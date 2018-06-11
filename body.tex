@@ -204,12 +204,15 @@ The main goal of this theses is to approximate the concentration of the isotope 
 
 \subsection{Different Approaches to calculate specific activity}
 \label{sec:Appro}
-In this theses two methods are used to determine the concentration of \nuc{Kr}{85} in the liquid argon that are completely independent from another.\\
+In this theses two methods are used to determine the concentration of \nuc{Kr}{85} in the liquid argon.\\
 
-One method for determining the concentration uses the property of Kr85 to have a probability of 0.43\% to decay into an excited state of \nuc{Rb}{85}. This state has a raised energy level of 514keV compared to its ground state and this excited state has a half-life of 1.015\(\mu\)s. Theoretically it should now be possible to measure a peak in the range around 514keV. From its amplitude and with the help of a Monte-Carlo simulation a relatively exact value for the concentration of \nuc{Kr}{85} can be obtained.\\
+The first method for determining the concentration uses the property of \nuc{Kr}{85} to have a probability of 0.43\% to decay into an excited state of \nuc{Rb}{85}. This state has a raised energy level of 514keV compared to its ground state and this excited state has a half-life of 1.015\(\mu\)s. Theoretically it should now be possible to measure a peak in the range around 514keV. Using a Monte-Carlo simulation one can also determine a function of amplitude of such a peak in the phase diagram only depending on its homogeneous concentration in the liquid argon. Using this and the previously measured amplitude one should be able to calculate the concentration of \nuc{Kr}{85}.\\
 
-The other method uses reducing the rate in a range from 200 to 500 keV. This is possible because every other isotope we know that has a non negligible fraction in liquid argon has half-life much higher than \nuc{Kr}{85} of \(10.739\mathrm{y}\). The dominant background sources are in descending order Ar42 with a half-life of 32.9 y, Ar39 with 269 y and U 232 with 68.9 y. Since the liquid argon has not been replaced since the beginning of GERDA Phase I in 2013, it can be estimated that the Kr85 rate has decreased by a factor of about square root of two while the rate of the other isotopes should have hardly changed.
+The second method uses the reduction in event rate over the range of 200 to 500 keV. This is useful only because every other isotope we know that has a non negligible fraction in the liquid argon has half-life much higher than \nuc{Kr}{85} [\(10.739\mathrm{y}\)]. The dominant background sources are in descending order Ar42 with a half-life of 32.9 y, Ar39 with 269 y and U 232 with 68.9 y. Since the liquid argon has not been replaced since the beginning of GERDA Phase I in 2013, it can be estimated that the Kr85 rate has decreased by a factor of \(\sqrt{2}\) while the rate of the other isotopes should have hardly changed.\\
 
+Due to several routine checks and improvements to the experimental construction there were several time intervals there no signal has been measured. This means that when one wants to draw this reduction spectrum in a histogram almost all the calculated bins will also contain the dead time of the detector. Luckily the test pulser can be used as a reference to when the detector was actually active. This test pulser emits a strong signal of ###testpulserEnergieHier### every twenty seconds and every measured event of it is separately marked as a test pulser signal. These signals can now be used as weigh to correct to previous histogram to get a correcter diagram. By laying a fit function of an exponential reduction plus a constant background over it one should be able to \\
+
+When one compares the 
 
 % short outline of approaches
 
