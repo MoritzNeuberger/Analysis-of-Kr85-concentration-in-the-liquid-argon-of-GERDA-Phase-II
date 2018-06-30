@@ -191,6 +191,7 @@ The third part is the main part of this theses. It will focus on how the concent
 \label{sec:ExSetup}
 
 % well, just dump everything here
+% also a bit about Tier1-4 storage of data 
 
 \subsection{Background Reduction}
 \label{sec:BGReduction}
@@ -245,7 +246,7 @@ Because the second method is based on a very broad approximation it is expected 
 \subsection{Activity from the 514keV peak}
 \label{sec:SAfrom514}
 
-As described in section \ref{sec:AotKr} this part of the theses concentrates on the first approach of finding the activity of \nuc{Kr}{85} by using relaxation of \nuc{Rb}{85} in a rare decay. The photon emitted carries an energy of almost exactly 514keV. It should therefor be possible to measure it in one of the detectors. When one plots all events measured by GERDA Phase II in a phase diagram from 500 to 525keV (as seen in figure \ref{fig:ungefiltertes500525}), two larger peaks are clearly visible. The first peak at about 511keV is easily identifiable as the expected positron electron annihilation peak where as the second peak at about 514keV corresponds to the rare \nuc{Kr}{85} decay into the excited \nuc{Rb}{85} state. This already means that we must have a not neglectable portion of \nuc{Kr}{85} as it was expected.\\
+As described in section \ref{sec:AotKr} this part of the theses concentrates on the first approach of finding the activity of \nuc{Kr}{85} by using relaxation of \nuc{Rb}{85} in a rare decay. The photon emitted carries an energy of almost exactly 514keV. It should therefor be possible to measure it in one of the detectors. When one plots all events measured by GERDA Phase II in a phase diagram from 500 to 525keV (as seen in figure \ref{fig:ungefiltertes500525}), two larger peaks are clearly visible. The first peak at about 511keV is easily identifiable as the expected positron electron annihilation peak where as the second peak at about 514keV corresponds to the rare \nuc{Kr}{85} decay into the excited \nuc{Rb}{85} state. This already means that, like it was expected, there must be a non neglectable portion of \nuc{Kr}{85} in the liquid argon.\\
 
 \begin{figure}[ht]
 	\centering
@@ -257,7 +258,7 @@ As described in section \ref{sec:AotKr} this part of the theses concentrates on 
 	}
 \end{figure}
 
-As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors are used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial detectors). Due to their difference in design and weigh the two types have a different energy resolution. Because of that their measured data will be evaluated separately. If you only take the events that are recorded in the respective detectors, you get graph \ref{} for all the events measured in the BEGe detectors and graph \ref{} for all the events in the COAX detectors. Since a smaller number of decays are measured with a lower exposure, the peaks in the new figures are only slightly visible over the background and the uncertainty.\\
+As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors are used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). Due to their differences in design and weigh the two types have a different energy resolution. Because of that their measured data will be evaluated separately. If you only take the events that are recorded in the respective detectors, you get figure \ref{} for all the events measured in the BEGe detectors and figure\ref{} for all the events in the COAX detectors.\\
 
 \begin{figure}[ht]
 	\centering
@@ -269,8 +270,9 @@ As it was elaborated in section \ref{sec:ExSetup}, two different types of detect
 	}
 \end{figure}
 
-At this point it is clear that we have two options on how we can handle the problem of the positron electron annihilation peak. Either we try to find a way to filter out the majority of the annihilation events while keeping almost all of the \nuc{Kr}{85} events. Or we try to live with it and adjust our fit function to a double Gaussian peak. 
+At this point it is clear that we have two options on how we can handle the problem of the positron electron annihilation peak. Either we try to find a way to filter out the majority of the annihilation events while keeping almost all of the \nuc{Kr}{85} events. This can hopefully be done by using the liquid argon veto of GERDA and the precoincidence of the electron scintillation in the photomultipliers. Or we try to leave it as it is and adjust our fit function to fit over both of the peaks using a double Gaussian peak. In this theses we will try to go both ways and later compare their informative value.\\
 
+As it was elaborated in section \ref{sec:ExSetup} all GERDA data is stored in a multi-tier data structure. All of the data used in this theses are from either tier 3 or from tier 4. In these tiers a lot of analysis has already been carried out on the individual events measured. Among other things, each event in tier 4 was given a flag whether there was a coincidence of the event with a strong signal in the liquid argon called "isLArVetoed". Due to the low energy of the beta electron (E\(_{mean}=47.65\)keV) released in the beta decay it can be expected that almost none of the electrons of the rare \nuc{Kr}{85} decay create any light in the scintillator. When you only take those events where this flag isn't set you get graphs 
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
 
