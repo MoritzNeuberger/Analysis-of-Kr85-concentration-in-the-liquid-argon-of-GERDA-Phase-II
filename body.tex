@@ -310,9 +310,31 @@ This already means that, like it was expected, there must be a non neglectable p
 	}
 \end{figure}
 
-As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors are used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
+As it was elaborated in section \ref{sec:ExSetup} all GERDA data is stored in a multi-tier data structure. 
+All of the data used in this theses are from either tier 3 or from tier 4.
+In these tiers a lot of analysis has already been carried out on the individual events measured. 
+Among other things, each event in tier 3 and 4 is given a flag whether or not there was a coincidence of the event with a signal in one of the photomultiplier in the water tank around the liquid argon.
+This flag is called the "Muon veto" and it always triggers whenever there is a strong Cherenkov signal measured.
+Due to the high energy needed to create any Cherenkov signal no isotope from inside the germanium source and liquid argon and certainly no \nuc{Kr}{85} should trigger the MuiVeto.
+This can be used to filter out high-energy particles from outside and the background they create.
+\\
+
+For a photon of a rare \nuc{Kr}{85} decay to create the distinct 514keV peak it is necessary that it has to deposit all of its energy in only one of the detectors. 
+This means that any energy measured in one Germanium detectors that has a coincidence with a non neglectable signal measured in another Germanium detector is most likely not a real rare \nuc{Kr}{85} decay.
+Whether an event has more than one detector measure a signal can be determined by the multiplicity counter of each event stored in tier 3 and 4.
+Using this counter even more background of none \nuc{Kr}{85} can be repressed by only using events where only one detector was triggered.
+\\
+
+With these two filters you get a new graph with still less background seen in figure \ref{}.
+% HIER WAS HIN
+From now on, only those events will be used in further analysis that came through these two filters.
+\\
+
+After applying the first few rather general filters on the measured events one has to make a distinction between the detectors.
+As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution. 
-Because of that their measured data will be evaluated separately. 
+The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
+Because of this their measured data must and will be evaluated separately. 
 If you only take the events that are recorded in the respective detectors, you get figure \ref{} for all the events measured in the BEGe detectors and figure\ref{} for all the events in the COAX detectors.
 \\
 
@@ -329,14 +351,18 @@ If you only take the events that are recorded in the respective detectors, you g
 At this point it is clear that we have two options on how we can handle the problem of the positron electron annihilation peak. 
 Either we try to find a way to filter out the majority of the annihilation events while keeping almost all of the \nuc{Kr}{85} events. 
 This can hopefully be done by using the liquid argon veto of GERDA and the precoincidence of the electron scintillation in the photomultipliers. 
-Or we try to leave it as it is and adjust our fit function to fit over both of the peaks using a double Gaussian peak. 
-In this theses we will try to go both ways and later compare their informative value.
+Or we try to leave it as it is and adjust our fit function to a fit over both of the peaks using a double Gaussian peak. 
+In this theses we will try to go both ways separately and later compare their informative value.
 \\
 
-As it was elaborated in section \ref{sec:ExSetup} all GERDA data is stored in a multi-tier data structure. 
-All of the data used in this theses are from either tier 3 or from tier 4. 
-In these tiers a lot of analysis has already been carried out on the individual events measured. 
-Among other things, each event in tier 4 was given a flag whether there was a coincidence of the event with a strong scintillation signal in one of the photomultiplier called "isLArVetoed". 
+\subsubsection{Annihilation peak suppression}
+\label{sec:APS}
+
+First, we will try to get a better shape of the 514keV peak by trying to suppress the annihilation peak using the liquid argon veto and will later discuss its effectiveness.
+\\
+
+Among other things, each event in tier 4 was given a flag called "isLArVetoed".
+This flag is always triggered whether there was a coincidence of the specific event with a strong scintillation signal in one of the photomultiplier in the liquid argon. 
 Due to the low energy of the beta electron (E\(_{mean}=47.65\)keV) released in the beta decay it can be expected that almost none of the electrons of the rare \nuc{Kr}{85} decay create any light in the scintillator. 
 In contrast to that you can expect a very strong light signal every time a positron electron annihilation occurs. 
 One should therefor be able to filter out almost all of the annihilation events while keeping the majority of the \nuc{Kr}{85} decay by only using events where this flag is not triggered.
