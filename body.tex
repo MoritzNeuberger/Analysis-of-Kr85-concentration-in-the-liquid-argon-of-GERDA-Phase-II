@@ -303,10 +303,10 @@ This already means that, like it was expected, there must be a non neglectable p
 \begin{figure}[ht]
 	\centering
 	\ifmakefigures%
-	\includegraphics[width=130mm]{./Bilder/500525NoFilterAllDetectors.pdf}
+	\includegraphics[width=130mm]{./Bilder/GraphNoFiltersAtAllAll.pdf}
 	\fi%
 	\caption{\label{fig:ungefiltertes500525}
-		All events measured by all detectors in the range of 500keV to 525keV showing two overlapping peaks at 511keV and 514keV.
+		All events measured by all detectors in the range of 500keV to 525keV with no filter applied showing two overlapping peaks at 511keV and 514keV.
 	}
 \end{figure}
 
@@ -369,6 +369,47 @@ One should therefor be able to filter out almost all of the annihilation events 
 \\
 
 If one plots all events that got through this filter one gets figure \ref{} for the BEGes and figure \ref{} for the COAX detectors.
+One can see that the positron electron annihilation peak can not be identified anymore while the 514keV peak is almost unchanged.
+\\
+
+At this point we could say that we have done enough filtering and use fit functions to determine the number of decays in the peaks.
+But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out a real rare \nuc{Kr}{85} decay.
+The number of events filtered out by the liquid argon veto in the energy range of 509 to 519 keV is 1728.
+This number of evens is way to big to look at every individual case.
+\\
+
+Luckily we can use the fact that the excited \nuc{Rb}{85} state has a half life of about %hier nichmal ein WERT% \(\mu\)sec.
+This means that we can identify a real rare \nuc{Kr}{85} decay by only looking at the events where the signal in the liquid argon happened before the event was measured in one of the Germanium detectors.
+We also know that the energy of the released beta electron is relatively low.
+This means that we can expect that only a small number of photomultipliers should measure a signal in a real rare \nuc{Kr}{85} decay.
+\\
+
+\begin{figure}[ht]
+	\centering
+	\ifmakefigures%
+	\includegraphics[width=160mm]{./Bilder/500525NoFilterAllDetectors.pdf}
+	\fi%
+	\caption{\label{fig:ungefiltertes500525}
+		All events measured by all detectors in the range of 500keV to 525keV showing two overlapping peaks at 511keV and 514keV.
+	}
+	\ifmakefigures%
+	\includegraphics[width=160mm]{./Bilder/500525NoFilterAllDetectors.pdf}
+	\fi%
+	\caption{\label{fig:ungefiltertes500525}
+		All events measured by all detectors in the range of 500keV to 525keV showing two overlapping peaks at 511keV and 514keV.
+	}
+\end{figure}
+
+
+If you apply these two restrictions to the liquid argon filtered events you get a distributions as seen in figure \ref{}.
+The x axis is the time difference of the events in the photomultipliers from the first signal measured in one of the Germanium detectors.
+This means that negative times difference mean that the event in the photomultiplier was measured before there was even an event in the Germanium detectors.
+Theoretically it should now be possible to see a exponential increase from the negative time scale towards a vanishing time difference.
+\\
+
+
+
+
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
 
