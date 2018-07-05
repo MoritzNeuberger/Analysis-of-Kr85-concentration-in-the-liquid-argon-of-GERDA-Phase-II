@@ -12,22 +12,22 @@
 \section{Introduction}
 \label{sec:intro}
 
-The GERDA experiment tries to find evidence for the existence of the neutrino less double beta decay in \nuc{Ge}{67} as it was reported to be found in the NAMEDESANDERENEXPERIMENTSHIER. 
+The GERDA experiment tries to find evidence for the existence of the neutrino less double beta decay in \nuc{Ge}{67} as it was reported to be found in the Heidelberg-Moskau experiment. 
 Because it is expected that this decay has a very long lifetime it is very important to filter out every source of background radiation as good as possible. 
-Therefor it is necessary to use a low temperature coolant to freeze the \nuc{Ge}{67} detectors down and to have some kind of scintillator around the detectors to filter out any radiation coming from the outside. 
-This is setup that way because in this experiment are the Germanium detectors made out of the \nuc{Ge}{67} double beta decay source. 
+Therefor it is necessary to use a low temperature coolant to freeze the \nuc{Ge}{67} detectors down and to use a scintillator around the detectors to filter out any radiation coming from the outside. 
+A setup like this is chosen because in this experiment the Germanium detectors made out of the \nuc{Ge}{67} which is at the same time the wanted double beta decay source. 
 This makes any signal coming from the outside a background event. 
 Liquid argon is a fitting material for both of requirements listed above due to its low freezing point and its ability to scintillate. 
-Commercial argon is extracted from the air by air liquefaction and therefor has residual foreign isotopes with a similar freezing point. 
+Commercial argon is extracted from the air by air liquefaction and therefor has residual foreign isotopes. 
 The majority of the impurity in the liquid argon can be removed by cryogenic distillation but even the remaining alien isotopes are still very active.\\
 
 One of these residual radioactive isotopes is \nuc{Kr}{85}. 
 Compared to \nuc{Ge}{67} it has a relatively low endpoint energy and therefor shouldn't create any fake neutrino less double beta decays. 
 It also isn't the strongest radioactive background source. 
 This title belongs to \nuc{Ar}{42}. 
-What is interesting about this isotope is the fact that first approximations of its concentration in the liquid argon showed that it is at least 10\(^{-3}\) times smaller than values measured in other experiments using liquid argon. %hier die Werte hin
+What is interesting about this isotope is the fact that first approximations of its concentration in the liquid argon showed that it is at least 10\(^{-3}\) times smaller than values measured in other experiments using liquid argon. !!!!! hier die Abschätzung hin oder sich eine andere Begründung für meine Bachelorarbeit ausdenken !!!!!
 
-The aim of this theses is to determine the concentration of the \nuc{Kr}{85} in the liquid argon coolant and scintillator of the GERDA experiment and by this determining its influence in the radioactive background. 
+The aim of this theses is to determine the concentration of the \nuc{Kr}{85} in the liquid argon coolant and scintillator of the GERDA experiment and by this determining its influence to the radioactive background. 
 This is accomplished by two different approaches. 
 The first method uses the relatively rare decay of \nuc{Kr}{85} into an excited state of \nuc{Rb}{85} with a probability of 0.43\%. 
 This excited state relaxes to its ground state by emitting a photon with 514keV of which there should be a noticeable peak in the phase diagram. 
@@ -44,7 +44,7 @@ The aim of GERDA as well as its experimental setup and background reduction will
 
 The third part is the main part of this theses. 
 It will focus on how the concentration of \nuc{Kr}{85} will be determined. 
-It will start with the theoretical idea behind and the problems of the two methods and then concentration on the two approaches individualy
+It will start with the theoretical idea behind and the problems of the two methods and then concentration on the two approaches individually !!!!! das sollte ich wohl am besten als letztes schreiben !!!!!
 
 % what is the general aim of my Bachelor thesis
 % general overview of how I'm going to do this
@@ -56,6 +56,9 @@ It will start with the theoretical idea behind and the problems of the two metho
 
 \subsection{Weyl, Majorana and Dirac fermions}
 \label{sec:WMDf}
+
+
+Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor allem auf "Kerne und Teilchen", der KTA Script und ein paar einfürhende Paper stützen.
 
 % in this chapter almost everything from source 0
 
@@ -278,7 +281,8 @@ Since the liquid argon has not been replaced since the beginning of GERDA Phase 
 Due to routine check-ups and improvements to the experimental setup there were several time intervals in which the detectors were deactivated. 
 This means that one has to find a way to weigh the measured rates with a signal that corresponds to the times the detector was actually active. 
 Luckily the test pulser signal can be used as such a reference. 
-This test pulse emits a strong signal of TESTPULSERENERGIEHIER every twenty seconds and every measured event of it is separately marked as a test pulse signal. 
+!!!!! Hier noch eine kurze Erklärung zum TP !!!!!
+%This test pulse emits a strong signal of TESTPULSERENERGIEHIER every twenty seconds and every measured event of it is separately marked as a test pulse signal. 
 These signals can now be used as weigh to correct the previous histogram.
 \\
 % By laying a fit function of an exponential decrease plus a constant background over it one should be able to deduct the activity of the \nuc{Kr}{85} from the amplitude of the exponential decrease. With this one can then calculate the concentration by integrating over the activity and dividing over the liquid argon volume.\\
@@ -295,7 +299,7 @@ In contrast, the first method is expected to wield a much better appraisal becau
 As described in section \ref{sec:AotKr} this part of the theses concentrates on the first approach of finding the activity of \nuc{Kr}{85} by using relaxation of \nuc{Rb}{85} in a rare decay. 
 The photon emitted carries an energy of almost exactly 514keV. 
 It should therefor be possible to measure it in one of the detectors. 
-When one plots all events measured by GERDA Phase II in a phase diagram from 500 to 525keV (as seen in figure \ref{fig:ungefiltertes500525}), two larger peaks are clearly visible. 
+When one plots all events measured by GERDA Phase II in a phase diagram from 500 to 525keV (as seen in figure \ref{fig:ungefiltertes500525}), two larger peaks are visible. 
 The first peak at about 511keV is easily identifiable as the expected positron electron annihilation peak where as the second peak at about 514keV corresponds to the rare \nuc{Kr}{85} decay into the excited \nuc{Rb}{85} state. 
 This already means that, like it was expected, there must be a non neglectable portion of \nuc{Kr}{85} in the liquid argon.
 \\
@@ -309,6 +313,8 @@ This already means that, like it was expected, there must be a non neglectable p
 		All events measured by all detectors in the range of 500keV to 525keV with no filter applied showing two overlapping peaks at 511keV and 514keV.
 	}
 \end{figure}
+
+
 
 As it was elaborated in section \ref{sec:ExSetup} all GERDA data is stored in a multi-tier data structure. 
 All of the data used in this theses are from either tier 3 or from tier 4.
@@ -325,8 +331,18 @@ Whether an event has more than one detector measure a signal can be determined b
 Using this counter even more background of none \nuc{Kr}{85} can be repressed by only using events where only one detector was triggered.
 \\
 
-With these two filters you get a new graph with still less background seen in figure \ref{}.
-% HIER WAS HIN
+\begin{figure}[ht]
+	\centering
+	\ifmakefigures%
+	\includegraphics[width=130mm]{./Bilder/500525NoFilterAllDetectors.pdf}
+	\fi%
+	\caption{\label{fig:leichtGefiltertes500525}
+		All events measured by all detectors in the range of 500keV to 525keV with the Mui Veto and only one detector triggered.
+	}
+\end{figure}
+
+With these two filters you get a new graph with still less background seen in figure \ref{fig:leichtGefiltertes500525}.
+One can see that the annihilation events could be partially suppressed by these two filters making the two peaks more distinguishable.
 From now on, only those events will be used in further analysis that came through these two filters.
 \\
 
@@ -339,13 +355,19 @@ If you only take the events that are recorded in the respective detectors, you g
 \\
 
 \begin{figure}[ht]
-	\centering
-	\ifmakefigures%
-	\includegraphics[width=160mm]{./Bilder/500525NoFilterAllDetectors.pdf}
-	\fi%
-	\caption{\label{fig:ungefiltertes500525}
-		All events measured by all detectors in the range of 500keV to 525keV showing two overlapping peaks at 511keV and 514keV.
-	}
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=80mm]{./Bilder/500525NoFilterBEGes.pdf}
+  \caption{figure}{All events measured by only BEGe detectors in the range of 500keV to 525keV.}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=80mm]{./Bilder/500525NoFilterCOAX.pdf}
+  \caption{figure}{All events measured by only COAX detectors in the range of 500keV to 525keV.}
+  \label{fig:test2}
+\end{minipage}
 \end{figure}
 
 At this point it is clear that we have two options on how we can handle the problem of the positron electron annihilation peak. 
@@ -372,6 +394,22 @@ If one plots all events that got through this filter one gets figure \ref{} for 
 One can see that the positron electron annihilation peak can not be identified anymore while the 514keV peak is almost unchanged.
 \\
 
+\begin{figure}[ht]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=80mm]{./Bilder/500525LArVetoBEGes.pdf}
+  \caption{figure}{All events measured by only BEGe detectors in the range of 500keV to 525keV.}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=80mm]{./Bilder/500525LArVetoCOAX.pdf}
+  \caption{figure}{All events measured by only COAX detectors in the range of 500keV to 525keV.}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
 At this point we could say that we have done enough filtering and use fit functions to determine the number of decays in the peaks.
 But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out a real rare \nuc{Kr}{85} decay.
 The number of events filtered out by the liquid argon veto in the energy range of 509 to 519 keV is 1728.
@@ -383,22 +421,6 @@ This means that we can identify a real rare \nuc{Kr}{85} decay by only looking a
 We also know that the energy of the released beta electron is relatively low.
 This means that we can expect that only a small number of photomultipliers should measure a signal in a real rare \nuc{Kr}{85} decay.
 \\
-
-\begin{figure}[ht]
-	\centering
-	\ifmakefigures%
-	\includegraphics[width=160mm]{./Bilder/500525NoFilterAllDetectors.pdf}
-	\fi%
-	\caption{\label{fig:ungefiltertes500525}
-		All events measured by all detectors in the range of 500keV to 525keV showing two overlapping peaks at 511keV and 514keV.
-	}
-	\ifmakefigures%
-	\includegraphics[width=160mm]{./Bilder/500525NoFilterAllDetectors.pdf}
-	\fi%
-	\caption{\label{fig:ungefiltertes500525}
-		All events measured by all detectors in the range of 500keV to 525keV showing two overlapping peaks at 511keV and 514keV.
-	}
-\end{figure}
 
 
 If you apply these two restrictions to the liquid argon filtered events you get a distributions as seen in figure \ref{}.
