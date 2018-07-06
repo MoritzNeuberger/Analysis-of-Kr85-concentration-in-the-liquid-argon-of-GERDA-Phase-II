@@ -454,22 +454,23 @@ This tool allows one to search for a specific event and see all recorded signals
 \\
 
 With this tool one can now perform a manual filter by looking at the remaining 69 events and perform a specific protocol.
-It was determined that all events with either more than 3phe of light intensity or more than 2keV distance from the 514keV peak are filtered out.
+It was determined that all events with either more than 3phe of light intensity, more than two events in one photomultiplier in the time window of interest (5\(\mu\)s - 0\(\mu\)s) or more than 2keV of energy difference from the 514keV peak are filtered out.
 Due to their higher responsiveness was the signal of the photomuliplier tubes (PMT) used predominantly.
 The silicon photomultipliers (SiPM) have a slower reaction time and the majority of events in them that happened before the Germanium signal were background events.
-In figure \ref{fig:Beispiel1} is an example for an almost perfect rare \nuc{Kr}{85} decay signal in the PMT.
+In figure \ref{fig:Beispiel1} is an example for an almost model rare \nuc{Kr}{85} decay signal in the PMT.
 \\
 
 \begin{figure}[ht!]
 	\centering
 	\ifmakefigures%
-	\includegraphics[width=130mm]{./Bilder/TriggerTimeOnly4.pdf}
+	\includegraphics[width=130mm]{./Bilder/pmt_event_1614036.eps}
 	\fi%
 	\caption{\label{fig:Trigger4}
 		All liquid argon filtered events with a negative time difference between the event in the Germanium detector and a signal in the photomultipliers in the liquid argon tank.
 	}
 \end{figure}
 
+Using this procedure we were able to lower the amount of possible rare \nuc{Kr}{85} decay signals down to 24 events.
 
 
 
