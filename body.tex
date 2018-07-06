@@ -311,7 +311,7 @@ The first peak at about 511keV is easily identifiable as the expected positron e
 This already means that, like it was expected, there must be a non neglectable portion of \nuc{Kr}{85} in the liquid argon.
 \\
 
-\begin{figure}[ht]
+\begin{figure}[t!]
 	\centering
 	\ifmakefigures%
 	\includegraphics[width=130mm]{./Bilder/GraphNoFiltersAtAllAll.pdf}
@@ -338,7 +338,7 @@ Whether an event has more than one detector measure a signal can be determined b
 Using this counter even more background of none \nuc{Kr}{85} can be repressed by only using events where only one detector was triggered.
 \\
 
-\begin{figure}[ht]
+\begin{figure}[t!]
 	\centering
 	\ifmakefigures%
 	\includegraphics[width=130mm]{./Bilder/500525NoFilterAllDetectors.pdf}
@@ -361,7 +361,7 @@ Because of this their measured data must and will be evaluated separately.
 If you only take the events that are recorded in the respective detectors, you get figure \ref{fig:NoFilterBEGes} for all the events measured in the BEGe detectors and figure \ref{fig:NoFilterCOAX} for all the events in the COAX detectors.
 \\
 
-\begin{figure}[ht]
+\begin{figure}[t!]
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
@@ -398,10 +398,10 @@ One should therefor be able to filter out almost all of the annihilation events 
 \\
 
 If one plots all events that got through this filter one gets figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
-One can see that the positron electron annihilation peak can not be identified anymore while the 514keV peak is almost unchanged.
+You can see that the positron electron annihilation peak can not be identified anymore while the 514keV peak is almost unchanged.
 \\
 
-\begin{figure}[ht]
+\begin{figure}[t!]
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
@@ -420,16 +420,16 @@ One can see that the positron electron annihilation peak can not be identified a
 At this point one could say that we have done enough filtering and use a fit functions to determine the number of decays in the peak.
 But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out an actual rare \nuc{Kr}{85} decay.
 The number of events filtered out by the liquid argon veto in the energy range of 509 to 519 keV is 1728.
-This number of evens is way to big to look at every individual case.
+This number of events is too big to look at every individual case.
 \\
 
 Luckily we can use the fact that the excited \nuc{Rb}{85} state has a half life of 1.015 \(\mathrm{\mu}\)s.
-This means that we can identify a real rare \nuc{Kr}{85} decay by only looking at the events where the signal in the liquid argon happened before the event was measured in one of the Germanium detectors.
+This means that we can identify most real rare \nuc{Kr}{85} decay by looking at the events where the signal in the liquid argon happened before the event was measured in one of the Germanium detectors.
 We also know that the energy of the released beta electron is relatively low.
 This means that we can expect that only a small number of photomultipliers should measure a signal in a real rare \nuc{Kr}{85} decay.
 \\
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\centering
 	\ifmakefigures%
 	\includegraphics[width=130mm]{./Bilder/TriggerTimeOnly4.pdf}
@@ -439,17 +439,41 @@ This means that we can expect that only a small number of photomultipliers shoul
 	}
 \end{figure}
 
-If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier events with a signal strength of at least 0.5 pe you get a distributions as seen in figure \ref{fig:Trigger4}.
+If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier events with a signal strength of at least 0.5 phe you get a distributions as seen in figure \ref{fig:Trigger4}.
 In this case, only events with a maximum of four triggered photomultipliers are shown in this graphic.
-Allowing events with a number of four different triggered photomultipliers is already a lot for a \nuc{Kr}{85} decay, but we wanted to do a more detailed manually investigation which is why the filter can be a little coarser here.
+Allowing events with a number of four different triggered photomultipliers is already a lot for a \nuc{Kr}{85} decay, but we wanted to do a more detailed manually investigation later which is why the filter can be a little coarser here.
 The x axis is the time difference of the events in the photomultipliers from the first signal measured in one of the Germanium detectors.
-This means that negative times difference mean that the event in the photomultiplier was measured before there was even an event in the Germanium detectors.
-Theoretically it should now be possible to see a exponential increase.
+This means that a negative times difference occur when an event in the photomultiplier was measured before there was even an event in the Germanium detectors.
+Theoretically it should now be possible to see a exponential increase from the negative scale towards a vanishing time difference.
 \\
 
 But because of the small number of events left over, it is almost impossible to make any statements about the course of these events.
 Nevertheless we were able to lower the number of potential \nuc{Kr}{85} events from 1728 down to only 69.  
+These remaining events can now be examined with a with software called GerLa written by GERDA employees.
+This tool allows one to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around this event.
 \\
+
+With this tool one can now perform a manual filter by looking at the remaining 69 events and perform a specific protocol.
+It was determined that all events with either more than 3phe of light intensity or more than 2keV distance from the 514keV peak are filtered out.
+Due to their higher responsiveness was the signal of the photomuliplier tubes (PMT) used predominantly.
+The silicon photomultipliers (SiPM) have a slower reaction time and the majority of events in them that happened before the Germanium signal were background events.
+In figure \ref{fig:Beispiel1} is an example for an almost perfect rare \nuc{Kr}{85} decay signal in the PMT.
+\\
+
+\begin{figure}[ht!]
+	\centering
+	\ifmakefigures%
+	\includegraphics[width=130mm]{./Bilder/TriggerTimeOnly4.pdf}
+	\fi%
+	\caption{\label{fig:Trigger4}
+		All liquid argon filtered events with a negative time difference between the event in the Germanium detector and a signal in the photomultipliers in the liquid argon tank.
+	}
+\end{figure}
+
+
+
+
+
 
 
 
