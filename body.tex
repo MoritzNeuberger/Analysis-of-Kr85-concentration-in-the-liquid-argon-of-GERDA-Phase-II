@@ -358,7 +358,7 @@ As it was elaborated in section \ref{sec:ExSetup}, two different types of detect
 Due to their differences in design and weigh the two types have a different energy resolution. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
 Because of this their measured data must and will be evaluated separately. 
-If you only take the events that are recorded in the respective detectors, you get figure \ref{} for all the events measured in the BEGe detectors and figure\ref{} for all the events in the COAX detectors.
+If you only take the events that are recorded in the respective detectors, you get figure \ref{fig:NoFilterBEGes} for all the events measured in the BEGe detectors and figure \ref{fig:NoFilterCOAX} for all the events in the COAX detectors.
 \\
 
 \begin{figure}[ht]
@@ -366,14 +366,14 @@ If you only take the events that are recorded in the respective detectors, you g
 \begin{minipage}{.5\textwidth}
   \centering
 	\includegraphics[width=80mm]{./Bilder/500525NoFilterBEGes.pdf}
-  \caption{figure}{All events measured by only BEGe detectors in the range of 500keV to 525keV.}
-  \label{fig:test1}
+  \caption{}{All events measured by only BEGe detectors in the range of 500keV to 525keV.}
+  \label{fig:NoFilterBEGes}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
 	\includegraphics[width=80mm]{./Bilder/500525NoFilterCOAX.pdf}
-  \caption{figure}{All events measured by only COAX detectors in the range of 500keV to 525keV.}
-  \label{fig:test2}
+  \caption{}{All events measured by only COAX detectors in the range of 500keV to 525keV.}
+  \label{fig:NoFilterCOAX}
 \end{minipage}
 \end{figure}
 
@@ -397,7 +397,7 @@ In contrast to that you can expect a very strong light signal every time a posit
 One should therefor be able to filter out almost all of the annihilation events while keeping the majority of the \nuc{Kr}{85} decay by only using events where this flag is not triggered.
 \\
 
-If one plots all events that got through this filter one gets figure \ref{} for the BEGes and figure \ref{} for the COAX detectors.
+If one plots all events that got through this filter one gets figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
 One can see that the positron electron annihilation peak can not be identified anymore while the 514keV peak is almost unchanged.
 \\
 
@@ -406,14 +406,14 @@ One can see that the positron electron annihilation peak can not be identified a
 \begin{minipage}{.5\textwidth}
   \centering
 	\includegraphics[width=80mm]{./Bilder/500525LArVetoBEGes.pdf}
-  \caption{figure}{All events measured by only BEGe detectors in the range of 500keV to 525keV.}
-  \label{fig:test1}
+  \caption{}{All events measured by only BEGe detectors with the LAr filter applied in the range of 500keV to 525keV.}
+  \label{fig:LArBEGes}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
 	\includegraphics[width=80mm]{./Bilder/500525LArVetoCOAX.pdf}
-  \caption{figure}{All events measured by only COAX detectors in the range of 500keV to 525keV.}
-  \label{fig:test2}
+  \caption{}{All events measured by only COAX detectors with the LAr filter applied in the range of 500keV to 525keV.}
+  \label{fig:LArCOAX}
 \end{minipage}
 \end{figure}
 
@@ -428,17 +428,18 @@ This means that we can identify a real rare \nuc{Kr}{85} decay by only looking a
 We also know that the energy of the released beta electron is relatively low.
 This means that we can expect that only a small number of photomultipliers should measure a signal in a real rare \nuc{Kr}{85} decay.
 \\
+
 \begin{figure}[ht]
 	\centering
 	\ifmakefigures%
-	\includegraphics[width=130mm]{./Bilder/TriggerTimeOnly2.pdf}
+	\includegraphics[width=130mm]{./Bilder/TriggerTimeOnly4.pdf}
 	\fi%
-	\caption{\label{fig:ungefiltertes500525}
+	\caption{\label{fig:Trigger4}
 		All liquid argon filtered events with a negative time difference between the event in the Germanium detector and a signal in the photomultipliers in the liquid argon tank.
 	}
 \end{figure}
 
-If you apply these two restrictions to the liquid argon filtered events you get a distributions as seen in figure \ref{}.
+If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier events with a signal strength of at least 0.5 pe you get a distributions as seen in figure \ref{fig:Trigger4}.
 In this case, only events with a maximum of four triggered photomultipliers are shown in this graphic.
 Allowing events with a number of four different triggered photomultipliers is already a lot for a \nuc{Kr}{85} decay, but we wanted to do a more detailed manually investigation which is why the filter can be a little coarser here.
 The x axis is the time difference of the events in the photomultipliers from the first signal measured in one of the Germanium detectors.
@@ -447,8 +448,10 @@ Theoretically it should now be possible to see a exponential increase.
 \\
 
 But because of the small number of events left over, it is almost impossible to make any statements about the course of these events.
-Nevertheless we were able to lower the number of potential \nuc{Kr}{85} events from 1728 down to only 48.  
+Nevertheless we were able to lower the number of potential \nuc{Kr}{85} events from 1728 down to only 69.  
 \\
+
+
 
 
 
