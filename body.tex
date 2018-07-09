@@ -281,7 +281,7 @@ Therefor it should be possible to single out the 514keV events from the annihila
 
 The second method uses the reduction of the event rate over the range of 200 to 400 keV. 
 This is only possible because every other isotope we know that is present in the liquid argon with a non negligible proportion has a half-life much higher than \nuc{Kr}{85} with its \(10.739\mathrm{y}\). 
-The dominant background sources are in descending order \nuc{Ar}{42} with a half-life of 32.9 y, \n uc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
+The dominant background sources are in descending order \nuc{Ar}{42} with a half-life of 32.9 y, \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
 Since the liquid argon has not been replaced since the beginning of GERDA Phase I in 2013, it can be estimated that the Kr85 rate has decreased by a factor of \(\sqrt{2}\) while the rate of the other isotopes should have hardly changed.
 \\
 
@@ -366,15 +366,18 @@ If you only take the events that are recorded in the respective detectors, you g
 \begin{minipage}{.5\textwidth}
   \centering
 	\includegraphics[width=80mm]{./Bilder/500525NoFilterBEGes.pdf}
-  \caption{}{All events measured by only BEGe detectors in the range of 500keV to 525keV.}
   \label{fig:NoFilterBEGes}
+  \caption{BEGes}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
 	\includegraphics[width=80mm]{./Bilder/500525NoFilterCOAX.pdf}
-  \caption{}{All events measured by only COAX detectors in the range of 500keV to 525keV.}
+  \caption{COAX}
   \label{fig:NoFilterCOAX}
 \end{minipage}
+    \\
+	\vspace{0.5cm}
+	All events measured by the respective detectors in the range of 500keV to 525keV.
 \end{figure}
 
 At this point it is clear that we have two options on how we can handle the problem of the positron electron annihilation peak. 
@@ -406,15 +409,18 @@ You can see that the positron electron annihilation peak can not be identified a
 \begin{minipage}{.5\textwidth}
   \centering
 	\includegraphics[width=80mm]{./Bilder/500525LArVetoBEGes.pdf}
-  \caption{}{All events measured by only BEGe detectors with the LAr filter applied in the range of 500keV to 525keV.}
+    \caption{BEGes}
   \label{fig:LArBEGes}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
 	\includegraphics[width=80mm]{./Bilder/500525LArVetoCOAX.pdf}
-  \caption{}{All events measured by only COAX detectors with the LAr filter applied in the range of 500keV to 525keV.}
+  \caption{COAX}
   \label{fig:LArCOAX}
 \end{minipage}
+    \\
+	\vspace{0.5cm}
+    All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.
 \end{figure}
 
 At this point one could say that we have done enough filtering and use a fit functions to determine the number of decays in the peak.
@@ -434,7 +440,8 @@ This means that we can expect that only a small number of photomultipliers shoul
 	\ifmakefigures%
 	\includegraphics[width=100mm]{./Bilder/TriggerTimeOnly4.pdf}
 	\fi%
-	\caption{\label{fig:Trigger4}
+	\label{fig:Trigger4}
+	\caption{
 		All liquid argon filtered events with a negative time difference between the event in the Germanium detector and a signal in the photomultipliers in the liquid argon tank.
 	}
 \end{figure}
@@ -471,7 +478,7 @@ In figure \ref{fig:Beispiel1} is an example for an almost model rare \nuc{Kr}{85
 \end{figure}
 
 Using this procedure we were able to lower the amount of possible rare \nuc{Kr}{85} decay signals down to 24 events.
-Finally we can now add those events to our liquid argon filtered energy diagram (see figure \ref{).
+Finally we can now add those events to our liquid argon filtered energy diagram (see figure \ref{}).
 !!!!! Hier noch ein paar Worte dazu !!!!!
 \\
 
@@ -508,55 +515,90 @@ When you apply the fit function to the two different phase-space diagrams of the
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=80mm]{./Bilder/500525FitNoFilterBEGes.pdf}
-		\caption{}{All events measured only by BEGe detectors in the range of 500keV to 525keV fitted with a fit function in the form of \ref{equ:FitNoFilters}. The green function represent the two Gaussian peaks independently using the determined fit parameters.}
+		\caption{BEGes}
 		\label{fig:LArBEGes}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=80mm]{./Bilder/500525FitNoFilterCOAX.pdf}
-		\caption{}{All events measured only by COAX detectors in the range of 500keV to 525keV fitted with a fit function in the form of \ref{equ:FitNoFilters}. The green function represent the two Gaussian peaks independently using the determined fit parameters.}
+		\caption{COAX}
 		\label{fig:LArCOAX}
 	\end{minipage}
+    \\
+	\vspace{0.5cm}
+	All events measured by the respective detectors in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitNoFilters}. The green function represent the two Gaussian peaks independently using the determined fit parameters.
 \end{figure}
 
 The resulting fit parameters are listed in table \ref and \ref. 
 
-\begin{figure}
-\begin{minipage}{.5\textwidth}
-\begin{array}{c|c|c}
+\begin{figure*}[t!]
 \centering
-Name of the variable	& Value & Error \\ 
-A Ampl1 &	16.315 &	3.658	\\	
-B Mean1 &	510.693 &	0.564	\\	
-C Vari1 &	1.022 &	1.433		\\
-D Ampl2 &	27.239 &	3.870		\\
-E Mean2 &	513.940 &	0.701		\\
-F Vari2 &	0.909 &	1.400		\\
-G ConBG &	14.175 &	1.050		\\
-H EBGAmpl &	24.487 &	1.833		\\
-I EBGDec &	-40.573 & 1.000		\\
+\begin{minipage}{.4\linewidth}
+\centering
+BEGes
+\vspace{0.5cm}
+\\
+\begin{tabular}{|c|c|c|}
+\hline
+Name	& Value & Error \\ 
+\hline
+A  &	16.15 &	3.658	\\	
+\hline
+B  &	510.693 &	0.564	\\	
+\hline
+C  &	1.022 &	1.433		\\
+\hline
+D  &	27.239 &	3.870		\\
+\hline
+E  &	513.940 &	0.701		\\
+\hline
+F  &	0.909 &	1.400		\\
+\hline
+G  &	14.175 &	1.050		\\
+\hline
+H  &	24.487 &	1.833		\\
+\hline
+I  &	-40.573 & 1.000	\\
+\hline
+\end{tabular}
 \label{tab:FitParNoFilterBEGe}
-\caption{}{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the BEGe detectors.}
-\end{array}
-\end{minipage} 
-\begin{minipage}{.5\textwidth}
-\begin{array}{c|c|c}
-\centering
-Name of the variable	& Value & Error \\ 
-A Ampl1 &	29.842 &	3.968	\\
-B Mean1 &	510.750 &	0.265	\\	
-C Vari1 &	1.564 &	0.236		\\
-D Ampl2 &	20.463 &	3.279		\\
-E Mean2 &	513.858 &	0.213		\\
-F Vari2 &	1.017 &	0.173		\\
-G ConBG &	13.123 &	0.289		\\
-H EBGAmpl &	-384995.062 &	2.592	\\	
-I EBGAbf &	-40.573 &	1.414		\\
-\label{tab:FitParNoFilterCOAX}
-\caption{}{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the COAX detectors.}
-\end{array}
+\\
+
 \end{minipage}
-\end{figure}
+\begin{minipage}{.4\linewidth}
+\centering
+COAX
+\vspace{0.5cm}
+\\
+\begin{tabular}{|c|c|c|}
+\hline
+Name	& Value & Error \\ 
+\hline
+A  &	29.842 &	3.968	\\
+\hline
+B  &	510.750 &	0.265	\\	
+\hline
+C  &	1.564 &	0.236		\\
+\hline
+D  &	20.463 &	3.279		\\
+\hline
+E  &	513.858 &	0.213		\\
+\hline
+F  &	1.017 &	0.173		\\
+\hline
+G  &	13.123 &	0.289		\\
+\hline
+H  &	-384995.062 &	2.592	\\	
+\hline
+I  &	-40.573 &	1.414\\
+\hline
+\end{tabular}
+\label{tab:FitParNoFilterCOAX}
+\end{minipage}
+\\
+\vspace{0.5cm}
+\captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the respective detectors.}
+\end{figure*}
 
 In the case of the two liquid argon filtered phase diagrams it can assumed that the positron electron annihilation peak is fully suppressed.
 Therefor only one Gaussian peak has to be fitted together with the background functions.
