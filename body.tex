@@ -454,7 +454,7 @@ This tool allows one to search for a specific event and see all recorded signals
 \\
 
 With this tool one can now perform a manual filter by looking at the remaining 69 events and perform a specific protocol.
-It was determined that all events with either more than 3phe of light intensity, more than two events in one photomultiplier in the time window of interest (5\(\mu\)s - 0\(\mu\)s) or more than 2keV of energy difference from the 514keV peak are filtered out.
+It was determined that all events with more than 3phe or less than 0.5 phe of light intensity, all events with more than two events in one photomultiplier in the time window of interest (5\(\mu\)s - 0\(\mu\)s) and all events with more than 2keV of energy difference from the 514keV peak will be filtered out.
 Due to their higher responsiveness was the signal of the photomuliplier tubes (PMT) used predominantly.
 The silicon photomultipliers (SiPM) have a slower reaction time and the majority of events in them that happened before the Germanium signal were background events.
 In figure \ref{fig:Beispiel1} is an example for an almost model rare \nuc{Kr}{85} decay signal in the PMT.
@@ -471,16 +471,102 @@ In figure \ref{fig:Beispiel1} is an example for an almost model rare \nuc{Kr}{85
 \end{figure}
 
 Using this procedure we were able to lower the amount of possible rare \nuc{Kr}{85} decay signals down to 24 events.
+Finally we can now add those events to our liquid argon filtered energy diagram (see figure \ref{).
+!!!!! Hier noch ein paar Worte dazu !!!!!
+\\
+
+!!!!! Diskussion: ist es sinvoll auch diese 24 events mit aufzunehmen? !!!!!
+
+\subsubsection{Fitting}
+
+Our stratagy to calculate the activity of \nuc{Kr}{85} through the 514keV peak involves determining the absolte amount of measured rare \nuc{Kr}{85} decays over all of phase II.
+Due to the still enormus amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{67} decays, it is neccesery to fit the 514keV peak with a suitable fit function.
+The amount of measured rare \nuc{Kr}{85} decays can then be calculated by integrating over the found fit function.
+\\
+
+The less filtered phase diagrams \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show two peaks.
+This requires the fit function to include two Gaussian functions from which only the parameters of the rare \nuc{Kr}{85} decay will then be analyzed.
+Additionally to the two Gaussian peaks a constant and an exponential background function will be added.
+Theoretically you can expect the distribution of the germanium events behaves like its phase-space function and should therefor not be constant.
+In this case however is the inspected energy interval small compared to the complete phase-space diagram of \nuc{Ge}{67}.
+This allows the approximation of the background to change like an exponential function together with an constant value.
+The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
+\\
+
+\begin{equation}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp^{-\frac{(x-\mathrm{B})^2}{2\mathrm{C}}} + \mathrm{D}\frac{1}{\sqrt{2\pi\mathrm{F}}}\exp^{-\frac{(x-\mathrm{E})^2}{2\mathrm{F}}} + \mathrm{G}\exp^{\mathrm{H}x} + \mathrm{I}
+\label{equ:FitNoFilters}
+\end{equation}
+\\
+
+When you apply the fit function to the two different phase-space diagrams of the two kinds of detectors you get the graphs displayed in figure \ref and \ref.
+\\
 
 
+\begin{figure}[t!]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=80mm]{./Bilder/500525FitNoFilterBEGes.pdf}
+		\caption{}{All events measured only by BEGe detectors in the range of 500keV to 525keV fitted with a fit function in the form of \ref{equ:FitNoFilters}. The green function represent the two Gaussian peaks independently using the determined fit parameters.}
+		\label{fig:LArBEGes}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=80mm]{./Bilder/500525FitNoFilterCOAX.pdf}
+		\caption{}{All events measured only by COAX detectors in the range of 500keV to 525keV fitted with a fit function in the form of \ref{equ:FitNoFilters}. The green function represent the two Gaussian peaks independently using the determined fit parameters.}
+		\label{fig:LArCOAX}
+	\end{minipage}
+\end{figure}
 
+The resulting fit parameters are listed in table \ref and \ref. 
 
+\begin{figure}
+\begin{minipage}{.5\textwidth}
+\begin{array}{c|c|c}
+\centering
+Name of the variable	& Value & Error \\ 
+A Ampl1 &	16.315 &	3.658	\\	
+B Mean1 &	510.693 &	0.564	\\	
+C Vari1 &	1.022 &	1.433		\\
+D Ampl2 &	27.239 &	3.870		\\
+E Mean2 &	513.940 &	0.701		\\
+F Vari2 &	0.909 &	1.400		\\
+G ConBG &	14.175 &	1.050		\\
+H EBGAmpl &	24.487 &	1.833		\\
+I EBGDec &	-40.573 & 1.000		\\
+\label{tab:FitParNoFilterBEGe}
+\caption{}{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the BEGe detectors.}
+\end{array}
+\end{minipage} 
+\begin{minipage}{.5\textwidth}
+\begin{array}{c|c|c}
+\centering
+Name of the variable	& Value & Error \\ 
+A Ampl1 &	29.842 &	3.968	\\
+B Mean1 &	510.750 &	0.265	\\	
+C Vari1 &	1.564 &	0.236		\\
+D Ampl2 &	20.463 &	3.279		\\
+E Mean2 &	513.858 &	0.213		\\
+F Vari2 &	1.017 &	0.173		\\
+G ConBG &	13.123 &	0.289		\\
+H EBGAmpl &	-384995.062 &	2.592	\\	
+I EBGAbf &	-40.573 &	1.414		\\
+\label{tab:FitParNoFilterCOAX}
+\caption{}{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the COAX detectors.}
+\end{array}
+\end{minipage}
+\end{figure}
 
+In the case of the two liquid argon filtered phase diagrams it can assumed that the positron electron annihilation peak is fully suppressed.
+Therefor only one Gaussian peak has to be fitted together with the background functions.
+The fit function therefor results to the function displayed in equation \ref{}.
+\\ 
 
-
-
-
-
+\begin{equation}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp^{-\frac{(x-\mathrm{B})^2}{2\mathrm{C}}} + \mathrm{D}\exp^{\mathrm{E}x} + \mathrm{F}
+\label{equ:FitFilters}
+\end{equation}
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
 
