@@ -357,8 +357,10 @@ After applying the first few rather general filters on the measured events one h
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
+For example, in the range of 500keV it can be expected that COAX have a resolution about 0.5keV higher than the BEGes. 
 Because of this their measured data must and will be evaluated separately. 
 If you only take the events that are recorded in the respective detectors, you get figure \ref{fig:NoFilterBEGes} for all the events measured in the BEGe detectors and figure \ref{fig:NoFilterCOAX} for all the events in the COAX detectors.
+The difference in resolution can be 
 \\
 
 \begin{figure}[t!]
@@ -487,7 +489,7 @@ Finally we can now add those events to our liquid argon filtered energy diagram 
 \subsubsection{Fitting}
 
 Our stratagy to calculate the activity of \nuc{Kr}{85} through the 514keV peak involves determining the absolte amount of measured rare \nuc{Kr}{85} decays over all of phase II.
-Due to the still enormus amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{67} decays, it is neccesery to fit the 514keV peak with a suitable fit function.
+Due to the still enormus amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{67} decays, it is necessary to fit the 514keV peak with a suitable fit function.
 The amount of measured rare \nuc{Kr}{85} decays can then be calculated by integrating over the found fit function.
 \\
 
@@ -496,12 +498,12 @@ This requires the fit function to include two Gaussian functions from which only
 Additionally to the two Gaussian peaks a constant and an exponential background function will be added.
 Theoretically you can expect the distribution of the germanium events behaves like its phase-space function and should therefor not be constant.
 In this case however is the inspected energy interval small compared to the complete phase-space diagram of \nuc{Ge}{67}.
-This allows the approximation of the background to change like an exponential function together with an constant value.
+This allows the approximation of the background to change like an exponential function due to the also very little changing background in this interval.
 The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
 \\
 
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp^{-\frac{(x-\mathrm{B})^2}{2\mathrm{C}}} + \mathrm{D}\frac{1}{\sqrt{2\pi\mathrm{F}}}\exp^{-\frac{(x-\mathrm{E})^2}{2\mathrm{F}}} + \mathrm{G}\exp^{\mathrm{H}x} + \mathrm{I}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp^{-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}} + \mathrm{D}\frac{1}{\sqrt{2\pi\mathrm{F}}}\exp^{-\frac{(x-\mathrm{E})^2}{2\mathrm{F}^2}} + \mathrm{G}\exp^{\mathrm{H}x} + \mathrm{I}
 \label{equ:FitNoFilters}
 \end{equation}
 \\
@@ -599,14 +601,22 @@ I  &	-40.573 &	1.414\\
 \vspace{0.5cm}
 \captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the respective detectors.}
 \end{figure*}
+\\
 
-In the case of the two liquid argon filtered phase diagrams it can assumed that the positron electron annihilation peak is fully suppressed.
-Therefor only one Gaussian peak has to be fitted together with the background functions.
-The fit function therefor results to the function displayed in equation \ref{}.
+The only values of these fit parameters that is of interest real for us is variable D.
+Its value is the amplitude of the second Gaussian peak.
+Because the Gaussian peak was chosen in the already normalized form this value also represents the amount of rare \nuc{Kr}{85} decays measured.
+This means that from the hardly filtered events over the entire course of phase II an amount of 27.24\(\pm\)3.88 rare \nuc{85}{85} decays were measured in the BEGe detectors and 20.46\(\pm\)3.28 in the COAX detectors. 
+\\
+
+Now to the two liquid argon filtered cases.
+In their two phase diagrams it can assumed that the positron electron annihilation peak is fully suppressed.
+Therefor only one Gaussian peak has to be fitted together with the background function.
+The fit function therefor results in the function displayed in equation \ref{equ:FitFilters}.
 \\ 
 
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp^{-\frac{(x-\mathrm{B})^2}{2\mathrm{C}}} + \mathrm{D}\exp^{\mathrm{E}x} + \mathrm{F}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp^{-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}} + \mathrm{D}\exp^{\mathrm{E}x} + \mathrm{F}
 \label{equ:FitFilters}
 \end{equation}
 
