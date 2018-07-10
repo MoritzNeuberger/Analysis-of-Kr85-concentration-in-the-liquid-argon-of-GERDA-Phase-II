@@ -353,14 +353,14 @@ One can see that the annihilation events could be partially suppressed by these 
 From now on, only those events that came through these two filters will be used in further analysis.
 \\
 
-After applying the first few rather general filters on the measured events one has to make a distinction between the detectors.
+After applying the first few rather general filters on the measured events one has to make a distinction between the events measured in different kinds of detectors.
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
 For example, in the range of 500keV it can be expected that COAX have a resolution about 0.5keV higher than the BEGes. 
 Because of this their measured data must and will be evaluated separately. 
 If you only take the events that are recorded in the respective detectors, you get figure \ref{fig:NoFilterBEGes} for all the events measured in the BEGe detectors and figure \ref{fig:NoFilterCOAX} for all the events in the COAX detectors.
-The difference in resolution can be 
+The difference in resolution can be seen in the fact that in the BEGe diagram the two peaks are distinguishable while they merge into one another in the COAX diagram.  
 \\
 
 \begin{figure}[t!]
@@ -392,7 +392,8 @@ In this theses we will try to go both ways separately and later compare their in
 \subsubsection{Annihilation peak suppression}
 \label{sec:APS}
 
-First, we will try to get a better shape of the 514keV peak by trying to suppress the annihilation peak using the liquid argon veto and will later discuss its effectiveness.
+As mentioned above, the scintilation property of the liquid argon and the recorded signals of the photomultipliers in the same container can hopefully filter out the disturbing events of positron electron annihilation.
+This chapter tries to implement just that and discusses in the end how successful the repression really was.
 \\
 
 Among other things, each event in tier 4 was given a flag called "isLArVetoed".
@@ -481,6 +482,26 @@ In figure \ref{fig:Beispiel1} is an example for an almost model rare \nuc{Kr}{85
 
 Using this procedure we were able to lower the amount of possible rare \nuc{Kr}{85} decay signals down to 24 events.
 Finally we can now add those events to our liquid argon filtered energy diagram (see figure \ref{}).
+
+\begin{figure}[t!]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=80mm]{./Bilder/500525LArVetoBEGes.pdf}
+    \caption{BEGes}
+  \label{fig:LArBEGes}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=80mm]{./Bilder/500525LArVetoCOAX.pdf}
+  \caption{COAX}
+  \label{fig:LArCOAX}
+\end{minipage}
+    \\
+	\vspace{0.5cm}
+    All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.
+\end{figure}
+
 !!!!! Hier noch ein paar Worte dazu !!!!!
 \\
 
