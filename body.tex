@@ -451,7 +451,8 @@ This means that we can expect that only a small number of photomultipliers shoul
 
 If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier events with a signal strength of at least 0.5 phe you get a distributions as seen in figure \ref{fig:Trigger4}.
 In this case, only events with a maximum of four triggered photomultipliers are shown in this graphic.
-Allowing events with a number of four different triggered photomultipliers is already a lot for a \nuc{Kr}{85} decay, but we wanted to do a more detailed manually investigation later which is why the filter can be a little coarser here.
+Allowing events with maximum of four different triggered photomultipliers is already a lot for a \nuc{Kr}{85} decay. 
+But we wanted to do a more detailed manually investigation later anyways which is why the filter can be a little coarser here.
 The x axis is the time difference of the events in the photomultipliers from the first signal measured in one of the Germanium detectors.
 This means that a negative times difference occur when an event in the photomultiplier was measured before there was even an event in the Germanium detectors.
 Theoretically it should now be possible to see a exponential increase from the negative scale towards a vanishing time difference.
@@ -464,7 +465,7 @@ This tool allows one to search for a specific event and see all recorded signals
 \\
 
 With this tool one can now perform a manual filter by looking at the remaining 69 events and perform a specific protocol.
-It was determined that all events with more than 3phe or less than 0.5 phe of light intensity, all events with more than two events in one photomultiplier in the time window of interest (5\(\mu\)s - 0\(\mu\)s) and all events with more than 2keV of energy difference from the 514keV peak will be filtered out.
+It was determined that all events with more than 3 phe or less than 0.5 phe of light intensity, all events with more than two signals in one photomultiplier in the time window of interest (5\(\mu\)s - 0\(\mu\)s) and all events with more than 2keV of energy difference from the 514keV peak will be filtered out.
 Due to their higher responsiveness was the signal of the photomuliplier tubes (PMT) used predominantly.
 The silicon photomultipliers (SiPM) have a slower reaction time and the majority of events in them that happened before the Germanium signal were background events.
 In figure \ref{fig:Beispiel1} is an example for an almost model rare \nuc{Kr}{85} decay signal in the PMT.
@@ -476,12 +477,38 @@ In figure \ref{fig:Beispiel1} is an example for an almost model rare \nuc{Kr}{85
 	\includegraphics[width=100mm]{./Bilder/BeispielSignal.png}
 	\fi%
 	\caption{\label{fig:Trigger4}
-    The recorded signal of the photomultiplier tube P4 from the event with event number 1614036. !!!!!Hier noch was zu den Achsen!!!!!. The blue bar represents the moment in time in which a signal in the Germanium detector was measured.
+    The recorded signal of the photomultiplier tube P4 from the event with event number 1614036. !!!!!Hier noch was zu den Achsen!!!!!. 
+    The blue bar represents the moment in time in which a signal in the Germanium detector was measured.
 	}
 \end{figure}
 
 Using this procedure we were able to lower the amount of possible rare \nuc{Kr}{85} decay signals down to 24 events.
-Finally we can now add those events to our liquid argon filtered energy diagram (see figure \ref{fig:LArBEGesEV} and \ref{fig:LArCOAXEV}).
+After this much filtering we can assume that all of these events are probably real rare \nuc{Kr}{85} decays.
+Finally we can recover those events to our liquid argon filtered energy diagrams (see figure \ref{fig:LArBEGesEV} and \ref{fig:LArCOAXEV}).
+You can see in comparison to figure \ref{fig:LArBEGes} and \ref{fig:LArCOAX} that the majority of the recovered events are placed near the 514keV peak.
+\\
+
+Now the question arises whether our approach could actually restore the majority of all lost \nuc{Kr}{85} events.
+A quantitative statement can only be obtained after a fit function analysis of the graphs to determine amount of actual rare \nuc{Kr}{85} events measured.
+This can not be done by integrating over the fit function as it will be done in section \ref{sec:Fitting}.
+\\
+
+Nevertheless we are still able to make some qualitative estimations about the recovery rate of this approach. 
+When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must be rather small.
+An important factor limiting this recovery rate originates from an approximation applied in this approach.
+It was approximated that the electrons created scintillation light instantaneously after being released.
+In reality, the moment an electron emits scintillation light is determined by many complex mechanisms. 
+However, its behaviour can be approximated by a relaxation approach. 
+This gives you a new characteristic time with which you can describe how many electrons have already created scintillation light after what time. 
+But this not spontaneous behavior means, that the measured signal depends on both the relaxation time of \nuc{Rb}{85} and the scintillation light of the electron.
+It is therefor quite possible, that a number of rare \nuc{Kr}{85} decay events can have a positive effective time difference.
+Those are then lost in our analysis due to us filtering out every event that has a positive time difference.
+This results in a lower recovery rate.
+\\
+
+After this analysis it is justified to question whether the majority of the rare \nuc{Kr}{85} decays can even pass through the LAr filter and the additional recovery.
+But we only get a satisfactory answer with a quantitative analysis which will be performed in the following chapter.
+\\
 
 \begin{figure}[t!]
 \centering
@@ -502,12 +529,8 @@ Finally we can now add those events to our liquid argon filtered energy diagram 
     All events measured by the respective detectors with the LAr filter applied and the manually recovered precoincedence events in the range of 500keV to 525keV.
 \end{figure}
 
-!!!!! Hier noch ein paar Worte dazu !!!!!
-\\
-
-!!!!! Diskussion: ist es sinvoll auch diese 24 events mit aufzunehmen? !!!!!
-
 \subsubsection{Fitting}
+\label{sec:Fitting}
 
 Our stratagy to calculate the activity of \nuc{Kr}{85} through the 514keV peak involves determining the absolte amount of measured rare \nuc{Kr}{85} decays over all of phase II.
 Due to the still enormus amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{67} decays, it is necessary to fit the 514keV peak with a suitable fit function.
