@@ -481,25 +481,25 @@ In figure \ref{fig:Beispiel1} is an example for an almost model rare \nuc{Kr}{85
 \end{figure}
 
 Using this procedure we were able to lower the amount of possible rare \nuc{Kr}{85} decay signals down to 24 events.
-Finally we can now add those events to our liquid argon filtered energy diagram (see figure \ref{}).
+Finally we can now add those events to our liquid argon filtered energy diagram (see figure \ref{fig:LArBEGesEV} and \ref{fig:LArCOAXEV}).
 
 \begin{figure}[t!]
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
-	\includegraphics[width=80mm]{./Bilder/500525LArVetoBEGes.pdf}
+	\includegraphics[width=80mm]{./Bilder/500525LArVetoBEGesEventList.pdf}
     \caption{BEGes}
-  \label{fig:LArBEGes}
+  \label{fig:LArBEGesEV}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
-	\includegraphics[width=80mm]{./Bilder/500525LArVetoCOAX.pdf}
+	\includegraphics[width=80mm]{./Bilder/500525LArVetoCOAXEventList.pdf}
   \caption{COAX}
-  \label{fig:LArCOAX}
+  \label{fig:LArCOAXEV}
 \end{minipage}
     \\
 	\vspace{0.5cm}
-    All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.
+    All events measured by the respective detectors with the LAr filter applied and the manually recovered precoincedence events in the range of 500keV to 525keV.
 \end{figure}
 
 !!!!! Hier noch ein paar Worte dazu !!!!!
@@ -524,12 +524,13 @@ The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
 \\
 
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp^{-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}} + \mathrm{D}\frac{1}{\sqrt{2\pi\mathrm{F}}}\exp^{-\frac{(x-\mathrm{E})^2}{2\mathrm{F}^2}} + \mathrm{G}\exp^{\mathrm{H}x} + \mathrm{I}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\frac{1}{\sqrt{2\pi\mathrm{F}}}\exp\left(-\frac{(x-\mathrm{E})^2}{2\mathrm{F}^2}\right) + \mathrm{G}\exp\left(\mathrm{H}x\right) + \mathrm{I}
 \label{equ:FitNoFilters}
 \end{equation}
 \\
 
-When you apply the fit function to the two different phase-space diagrams of the two kinds of detectors you get the graphs displayed in figure \ref and \ref.
+When you apply the fit function to the two different phase-space diagrams of the two kinds of detectors you get the graphs displayed in figure \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX}.
+The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}. 
 \\
 
 
@@ -539,95 +540,96 @@ When you apply the fit function to the two different phase-space diagrams of the
 		\centering
 		\includegraphics[width=80mm]{./Bilder/500525FitNoFilterBEGes.pdf}
 		\caption{BEGes}
-		\label{fig:LArBEGes}
+		\label{fig:FitNoFilterBEGes}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=80mm]{./Bilder/500525FitNoFilterCOAX.pdf}
 		\caption{COAX}
-		\label{fig:LArCOAX}
+		\label{fig:FitNoFilterCOAX}
 	\end{minipage}
     \\
 	\vspace{0.5cm}
 	All events measured by the respective detectors in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitNoFilters}. The green function represent the two Gaussian peaks independently using the determined fit parameters.
+\vspace{0.5cm}
 \end{figure}
+\\
 
-The resulting fit parameters are listed in table \ref and \ref. 
-
-\begin{figure*}[t!]
+\begin{figure}[t!]
 \centering
 \begin{minipage}{.4\linewidth}
 \centering
-BEGes
+BEGes:
 \vspace{0.5cm}
 \\
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|}
 \hline
-Name	& Value & Error \\ 
+Name	& Value \\ 
 \hline
-A  &	16.15 &	3.658	\\	
+A  &	(16.15 \(\pm\)	3.658)	\\	
 \hline
-B  &	510.693 &	0.564	\\	
+B  &	(510.693 \(\pm\)	0.564)\\	
 \hline
-C  &	1.022 &	1.433		\\
+C  &	(1.022 \(\pm\)	1.433)		\\
 \hline
-D  &	27.239 &	3.870		\\
+D  &	(27.239 \(\pm\)	3.870)		\\
 \hline
-E  &	513.940 &	0.701		\\
+E  &	(513.940 \(\pm\)	0.701)		\\
 \hline
-F  &	0.909 &	1.400		\\
+F  &	(0.909 \(\pm\)	1.400)		\\
 \hline
-G  &	14.175 &	1.050		\\
+G  &	(14.175 \(\pm\)	1.050)		\\
 \hline
-H  &	24.487 &	1.833		\\
+H  &	(24.487 \(\pm\)	1.833)		\\
 \hline
-I  &	-40.573 & 1.000	\\
+I  &	(-40.573 \(\pm\) 1.000)	\\
 \hline
-\end{tabular}
-\label{tab:FitParNoFilterBEGe}
-\\
 
+\end{tabular}
+\\
 \end{minipage}
 \begin{minipage}{.4\linewidth}
 \centering
-COAX
+COAX:
 \vspace{0.5cm}
 \\
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|}
 \hline
-Name	& Value & Error \\ 
+Name	& Value \\ 
 \hline
-A  &	29.842 &	3.968	\\
+A  &	(29.842 \(\pm\)	3.968)	\\
 \hline
-B  &	510.750 &	0.265	\\	
+B  &	(510.750 \(\pm\)	0.265)	\\	
 \hline
-C  &	1.564 &	0.236		\\
+C  &	(1.564 \(\pm\)	0.236	)	\\
 \hline
-D  &	20.463 &	3.279		\\
+D  &	(20.463 \(\pm\)	3.279	)	\\
 \hline
-E  &	513.858 &	0.213		\\
+E  &	(513.858 \(\pm\)	0.213)		\\
 \hline
-F  &	1.017 &	0.173		\\
+F  &	(1.017 \(\pm\)	0.173	)	\\
 \hline
-G  &	13.123 &	0.289		\\
+G  &	(13.123 \(\pm\)	0.289	)	\\
 \hline
-H  &	-384995.062 &	2.592	\\	
+H  &	(-384995.062 \(\pm\)	2.592)	\\	
 \hline
-I  &	-40.573 &	1.414\\
+I  &	(-40.573 \(\pm\)	1.414)\\
 \hline
+
 \end{tabular}
-\label{tab:FitParNoFilterCOAX}
 \end{minipage}
 \\
+
+\label{tab:FitParNoFilter}
 \vspace{0.5cm}
 \captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the respective detectors.}
-\end{figure*}
+\end{figure}
 \\
 
-The only values of these fit parameters that is of interest real for us is variable D.
+The only values of these fit parameters that is of real interest for the determination of the activity is variable D.
 Its value is the amplitude of the second Gaussian peak.
-Because the Gaussian peak was chosen in the already normalized form this value also represents the amount of rare \nuc{Kr}{85} decays measured.
-This means that from the hardly filtered events over the entire course of phase II an amount of 27.24\(\pm\)3.88 rare \nuc{85}{85} decays were measured in the BEGe detectors and 20.46\(\pm\)3.28 in the COAX detectors. 
+Because the Gaussian peak was chosen in the normalized form this value also represents the amount of rare \nuc{Kr}{85} decays measured.
+This means that from the hardly filtered events over the entire course of phase II an amount of (27.24\(\pm\)3.88) rare \nuc{Kr}{85} decays were measured in the BEGe detectors and (20.46\(\pm\)3.28) in the COAX detectors. 
 \\
 
 Now to the two liquid argon filtered cases.
@@ -637,9 +639,11 @@ The fit function therefor results in the function displayed in equation \ref{equ
 \\ 
 
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp^{-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}} + \mathrm{D}\exp^{\mathrm{E}x} + \mathrm{F}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\exp\left(\mathrm{E}x\right) + \mathrm{F}
 \label{equ:FitFilters}
 \end{equation}
+
+
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
 
