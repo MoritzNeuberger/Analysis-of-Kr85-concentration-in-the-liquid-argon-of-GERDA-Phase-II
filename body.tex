@@ -460,7 +460,7 @@ But we wanted to do a more detailed manually investigation later anyways which i
 \end{figure}
 
 If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier events with a signal strength of at least 0.5 phe you get a distributions as seen in figure \ref{fig:Trigger4}.
-We are only interested in the signals that measured at least 0.5 phe because that is the necessary intensity to trigger the LAr veto \cite{2017Natur.544...47A} making them the signals of interest.
+We are only interested in the signals that measured at least 0.5 phe because that is the necessary intensity to trigger the LAr veto making them the signals of interest.
 Every signal weaker than 0.5 phe that can hardly be distinguished from the background and are therefor neglected.  
 The x axis is the time difference of the events in the photomultipliers from the signal measured in one of the Germanium detectors.
 Theoretically it should now be possible to see a exponential increase from the negative scale towards a vanishing time difference.
@@ -588,7 +588,7 @@ The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}.
 
 \begin{figure}[t!]
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|c}
 \hline
 Name	& Value [BEGes] & Valuse [COAX]\\ 
 \hline
@@ -633,10 +633,8 @@ The fit function therefor results in the function displayed in equation \ref{equ
 \mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\exp\left(\mathrm{E}x\right) + \mathrm{F}
 \label{equ:FitFilters}
 \end{equation}
-\\
 
 After applying the fit function to the four phase-space diagrams seen in figure \ref to \ref, you get the fit parameters displayed in table
-\\
 
 \begin{figure}[t!]
 	\centering
@@ -644,35 +642,36 @@ After applying the fit function to the four phase-space diagrams seen in figure 
 		\centering
 		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoBEGes.pdf}
 		\caption{BEGes}
-		\label{fig:FitNoFilterBEGes}
+		\label{fig:FitLArVetoBEGes}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoCOAX.pdf}
 		\caption{COAX}
-		\label{fig:FitNoFilterCOAX}
+		\label{fig:FitLArVetoCOAX}
 	\end{minipage}
-    \\
+	\\
 	\vspace{0.5cm}
-	All events measured by the respective detectors with the LAr veto applied in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitFilters}.
+	All events measured by the respective detectors  with the liquid argon veto applied in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitFilters}.
 	\\
 	\vspace{0.5cm}
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoBEGes.pdf}
+		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoEventListBEGes.pdf}
 		\caption{BEGes}
-		\label{fig:FitNoFilterBEGes}
+		\label{fig:FitLArVetoEventListBEGes}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoCOAX.pdf}
+		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoEventListCOAX.pdf}
 		\caption{COAX}
-		\label{fig:FitNoFilterCOAX}
+		\label{fig:FitLArVetoEventListCOAX}
 	\end{minipage}
-    \\
+	\\
 	\vspace{0.5cm}
-	All events measured by the respective detectors with the LAr veto applied in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitFilters}.
-\vspace{0.5cm}
+	All events measured by the respective detectors with the liquid argon veto applied and the falsely filtered \nuc{Kr}{85} events recovered in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitFilters}.
+	!!!!! god dammit da muss man zwei vlt drei sätze draus machen!!!!!
+	\vspace{0.5cm}
 \end{figure}
 \\
 
@@ -680,36 +679,25 @@ After applying the fit function to the four phase-space diagrams seen in figure 
 	\centering
 	\begin{tabular}{|l|r|r|r|r|}
 		\hline
-		Name	& LAr Veto [BEGes] & LAr Veto [COAX] & LAr Veto + recovery [BEGes] & LAr Veto  recovery [BEGes]\\ 
+		Name	& Value [BEGes] \\ 
 		\hline
-		A  &	(17.844639 \(\pm\)	3.179471)&	(17.914476 \(\pm\)	2.683260)	&	(17.914476 \(\pm\)	2.683260)&	(17.914476 \(\pm\)	2.683260)\\	
+		A  &	(17.844639 \(\pm\)	3.179471)&	(17.914476 \(\pm\)	2.683260)	&	(19.847330\(\pm\)	2.688415)&	(18.851511 \(\pm\)	2.696000)\\	
 		\hline
-		B  &	(513.838989 \(\pm\)	0.665171)&	(513.748535 \(\pm\)	0.179167)&	(17.914476 \(\pm\)	2.683260)&	(17.914476 \(\pm\)	2.683260)\\	
+		B  &	(513.838989 \(\pm\)	0.665171)&	(513.748535 \(\pm\)	0.179167)&	(513.849854 \(\pm\)	0.152052)&	(513.737183	\(\pm\) 0.167941)\\	
 		\hline
-		C  &	(0.828315 \(\pm\)	1.377836)	&	(0.940856 \(\pm\)	0.160788	)	&	(17.914476 \(\pm\)	2.683260)&	(17.914476 \(\pm\)	2.683260)\\
+		C  &	(0.828315 \(\pm\)	1.377836)	&	(0.940856 \(\pm\)	0.160788	)	&	(0.865958\(\pm\) 0.108436)&	(0.923679 \(\pm\)	0.149867)\\
 		\hline
-		D  &	(9.265341 \(\pm\)	1.032088)	&	(9.073170 \(\pm\)	0.233725	)	&	(17.914476 \(\pm\)	2.683260)&	(17.914476 \(\pm\)	2.683260)\\
+		D  &	(9.265341 \(\pm\)	1.032088)	&	(9.073170 \(\pm\)	0.233725	)	&	(9.307535\(\pm\)	0.236841)&	(9.076473 \(\pm\)	0.233940)\\
 		\hline
-		E  &	(18.142975 \(\pm\)	1.833031)	&	(-401772.843750 \(\pm\)	3.666062)	&	(17.914476 \(\pm\)	2.683260)&	(17.914476 \(\pm\)	2.683260)\\
+		E  &	(18.142975 \(\pm\)	1.833031)	&	(-401772.843750 \(\pm\)	3.666062)	&	(-394189.968750\(\pm\)	45.660984)&	(-796827.062500 \(\pm\)	64.574379)\\
 		\hline	
-		F  &	(-26.647284 \(\pm\)	1.000000)	&	(-43.877174 \(\pm\)	1.414214	)	&	(17.914476 \(\pm\)	2.683260)&	(17.914476 \(\pm\)	2.683260)\\
+		F  &	(-26.647284 \(\pm\)	1.000000)	&	(-43.877174 \(\pm\)	1.414214	)	&	(-55.546192\(\pm\)	1.414214)&	(-55.546192 \(\pm\)	1.414214)\\
 		\hline
 	\end{tabular}
 	\label{tab:FitParNoFilter}
 	\captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the respective detectors.}
 \end{figure}
 \\
-
-
-As above, the amplitude A of the Gaussian peak correspond to the number of events measured by this peak.
-In the case of only applying the liquid argon veto it can be seen that the number of events in the BEGe and in the COAX detectors has dropped considerably compared to the not filtered value.
-This shows that a recovery of falsely filtered rare \nuc{Kr}{85} decays is necessary.
-But if you take the fit parameters from the case with liquid argon filter and additional recover, you can see that the peak amplitude of the BEGe detectors is still much smaller than the value from the hardly filtered phase space diagram.
-\\
-
-
-
-
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
 
