@@ -392,12 +392,12 @@ In this theses we will try to go both ways separately and later compare their in
 \subsubsection{Annihilation peak suppression}
 \label{sec:APS}
 
-As mentioned above, the scintilation property of the liquid argon and the recorded signals of the photomultipliers in the same container can hopefully filter out the disturbing events of positron electron annihilation.
+As mentioned above, it is hopefully possible to filter out the the disturbing positron electron annihilation events by using the scintillation property of the liquid argon and the recorded signals of the photomultipliers in liquid argon tank.
 This chapter tries to implement just that and discusses in the end how successful the repression really was.
 \\
 
 Among other things, each event in tier 4 was given a flag called "isLArVetoed".
-This flag is always triggered whether there was a coincidence of the specific event with a strong scintillation signal in one of the photomultiplier in the liquid argon. 
+This flag is always triggered whether there was a coincidence of the specific event with a strong scintillation signal in one of the photomultiplier. 
 Due to the low energy of the beta electron (E\(_{mean}=47.65\)keV) released in the beta decay it can be expected that almost none of the electrons of the rare \nuc{Kr}{85} decay create any light in the scintillator. 
 In contrast to that you can expect a very strong light signal every time a positron electron annihilation occurs. 
 One should therefor be able to filter out almost all of the annihilation events while keeping the majority of the \nuc{Kr}{85} decay by only using events where this flag is not triggered.
@@ -427,15 +427,25 @@ You can see that the positron electron annihilation peak can not be identified a
 \end{figure}
 
 At this point one could say that we have done enough filtering and use a fit functions to determine the number of decays in the peak.
-But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out an actual rare \nuc{Kr}{85} decay.
+But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out an actual rare \nuc{Kr}{85} decay and to possibly recover them.
 The number of events filtered out by the liquid argon veto in the energy range of 509 to 519 keV is 1728.
-This number of events is too big to look at every individual case.
+This number is too big to look at every individual case.
 \\
 
 Luckily we can use the fact that the excited \nuc{Rb}{85} state has a half life of 1.015 \(\mathrm{\mu}\)s.
-This means that we can identify most real rare \nuc{Kr}{85} decay by looking at the events where the signal in the liquid argon happened before the event was measured in one of the Germanium detectors.
+This means that we can identify the real rare \nuc{Kr}{85} decay by looking at all the events in which the liquid argon signal happened before the Germanium detectors event.
+Therefor we only use events with a negative time difference between these two events.
+The time difference for each individual liquid argon events is already analyzed and stored in the triggerLAr vector of the Tier 3 dataset.
+This vector has the same number of dimensions as there are photomultipliers and every entry is indexed with the corresponding input channel of this photomultiplier.
+The entries of this vector are again vectors themselves storing the time difference for every signal that triggered the liquid argon veto in the corresponding channel.
+Since the events are listed in ascending order and the lower bound of the time difference in e.g. the PMT is at -5\(\mus\), we use only the first entry of this inner vector here for simplicity.
+\\
+
 We also know that the energy of the released beta electron is relatively low.
 This means that we can expect that only a small number of photomultipliers should measure a signal in a real rare \nuc{Kr}{85} decay.
+In this case we will only use those events that have a maximum of four different triggered photomultipliers.
+Allowing events with maximum of four different triggered photomultipliers is already a lot for a \nuc{Kr}{85} decay. 
+But we wanted to do a more detailed manually investigation later anyways which is why the filter can be a little coarser here.
 \\
 
 \begin{figure}[t!]
@@ -450,25 +460,21 @@ This means that we can expect that only a small number of photomultipliers shoul
 \end{figure}
 
 If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier events with a signal strength of at least 0.5 phe you get a distributions as seen in figure \ref{fig:Trigger4}.
-In this case, only events with a maximum of four triggered photomultipliers are shown in this graphic.
-Allowing events with maximum of four different triggered photomultipliers is already a lot for a \nuc{Kr}{85} decay. 
-But we wanted to do a more detailed manually investigation later anyways which is why the filter can be a little coarser here.
-The x axis is the time difference of the events in the photomultipliers from the first signal measured in one of the Germanium detectors.
-This means that a negative times difference occur when an event in the photomultiplier was measured before there was even an event in the Germanium detectors.
+The x axis is the time difference of the events in the photomultipliers from the signal measured in one of the Germanium detectors.
 Theoretically it should now be possible to see a exponential increase from the negative scale towards a vanishing time difference.
 \\
 
 But because of the small number of events left over, it is almost impossible to make any statements about the course of these events.
-Nevertheless we were able to lower the number of potential \nuc{Kr}{85} events from 1728 down to only 69.  
-These remaining events can now be examined with a with software called GerLa written by GERDA employees.
+Nevertheless we were able to lower the number of potential \nuc{Kr}{85} events from 1728 down to only 55.  
+These remaining events can now be manually examined with a with software called GerLa written by GERDA employees.
 This tool allows one to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around this event.
 \\
 
-With this tool one can now perform a manual filter by looking at the remaining 69 events and perform a specific protocol.
-It was determined that all events with more than 3 phe or less than 0.5 phe of light intensity, all events with more than two signals in one photomultiplier in the time window of interest (5\(\mu\)s - 0\(\mu\)s) and all events with more than 2keV of energy difference from the 514keV peak will be filtered out.
-Due to their higher responsiveness was the signal of the photomuliplier tubes (PMT) used predominantly.
-The silicon photomultipliers (SiPM) have a slower reaction time and the majority of events in them that happened before the Germanium signal were background events.
-In figure \ref{fig:Beispiel1} is an example for an almost model rare \nuc{Kr}{85} decay signal in the PMT.
+With this tool one can now perform a manual filter by looking at the remaining 55 events and perform a specific protocol.
+This protocol consists of filtering out every event that has a combined light intensity of over 4 phe, every event that only has a negative time difference in a signal weaker than 0.5 phe and every event that resulted in a pileup.
+Due to their higher sensitivity, the signal of the photomultiplier tubes (PMT) was mainly but not exclusively used.
+The silicon photomultipliers (SiPM) have the downside of a slower reaction time and the majority of events in them that happened before the Germanium signal were background events.
+In figure \ref{fig:Beispiel1} is an example for a model signal in the PMT.
 \\
 
 \begin{figure}[t!]
@@ -490,11 +496,11 @@ You can see in comparison to figure \ref{fig:LArBEGes} and \ref{fig:LArCOAX} tha
 
 Now the question arises whether our approach could actually restore the majority of all lost \nuc{Kr}{85} events.
 A quantitative statement can only be obtained after a fit function analysis of the graphs to determine amount of actual rare \nuc{Kr}{85} events measured.
-This can not be done by integrating over the fit function as it will be done in section \ref{sec:Fitting}.
+This can be done by integrating over the fit function as it will be done in section \ref{sec:Fitting}.
 \\
 
 Nevertheless we are still able to make some qualitative estimations about the recovery rate of this approach. 
-When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must be rather small.
+When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must not be much smaller.
 An important factor limiting this recovery rate originates from an approximation applied in this approach.
 It was approximated that the electrons created scintillation light instantaneously after being released.
 In reality, the moment an electron emits scintillation light is determined by many complex mechanisms. 
@@ -506,7 +512,7 @@ Those are then lost in our analysis due to us filtering out every event that has
 This results in a lower recovery rate.
 \\
 
-After this analysis it is justified to question whether the majority of the rare \nuc{Kr}{85} decays can even pass through the LAr filter and the additional recovery.
+After this qualitative analysis it is justified to question whether the majority of the rare \nuc{Kr}{85} decays can even pass through the LAr filter and the additional recovery.
 But we only get a satisfactory answer with a quantitative analysis which will be performed in the following chapter.
 \\
 
@@ -532,8 +538,8 @@ But we only get a satisfactory answer with a quantitative analysis which will be
 \subsubsection{Fitting}
 \label{sec:Fitting}
 
-Our stratagy to calculate the activity of \nuc{Kr}{85} through the 514keV peak involves determining the absolte amount of measured rare \nuc{Kr}{85} decays over all of phase II.
-Due to the still enormus amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{67} decays, it is necessary to fit the 514keV peak with a suitable fit function.
+Our strategy to calculate the activity of \nuc{Kr}{85} through the 514keV peak involves determining the absolte amount of measured rare \nuc{Kr}{85} decays over all of phase II.
+Due to the still enormous amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{67} decays, it is necessary to fit the 514keV peak with a suitable fit function.
 The amount of measured rare \nuc{Kr}{85} decays can then be calculated by integrating over the found fit function.
 \\
 
@@ -580,71 +586,31 @@ The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}.
 
 \begin{figure}[t!]
 \centering
-\begin{minipage}{.4\linewidth}
-\centering
-BEGes:
-\vspace{0.5cm}
-\\
-\begin{tabular}{|c|c|}
+\begin{tabular}{|l|r|r|}
 \hline
-Name	& Value \\ 
+Name	& Value [BEGes] & Valuse [COAX]\\ 
 \hline
-A  &	(16.15 \(\pm\)	3.658)	\\	
+A  &	(16.15 \(\pm\)	3.658)&	(29.842 \(\pm\)	3.968)	\\	
 \hline
-B  &	(510.693 \(\pm\)	0.564)\\	
+B  &	(510.693 \(\pm\)	0.564)&	(510.750 \(\pm\)	0.265)\\	
 \hline
-C  &	(1.022 \(\pm\)	1.433)		\\
+C  &	(1.022 \(\pm\)	1.433)	&	(1.564 \(\pm\)	0.236	)	\\
 \hline
-D  &	(27.239 \(\pm\)	3.870)		\\
+D  &	(27.239 \(\pm\)	3.870)	&	(20.463 \(\pm\)	3.279	)	\\
 \hline
-E  &	(513.940 \(\pm\)	0.701)		\\
+E  &	(513.940 \(\pm\)	0.701)	&	(513.858 \(\pm\)	0.213)	\\
 \hline
-F  &	(0.909 \(\pm\)	1.400)		\\
+F  &	(0.909 \(\pm\)	1.400)	&	(1.017 \(\pm\)	0.173	)	\\
 \hline
-G  &	(14.175 \(\pm\)	1.050)		\\
+G  &	(14.175 \(\pm\)	1.050)	&	(13.123 \(\pm\)	0.289	)	\\
 \hline
-H  &	(24.487 \(\pm\)	1.833)		\\
+H  &	(24.487 \(\pm\)	1.833)	&	(-384995.062 \(\pm\)	2.592)	\\
 \hline
-I  &	(-40.573 \(\pm\) 1.000)	\\
+I  &	(-40.573 \(\pm\) 1.000)	&	(-40.573 \(\pm\)	1.414)\\
 \hline
 
 \end{tabular}
-\\
-\end{minipage}
-\begin{minipage}{.4\linewidth}
-\centering
-COAX:
-\vspace{0.5cm}
-\\
-\begin{tabular}{|c|c|}
-\hline
-Name	& Value \\ 
-\hline
-A  &	(29.842 \(\pm\)	3.968)	\\
-\hline
-B  &	(510.750 \(\pm\)	0.265)	\\	
-\hline
-C  &	(1.564 \(\pm\)	0.236	)	\\
-\hline
-D  &	(20.463 \(\pm\)	3.279	)	\\
-\hline
-E  &	(513.858 \(\pm\)	0.213)		\\
-\hline
-F  &	(1.017 \(\pm\)	0.173	)	\\
-\hline
-G  &	(13.123 \(\pm\)	0.289	)	\\
-\hline
-H  &	(-384995.062 \(\pm\)	2.592)	\\	
-\hline
-I  &	(-40.573 \(\pm\)	1.414)\\
-\hline
-
-\end{tabular}
-\end{minipage}
-\\
-
 \label{tab:FitParNoFilter}
-\vspace{0.5cm}
 \captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the respective detectors.}
 \end{figure}
 \\
@@ -661,12 +627,45 @@ Therefor only one Gaussian peak has to be fitted together with the background fu
 The fit function therefor results in the function displayed in equation \ref{equ:FitFilters}.
 \\ 
 
+
+
 \begin{equation}
 \mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\exp\left(\mathrm{E}x\right) + \mathrm{F}
 \label{equ:FitFilters}
 \end{equation}
 
+After applying the fit function to the four phase-space diagrams seen in figure \ref to \ref, you get the fit parameters displayed in table
 
+\begin{figure}[t!]
+	\centering
+	\begin{tabular}{|l|r|r|r|r|}
+		\hline
+		Name	& Value [BEGes] \\ 
+		\hline
+		A  &	(16.15 \(\pm\)	3.658)&	(29.842 \(\pm\)	3.968)	\\	
+		\hline
+		B  &	(510.693 \(\pm\)	0.564)&	(510.750 \(\pm\)	0.265)\\	
+		\hline
+		C  &	(1.022 \(\pm\)	1.433)	&	(1.564 \(\pm\)	0.236	)	\\
+		\hline
+		D  &	(27.239 \(\pm\)	3.870)	&	(20.463 \(\pm\)	3.279	)	\\
+		\hline
+		E  &	(513.940 \(\pm\)	0.701)	&	(513.858 \(\pm\)	0.213)	\\
+		\hline
+		F  &	(0.909 \(\pm\)	1.400)	&	(1.017 \(\pm\)	0.173	)	\\
+		\hline
+		G  &	(14.175 \(\pm\)	1.050)	&	(13.123 \(\pm\)	0.289	)	\\
+		\hline
+		H  &	(24.487 \(\pm\)	1.833)	&	(-384995.062 \(\pm\)	2.592)	\\
+		\hline
+		I  &	(-40.573 \(\pm\) 1.000)	&	(-40.573 \(\pm\)	1.414)\\
+		\hline
+		
+	\end{tabular}
+	\label{tab:FitParNoFilter}
+	\captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the phase-space diagram of the respective detectors.}
+\end{figure}
+\\
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
 
