@@ -383,28 +383,39 @@ The difference in resolution can be seen in the fact that in the BEGe diagram th
 \end{figure}
 
 At this point it is clear that we have two options on how we can handle the problem of the positron electron annihilation peak. 
-Either we try to find a way to filter out the majority of the annihilation events while keeping almost all of the \nuc{Kr}{85} events. 
+Either we try to find a way to filter out the majority of the annihilation events while keeping almost all of the \nuc{Kr}{85} events.
 This can hopefully be done by using the liquid argon veto of GERDA and the precoincidence of the electron scintillation in the photomultipliers. 
-Or we try to leave it as it is and adjust our fit function to a fit over both of the peaks using a double Gaussian peak. 
-In this theses we will try to go both ways separately and later compare their informative value.
 \\
+The other option is to leave the phase-space diagram as it is and we only change our fit function so that it also takes the second peak into account when fitting.
+But this is only really an option for the BEGe detectors.
+As mentioned earlier the peaks in the BEGe phase-space are clearly distinguishable while they merge into each other in the COAX diagram.
+This merging of the peaks makes it difficult to put a clear fit function through the two peaks.
+Also considering the fact, that the COAX detectors have a corser resolution than the BEGe detectors, in the further analysis only the values of the BEGe detectors will be used.
+Nevertheless, the results of the COAX detectors can give us a reinsurance that the value is at least in the right order of magnitude.
+\\
+
+In this theses we will try to go both ways separately and later compare their informative value.
+But first we need to discuss how we want to suppress the annihilation peak and whether our method really makes sense. 
+This will be done in the following chapter.
+\\
+
 
 \subsubsection{Annihilation peak suppression}
 \label{sec:APS}
 
-As mentioned above, it is hopefully possible to filter out the the disturbing positron electron annihilation events by using the scintillation property of the liquid argon and the recorded signals of the photomultipliers in liquid argon tank.
-This chapter tries to implement just that and discusses in the end how successful the repression really was.
+As mentioned above, it should be theoretically possible to filter out the majority of the disturbing positron electron annihilation events by using the scintillation property of the liquid argon.
+In the case of the rare \nuc{Kr}{85} decay the emitted electron has a very low mean kinetic energy of E\(_{mean}=47.65\)keV.
+This means that in the majority of these rare decays no light should be seen in the detectors because the beta electron is unlikely to trigger any of them.
+In contrast to that you can expect a very strong light signal every time a positron electron annihilation occurs. 
+One should therefor be able to filter out almost all of the annihilation events while keeping the majority of the \nuc{Kr}{85} decay by only using events where this flag is not triggered.
+This chapter tries to implement a filter that uses this mechanism and discusses in the end how successful the repression really was.
 \\
 
 Among other things, each event in tier 4 was given a flag called "isLArVetoed".
-This flag is always triggered whether there was a coincidence of the specific event with a strong scintillation signal in one of the photomultiplier. 
-Due to the low energy of the beta electron (E\(_{mean}=47.65\)keV) released in the beta decay it can be expected that almost none of the electrons of the rare \nuc{Kr}{85} decay create any light in the scintillator. 
-In contrast to that you can expect a very strong light signal every time a positron electron annihilation occurs. 
-One should therefor be able to filter out almost all of the annihilation events while keeping the majority of the \nuc{Kr}{85} decay by only using events where this flag is not triggered.
-\\
-
-If one plots all events that got through this filter one gets figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
-You can see that the positron electron annihilation peak can not be identified anymore while the 514keV peak is almost unchanged.
+This flag is always triggered whenever an event in the Germanium detectors coincides with a strong scintillation signal in one of the photomultipliers positioned in the liquid argon tank.
+In particular, the signals in the photomultipliers must have an intensity of at least 0.5 phe for them to trigger the flag \cite{2017Natur.544...47A}.
+If one plots all events in which this flag has not been set one gets figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
+You can see that the positron electron annihilation peak can not be identified any longer while the 514keV peak seems almost unchanged.
 \\
 
 \begin{figure}[t!]
@@ -426,22 +437,22 @@ You can see that the positron electron annihilation peak can not be identified a
     All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.
 \end{figure}
 
-At this point one could say that we have done enough filtering and use a fit functions to determine the number of decays in the peak.
-But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out an actual rare \nuc{Kr}{85} decay and to possibly recover them.
+At this point one could say that we have done enough filtering and use this graph to determine the number of decays in the peak.
+But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out any real rare \nuc{Kr}{85} decay and whether it is possible to recover them.
 The number of events filtered out by the liquid argon veto in the energy range of 509 to 519 keV is 1728.
-This number is too big to look at every individual case.
+This number is way too big to look at every individual case.
 \\
 
 Luckily we can use the fact that the excited \nuc{Rb}{85} state has a half life of 1.015 \(\mathrm{\mu}\)s.
-This means that we can identify the real rare \nuc{Kr}{85} decay by looking at all the events in which the liquid argon signal happened before the Germanium detectors event.
-Therefor we only use events with a negative time difference between these two events.
+This means that we can identify potential real rare \nuc{Kr}{85} decay by looking exclusively at the events in which the trigger from the photomultiplie happened earlier then the Germanium detector event.
+In other words, we only use events with a negative time difference between these two events.
 The time difference for each individual liquid argon events is already analyzed and stored in the triggerLAr vector of the Tier 3 dataset.
 This vector has the same number of dimensions as there are photomultipliers and every entry is indexed with the corresponding input channel of this photomultiplier.
 The entries of this vector are again vectors themselves storing the time difference for every signal that triggered the liquid argon veto in the corresponding channel.
-Since the events are listed in ascending order and the lower bound of the time difference in e.g. the PMT is at -5\(\mus\), we use only the first entry of this inner vector here for simplicity.
+Since the events are listed in ascending order and we are interested in the first trigger event of the photomultiplier, we use only the first entry of this inner vector here for simplicity.
 \\
 
-We also know that the energy of the released beta electron is relatively low.
+In addition, we also know that the energy of the released beta electron is relatively low.
 This means that we can expect that only a small number of photomultipliers should measure a signal in a real rare \nuc{Kr}{85} decay.
 In this case we will only use those events that have a maximum of four different triggered photomultipliers.
 Allowing events with maximum of four different triggered photomultipliers is already a lot for a \nuc{Kr}{85} decay. 
@@ -459,21 +470,33 @@ But we wanted to do a more detailed manually investigation later anyways which i
 	}
 \end{figure}
 
-If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier events with a signal strength of at least 0.5 phe you get a distributions as seen in figure \ref{fig:Trigger4}.
-We are only interested in the signals that measured at least 0.5 phe because that is the necessary intensity to trigger the LAr veto making them the signals of interest.
-Every signal weaker than 0.5 phe that can hardly be distinguished from the background and are therefor neglected.  
+If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier signals with a signal strength of at least 0.5 phe you get a distributions as seen in figure \ref{fig:Trigger4}.
+We are only interested in the signals that measured at least 0.5 phe because, as mentioned above, that is the necessary intensity to trigger the LAr veto making them the signals of interest. 
 The x axis is the time difference of the events in the photomultipliers from the signal measured in one of the Germanium detectors.
 Theoretically it should now be possible to see a exponential increase from the negative scale towards a vanishing time difference.
+Because of the small number of events however, it is almost impossible to make any statements about the course of these events.
 \\
 
-But because of the small number of events left over, it is almost impossible to make any statements about the course of these events.
+Interestingly, the majority of all signals were measured with a negative time difference in the PMTs. 
+This could perhaps be due to the better temporal resolution of the PMTs. 
+The signals of all PMTs are recorded with a resolution of 10ns and the SiPM with a resolution of 80ns but over a larger range than the PMTs\cite{nature}. 
+However, since the expected time difference is in the order of \(\mu\)s, this is no reason for the reduced number of measured events. 
+Another difference between the photomultiplier types is that the PMTs have a faster reaction time than the SiPMs. 
+As we will see, practically all deflections in the measured intensity of the PMT signal caused by procoincedents have already subsided before the signal was measured in the germanium detectors. 
+Thus a clear maximum should be recognizable before the germanium detector events.
+In contrast, the measured signal of the SiPMs increases exponentially with a characteristic time in the order of 10\(\mu\)s. 
+The trigger positions are then determined by software. 
+However, this should still be able to determine the trigger position of the signals for procoincedence events with sufficient accuracy.
+!!!!! Hier dir noch was genaueres ausdenken !!!!!
+\\
+
 Nevertheless we were able to lower the number of potential \nuc{Kr}{85} events from 1728 down to only 55.  
 These remaining events can now be manually examined with a with software called GerLa written by GERDA employees.
 This tool allows one to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around this event.
 \\
 
-With this tool one can now perform a manual filter by looking at the remaining 55 events and perform a specific protocol.
-This protocol consists of filtering out every event that has a combined light intensity of over 4 phe, every event that only has a negative time difference in a signal weaker than 0.5 phe and every event that resulted in a pileup.
+With this program one can now perform a manual filter by looking at the remaining 55 events indivitually and perform a specific protocol to determin wheter they are signals from a rare \nuc{Kr}{85} decay or not.
+This protocol consists of filtering out every event that has a combined light intensity of over 4 phe, every event that only has a negative time difference in a signal weaker than 0.5 phe and every event in which a pileup distorted the signal.
 Due to their higher sensitivity, the signal of the photomultiplier tubes (PMT) was mainly but not exclusively used.
 The silicon photomultipliers (SiPM) have the downside of a slower reaction time and the majority of events in them that happened before the Germanium signal were background events.
 In figure \ref{fig:Beispiel1} is an example for a model signal in the PMT.
@@ -624,9 +647,17 @@ This means that from the hardly filtered events over the entire course of phase 
 \\
 
 Now to the two liquid argon filtered cases.
-In their two phase diagrams it can assumed that the positron electron annihilation peak is fully suppressed.
+Before we apply the fits we have to discus what we are expecting.
+In the ideal case, that the majority of all rare \nuc{85}{85} decays through the liquid argon filter, we expect the amplitude of the Gaussian peaks in both the LArVeto filtered case and the hardly filtered case to be similar.
+These results would then be used in the further course of the analysis, since their values gather more directly than the results of the hardly filtered case.
+In contrast, in the case that a not insignificant amount of \nuc{Kr}{85} decays was filtered out that this amplitude is expected to be much smaller.
+If this were to happen, we would have to fall back on the results of the hardly filtered values.
+\\
+
+Now to actually applying the fits.
+As mentioned above we can assumed that the positron electron annihilation peak is fully suppressed.
 Therefor only one Gaussian peak has to be fitted together with the background function.
-The fit function therefor results in the function displayed in equation \ref{equ:FitFilters}.
+The fit therefor results in the function displayed in equation \ref{equ:FitFilters}.
 \\ 
 
 \begin{equation}
@@ -634,7 +665,7 @@ The fit function therefor results in the function displayed in equation \ref{equ
 \label{equ:FitFilters}
 \end{equation}
 
-After applying the fit function to the four phase-space diagrams seen in figure \ref to \ref, you get the fit parameters displayed in table
+After applying the fit to the four phase-space diagrams seen in figure \ref to \ref, you get the fit parameters displayed in table
 
 \begin{figure}[t!]
 	\centering
@@ -701,9 +732,9 @@ After applying the fit function to the four phase-space diagrams seen in figure 
 
 
 As above, the amplitude A of the Gaussian peak correspond to the number of events measured by this peak.
-In the case of only applying the liquid argon veto it can be seen that the number of events in the BEGe and in the COAX detectors has dropped considerably compared to the not filtered value.
+In the case of only applying the liquid argon veto it can be seen that the number of events in the BEGe and in the COAX detectors has dropped considerably compared to the hardly filtered value.
 This shows that a recovery of falsely filtered rare \nuc{Kr}{85} decays is necessary.
-But if you take the fit parameters from the case with liquid argon filter and additional recover, you can see that the peak amplitude of the BEGe detectors is still much smaller than the value from the hardly filtered phase space diagram.
+But even in these cases, the amplitudes of the peaks is still much smaller, at least in the case of the BEGes.
 \\
 
 
