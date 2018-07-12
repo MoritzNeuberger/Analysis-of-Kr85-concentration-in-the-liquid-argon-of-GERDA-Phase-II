@@ -734,9 +734,25 @@ After applying the fit to the four phase-space diagrams seen in figure \ref to \
 As above, the amplitude A of the Gaussian peak correspond to the number of events measured by this peak.
 In the case of only applying the liquid argon veto it can be seen that the number of events in the BEGe and in the COAX detectors has dropped considerably compared to the hardly filtered value.
 This shows that a recovery of falsely filtered rare \nuc{Kr}{85} decays is necessary.
-But even in these cases, the amplitudes of the peaks is still much smaller, at least in the case of the BEGes.
+But even in these cases, the amplitude of the peak in the BEGe phase-space is still much smaller.
+We  therefor have no alternative but to reject the peak suppression approach and to fall back to the results of the hardly filtered case.
+As mentioned above, in this case only the measurement data from the BEGe detectors can be used to obtain an exact value for the activity.
+The results from the COAX detector however will still be processed in the same manner to obtain a reinsurance of the value being in the same order of magnitude.
 \\
 
+Now that we have a number of rare \nuc{Kr}{85} events measured in the BEGe detectors.
+But what we need for the determination of the activity is not the amount of measured events but actually the amount of actual rare \nuc{Kr}{85} in the whole liquid argon tank.
+Luckily we can calculate the amount of actual events in the liquid argon tank by determining the detector efficiency of the BEGes.
+This can be done by running a Monte Carlo simulation simulating a great amount of rare \nuc{Kr}{85} events in a cylindrical volume with a detector therein with the same design as used in GERDA.
+From the amount of measured events in these simulated detectors and the absolute amount of simulated events one can then calculate the efficiency with which the BEGe detectors measure any \nuc{Kr}{85} events. 
+How exactly this was implemented is the topic of the next chapter.
+\\
+
+\subsubsection{Monte Carlo simulation}
+\label{sec:MonteCarlo514}
+
+As described above, we want to determine the detector efficiency with the help of a Monte Carlo simulation.
+The tool used to perform this simulation is MAGE (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA. !!!!! Quelle !!!!!
 
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
