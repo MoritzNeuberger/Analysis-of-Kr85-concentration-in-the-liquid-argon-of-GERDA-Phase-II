@@ -357,7 +357,7 @@ After applying the first few rather general filters on the measured events one h
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
-For example, in the range of 500keV it can be expected that COAX have a resolution about 0.5keV higher than the BEGes \cite{2017Natur.544...47A}. 
+For example, in the range of 500keV it can be expected that COAX have a resolution about 0.5keV higher than the BEGes \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
 Because of this their measured data must and will be evaluated separately. 
 If you only take the events that are recorded in the respective detectors, you get figure \ref{fig:NoFilterBEGes} for all the events measured in the BEGe detectors and figure \ref{fig:NoFilterCOAX} for all the events in the COAX detectors.
 The difference in resolution can be seen in the fact that in the BEGe diagram the two peaks are distinguishable while they merge into one another in the COAX diagram.  
@@ -413,7 +413,7 @@ This chapter tries to implement a filter that uses this mechanism and discusses 
 
 Among other things, each event in tier 4 was given a flag called "isLArVetoed".
 This flag is always triggered whenever an event in the Germanium detectors coincides with a strong scintillation signal in one of the photomultipliers positioned in the liquid argon tank.
-In particular, the signals in the photomultipliers must have an intensity of at least 0.5 phe for them to trigger the flag \cite{2017Natur.544...47A}.
+In particular, the signals in the photomultipliers must have an intensity of at least 0.5 phe for them to trigger the flag \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}.
 If one plots all events in which this flag has not been set one gets figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
 You can see that the positron electron annihilation peak can not be identified any longer while the 514keV peak seems almost unchanged.
 \\
@@ -752,7 +752,51 @@ How exactly this was implemented is the topic of the next chapter.
 \label{sec:MonteCarlo514}
 
 As described above, we want to determine the detector efficiency with the help of a Monte Carlo simulation.
-The tool used to perform this simulation is MAGE (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA. !!!!! Quelle !!!!!
+The tool used to perform this simulation is MAGE (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA \cite{boswell_melissa_chan_yuen-dat_detwiler_a._finnerty_padraic_henning_gehman_et}.
+Both experiments aim to measure the neutrinoless double beta decay using enriched Germanium detectors.
+Because it is expected that the halflife of this decay is in the order of at least \(10^{25}\) years, a lot of effort is put into finding out how big the contribution of different isotopes to the background is.
+MAGE is therefor specialized to simulate radioactive decays and their corresponding measured events in Germanium detectors.
+\\
+
+The simulation used here consists of a cylindrical volume of about 17m\(^{3}\), in which the detector structure of the GERDA experiment is placed in the middle. 
+A total of 50 million rare \nuc{Kr}{85} decays in the volume of this cylinder not occupied by the detector are now simulated. 
+As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over the entire volume of the cylinder is almost constant.
+From these 50 million simulated decays only about 90 thousand were actually detected by any of the detectors and only 53.750 of them crated a signal in one of the BEGe detectors.
+The resulting phase-space diagram form all the detected events in any of the BEGes is shown in figure 
+\\
+
+
+\begin{figure}[t!]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=80mm]{./Bilder/MC-Querschnitt-BEGes.pdf}
+		\caption{Cross section from above}
+		\label{fig:CrossSecAb}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=80mm]{./Bilder/MC-Radius-BEGes.pdf}
+		\caption{Radial cross section}
+		\label{fig:CrossSecRa}
+	\end{minipage}
+    \\
+	\vspace{0.5cm}
+    Cross section from above and a radial cross section showing the density of simulated decays in the cylindrical volume. The red points indicate all events that were measured by the BEGe detectors.
+\vspace{0.5cm}
+\end{figure}
+\\
+
+\begin{figure}[t!]
+	\centering
+	\ifmakefigures%
+	\includegraphics[width=100mm]{./Bilder/BeispielSignal.png}
+	\fi%
+	\caption{\label{fig:Trigger4}
+    The recorded signal of the photomultiplier tube P4 from the event with event number 1614036. !!!!!Hier noch was zu den Achsen!!!!!. 
+    The blue bar represents the moment in time in which a signal in the Germanium detector was measured.
+	}
+\end{figure}
 
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
