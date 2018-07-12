@@ -758,13 +758,12 @@ Because it is expected that the halflife of this decay is in the order of at lea
 MAGE is therefor specialized to simulate radioactive decays and their corresponding measured events in Germanium detectors.
 \\
 
-The simulation used here consists of a cylindrical volume of about 17m\(^{3}\), in which the detector structure of the GERDA experiment is placed in the middle. 
-A total of 50 million rare \nuc{Kr}{85} decays in the volume of this cylinder not occupied by the detector are now simulated. 
-As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over the entire volume of the cylinder is almost constant.
-From these 50 million simulated decays only about 90 thousand were actually detected by any of the detectors and only 53.750 of them crated a signal in one of the BEGe detectors.
-The resulting phase-space diagram form all the detected events in any of the BEGes is shown in figure 
+The simulation used here consists of a cylindrical of 2.5m of height and 3m in diameter, in which the detector structure of the GERDA experiment is placed in the middle.
+The resulting volume of the liquid argon is of about 17.65 \(m^3\).
+Compared with the volume of the liquid argon tank used in the GERDA experiment of 
+A total of N = 50.000.000 rare \nuc{Kr}{85} decays are now simulated in the volume of this cylinder that is not occupied by the detectors. 
+As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over the entire volume of the cylinder is relatively constant.
 \\
-
 
 \begin{figure}[t!]
 	\centering
@@ -787,14 +786,51 @@ The resulting phase-space diagram form all the detected events in any of the BEG
 \end{figure}
 \\
 
+From these 50 million simulated decays only about 90 thousand were actually detected by any of the detectors and only 53.750 of them crated a signal in one of the BEGe detectors.
+These 53.750 events are drawn as red points into figure \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa}.
+From their position one can see that the overwhelming majority of the detected events were positioned close to the detectors themselves.
+The fact that already
+The resulting phase-space diagram form all the detected events in any of the BEGes is shown in figure \ref{fig:PhasenraumMC514}.
+From this it can be seen that the only a small amount of all measured events are direct signals from the rare decays. 
+The great majority of photons measured were scattered before they arrived in the detector and have a lower energy.
+Among other things, the Compton edge of the photons at about 343 keV can be seen.
+To calculate the detector efficiency, only the measured events at the 514keV peak have to be used.
+This peak contains a total of \(\Delta\mathrm{N}_{\gamma} = 4755\) events.
+With a total of 50 million initial decays, this results in a efficiency of \(\epsilon_{\gamma} = 9.51\times10^{-5}\) for the volume of the simulated cylinder.
+To calculate this value formula \ref{equ:DetEff514} was used.
+\\
+
+\begin{equation}
+    \epsilon_{\gamma} = \frac{\Delta\mathrm{N}_\gamma}{N}
+    \label{equ:DetEff514}
+\end{equation}
+\\
+
+This means that if a \nuc{Kr}{85} isotope makes a rare decay at any point in the liquid argon container, the photon released during relaxation of the resulting excited \nuc{Rb}{85} has a probability \(\epsilon_\gamma\) of being measured by one of the BEGe detectors.
+On the other hand, it can also be said, that for every measured 514keV photon in one of the BEGe detectors an amount of about 10515 rare \nuc{Kr}{85} decays must have happened.
+\\
+
+In comparison a number of 3714 direct rare \nuc{Kr}{85} events was measured in the COAX detectors.
+The ratio between the number of measured events in the COAX detectors and the BEGes can now be determined to be \(\mathrm{N}_{MC,COAX}/\mathrm{N}_{MC,BEGe} = 0,781\).
+If you compare this value with the values measured in the experiment \(\mathrm{N}_{COAX}/\mathrm{N}_{BEGe} = 0,751\), you can see that their values are very close to one another.
+The main reason for the deviations may be that in the case of the vlues masued in the experiment a smaller amount of decays was used to determine this ratio. 
+But what these values show in any case is that the Monte Carlo simulation simulated the actual conditions in the liquid argon tank reasonably well.
+\\
+
+
+
+
+
+
+
+
 \begin{figure}[t!]
 	\centering
 	\ifmakefigures%
-	\includegraphics[width=100mm]{./Bilder/BeispielSignal.png}
+	\includegraphics[width=100mm]{./Bilder/MC-514-Phasenraum.pdf}
 	\fi%
-	\caption{\label{fig:Trigger4}
-    The recorded signal of the photomultiplier tube P4 from the event with event number 1614036. !!!!!Hier noch was zu den Achsen!!!!!. 
-    The blue bar represents the moment in time in which a signal in the Germanium detector was measured.
+	\caption{\label{fig:PhasenraumMC514}
+    Phase-space of the measured rare \nuc{Kr}{85} events in all of the BEGe detectors.
 	}
 \end{figure}
 
