@@ -386,13 +386,15 @@ At this point it is clear that we have two options on how we can handle the prob
 Either we try to find a way to filter out the majority of the annihilation events while keeping almost all of the \nuc{Kr}{85} events.
 This can hopefully be done by using the liquid argon veto of GERDA and the precoincidence of the electron scintillation in the photomultipliers. 
 \\
+
 The other option is to leave the phase-space diagram as it is and we only change our fit function so that it also takes the second peak into account when fitting.
 But this is only really an option for the BEGe detectors.
 As mentioned earlier the peaks in the BEGe phase-space are clearly distinguishable while they merge into each other in the COAX diagram.
 This merging of the peaks makes it difficult to put a clear fit function through the two peaks.
-Also considering the fact, that the COAX detectors have a corser resolution than the BEGe detectors, in the further analysis only the values of the BEGe detectors will be used.
+Also considering the fact, that the COAX detectors have a coarser resolution than the BEGe detectors, in the further analysis only the values of the BEGe detectors will be used.
 Nevertheless, the results of the COAX detectors can give us a reinsurance that the value is at least in the right order of magnitude.
-\\
+!!!!! Die Argumentation hier ist einfach mal zum Haare ausreißen, denk dir was besseres aus !!!!!
+\\ 
 
 In this theses we will try to go both ways separately and later compare their informative value.
 But first we need to discuss how we want to suppress the annihilation peak and whether our method really makes sense. 
@@ -611,7 +613,7 @@ The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}.
 
 \begin{figure}[t!]
 \centering
-\begin{tabular}{|c|c|c}
+\begin{tabular}{|c|c|c|}
 \hline
 Name	& Value [BEGes] & Valuse [COAX]\\ 
 \hline
@@ -694,7 +696,7 @@ After applying the fit to the four phase-space diagrams seen in figure \ref to \
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoEventListCOAX.pdf}
+		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoEventListC.pdf}
 		\caption{COAX}
 		\label{fig:FitLArVetoEventListCOAX}
 	\end{minipage}
@@ -839,11 +841,12 @@ was necessary.
 
 From here we can also easily determine the decay density for all Kr85 decays by simply dividing by the probability of a rare decay occurring.
 As mentioned in section \ref{sec:Kry85} the probability of the rare decay is $p = 0.00434$.
-We can therefor calculate a deca density of 
+We can therefor calculate a decay density of 
 \begin{equation*}
-\mathrm{N}_{BEGe}\times\frac{1}{\epsilon_\gamma V_{sim}p} =  3737.892\frac{\mathrm{decays(all)}}{\mathrm{l}} 
+\frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}} =  3737.892\frac{\mathrm{decays(all)}}{\mathrm{l}} 
 \end{equation*}
 \\
+
 
 Now some words about the simulated events that got detected in the COAX detectors.
 In comparison only a number of 3714 direct rare \nuc{Kr}{85} events was measured in them.
@@ -852,6 +855,45 @@ If you compare this value with the ratio calculated from the events of the exper
 The main reason for the small deviations may be that in the case of the values measured in the experiment a smaller amount of decays was used to determine this ratio. 
 But what these values show in any case is that the Monte Carlo simulation simulated the actual conditions in the liquid argon tank reasonably well.
 \\
+
+\subsubsection{Calculating the activity}
+
+All we need now to calculate the mean activity of \nuc{85}{85} in Phase II is the measuring time of all detectors.
+But this is not as easy as it seems.
+The two of the three problems result from the fact that not all detectors were used over the curse of phase II and that there were also intervals in phase II in which no measurement was made since for example maintenance was carried out.
+But this can easily be solved by looking at the effective measuring time of each detector individually.
+These can be determined by looking at how many test puler signals have been recorded by the respective detectors. 
+Since the test pulse signals have been set to a frequency of 0.05Hz over the entire Phase II time, an effective measurement time can be achieved by determining the number of detected test pulse signals.
+The individual measuring times are therefor given by
+\begin{equation*}
+    t_\mathrm{i} = \mathrm{N}_{TP}(\mathrm{i}) \times 20\mathrm{s}
+\end{equation*}
+where i is the index of the respective input channel of each BEGe detector.
+\\
+
+The third problem arises from the fact that we calculated the decay density with the assumption that we could merge all BEGe detectors into a single detector.
+But now that we want to look at the measurement time of each individual detector, this assumption does not hold true.
+Luckily we can work around this problem by calculating an average measurement time for all detectors, which we can then calculate as if the BEGe detectors were such a single detector.
+For this average measuring time one has to consider the fact that we also have to apply a weigh on every individual measuring times.
+This arises from the fact that every BEGe detector has an individual mass.
+As we know, the detector efficiency of a single detector is directly dependent on its mass.
+If we want to combine all single detectors into one large detector, we have to consider that such heavier detectors contribute more to the measured decay rate than other lighter detectors.
+It is therefore necessary to weight the measuring time each detector with its individual mass.
+\\
+
+In summary, we can now finally determine the weighted mean value of the measurement time by using this formula:
+\begin{equation*}
+    \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = 1.592\mathrm{y}
+\end{equation*}
+\\
+
+With this mean measuring time we can now finally calculate the mean activity density $\bar{a}$ of \nuc{Kr}{85} over the curse of all of Phase II.
+This can easily be done by applying
+\begin{equation*}
+    \bar{a} = \frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}} = 0.07437 \frac{\mathmr{mBq}}{\mathrm{l}}
+\end{equation*}
+
+
 
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
