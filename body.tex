@@ -256,7 +256,7 @@ The last section is used to finally calculate the concentration of \nuc{Kr}{85} 
 Finally, the result is compared with the activities from Darkside and WARP. 
 
 
-\subsection{Different Approaches to calculate the activity}
+\subsection{Different Approaches to Calculate the Activity}
 \label{sec:Appro}
 
 The aim of this section is to give the reader an overview of the two methods used in this theses to determine the concentration of \nuc{Kr}{85}. 
@@ -268,9 +268,9 @@ This state has a raised energy level of 514keV compared to its ground state and 
 Theoretically it should now be possible to measure a peak in the phase diagram around the 514keV mark. 
 One can than use a fit to determine the number of decays measured by the detectors. 
 Due to the different energy resolution in the BEGes and the COAX detectors, the decay count in their signals will be done separately. 
-It also of interest to know the overall detector efficiency of the two kinds. 
+It's also of interest to know the overall detector efficiency of the two kinds. 
 This can be approximated using a Monte-Carlo simulation creating a huge amount of 514keV decay events and counting the measured events in the detector. 
-It should now be possible to determine the activity of \nuc{Kr}{85} by using the measured events, the detector efficiency and the volume from the Monte-Carlo simulation, the mass of the detectors and the exposure of the detectors.
+It should then be possible to determine A mean activity from \nuc{Kr}{85} over the course of Phase II.
 \\
 
 The biggest problem of this method to overcome lies with the proximity of the \nuc{Kr}{85} to the 511keV peak of the positron electron annihilation. 
@@ -282,7 +282,7 @@ Therefor it should be possible to single out the 514keV events from the annihila
 The second method uses the reduction of the event rate over the range of 200 to 400 keV. 
 This is only possible because every other isotope we know that is present in the liquid argon with a non negligible proportion has a half-life much higher than \nuc{Kr}{85} with its \(10.739\mathrm{y}\). 
 The dominant background sources are in descending order \nuc{Ar}{42} with a half-life of 32.9 y, \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
-Since the liquid argon has not been replaced since the beginning of GERDA Phase I in 2013, it can be estimated that the Kr85 rate has decreased by a factor of \(\sqrt{2}\) while the rate of the other isotopes should have hardly changed.
+Since the liquid argon has not been replaced since the beginning of GERDA Phase I in 2013, it can be estimated that the Kr85 rate has  an overall decrease of a factor of \(\sqrt{2}\) while the rate of the other isotopes should have hardly changed.
 \\
 
 Due to routine check-ups and improvements to the experimental setup there were several time intervals in which the detectors were deactivated. 
@@ -295,12 +295,15 @@ These signals can now be used as weigh to correct the previous histogram.
 % By laying a fit function of an exponential decrease plus a constant background over it one should be able to deduct the activity of the \nuc{Kr}{85} from the amplitude of the exponential decrease. With this one can then calculate the concentration by integrating over the activity and dividing over the liquid argon volume.\\
 
 Because the second method is based on a very broad approximation it is expected to only give a rough estimation of the actual concentration. 
-In contrast, the first method is expected to wield a much better appraisal because it does not heavily rely on any approximation.
+In contrast, the first method is expected to wield a much better accuracy.
+This is because in this approach only \nuc{Kr}{85} decays actually generate the change in the phase diagram while in the second method many other isotopes can produce additional changes.
+It is therefore understandable that we have chosen the first method as our actual activity determination, while the second method serves only as an additional review of our results.
+
 \\
 
 % short outline of approaches
  
-\subsection{Activity from the 514keV peak}
+\subsection{Activity from the 514keV Peak}
 \label{sec:SAfrom514}
 
 As described in section \ref{sec:AotKr} this part of the theses concentrates on the first approach of finding the activity of \nuc{Kr}{85} by using relaxation of \nuc{Rb}{85} in a rare decay. 
@@ -402,7 +405,7 @@ This will be done in the following chapter.
 \\
 
 
-\subsubsection{Annihilation peak suppression}
+\subsubsection{Annihilation Peak Suppression}
 \label{sec:APS}
 
 As mentioned above, it should be theoretically possible to filter out the majority of the disturbing positron electron annihilation events by using the scintillation property of the liquid argon.
@@ -492,16 +495,16 @@ However, this should still be able to determine the trigger position of the sign
 !!!!! Hier dir noch was genaueres ausdenken !!!!!
 \\
 
-Nevertheless we were able to lower the number of potential \nuc{Kr}{85} events from 1728 down to only 55.  
+Nevertheless we were able to lower the number of potential rare \nuc{Kr}{85} events from 1728 down to only 55.  
 These remaining events can now be manually examined with a with software called GerLa written by GERDA employees.
 This tool allows one to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around this event.
 \\
 
 With this program one can now perform a manual filter by looking at the remaining 55 events indivitually and perform a specific protocol to determin wheter they are signals from a rare \nuc{Kr}{85} decay or not.
 This protocol consists of filtering out every event that has a combined light intensity of over 4 phe, every event that only has a negative time difference in a signal weaker than 0.5 phe and every event in which a pileup distorted the signal.
-Due to their higher sensitivity, the signal of the photomultiplier tubes (PMT) was mainly but not exclusively used.
+Due to their faster response time, the signal of the photomultiplier tubes (PMT) was mainly but not exclusively used.
 The silicon photomultipliers (SiPM) have the downside of a slower reaction time and the majority of events in them that happened before the Germanium signal were background events.
-In figure \ref{fig:Beispiel1} is an example for a model signal in the PMT.
+In figure \ref{fig:Trigger4} is an example for a model signal in the PMT.
 \\
 
 \begin{figure}[t!]
@@ -516,9 +519,9 @@ In figure \ref{fig:Beispiel1} is an example for a model signal in the PMT.
 \end{figure}
 
 Using this procedure we were able to lower the amount of possible rare \nuc{Kr}{85} decay signals down to 24 events.
-After this much filtering we can assume that all of these events are probably real rare \nuc{Kr}{85} decays.
-Finally we can recover those events to our liquid argon filtered energy diagrams (see figure \ref{fig:LArBEGesEV} and \ref{fig:LArCOAXEV}).
-You can see in comparison to figure \ref{fig:LArBEGes} and \ref{fig:LArCOAX} that the majority of the recovered events are placed near the 514keV peak.
+After this much filtering we can assume that probably all of these events are real rare \nuc{Kr}{85} decays.
+Finally, we can restore these events in our liquid argon filtered energy diagrams. (see figure \ref{fig:LArBEGesEV} and \ref{fig:LArCOAXEV}).
+You can see in comparison to figure \ref{fig:LArBEGes} and \ref{fig:LArCOAX} that the majority of the restoreed events are placed near the 514keV peak.
 \\
 
 Now the question arises whether our approach could actually restore the majority of all lost \nuc{Kr}{85} events.
@@ -527,19 +530,19 @@ This can be done by integrating over the fit function as it will be done in sect
 \\
 
 Nevertheless we are still able to make some qualitative estimations about the recovery rate of this approach. 
-When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must not be much smaller.
-An important factor limiting this recovery rate originates from an approximation applied in this approach.
+When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must be much smaller.
+An important factor limiting this recovery rate originates from an estimation applied in this approach.
 It was approximated that the electrons created scintillation light instantaneously after being released.
 In reality, the moment an electron emits scintillation light is determined by many complex mechanisms. 
 However, its behaviour can be approximated by a relaxation approach. 
 This gives you a new characteristic time with which you can describe how many electrons have already created scintillation light after what time. 
-But this not spontaneous behavior means, that the measured signal depends on both the relaxation time of \nuc{Rb}{85} and the scintillation light of the electron.
+But this not spontaneous behavior means, that the measured signal depends on both the relaxation time of the \nuc{Rb}{85} and the scintillation light of the electron.
 It is therefor quite possible, that a number of rare \nuc{Kr}{85} decay events can have a positive effective time difference.
 Those are then lost in our analysis due to us filtering out every event that has a positive time difference.
 This results in a lower recovery rate.
 \\
 
-After this qualitative analysis it is justified to question whether the majority of the rare \nuc{Kr}{85} decays can even pass through the LAr filter and the additional recovery.
+After this qualitative analysis it is justified to question whether the majority of the rare \nuc{Kr}{85} decays can even pass through the liquid argon filter and the additional recovery.
 But we only get a satisfactory answer with a quantitative analysis which will be performed in the following chapter.
 \\
 
@@ -565,7 +568,7 @@ But we only get a satisfactory answer with a quantitative analysis which will be
 \subsubsection{Fitting}
 \label{sec:Fitting}
 
-Our strategy to calculate the activity of \nuc{Kr}{85} through the 514keV peak involves determining the absolte amount of measured rare \nuc{Kr}{85} decays over all of phase II.
+Our strategy to calculate the activity of \nuc{Kr}{85} through the 514keV peak involves determining the absolute amount of measured rare \nuc{Kr}{85} decays over all of Phase II.
 Due to the still enormous amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{67} decays, it is necessary to fit the 514keV peak with a suitable fit function.
 The amount of measured rare \nuc{Kr}{85} decays can then be calculated by integrating over the found fit function.
 \\
@@ -750,7 +753,7 @@ From the amount of measured events in these simulated detectors and the absolute
 How exactly this was implemented is the topic of the next chapter.
 \\
 
-\subsubsection{Monte Carlo simulation}
+\subsubsection{Monte Carlo Simulation}
 \label{sec:MonteCarlo514}
 
 As described above, we want to determine the detector efficiency with the help of a Monte Carlo simulation.
@@ -791,7 +794,7 @@ As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over th
 From these 50 million simulated decays only about 90 thousand were actually detected by any of the detectors and only 53.750 of them crated a signal in one of the BEGe detectors.
 These 53.750 events are drawn as red points into figure \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa}.
 From their position one can see that the overwhelming majority of the detected events were positioned close to the detectors themselves.
-It can be seen that already at a distance of about 60cm from the detectors the majority of all decays were no longer measured.
+Already at a distance of about 60cm from the detectors the majority of all decays were no longer measured.
 This means that the amount of measured events should not change when one enlarges the volume of the tank, provided that the density of decays stays constant.
 But that would also mean that the detector efficiency $\epsilon$ would have a reciprocal proportionality to the simulated volume.
 Therefore, we expect the ratio $\frac{1}{\epsilon V_{sim}}$ to be invariant with change of volume, provided that the volume is large enough.
@@ -839,7 +842,7 @@ For an amount of 27.239\(\pm\)3.870 events to be measured, it can be concluded t
 was necessary.
 \\
 
-From here we can also easily determine the decay density for all Kr85 decays by simply dividing by the probability of a rare decay occurring.
+From here we can also easily determine the decay density for all \nuc{Kr}{85} decays by simply dividing by the probability of a rare decay occurring.
 As mentioned in section \ref{sec:Kry85} the probability of the rare decay is $p = 0.00434$.
 We can therefor calculate a decay density of 
 \begin{equation*}
@@ -853,10 +856,10 @@ In comparison only a number of 3714 direct rare \nuc{Kr}{85} events was measured
 The ratio between the number of measured events in the COAX detectors and the BEGes can now be determined to be \(\mathrm{N}_{MC,COAX}/\mathrm{N}_{MC,BEGe} = 0,781\).
 If you compare this value with the ratio calculated from the events of the experiment \(\mathrm{N}_{COAX}/\mathrm{N}_{BEGe} = 0,751\), you can see that their values are very close to one another.
 The main reason for the small deviations may be that in the case of the values measured in the experiment a smaller amount of decays was used to determine this ratio. 
-But what these values show in any case is that the Monte Carlo simulation simulated the actual conditions in the liquid argon tank reasonably well.
+But what these values show in any case is that the Monte Carlo simulation simulated the actual Germanium detectors reasonably well.
 \\
 
-\subsubsection{Calculating the activity}
+\subsubsection{Calculating the Activity}
 
 All we need now to calculate the mean activity of \nuc{85}{85} in Phase II is the measuring time of all detectors.
 But this is not as easy as it seems.
@@ -873,23 +876,22 @@ where i is the index of the respective input channel of each BEGe detector.
 
 The third problem arises from the fact that we calculated the decay density with the assumption that we could merge all BEGe detectors into a single detector.
 But now that we want to look at the measurement time of each individual detector, this assumption does not hold true.
-Luckily we can work around this problem by calculating an average measurement time for all detectors, which we can then calculate as if the BEGe detectors were such a single detector.
-For this average measuring time one has to consider the fact that we also have to apply a weigh on every individual measuring times.
+Luckily one can work around this problem by calculating an average measurement time for all detectors, which you can then calculate as if the BEGe detectors were such a single detector.
+For this average measuring time one has to consider the fact that we also have to apply a weigh on every individual measuring time.
 This arises from the fact that every BEGe detector has an individual mass.
 As we know, the detector efficiency of a single detector is directly dependent on its mass.
-If we want to combine all single detectors into one large detector, we have to consider that such heavier detectors contribute more to the measured decay rate than other lighter detectors.
-It is therefore necessary to weight the measuring time each detector with its individual mass.
+If we want to combine all single detectors into one large detector, we have to consider that heavier detectors contribute more to the measured decay rate than lighter detectors.
+It is therefore necessary to weight the measuring time of each detector with its individual mass.
 \\
 
-In summary, we can now finally determine the weighted mean value of the measurement time by using this formula:
+In summary, we can now finally determine the weighted mean value of the measurement time by using formula
 \begin{equation*}
     \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = (1.592\pm0,001)
     \mathrm{y}
 \end{equation*}
 \\
 
-With this mean measuring time we can now finally calculate the mean activity density $\bar{a}$ of \nuc{Kr}{85} over the curse of all of Phase II.
-This can easily be done by applying
+With this mean measuring time we can now finally calculate the mean activity density $\bar{a}$ of \nuc{Kr}{85} over the curse of all of Phase II by applying
 \begin{equation*}
     \bar{a} = \frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}} = (7.437\pm1.169)\times10^{-2}
      \frac{\mathmr{mBq}}{\mathrm{l}}
@@ -904,11 +906,11 @@ This can easily be done by applying
 % make a Monte Carlo simulation to estimate actual Kr85 activity in LAr from measured activity in detectors
 % -> with amplitude and factors from MC-Simulation one can calculate the specific activity
 
-\subsection{Activity from the decrease in rate}
+\subsection{Activity from the Decrease in Rate}
 \label{sec:SAfromDecrease}
 
-As described in the beginning of this section, the first method of determining the activity density via the peak of the photon released from the relaxation of \nuc{Rb}{85}  after a rare \nuc{Kr}{85} decay was expected to be relatively precise.
-By following this procedure we were able to determine the activity down to the order of 10$^-5\frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
+As described in the beginning of section \ref{sec:AotKr}, the first method of determining the activity density via the peak of the photon released from the relaxation of \nuc{Rb}{85}  after a rare \nuc{Kr}{85} decay was expected to be relatively precise.
+By following this procedure we were able to determine the activity down to the order of 10$^{-5} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
 As it was also stated above, the second method using the change in intensity with time is expected to be relatively imprecise.
 This estimation came from the fact that a great approximation is needed to determine the activity from it.
 It is necessary to expect that in the time interval of all of Phase II only the intensity of the \nuc{Kr}{85} isotope has a non neglectable change in its intensity.
@@ -924,7 +926,7 @@ The majority of change in intensity should therefor originate from the \nuc{Kr}{
 
 % use Volume of LAr-Tank to determine the number of Kr85 and from this the concentration in the argon
 
-\subsection{Calculation of the concentration}
+\subsection{Calculation of the Concentration}
 \label{sec:calcOfTheCon}
 
 
