@@ -303,7 +303,7 @@ In contrast, the first method is expected to wield a much better appraisal becau
 \subsection{Activity from the 514keV peak}
 \label{sec:SAfrom514}
 
-As described in section \ref{sec:AotKr} this part of the theses concentrates on the first approach of finding the activity of \nuc{Kr}{85} by using relaxation of \nuc{Rb}{85} in a rare decay. 
+As described in section \ref{sec:AotKr} this part of the theses concentrates on the first approach of finding the activity of \nuc{Kr}{85} by using the relaxation of emerging \nuc{Rb}{85} in a rare \nuc{Kr}{85} decay. 
 The photon emitted carries an energy of almost exactly 514keV. 
 It should therefor be possible to measure it in one of the detectors. 
 When one plots all events measured by GERDA Phase II in a phase diagram from 500 to 525keV (as seen in figure \ref{fig:ungefiltertes500525}), two larger peaks are visible. 
@@ -645,7 +645,7 @@ I  &	(-40.573 \(\pm\) 1.000)	&	(-40.573 \(\pm\)	1.414)\\
 The only values of these fit parameters that is of real interest for the determination of the activity is variable D.
 Its value is the amplitude of the second Gaussian peak.
 Because the Gaussian peak was chosen in the normalized form this value also represents the amount of rare \nuc{Kr}{85} decays measured.
-This means that from the hardly filtered events over the entire course of phase II an amount of $\mathrm{N}_{BEGe} = (27.24\pm3.88)$ rare \nuc{Kr}{85} decays were measured in the BEGe detectors and $\mathrm{N}_{COAX} = ((20.46\pm3.28)$ in the COAX detectors. 
+This means that from the hardly filtered events over the entire course of phase II an amount of $\mathrm{N}_{BEGe} = (27.24\pm3.88)$ rare \nuc{Kr}{85} decays were measured in the BEGe detectors and $\mathrm{N}_{COAX} = (20.46\pm3.28)$ in the COAX detectors. 
 \\
 
 Now to the two liquid argon filtered cases.
@@ -712,7 +712,7 @@ After applying the fit to the four phase-space diagrams seen in figure \ref to \
 	\centering
 	\begin{tabular}{|l|r|r|r|r|}
 		\hline
-		Name	& Value [BEGes] \\ 
+		Name	& Value (LAr) [BEGes] & Value (LAr) [COAX] & Value (LAr \& Recovery) [BEGes] & Value (LAr \& Recovery) [COAX] \\ 
 		\hline
 		A  &	(17.844639 \(\pm\)	3.179471)&	(17.914476 \(\pm\)	2.683260)	&	(19.847330\(\pm\)	2.688415)&	(18.851511 \(\pm\)	2.696000)\\	
 		\hline
@@ -839,7 +839,7 @@ For an amount of 27.239\(\pm\)3.870 events to be measured, it can be concluded t
 was necessary.
 \\
 
-From here we can also easily determine the decay density for all Kr85 decays by simply dividing by the probability of a rare decay occurring.
+From here we can also determine the decay density for all \nuc{Kr}{85} decays by simply dividing by the probability of a rare decay occurring.
 As mentioned in section \ref{sec:Kry85} the probability of the rare decay is $p = 0.00434$.
 We can therefor calculate a decay density of 
 \begin{equation*}
@@ -850,21 +850,22 @@ We can therefor calculate a decay density of
 
 Now some words about the simulated events that got detected in the COAX detectors.
 In comparison only a number of 3714 direct rare \nuc{Kr}{85} events was measured in them.
-The ratio between the number of measured events in the COAX detectors and the BEGes can now be determined to be \(\mathrm{N}_{MC,COAX}/\mathrm{N}_{MC,BEGe} = 0,781\).
+The ratio between the number of measured events in the COAX detectors and the BEGes can be determined to be \(\mathrm{N}_{MC,COAX}/\mathrm{N}_{MC,BEGe} = 0,781\).
 If you compare this value with the ratio calculated from the events of the experiment \(\mathrm{N}_{COAX}/\mathrm{N}_{BEGe} = 0,751\), you can see that their values are very close to one another.
 The main reason for the small deviations may be that in the case of the values measured in the experiment a smaller amount of decays was used to determine this ratio. 
-But what these values show in any case is that the Monte Carlo simulation simulated the actual conditions in the liquid argon tank reasonably well.
+But what these values show in any case is that the Monte Carlo simulation simulated the functionality of the detectors in the liquid argon tank reasonably well.
 \\
 
 \subsubsection{Calculating the activity}
 
-All we need now to calculate the mean activity of \nuc{85}{85} in Phase II is the measuring time of all detectors.
+All we need now to calculate the mean activity of \nuc{Kr}{85} in Phase II is the measuring time of all detectors.
 But this is not as easy as it seems.
-The two of the three problems result from the fact that not all detectors were used over the curse of phase II and that there were also intervals in phase II in which no measurement was made since for example maintenance was carried out.
-But this can easily be solved by looking at the effective measuring time of each detector individually.
-These can be determined by looking at how many test puler signals have been recorded by the respective detectors. 
-Since the test pulse signals have been set to a frequency of 0.05Hz over the entire Phase II time, an effective measurement time can be achieved by determining the number of detected test pulse signals.
-The individual measuring times are therefor given by
+Three problems stand in our way.
+Two of the three problems result from the fact that not all detectors were used over the curse of phase II and that there were also intervals in phase II in which no measurement was made since for example maintenance was carried out.
+However these two problems can easily be solved by looking at the detector individually and determining the effective measuring time for each of them individually.
+Those can be determined by looking at how many test pulse signals have been recorded by the respective detectors. 
+Since the test pulse signals have been set to a frequency of 0.05Hz over the entire Phase II time, the effective measurement times can be calculated by determining the number of detected test pulse signals in the individual detectors.
+The measuring times are therefor given by
 \begin{equation*}
     t_\mathrm{i} = \mathrm{N}_{TP}(\mathrm{i}) \times 20\mathrm{s}
 \end{equation*}
@@ -873,11 +874,12 @@ where i is the index of the respective input channel of each BEGe detector.
 
 The third problem arises from the fact that we calculated the decay density with the assumption that we could merge all BEGe detectors into a single detector.
 But now that we want to look at the measurement time of each individual detector, this assumption does not hold true.
-Luckily we can work around this problem by calculating an average measurement time for all detectors, which we can then calculate as if the BEGe detectors were such a single detector.
-For this average measuring time one has to consider the fact that we also have to apply a weigh on every individual measuring times.
-This arises from the fact that every BEGe detector has an individual mass.
+Luckily we can work around this problem by calculating an average measurement time for all detectors.
+With this we can then calculate as if the BEGe detectors were such a single detector.
+For this average measuring time one has to consider the fact that we also have to apply a weigh on each individual measuring time.
+This arises from the fact that every BEGe detector used has an individual mass.
 As we know, the detector efficiency of a single detector is directly dependent on its mass.
-If we want to combine all single detectors into one large detector, we have to consider that such heavier detectors contribute more to the measured decay rate than other lighter detectors.
+If we want to combine all single detectors into one large detector, we have to consider that heavier detectors contribute more to the measured decay rate than lighter detectors.
 It is therefore necessary to weight the measuring time each detector with its individual mass.
 \\
 
@@ -890,7 +892,7 @@ In summary, we can now finally determine the weighted mean value of the measurem
 With this mean measuring time we can now finally calculate the mean activity density $\bar{a}$ of \nuc{Kr}{85} over the curse of all of Phase II.
 This can easily be done by applying
 \begin{equation*}
-    \bar{a} = \frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}} = 0.07437 \frac{\mathmr{mBq}}{\mathrm{l}}
+    \bar{a} = \frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}} = 0.07437 \frac{\unit{mBq}}{\mathrm{l}}
 \end{equation*}
 
 !!!!! sich noch überlegen, was man genau mit den COAX detektoren macht !!!!!
@@ -906,7 +908,7 @@ This can easily be done by applying
 \label{sec:SAfromDecrease}
 
 As described in the beginning of this section, the first method of determining the activity density via the peak of the photon released from the relaxation of \nuc{Rb}{85}  after a rare \nuc{Kr}{85} decay was expected to be relatively precise.
-By following this procedure we were able to determine the activity down to the order of 10$^-5\frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
+By following this procedure we were able to determine the activity down to the order of 10$^{-5}\frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
 As it was also stated above, the second method using the change in intensity with time is expected to be relatively imprecise.
 This estimation came from the fact that a great approximation is needed to determine the activity from it.
 It is necessary to expect that in the time interval of all of Phase II only the intensity of the \nuc{Kr}{85} isotope has a non neglectable change in its intensity.
