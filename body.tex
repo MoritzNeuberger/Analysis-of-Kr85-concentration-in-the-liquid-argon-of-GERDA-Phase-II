@@ -803,10 +803,10 @@ From it one can be seen that only a small amount of all measured events are dire
 The great majority of photons measured were scattered before they arrived in the detector and therefor have a lower energy.
 Among other things, the Compton edge of the photons at about 343 keV can be seen.
 But to calculate the detector efficiency, only the measured events at the 514keV peak have to be used.
-This peak contains a total of \(\Delta\mathrm{N} = 4755\) events.
+This peak contains a total of \(\Delta\mathrm{N} = 4755\pm69\) events.
 With a total of 50 million initial decays, this results in a efficiency of 
 \begin{equation*}
-\epsilon_{\gamma} = \frac{\Delta\mathrm{N}}{\mathrm{N}} = 9.51 \times 10^{-5}  \frac{\mathrm{event}}{\mathrm{decay(rare)}}
+\epsilon_{\gamma} = \frac{\Delta\mathrm{N}}{\mathrm{N}} = (9.51\pm0.14) \times 10^{-5}  \frac{\mathrm{event}}{\mathrm{decay(rare)}}
 \end{equation*}
 for the volume of the simulated cylinder.
 \\
@@ -816,7 +816,7 @@ On the other hand, it can also be said, that for every measured 514keV photon in
 In other words, the value $\frac{1}{\epsilon_\gamma}$ is a conversation factor from the measured entries to the actual amount of rare decays.
 Additionally you can use the simulated volume to calculate a conversion factor density 
 \begin{equation*}
-\frac{1}{\epsilon_\gamma V_{sim}} = 0.5955 \frac{\mathrm{decay(rare)}}{\mathrm{event} \times l}
+\frac{1}{\epsilon_\gamma V_{sim}} = (5.955\pm0.086) \times 10^{-1} \frac{\mathrm{decay(rare)}}{\mathrm{event} \times l}
 \end{equation*}
 As mentioned above this value is invariant with change of volume which is why we can use it for our further analysis. 
 \\
@@ -834,7 +834,7 @@ As mentioned above this value is invariant with change of volume which is why we
 Now that the detector efficiency of the BEGe detectors is determined we can calculate the density of all rare \nuc{Kr}{85} decays.
 For an amount of 27.239\(\pm\)3.870 events to be measured, it can be concluded that a decay density of
 \begin{equation*}
-\mathrm{N}_{BEGe}\times\frac{1}{\epsilon_\gamma V_{sim}} =  16.222 \frac{\mathrm{decays(rare)}}{\mathrm{l}} 
+\mathrm{N}_{BEGe}\times\frac{1}{\epsilon_\gamma V_{sim}} = (16.22\pm2.54) \frac{\mathrm{decays(rare)}}{\mathrm{l}} 
 \end{equation*}
 was necessary.
 \\
@@ -843,7 +843,7 @@ From here we can also easily determine the decay density for all Kr85 decays by 
 As mentioned in section \ref{sec:Kry85} the probability of the rare decay is $p = 0.00434$.
 We can therefor calculate a decay density of 
 \begin{equation*}
-\frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}} =  3737.892\frac{\mathrm{decays(all)}}{\mathrm{l}} 
+\frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}} =  (3737.9\pm585.3)\frac{\mathrm{decays(all)}}{\mathrm{l}} 
 \end{equation*}
 \\
 
@@ -883,14 +883,16 @@ It is therefore necessary to weight the measuring time each detector with its in
 
 In summary, we can now finally determine the weighted mean value of the measurement time by using this formula:
 \begin{equation*}
-    \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = 1.592\mathrm{y}
+    \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = (1.592\pm0,001)
+    \mathrm{y}
 \end{equation*}
 \\
 
 With this mean measuring time we can now finally calculate the mean activity density $\bar{a}$ of \nuc{Kr}{85} over the curse of all of Phase II.
 This can easily be done by applying
 \begin{equation*}
-    \bar{a} = \frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}} = 0.07437 \frac{\mathmr{mBq}}{\mathrm{l}}
+    \bar{a} = \frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}} = (7.437\pm1.169)\times10^{-2}
+     \frac{\mathmr{mBq}}{\mathrm{l}}
 \end{equation*}
 
 !!!!! sich noch überlegen, was man genau mit den COAX detektoren macht !!!!!
@@ -913,6 +915,7 @@ It is necessary to expect that in the time interval of all of Phase II only the 
 The idea behind it is the fact that \nuc{Kr}{85} has the lowest half life of all the other residual alien isotopes in the liquid argon.
 The majority of change in intensity should therefor originate from the \nuc{Kr}{85}.
 \\
+
 
 
 
