@@ -9,7 +9,9 @@
 %-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
-\documentclass[11pt,a4paper]{article}
+%\documentclass[11pt,a4paper]{article}
+\documentclass[encoding=utf8,british]{tumphthesis}
+
 %\documentclass[12pt,a4paper,twoside]{article}%
 %-------------------------------------------------------------------------------
 \include{header}              % packages/settings
@@ -20,9 +22,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -----------------------------------------------------  DEFINE YOUR REPORT  ---
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\repnumber}  {GSTR-18-0xx}    % REPNUMBER (yy->year, 0xx->running number)
+%\newcommand{\repnumber}  {GSTR-18-0xx}    % REPNUMBER (yy->year, 0xx->running number)
 \newcommand{\repdate}    {August 8, 2018} % DATE
-\newcommand{\titleheader}{Analysis of Kr85 concentration in the liquid argon of GERDA Phase II} % TITLE
+\newcommand{\titleheader}{Analysis of \Kr concentration in the liquid argon of GERDA Phase II} % TITLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -93,8 +95,8 @@ Seite beabsichtigt leer gelassen.
 % ---------------------------------------------------------------- settings  ---
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\pagestyle{myheadings}
-\markboth{~-~~\repnumber\hfill\titleheader}{\titleheader\hfill\repnumber~~-~}
+%\pagestyle{myheadings}
+%\markboth{~-~~\repnumber\hfill\titleheader}{\titleheader\hfill\repnumber~~-~}
 \newpage
 %----------------------------------------------------------------- body --------
 \input{body}
