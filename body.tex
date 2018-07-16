@@ -846,7 +846,7 @@ was necessary.
 \\
 
 From here we can also easily determine the decay density for all \Kr decays by simply dividing by the probability of a rare decay occurring.
-As mentioned in section \ref{sec:Kry85} the probability of the rare decay is $p = 0.00434$.
+As mentioned in section \ref{sec:Kry85} the probability of the rare decay is $p = 0.434\%$.
 We can therefor calculate a decay density of 
 \begin{equation*}
 \frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}} =  (3737.9\pm585.3)\frac{\mathrm{decays(all)}}{\mathrm{l}} 
@@ -863,6 +863,7 @@ But what these values show in any case is that the Monte Carlo simulation simula
 \\
 
 \subsection{Calculating the Activity}
+\label{sec:CalcActiv}
 
 All we need now to calculate the mean activity of \nuc{85}{85} in \PII is the measuring time of all detectors.
 But this is not as easy as it seems.
@@ -921,6 +922,46 @@ The idea behind it is the fact that \Kr has the lowest half life of all the othe
 The majority of change in intensity should therefor originate from the \Kr.
 \\
 
+To determine the change in intensity we want to plot every detected event into a histogram and apply an exponential fit plus a constant background.
+From the fit one should be able to calculate an event activity of all measured events in the detectors.
+But in order to determine the decay activity of \Kr, one has to use again a Monte Carlo simulation to determine a detector efficiency.
+By simply dividing the event activity by the detector efficiency times the simulated volume, the decay activity of \Kr is obtained.
+This procedure will be carried out in the next paragraphs.
+\\
+
+\subsection{Event Activity}
+\label{sec:EventAct}
+
+If all measured events from phase II of the GERDA experiment were actually taken into account and applied in time, one would still have a large background with which one cannot be sure how it actually behaves in time.
+It is therefor necessary to limit the amount of events one looks at for the change in intensity.
+An appropriate limitation is to only use events with energies in the range of 200 to 400keV.
+It is an elegant solution because in this interval the great majority of all other isotopes have only a small relative intensity. 
+Therefore, the change in intensity of isotopes with a much higher maximums energy is filtered out and only \Kr's change should be visible.
+The only other major background source that also has its maximum energy in this range is \nuc{Ar}{39} but its half life is of about 269y which means that its change over time should is irrelevant.
+Theoretically the ideal energy range for \Kr would already start at 50keV due to its maximum energy of about 100keV.
+But this is problematic due to  !!!!! hier noch hin warum sich das Spektrum bei e<187 so seltsam verhält !!!!!.
+\\
+
+If you now plot the measured events over time, a new problem becomes apparent.
+In figure \ref{} one can see that the intensity changes very abruptly over time not following any kind of decrease.
+This can easily be explained by the fact that was already mentioned in \ref{sec:CalcActiv}.
+We saw there that not every detector was active all the time and that in \PII there were time intervals at which nothing at all was measured due to maintenance work.
+Luckily we already found a solution to this problem by using the test pule signal.
+With it we were able to calculate an effective measurement time for every detector.
+\\
+
+In the case however we are not interested in an overall effective measurement time.
+Rather, we are interested in the measurement time of each detector in each of the individual binning intervals of the histogram.
+
+\begin{figure}[t!]
+	\centering
+	\ifmakefigures%
+	\includegraphics[width=100mm]{./Bilder/MC-514-Phasenraum.pdf}
+	\fi%
+	\caption{\label{fig:PhasenraumMC514}
+    Phase-space of the measured rare \Kr events in all of the BEGe detectors of the Monte Carlo simulation.
+	}
+\end{figure}
 
 
 
