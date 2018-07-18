@@ -293,7 +293,7 @@ This value can then be used in a conversation factor to determine the amount of 
 
 The final value needed to calculate the specific activity is the measuring time.
 Because not every detector was measuring over the course of Phase II a mean measuring time for all detectors has to be calculated.
-Not finally with the values of the amplitude, the conversion factor and the mean measuring time a mean specific activity can be determined. 
+Now finally with the values of the amplitude, the conversion factor and the mean measuring time a mean specific activity can be determined. 
 The line count rate analysis is expected to generate a relatively precise estimation of the specific activity.
 This is because only the photons of the \Kr decays can be the cause of the investigated change in spectrum whereas in the second method every isotopes theoretically creates a change in intensity over time distorting.
 \\ 
@@ -301,10 +301,11 @@ This is because only the photons of the \Kr decays can be the cause of the inves
 However, the biggest problem of this method to overcome lies with the proximity of the \Kr to the 511keV peak of the positron electron annihilation. 
 Its peak is expected to partially dominate over the \Kr in the spectrum and does not allow for a direct measurement of the 514keV peak. 
 This is not necessary a great setback because we can just adapt our fit function to a double Gaussian peak function.
-But it is also of interest whether it is possible to completely suppers the annihilation peak without changing the 514keV photon line.  
+But it is also of interest whether it is possible to completely suppers the annihilation peak without changing the 514keV photon line.
 Due to the low energy of the escaping electron (47.65keV) in the \Kr decay into the excited \nuc{Rb}{85m}, this specific decay is very unlikely to create any scintillating light in the liquid argon. 
 On the other hand one can expect the light of the positron electron annihilation to create a great signal in the photomultiplier that are positioned in the liquid argon tank.
 It should therefor be possible to single out the 514keV photon events from the annihilation events.
+If possible this could be a second method to determine the amplitude of the peak with just one Gaussian peak.
 \\
 
 The rest of the chapter will now concentrate on the concrete implementation of the method.
@@ -387,16 +388,16 @@ Compared to the COAX detectors their peaks can easily be distinguished.
     \caption{All events measured by the respective detectors with the LAr filter applied and the manually recovered precoincedence events in the range of 500keV to 525keV.}
 \end{figure}
 
-Now that we have the two spectra of the corresponding detectors, we have two possible ways of how we could determine the number of measured events around the 514keV peak.
+Now that we have the two spectra of the corresponding detectors, we have two possible ways of how we can determine the number of measured events around the 514keV peak.
 The easier way is to just use the spectra as they are and only change the used fit function so that it also takes the second peak into account when fitting.
-Another possible approach is to try to suppress the annihilation peak and then fit the spectrum with only one Gaussian peak.
+Another possible approach tries to suppress the annihilation peak and then fit the spectrum with only one Gaussian peak.
 This can hopefully be done by using the liquid argon veto of GERDA and the precoincidence of the electron scintillation in the photomultipliers. 
 \\ 
 
 In this theses we will try to go both ways separately and later compare their resulting values.
 We will probably end up using the unsuppressed spectra to determine the amount of events measured and only use the other method as a crosscheck.
 As we will see later this is because the used filter also filters out events from the 514keV line peak.
-This results in a lower amount of events measured at this energy and therefore, in the end, gives us a lower activity than there is in actuality. #
+This results in a lower amount of events measured at this energy and therefore, in the end, gives us a lower activity than there is in actuality. 
 But to understand why this filter also filters out these false positives we have to discuss how this filter works first.
 This will be the topic of the following chapter.
 \\
@@ -406,15 +407,15 @@ This will be the topic of the following chapter.
 \label{sec:APS}
 
 As mentioned above, it should be theoretically possible to filter out the majority of the positron electron annihilation events by using the scintillation property of the liquid argon.
-In the case of the rare \Kr decay the emitted electron has a very low mean kinetic energy of E\(_{mean}=47.65\)keV.
-This means that in the majority of these rare decays no light should be seen in the detectors, because the beta electron is unlikely to trigger any of them.
+In the case of the \Kr decay into the excited \nuc{Rb}{85m} the emitted electron has a very low mean kinetic energy of E\(_{mean}=47.65\)keV.
+This means that in the majority of these decays no light should be seen in the detectors, because the beta electron is unlikely to trigger any of them.
 In contrast to that you can expect a very strong light signal every time a positron electron annihilation occurs. 
 One should therefor be able to filter out almost all of the annihilation events while keeping the majority of the \Kr decay by only using events where this flag is not triggered.
 This chapter tries to implement a filter that uses this mechanism and discusses in the end how successful the repression really was.
 \\
 
 Among other things, each event in tier 4 was given a flag called "isLArVetoed".
-This flag is always triggered whenever an event in the Germanium detectors coincides with a scintillation signal of at least 0.5phe in one of the photomultipliers positioned in the liquid argon tank \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}.
+This flag is always triggered whenever an event in the Germanium detectors coincides with a scintillation signal of about 0.5phe in one of the photomultipliers positioned in the liquid argon tank \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}.
 If one plots all events in which this flag has not been set one gets figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
 You can see that the positron electron annihilation peak can not be identified any longer while the 514keV peak seems almost unchanged.
 \\
@@ -438,20 +439,24 @@ You can see that the positron electron annihilation peak can not be identified a
     \caption{All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.}
 \end{figure}
 
+In comparison, when you take only those events in which the liquid argon veto was triggered you get figure \ref{} and \ref{}.
+From those you can see that the majority of filtered events have an energy around the 511keV. 
 
-At this point one could say that we have done enough filtering and use this graph to determine the number of decays in the peak.
+
+At this point one could say that we have done enough filtering and use the liquid argon filtered spectra to determine the number of decays in the peak.
 But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out any real rare \Kr decay and whether it is possible to recover them.
 The number of events filtered out by the liquid argon veto in the energy range of 509 to 519 keV is 1728.
 This number is way too big to look at every individual case.
 \\
 
 Luckily we can use the fact that the excited \nuc{Rb}{85} state has a half life of 1.015 \(\mathrm{\mu}\)s.
-This means that we can identify potential real rare \Kr decay by looking exclusively at the events in which the trigger from the photomultiplie happened earlier then the Germanium detector event.
-In other words, we only use events with a negative time difference between these two events respective to the Germanium detector signal.
-The time difference for each individual liquid argon events is already analyzed and stored in the "triggerLAr" vector of the Tier 3 data set.
+This means that theoretically we should be able to measure a pre-coincedence event of the beta creating scintillation light which can then be measured before even a signal in the germanium detectors could be seen.
+This way we  can hopefully identify the majority of events created by \Kr decays from the rest of the filtered signals.
+To do this, we have to limit the events used for our investigation to those events that have a negative time difference between these two events respective to the Germanium detector signal.
+The time difference for each individual liquid argon events is already analyzed and stored in the vector "triggerLAr"  of the Tier 3 data set.
 This vector has the same number of dimensions as there are photomultipliers and every entry is indexed with the corresponding input channel of this photomultiplier.
 The entries of this vector are again vectors themselves storing the time difference for every signal that triggered the liquid argon veto in the corresponding channel.
-Since the events are listed in ascending order and we are interested in the first trigger event of the photomultiplier, we use only the first entry of this inner vector here for simplicity.
+Since the events are listed in ascending order and we are interested in the first trigger event of the photomultiplier, we use only the first entry of this inner vector here for simplicity reasons.
 From now on we only use events in which at least one photomultiplier measured a negative time difference.
 \\
 
@@ -480,7 +485,10 @@ Theoretically it should now be possible to see a exponential increase from the n
 Because of the small number of events however, it is almost impossible to make any statements about the course of these events.
 \\
 
-Interestingly, the majority of all signals were measured with a negative time difference in the PMTs. 
+
+!!!!! diesen Teil noch Überarbeiten wenn nicht weglassen !!!!!
+
+Interestingly, the majority of all signals with a negative time difference were measured by the PMTs. 
 This could perhaps be due to the better temporal resolution of the PMTs. 
 The signals of all PMTs are recorded with a resolution of 10ns and the SiPM with a resolution of 80ns but over a larger range than the PMTs\cite{nature}. 
 However, since the expected time difference is in the order of \(\mu\)s, this is no reason for the reduced number of measured events. 
@@ -493,16 +501,19 @@ However, this should still be able to determine the trigger position of the sign
 !!!!! Hier dir noch was genaueres ausdenken, wenn überhaupt !!!!!
 \\
 
-Nevertheless we were able to lower the number of potential rare \Kr events from 1728 down to only 55.  
+!!!!! bis hier hin !!!!!
+
+
+Nevertheless we were able to lower the number of potential 514keV photons from \Kr decay events from 1728 down to only 55.  
 These remaining events can now be manually examined with a with software called GerLa written by GERDA employees.
 This tool allows one to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around this event.
 \\
 
-With this program one can now perform a manual filter by looking at the remaining 55 events individually and perform a specific protocol to determine whether they are signals from a rare \Kr decay or not.
-This protocol consists of filtering out every event that has a combined light intensity of over 5 phe and every event that only has a negative time difference in a signal weaker than 0.5 phe.
-Due to their faster response time, the signal of the photomultiplier tubes (PMT) was mainly but not exclusively used.
-The silicon photomultipliers (SiPM) have the downside of a slower reaction time and the majority of events in them that happened before the Germanium signal were background events.
-In figure \ref{fig:Trigger4} is an example for a model signal in the PMT.
+With this program one can now perform a manual filter by looking at the remaining 55 events individually and perform a specific procedure to determine whether they are signals from a \Kr decay or not.
+This procedure consists of filtering out every event that has a combined light intensity of over 5 phe and every event that only has a negative time difference in a signal weaker than 0.5 phe.
+The upper limit of the light intensity comes from the fact that the mean kinetic energy of the electron released from the decay is 47.65keV. 
+With the luminosity of liquid argon of about 50 photons/MeV one can expect about 2.5 photons at these energies. 
+It can then be assumed that the predominant part of all betas released in the investigated decay only emit 5 photons at best.
 \\
 
 \begin{figure}[t!]
@@ -517,67 +528,52 @@ In figure \ref{fig:Trigger4} is an example for a model signal in the PMT.
 	}
 \end{figure}
 
-Using this procedure we were able to lower the amount of possible rare \Kr decay signals down to 24 events.
-After this much filtering we can assume that probably all of these events are real rare \Kr decays.
-Finally, we can restore these events in our liquid argon filtered energy diagrams. (see figure \ref{fig:LArBEGesEV} and \ref{fig:LArCOAXEV}).
-You can see in comparison to figure \ref{fig:LArBEGes} and \ref{fig:LArCOAX} that the majority of the restored events are placed near the 514keV peak.
+At this point we realized that this procedure does not really work as well as we hoped it would.
+From the remaining 55 only a few events really were unambiguous enough that one could clearly claim that they are the photons we expected.
+After this much filtering we can assume that probably all of these events are in fact caused by a \Kr decays.
+Signals like the one shown in figure \ref{fig:Trigger4} are a rare example of an almost model signal that we wanted to see.
+The great majority of other events were either background events in the SiPM that randomly triggered the LAr veto or their measured signal was too strong.  
 \\
 
-Now the question arises whether our approach could actually restore the majority of all lost \Kr events.
-A quantitative statement can only be obtained after a fit function analysis of the graphs to determine amount of actual rare \Kr events measured.
-This can be done by integrating over the fit function as it will be done in section \ref{sec:Fitting}.
+With this it was now determined that the majority of events with a negative time difference are in fact not caused by a \Kr decay.
+This means that the remaining \Kr decay events must have a positive time difference.
+But it is practically impossible to recover them from there due to the great amount of individual events that have to be looked at.
+Our recovery attempt has therefor failed.
 \\
 
-Nevertheless we are still able to make some qualitative estimations about the recovery rate of this approach. 
-When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must be much smaller.
+!!!!! DAS HIER IST AUCH NOCH EINE PROBLEMSTELLE !!!!!
+
+Nevertheless we are still able to make some qualitative estimations about why approach did not work. 
+When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must be smaller.
 An important factor limiting this recovery rate originates from an estimation applied in this approach.
 It was approximated that the electrons created scintillation light instantaneously after being released.
 In reality, the moment an electron emits scintillation light is determined by many complex mechanisms. 
-However, its behaviour can be approximated by a relaxation approach. 
+However, its behavior can be approximated by a relaxation approach. 
 This gives you a new characteristic time with which you can describe how many electrons have already created scintillation light after what time. 
 But this not spontaneous behavior means, that the measured signal depends on both the relaxation time of the \nuc{Rb}{85} and the scintillation light of the electron.
-It is therefor quite possible, that a number of rare \Kr decay events can have a positive effective time difference.
+It is therefor quite possible, that a number of \Kr decay events can have a positive effective time difference.
 Those are then lost in our analysis due to us filtering out every event that has a positive time difference.
 This results in a lower recovery rate.
 \\
 
-After this qualitative analysis it is justified to question whether the majority of the rare \Kr decays can even pass through the liquid argon filter and the additional recovery.
+Now that we have seen that we were not able to recover any of the falsely filtered \Kr caused events it is justified to also question whether the majority of the rare \Kr decays can even pass through the liquid argon filter itself.
 But we only get a satisfactory answer with a quantitative analysis which will be performed in the following chapter.
 \\
-
-\begin{figure}[t!]
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-	\includegraphics[width=80mm]{./Bilder/500525LArVetoBEGesEventList.pdf}
-    \caption{BEGes}
-  \label{fig:LArBEGesEV}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-	\includegraphics[width=80mm]{./Bilder/500525LArVetoCOAXEventList.pdf}
-  \caption{COAX}
-  \label{fig:LArCOAXEV}
-\end{subfigure}
-    \\
-	\vspace{0.5cm}
-    \caption{All events measured by the respective detectors with the LAr filter applied and the manually recovered precoincedence events in the range of 500keV to 525keV.}
-\end{figure}
 
 \subsection{Fitting}
 \label{sec:Fitting}
 
-Our strategy to calculate the activity of \Kr through the 514keV peak involves determining the absolute amount of measured rare \Kr decays over all of \PII.
+Our strategy to calculate the activity of \Kr through the 514keV peak involves determining the absolute amount of measured \Kr decays events over all of \PII.
 Due to the still enormous amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{67} decays, it is necessary to fit the 514keV peak with a suitable fit function.
-The amount of measured rare \Kr decays can then be calculated by integrating over the found fit function.
+The amount of measured \Kr decay events can then be calculated by integrating over the found fit function and dividing by the probability of the specific decay into \nuc{Rb}{85m}.
 \\
 
-The less filtered spectrum \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show two peaks.
-This requires the fit function to include two Gaussian functions from which only the parameters of the rare \Kr decay will then be analyzed.
+The not liquid argon filtered spectrum \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show two peaks.
+This requires the fit function to include two Gaussian functions from which only the parameters of the second peak will then be analyzed.
 Additionally to the two Gaussian peaks a constant and an exponential background function will be added.
-Theoretically you can expect the distribution of the germanium events behaves like its phase-space function and should therefor not be constant.
+Theoretically you can expect the distribution of the germanium events to behave like its phase-space function and therefor change with energy.
 In this case however is the inspected energy interval small compared to the complete phase-space diagram of \nuc{Ge}{67}.
-This allows the approximation of the background to change like an exponential function due to the also very little changing background in this interval.
+This allows the approximation of the background to change like an exponential .
 The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
 \\
 
@@ -646,22 +642,17 @@ I  &	(-40.573 \(\pm\) 1.000)	&	(-40.573 \(\pm\)	1.414)\\
 
 The only values of these fit parameters that is of real interest for the determination of the activity is variable D.
 Its value is the amplitude of the second Gaussian peak.
-Because the Gaussian peak was chosen in the normalized form this value also represents the amount of rare \Kr decays measured.
-This means that from the hardly filtered events over the entire course of \PII an amount of $\mathrm{N}_{BEGe} = (27.24\pm3.88)$ rare \Kr decays were measured in the BEGe detectors and $\mathrm{N}_{COAX} = ((20.46\pm3.28)$ in the COAX detectors. 
+Because the Gaussian peak was chosen in the normalized form this value also represents the amount of \Kr decays measured per binning of the histogram.
+But we only want the amount of counts in the peak independently of the binning of the histogram.
+We therefor have to multiply these values with $}\frac{1}{0.2}\unit{keV}$.
+Finally, we can conclude that in the BEGes an amount of !!!!! events was measured and in the COAX detectors a number !!!!! of events.
 \\
 
-Now to the two liquid argon filtered cases.
-Before we apply the fits we have to discus what we are expecting.
-In the ideal case, that the majority of all rare \nuc{85}{85} decays through the liquid argon filter, we expect the amplitude of the Gaussian peaks in both the LArVeto filtered case and the hardly filtered case to be similar.
-These results would then be used in the further course of the analysis, since their values gather more directly than the results of the hardly filtered case.
-In contrast, in the case that a not insignificant amount of \Kr decays was filtered out that this amplitude is expected to be much smaller.
-If this were to happen, we would have to fall back on the results of the hardly filtered values.
-\\
-
-Now to actually applying the fits.
+Now to the liquid argon filtered spectrum.
 As mentioned above we can assumed that the positron electron annihilation peak is fully suppressed.
+Additionally in the ideal case, that the majority of all \Kr decay events got through the liquid argon filter, we expect the amplitude of the Gaussian peak to be similar to the amplitude in the not liquid argon filtered case.
 Therefor only one Gaussian peak has to be fitted together with the background function.
-The fit therefor results in the function displayed in equation \ref{equ:FitFilters}.
+The fit results in the function displayed in equation \ref{equ:FitFilters}.
 \\ 
 
 \begin{equation}
@@ -670,17 +661,13 @@ The fit therefor results in the function displayed in equation \ref{equ:FitFilte
 \end{equation}
 \\
 
-After applying the fit to the four spectra seen in figure \ref to \ref, you get the fit parameters displayed in table \ref.
-As above, the amplitude A of the Gaussian peak correspond to the number of events measured by this peak.
-In the case of only applying the liquid argon veto it can be seen that the number of events in the BEGe and in the COAX detectors has dropped considerably compared to the hardly filtered value.
-This shows that a recovery of falsely filtered rare \Kr decays is necessary.
-But even in these cases, the amplitude of the peak in the BEGe spectrum is still much smaller.
-We  therefor have no alternative but to reject the peak suppression approach and to fall back to the results of the hardly filtered case.
-
-% !!!!! COAX !!!!!
-
-As mentioned above, in this case only the measurement data from the BEGe detectors can be used to obtain an exact value for the activity.
-The results from the COAX detector however will still be processed in the same manner to obtain a reinsurance of the value being in the same order of magnitude.
+After applying the fit to the spectra seen in figure \ref to \ref, you get the fit parameters displayed in table \ref.
+As above, the amplitude A of the Gaussian peak correspond to the number of events measured in the area of the peak per binning.
+This results in an amount of !!!! for the BEGe and !!!!! for the COAX spectrum.
+As mentioned above these values are only planned to be a crosscheck for the not argon filtered values. 
+Compared to those values, it can be seen that the number of events in the BEGe and in the COAX detectors has dropped considerably.
+This means that some of the \Kr decay events must have been filtered out and a recovery of these falsely filtered \Kr decays is necessary.
+But due to that not being possible we can not use those results in our analysis nor for a real crosscheck..
 \\
 
 
@@ -744,18 +731,19 @@ The results from the COAX detector however will still be processed in the same m
 \end{figure}
 
 
-Now that we have a number of rare \Kr events measured in the BEGe detectors.
-But what we need for the determination of the activity is not the amount of measured events but actually the amount of actual rare \Kr in the whole liquid argon tank.
-Luckily we can calculate the amount of actual events in the liquid argon tank by determining the detector efficiency of the BEGes.
-This can be done by running a Monte Carlo simulation simulating a great amount of rare \Kr events in a cylindrical volume with a detector therein with the same design as used in GERDA.
-From the amount of measured events in these simulated detectors and the absolute amount of simulated events one can then calculate the efficiency with which the BEGe detectors measure any \Kr events. 
+Now that we have a number of the special \Kr events measured in the respective detectors.
+But what we need for the determination of the activity is not the amount of measured events but actually the amount of \Kr decays in the whole liquid argon tank.
+Luckily we can calculate the amount of actual events in the liquid argon tank by determining the detector efficiency of the two detector types.
+This can be done by running a Monte Carlo simulation simulating a great amount of 514keV photon emissions in a cylindrical volume with a detector therein with the same design as used in GERDA.
+From the amount of measured events in these simulated detectors and the absolute amount of simulated events one can then calculate the efficiency with which the detectors measure any \Kr events. 
 How exactly this was implemented is the topic of the next chapter.
 \\
 
 \subsection{Monte Carlo Simulation}
 \label{sec:MonteCarlo514}
 
-As described above, we want to determine the detector efficiency with the help of a Monte Carlo simulation.
+As described above, we want to determine a conversion factor between the measured 514keV events and the decay density of \Kr necessary to create this signal.
+Such a conversion factor can be determined with the help of a Monte Carlo simulation.
 The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA \cite{boswell_melissa_chan_yuen-dat_detwiler_a._finnerty_padraic_henning_gehman_et}.
 Both experiments aim to measure the neutrinoless double beta decay using enriched Germanium detectors.
 Because it is expected that the halflife of this decay is in the order of at least \(10^{25}\) years, a lot of effort is put into finding out how big the contribution of different isotopes to the background is.
@@ -764,7 +752,8 @@ Because it is expected that the halflife of this decay is in the order of at lea
 
 The simulation used here consists of a cylindrical of 2.5m of height and 3m in diameter, in which the detector structure of the GERDA experiment is placed in the middle.
 The resulting volume of the liquid argon is $V_{sim} = 17.65 \mathrm{m}^3$ .
-Compared with the volume of 64 m\(^3\) of liquid argon used in the GERDA experiment this volume is much smaller but as we will see later, this volume is by far enough to calculate the detector efficiency of the BEGe detectors.
+Compared with the volume of 64 m\(^3\) of liquid argon used in the GERDA experiment this volume is much smaller.
+But as we will see later, this volume is by far big enough for our purpose.
 A total of N = 50.000.000 rare \Kr decays are now simulated in the volume of this cylinder that is not occupied by the detectors. 
 As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over the entire volume of the cylinder is relatively constant.
 \\
@@ -790,37 +779,46 @@ As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over th
 \end{figure}
 \\
 
-From these 50 million simulated decays only about 90 thousand were actually detected by any of the detectors and only 53.750 of them crated a signal in one of the BEGe detectors.
-These 53.750 events are drawn as red points into figure \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa}.
-From their position one can see that the overwhelming majority of the detected events were positioned close to the detectors themselves.
+From these 50 million simulated decays only about 90 thousand were actually detected by any of the detectors, only 30.465 of them crated a signal in one of the BEGe and 24902 in the COAX under the condition that one already uses an anti-coincedence filter.
+The spatial distribution of all measured events in the respective detectors can be seen as red dots in Figure \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa} for the BEGe detectors and Figure blah and blah for the COAX detectors, depending on the detector type.
+From their position one can see that in both detector types the overwhelming majority of the detected events were positioned close to the detectors themselves.
 Already at a distance of about 60cm from the detectors the majority of all decays were no longer measured.
 This means that the amount of measured events should not change when one enlarges the volume of the tank, provided that the density of decays stays constant.
 But that would also mean that the detector efficiency $\epsilon$ would have a reciprocal proportionality to the simulated volume.
-Therefore, we expect the ratio $\frac{1}{\epsilon V_{sim}}$ to be invariant with change of volume, provided that the volume is large enough.
-This is the reason why we were able to use a smaller volume of liquid argon in the Monte Carlo simulation than was actually used in the experiment.
+Therefore, we expect the ratio $\frac{1}{\epsilon V_{sim}}$ to be invariant with change of volume, provided that the volume is large enough.   
+This is the reason why we are able to use a smaller volume of liquid argon in the Monte Carlo simulation than was actually used in the experiment.
+At the same time, this ratio is also a conversion factor between the amount of measured 514keV photons and the density of \Kr necessary to create the measured peak, which is exactly what we want to determine with this simulation.
 \\
 
-The spectrum form all the events detected in one of the BEGes is shown in figure \ref{fig:PhasenraumMC514}.
+The spectrum of all the events detected in BEGe detectors is shown in figure \ref{fig:PhasenraumMC514}.
 From it one can be seen that only a small amount of all measured events are direct signals from a rare \Kr decay. 
 The great majority of photons measured were scattered before they arrived in the detector and therefor have a lower energy.
 Among other things, the Compton edge of the photons at about 343 keV can be seen.
 But to calculate the detector efficiency, only the measured events at the 514keV peak have to be used.
-This peak contains a total of \(\Delta\mathrm{N} = 4755\pm69\) events.
+In the case of the BEGe detectors this peak contains a total of \(\Delta\mathrm{N} = 4511\pm67\) events while the COAX peak contains  \(\Delta\mathrm{N} = 3706\pm60\) .
 With a total of 50 million initial decays, this results in a efficiency of 
 \begin{equation*}
-\epsilon_{\gamma} = \frac{\Delta\mathrm{N}}{\mathrm{N}} = (9.51\pm0.14) \times 10^{-5}  \frac{\mathrm{event}}{\mathrm{decay(rare)}}
+\epsilon_{\gamma\mathrm{,BEGe}} = \frac{\Delta\mathrm{N_{BEGe}}}{\mathrm{N}} = (9.02\pm0.13) \times 10^{-5}  \frac{\mathrm{event}}{\mathrm{decay(rare)}}
+\end{equation*}
+\begin{equation*}
+\epsilon_{\gamma\mathrm{,COAX}} = \frac{\Delta\mathrm{N_{COAX}}}{\mathrm{N}} = (7.412\pm0.12) \times 10^{-5}  \frac{\mathrm{event}}{\mathrm{decay(rare)}}
 \end{equation*}
 for the volume of the simulated cylinder.
 \\
 
-This means that if a \Kr isotope makes a rare decay at any location in the liquid argon container, the photon released during relaxation of the resulting excited \nuc{Rb}{85} has a probability \(\epsilon_\gamma\) of being measured by one of the BEGe detectors.
-On the other hand, it can also be said, that for every measured 514keV photon in one of the BEGe detectors an amount of about $\frac{1}{\epsilon_\gamma} = 10515 \frac{\mathrm{decay(rare)}}{\mathrm{event}}$  rare \Kr decays must have happened.
-In other words, the value $\frac{1}{\epsilon_\gamma}$ is a conversation factor from the measured entries to the actual amount of rare decays.
-Additionally you can use the simulated volume to calculate a conversion factor density 
+This means that if a 514keV photon is emitted at any location in the liquid argon container, it has a probability \(\epsilon_{\gamma,\mathrm{,BEGe}}\) of being measured by one of the BEGe detectors.
+On the other hand, it can also be said, that for every measured 514keV photon in one of the BEGe detectors an amount of about $\frac{1}{\epsilon_\gamma} = 10515 \frac{\mathrm{decay(rare)}}{\mathrm{event}}$ \nuc{Rb}[85m] relaxations must occur.
+In other words, the value $\frac{1}{\epsilon_\gamma}$ is a factor from the measured entries to the actual amount of \nuc{Rb}{85m} relaxations.
+If you divide this factor by the simulated volume you get the conversion factor you want to determine with this simulation.
+
 \begin{equation*}
-\frac{1}{\epsilon_\gamma V_{sim}} = (5.955\pm0.086) \times 10^{-1} \frac{\mathrm{decay(rare)}}{\mathrm{event} \times l}
+\frac{1}{\epsilon_{\gamma\mathrm{,BEGe}} V_{sim}} = (5.955\pm0.086) \times 10^{-1} \frac{\mathrm{decay(rare)}}{\mathrm{event} \times l}
 \end{equation*}
-As mentioned above this value is invariant with change of volume which is why we can use it for our further analysis. 
+\begin{equation*}
+\frac{1}{\epsilon_{\gamma\mathrm{,COAX}} V_{sim}} = (5.955\pm0.086) \times 10^{-1} \frac{\mathrm{decay(rare)}}{\mathrm{event} \times l}
+\end{equation*}
+
+As mentioned above these values are invariant with change of volume which is why we can also apply it to our real liquid argon tank volume. 
 \\
 
 \begin{figure}[t!]
@@ -834,40 +832,29 @@ As mentioned above this value is invariant with change of volume which is why we
 	\label{fig:PhasenraumMC514}
 \end{figure}
 
-Now that the detector efficiency of the BEGe detectors is determined we can calculate the density of all rare \Kr decays.
-For an amount of 27.239\(\pm\)3.870 events to be measured, it can be concluded that a decay density of
-\begin{equation*}
-\mathrm{N}_{BEGe}\times\frac{1}{\epsilon_\gamma V_{sim}} = (16.22\pm2.54) \frac{\mathrm{decays(rare)}}{\mathrm{l}} 
-\end{equation*}
-was necessary.
+Now that the conversion factors of the two types of detectors are determined we can calculate the density of all \Kr decays by applying formula \ref{equ:density}
+
+\begin{equation}
+\rho_{dec} = \frac{\mathrm{N}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}
+\label{equ:density}
+\end{equation}
+
+where p = 0.434$\%$ is the probability of a \Kr to decay into the 514keV energetically raised \nuc{Rb}{85m}.
+For an amount of 27.24\(\pm\)3.87 events to be measured in the BEGe detectors, it can be concluded that a density for the \Kr decay of, whereas for the COAX detectors we get a value of . 
 \\
 
-From here we can also easily determine the decay density for all \Kr decays by simply dividing by the probability of a rare decay occurring.
-As mentioned in section \ref{sec:Kry85} the probability of the rare decay is $p = 0.434\%$.
-We can therefor calculate a decay density of 
-\begin{equation*}
-\frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}} =  (3737.9\pm585.3)\frac{\mathrm{decays(all)}}{\mathrm{l}} 
-\end{equation*}
-\\
-
-
-Now some words about the simulated events that got detected in the COAX detectors.
-In comparison only a number of 3714 direct rare \Kr events was measured in them.
-The ratio between the number of measured events in the COAX detectors and the BEGes can now be determined to be \(\mathrm{N}_{MC,COAX}/\mathrm{N}_{MC,BEGe} = 0,781\).
-If you compare this value with the ratio calculated from the events of the experiment \(\mathrm{N}_{COAX}/\mathrm{N}_{BEGe} = 0,751\), you can see that their values are very close to one another.
-The main reason for the small deviations may be that in the case of the values measured in the experiment a smaller amount of decays was used to determine this ratio. 
-But what these values show in any case is that the Monte Carlo simulation simulated the actual Germanium detectors reasonably well.
+!!!!! hier könnte man vielleicht noch einen Absatz zur Güte der MC simulation mit Hilfe der relativen Zählrate beim 514keV peak in der beiden Detektoren hinschreiben !!!!!
 \\
 
 \subsection{Calculating the Activity}
 \label{sec:CalcActiv}
 
-All we need now to calculate the mean activity of \nuc{85}{85} in \PII is the measuring time of all detectors.
+All we need now to calculate the mean activity of \Kr in \PII is the measuring time of all detectors.
 But this is not as easy as it seems.
-The two of the three problems result from the fact that not all detectors were used over the curse of \PII and that there were also intervals in \PII in which no measurement was made since for example maintenance was carried out.
-But this can easily be solved by looking at the effective measuring time of each detector individually.
-These can be determined by looking at how many test puler signals have been recorded by the respective detectors. 
-Since the test pulse signals have been set to a frequency of 0.05Hz over the entire \PII time, an effective measurement time can be achieved by determining the number of detected test pulse signals.
+Firstly we have the problem that not all detectors were measuring over the curse of \PII and that there were time intervals in which no measurement was recorded at all.
+This can easily be solved by looking at the effective measuring time of each detector individually.
+The effective measuring time of a detector can easily be determined by looking at how many test pule signals have been recorded by it. 
+Since the test pulse signals have been set to a frequency of 0.05Hz over the entire \PII, an effective measurement time can be achieved by determining the number of detected test pulse signals and then multiply it by 20 seconds.
 The individual measuring times are therefor given by
 \begin{equation*}
     t_\mathrm{i} = \mathrm{N}_{TP}(\mathrm{i}) \times 20\mathrm{s}
@@ -875,9 +862,20 @@ The individual measuring times are therefor given by
 where i is the index of the respective input channel of each BEGe detector.
 \\
 
-The third problem arises from the fact that we calculated the decay density with the assumption that we could merge all BEGe detectors into a single detector.
+The second problem arises from the fact that we calculated the decay density with the assumption that we could merge all detectors of the same kind into a single detector.
 But now that we want to look at the measurement time of each individual detector, this assumption does not hold true.
-Luckily one can work around this problem by calculating an average measurement time for all detectors, which you can then calculate as if the BEGe detectors were such a single detector.
+There are now two different workarounds we could take.
+\\
+
+In the first method we would rerun our Monte Carlo simulation, this time considering the amount of time each detector was actually measuring.
+This would be very inefficient.
+\\
+
+The second method works around the merging problem by calculating an average measurement time for all detectors.
+With this you could then calculate with the detector block as if all detectors of one kind were such a single detector.
+This is very elegant solution because no new computation of a simulation is necessary.
+\\
+
 For this average measuring time one has to consider the fact that we also have to apply a weigh on every individual measuring time.
 This arises from the fact that every BEGe detector has an individual mass.
 As we know, the detector efficiency of a single detector is directly dependent on its mass.
@@ -885,18 +883,26 @@ If we want to combine all single detectors into one large detector, we have to c
 It is therefore necessary to weight the measuring time of each detector with its individual mass.
 \\
 
-In summary, we can now finally determine the weighted mean value of the measurement time by using formula
+Coincidentally, the multiplication of the individual measuring time of a detector with its mass is also the exposure this  single detector.
+This means that to calculate the mean measuring time, we just have to divide the combined exposure of all detectors of the same kind by their combined mass.
+\\
+
+No matter what approach you take, in the end you get a mean measuring time of !!!!! for the BEGes and !!!!! for the COAX detectors.
 \begin{equation*}
     \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = (1.592\pm0,001)
     \mathrm{y}
 \end{equation*}
 \\
 
-With this mean measuring time we can now finally calculate the mean activity density $\bar{a}$ of \Kr over the curse of all of \PII by applying
+With these mean measuring times we can now finally calculate the mean specific activity $\bar{a}$ of \Kr over the curse of all of \PII by applying
 \begin{equation*}
-    \bar{a} = \frac{\mathrm{N}_{BEGe}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}} = (7.437\pm1.169)\times10^{-2}
+    \bar{a} = \frac{\mathrm{N}}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}}
      \frac{\mathmr{mBq}}{\mathrm{l}}
 \end{equation*}
+
+
+
+Finally, we can conclude that with the line count rate analysis we were able to determine an activity of 
 
 !!!!! sich noch überlegen, was man genau mit den COAX detektoren macht !!!!!
 
