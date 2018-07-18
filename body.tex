@@ -210,11 +210,9 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 % also a bit about standard double beta decay
 % differences between the standard and neutrinoless beta decay
  
-\section{LAr as coolant} 
-\label{sec:LArcoolant}
 
 
-\section{\Kr isotop}
+\capter{\Kr isotop}
 \label{sec:Kry85}
 
 % where does it come from?
@@ -234,6 +232,11 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 
 % not sure whether this is enough for its own section, maybe just connect it with general info
 
+
+\section{Liquid Argon as Coolant, Shielding and Scintillator} 
+\label{sec:LArcoolant}
+
+
 \section{Experimental Setup}
 \label{sec:ExSetup}
 
@@ -243,150 +246,107 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 \section{Background Reduction}
 \label{sec:BGReduction}
 
+
 % Mui, Mountain, Pulse shape disc.
 % especially LAr-Veto 
 
-\section{Results}
+\section{Recent Results}
 \label{sec:ResultsofGERDA}
 
 % what has happened so far
 
-\chapter{Analysis of the \Kr concentration}
-\label{sec:AotKr}
-
-As stated above, the main goal of this theses is to approximate the concentration of the isotope \Kr in the liquid argon coolant and scintillate of the GERDA experiment. 
-This value is of special interest, as in other experiments this isotope in the liquid argon has produced a not negligible background. 
-For example, a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\) was measured in the Darkside experiment \cite{PhysRevD.93.081101} and an activity of \((0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}\) in the WARP experiment \cite{Benetti:2006az}.
-This corresponds to a concentration of about \((2.32\pm0.14)\times10^{-18}\frac{\unit{mol}}{\unit{l}}\) for the Darkside and  \((1.30\pm1.05)\times10^{-16}\frac{\unit{mol}}{\unit{l}}\) for the WARP experiment.
-The concentration of \Kr in the GERDA experiment therefor of interest as it provides an estimation of its influence on the measured background.\\
-
-In the curse of this theses two different approaches are used to calculate the concentration of \Kr. 
-The first and more precise method is a linecount analysis of the rare \Kr decay into an excited state of \nuc{Rb}{85m}.
-The second method uses the reduction in intensity of all events over time. 
-This method is less likely to create precise results due to it relying on a great approximation.\\
-
-Section \ref{sec:Appro} concentrates on explaining the ideas and problems of theses two methods and compares the expected precision of them. The following two chapters describe the two analytical approaches in greater detail and provide the results found when applying them on the measured data. The last section focuses on the comparison of the two results and discusses possible sources of errors. 
-
-\section{Different Approaches to Calculate the Activity}
-\label{sec:Appro}
-
-The aim of this section is to give the reader an overview of the two methods used in this theses to determine the concentration of \Kr. 
-The later sections go into further details about the concrete procedures.
-\\
-
-The first method uses \Kr's property to decay into an excited state of \nuc{Rb}{85m} with a probability of 0.43\%. 
-This state has a raised energy level of 514keV compared to its ground state and has a half-life of 1.015\(\unit{\mu s}\). 
-Theoretically it should be possible to measure a peak in the spectrum around the 514keV mark.
-One can than use a fit to determine the number of decays measured by the detectors. 
-It is also necessary to calculate the detector efficiency of the detector to detect any rare \Kr decays.
-This value can be used as a conversation factor to determine the amount of decays necessary to create the measured peak.
-The detector efficiency can't be calculated by just using the measured data.
-It has to be approximated by using a Monte-Carlo simulation creating a huge amount of 514keV decay and counting the measured events in the detector. 
-The detector efficiency can then be determined by dividing the measured events by the total number of simulated decays.
-With the number of events from the peak and the detector efficiency, a decay density in liquid argon can then be determined.
-Finally a mean measuring time of the detector has to be evaluated with which a mean specific activity can be calculated.
-\\
-
-The biggest problem of this method to overcome lies with the proximity of the \Kr to the 511keV peak of the positron electron annihilation. 
-Its peak is expected to partially dominate over the \Kr in the spectrum and does not allow for a direct measurement of the 514keV peak. 
-But due to the low energy of the escaping electron (47.65keV) in the rare decay is very unlikely to create any scintillating light in the liquid argon. 
-Therefor it should be possible to single out the 514keV events from the annihilation events that generally create a strong light signal by using the liquid argon veto.
-\\
-
-The second method uses the reduction of the event rate over the range of 200 to 400 keV. 
-To measure the change of intensity over time every measured event will be drawn over time and an exponential fit applied.
-The amplitude of the resulting exponential function represents an event activity.
-In this method it is also necessary to calculate with a detector efficiency.
-We cannot use the same efficiency from the first method because there only rare \Kr events were simulated whereas in this method all \Kr decays are investigated.
-That is why another Monte Carlo simulation has to be used now with regular \Kr decays.
-Finally the specific activity can be calculated from these two values.
-It is important to note that this approach actually determines the specific activity of \Kr at the start of \PII while the first method calculates the mean specific activity over all of \PII.
-To compare those two results, the mean specific activity of the second method has to be determined.
-\\
-
-The only reason why we can use the second method is that any other radioactive isotope present in liquid argon has a half-life much higher than that of \Kr \(T = 10.739\\unit{y}\).
-The dominant background sources are in descending order \nuc{Ar}{42} with a half-life of 32.9 y, \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
-Therefor it can be expected that no other isotope has a notable change in time over the corse of \PII.
-\\
-
-Due to routine checks and improvements to the setup, however, the measuring process was interrupted for several time intervals. 
-This means that one has to find a way to weigh the measured rates with a signal that corresponds to the times the detector was actually active. 
-Luckily the test pulse signal can be used as such a reference. 
-This test pulse is created by injecting charge pulses into the front-end electronics with a rate of 0.05Hz.
-In particular, a test pulser signal can only then be measured if actual measurements are recorded.
-With this reference to the actual measuring time the previously created plot can now be corrected. 
-\\
-
-Because the second method is based on a very broad approximation it is expected to only give a rough estimation of the actual specific activity. 
-In contrast, the first method is expected to wield a much better accuracy.
-This is because in the linecount analysis only actual \Kr decays generate the change in the spectrum while in the second method many other isotopes can produce additional changes.
-We therefor chosen the first method as our actual activity determination, while the second method serves only as an additional review of our results.
-\\
-
-
 % short outline of approaches
  
-\section{Activity from the 514keV Peak}
+\chapter{Line Count Rate Analysis}
 \label{sec:SAfrom514}
 
-As described in section \ref{sec:AotKr} this part of the theses concentrates on the first approach of finding the activity of \Kr by using relaxation of \nuc{Rb}{85} in a rare decay. 
-The photon emitted carries an energy of almost exactly 514keV. 
-It should therefor be possible to measure it in one of the detectors. 
-When one plots all events measured by GERDA \PII in a histogram from 500 to 525keV (as seen in figure \ref{fig:ungefiltertes500525}), two larger peaks are visible. 
-The first peak at about 511keV is easily identifiable as the expected positron electron annihilation peak where as the second peak at about 514keV corresponds to the rare \Kr decay into the excited \nuc{Rb}{85} state. 
-This already means that, like it was expected, there must be a non neglectable portion of \Kr in the liquid argon.
+
+As stated in the introduction, the main goal of this theses is to approximate the concentration of the isotope \Kr in the liquid argon coolant, shielding and scintillate of the GERDA experiment. 
+This value is of special interest, as in other experiments this isotope in the liquid argon has produced a not negligible background. 
+For example, a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\) was measured in the Darkside experiment \cite{PhysRevD.93.081101} and \((0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}\) in the WARP experiment \cite{Benetti:2006az}.
+This corresponds to a concentration of about \((2.32\pm0.14)\times10^{-18}\frac{\unit{mol}}{\unit{l}}\) for the Darkside and  \((1.30\pm1.05)\times10^{-16}\frac{\unit{mol}}{\unit{l}}\) for the WARP experiment.
+The concentration of \Kr in the GERDA experiment therefor of interest as it provides an estimation of its influence on the measured background.
 \\
 
-\begin{figure}[t!]
-\begin{subfigure}{.5\textwidth}
-	\centering
-	\includegraphics[width=80mm]{./Bilder/GraphNoFiltersAtAllAll.pdf}
-	\caption{
-		No filters
-	}
-	\label{fig:ungefiltertes500525}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-	\centering
-	\includegraphics[width=80mm]{./Bilder/500525NoFilterAllDetectors.pdf}
-	\caption{
-	    Hardly filtered: multiplicity and Muon veto
-	}
-	\label{fig:leichtGefiltertes500525}
-\end{subfigure}
-\caption{
-		Measured events from all detectors in the range from 500 to 525 keV. (a) shows all measured events while (b) shows only those events that got through the first few filters. Those filters consists of the Muon veto and the multiplicity veto.}
-\end{figure}
+In the curse of this theses two different approaches are used to calculate the concentration of \Kr. 
+The first and more precise method is the line count rate analysis of the \Kr decay into an excited state of \nuc{Rb}{85m}. 
+It is also the topic of this chapter.
+The second method that is discussed in the following chapter uses the reduction in intensity of all events over time. 
+This method is less likely to create precise results due to it relying on a great approximation.
+It is estimated that only \Kr's activity has a notable change with time whereas the activity of all other radioactive isotopes stay relatively constant. 
+It is therefor intended to only be a crosscheck for the result of the first method.\\
+\\
 
+Now to how exactly the line count rate analysis is able to determine a specific activity.
+As discussed in section \ref{sec:Kry85} has \Kr the property, that it has a small probability of 0.43\% to decay into an excited state of \nuc{Rb}{85m}. 
+This state has a raised energy level of 514keV compared to its ground state and a half-life of 1.015\(\unit{\mu s}\). 
+Theoretically it should be possible to measure a peak in the spectrum around the 514keV of by the photons emitted from the relaxation of \nuc{Rb}{85m}.
+In the spectrum around this peak one can then apply an Gaussian peak fit to determine the number of events measured by the detectors in this area. 
+\\
+
+It is also necessary to calculate the efficiency of the detector to measure any photons with an energy of 514keV.
+But this detector efficiency can't be calculated by just using the measured data.
+It has to be determined by using a Monte Carlo simulation creating a huge amount of 514 keV photons in a constant volume and counting the measured events in the detector. 
+The detector efficiency can then be calculated by dividing the simulated measured events by the total number of simulated decays.
+This value can then be used in a conversation factor to determine the amount of decays actually necessary to create the measured peak.
+\\
+
+The final value needed to calculate the specific activity is the measuring time.
+Because not every detector was measuring over the course of Phase II a mean measuring time for all detectors has to be calculated.
+Not finally with the values of the amplitude, the conversion factor and the mean measuring time a mean specific activity can be determined. 
+The line count rate analysis is expected to generate a relatively precise estimation of the specific activity.
+This is because only the photons of the \Kr decays can be the cause of the investigated change in spectrum whereas in the second method every isotopes theoretically creates a change in intensity over time distorting.
+\\ 
+
+However, the biggest problem of this method to overcome lies with the proximity of the \Kr to the 511keV peak of the positron electron annihilation. 
+Its peak is expected to partially dominate over the \Kr in the spectrum and does not allow for a direct measurement of the 514keV peak. 
+This is not necessary a great setback because we can just adapt our fit function to a double Gaussian peak function.
+But it is also of interest whether it is possible to completely suppers the annihilation peak without changing the 514keV photon line.  
+Due to the low energy of the escaping electron (47.65keV) in the \Kr decay into the excited \nuc{Rb}{85m}, this specific decay is very unlikely to create any scintillating light in the liquid argon. 
+On the other hand one can expect the light of the positron electron annihilation to create a great signal in the photomultiplier that are positioned in the liquid argon tank.
+It should therefor be possible to single out the 514keV photon events from the annihilation events.
+\\
+
+The rest of the chapter will now concentrate on the concrete implementation of the method.
+As it was stated above, to determine the amount of measured 514keV photons a fit has to be applied to the spectrum around the peak. 
+But before the measured spectrum can be used for our analysis we have to apply some filters.
+These filters should filter out any event of which we can say with a high probability they were not caused by a \Kr decay.
+Two very appropriate filters are the Muon Veto and the detector anti-coincidence veto.
+How exactly these two filters work will be discussed now.
+\\
 
 As it was elaborated in section \ref{sec:ExSetup} all GERDA data is stored in a multi-tier data structure. 
 All of the data used in this theses are from either tier 3 or from tier 4.
 In these tiers a lot of analysis has already been carried out on the individual events measured. 
-Among other things, each event in tier 3 and 4 is given a flag whether or not there was a coincidence of the event with a signal in one of the photomultiplier in the water tank around the liquid argon.
-This flag is called the Muon veto and it always triggers whenever there is a strong Cherenkov signal measured.
-Due to the high energy needed to create any Cherenkov signal no isotope from inside the germanium source and liquid argon and certainly no \Kr should trigger this Muon Veto.
-This can be used to filter out high-energy particles from outside and the background they create.
+Among other things, each event in tier 3 and 4 is given a flag whether or not there was a coincidence of the event with a signal in one of the photomultiplier in the water tank.
+This flag is called the Muon Veto and it always triggers whenever there is a strong light signal measured.
+Due to the high kinetic energy needed to create any Cherenkov light no isotope from inside the germanium source and liquid argon should trigger this Muon Veto.
+Especially no \Kr decay. 
+This veto can therefor be used to filter out high-energy particles from outside and the background they create.
 \\
 
-For a photon of a rare \Kr decay to create the distinct 514keV peak it is necessary that it has to deposit all of its energy in only one of the detectors. 
-This means that any energy measured in one Germanium detectors that has a coincidence with a non neglectable signal measured in another Germanium detector is most likely not a real rare \Kr decay.
+For a photon from the relaxation of \nuc{Rb}{85m}to create the distinct 514keV peak it is necessary to deposit all of its energy in only one of the detectors. 
+This means that any event in which two different germanium detectors measured a non neglectable energy deposition is most likely not caused by a \Kr decay.
+This kind of filtering is called a detector anti-coincidence filter.
 Whether an event has more than one detector measure a signal can be determined by the multiplicity counter of each event stored in tier 3 and 4.
-Using this counter even more background of none \Kr can be repressed by only using events where only one detector was triggered.
-\\
-
-With these two filters you get a new graph with less background seen in figure \ref{fig:leichtGefiltertes500525}.
-One can see that the annihilation events could be partially suppressed by these two filters making the two peaks more distinguishable.
-From now on, only those events that came through these two filters will be used in further analysis.
+Using this counter even more background of none \Kr decays can be repressed.
 \\
 
 After applying the first few rather general filters on the measured events one has to make a distinction between the events measured in different kinds of detectors.
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
-Due to their differences in design and weigh the two types have a different energy resolution. 
+Due to their differences in design and weigh the two types have a different energy resolution and detector efficiencies. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
-For example, in the range of 500keV it can be expected that COAX have a resolution about 0.5keV higher than the BEGes \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
-Because of this their measured data must and will be evaluated separately. 
-If you only take the events that are recorded in the respective detectors, you get figure \ref{fig:NoFilterBEGes} for all the events measured in the BEGe detectors and figure \ref{fig:NoFilterCOAX} for all the events in the COAX detectors.
-The difference in resolution can be seen in the fact that in the BEGe diagram the two peaks are distinguishable while they merge into one another in the COAX diagram.  
+For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 2,72keV \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
+On the other hand, due to the BEGes being smaller they also have a lower detection efficiency.
+It is therefor necessary to evaluate their measured data separately.
+\\
+
+Now that we have listed the steps necessary to adjust our measurement results so that we can determine the number of decays from we can finally plot the spectra of the corresponding detectors (see figure \ref{fig:NoFilterBEGes} for the BEGes and \ref{fig:NoFilterCOAX} for the spectra of the COAX detectors). 
+In these two spectra we can clearly see two distinct peaks - one at 511keV that corresponds to the positron electron annihilation events and one at 514keV that corresponds to the photons from the relaxation of \nuc{Rb}[85m].
+From the fact that we can see a distinct peak at the 514keV line we can already claim the fact that there must be a non neglectible amount of \Kr in the liquid argon.
+Otherwise no peak should have been able to be measured. 
+The difference in resolution can be seen in the fact that in the BEGe diagram the two peaks have a smaller full width at half value..
+Compared to the COAX detectors their peaks can easily be distinguished.  
 \\
 
 \begin{figure}[t!]
@@ -427,15 +387,18 @@ The difference in resolution can be seen in the fact that in the BEGe diagram th
     \caption{All events measured by the respective detectors with the LAr filter applied and the manually recovered precoincedence events in the range of 500keV to 525keV.}
 \end{figure}
 
-At this point it is clear that we have two options on how we can handle the problem of the positron electron annihilation peak. 
-Either we try to find a way to filter out the majority of the annihilation events while keeping almost all of the \Kr  events.
+Now that we have the two spectra of the corresponding detectors, we have two possible ways of how we could determine the number of measured events around the 514keV peak.
+The easier way is to just use the spectra as they are and only change the used fit function so that it also takes the second peak into account when fitting.
+Another possible approach is to try to suppress the annihilation peak and then fit the spectrum with only one Gaussian peak.
 This can hopefully be done by using the liquid argon veto of GERDA and the precoincidence of the electron scintillation in the photomultipliers. 
-The other option is to leave the spectrum as it is and only change the used fit function so that it also takes the second peak into account when fitting.
 \\ 
 
 In this theses we will try to go both ways separately and later compare their resulting values.
-But first we need to discuss how we want to suppress the annihilation peak and the merit of this procedure. 
-This will be done in the following chapter.
+We will probably end up using the unsuppressed spectra to determine the amount of events measured and only use the other method as a crosscheck.
+As we will see later this is because the used filter also filters out events from the 514keV line peak.
+This results in a lower amount of events measured at this energy and therefore, in the end, gives us a lower activity than there is in actuality. #
+But to understand why this filter also filters out these false positives we have to discuss how this filter works first.
+This will be the topic of the following chapter.
 \\
 
 
@@ -946,6 +909,33 @@ With this mean measuring time we can now finally calculate the mean activity den
 
 \section{Activity from the Decrease in Rate}
 \label{sec:SAfromDecrease}
+
+
+The second method uses the reduction of the event rate over the range of 200 to 400 keV. 
+To measure the change of intensity over time every measured event will be drawn over time and an exponential fit applied.
+The amplitude of the resulting exponential function represents an event activity.
+In this method it is also necessary to calculate with a detector efficiency.
+We cannot use the same efficiency from the first method because there only rare \Kr events were simulated whereas in this method all \Kr decays are investigated.
+That is why another Monte Carlo simulation has to be used now with regular \Kr decays.
+Finally the specific activity can be calculated from these two values.
+It is important to note that this approach actually determines the specific activity of \Kr at the start of \PII while the first method calculates the mean specific activity over all of \PII.
+To compare those two results, the mean specific activity of the second method has to be determined.
+\\
+
+The only reason why we can use the second method is that any other radioactive isotope present in liquid argon has a half-life much higher than that of \Kr \(T = 10.739\\unit{y}\).
+The dominant background sources are in descending order \nuc{Ar}{42} with a half-life of 32.9 y, \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
+Therefor it can be expected that no other isotope has a notable change in time over the corse of \PII.
+\\
+
+Due to routine checks and improvements to the setup, however, the measuring process was interrupted for several time intervals. 
+This means that one has to find a way to weigh the measured rates with a signal that corresponds to the times the detector was actually active. 
+Luckily the test pulse signal can be used as such a reference. 
+This test pulse is created by injecting charge pulses into the front-end electronics with a rate of 0.05Hz.
+In particular, a test pulser signal can only then be measured if actual measurements are recorded.
+With this reference to the actual measuring time the previously created plot can now be corrected. 
+\\
+
+
 
 As described in the beginning of section \ref{sec:AotKr}, the line count analysis method of the rare \Kr decay was expected to be relatively precise.
 By following this procedure we were able to determine the activity down to the order of 10$^{-5} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
