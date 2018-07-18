@@ -403,7 +403,7 @@ This will be the topic of the following chapter.
 \\
 
 
-\subsection{Annihilation Peak Suppression}
+\section{Annihilation Peak Suppression}
 \label{sec:APS}
 
 As mentioned above, it should be theoretically possible to filter out the majority of the positron electron annihilation events by using the scintillation property of the liquid argon.
@@ -560,7 +560,7 @@ Now that we have seen that we were not able to recover any of the falsely filter
 But we only get a satisfactory answer with a quantitative analysis which will be performed in the following chapter.
 \\
 
-\subsection{Fitting}
+\section{Fitting}
 \label{sec:Fitting}
 
 Our strategy to calculate the activity of \Kr through the 514keV peak involves determining the absolute amount of measured \Kr decays events over all of \PII.
@@ -670,7 +670,6 @@ This means that some of the \Kr decay events must have been filtered out and a r
 But due to that not being possible we can not use those results in our analysis nor for a real crosscheck..
 \\
 
-
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}{.5\textwidth}
@@ -687,26 +686,7 @@ But due to that not being possible we can not use those results in our analysis 
 	\end{subfigure}
 	\cpation{All events measured by the respective detectors  with the liquid argon veto applied in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitFilters}.}
 \end{figure}
-\\
 
-\begin{figure}
-	\vspace{0.5cm}
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoEventListBEGes.pdf}
-		\caption{BEGes}
-		\label{fig:FitLArVetoEventListBEGes}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoEventListC.pdf}
-		\caption{COAX}
-		\label{fig:FitLArVetoEventListCOAX}
-	\end{subfigure}
-	\caption{All events measured by the respective detectors with the liquid argon veto applied and the falsely filtered \Kr events recovered in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitFilters}.
-	!!!!! god dammit da muss man zwei vlt drei sätze draus machen!!!!!}
-\end{figure}
-\\
 \begin{figure}[t!]
 	\centering
 	\begin{tabular}{|l|r|r|r|r|}
@@ -739,7 +719,7 @@ From the amount of measured events in these simulated detectors and the absolute
 How exactly this was implemented is the topic of the next chapter.
 \\
 
-\subsection{Monte Carlo Simulation}
+\section{Monte Carlo Simulation}
 \label{sec:MonteCarlo514}
 
 As described above, we want to determine a conversion factor between the measured 514keV events and the decay density of \Kr necessary to create this signal.
@@ -846,7 +826,7 @@ For an amount of 27.24\(\pm\)3.87 events to be measured in the BEGe detectors, i
 !!!!! hier könnte man vielleicht noch einen Absatz zur Güte der MC simulation mit Hilfe der relativen Zählrate beim 514keV peak in der beiden Detektoren hinschreiben !!!!!
 \\
 
-\subsection{Calculating the Activity}
+\section{Calculating the Activity}
 \label{sec:CalcActiv}
 
 All we need now to calculate the mean activity of \Kr in \PII is the measuring time of all detectors.
@@ -888,6 +868,7 @@ This means that to calculate the mean measuring time, we just have to divide the
 \\
 
 No matter what approach you take, in the end you get a mean measuring time of !!!!! for the BEGes and !!!!! for the COAX detectors.
+
 \begin{equation*}
     \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = (1.592\pm0,001)
     \mathrm{y}
@@ -896,7 +877,7 @@ No matter what approach you take, in the end you get a mean measuring time of !!
 
 With these mean measuring times we can now finally calculate the mean specific activity $\bar{a}$ of \Kr over the curse of all of \PII by applying
 \begin{equation*}
-    \bar{a} = \frac{\mathrm{N}}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}}
+    \bar{a} = \frac{\mathrm{N}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}}
      \frac{\mathmr{mBq}}{\mathrm{l}}
 \end{equation*}
 
@@ -959,7 +940,7 @@ By simply dividing the event activity by the detector efficiency times the simul
 This procedure will be carried out in the next section.
 \\
 
-\subsection{Event Activity}
+\section{Event Activity}
 \label{sec:EventAct}
 
 \begin{figure}[t!]
