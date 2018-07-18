@@ -578,11 +578,14 @@ The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
 \\
 
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\frac{1}{\sqrt{2\pi\mathrm{F}}}\exp\left(-\frac{(x-\mathrm{E})^2}{2\mathrm{F}^2}\right) + \mathrm{G}\exp\left(\mathrm{H}x\right) + \mathrm{I}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi}\mathrm{C}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\frac{1}{\sqrt{2\pi}\mathrm{F}}\exp\left(-\frac{(x-\mathrm{E})^2}{2\mathrm{F}^2}\right) + \mathrm{G}\exp\left(\mathrm{H}x\right) + \mathrm{I}
 \label{equ:FitNoFilters}
 \end{equation}
 \\
 
+
+In the course of the fitting process it has to be mentioned that some fitness parameters have only been left free for rather small interval.
+Most notably the values C and F, being the variances of two Gaussian peaks, were each left free only on a very small range around the values derived from the resolutions of the detectors at the specific energies ().
 When you apply the fit function to the two different spectra of the two kinds of detectors you get the graphs displayed in figure \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX}.
 The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}. 
 \\
@@ -917,45 +920,34 @@ Finally, we can conclude that with the line count rate analysis we were able to 
 \label{sec:SAfromDecrease}
 
 
-The second method uses the reduction of the event rate over the range of 200 to 400 keV. 
+As described in the beginning of section \ref{sec:AotKr}, the line count analysis method of the rare \Kr decay was expected to be relatively precise.
+By following this procedure we were able to determine the activity down to the order of 10$^{-5} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
+As it was also stated above, the second method using the change in intensity with time is expected to be relatively imprecise.
+This estimation came from the fact that this method relies on a great approximation.
+It is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
+The idea behind this is that \Kr has the lowest half life \(T = 10.739\\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
+The dominant background sources are in descending order \nuc{Ar}{42} with a half-life of 32.9 y, \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
+Compared to those should \Kr be the only isotope to change its activity notably in the timespan of Phase II.
+It is therefor approximated that all change in intensity should originate from the \Kr decay.
+\\
+
+Now that we have made this approximation, we have to discuss how one can determine the specific activity using the change in intensity. 
 To measure the change of intensity over time every measured event will be drawn over time and an exponential fit applied.
-The amplitude of the resulting exponential function represents an event activity.
-In this method it is also necessary to calculate with a detector efficiency.
-We cannot use the same efficiency from the first method because there only rare \Kr events were simulated whereas in this method all \Kr decays are investigated.
-That is why another Monte Carlo simulation has to be used now with regular \Kr decays.
+The amplitude of the resulting exponential function represents an event rate with which events in the investigated energy range occur.
+To calculate the specific activity of \Kr with this value one again has to use a Monte Carlo simulation to calculate a fitting conversion factor. 
+We cannot use the same simulation from the first method because in this case we actually have to simulate actual \Kr events, not only the emission of 514keV photons as it was done in the prior chapter.
+That is why another Monte Carlo simulation has to be used, just now with regular \Kr decays.
+With it another converstion factor can be determined.
 Finally the specific activity can be calculated from these two values.
-It is important to note that this approach actually determines the specific activity of \Kr at the start of \PII while the first method calculates the mean specific activity over all of \PII.
+It is important to note that in this approach determines the specific activity of \Kr at the start of \PII iwhile the first method calculates the mean specific activity over all of \PII.
 To compare those two results, the mean specific activity of the second method has to be determined.
 \\
 
 The only reason why we can use the second method is that any other radioactive isotope present in liquid argon has a half-life much higher than that of \Kr \(T = 10.739\\unit{y}\).
 The dominant background sources are in descending order \nuc{Ar}{42} with a half-life of 32.9 y, \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
-Therefor it can be expected that no other isotope has a notable change in time over the corse of \PII.
+Therefor it can be expected that no other isotope has a notable change in time over the course of \PII.
 \\
 
-Due to routine checks and improvements to the setup, however, the measuring process was interrupted for several time intervals. 
-This means that one has to find a way to weigh the measured rates with a signal that corresponds to the times the detector was actually active. 
-Luckily the test pulse signal can be used as such a reference. 
-This test pulse is created by injecting charge pulses into the front-end electronics with a rate of 0.05Hz.
-In particular, a test pulser signal can only then be measured if actual measurements are recorded.
-With this reference to the actual measuring time the previously created plot can now be corrected. 
-\\
-
-
-
-As described in the beginning of section \ref{sec:AotKr}, the line count analysis method of the rare \Kr decay was expected to be relatively precise.
-By following this procedure we were able to determine the activity down to the order of 10$^{-5} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
-As it was also stated above, the second method using the change in intensity with time is expected to be relatively imprecise.
-This estimation came from the fact that a great approximation is needed to determine the activity from it.
-It is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
-The idea behind it is that \Kr has the lowest half life of all the other residual radioactive isotopes in the liquid argon.
-The majority of change in intensity should therefor exclusively originate from the \Kr.
-\\
-
-To determine the change in intensity we want to plot every detected event into a histogram and apply an exponential fit plus a constant background.
-From the fit one should be able to calculate an event activity of all measured events in the detectors.
-But in order to determine the decay activity of \Kr, one has to use again a Monte Carlo simulation to determine a detector efficiency.
-By simply dividing the event activity by the detector efficiency times the simulated volume, the decay activity of \Kr is obtained.
 This procedure will be carried out in the next section.
 \\
 
