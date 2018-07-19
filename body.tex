@@ -914,7 +914,7 @@ However we can still use its determined value as a crosscheck for the results fo
 \\   
 
 Now that we have shown that this approach may actually be applied here, we have to discuss how one can determine the specific activity using the change in intensity anyways. 
-To measure the change in rate every measured event will mas to be drawn over time and an exponential fit applied.
+To measure the change in rate every measured event will has to be drawn over time and an exponential fit applied.
 The amplitude of the resulting exponential function represents an event rate with which events in the investigated energy range occur.
 \\
 
@@ -953,7 +953,8 @@ The following sections will focus on the concrete implementation of this method 
 
 To determine the event rate one has to plot the amount of measured events over time with a suitable binning (see figure \ref{fig:ZeitAll}).
 In this case a binning of one week per bin was chosen which results in about 114 weeks for the 2,17 years of \PII.
-Immediately after seeing this figure you can see two different two different sources for discontinuities in the course of the graph.
+It should be noted that we again, like in the line count rate analysis, only use those events in which the Muon Veto and the detector anti-coincidence veto is not triggered.
+The first thing that jump into your eyes when looking at figure \ref{fig:ZeitAll} is two different types for discontinuities can be seen.
 Oblivious we can not lay a exponential decrease fit function through this graph as long as these discontinuities are present.
 We therefor have to find a way to suppress them but to do that we have to investigate where these discontinuities originate from.
 \\
@@ -967,7 +968,7 @@ After the lowering all event with an energy of at least 17keV could be measured 
 For a more graphical representation, see the beginning of the spectra in figure \ref{fig:before} for all events measured before and figure \ref{fig:after} for all events after the lowering of the limit. 
 This means that from the 12.10.2017 on a much higher event rate was measured just because more event were actually recored.
 To work around this continuity problem all we have to do is limit our event used for the analysis to those that have a minimal energy of 200keV. 
-While we are already at it we can also use an upper energy limit.
+While we are already at it we can also set up an upper limit on the energy.
 Its purpose is to suppress events caused by isotopes with a higher end point energy than \Kr.
 Even though they should only create a constant background, but their presence make a change in intensity harder to identify.
 We therefor chose the upper limit to be at 400keV.
@@ -1041,9 +1042,9 @@ In this is A corresponding to the measured \Kr event rate of the decreasing func
 Due to us exacting only \Kr to change over time we can already fix fit-parameter B to \(T = 10.739\unit{y}\) which is the half life of \Kr and leaving the other two parameter relatively free.
 From the resulting fit function (seen figure \ref) we get the fit parameters as seen in table \ref{tab:FitParZeit}.
 The only parameter we need for our analysis is parameter \(\mathrm{A} = \) being the \Kr event rate meaning that !!!!! events caused by \Kr decays could be measured every second.
-Now that we have the \Kr event rate all we need now to determine the specific activity is the conversion factor from the measured events to the necessary \Kr decays in the liquid argon to cause this event rate.
+Now that we have the \Kr event rate all we need now to determine the specific activity is the conversion factor from the measured events to the necessary \Kr decays in the liquid argon to cause this \Kr event rate.
 As described above we need a new Monte Carlo simulation for that.
-What this simulation simulates and how we determine the conversion factor from it is the topic of the following section.
+What this simulation actually simulates and how we determine the conversion factor from it is the topic of the following section.
 
 
 \begin{figure}[t!]
@@ -1062,18 +1063,73 @@ What this simulation simulates and how we determine the conversion factor from i
 	\label{tab:FitParZeit}
 	\captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
 \end{figure}
-
+\\
 \begin{figure}[t!]
 	\centering
-	\ifmakefigures%
-	\includegraphics[width=100mm]{./Bilder/BeispielSignal.pdf}
-	\fi%
-	\label{fig:Trigger4}
-	\caption{
-		The recorded signal of the photomultiplier tube P4 from the event with event number 1614036. !!!!!Hier noch was zu den Achsen!!!!!. 
-		The blue bar represents the moment in time in which a signal in the Germanium detector was measured.
-	}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/eventRateFit.pdf}
+		\caption{effective measuring times}
+		\label{fig:effectiveMeasuringTimes}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/Sim1Phasenraum.pdf}
+		\caption{after}
+		\label{fig:Sim1Spektrum}
+	\end{subfigure}
+	\\
+	\vspace{0.5cm}
+	\caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
+	\vspace{0.5cm}
 \end{figure}
+\section{Monte Carlo simulation}
+\label{sec:MonteCarlo2}
+
+To calculate this conversion factor we have to apply the same process as in the line count rate analysis.
+Just that we this time don't simulate the emission of photons with an energy of 514keV in the liquid argon but rather simulate the actual \Kr decays themselves.
+But a problem is, that we can expect the detector efficiency of \Kr to be very small.#
+This is because the electrons probability of being detected is being suppressed by the fact the detectors themselves have a small dead layer of germanium around them.
+If an electron is captured in this dead layer it will create no signal that could be recored even though it hit the detector.
+On the other hand if a photon hits the detector it is very likely to deposit all of its energy inside the active detector area due to it being able to transmit further into the detector.
+It also has to be considered that only those decays will be considered by us that made their event in one of the detectors that was always on.
+Every other decay that made an event in another detector will be discarded making the detector efficiency even smaller. 
+Because of this low expected detector efficiency we have to simulate a much higher amount of decays than photons were emitted in the other simulation.
+\\
+
+In this simulation we simulated N = 1 billion \Kr decays in a volume of again $V_{sim} = 17.65 \mathrm{m}^3$.
+Due to the massive amount of simulated events only those decays were saved in which an event has been measured.
+These events created a combined spectrum of the emitted electrons plus the photons emitted from the excited \nuc{Rb}{85m} as seen in figure \ref{fig:Sim1Spektrum}.
+If you compare this spectrum with the one calculated for the other Monte Carlo simulation we can see these spectra look very much alike.
+But this would mean that the majority of the measured events must have been the photons of the \nuc{Rb}{85m} relaxation.
+But that would also mean that almost none of the electrons emitted in the beta decay of \Kr created any signal.
+This is actually an advantage for us because if only a small portion of the events measured was done by electrons then we don't have to make any correction.
+If the majority of the measured events were created by electrons then we would have to apply a correction onto our detector efficiency.
+This is because of a weakness of the simulated detectors.
+The dead layer of the actual detectors isn't known that well which is why the simulated detectors can only work with an assumptions of the actual dead volume of the detectors.
+Unfortunately, it's hard to fix this weakness.
+We are therefor in luck with the fact the 514keV photons are responsible for the majority of event in the spectrum where no such correction has to be applied.
+\\
+
+But this conclusion of photons being the main cause of the spectrum assumes that in both simulations the same environmental conditions were simulated.
+Whether this is true or not can easily be determined by looking at line count of the characteristic 514keV peak.
+In the case of the first simulation an amount of 10179 events were measured by the BEGe detectors in the 514keV peak with a decay density of about $2832\frac{\unit{photon}}{\unit{l}}$.
+On the other hand in the second simulation only 817 events were measured with a decay density of $56640\frac{\unit{decay}}{\unit{l}}$.
+But one has to consider that in the case of the first simulation only the photons of the \nuc{Rb}{85m} relaxation were emitted and \Kr only decays into this exited state with a probability of 0.434$\%$.
+The effective decay density of the first simulation is therefor about $652511\frac{\unit{decay}}{\unit{l}}$.
+To compare these two line counts, we now have to scale one of the two values so that they would theoretically have had the same decay density.
+By applying the scale of $\frac{56640}{652511}$ onto the amount of events from the first simulation you get a adjusted value of 884 events.
+The fact, that this value is roughly the same size as the value form the second simulation, proves, that a similar environmental situation must have been simulated.
+This conclusion also justifies retroactively the assumption that the simplification in the first simulation of only emitting photons to replace the actual decay could be done.
+\\
+
+
+
+
+ 
+
+
+  
 
 
 
