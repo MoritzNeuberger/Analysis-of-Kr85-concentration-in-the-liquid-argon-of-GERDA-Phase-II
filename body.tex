@@ -26,7 +26,7 @@ However, \Ge is still very suitable for further investigations of neutrino less 
 \\
 
 Because it is expected that the neutrinoless double beta decay has a very long lifetime it is very important to filter out every source of background radiation as good as possible. 
-Therefor it is necessary to use a low temperature coolant to freeze the \nuc{Ge}{67} detectors down, to shield the detectors from external radioactive sources and to use a scintillator around the detectors to filter out any radiation coming from the outside. 
+Therefor it is necessary to use a low temperature coolant to freeze the \nuc{Ge}{76} detectors down, to shield the detectors from external radioactive sources and to use a scintillator around the detectors to filter out any radiation coming from the outside. 
 Due to the \Ge detectors also being the source of the double beta decay at the same time, all signal coming from the outside are background event. 
 \\
 
@@ -35,7 +35,7 @@ Commercial argon is extracted from the air by air liquefaction and therefor has 
 The majority of the impurity in the liquid argon can be removed by cryogenic distillation but even the remaining alien isotopes are still very active.\\
 
 One of these residual radioactive isotopes is \Kr. 
-Compared to \nuc{Ge}{67} it has a relatively low endpoint energy and therefor shouldn't create any fake neutrino less double beta decays. 
+Compared to \nuc{Ge}{76} it has a relatively low endpoint energy and therefor shouldn't create any fake neutrino less double beta decays. 
 It also isn't the strongest radioactive background source. 
 This title belongs to \nuc{Ar}{42}. 
 What is interesting about this isotope is the fact that first approximations of its concentration in the liquid argon showed that it is at least 10\(^{-3}\) times smaller than values measured in other experiments using liquid argon.
@@ -337,7 +337,7 @@ After applying the first few rather general filters on the measured events one h
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution and detector efficiencies. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
-For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 2,72keV \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
+For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 2,72keV (see appendix \ref{sec ) \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
 On the other hand, due to the BEGes being smaller they also have a lower detection efficiency.
 It is therefor necessary to evaluate their measured data separately.
 \\
@@ -346,7 +346,7 @@ Now that we have listed the steps necessary to adjust our measurement results so
 In these two spectra we can clearly see two distinct peaks - one at 511keV that corresponds to the positron electron annihilation events and one at 514keV that corresponds to the photons from the relaxation of \nuc{Rb}{85m}.
 From the fact that we can see a distinct peak at the 514keV line we can already claim the fact that there must be a non neglectible amount of \Kr in the liquid argon.
 Otherwise no peak should have been able to be measured. 
-The difference in resolution can be seen in the fact that in the BEGe diagram the two peaks have a smaller full width at half value..
+The difference in resolution can be seen in the fact that in the BEGe diagram the two peaks have a smaller full width at half value.
 Compared to the COAX detectors their peaks can easily be distinguished.  
 \\
 
@@ -542,16 +542,19 @@ But we only get a satisfactory answer with a quantitative analysis which will be
 \label{sec:Fitting}
 
 Our strategy to calculate the activity of \Kr through the 514keV peak involves determining the absolute amount of measured \Kr decays events over all of \PII.
-Due to the still enormous amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{67} decays, it is necessary to fit the 514keV peak with a suitable fit function.
+Due to the still enormous amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{76} decays, it is necessary to fit the 514keV peak with a suitable fit function.
 The amount of measured \Kr decay events can then be calculated by integrating over the found fit function and dividing by the probability of the specific decay into \nuc{Rb}{85m}.
 \\
 
 The not liquid argon filtered spectrum \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show two peaks.
 This requires the fit function to include two Gaussian functions from which only the parameters of the second peak will then be analyzed.
 Additionally to the two Gaussian peaks a constant and an exponential background function will be added.
-Theoretically you can expect the distribution of the germanium events to behave like its phase-space function and therefor change with energy.
-In this case however is the inspected energy interval small compared to the complete phase-space diagram of \nuc{Ge}{67}.
-This allows the approximation of the background to change like an exponential .
+When looking at the not liquid argon filtered spectra again we can see that over the course of the displayed interval no real change in count rate over energy can be seen (see figure \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX}).
+But theoretically we expect the distribution of the germanium events to behave like its phase-space function and therefor change with energy.
+It is therefor necessary to also consider this change in count rate over energy in the fit function.
+The phase-space function of \nuc{Ge}{76} is very complex however.
+In this case however is the energy interval relatively small compared to the complete spectrum of \nuc{Ge}{76}.
+This allows the approximation that its phase-space function changes like an exponential decrease due to the general form of the measured spectrum in this energy range.
 The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
 \\
 
@@ -562,7 +565,7 @@ The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
 \\
 
 In the course of the fitting process it has to be mentioned that some fitness parameters have only been left free for rather small interval.
-Most notably the values C and F, being the variances of two Gaussian peaks, were each left free only on a very small range around the values derived from the resolutions of the detectors at the specific energies (see appendix section \ref{sec:ResDetermination}).
+Most notably the values C and F, being the variances of two Gaussian peaks, were each only left free on a very small range around the values derived from the resolutions of the detectors at their specific energies (see appendix section \ref{sec:ResDetermination}).
 When you apply the fit function to the two different spectra of the two kinds of detectors you get the graphs displayed in figure \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX}.
 The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}. 
 \\
@@ -594,23 +597,23 @@ The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}.
 \hline
 Name	& Value [BEGes] & Valuse [COAX]\\ 
 \hline
-A  &	(16.15 \(\pm\)	3.658)&	(29.842 \(\pm\)	3.968)	\\	
+A  &	(16.384684 \(\pm\)	4.229890	)&	(29.842 \(\pm\)	3.968)	\\	
 \hline
-B  &	(510.693 \(\pm\)	0.564)&	(510.750 \(\pm\)	0.265)\\	
+B  &	(510.689545  \(\pm\)	0.275479	)&	(510.750 \(\pm\)	0.265)\\	
 \hline
-C  &	(1.022 \(\pm\)	1.433)	&	(1.564 \(\pm\)	0.236	)	\\
+C  &	(0.952063 \(\pm\)	0.010154	)	&	(1.564 \(\pm\)	0.236	)	\\
 \hline
-D  &	(27.239 \(\pm\)	3.870)	&	(20.463 \(\pm\)	3.279	)	\\
+D  &	(36.757652 \(\pm\)	4.743389)	&	(20.463 \(\pm\)	3.279	)	\\
 \hline
-E  &	(513.940 \(\pm\)	0.701)	&	(513.858 \(\pm\)	0.213)	\\
+E  &	(513.923462 \(\pm\)	0.153953	)	&	(513.858 \(\pm\)	0.213)	\\
 \hline
-F  &	(0.909 \(\pm\)	1.400)	&	(1.017 \(\pm\)	0.173	)	\\
+F  &	(0.952731 \(\pm\)	0.011750	)	&	(1.017 \(\pm\)	0.173	)	\\
 \hline
-G  &	(14.175 \(\pm\)	1.050)	&	(13.123 \(\pm\)	0.289	)	\\
+G  &	(21.714308 \(\pm\)	0.432063)	&	(13.123 \(\pm\)	0.289	)	\\
 \hline
-H  &	(24.487 \(\pm\)	1.833)	&	(-384995.062 \(\pm\)	2.592)	\\
+H  &	(-224175.656250 \(\pm\)	0.000424)	&	(-384995.062 \(\pm\)	2.592)	\\
 \hline
-I  &	(-40.573 \(\pm\) 1.000)	&	(-40.573 \(\pm\)	1.414)\\
+I  &	(-0.655847 \(\pm\) 0.399776)	&	(-40.573 \(\pm\)	1.414)\\
 \hline
 
 \end{tabular}
@@ -618,6 +621,8 @@ I  &	(-40.573 \(\pm\) 1.000)	&	(-40.573 \(\pm\)	1.414)\\
 \captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
 \end{figure}
 \\
+
+
 
 The only values of these fit parameters that is of real interest for the determination of the activity is variable D.
 Its value is the amplitude of the second Gaussian peak.
@@ -627,7 +632,14 @@ We therefor have to multiply these values with $}\frac{1}{0.2}\unit{keV}$.
 Finally, we can conclude that in the BEGes an amount of !!!!! events was measured and in the COAX detectors a number !!!!! of events.
 \\
 
-Now to the liquid argon filtered spectrum.
+
+From the fit parameter value H and I we can also see that as expected the change of the background over the inspected energy interval is neglactable.
+Parameter I defines the change in energy and its value so small that the exponential function in the range that is investigated in has no real impact on the overall fit function.
+But as mentioned before it would have been wrong to leave out the fit functions possibility to change over energy because otherwise it might have ruined our whole fitting process. 
+\\
+
+
+After finding the fit parameter for the not liquid argon filtered spectrum we now go to the filtered spectrum.
 As mentioned above we can assumed that the positron electron annihilation peak is fully suppressed.
 Additionally in the ideal case, that the majority of all \Kr decay events got through the liquid argon filter, we expect the amplitude of the Gaussian peak to be similar to the amplitude in the not liquid argon filtered case.
 Therefor only one Gaussian peak has to be fitted together with the background function.
@@ -863,7 +875,7 @@ With these mean measuring times we can now finally calculate the mean specific a
 
 Finally, we can conclude that with the line count rate analysis we were able to determine an activity of 
 
-!!!!! sich noch überlegen, was man genau mit den COAX detektoren macht !!!!!
+
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
 
@@ -879,31 +891,33 @@ As described in the beginning of section \ref{sec:AotKr}, the line count analysi
 By following this procedure we were able to determine the activity down to the order of 10$^{-5} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
 As it was also stated above, the second method using the change in intensity with time is expected to be relatively imprecise.
 This estimation came from the fact that this method relies on a great approximation.
-It is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
+Because it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
 The idea behind this is that \Kr has the lowest half life \(T = 10.739\\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
-The dominant background sources are in descending order \nuc{Ar}{42} with a half-life of 32.9 y, \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
+In comparison, the other dominant background sources are in descending order of their activity \nuc{Ar}{42} with a half-life of 32.9 y [], \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
 Compared to those should \Kr be the only isotope to change its activity notably in the timespan of Phase II.
-It is therefor approximated that all change in intensity should originate from the \Kr decay.
+It is therefor approximated that all change in intensity should only originate from the \Kr decay.
 \\
 
-Now that we have made this approximation, we have to discuss how one can determine the specific activity using the change in intensity. 
-To measure the change of intensity over time every measured event will be drawn over time and an exponential fit applied.
+But in the end is this assumption relatively harsh because in reality all other isotopes still have a non vanishing influence on the changes in intensity.
+It is therefor expected that this approach only wields a relatively imprecise value for \Kr's activity.
+However we can still use its determined value as a crosscheck for the results found by the line count rate analysis.
+\\   
+
+Now that we have shown that this approach may actually be applied here, we have to discuss how one can determine the specific activity using the change in intensity anyways. 
+To measure the change in rate every measured event will mas to be drawn over time and an exponential fit applied.
 The amplitude of the resulting exponential function represents an event rate with which events in the investigated energy range occur.
+\\
+
 To calculate the specific activity of \Kr with this value one again has to use a Monte Carlo simulation to calculate a fitting conversion factor. 
-We cannot use the same simulation from the first method because in this case we actually have to simulate actual \Kr events, not only the emission of 514keV photons as it was done in the prior chapter.
-That is why another Monte Carlo simulation has to be used, just now with regular \Kr decays.
-With it another converstion factor can be determined.
+We cannot use the same simulation from the first method because in this case we actually have to simulate \Kr events, not only the emission of 514keV photons as it was done in the prior chapter.
+That is why another Monte Carlo simulation has to be carried out.
+With it a new conversion factor can be determined to calculate the \Kr decay density necessary to create the measured event activity.
+\\
+
 Finally the specific activity can be calculated from these two values.
-It is important to note that in this approach determines the specific activity of \Kr at the start of \PII iwhile the first method calculates the mean specific activity over all of \PII.
-To compare those two results, the mean specific activity of the second method has to be determined.
-\\
-
-The only reason why we can use the second method is that any other radioactive isotope present in liquid argon has a half-life much higher than that of \Kr \(T = 10.739\\unit{y}\).
-The dominant background sources are in descending order \nuc{Ar}{42} with a half-life of 32.9 y, \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
-Therefor it can be expected that no other isotope has a notable change in time over the course of \PII.
-\\
-
-This procedure will be carried out in the next section.
+It is important to note that this approach determines the specific activity of \Kr at the start of \PII while the first method calculates the mean specific activity over all of \PII.
+To compare those two results, in the end a mean specific activity of the second method has to be determined.
+The following sections will focus on the concrete implementation of this method and the values determined by them.
 \\
 
 \section{Event Activity}
