@@ -1100,29 +1100,31 @@ Because of this low expected detector efficiency we have to simulate a much high
 In this simulation we simulated N = 1 billion \Kr decays in a volume of again $V_{sim} = 17.65 \mathrm{m}^3$.
 Due to the massive amount of simulated events only those decays were saved in which an event has been measured.
 These events created a combined spectrum of the emitted electrons plus the photons emitted from the excited \nuc{Rb}{85m} as seen in figure \ref{fig:Sim1Spektrum}.
-If you compare this spectrum with the one calculated for the other Monte Carlo simulation we can see these spectra look very much alike.
-But this would mean that the majority of the measured events must have been the photons of the \nuc{Rb}{85m} relaxation.
-But that would also mean that almost none of the electrons emitted in the beta decay of \Kr created any signal.
-This is actually an advantage for us because if only a small portion of the events measured was done by electrons then we don't have to make any correction.
+If you compare this spectrum with the one calculated for the other Monte Carlo simulation we can see these two spectra look very much alike.
+But this would mean that the majority of the measured events must have been caused by the photons of the \nuc{Rb}{85m} relaxation.
+That would also mean that almost none of the electrons emitted in the beta decay of \Kr created any signal.
+This is actually an advantage for us.
 If the majority of the measured events were created by electrons then we would have to apply a correction onto our detector efficiency.
 This is because of a weakness of the simulated detectors.
 The dead layer of the actual detectors isn't known that well which is why the simulated detectors can only work with an assumptions of the actual dead volume of the detectors.
-Unfortunately, it's hard to fix this weakness.
-We are therefor in luck with the fact the 514keV photons are responsible for the majority of event in the spectrum where no such correction has to be applied.
+Unfortunately, it's hard to correct the determined value for this weakness.
+We are therefor in luck that the 514keV photons are responsible for the majority of event in the spectrum.
+In this case no such correction has to be applied.
 \\
 
 But this conclusion of photons being the main cause of the spectrum assumes that in both simulations the same environmental conditions were simulated.
 Whether this is true or not can easily be determined by looking at line count of the characteristic 514keV peak.
-In the case of the first simulation an amount of 10179 events were measured by the BEGe detectors in the 514keV peak with a decay density of about $2832\frac{\unit{photon}}{\unit{l}}$.
-On the other hand in the second simulation only 817 events were measured with a decay density of $56640\frac{\unit{decay}}{\unit{l}}$.
+In the case of the first simulation an amount of 10179 events were measured by the BEGe detectors in the 514keV peak with a decay density of about 2832 $\unit{photon}/\unit{l}$.
+On the other hand in the second simulation only 817 events were measured with a decay density of 56640$\unit{decay}/\unit{l}$.
 But one has to consider that in the case of the first simulation only the photons of the \nuc{Rb}{85m} relaxation were emitted and \Kr only decays into this exited state with a probability of 0.434$\%$.
-The effective decay density of the first simulation is therefor about $652511\frac{\unit{decay}}{\unit{l}}$.
+The effective decay density of the first simulation is therefor about 652511 $\unit{decay}/\unit{l}$.
 To compare these two line counts, we now have to scale one of the two values so that they would theoretically have had the same decay density.
 By applying the scale of $\frac{56640}{652511}$ onto the amount of events from the first simulation you get a adjusted value of 884 events.
 The fact, that this value is roughly the same size as the value form the second simulation, proves, that a similar environmental situation must have been simulated.
-This conclusion also justifies retroactively the assumption that the simplification in the first simulation of only emitting photons to replace the actual decay could be done.
+This conclusion also justifies retroactively the simplification in the first simulation of only emitting photons to replace the actual decay could be done.
 \\
 
+Now to calculating the conversation factor from this simulation.
 
 
 
