@@ -831,10 +831,6 @@ Now that the conversion factors of the two types of detectors are determined we 
 where p = 0.434$\%$ is the probability of a \Kr to decay into the 514keV energetically raised \nuc{Rb}{85m}.
 For an amount of 27.24\(\pm\)3.87 events to be measured in the BEGe detectors, it can be concluded that a density for the \Kr decay of, whereas for the COAX detectors we get a value of . 
 \\
-
-!!!!! hier könnte man vielleicht noch einen Absatz zur Güte der MC simulation mit Hilfe der relativen Zählrate beim 514keV peak in der beiden Detektoren hinschreiben !!!!!
-\\
-
 \section{Calculating the Activity}
 \label{sec:CalcActiv}
 
@@ -870,8 +866,6 @@ This arises from the fact that every BEGe detector has an individual mass.
 As we know, the detector efficiency of a single detector is directly dependent on its mass.
 If we want to combine all single detectors into one large detector, we have to consider that heavier detectors contribute more to the measured decay rate than lighter detectors.
 It is therefore necessary to weight the measuring time of each detector with its individual mass.
-\\
-
 Coincidentally, the multiplication of the individual measuring time of a detector with its mass is also the exposure this  single detector.
 This means that to calculate the mean measuring time, we just have to divide the combined exposure of all detectors of the same kind by their combined mass.
 \\
@@ -879,20 +873,17 @@ This means that to calculate the mean measuring time, we just have to divide the
 No matter what approach you take, in the end you get a mean measuring time of !!!!! for the BEGes and !!!!! for the COAX detectors.
 
 \begin{equation*}
-    \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = (1.592\pm0,001)
+    \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = 1.592
     \mathrm{y}
 \end{equation*}
-\\
 
 With these mean measuring times we can now finally calculate the mean specific activity $\bar{a}$ of \Kr over the curse of all of \PII by applying
 \begin{equation*}
-    \bar{a} = \frac{\mathrm{N}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}}
-     \frac{\mathmr{mBq}}{\mathrm{l}}
+    \bar{a} = \frac{\rho_{dec} }{\bar{t}} = \frac{\mathrm{N}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}}
 \end{equation*}
 
 
-
-Finally, we can conclude that with the line count rate analysis we were able to determine an activity of 
+Finally, we can conclude that with the line count rate analysis we were able to determine an activity of in the BEGes and an activity of in the COAX.
 
 
 
@@ -903,7 +894,7 @@ Finally, we can conclude that with the line count rate analysis we were able to 
 % make a Monte Carlo simulation to estimate actual Kr85 activity in LAr from measured activity in detectors
 % -> with amplitude and factors from MC-Simulation one can calculate the specific activity
 
-\section{Activity from the Decrease in Rate}
+\chapter{Activity from the Decrease in Rate}
 \label{sec:SAfromDecrease}
 
 As described in the beginning of section \ref{sec:AotKr}, the line count analysis method of the rare \Kr decay was expected to be relatively precise.
@@ -911,7 +902,7 @@ By following this procedure we were able to determine the activity down to the o
 As it was also stated above, the second method using the change in intensity with time is expected to be relatively imprecise.
 This estimation came from the fact that this method relies on a great approximation.
 Because it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
-The idea behind this is that \Kr has the lowest half life \(T = 10.739\\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
+The idea behind this is that \Kr has the lowest half life \(T = 10.739\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
 In comparison, the other dominant background sources are in descending order of their activity \nuc{Ar}{42} with a half-life of 32.9 y [], \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
 Compared to those should \Kr be the only isotope to change its activity notably in the timespan of Phase II.
 It is therefor approximated that all change in intensity should only originate from the \Kr decay.
@@ -939,14 +930,14 @@ To compare those two results, in the end a mean specific activity of the second 
 The following sections will focus on the concrete implementation of this method and the values determined by them.
 \\
 
-\section{Event Activity}
+\section{Event Rate}
 \label{sec:EventAct}
 
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.\textwidth]{./Bilder/ZeitverlaufALLE.pdf}
+		\includegraphics[width=\textwidth]{./Bilder/ZeitverlaufALLE.pdf}
 		\caption{every event}
 		\label{fig:ZeitAll}
 	\end{subfigure}%
@@ -957,11 +948,8 @@ The following sections will focus on the concrete implementation of this method 
 		\label{fig:ZeitLimits}
 	\end{subfigure}
     \\
-	\vspace{0.5cm}
     \caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
-\vspace{0.5cm}
 \end{figure}
-\\
 
 To determine the event rate one has to plot the amount of measured events over time with a suitable binning (see figure \ref{fig:ZeitAll}).
 In this case a binning of one week per bin was chosen which results in about 114 weeks for the 2,17 years of \PII.
@@ -990,7 +978,7 @@ A new plot including only events between the energy limits of 200 and 400keV can
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.\textwidth]{./Bilder/beforeTheFall.pdf}
+		\includegraphics[width=\textwidth]{./Bilder/beforeTheFall.pdf}
 		\caption{before}
 		\label{fig:before}
 	\end{subfigure}%
@@ -1005,7 +993,6 @@ A new plot including only events between the energy limits of 200 and 400keV can
 	\caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
 	\vspace{0.5cm}
 \end{figure}
-\\
 
 The second discontinuities behavior originates from the same problem that we faced in the first method.
 Not all detectors were on all of the time and there were also time intervals in which nothing at all was measured.
@@ -1028,7 +1015,7 @@ Or in other words, this new histogram shows us the event rate per week over all 
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.\textwidth]{./Bilder/testpuler.pdf}
+		\includegraphics[width=\textwidth]{./Bilder/testpuler.pdf}
 		\caption{effective measuring times}
 		\label{fig:effectiveMeasuringTimes}
 	\end{subfigure}%
@@ -1043,20 +1030,16 @@ Or in other words, this new histogram shows us the event rate per week over all 
 	\caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
 	\vspace{0.5cm}
 \end{figure}
-\\
 
 From this graph we now want to determine the exponential change in the event rate by applying an exponential fit function.
 The exact fit function used is
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\exp\left(\frac{\log(2)\times x}{\mathrm{B}}\right) + \mathrm{C}
+\mathrm{f}(x) = \mathrm{A}\times\exp\left(\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}
 \label{equ:FitFilters}
 \end{equation}
-\\
 In this is A corresponding to the measured \Kr event rate of the decreasing function, B the half life of the decrease and C the constant event background rate.
 Due to us exacting only \Kr to change over time we can already fix fit-parameter B to \(T = 10.739\unit{y}\) which is the half life of \Kr and leaving the other two parameter relatively free.
-\\
-
-From the resulting fit parameters (see table \ref{tab:FitParZeit}) we get a fit function as seen in figure \ref.
+From the resulting fit function (seen figure \ref) we get the fit parameters as seen in table \ref{tab:FitParZeit}.
 The only parameter we need for our analysis is parameter \(\mathrm{A} = \) being the \Kr event rate meaning that !!!!! events caused by \Kr decays could be measured every second.
 Now that we have the \Kr event rate all we need now to determine the specific activity is the conversion factor from the measured events to the necessary \Kr decays in the liquid argon to cause this event rate.
 As described above we need a new Monte Carlo simulation for that.
