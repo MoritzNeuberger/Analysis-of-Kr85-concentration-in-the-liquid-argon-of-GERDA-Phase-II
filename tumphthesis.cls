@@ -60,7 +60,7 @@
 \RequirePackage{fontenc}
 \PassOptionsToPackage{ngerman,british}{babel}
 \RequirePackage{babel}
-\selectlanguage{ngerman}
+\selectlanguage{british}
 \if@noloadcsquotes
 	\relax
 \else
@@ -113,7 +113,7 @@
 	bibstyle=numeric-comp,citestyle=numeric-comp,%
 	}{biblatex}
 \RequirePackage{biblatex}
-\IfFileExists{\jobname.bib}{\addbibresource{\jobname.bib}}{\relax}%
+\IfFileExists{\reference.bib}{\addbibresource{\reference.bib}}{\relax}%
 \defbibheading{bibliography}[\bibname]{\chapter{#1}}
 
 % Die AMS-Pakete dienen zum modernen Satz von Gleichungen. Die Integralgrenzen
@@ -325,7 +325,7 @@
 		pdfsubject={\@subject},%
 		pdfkeywords={Technische Universit\"at M\"unchen;Fakult\"at f\"ur Physik;\@subject}}}
 \fi
-\renewcaptionname{ngerman}{\proofname}{Beweis}
+\renewcaptionname{british}{\proofname}{Beweis}
 
 % Kolumnentitel im Kopf mit Linie werden mit scrpage2 eingerichtet.
 \if@draftmode
