@@ -11,7 +11,7 @@
 %-------------------------------------------------------------------------------
 %\documentclass[11pt,a4paper]{article}
 \documentclass[encoding=utf8,british]{tumphthesis}
-
+\makeatletter\@openrightfalse
 %\documentclass[12pt,a4paper,twoside]{article}%
 %-------------------------------------------------------------------------------
 \include{header}              % packages/settings
@@ -115,5 +115,5 @@ Seite beabsichtigt leer gelassen.
 %--------------------------------------------------------------- references ----
 \bibliographystyle{plain}
 \bibliography{references}
-
+\@openrightfalse\makeatletter
 \end{document}

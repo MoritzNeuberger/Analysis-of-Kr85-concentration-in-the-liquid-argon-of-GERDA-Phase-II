@@ -72,7 +72,7 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 % general overview of how I'm going to do this
 % ? what are my predictions ?
 % What possible influence would the result of my work might have on the result of the GERDA experiment?
-
+\makeatletter\@openrightfalse
 \chapter{Physical Background}
 \label{sec:PhyBG}
 
@@ -337,7 +337,7 @@ After applying the first few rather general filters on the measured events one h
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution and detector efficiencies. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
-For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 2,72keV (see appendix \ref{sec ) \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
+For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 2,72keV (see appendix \ref{sec:} ) \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
 On the other hand, due to the BEGes being smaller they also have a lower detection efficiency.
 It is therefor necessary to evaluate their measured data separately.
 \\
@@ -647,7 +647,7 @@ The only values of these fit parameters that is of real interest for the determi
 Its value is the amplitude of the second Gaussian peak.
 Because the Gaussian peak was chosen in the normalized form this value also represents the amount of \Kr decays measured per binning of the histogram.
 But we only want the amount of counts in the peak independently of the binning of the histogram.
-We therefor have to multiply these values with $}\frac{1}{0.2}\unit{keV}$.
+We therefor have to multiply these values with $\frac{1}{0.2}\unit{keV}$.
 Finally, we can conclude that in the BEGes an amount of !!!!! events was measured and in the COAX detectors a number !!!!! of events.
 \\
 
@@ -694,7 +694,7 @@ But due to that not being possible we can not use those results in our analysis 
 		\caption{COAX}
 		\label{fig:FitLArVetoCOAX}
 	\end{subfigure}
-	\cpationof[figure]{All events measured by the respective detectors  with the liquid argon veto applied in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitFilters}.}
+	\caption{All events measured by the respective detectors  with the liquid argon veto applied in the range of 500keV to 525keV fitted with a fit function in the form seen in equation \ref{equ:FitFilters}.}
 \end{figure}
 
 \begin{figure}[t!]
@@ -801,10 +801,10 @@ In other words, the value $\frac{1}{\epsilon_\gamma}$ is a factor from the measu
 If you divide this factor by the simulated volume you get the conversion factor you want to determine with this simulation.
 
 \begin{equation*}
-\frac{1}{\epsilon_{\gamma\mathrm{,BEGe}} V_{sim}} = (5.955\pm0.086) \times 10^{-1} \frac{\mathrm{decay(rare)}}{\mathrm{event} \times l}
+\frac{1}{\epsilon_{\gamma\mathrm{,BEGe}} V_{sim}} = (5.955\pm0.086) \times 10^{-1} \frac{\mathrm{photon}}{\mathrm{event} \times l}
 \end{equation*}
 \begin{equation*}
-\frac{1}{\epsilon_{\gamma\mathrm{,COAX}} V_{sim}} = (5.955\pm0.086) \times 10^{-1} \frac{\mathrm{decay(rare)}}{\mathrm{event} \times l}
+\frac{1}{\epsilon_{\gamma\mathrm{,COAX}} V_{sim}} = (5.955\pm0.086) \times 10^{-1} \frac{\mathrm{photon}}{\mathrm{event} \times l}
 \end{equation*}
 
 As mentioned above these values are invariant with change of volume which is why we can also apply it to our real liquid argon tank volume. 
@@ -952,7 +952,7 @@ The following sections will focus on the concrete implementation of this method 
 \end{figure}
 
 To determine the event rate one has to plot the amount of measured events over time with a suitable binning (see figure \ref{fig:ZeitAll}).
-In this case a binning of one week per bin was chosen which results in about 114 weeks for the 2,17 years of \PII.
+In this case a binning of one week per bin was chosen which results in about 114 weeks for the 2.17 years of \PII.
 It should be noted that we again, like in the line count rate analysis, only use those events in which the Muon Veto and the detector anti-coincidence veto is not triggered.
 The first thing that jump into your eyes when looking at figure \ref{fig:ZeitAll} is two different types for discontinuities can be seen.
 Oblivious we can not lay a exponential decrease fit function through this graph as long as these discontinuities are present.
@@ -991,7 +991,7 @@ A new plot including only events between the energy limits of 200 and 400keV can
 	\end{subfigure}
 	\\
 	\vspace{0.5cm}
-	\caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
+	\caption{ }
 	\vspace{0.5cm}
 \end{figure}
 
@@ -1009,27 +1009,24 @@ These mean measuring times can easily be calculated by plotting the test pulse s
 The contents of these bins in the test pulse histogram correspond now to the respective measuring time in the binning intervals. 
 \\
 
-By dividing all bins of the event histogram by the corresponding bins in the test pulse histogram, you would get a new histogram showing the change of events measured in the time intervals of the bins (see figure \ref{}).
+By dividing all bins of the event histogram by the corresponding bins in the test pulse histogram, you would get a new histogram showing the change of events measured in the time intervals of the bins (see figure \ref{fig:ChangeInEventRate}).
 Or in other words, this new histogram shows us the event rate per week over all of \PII.
 \\
 \begin{figure}[t!]
 	\centering
-	\begin{subfigure}{.5\textwidth}
+	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/testpuler.pdf}
 		\caption{effective measuring times}
 		\label{fig:effectiveMeasuringTimes}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/afterTheFall.pdf}
+		\includegraphics[width=\textwidth]{./Bilder/eventRate.pdf}
 		\caption{after}
-		\label{fig:after}
-	\end{subfigure}
+		\label{fig:ChangeInEventRate}
+	\end{minipage}
 	\\
-	\vspace{0.5cm}
-	\caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
-	\vspace{0.5cm}
 \end{figure}
 
 From this graph we now want to determine the exponential change in the event rate by applying an exponential fit function.
@@ -1039,15 +1036,15 @@ The exact fit function used is
 \label{equ:FitFilters}
 \end{equation}
 In this is A corresponding to the measured \Kr event rate of the decreasing function, B the half life of the decrease and C the constant event background rate.
-Due to us exacting only \Kr to change over time we can already fix fit-parameter B to \(T = 10.739\unit{y}\) which is the half life of \Kr and leaving the other two parameter relatively free.
-From the resulting fit function (seen figure \ref) we get the fit parameters as seen in table \ref{tab:FitParZeit}.
-The only parameter we need for our analysis is parameter \(\mathrm{A} = \) being the \Kr event rate meaning that !!!!! events caused by \Kr decays could be measured every second.
+Due to us exacting only \Kr to change over time we can already fix fit-parameter B to \(10.739\unit{y}\) which is the half life of \Kr and leaving the other two parameter relatively free.
+From the resulting fit function (seen figure \ref{fig:ChangeInEventRateFit}) we get the fit parameters as seen in table \ref{tab:FitParZeit}.
+The only parameter we need for our analysis is parameter \(\mathrm{A} = R_{\mathrm{count}} = \) being the \Kr event rate meaning that !!!!! events caused by \Kr decays could be measured every second.
 Now that we have the \Kr event rate all we need now to determine the specific activity is the conversion factor from the measured events to the necessary \Kr decays in the liquid argon to cause this \Kr event rate.
 As described above we need a new Monte Carlo simulation for that.
 What this simulation actually simulates and how we determine the conversion factor from it is the topic of the following section.
 
 
-\begin{figure}[t!]
+\begin{table}[t!]
 	\centering
 	\begin{tabular}{|l|r|}
 		\hline
@@ -1060,28 +1057,25 @@ What this simulation actually simulates and how we determine the conversion fact
 		C  &	(0.828315 \(\pm\)	1.377836)\\
 		\hline
 	\end{tabular}
-	\label{tab:FitParZeit}
-	\captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
-\end{figure}
+	\caption{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
+    \label{tab:FitParZeit}
+\end{table}
 \\
 \begin{figure}[t!]
 	\centering
-	\begin{subfigure}{.5\textwidth}
+	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/eventRateFit.pdf}
 		\caption{effective measuring times}
-		\label{fig:effectiveMeasuringTimes}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
+		\label{fig:ChangeInEventRateFit}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/Sim1Phasenraum.pdf}
 		\caption{after}
 		\label{fig:Sim1Spektrum}
-	\end{subfigure}
-	\\
-	\vspace{0.5cm}
-	\caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
-	\vspace{0.5cm}
+	\end{minipage}
+
 \end{figure}
 \section{Monte Carlo simulation}
 \label{sec:MonteCarlo2}
@@ -1119,16 +1113,38 @@ On the other hand in the second simulation only 817 events were measured with a 
 But one has to consider that in the case of the first simulation only the photons of the \nuc{Rb}{85m} relaxation were emitted and \Kr only decays into this exited state with a probability of 0.434$\%$.
 The effective decay density of the first simulation is therefor about 652511 $\unit{decay}/\unit{l}$.
 To compare these two line counts, we now have to scale one of the two values so that they would theoretically have had the same decay density.
-By applying the scale of $\frac{56640}{652511}$ onto the amount of events from the first simulation you get a adjusted value of 884 events.
-The fact, that this value is roughly the same size as the value form the second simulation, proves, that a similar environmental situation must have been simulated.
+By applying the scale of $\frac{56640}{652511}$ onto the amount of events in the 514keV peak from the first simulation you get a adjusted value of 884 events.
+The fact, that this value is roughly the same size as the value 817 form the second simulation, proves, that a similar environmental situation must have been simulated.
 This conclusion also justifies retroactively the simplification in the first simulation of only emitting photons to replace the actual decay could be done.
 \\
 
 Now to calculating the conversation factor from this simulation.
+Like we need the amount of events measured in the range of interest.
+In this case we determine an amount of $\Delta$N = (1438$\pm$38) events in the spectrum that deposited an energy between 200 to 400keV.
+With the absolute amount N of decays simulated we determine a detector efficiency of
+\begin{equation*}
+    \epsilon_{\beta} = \frac{\Delta \mathrm{N}}{\mathrm{N}} = (1.438\pm0.038)\times10^{-6} \frac{\unit{events}}{\unit{decay}}
+\end{equation*}
+This values says that any decay in the liquid argon has a probability of $\epsilon_{\beta}$ to be detected by one of the detectors that was always on.
+With this value we can again calculate the volume independent conversation factor
+\begin{equation*}
+    \frac{1}{\epsilon_{\beta} V_{sim}} = (39,38\pm1,04) \frac{\unit{decay}}{\unit{events} \times l }
+\end{equation*}
+\\
 
+With this conversation factor we can now also calculate the specific activity of \Kr.
+By applying equation \ref{equ:activityAt0} and feeding it with the values found we result in an specific activity of $a = (0,0614\pm0,0419) \frac{\unit{Bq}}{\unit{l}}$ at the start of Phase II.
 
+\begin{equation}
+    a(t=0) = \frac{R_\mathrm{count}}{\epsilon_{\beta} V_{sim}} 
+    \label{equ:activityAt0}
+\end{equation}
 
- 
+Because we want to compare this value to the specific activity found in the line count rate analysis, we have to now calculate the mean specific activity over all of Phase II.
+This can easily be done by integrating the exponential function with fit parameter A and B over all of \PII and then dividing it by 2.17 years.
+\begin{equation*}
+    \bar{a} = \int_0^{2.17y} \mathrm{A}\times\exp \left( \frac{\log(2)}{\mathrm{B}} t \right) \mathrm{d}t
+\end{equation*}
 
 
   
