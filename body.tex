@@ -326,7 +326,7 @@ Especially no \Kr decay.
 This veto can therefor be used to filter out high-energy particles from outside and the background they create.
 \\
 
-For a photon from the relaxation of \nuc{Rb}{85m}to create the distinct 514keV peak it is necessary to deposit all of its energy in only one of the detectors. 
+For a photon from the relaxation of \nuc{Rb}{85m} to create the distinct 514keV peak it is necessary to deposit all of its energy in only one of the detectors. 
 This means that any event in which two different germanium detectors measured a non neglectable energy deposition is most likely not caused by a \Kr decay.
 This kind of filtering is called a detector anti-coincidence filter.
 Whether an event has more than one detector measure a signal can be determined by the multiplicity counter of each event stored in tier 3 and 4.
@@ -343,7 +343,7 @@ It is therefor necessary to evaluate their measured data separately.
 \\
 
 Now that we have listed the steps necessary to adjust our measurement results so that we can determine the number of decays from we can finally plot the spectra of the corresponding detectors (see figure \ref{fig:NoFilterBEGes} for the BEGes and \ref{fig:NoFilterCOAX} for the spectra of the COAX detectors). 
-In these two spectra we can clearly see two distinct peaks - one at 511keV that corresponds to the positron electron annihilation events and one at 514keV that corresponds to the photons from the relaxation of \nuc{Rb}[85m].
+In these two spectra we can clearly see two distinct peaks - one at 511keV that corresponds to the positron electron annihilation events and one at 514keV that corresponds to the photons from the relaxation of \nuc{Rb}{85m}.
 From the fact that we can see a distinct peak at the 514keV line we can already claim the fact that there must be a non neglectible amount of \Kr in the liquid argon.
 Otherwise no peak should have been able to be measured. 
 The difference in resolution can be seen in the fact that in the BEGe diagram the two peaks have a smaller full width at half value..
@@ -369,25 +369,6 @@ Compared to the COAX detectors their peaks can easily be distinguished.
 	\caption{All events measured by the respective detectors in the range of 500keV to 525keV.}
 \end{figure}
 
-\begin{figure}[t!]
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-	\includegraphics[width=80mm]{./Bilder/500525LArVetoBEGesEventList.pdf}
-    \caption{BEGes}
-  \label{fig:LArBEGesEV}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-	\includegraphics[width=80mm]{./Bilder/500525LArVetoCOAXEventList.pdf}
-  \caption{COAX}
-  \label{fig:LArCOAXEV}
-\end{subfigure}
-    \\
-	\vspace{0.5cm}
-    \caption{All events measured by the respective detectors with the LAr filter applied and the manually recovered precoincedence events in the range of 500keV to 525keV.}
-\end{figure}
-
 Now that we have the two spectra of the corresponding detectors, we have two possible ways of how we can determine the number of measured events around the 514keV peak.
 The easier way is to just use the spectra as they are and only change the used fit function so that it also takes the second peak into account when fitting.
 Another possible approach tries to suppress the annihilation peak and then fit the spectrum with only one Gaussian peak.
@@ -401,7 +382,6 @@ This results in a lower amount of events measured at this energy and therefore, 
 But to understand why this filter also filters out these false positives we have to discuss how this filter works first.
 This will be the topic of the following chapter.
 \\
-
 
 \section{Annihilation Peak Suppression}
 \label{sec:APS}
@@ -439,9 +419,9 @@ You can see that the positron electron annihilation peak can not be identified a
     \caption{All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.}
 \end{figure}
 
-In comparison, when you take only those events in which the liquid argon veto was triggered you get figure \ref{} and \ref{}.
+In comparison, when you take only those events in which the liquid argon veto was triggered you get figure \ref{fig:LArBEGes} and \ref{fig:LArCOAX}.
 From those you can see that the majority of filtered events have an energy around the 511keV. 
-
+\\
 
 At this point one could say that we have done enough filtering and use the liquid argon filtered spectra to determine the number of decays in the peak.
 But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out any real rare \Kr decay and whether it is possible to recover them.
@@ -449,11 +429,11 @@ The number of events filtered out by the liquid argon veto in the energy range o
 This number is way too big to look at every individual case.
 \\
 
-Luckily we can use the fact that the excited \nuc{Rb}{85} state has a half life of 1.015 \(\mathrm{\mu}\)s.
+Luckily we can use the fact that the excited \nuc{Rb}{85m} state has a half life of 1.015 \(\unit{\mus}\).
 This means that theoretically we should be able to measure a pre-coincedence event of the beta creating scintillation light which can then be measured before even a signal in the germanium detectors could be seen.
 This way we  can hopefully identify the majority of events created by \Kr decays from the rest of the filtered signals.
 To do this, we have to limit the events used for our investigation to those events that have a negative time difference between these two events respective to the Germanium detector signal.
-The time difference for each individual liquid argon events is already analyzed and stored in the vector "triggerLAr"  of the Tier 3 data set.
+The time difference for each individual liquid argon events is already analyzed and stored in the vector $"$triggerLAr$"$  of the tier 3 data set.
 This vector has the same number of dimensions as there are photomultipliers and every entry is indexed with the corresponding input channel of this photomultiplier.
 The entries of this vector are again vectors themselves storing the time difference for every signal that triggered the liquid argon veto in the corresponding channel.
 Since the events are listed in ascending order and we are interested in the first trigger event of the photomultiplier, we use only the first entry of this inner vector here for simplicity reasons.
@@ -485,7 +465,6 @@ Theoretically it should now be possible to see a exponential increase from the n
 Because of the small number of events however, it is almost impossible to make any statements about the course of these events.
 \\
 
-
 !!!!! diesen Teil noch Überarbeiten wenn nicht weglassen !!!!!
 
 Interestingly, the majority of all signals with a negative time difference were measured by the PMTs. 
@@ -502,7 +481,6 @@ However, this should still be able to determine the trigger position of the sign
 \\
 
 !!!!! bis hier hin !!!!!
-
 
 Nevertheless we were able to lower the number of potential 514keV photons from \Kr decay events from 1728 down to only 55.  
 These remaining events can now be manually examined with a with software called GerLa written by GERDA employees.
@@ -583,13 +561,11 @@ The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
 \end{equation}
 \\
 
-
 In the course of the fitting process it has to be mentioned that some fitness parameters have only been left free for rather small interval.
 Most notably the values C and F, being the variances of two Gaussian peaks, were each left free only on a very small range around the values derived from the resolutions of the detectors at the specific energies (see appendix section \ref{sec:ResDetermination}).
 When you apply the fit function to the two different spectra of the two kinds of detectors you get the graphs displayed in figure \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX}.
 The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}. 
 \\
-
 
 \begin{figure}[t!]
 	\centering
@@ -713,7 +689,6 @@ But due to that not being possible we can not use those results in our analysis 
 	\captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
 \end{figure}
 
-
 Now that we have a number of the special \Kr events measured in the respective detectors.
 But what we need for the determination of the activity is not the amount of measured events but actually the amount of \Kr decays in the whole liquid argon tank.
 Luckily we can calculate the amount of actual events in the liquid argon tank by determining the detector efficiency of the two detector types.
@@ -737,7 +712,7 @@ The simulation used here consists of a cylindrical of 2.5m of height and 3m in d
 The resulting volume of the liquid argon is $V_{sim} = 17.65 \mathrm{m}^3$ .
 Compared with the volume of 64 m\(^3\) of liquid argon used in the GERDA experiment this volume is much smaller.
 But as we will see later, this volume is by far big enough for our purpose.
-A total of N = 50.000.000 rare \Kr decays are now simulated in the volume of this cylinder that is not occupied by the detectors. 
+A total of N = 50.000.000 photons with an energy of 514keV are now simulated in of the volume in this cylinder that is not occupied by the detectors. 
 As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over the entire volume of the cylinder is relatively constant.
 \\
 
@@ -762,7 +737,7 @@ As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over th
 \end{figure}
 \\
 
-From these 50 million simulated decays only about 90 thousand were actually detected by any of the detectors, only 30.465 of them crated a signal in one of the BEGe and 24902 in the COAX under the condition that one already uses an anti-coincedence filter.
+From these 50 million simulated decays only about 90 thousand were actually detected by any of the detectors, only 30.465 of them crated a signal in one of the BEGe and 24.902 in the COAX under the condition that one already uses an anti-coincedence filter.
 The spatial distribution of all measured events in the respective detectors can be seen as red dots in Figure \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa} for the BEGe detectors and Figure blah and blah for the COAX detectors, depending on the detector type.
 From their position one can see that in both detector types the overwhelming majority of the detected events were positioned close to the detectors themselves.
 Already at a distance of about 60cm from the detectors the majority of all decays were no longer measured.
@@ -790,7 +765,7 @@ for the volume of the simulated cylinder.
 \\
 
 This means that if a 514keV photon is emitted at any location in the liquid argon container, it has a probability \(\epsilon_{\gamma,\mathrm{,BEGe}}\) of being measured by one of the BEGe detectors.
-On the other hand, it can also be said, that for every measured 514keV photon in one of the BEGe detectors an amount of about $\frac{1}{\epsilon_\gamma} = 10515 \frac{\mathrm{decay(rare)}}{\mathrm{event}}$ \nuc{Rb}[85m] relaxations must occur.
+On the other hand, it can also be said, that for every measured 514keV photon in one of the BEGe detectors an amount of about $\frac{1}{\epsilon_\gamma} = 10515 \frac{\mathrm{decay(rare)}}{\mathrm{event}}$ \nuc{Rb}{85m} relaxations must occur.
 In other words, the value $\frac{1}{\epsilon_\gamma}$ is a factor from the measured entries to the actual amount of \nuc{Rb}{85m} relaxations.
 If you divide this factor by the simulated volume you get the conversion factor you want to determine with this simulation.
 
@@ -900,7 +875,6 @@ Finally, we can conclude that with the line count rate analysis we were able to 
 \section{Activity from the Decrease in Rate}
 \label{sec:SAfromDecrease}
 
-
 As described in the beginning of section \ref{sec:AotKr}, the line count analysis method of the rare \Kr decay was expected to be relatively precise.
 By following this procedure we were able to determine the activity down to the order of 10$^{-5} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
 As it was also stated above, the second method using the change in intensity with time is expected to be relatively imprecise.
@@ -939,13 +913,13 @@ This procedure will be carried out in the next section.
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[height=80mm]{./Bilder/ZeitverlaufALLE.pdf}
+		\includegraphics[width=.\textwidth]{./Bilder/ZeitverlaufALLE.pdf}
 		\caption{every event}
 		\label{fig:ZeitAll}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[height=80mm]{./Bilder/ZeitverlaufLimits.pdf}
+		\includegraphics[width=\textwidth]{./Bilder/ZeitverlaufLimits.pdf}
 		\caption{only energies between 200 and 400keV}
 		\label{fig:ZeitLimits}
 	\end{subfigure}
@@ -955,7 +929,6 @@ This procedure will be carried out in the next section.
 \vspace{0.5cm}
 \end{figure}
 \\
-
 
 To determine the event activity of the all events measured in the detectors one has to plot the amount of measured events in specific intervals over time.
 If one takes every event measured over all of Phase II one can see two key characteristic discrepancies from the expected continuous course (see figure \ref{fig:ZeitAll}).
@@ -1000,7 +973,6 @@ In figure \ref{} one can see that the intensity changes very abruptly over time 
 But for our intensity diagram to have a continuous
 
 
-
 This can easily be explained by what was already mentioned in \ref{sec:CalcActiv}.
 We saw there that not every detector was active all the time and that in \PII there were time intervals at which nothing at all was measured due to maintenance work.
 Luckily we already found a solution to this problem by using the test pule signal.
@@ -1012,7 +984,7 @@ Rather, we are interested in the measurement time of each detector in each of th
 Those intervals were chosen to be of roughly one week.
 Out strategy therefor is to determine the amount N$_{det,t}(i)$ of events with energies from 200 to 400keV of each individual detector in these week long intervals as well as the amount N$_{TP,t}(i)$ of measured test pulse signals.
 Variable i is the input channel of the detectors whereas t is the index for the specific time interval.
-From those one can calculate a ratio r_{i,t} between the number of measured events and the test pulse signals for each detector and each time interval.
+From those one can calculate a ratio r$_{\mathrm{i,t}}$ between the number of measured events and the test pulse signals for each detector and each time interval.
 \begin{equation*}
 r_{i,t} = \frac{\mathrm{N}_{det,t}(i)}{\mathrm{N}_{TP,t}(i)}
 \end{equation*}  
@@ -1041,7 +1013,7 @@ These ratios represent a relative frequency in which the investigated events wit
 \section{Conclusion and Discussion}
 \label{sec:calcOfTheCon}
 
-With all the work done in this paper it could now finally be shown that the activity of \nuc{Kr}{85} in the liquid argon of the GERDA experiment has a value of 0.074 $\frac{\unit{mBq}}{\unit{l}]}$. 
+With all the work done in this paper it could now finally be shown that the activity of \nuc{Kr}{85} in the liquid argon of the GERDA experiment has a value of 0.074 $\frac{\unit{mBq}}{\unit{l}}$. 
 
 
 
