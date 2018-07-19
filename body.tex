@@ -418,14 +418,33 @@ You can see that the positron electron annihilation peak can not be identified a
 	\vspace{0.5cm}
     \caption{All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.}
 \end{figure}
+\begin{figure}[t!]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=80mm]{./Bilder/AntiLArBEGe.pdf}
+		\caption{BEGes}
+		\label{fig:AntiLArBEGes}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=80mm]{./Bilder/AntiLArCOAX.pdf}
+		\caption{COAX}
+		\label{fig:AntiLArCOAX}
+	\end{subfigure}
+	\\
+	\vspace{0.5cm}
+	\caption{All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.}
+\end{figure}
 
-In comparison, when you take only those events in which the liquid argon veto was triggered you get figure \ref{fig:LArBEGes} and \ref{fig:LArCOAX}.
-From those you can see that the majority of filtered events have an energy around the 511keV. 
+In comparison, when you take only those events in which the liquid argon veto was triggered you get figure \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}.
+From those you can see that the majority of not background events that got filtered out have an energy around the 511keV.
+But one can already see that there are also a small deviation from the background level around the 514keV marks.
+This means that some of events caused by \Kr decays must have also triggered the liquid argon veto.
 \\
 
-At this point one could say that we have done enough filtering and use the liquid argon filtered spectra to determine the number of decays in the peak.
-But due to the non vanishing possibility of the beta electron to trigger the liquid argon veto it is of interest to investigate whether the filter has accidentally filtered out any real rare \Kr decay and whether it is possible to recover them.
-The number of events filtered out by the liquid argon veto in the energy range of 509 to 519 keV is 1728.
+It is therefor of interest to investigate how many of the \Kr decay caused events were filtered out by accident and whether it is possible to recover them.
+The absolute number of events filtered out by the liquid argon veto in the energy range of 509 to 519 keV is 1728.
 This number is way too big to look at every individual case.
 \\
 
@@ -944,77 +963,133 @@ The following sections will focus on the concrete implementation of this method 
 \end{figure}
 \\
 
-To determine the event activity of the all events measured in the detectors one has to plot the amount of measured events in specific intervals over time.
-If one takes every event measured over all of Phase II one can see two key characteristic discrepancies from the expected continuous course (see figure \ref{fig:ZeitAll}).
+To determine the event rate one has to plot the amount of measured events over time with a suitable binning (see figure \ref{fig:ZeitAll}).
+In this case a binning of one week per bin was chosen which results in about 114 weeks for the 2,17 years of \PII.
+Immediately after seeing this figure you can see two different two different sources for discontinuities in the course of the graph.
+Oblivious we can not lay a exponential decrease fit function through this graph as long as these discontinuities are present.
+We therefor have to find a way to suppress them but to do that we have to investigate where these discontinuities originate from.
 \\
 
-Firstly, you see a jump in the intensity at roughly \(52\times10^6\unit{s}\).
-This jump results from lowering of the lower detection energy limit. !!!!! Hier noch genauer nachfragen !!!!!
-Because of that more events were actually stored then previously resulting in a higher event intensity.
-This however can easily be solved by only using events with a minimum energy of about 200keV.
-We can also use an upper energy limit to suppress events caused by isotopes with a higher end point energy than \Kr.
+Firstly, you see a big jump in the intensity at a later time of \PII.
+This jump originates from the lowering of the lower detection energy limit on the 12.10.2017.
+At this point in time the lower limit for the event detection in all detectors was drastically lowered.
+Due to every detector having different characteristics, the limit was set for each detector individually.
+Before the lowering the highest limit was set at 139keV for the BEGes and at 185 for the COAX.
+After the lowering all event with an energy of at least 17keV could be measured by all detectors.
+For a more graphical representation, see the beginning of the spectra in figure \ref{fig:before} for all events measured before and figure \ref{fig:after} for all events after the lowering of the limit. 
+This means that from the 12.10.2017 on a much higher event rate was measured just because more event were actually recored.
+To work around this continuity problem all we have to do is limit our event used for the analysis to those that have a minimal energy of 200keV. 
+While we are already at it we can also use an upper energy limit.
+Its purpose is to suppress events caused by isotopes with a higher end point energy than \Kr.
 Even though they should only create a constant background, but their presence make a change in intensity harder to identify.
 We therefor chose the upper limit to be at 400keV.
 Theoretically the endpoint energy of \Kr is at 687keV, but the count rate towards the endpoint is that low that we would basically only include more constant background by setting the upper limit higher.
 A new plot including only events between the energy limits of 200 and 400keV can be seen in figure \ref{fig:ZeitLimits}.
 \\
+\begin{figure}[t!]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.\textwidth]{./Bilder/beforeTheFall.pdf}
+		\caption{before}
+		\label{fig:before}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/afterTheFall.pdf}
+		\caption{after}
+		\label{fig:after}
+	\end{subfigure}
+	\\
+	\vspace{0.5cm}
+	\caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
+	\vspace{0.5cm}
+\end{figure}
+\\
 
-Secondly, you have here the same problem as before.
+The second discontinuities behavior originates from the same problem that we faced in the first method.
 Not all detectors were on all of the time and there were also time intervals in which nothing at all was measured.
-In section \ref{sec:CalcActiv} we used the test pulse signal to weigh each individual detector signals with which one we were able to calculate a weighted mean measuring time.
+In section \ref{sec:CalcActiv} we used the test pulse signal to weigh each individual detector signals with which we were able to calculate a weighted mean measuring time.
 However here we are not interested in a mean measuring time over all of \PII.
-In this case solve this issue by only using the events measured by all those detectors that were on over all of \PII and 
-
-
-would get a lot of constant background from other radioactive isotopes with a much higher half life than \Kr.
-This constant background can be partially suppressed by limiting the events examined.
-
-
-An appropriate limitation is to only use those events with energies in the range of 200 to 400keV.
-With this choice a lot of isotopes with a much higher mean beta energy will be filtered out while a great portion of the \Kr events lie in this interval.
-Really the only two other isotopes that have their mean beta energy in the same area are \nuc{Ar}{39} and \nuc{Ar}{42}.
-\nuc{Ar}{39} has a half life of about 269y and can therefor be seen as a constant background source.
-\nuc{Ar}{42} however has only a half life of 32.9y 
-%The only other major background source that also has its maximum energy in this range is \nuc{Ar}{39} but its half life is of about 269y which means that its change over time should is irrelevant.
-Theoretically the ideal energy range for \Kr would already start at 50keV due to its maximum energy of about 100keV.
-But this is problematic due to  !!!!! hier noch hin warum sich das Spektrum bei e<150 so seltsam verhält !!!!!.
+In this case we solve this issue by only using the events measured by all detectors that were on over all of \PII and weighing the resulting bins in the histogram with the amount of test pulse signals that occurred in the same time interval.
+By only taking those detectors that were always on at the times data was recorded will ensure us that all changes to the intensity by starting up or shutting off detectors will be suppressed.
+But now we still have the problem that the measuring periods were frequently interrupted.
+This is where the test pulse signal comes in handy.
+It is a clear indication of when exactly data was actually recorded.
+This means that similar to the first method we can now determine effective measuring times of each time interval of the individual bin in the histogram.
+These mean measuring times can easily be calculated by plotting the test pulse signals in an histogram with the same binning as the event histogram and dividing each of these bins with the frequency of the test pulse of $f_\mathrm{TP} = 0.05\unit{Hz}$ (see figure \ref{fig:effectiveMeasuringTimes}).
+The contents of these bins in the test pulse histogram correspond now to the respective measuring time in the binning intervals. 
 \\
 
-
-
-If you now plot the measured events over time, a new problem becomes apparent (see figure ).
-In figure \ref{} one can see that the intensity changes very abruptly over time not following any kind of decrease.
-But for our intensity diagram to have a continuous
-
-
-This can easily be explained by what was already mentioned in \ref{sec:CalcActiv}.
-We saw there that not every detector was active all the time and that in \PII there were time intervals at which nothing at all was measured due to maintenance work.
-Luckily we already found a solution to this problem by using the test pule signal.
-With it we were able to calculate an effective measurement time for every detector.
+By dividing all bins of the event histogram by the corresponding bins in the test pulse histogram, you would get a new histogram showing the change of events measured in the time intervals of the bins (see figure \ref{}).
+Or in other words, this new histogram shows us the event rate per week over all of \PII.
+\\
+\begin{figure}[t!]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.\textwidth]{./Bilder/testpuler.pdf}
+		\caption{effective measuring times}
+		\label{fig:effectiveMeasuringTimes}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/afterTheFall.pdf}
+		\caption{after}
+		\label{fig:after}
+	\end{subfigure}
+	\\
+	\vspace{0.5cm}
+	\caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
+	\vspace{0.5cm}
+\end{figure}
 \\
 
-In the case however we are not interested in an overall effective measurement time.
-Rather, we are interested in the measurement time of each detector in each of the individual binning intervals of the histogram.
-Those intervals were chosen to be of roughly one week.
-Out strategy therefor is to determine the amount N$_{det,t}(i)$ of events with energies from 200 to 400keV of each individual detector in these week long intervals as well as the amount N$_{TP,t}(i)$ of measured test pulse signals.
-Variable i is the input channel of the detectors whereas t is the index for the specific time interval.
-From those one can calculate a ratio r$_{\mathrm{i,t}}$ between the number of measured events and the test pulse signals for each detector and each time interval.
-\begin{equation*}
-r_{i,t} = \frac{\mathrm{N}_{det,t}(i)}{\mathrm{N}_{TP,t}(i)}
-\end{equation*}  
-These ratios represent a relative frequency in which the investigated events with 200 to 400 keV occurred compared to the test pulse signal.
+From this graph we now want to determine the exponential change in the event rate by applying an exponential fit function.
+The exact fit function used is
+\begin{equation}
+\mathrm{f}(x) = \mathrm{A}\exp\left(\frac{\log(2)\times x}{\mathrm{B}}\right) + \mathrm{C}
+\label{equ:FitFilters}
+\end{equation}
+\\
+In this is A corresponding to the measured \Kr event rate of the decreasing function, B the half life of the decrease and C the constant event background rate.
+Due to us exacting only \Kr to change over time we can already fix fit-parameter B to \(T = 10.739\unit{y}\) which is the half life of \Kr and leaving the other two parameter relatively free.
+\\
 
+From the resulting fit parameters (see table \ref{tab:FitParZeit}) we get a fit function as seen in figure \ref.
+The only parameter we need for our analysis is parameter \(\mathrm{A} = \) being the \Kr event rate meaning that !!!!! events caused by \Kr decays could be measured every second.
+Now that we have the \Kr event rate all we need now to determine the specific activity is the conversion factor from the measured events to the necessary \Kr decays in the liquid argon to cause this event rate.
+As described above we need a new Monte Carlo simulation for that.
+What this simulation simulates and how we determine the conversion factor from it is the topic of the following section.
 
 
 \begin{figure}[t!]
 	\centering
+	\begin{tabular}{|l|r|}
+		\hline
+		Name	& Value  \\ 
+		\hline
+		A  &	(17.844639 \(\pm\)	3.179471)\\	
+		\hline
+		B  &	(513.838989 \(\pm\)	0.665171)\\	
+		\hline
+		C  &	(0.828315 \(\pm\)	1.377836)\\
+		\hline
+	\end{tabular}
+	\label{tab:FitParZeit}
+	\captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
+\end{figure}
+
+\begin{figure}[t!]
+	\centering
 	\ifmakefigures%
-	\includegraphics[width=100mm]{./Bilder/MC-514-Phasenraum.pdf}
+	\includegraphics[width=100mm]{./Bilder/BeispielSignal.pdf}
 	\fi%
+	\label{fig:Trigger4}
 	\caption{
-    Spectrum of the measured rare \Kr events in all of the BEGe detectors of the Monte Carlo simulation.
+		The recorded signal of the photomultiplier tube P4 from the event with event number 1614036. !!!!!Hier noch was zu den Achsen!!!!!. 
+		The blue bar represents the moment in time in which a signal in the Germanium detector was measured.
 	}
-	\label{fig:PhasenraumMC514}
 \end{figure}
 
 
