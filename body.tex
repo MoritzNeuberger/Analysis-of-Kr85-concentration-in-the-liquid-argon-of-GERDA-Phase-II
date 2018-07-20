@@ -831,6 +831,8 @@ Now that the conversion factors of the two types of detectors are determined we 
 where p = 0.434$\%$ is the probability of a \Kr to decay into the 514keV energetically raised \nuc{Rb}{85m}.
 For an amount of 27.24\(\pm\)3.87 events to be measured in the BEGe detectors, it can be concluded that a density for the \Kr decay of, whereas for the COAX detectors we get a value of . 
 \\
+
+
 \section{Calculating the Activity}
 \label{sec:CalcActiv}
 
@@ -883,8 +885,36 @@ With these mean measuring times we can now finally calculate the mean specific a
 \end{equation*}
 
 
-Finally, we can conclude that with the line count rate analysis we were able to determine an activity of in the BEGes and an activity of in the COAX.
+Finally, we can calculate that with the line count rate analysis we were able to determine an activity of $\bar{a}_{\mathrm{1,BEGe}} = (5.46\pm0.827)\times10^{-4}	\frac{\unit{Bq}}{\unit{l}}$ in the BEGes and a specific activity of $\bar{a}_{\mathrm{1,COAX}} = (4.70\pm0.887)\times10^{-4}	\frac{\unit{Bq}}{\unit{l}}$ in the COAX.
+These two values differ only inside their range of uncertainty which is why these results are of good quality.
+Of these two value we can now also calculate a mean specific activity $\bar{a}_{1} = (5.08\pm0.857)\times10^{-4}\frac{\unit{Bq}}{\unit{l}}$.
+\\
 
+We can now already make some early comparisons to the WARP and the Darkside experiments.
+Because we can now calculate how many events we should have seen if the specific activity of \Kr from the other experiments would have been present.
+As simplification we restrict ourselves here to the theoretical values that could be measured in the BEGe detectors. 
+In the case of the WARP experiment a specific activity of $(0,16\pm0,13)\frac{\unit{Bq}}{\unit{l}}$ \label{} was measured for the \Kr.
+How many events this corresponds to in the BEGe detectors we can determine with the help of formula \ref{equ:correspondingEvents}.
+\begin{equation}
+	\mathrm{N} = \bar{a} \times p \times \epsilon_\gamma V_{sim} \times \bar{t}
+	\label{equ:correspondingEvents}
+\end{equation}
+With this activity and the values determined from the analysis above we can calculate a corresponding amount of about 76152 events that would have be measured in the BEGes.
+As one could expect with such a high activity, the counting rate is also much higher than the 183 events determined from the actual measurement.
+On the other hand, an specific activity of $(2,8577 \pm 0,18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
+This value is only of one order of magnitude bigger than the one calculated above.
+The corresponding line count at the 514keV peak for the Darkside experiment would therefor be of about 1360 measured events.
+From the specific activitys themselves we can already see that the determined activity of \Kr at GERDA is much smaller than the ones of the other two experiments.
+With the corresponding line count rate we can now also see that a specific activity higher than the determined value of $(5.08\pm0.857)\times10^{-4}\frac{\unit{Bq}}{\unit{l}}$ is very much unlikely because a much higher line count should have been measured in that case.
+\\
+
+Now that we have determined a concrete value for the specific activity of \Kr we now come to our second attempt to measure the specific activity as described in the next chapter.
+\\  
+
+
+
+
+%	4,70E-04	8,87E-05	Bq/l
 
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
@@ -899,22 +929,22 @@ Finally, we can conclude that with the line count rate analysis we were able to 
 
 As described in the beginning of section \ref{sec:AotKr}, the line count analysis method of the rare \Kr decay was expected to be relatively precise.
 By following this procedure we were able to determine the activity down to the order of 10$^{-5} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
-As it was also stated above, the second method using the change in intensity with time is expected to be relatively imprecise.
+We will now concentrate on implementing and discussing the second approach of determining the specific activity by using the change of event rate over time.
+Because this method does not rely on any of the values used in the line count rate analysis this approach is truly completely independent of the other method.
+Ideally, a positive result from this method would confirm the specific activity determined in the previous chapter. 
+But as it was also stated above, the second method is expected to be relatively imprecise.  
 This estimation came from the fact that this method relies on a great approximation.
 Because it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
 The idea behind this is that \Kr has the lowest half life \(T = 10.739\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
 In comparison, the other dominant background sources are in descending order of their activity \nuc{Ar}{42} with a half-life of 32.9 y [], \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
 Compared to those should \Kr be the only isotope to change its activity notably in the timespan of Phase II.
 It is therefor approximated that all change in intensity should only originate from the \Kr decay.
+But even if the activity determined by this method is not expected to have a much of a value for us, it can still be used as a crosscheck for the other activity determined above.
 \\
 
-But in the end is this assumption relatively harsh because in reality all other isotopes still have a non vanishing influence on the changes in intensity.
-It is therefor expected that this approach only wields a relatively imprecise value for \Kr's activity.
-However we can still use its determined value as a crosscheck for the results found by the line count rate analysis.
-\\   
-
-Now that we have shown that this approach may actually be applied here, we have to discuss how one can determine the specific activity using the change in intensity anyways. 
-To measure the change in rate every measured event will has to be drawn over time and an exponential fit applied.
+We have now shown that this approach can be applied here and that it actually serves a purpose.
+Now it has to be discussed how exactly the specific activity can be determined by changing the intensity.
+To measure the change in rate every measured event will have to be drawn over time and through it an exponential fit applied.
 The amplitude of the resulting exponential function represents an event rate with which events in the investigated energy range occur.
 \\
 
@@ -1060,20 +1090,27 @@ What this simulation actually simulates and how we determine the conversion fact
 	\caption{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
     \label{tab:FitParZeit}
 \end{table}
-\\
+\begin{figure}{.5\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{./Bilder/eventRateFit.pdf}
+	\caption{effective measuring times}
+	\label{fig:ChangeInEventRateFit}
+\end{figure}%
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.5\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{./Bilder/eventRateFit.pdf}
-		\caption{effective measuring times}
-		\label{fig:ChangeInEventRateFit}
-	\end{minipage}%
+	
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/Sim1Phasenraum.pdf}
 		\caption{after}
 		\label{fig:Sim1Spektrum}
+	\end{minipage}%
+
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/Aktivitaet.pdf}
+		\caption{specific activity of \Kr over time}
+		\label{fig:activity}
 	\end{minipage}
 
 \end{figure}
@@ -1140,12 +1177,29 @@ By applying equation \ref{equ:activityAt0} and feeding it with the values found 
     \label{equ:activityAt0}
 \end{equation}
 
+We can get back to the graph \ref{fig:ChangeInEventRateFit} and apply the same formula to each of its values and the fit function.
+The resulting graph can be seen in figure \ref
 Because we want to compare this value to the specific activity found in the line count rate analysis, we have to now calculate the mean specific activity over all of Phase II.
-This can easily be done by integrating the exponential function with fit parameter A and B over all of \PII and then dividing it by 2.17 years.
-\begin{equation*}
-    \bar{a} = \int_0^{2.17y} \mathrm{A}\times\exp \left( \frac{\log(2)}{\mathrm{B}} t \right) \mathrm{d}t
-\end{equation*}
+This can easily be done by integrating an exponential decay function over all of \PII and then dividing it by 2.17 years.
 
+\begin{equation*}
+    \bar{a} = \frac{1}{2.17\unit{y}} \int_0^{2.17y} a(t=0)\times\exp \left( \frac{\log(2)}{T} t \right) \mathrm{d}t
+\end{equation*}
+with T being the half life of \Kr.
+This results in an mean specific activity of $ \bar{a_{2}} = 0.057294 \frac{\unit{Bq}}{\unit{l}}$ if the BEGe detectors and $ $ in the COAX detectors.
+These two values differer only 
+\\
+
+If we now compared this result with the specific activity found in the line count rate analysis we see a now problem arise.
+The mean specific activity of all investigated detectors found in the first method had a value of $\bar{a}_{1} = (5.08\pm0.857)\times10^{-4}\frac{\unit{Bq}}{\unit{l}}$.
+Compared to this is the value determined here two orders of magnitude bigger.
+This is problematic.
+But in actuality we could have seen this problem coming.
+Because if we would expect the amplitude of the function shown in figure \ref{fig:activity} to be in the same order of magnitude as the other activity we determined, no real change should be seen over the uncertainty.
+\\
+
+The critical question now is: where did we make a mistake?
+!!!!! UND HIER DANN DIE ERKLÄRUNG !!!!!  
 
   
 
