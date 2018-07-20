@@ -906,6 +906,7 @@ This value is only of one order of magnitude bigger than the one calculated abov
 The corresponding line count at the 514keV peak for the Darkside experiment would therefor be of about 1360 measured events.
 From the specific activitys themselves we can already see that the determined activity of \Kr at GERDA is much smaller than the ones of the other two experiments.
 With the corresponding line count rate we can now also see that a specific activity higher than the determined value of $(5.08\pm0.857)\times10^{-4}\frac{\unit{Bq}}{\unit{l}}$ is very much unlikely because a much higher line count should have been measured in that case.
+And due to the fact that not many assumptions have been made in the course of this approach it can be expected, that the specific activity determined here comes very close to the actual value. 
 \\
 
 Now that we have determined a concrete value for the specific activity of \Kr we now come to our second attempt to measure the specific activity as described in the next chapter.
@@ -932,11 +933,22 @@ By following this procedure we were able to determine the activity down to the o
 We will now concentrate on implementing and discussing the second approach of determining the specific activity by using the change of event rate over time.
 Because this method does not rely on any of the values used in the line count rate analysis this approach is truly completely independent of the other method.
 Ideally, a positive result from this method would confirm the specific activity determined in the previous chapter. 
+\\
+
 But as it was also stated above, the second method is expected to be relatively imprecise.  
 This estimation came from the fact that this method relies on a great approximation.
 Because it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
 The idea behind this is that \Kr has the lowest half life \(T = 10.739\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
-In comparison, the other dominant background sources are in descending order of their activity \nuc{Ar}{42} with a half-life of 32.9 y [], \nuc{Ar}{39} with 269 y and \nuc{U}{232} with 68.9 y. 
+In comparison, other radioactive isotopes that are of interest here are \nuc{Ar}{42} with a half-life of 32.9 y [], \nuc{Ar}{39} with 269 y and \nuc{Po}{210} with 138d. 
+\nuc{Po}{210} has a much lower half life than \Kr but the energy of the escaping alpha particle much higher than the mean beta energy of all of the isotopes above.
+This is important, because over the course of this chapter we will at some point begin to only consider those events in our analysis that deposited an energy between 200 and 400 keV.
+The two different types of argon isotopes are like the \Kr located in the liquid argon and have both a mean beta energy close to \Kr's 251.59 keV for the most likely decay.
+Their change in event rate should therefor be measurable by our approach.
+The change in activity of \nuc{Ar}{39} can be neglected because its half life way to big.
+On the other hand, \nuc{Ar}{42} has a half life that is in the same order of magnitude as \Kr.
+But its specific activity has already been determined to be !!!!! hier der Wert hin ?43$\muiBq/l$? !!!!!
+This is an order of magnitude smaller than the activity we expect from \Kr and should therefore be dominated by it.   
+This means even though \nuc{Po}{210} has a much lower half life it would not create much of a change in event rate due to its very low probably to release an alpha particle in this energy range.
 Compared to those should \Kr be the only isotope to change its activity notably in the timespan of Phase II.
 It is therefor approximated that all change in intensity should only originate from the \Kr decay.
 But even if the activity determined by this method is not expected to have a much of a value for us, it can still be used as a crosscheck for the other activity determined above.
@@ -1117,6 +1129,9 @@ What this simulation actually simulates and how we determine the conversion fact
 \section{Monte Carlo simulation}
 \label{sec:MonteCarlo2}
 
+
+!!!!! zur deadlayer noch genauer was heraussuchen !!!!!
+
 To calculate this conversion factor we have to apply the same process as in the line count rate analysis.
 Just that we this time don't simulate the emission of photons with an energy of 514keV in the liquid argon but rather simulate the actual \Kr decays themselves.
 But a problem is, that we can expect the detector efficiency of \Kr to be very small.#
@@ -1190,15 +1205,40 @@ This results in an mean specific activity of $ \bar{a_{2}} = 0.057294 \frac{\uni
 These two values differer only 
 \\
 
-If we now compared this result with the specific activity found in the line count rate analysis we see a now problem arise.
+If we now compared this result with the specific activity found in the line count rate analysis we realize that we have a problem.
 The mean specific activity of all investigated detectors found in the first method had a value of $\bar{a}_{1} = (5.08\pm0.857)\times10^{-4}\frac{\unit{Bq}}{\unit{l}}$.
-Compared to this is the value determined here two orders of magnitude bigger.
+Compared to this is the value determined here is two orders of magnitude bigger.
 This is problematic.
 But in actuality we could have seen this problem coming.
 Because if we would expect the amplitude of the function shown in figure \ref{fig:activity} to be in the same order of magnitude as the other activity we determined, no real change should be seen over the uncertainty.
+But where does it come from?
+The critical question now is: where did we make a mistake?
+This question and how we made this mistake will be the topic of the following section.
 \\
 
-The critical question now is: where did we make a mistake?
+
+\section{Search for the origin of the error}
+\label{SearchForError}
+
+We already saw from the comparison of the first results with the specific activity from WARP and Darkside that a value of about 0.546 $\frac{mBq}{l}$ for the specific activity of \Kr in GERDA is very likely to be true.
+Otherwise a much higher line count rate would have been necessary to be measured.
+To evaluate the accuracy of our measurement results of the second method we can also compare its values to the Darkside and the WARP experiment and predict what the equivalent changes over time with the respective activities would looks like.
+Again in the case of the WARP experiment an activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ was measured. 
+If we were to measured its equivalent amplitude in a graph like figure \ref{fig:ChangeInEventRateFit} it would greatly dominate over the constant background and a clear change would have been able to be seen.
+On the other hand is the activity in the Darkside experiment with its $(2,8577 \pm 0,18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
+Because we expect the specific activity of \Kr in the GERDA experiment to be about an order of magnitude smaller than the one in the Darkside experiment we can assume that the error actually originates in the second approach.
+As we have already mentioned several times in these theses, one of the weaknesses of this approach is the necessary assumption that only \Kr changes its activity over time.
+Compared to \nuc{Ar}{39} which also has its mean beta energy in the same energy range as \Kr this holds true with its half life of 269 y.
+In all of Phase II its activity should have only dropped by only 0.56$ \% $ which can be ignored.
+As it was also shown, \nuc{Ar}{42}'s activity is one order of magnitude smaller than
+As already mentioned above it has a half life of 32.9 y which which leads to a change of already about 4.4$\%$.
+This should theoretically be big enough to be able to measure its change over time.
+However its specific activity has already been determined 
+
+
+
+
+
 !!!!! UND HIER DANN DIE ERKLÄRUNG !!!!!  
 
   
