@@ -109,12 +109,12 @@
 \fi
 
 % biblatex wird zum Setzen des Literatirverzeichnisses verwendet
-\PassOptionsToPackage{sorting=none,autolang=other,backend=biber,
-	bibstyle=numeric-comp,citestyle=numeric-comp,%
-	}{biblatex}
-\RequirePackage{biblatex}
-\IfFileExists{\reference.bib}{\addbibresource{\reference.bib}}{\relax}%
-\defbibheading{bibliography}[\bibname]{\chapter{#1}}
+%\PassOptionsToPackage{sorting=none,autolang=other,backend=biber,
+%	bibstyle=numeric-comp,citestyle=numeric-comp,%
+%	}{biblatex}
+%\RequirePackage{biblatex}
+%\IfFileExists{\reference.bib}{\addbibresource{\reference.bib}}{\relax}%
+%\defbibheading{bibliography}[\bibname]{\chapter{#1}}
 
 % Die AMS-Pakete dienen zum modernen Satz von Gleichungen. Die Integralgrenzen
 % werden grundsätzlich unter/über das Integralzeichen gesetzt.

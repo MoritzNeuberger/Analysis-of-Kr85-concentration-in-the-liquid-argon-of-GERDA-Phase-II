@@ -12,7 +12,7 @@
 %\documentclass[11pt,a4paper]{article}
 \documentclass[encoding=utf8,british]{tumphthesis}
 \makeatletter\@openrightfalse
-%\documentclass[12pt,a4paper,twoside]{article}%
+\documentclass[12pt,a4paper,twoside]{article}%
 %-------------------------------------------------------------------------------
 \include{header}              % packages/settings
 \include{commands}            % commands, hyphenation etc.
@@ -33,17 +33,6 @@
 % --------------------------------------------------------  begin title page  --
 \begin{titlepage}
 % --------------------------------------------------------- logo /header -------
-\parbox[b]{40mm}{
-\ifmakefigures%
-  \vspace*{-7truecm}
-  \includegraphics[scale=0.25]{./gerda-GSTR-logo.pdf}
-\fi%
-  }
-\parbox[b]{110mm}{\hfill\hfill
-\textsc{Gerda} Scientific / Technical Report:~~ \textbf{\repnumber}\\[12mm]
- \hspace*{30mm}\hfill\hfill\repdate\\
- \hspace*{1mm}\hfill\small gerda-abbreviation.tex:~\versionabb}
-
 \vspace*{20mm}
 \begin{center}
 {\Large\textbf{\titleheader}}
@@ -113,7 +102,7 @@ Seite beabsichtigt leer gelassen.
 \input{appendix}
 
 %--------------------------------------------------------------- references ----
-\bibliographystyle{plain}
-\bibliography{references}
+\bibliographystyle{}
+\bibliography{references.bib}
 \@openrightfalse\makeatletter
 \end{document}
