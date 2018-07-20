@@ -1102,29 +1102,29 @@ What this simulation actually simulates and how we determine the conversion fact
 	\caption{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
     \label{tab:FitParZeit}
 \end{table}
-\begin{figure}{.5\textwidth}
+
+\begin{figure}[t!]
 	\centering
-	\includegraphics[width=\textwidth]{./Bilder/eventRateFit.pdf}
+	\ifmakefigures%
+	\includegraphics[width=100mm]{./Bilder/eventRateFit.pdf}
+	\fi%
 	\caption{effective measuring times}
 	\label{fig:ChangeInEventRateFit}
 \end{figure}%
 \begin{figure}[t!]
 	\centering
-	
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/Sim1Phasenraum.pdf}
 		\caption{after}
 		\label{fig:Sim1Spektrum}
 	\end{minipage}%
-
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/Aktivitaet.pdf}
 		\caption{specific activity of \Kr over time}
 		\label{fig:activity}
 	\end{minipage}
-
 \end{figure}
 \section{Monte Carlo simulation}
 \label{sec:MonteCarlo2}
