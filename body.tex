@@ -666,7 +666,7 @@ The fit results in the function displayed in equation \ref{equ:FitFilters}.
 \\ 
 
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\exp\left(\mathrm{E}x\right) + \mathrm{F}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi}\mathrm{C}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\exp\left(\mathrm{E}x\right) + \mathrm{F}
 \label{equ:FitFilters}
 \end{equation}
 \\
@@ -939,18 +939,24 @@ But as it was also stated above, the second method is expected to be relatively 
 This estimation came from the fact that this method relies on a great approximation.
 For this method to be applied it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
 The idea behind this comes from the fact that \Kr has the lowest half life \(T = 10.739\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
-In comparison, other radioactive isotopes that are of interest here are \nuc{Ar}{42} with a half-life of 32.9 y \cite{chen_nuclear_2016}, \nuc{Ar}{39} with 269 y \cite{singh_nuclear_2006} and \nuc{Po}{210} with 138d. 
+In comparison, other radioactive isotopes that are of interest here are \nuc{Ar}{42} with a half-life of 32.9 y \cite{chen_nuclear_2016}, \nuc{Ar}{39} with 269 y \cite{singh_nuclear_2006} and \nuc{Po}{210} with 138d \cite{kondev_nuclear_2008}. 
+\\
+
 \nuc{Po}{210} has a much lower half life than \Kr but the energy of the escaping alpha particle much higher than the mean beta energy of all of the isotopes above.
 This is important, because over the course of this chapter we will at some point begin to only consider those events in our analysis that deposited an energy between 200 and 400 keV.   
 This means even though \nuc{Po}{210} has a much lower half life it would not create much of a change in event rate due to its very low probably to release an alpha particle in this energy range.
-On the other hand, the two different types of argon isotopes are like the \Kr located in the liquid argon and have both a mean beta energy close to \Kr's 251.59 keV for the most likely decay.
+\\
+
+On the other hand, the two different types of argon isotopes also have both a mean beta energy close to \Kr's 251.59 keV for the most likely decay.
 Their change in event rate should therefor be measurable by our approach.
 The change in activity of \nuc{Ar}{39} can be neglected because its half life way to big.
 \nuc{Ar}{42} on the other hand has a half life that is in the same order of magnitude as \Kr.
 But its specific activity has already been determined to be about $148\muiBq/l$ \cite{becerici_schmidt_results_2014} which is about factor 3.5 smaller than the expected \Kr specific activity.
-Whether or not we have to consider the influence of this isotope will be discussed later in the theses.
-But in the course of this approach of calculating the specific activity we will .
-Compared to those should \Kr be the only isotope to change its activity notably in the timespan of Phase II.
+Whether or not we have to consider the influence of this isotope will be discussed later in this theses.
+For now we will apply the simplification that its change will be small compared to \Kr.
+\\
+
+All other radioactive isotopes that are risidual in the liquid argon have either a much longer half life than \nuc{Ar}{42}, their mean beta energy is much higher than 400keV or their specific activity is too small to measure any kind of change over time.
 It is therefor approximated that all change in intensity should only originate from the \Kr decay.
 But even if the activity determined by this method is not expected to have a much of a value for us, it can still be used as a crosscheck for the other activity determined above.
 \\
@@ -1235,11 +1241,13 @@ Because we expect the specific activity of \Kr in the GERDA experiment to be abo
 As we have already mentioned several times in these theses, one of the weaknesses of this approach is the necessary assumption that only \Kr changes its activity over time.
 Compared to \nuc{Ar}{39} which also has its mean beta energy in the same energy range as \Kr this holds true with its half life of 269 y.
 In all of Phase II its activity should have only dropped by only 0.56$ \% $ which can be ignored.
-As it was also shown, \nuc{Ar}{42}'s activity is one order of magnitude smaller than
-As already mentioned above it has a half life of 32.9 y which which leads to a change of already about 4.4$\%$.
-This should theoretically be big enough to be able to measure its change over time.
-However its specific activity has already been determined to be 
-
+Now finally \nuc{Ar}{42} comes into play.
+As we already mentioned in the beginning of this chapter, \nuc{Ar}{42} has a half life of 32.9 y.
+Over the time of \PII it should show a drop in activity of 4.4$\%$ which results in a decrease of $7 \frac{\unit{\muBq}}{\unit{l}}$.
+This by far not enough to explain the much greater decrease of specific activity measured.
+But what is really interesting about this decay is not the decay of \nuc{Ar}{42} but rather the decay of the resulting daughter nuclei \nuc{K}{42}.
+\nuc{K}{42} has a half life of 12.355 h \cite{chen_nuclear_2016} but due to it being a daugther nuclei of a isotope with a much higher half life its effective specific activity should be equal to the one of \nuc{Ar}{42}.
+\\
 
 
 
