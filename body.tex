@@ -327,7 +327,7 @@ This veto can therefor be used to filter out high-energy particles from outside 
 \\
 
 For a photon from the relaxation of \nuc{Rb}{85m} to create the distinct 514keV peak it is necessary to deposit all of its energy in only one of the detectors. 
-This means that any event in which two different germanium detectors measured a non neglectable energy deposition is most likely not caused by a \Kr decay.
+This means that any event in which two different germanium detectors measured a non negligible energy deposition is most likely not caused by a \Kr decay.
 This kind of filtering is called a detector anti-coincidence filter.
 Whether an event has more than one detector measure a signal can be determined by the multiplicity counter of each event stored in tier 3 and 4.
 Using this counter even more background of none \Kr decays can be repressed.
@@ -938,7 +938,7 @@ Ideally, a positive result from this method would confirm the specific activity 
 
 But as it was also stated above, the second method is expected to be relatively imprecise.  
 This estimation came from the fact that this method relies on a great approximation.
-For this method to be applied it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
+For this method to be applied it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non negligible change in its intensity.
 The idea behind this comes from the fact that \Kr has the lowest half life \(T = 10.739\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
 In comparison, other radioactive isotopes that are of interest here are \nuc{Ar}{42} with a half-life of 32.9 y \cite{chen_nuclear_2016}, \nuc{Ar}{39} with 269 y \cite{singh_nuclear_2006} and \nuc{Po}{210} with 138d \cite{kondev_nuclear_2008}. 
 \\
@@ -1256,28 +1256,53 @@ But assuming that the individual \nuc{Ar}{42} and \nuc{K}{42} isotopes are homog
 \\
 
 And here comes the critical point.
-It is wrong to assume that all \nuc{K}{42} isotopes are homogeneously distributed in the liquid argon.
+The \nuc{K}{42} isotopes are not homogeneously distributed in the liquid argon.
 To understand why they are not we have look at what a \nuc{K}{42} does right after it was formed.
-What we didn't consider in the previous estimation of the resulting specific activity was the fact that right after a \nuc{Ar}{42} decays is the resulting \nuc{K}{42} isotope positively ionized.
-This results from the newly formed electron escapes from the decay position due to its high velocity.
-Because that \nuc{K}{42} isotope is positively charged, it is its aim to reduce its potential energy created by electrostatic fields.
+Right after a \nuc{Ar}{42} decays is the resulting \nuc{K}{42} isotope positively ionized.
+This results from the newly formed electron escaping from the decay position due to its high velocity.
+Because the \nuc{K}{42} isotope is positively charged, it is its aim to reduce its potential energy created by electrostatic fields.
 \\
 
-Such fields present in the liquid argon tank are the ones of the germanium detectors.
-In a germanium detectors it is necessary to create a great electrostatic potential difference between the doped electrodes.
-These strong fields are supposed to guarantee that the majority of electron-hole pairs that have been created by energy deposition in the germanium semiconductor reach the corresponding electrodes much faster than their mean free time $\tau$. %Hier noch die Buchquelle
+Such fields are present in the liquid argon tank originate from the germanium detectors.
+In a germanium detector it is necessary to create a great electrostatic potential difference between the doped electrodes.
+The resulting electric field separates electron-hole pairs that might have been created by other particles depositing their energy in the semiconductor.
+The field then guiding the particles to the respective electrodes and by that creating a current which can be measured externally.
+In the case of the GERDA experiment are strong fields necessary.
+They are supposed to guarantee that the majority of electron-hole pairs reach the corresponding electrodes much faster than their mean free time $\tau$. %Hier noch die Buchquelle
 If the fields would not be as strong, the detection probability of any event would be much lower which is not ideal for an experiment in which extremely rare events have to be measured.
 \\
 
-Now that the positively charged isotopes see these electrostatic fields od the detectors, they want to move in the direction of the negative charge source located on the outer negatively doped surface of the detectors.
-Because in the liquid argon the mean time it takes the ionized \nuc{K}{42} to capture an electron to compensate for its positive charge is relatively long.
-Thats why even though the fields should not be as strong outside of the detectors the \nuc{K}{42} can still travel a relatively long distance before it decays further.
-But due to the higher density of \nuc{K}{42} isotopes near the germanium detectors it can be expected that also the specific activity around the detector increases.
+Now that the positively ionized isotopes see these electrostatic fields of the detectors, they want to move in the direction of the negative charge located on the outer negatively doped surface of the detectors.
+Because in the liquid argon the mean time it takes the ionized \nuc{K}{42} to capture an electron as compensate for its positive charge is relatively long.
+Thats why even though the fields are not very strong outside of the detectors the \nuc{K}{42} can still travel a relatively long distance before it either captures an electron or decays further.
+However, due to the higher density of \nuc{K}{42} isotopes near the germanium detectors it can be expected that also the specific activity around the detector increases.
+\\
+
 This effect has already been measured in the GERDA set up and is one of the leading background sources of the whole experiment.
-\nuc{K}[42] has the unfortunate characteristic that its end point energy at about $Q_{\beta}=3525\unit{MeV}$ lies higher than the end point energy of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
+\nuc{K}[42] has also the unfortunate characteristic for the GERDA experiment that its end point energy at about $Q_{\beta}=3525\unit{MeV}$ lies higher than the end point energy of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
 This means that electrons of the \nuc{K}{42} decay can create background events in the investigated rage. 
 Initially it was not expected to create much background.
-Its influence on the measurement was only recognized after the start of \PI, when its counting rate was too high by a factor of 20. %!!!!! Refernz zu Becerici Schmidt 
+Its influence on the measurement however was only recognized after the start of \PI, when its counting rate was too high by a factor of 20. %!!!!! Refernz zu Becerici Schmidt 
+Techniques to suppress the background of \nuc{K}{42} were introduced over time like the usage of nylon mini-shrouds as a mechanically barrier.
+The mini-shrouds together with active filters of the pulse shape analysis and the liquid argon veto have proven to bee able to suppress \nuc{K}{42} events by more then three orders of magnitude.
+\\
+
+In this case however it is not possible for the analysis to use the active filters to suppress the \nuc{K}{42} further.
+That is because in that case the \Kr events will also be filtered out.
+So it still can be expected that a not negligible proportion of the measured specific activity comes from the denser \nuc{K}{42} in the region of the detectors.
+To get a quantitative approximation, you can now use the plot of the event rate change again (see \ref{fig:ChangeInEventRate}) and modify the fit function so that two exponential decay plus a constant background are considered.
+Both of the exponential decay fit functions have their half life fixed to the respective half life of \Kr (10.739y) and \nuc{Ar}{42} (32.9y).
+The resulting fit can be seen in figure \ref{fig:double}.
+\\
+
+\begin{figure}[t!]
+	\centering
+	\ifmakefigures%
+	\includegraphics[width=100mm]{./Bilder/doppelt.pdf}
+	\fi%
+	\caption{double exponential decay fit}
+	\label{fig:double}
+\end{figure}%
 
 
 
