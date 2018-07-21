@@ -951,7 +951,7 @@ On the other hand, the two different types of argon isotopes also have both a me
 Their change in event rate should therefor be measurable by our approach.
 The change in activity of \nuc{Ar}{39} can be neglected because its half life way to big.
 \nuc{Ar}{42} on the other hand has a half life that is in the same order of magnitude as \Kr.
-But its specific activity has already been determined to be about $148\muiBq/l$ \cite{becerici_schmidt_results_2014} which is about factor 3.5 smaller than the expected \Kr specific activity.
+But its specific activity has already been determined to be about $148\mui Bq/l$ \cite{becerici_schmidt_results_2014} which is about factor 3.5 smaller than the expected \Kr specific activity.
 Whether or not we have to consider the influence of this isotope will be discussed later in this theses.
 For now we will apply the simplification that its change will be small compared to \Kr.
 \\
@@ -1000,20 +1000,23 @@ The following sections will focus on the concrete implementation of this method 
     \caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
 \end{figure}
 
-To determine the event rate one has to plot the amount of measured events over time with a suitable binning (see figure \ref{fig:ZeitAll}).
-In this case a binning of one week per bin was chosen which results in about 114 weeks for the 2.17 years of \PII.
-It should be noted that we again, like in the line count rate analysis, only use those events in which the Muon Veto and the detector anti-coincidence veto is not triggered.
-The first thing that jump into your eyes when looking at figure \ref{fig:ZeitAll} is two different types for discontinuities can be seen.
-Oblivious we can not lay a exponential decrease fit function through this graph as long as these discontinuities are present.
-We therefor have to find a way to suppress them but to do that we have to investigate where these discontinuities originate from.
+To determine the event rate one has to plot the amount of measured events over time in an event histogram with a suitable binning (see figure \ref{fig:ZeitAll}).
+In this case a binning of one week per bin was chosen which results in about 114 bins for the 2.17 years of \PII.
+As with the line count rate analysis, here we used only these events in the \ref{fig:ZeitAll} histogram where the Muon veto and the detector anticoincidence veto were not triggered.
+When looking at the histogram for the first time two things jump into your eye.
+Firtsly, there seems to be a great jump in the amount of events measured in the second half of \PII.
+And secondly, there are times in which the amount of events measured drop to zero.
+These two discontinuous changes to our expected outcome of an exponential decrease make it impossible for us to lay an exponential fit function throug the graph.
+We therefor have to find a way to suppress them.
+But for this to be done we first have to investigate where these discontinuities originate from.
 \\
 
-Firstly, you see a big jump in the intensity at a later time of \PII.
-This jump originates from the lowering of the lower detection energy limit on the 12.10.2017.
-At this point in time the lower limit for the event detection in all detectors was drastically lowered.
+Firstly, we discuss the big jump in number of events measured.
+This jump originates from the change of the lowering of the energy threshold on the 12.10.2017.
+This reduction of the lower threshold dramatically increased the number of events measured.
 Due to every detector having different characteristics, the limit was set for each detector individually.
-Before the lowering the highest limit was set at 139keV for the BEGes and at 185 for the COAX.
-After the lowering all event with an energy of at least 17keV could be measured by all detectors.
+Before the lowering the highest limit was set at about 140keV for the BEGes and at 185 for the COAX.
+After the lowering all event with an energy of at least about 15keV could be recorded by all detectors.
 For a more graphical representation, see the beginning of the spectra in figure \ref{fig:before} for all events measured before and figure \ref{fig:after} for all events after the lowering of the limit. 
 This means that from the 12.10.2017 on a much higher event rate was measured just because more event were actually recored.
 To work around this continuity problem all we have to do is limit our event used for the analysis to those that have a minimal energy of 200keV. 
@@ -1044,16 +1047,18 @@ A new plot including only events between the energy limits of 200 and 400keV can
 	\vspace{0.5cm}
 \end{figure}
 
-The second discontinuities behavior originates from the same problem that we faced in the first method.
-Not all detectors were on all of the time and there were also time intervals in which nothing at all was measured.
-In section \ref{sec:CalcActiv} we used the test pulse signal to weigh each individual detector signals with which we were able to calculate a weighted mean measuring time.
-However here we are not interested in a mean measuring time over all of \PII.
-In this case we solve this issue by only using the events measured by all detectors that were on over all of \PII and weighing the resulting bins in the histogram with the amount of test pulse signals that occurred in the same time interval.
-By only taking those detectors that were always on at the times data was recorded will ensure us that all changes to the intensity by starting up or shutting off detectors will be suppressed.
-But now we still have the problem that the measuring periods were frequently interrupted.
+The second discontinuous behavior originates from the same problem that we faced in the line count rate analysis.
+Not all detectors were on all of the time and there were also time intervals in which no signal at all was recorded.
+Due to the fact that some of the detectors were turned on or off over the time of \PII will result in discontinuous changes in the event rate because more or fewer events were able to be measured.
+But this can easily be solved by only considering those events measured in a detector that was always turned on.
+Which detector was always on over all of \PII can be seen in figure \ref in the appendix.
+On the other hand due to there being time intervals in which no events were recorded the event rate drops discontinuous to zero there.
+In section \ref{sec:CalcActiv} we solved this problem by calculating an effective measuring time for each detectors.
+Here, however, we are not interested in an average measurement time over the entire \PII.
+In this method we must find a way to weigh each individual bin of the event histogram with the corresponding effective measurement time of that bin.
 This is where the test pulse signal comes in handy.
 It is a clear indication of when exactly data was actually recorded.
-This means that similar to the first method we can now determine effective measuring times of each time interval of the individual bin in the histogram.
+This means that similar to the first method we can now determine effective measuring times of each time interval of the bins.
 These mean measuring times can easily be calculated by plotting the test pulse signals in an histogram with the same binning as the event histogram and dividing each of these bins with the frequency of the test pulse of $f_\mathrm{TP} = 0.05\unit{Hz}$ (see figure \ref{fig:effectiveMeasuringTimes}).
 The contents of these bins in the test pulse histogram correspond now to the respective measuring time in the binning intervals. 
 \\
@@ -1208,8 +1213,7 @@ This can easily be done by integrating an exponential decay function over all of
     \bar{a} = \frac{1}{2.17\unit{y}} \int_0^{2.17y} a(t=0)\times\exp \left( \frac{\log(2)}{T} t \right) \mathrm{d}t
 \end{equation*}
 with T being the half life of \Kr.
-This results in an mean specific activity of $ \bar{a_{2}} = 0.057294 \frac{\unit{Bq}}{\unit{l}}$ if the BEGe detectors and $ $ in the COAX detectors.
-These two values differer only 
+This results in an mean specific activity of $ \bar{a_{2}} = 0.057294 \frac{\unit{Bq}}{\unit{l}}$.
 \\
 
 If we now compared this result with the specific activity found in the line count rate analysis we realize that we have a problem.
@@ -1239,15 +1243,41 @@ Because we expect the specific activity of \Kr in the GERDA experiment to be abo
 \\
 
 As we have already mentioned several times in these theses, one of the weaknesses of this approach is the necessary assumption that only \Kr changes its activity over time.
-Compared to \nuc{Ar}{39} which also has its mean beta energy in the same energy range as \Kr this holds true with its half life of 269 y.
-In all of Phase II its activity should have only dropped by only 0.56$ \% $ which can be ignored.
-Now finally \nuc{Ar}{42} comes into play.
-As we already mentioned in the beginning of this chapter, \nuc{Ar}{42} has a half life of 32.9 y.
-Over the time of \PII it should show a drop in activity of 4.4$\%$ which results in a decrease of $7 \frac{\unit{\muBq}}{\unit{l}}$.
-This by far not enough to explain the much greater decrease of specific activity measured.
-But what is really interesting about this decay is not the decay of \nuc{Ar}{42} but rather the decay of the resulting daughter nuclei \nuc{K}{42}.
-\nuc{K}{42} has a half life of 12.355 h \cite{chen_nuclear_2016} but due to it being a daugther nuclei of a isotope with a much higher half life its effective specific activity should be equal to the one of \nuc{Ar}{42}.
+Compared to \nuc{Ar}{39} which also has its mean beta energy in the same energy range as \Kr this still holds true with its half life of 269 y.
+In all of Phase II its specific activity should have only dropped by 0.56$ \% $ which can be ignored.
 \\
+
+As already indicated in the beginning of this chapter we now have to discuss the influence of \nuc{Ar}{42}.
+\nuc{Ar}{42} has a half life of 32.9 y.
+Over all phase II it should therefore show a decrease of about 4.4$\%$ which should actually be possible to detect.
+But due to its low specific activity this would result in a decrease of $7 \frac{\unit{\mu Bq}}{\unit{l}}$.
+This by far not enough to explain the much greater decrease as seen in \ref{fig:activity}.
+\\
+
+But what is really interesting about \nuc{Ar}{42}, is not the decay of \nuc{Ar}{42} itself, but rather  the decay of the daughter nuclei \nuc{K}{42}.
+\nuc{K}{42} has a half life of 12.355 h \cite{chen_nuclear_2016}.
+Due to this half life being much lower than \nuc{Ar}{42}'s it can be approximated that \nuc{K}{42}'s specific activity is equal to \nuc{Ar}{42}s specific activity.
+This can be assumed, because in comparison to the half life of \nuc{Ar}{42} the resulting \nuc{K}{42} practically instantaneously decays further.
+This means that for every \nuc{Ar}{42} we can measure two individual decays resulting in a doubling of the initial \nuc{Ar}{42} activity.
+But even with \nuc{Ar}{42}'s decay rate effectively doubled the resulting specific activity is still to small to explain the comparably drastic change over time.  
+\\
+
+The critical point is that \nuc{K}{42}s specific activity around the detector is not equal to the specific activity of \nuc{Ar}{42} as assumed in the paragraph above.
+Based on the considerations just made, we concluded that \nuc{Ar}{42} and \nuc{K}{42} must have the same amount of decays in the liquid argon tank.
+But without mentioning it, we assumed that the distribution of \nuc{K}{42} in the liquid argon remains homogeneously distributed after its formation. 
+What we didn't consider was the fact that after the beta decay of \nuc{Ar}{42} the forming \nuc{K}{42} nuclei it is positively ionized.
+Because of this positive charge, the \nuc{K}{42} are being attracted towards the germanium detectors due to their electric field.
+These ionized \nuc{K}{42} in the liquid argon also have a relatively long characteristic time in which they stay ionized resulting in a relatively long traveling time.
+After they catch an additional electron to compensate the positive charge the \nuc{K}{42} nuclei will stop moving and stay in their position.
+This means that we can expect a higher \nuc{K}{42} density around the detectors than on the wall of the liquid argon tank, which leads to an inhomogeneous distribution.
+Because of the higher density of \nuc{K}{42} around the detectors the specific activity in this area must also be higher than far away from the detectors.
+As a result, a much higher specific activity of \nuc{K}{42} and \nuc{Ar}{42} can also be measured in the detectors in contrast to the case in which we assumed a homogeneous distribution.
+\\
+
+Whether this higher specific activity of \nuc{K}{42} in the area of the detectors is enough to explain the greater amplitude in the measured diagram can 
+
+
+!!!!! hier brauche ich noch das paper zur charakteritsichen Zeit in der das Nuklid ionisiert ist !!!!!
 
 
 
