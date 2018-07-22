@@ -1,3 +1,27 @@
+
+\begin{document}
+% Ist die Arbeit auf Englisch verfasst, hier die Sprache umschalten. 
+% Die Sprache muss als Klassenoption angegeben sein.
+
+%\chapter{Titel des ersten Kapitels}
+%\section{Erster Abschnitt}
+%\lipsum[2-5]\cite{schwabl-qqi2002}
+
+%Und noch etwas \emph{betontes}.
+
+%\section{Zweiter Abschnitt}
+%\lipsum[6] Test\cite{Setare:2013dra}
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=\textwidth]{tumlogo}
+%	\caption{\label{fig:test}Test}
+%\end{figure}
+%\subsection{Unterabschnitt}
+%\lipsum[7]\cite{schwabl-qqi2002,schwabl-qffi2002}
+%\subsubsection{Unterunterabschnitt}
+%\paragraph{Absatz} \lipsum[8]
+
+
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ---------------------------------------------------  ADD HERE YOUR REPORT  ---
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -72,7 +96,7 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 % general overview of how I'm going to do this
 % ? what are my predictions ?
 % What possible influence would the result of my work might have on the result of the GERDA experiment?
-\makeatletter\@openrightfalse
+
 \chapter{Physical Background}
 \label{sec:PhyBG}
 
@@ -212,7 +236,7 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
  
 
 
-\capter{\Kr isotop}
+\capter{\Kr isotope}
 \label{sec:Kry85}
 
 % where does it come from?
@@ -263,7 +287,7 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 
 As stated in the introduction, the main goal of this theses is to approximate the concentration of the isotope \Kr in the liquid argon coolant, shielding and scintillate of the GERDA experiment. 
 This value is of special interest, as in other experiments this isotope in the liquid argon has produced a not negligible background. 
-For example, a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\) was measured in the Darkside experiment \cite{PhysRevD.93.081101} and \((0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}\) in the WARP experiment \cite{Benetti:2006az}.
+For example, a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\) was measured in the Darkside experiment \cite{agnes_results_2016} and \((0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}\) in the WARP experiment \cite{benetti_measurement_2006}.
 This corresponds to a concentration of about \((2.32\pm0.14)\times10^{-18}\frac{\unit{mol}}{\unit{l}}\) for the Darkside and  \((1.30\pm1.05)\times10^{-16}\frac{\unit{mol}}{\unit{l}}\) for the WARP experiment.
 The concentration of \Kr in the GERDA experiment therefor of interest as it provides an estimation of its influence on the measured background.
 \\
@@ -274,7 +298,7 @@ It is also the topic of this chapter.
 The second method that is discussed in the following chapter uses the reduction in intensity of all events over time. 
 This method is less likely to create precise results due to it relying on a great approximation.
 It is estimated that only \Kr's activity has a notable change with time whereas the activity of all other radioactive isotopes stay relatively constant. 
-It is therefor intended to only be a crosscheck for the result of the first method.\\
+It is therefor intended to only be a crosscheck for the result of the first method.
 \\
 
 Now to how exactly the line count rate analysis is able to determine a specific activity.
@@ -337,7 +361,7 @@ After applying the first few rather general filters on the measured events one h
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution and detector efficiencies. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
-For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 272keV (see appendix \ref{sec:} ) \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
+For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 272keV (see appendix \ref{sec:} ) \cite{agostini_background_2017}. 
 On the other hand, due to the BEGes being smaller they also have a lower detection efficiency.
 It is therefor necessary to evaluate their measured data separately.
 \\
@@ -354,13 +378,13 @@ Compared to the COAX detectors their peaks can easily be distinguished.
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-	\includegraphics[width=80mm]{./Bilder/500525NoFilterBEGes.pdf}
+	\includegraphics[width=75mm]{./Bilder/500525NoFilterBEGes.pdf}
   \label{fig:NoFilterBEGes}
   \caption{BEGes}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-	\includegraphics[width=80mm]{./Bilder/500525NoFilterCOAX.pdf}
+	\includegraphics[width=75mm]{./Bilder/500525NoFilterCOAX.pdf}
   \caption{COAX}
   \label{fig:NoFilterCOAX}
 \end{subfigure}
@@ -395,22 +419,20 @@ This chapter tries to implement a filter that uses this mechanism and discusses 
 \\
 
 Among other things, each event in tier 4 was given a flag called "isLArVetoed".
-This flag is always triggered whenever an event in the Germanium detectors coincides with a scintillation signal of about 0.5phe in one of the photomultipliers positioned in the liquid argon tank \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}.
+This flag is always triggered whenever an event in the Germanium detectors coincides with a scintillation signal of about 0.5phe in one of the photomultipliers positioned in the liquid argon tank \cite{agostini_background_2017}.
 If one plots all events in which this flag has not been set one gets figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
 You can see that the positron electron annihilation peak can not be identified any longer while the 514keV peak seems almost unchanged.
 \\
 
 \begin{figure}[t!]
 \centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-	\includegraphics[width=80mm]{./Bilder/500525LArVetoBEGes.pdf}
+\begin{subfigure}{0.5\textwidth}
+	\includegraphics[width=75mm]{./Bilder/500525LArVetoBEGes.pdf}
     \caption{BEGes}
   \label{fig:LArBEGes}
 \end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-	\includegraphics[width=80mm]{./Bilder/500525LArVetoCOAX.pdf}
+\begin{subfigure}{0.5\textwidth}
+	\includegraphics[width=75mm]{./Bilder/500525LArVetoCOAX.pdf}
   \caption{COAX}
   \label{fig:LArCOAX}
 \end{subfigure}
@@ -418,17 +440,16 @@ You can see that the positron electron annihilation peak can not be identified a
 	\vspace{0.5cm}
     \caption{All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.}
 \end{figure}
+
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=80mm]{./Bilder/AntiLArBEGe.pdf}
+		\includegraphics[width=75mm]{./Bilder/AntiLArBEGe.pdf}
 		\caption{BEGes}
 		\label{fig:AntiLArBEGes}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=80mm]{./Bilder/AntiLArCOAX.pdf}
+		\includegraphics[width=75mm]{./Bilder/AntiLArCOAX.pdf}
 		\caption{COAX}
 		\label{fig:AntiLArCOAX}
 	\end{subfigure}
@@ -488,7 +509,7 @@ Because of the small number of events however, it is almost impossible to make a
 
 Interestingly, the majority of all signals with a negative time difference were measured by the PMTs. 
 This could perhaps be due to the better temporal resolution of the PMTs. 
-The signals of all PMTs are recorded with a resolution of 10ns and the SiPM with a resolution of 80ns but over a larger range than the PMTs\cite{nature}. 
+The signals of all PMTs are recorded with a resolution of 10ns and the SiPM with a resolution of 80ns but over a larger range than the PMTs \cite{agostini_background_2017}. 
 However, since the expected time difference is in the order of \(\mu\)s, this is no reason for the reduced number of measured events. 
 Another difference between the photomultiplier types is that the PMTs have a faster reaction time than the SiPMs. 
 As we will see, practically all deflections in the measured intensity of the PMT signal caused by procoincedents have already subsided before the signal was measured in the germanium detectors. 
@@ -593,13 +614,13 @@ The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}.
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=80mm]{./Bilder/500525FitNoFilterBEGes.pdf}
+		\includegraphics[width=75mm]{./Bilder/500525FitNoFilterBEGes.pdf}
 		\caption{BEGes}
 		\label{fig:FitNoFilterBEGes}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=80mm]{./Bilder/500525FitNoFilterCOAX.pdf}
+		\includegraphics[width=75mm]{./Bilder/500525FitNoFilterCOAX.pdf}
 		\caption{COAX}
 		\label{fig:FitNoFilterCOAX}
 	\end{subfigure}
@@ -684,13 +705,13 @@ But due to that not being possible we can not use those results in our analysis 
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoBEGes.pdf}
+		\includegraphics[width=75mm]{./Bilder/500525FitLArVetoBEGes.pdf}
 		\caption{BEGes}
 		\label{fig:FitLArVetoBEGes}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=80mm]{./Bilder/500525FitLArVetoCOAX.pdf}
+		\includegraphics[width=75mm]{./Bilder/500525FitLArVetoCOAX.pdf}
 		\caption{COAX}
 		\label{fig:FitLArVetoCOAX}
 	\end{subfigure}
@@ -733,7 +754,7 @@ How exactly this was implemented is the topic of the next chapter.
 
 As described above, we want to determine a conversion factor between the measured 514keV events and the decay density of \Kr necessary to create this signal.
 Such a conversion factor can be determined with the help of a Monte Carlo simulation.
-The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA \cite{boswell_melissa_chan_yuen-dat_detwiler_a._finnerty_padraic_henning_gehman_et}.
+The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA \cite{boswell_mage_2010}.
 Both experiments aim to measure the neutrinoless double beta decay using enriched Germanium detectors.
 Because it is expected that the halflife of this decay is in the order of at least \(10^{25}\) years, a lot of effort is put into finding out how big the contribution of different isotopes to the background is.
 \mage is therefor specialized to simulate radioactive decays and their corresponding measured events in Germanium detectors.
@@ -751,13 +772,13 @@ As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over th
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[height=80mm]{./Bilder/MC-Querschnitt-BEGes.pdf}
+		\includegraphics[height=75mm]{./Bilder/MC-Querschnitt-BEGes.pdf}
 		\caption{Cross section from above}
 		\label{fig:CrossSecAb}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[height=80mm]{./Bilder/MC-Radius-BEGes.png}
+		\includegraphics[height=75mm]{./Bilder/MC-Radius-BEGes.png}
 		\caption{Radial cross section}
 		\label{fig:CrossSecRa}
 	\end{subfigure}
@@ -872,13 +893,14 @@ Coincidentally, the multiplication of the individual measuring time of a detecto
 This means that to calculate the mean measuring time, we just have to divide the combined exposure of all detectors of the same kind by their combined mass.
 \\
 
-No matter what approach you take, in the end you get a mean measuring time of !!!!! for the BEGes and !!!!! for the COAX detectors.
+No matter what approach you take, you can now determine the mean measuring times using equation \ref{meanmeauringtime}.
 
 \begin{equation*}
     \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = 1.592
-    \mathrm{y}
+\label{meanmeauringtime}
 \end{equation*}
 
+From this, an average measurement time for the BEGes of  and for the COAX of can be calculated.
 With these mean measuring times we can now finally calculate the mean specific activity $\bar{a}$ of \Kr over the curse of all of \PII by applying
 \begin{equation*}
     \bar{a} = \frac{\rho_{dec} }{\bar{t}} = \frac{\mathrm{N}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}}
@@ -891,8 +913,8 @@ Of these two value we can now also calculate a mean specific activity $\bar{a}_{
 \\
 
 We can now make some comparisons of this value with the WARP and the Darkside experiments.
-In the case of the WARP experiment a specific activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ \label{} was measured for the \Kr.
-On the other hand, an specific activity of $(28577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
+In the case of the WARP experiment a specific activity of $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ \label{} was measured for the \Kr.
+On the other hand, an specific activity of $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
 Our determined value of $(0.508\pm0.085)\frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole tree orders of magnitude smaller than the WARP experiment.
 From these comparisons we can see that our results seem to verify the first approximations mentioned in the introduction predicting that the \Kr activity seems to be much smaller than in other experiments using liquid argon.
 \\
@@ -916,13 +938,13 @@ In both diagrams the actually measured spectra are also displayed, even if they 
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=80mm]{./Bilder/WARP.pdf}
+		\includegraphics[width=75mm]{./Bilder/WARP.pdf}
 		\caption{Cross section from above}
 		\label{fig:WARP}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=80mm]{./Bilder/Darkside.pdf}
+		\includegraphics[width=75mm]{./Bilder/Darkside.pdf}
 		\caption{Radial cross section}
 		\label{fig:Darkside}
 	\end{subfigure}
@@ -1386,98 +1408,4 @@ This was due to the falsely made assumption that \Kr is the only isotope in the 
 
 
 
-
-
-
-% what went wrong?
-% what does it mean?
-% possible future enhancements to determine the Kr85 concentration
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Another Section}
-% \label{sec:secname}
-
-
-% Fig.~\ref{fig:pmt} shows a PMT.
-
-% %------------------------------------------------------------------- figure ----
-% \begin{figure}[hb]
-% \centering
-% \ifmakefigures%
-%    \includegraphics[width=45mm]{kapselung-small.jpg}
-% \fi%
-%   \caption{\label{fig:pmt}
-% The encapsulation of the Cerenkov PMT.
-% }
-% \end{figure}
-% %-------------------------------------------------------------------------------
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Results and Analysis}
-% \label{sec:results}
-
-
-% %----------------------------------------------------------------- equation ----
-% {\centering
-% \begin{equation}\label{eq:sensit}
-%     T_{1/2}(0^{+} \rightarrow g.s.~with~single~\gamma)~ \geq ~\ln2 \cdot
-%     \varepsilon \cdot a \cdot \frac{M \cdot N_A}{A} \cdot 
-%     \sqrt{\frac{\Delta T}{b\cdot\Delta E}},
-% \end{equation}
-% } % end centering
-% %-------------------------------------------------------------------------------
-
-% Table~\ref{tab:param} compiles everything.
-
-% %-------------------------------------------------------------------- table ----
-% \begin{table}[t]
-% \centering
-% \caption{\label{tab:param}
-% Experimental parameters and values.
-% }
-% \vspace*{2mm}
-% \begin{tabular}{L{4cm}|C{6cm}}
-%   Column1 & Column2 \\  \hline 
-%   Row1 & $100\pm10$ \\
-%   Row2 & $100\pm10$ \\ \hline
-%   Row3 & $100\pm10$ \\
-%   Row4 & $100\pm10$ \\ 
-% \end{tabular}
-% \end{table}
-% %-------------------------------------------------------------------------------
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Conclusions}
-% \label{sec:conclusions}
+\end{document}

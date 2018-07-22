@@ -11,11 +11,41 @@
 %-------------------------------------------------------------------------------
 %\documentclass[11pt,a4paper]{article}
 \documentclass[encoding=utf8,british]{tumphthesis}
-\makeatletter\@openrightfalse
-\documentclass[12pt,a4paper,twoside]{article}%
+% \documentclass[pstricks,siunitx,addfonts,theorem,font=palatino,british]{tumphthesis}
+
+% Das folgende Paket dient lediglich dazu, den Blindtext "Lorem ipsum ..."
+% auszugeben und kann in einer echten Abschlussarbeit natürlich weggelassen 
+% (oder auskommentiert) werden.
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{units}
+\usepackage{capt-of}
+\usepackage{subfig}
+\usepackage{csquotes}
+
+\bibliography{references}
+\bibliographystyle{plain}
+%\include{gerda-abbreviations}
+% Die Metadaten der Abschlussarbeit werden auf dem Deckblatt gedruckt und
+% in dem PDF eingetragen.
+\subject{Abschlussarbeit im Bachelorstudiengang Physik}
+\title{Titel der Abschlussarbeit}
+%\subtitle{\foreignlanguage{british}{Title in English}}
+\author{Sheldon Cooper}
+\date{31.~Juli 2011}
+%\cooperators{Max-Planck-Institut für Physik}
+
+% Auf der Rückseite des Deckblatts können Themensteller, Zweitgutachter 
+% und Tag der mündlichen Prüfung vermerkt werden.
+\lowertitleback{Erstgutachter (Themensteller): Prof.\ S.~Schönert\\
+Zweitgutachter: Prof.\ S.~Preuss}
+
+
+
 %-------------------------------------------------------------------------------
-\include{header}              % packages/settings
-\include{commands}            % commands, hyphenation etc.
+%\include{header}              % packages/settings
 \include{gerda-abbreviations} % for definitions see:  abbreviations.tex
 %-------------------------------------------------------------------------------
 
@@ -23,26 +53,33 @@
 % -----------------------------------------------------  DEFINE YOUR REPORT  ---
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\newcommand{\repnumber}  {GSTR-18-0xx}    % REPNUMBER (yy->year, 0xx->running number)
-\newcommand{\repdate}    {August 8, 2018} % DATE
-\newcommand{\titleheader}{Analysis of \Kr concentration in the liquid argon of GERDA Phase II} % TITLE
+%\newcommand{\repdate}    {August 8, 2018} % DATE
+%\newcommand{\titleheader}{Analysis of \Kr concentration in the liquid argon of GERDA Phase II} % TITLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % --------------------------------------------------------  begin document   ---
 \begin{document}
+\selectlanguage{british}
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+
 % --------------------------------------------------------  begin title page  --
-\begin{titlepage}
+%\begin{titlepage}
 % --------------------------------------------------------- logo /header -------
-\vspace*{20mm}
-\begin{center}
-{\Large\textbf{\titleheader}}
-\vspace*{10mm}
+%\vspace*{20mm}
+%\begin{center}
+%{\Large\textbf{\titleheader}}
+%\vspace*{10mm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ----------------------------------------------------  DEFINE YOUR AUTHORS  ---
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Moritz Neuberger, Christoph Wiesinger$^o$), Steffan Schönert$^o$)
-\vspace*{5mm}
+%Moritz Neuberger, Christoph Wiesinger$^o$), Steffan Schönert$^o$)
+%\vspace*{5mm}
 
 % Address:  (select the appropriate ones and change letters if needed) 
 %$^a$)  INFN Laboratori Nazionali del Gran Sasso  and Gran Sasso Science Institute, Assergi,  Italy\\[1mm]
@@ -59,34 +96,34 @@ Moritz Neuberger, Christoph Wiesinger$^o$), Steffan Schönert$^o$)
 %$^l$)  Institute for Theoretical and Experimental Physics, NRC ``Kurchatov Institute'', Moscow, Russia\\[1mm]                                
 %$^m$)  National Research Centre ``Kurchatov Institute'', Moscow, Russia\\[1mm]                                       
 %$^n$)  Max-Planck-Institut f{\"ur} Physik, Munich, Germany\\[1mm]                                          
-$^o$)  Physik Department E15 and Excellence Cluster Universe, Technische  Universit{\"a}t M{\"u}nchen, Munich, Germany\\[1mm]                           
+%$^o$)  Physik Department E15 and Excellence Cluster Universe, Technische  Universit{\"a}t M{\"u}nchen, Munich, Germany\\[1mm]                           
 %$^p$)  Dipartimento di Fisica e Astronomia dell{`}Universit{\`a} di Padova, Padova, Italy\\[1mm]         
 %$^q$)  INFN  Padova, Padova, Italy\\[1mm]
 %$^r$)  Physikalisches Institut, Eberhard Karls Universit{\"a}t T{\"u}bingen, T{\"u}bingen, Germany\\[1mm]       
 %$^s$)  Physik Institut der Universit{\"a}t Z{\"u}rich, Z{\"u}rich, Switzerland\\[1mm] 
-\vspace*{20mm}
+%\vspace*{20mm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % --------------------------------------------------  WRITE A SHORT ASTRACT  ---
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{abstract}
-Seite beabsichtigt leer gelassen.
-\end{abstract}
+%\begin{abstract}
+%Seite beabsichtigt leer gelassen.
+%\end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{center}
-\vfill
-\end{titlepage}
-\vfill
+%\end{center}
+%\vfill
+%\end{titlepage}
+%\vfill
 
 % ---------------------------------------------------------------- settings  ---
-\pagenumbering{arabic}
-\setcounter{page}{1}
+%\pagenumbering{arabic}
+%\setcounter{page}{1}
 %\pagestyle{myheadings}
 %\markboth{~-~~\repnumber\hfill\titleheader}{\titleheader\hfill\repnumber~~-~}
-\newpage
+%\newpage
 %----------------------------------------------------------------- body --------
 \input{body}
 
@@ -102,7 +139,17 @@ Seite beabsichtigt leer gelassen.
 \input{appendix}
 
 %--------------------------------------------------------------- references ----
-\bibliographystyle{}
-\bibliography{references.bib}
-\@openrightfalse\makeatletter
+
+
+\appendix
+\chapter{Determining the resolution of the detector types}
+\label{sec:ResDetermination}
+
+
+
+
+
+\backmatter
+
+\printbibliography
 \end{document}
