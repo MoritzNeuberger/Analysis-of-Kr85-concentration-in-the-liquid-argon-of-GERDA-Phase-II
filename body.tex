@@ -337,7 +337,7 @@ After applying the first few rather general filters on the measured events one h
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution and detector efficiencies. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
-For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 2,72keV (see appendix \ref{sec:} ) \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
+For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 272keV (see appendix \ref{sec:} ) \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
 On the other hand, due to the BEGes being smaller they also have a lower detection efficiency.
 It is therefor necessary to evaluate their measured data separately.
 \\
@@ -891,8 +891,8 @@ Of these two value we can now also calculate a mean specific activity $\bar{a}_{
 \\
 
 We can now make some comparisons of this value with the WARP and the Darkside experiments.
-In the case of the WARP experiment a specific activity of $(0,16\pm0,13)\frac{\unit{Bq}}{\unit{l}}$ \label{} was measured for the \Kr.
-On the other hand, an specific activity of $(2,8577 \pm 0,18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
+In the case of the WARP experiment a specific activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ \label{} was measured for the \Kr.
+On the other hand, an specific activity of $(28577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
 Our determined value of $(0.508\pm0.085)\frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole tree orders of magnitude smaller than the WARP experiment.
 From these comparisons we can see that our results seem to verify the first approximations mentioned in the introduction predicting that the \Kr activity seems to be much smaller than in other experiments using liquid argon.
 \\
@@ -908,7 +908,7 @@ With the activity and the values determined from the analysis above we can calcu
 In the case of the WARP experiment one could expect with such a high activity that the count rate is also much higher than the 183 events determined from the actual measurement.
 Again for the Darkside experiment we calculate a amount of counts about one order of magnitude higher than the here measured events.
 From these comparisons we can see that for a much higher specific activity of \Kr to have actually been present a much bigger amount of events should have been counted.
-As a graphical representation you can see the peaks that one would have been able to be seen in the measured spectrum if an specific activity of the WARP or the Darkside experiment was present in figure \ref{fig:WARP} and \ref{fig:Darkside}.
+As a graphical representation, the peaks that one would have been able to be seen in the measured spectrum are displayed in figure \ref{fig:WARP} and \ref{fig:Darkside}.
 In both diagrams the actually measured spectra are also displayed, even if they are not recognizable as in the case of the WARP peak.
 \\
 
@@ -939,7 +939,7 @@ Now that we have determined a concrete value for the specific activity of \Kr we
 
 
 
-%	4,70E-04	8,87E-05	Bq/l
+%	4.70E-04	8,87E-05	Bq/l
 
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
@@ -953,7 +953,7 @@ Now that we have determined a concrete value for the specific activity of \Kr we
 \label{sec:SAfromDecrease}
 
 As described in the beginning of section \ref{sec:AotKr}, the line count analysis method of the rare \Kr decay was expected to be relatively precise.
-By following this procedure we were able to determine the activity down to the order of 10$^{-5} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
+By following this procedure we were able to determine the activity down to the order of 10$^{-4} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
 We will now concentrate on implementing and discussing the second approach of determining the specific activity by using the change of event rate over time.
 Because this method does not rely on any of the values used in the line count rate analysis this approach is truly completely independent of the other method.
 Ideally, a positive result from this method would confirm the specific activity determined in the previous chapter. 
@@ -971,7 +971,7 @@ This is important, because over the course of this chapter we will at some point
 This means even though \nuc{Po}{210} has a much lower half life it would not create much of a change in event rate due to its very low probably to release an alpha particle in this energy range.
 \\
 
-On the other hand, the two different types of argon isotopes also have both a mean beta energy close to \Kr's 251.59 keV for the most likely decay.
+On the other hand, the two different types of argon isotopes have both a mean beta energy close to \Kr's 251.59 keV.
 Their change in event rate should therefor be measurable by our approach.
 The change in activity of \nuc{Ar}{39} can be neglected because its half life way to big.
 \nuc{Ar}{42} on the other hand has a half life that is in the same order of magnitude as \Kr.
@@ -980,7 +980,7 @@ Whether or not we have to consider the influence of this isotope will be discuss
 For now we will apply the simplification that its change will be small compared to \Kr.
 \\
 
-All other radioactive isotopes that are risidual in the liquid argon have either a much longer half life than \nuc{Ar}{42}, their mean beta energy is much higher than 400keV or their specific activity is too small to measure any kind of change over time.
+All other radioactive isotopes that are residual in the liquid argon have either a much longer half life than \nuc{Ar}{42}, their mean beta energy is much higher than 400keV or their specific activity is too small too small to measure any kind of change over time.
 It is therefor approximated that all change in intensity should only originate from the \Kr decay.
 But even if the activity determined by this method is not expected to have a much of a value for us, it can still be used as a crosscheck for the other activity determined above.
 \\
@@ -1216,12 +1216,12 @@ With the absolute amount N of decays simulated we determine a detector efficienc
 This values says that any decay in the liquid argon has a probability of $\epsilon_{\beta}$ to be detected by one of the detectors that was always on.
 With this value we can again calculate the volume independent conversation factor
 \begin{equation*}
-    \frac{1}{\epsilon_{\beta} V_{sim}} = (39,38\pm1,04) \frac{\unit{decay}}{\unit{events} \times l }
+    \frac{1}{\epsilon_{\beta} V_{sim}} = (39.38\pm1.04) \frac{\unit{decay}}{\unit{events} \times l }
 \end{equation*}
 \\
 
 With this conversation factor we can now also calculate the specific activity of \Kr.
-By applying equation \ref{equ:activityAt0} and feeding it with the values found we result in an specific activity of $a = (0,0614\pm0,0419) \frac{\unit{Bq}}{\unit{l}}$ at the start of Phase II.
+By applying equation \ref{equ:activityAt0} and feeding it with the values found we result in an specific activity of $a = (0.0614\pm0.0419) \frac{\unit{Bq}}{\unit{l}}$ at the start of Phase II.
 
 \begin{equation}
     a(t=0) = \frac{R_\mathrm{count}}{\epsilon_{\beta} V_{sim}} 
@@ -1261,9 +1261,9 @@ By comparing the results of the first method with those of the WARP and Darkside
 The second method however has the problem that theoretically every other isotope that is residual in the liquid argon contributes to the investigated change over time.
 It can therefor be very likely that our mistakes lies in the assumption that all contribution of any other isotope to this change can be ignored. 
 In the beginning of this chapter we already discussed all of the isotopes that are the most probable sources of error.
-We already mentioned there that any contributions from \nuc{Ar}{39} and \nuc{Po}{210} can be disregarded due to their either high half life or their high kinetic energy of the escaping particle.
-But we already indicated there that later it might be necessary to discuss the influence of \nuc{Ar}{42} further.
-\nuc{Ar}{42} has a half life of 32.9 y which is in the same oder of magnitude as the half life of \Kr.
+We already mentioned there that any contributions from \nuc{Ar}{39} and \nuc{Po}{210} can be disregarded due to their either high half life or their high mean kinetic energy of the escaping particle.
+But as it was already indicated there, it might be necessary to discuss the influence of \nuc{Ar}{42} further.
+\nuc{Ar}{42} has a half life of 32.9 y which is in the same order of magnitude as the half life of \Kr.
 Therefore, we can expect to see a change in its activity over the course of \PII of about 4.4$\%$ of its absolute specific activity.
 With an specific activity big enough one could expect this isotope to be responsible for the measured decrease.
 But due to the fact that \nuc{Ar}{42}'s specific activity has already been determined to be much lower than the measured amplitude it can not be the only cause of this .
@@ -1280,7 +1280,7 @@ But assuming that the individual \nuc{Ar}{42} and \nuc{K}{42} isotopes are homog
 
 And here comes the critical point.
 The \nuc{K}{42} isotopes are not homogeneously distributed in the liquid argon.
-To understand why they are not we have look at what a \nuc{K}{42} does right after it was formed.
+To understand why they are not we have look at what a \nuc{K}{42} does right after it is formed.
 Right after a \nuc{Ar}{42} decays is the resulting \nuc{K}{42} isotope positively ionized.
 This results from the newly formed electron escaping from the decay position due to its high velocity.
 Because the \nuc{K}{42} isotope is positively charged, it is its aim to reduce its potential energy created by electrostatic fields.
@@ -1367,22 +1367,25 @@ But because of the higher number of fit parameters that would have to be determi
 
 Now, at the end of this analysis, one could finally look again at what the results would have looked like if the specific activity of \Kr from the WARP or Darkside experiments had been present.
 Again in the case of the WARP experiment an activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ was measured. 
-If one would measure its equivalent amplitude in a diagram like Figure \ref{fig:ChangeInEventRateFit}, it would strongly dominate the constant background and a significant change would have been visible.
-On the other hand is the activity in the Darkside experiment with its $(2,8577 \pm 0,18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
+If one would measure its equivalent amplitude in a diagram like Figure \ref{fig:ChangeInEventRateFit} a significant change would have been visible.
+On the other hand is the activity in the Darkside experiment with its $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
 \\
-  
-
-
 
 % use fit to calculate the decrease in rate of the signals in range from 200 to 500keV
 % from fit and assumption that only Kr85's activity is decreasing one can calculate the specific activity from the amplitude of the fit
 
 % use Volume of LAr-Tank to determine the number of Kr85 and from this the concentration in the argon
 
-\section{Conclusion and Discussion}
-\label{sec:calcOfTheCon}
+\chapter{Summary and Outlook}
+\label{sec:ConcAndOutlook}
 
-With all the work done in this paper it could now finally be shown that the activity of \nuc{Kr}{85} in the liquid argon of the GERDA experiment has a value of 0.074 $\frac{\unit{mBq}}{\unit{l}}$. 
+With the line count rate analysis carried out in this paper it could be shown that the specific activity of \nuc{Kr}{85} in the liquid argon of the GERDA experiment has a value of $(0.508\pm0.0857) \frac{\unit{mBq}}{\unit{l}}$. 
+Compared to WARPs $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ and to Darksides $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ its value is much smaller.
+On the other hand, the second attempt to determine a value for the specific activity via the change of count rate over time has failed.
+This was due to the falsely made assumption that \Kr is the only isotope in the liquid argon to shoe significant change in its activity over time.
+
+
+
 
 
 
