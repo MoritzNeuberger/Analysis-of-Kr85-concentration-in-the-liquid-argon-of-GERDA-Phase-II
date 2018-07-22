@@ -1278,7 +1278,7 @@ Thats why even though the fields are not very strong outside of the detectors th
 However, due to the higher density of \nuc{K}{42} isotopes near the germanium detectors it can be expected that also the specific activity around the detector increases.
 \\
 
-This effect has already been measured in the GERDA set up and is one of the leading background sources of the whole experiment.
+This effect has already been measured in the GERDA set up and is one of the greatest background sources of the whole experiment.
 \nuc{K}[42] has also the unfortunate characteristic for the GERDA experiment that its end point energy at about $Q_{\beta}=3525\unit{MeV}$ lies higher than the end point energy of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
 This means that electrons of the \nuc{K}{42} decay can create background events in the investigated rage. 
 Initially it was not expected to create much background.
@@ -1292,9 +1292,11 @@ That is because in that case the \Kr events will also be filtered out.
 So it still can be expected that a not negligible proportion of the measured specific activity comes from the denser \nuc{K}{42} in the region of the detectors.
 To get a quantitative approximation, you can now use the plot of the event rate change again (see \ref{fig:ChangeInEventRate}) and modify the fit function so that two exponential decay plus a constant background are considered.
 Both of the exponential decay fit functions have their half life fixed to the respective half life of \Kr (10.739y) and \nuc{Ar}{42} (32.9y).
-The resulting fit can be seen in figure \ref{fig:double}.
+The used fit function can be seen in equation \ref{fig:double}, the resulting fit function in figure and the fit parameter in table.
+\begin{equation}
+    \mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}\times\exp\left(-\frac{\log(2)}{\mathrm{D}} x \right) + \mathrm{E}
+\end{equation}
 \\
-
 \begin{figure}[t!]
 	\centering
 	\ifmakefigures%
@@ -1303,6 +1305,27 @@ The resulting fit can be seen in figure \ref{fig:double}.
 	\caption{double exponential decay fit}
 	\label{fig:double}
 \end{figure}%
+\\
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|c|}
+    \hline
+       Name  & Value \\
+       \hline
+    A     & 0.0010244$\pm$0.000122073 \\
+\hline
+     B    & 10.739 \\
+      \hline
+      C   & 0.00145395$\pm$0.000129916 \\
+       \hline
+       D  & 32.9 \\
+        \hline
+        E & 0.00175652$\pm$0.000119112
+        \hline
+    \end{tabular}
+    \caption{Fit parameters of the double exponential decay analysis}
+    \label{tab:doubleFitpara}
+\end{table}
 
 
 
