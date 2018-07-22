@@ -908,6 +908,29 @@ With the activity and the values determined from the analysis above we can calcu
 In the case of the WARP experiment one could expect with such a high activity that the count rate is also much higher than the 183 events determined from the actual measurement.
 Again for the Darkside experiment we calculate a amount of counts about one order of magnitude higher than the here measured events.
 From these comparisons we can see that for a much higher specific activity of \Kr to have actually been present a much bigger amount of events should have been counted.
+As a graphical representation you can see the peaks that one would have been able to be seen in the measured spectrum if an specific activity of the WARP or the Darkside experiment was present in figure \ref{fig:WARP} and \ref{fig:Darkside}.
+In both diagrams the actually measured spectra are also displayed, even if they are not recognizable as in the case of the WARP peak.
+\\
+
+\begin{figure}[t!]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=80mm]{./Bilder/WARP.pdf}
+		\caption{Cross section from above}
+		\label{fig:WARP}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=80mm]{./Bilder/Darkside.png}
+		\caption{Radial cross section}
+		\label{fig:Darkside}
+	\end{subfigure}
+    \\
+	\vspace{0.5cm}
+    \caption{}
+\vspace{0.5cm}
+\end{figure}
 \\
 
 Now that we have determined a concrete value for the specific activity of \Kr we now come to our second attempt to measure the specific activity as described in the next chapter.
@@ -1087,7 +1110,7 @@ Or in other words, this new histogram shows us the event rate per week over all 
 From this graph we now want to determine the exponential change in the event rate by applying an exponential fit function.
 The exact fit function used is
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\times\exp\left(\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}
+\mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}
 \label{equ:FitFilters}
 \end{equation}
 In this is A corresponding to the measured \Kr event rate of the decreasing function, B the half life of the decrease and C the constant event background rate.
@@ -1214,7 +1237,7 @@ This can easily be done by integrating an exponential decay function over all of
     \bar{a} = \frac{1}{2.17\unit{y}} \int_0^{2.17y} a(t=0)\times\exp \left( \frac{\log(2)}{T} t \right) \mathrm{d}t
 \end{equation*}
 with T being the half life of \Kr.
-This results in an mean specific activity of $ \bar{a_{2}} = 0.057294 \frac{\unit{Bq}}{\unit{l}}$.
+This results in an mean specific activity of $ \bar{a_{2}} = 57.294 \frac{\unit{mBq}}{\unit{l}}$.
 \\
 
 If you now compared this result with the specific activity found in the line count rate analysis you will realize that there is a problem.
@@ -1265,38 +1288,38 @@ Because the \nuc{K}{42} isotope is positively charged, it is its aim to reduce i
 
 Such fields are present in the liquid argon tank originate from the germanium detectors.
 In a germanium detector it is necessary to create a great electrostatic potential difference between the doped electrodes.
-The resulting electric field separates electron-hole pairs that might have been created by other particles depositing their energy in the semiconductor.
-The field then guiding the particles to the respective electrodes and by that creating a current which can be measured externally.
+The resulting electric field separates electron-hole pairs that might have been created by other particles depositing their energy in the semiconductor \cite{spieler_semiconductor_2005}.
+The field then guids the particles to the respective electrodes and by that creating a current which can be measured externally.
 In the case of the GERDA experiment are strong fields necessary.
 They are supposed to guarantee that the majority of electron-hole pairs reach the corresponding electrodes much faster than their mean free time $\tau$. %Hier noch die Buchquelle
 If the fields would not be as strong, the detection probability of any event would be much lower which is not ideal for an experiment in which extremely rare events have to be measured.
 \\
 
 Now that the positively ionized isotopes see these electrostatic fields of the detectors, they want to move in the direction of the negative charge located on the outer negatively doped surface of the detectors.
-Because in the liquid argon the mean time it takes the ionized \nuc{K}{42} to capture an electron as compensate for its positive charge is relatively long.
-Thats why even though the fields are not very strong outside of the detectors the \nuc{K}{42} can still travel a relatively long distance before it either captures an electron or decays further.
+Because in the liquid argon the mean time it takes the ionized \nuc{K}{42} to capture an electron as compensate for its positive charge is relatively long. %!!!!! hier brauche ich noch das paper zur charakteritsichen Zeit in der das Nuklid ionisiert ist !!!!!
+Thats why even though the fields are not very strong outside of the detectors the \nuc{K}{42} can still travel a relatively long distance before it either captures an electron or decays further. 
 However, due to the higher density of \nuc{K}{42} isotopes near the germanium detectors it can be expected that also the specific activity around the detector increases.
 \\
 
-This effect has already been measured in the GERDA set up and is one of the greatest background sources of the whole experiment.
-\nuc{K}[42] has also the unfortunate characteristic for the GERDA experiment that its end point energy at about $Q_{\beta}=3525\unit{MeV}$ lies higher than the end point energy of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
+This effect has already been measured in the GERDA set up and it is one of the greatest background sources of the whole experiment.
+\nuc{K}{42} has also the unfortunate characteristic for the GERDA experiment that its end point energy at about $Q_{\beta}=3525\unit{MeV}$ lies higher than the end point energy of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
 This means that electrons of the \nuc{K}{42} decay can create background events in the investigated rage. 
 Initially it was not expected to create much background.
-Its influence on the measurement however was only recognized after the start of \PI, when its counting rate was too high by a factor of 20. %!!!!! Refernz zu Becerici Schmidt 
+Its influence on the measurement however was only recognized after the start of \PI, when its counting rate was too high by a factor of 20. \cite{becerici_schmidt_results_2014}. %!!!!! Refernz zu Becerici Schmidt 
 Techniques to suppress the background of \nuc{K}{42} were introduced over time like the usage of nylon mini-shrouds as a mechanically barrier.
 The mini-shrouds together with active filters of the pulse shape analysis and the liquid argon veto have proven to bee able to suppress \nuc{K}{42} events by more then three orders of magnitude.
 \\
 
 In this case however it is not possible for the analysis to use the active filters to suppress the \nuc{K}{42} further.
-That is because in that case the \Kr events will also be filtered out.
+Because otherwise we would also filter out the \Kr events that we wanted to investigate in the first place.
 So it still can be expected that a not negligible proportion of the measured specific activity comes from the denser \nuc{K}{42} in the region of the detectors.
-To get a quantitative approximation, you can now use the plot of the event rate change again (see \ref{fig:ChangeInEventRate}) and modify the fit function so that two exponential decay plus a constant background are considered.
-Both of the exponential decay fit functions have their half life fixed to the respective half life of \Kr (10.739y) and \nuc{Ar}{42} (32.9y).
+What effective specific activity can be expected from the \nuc{Ar}{42} is difficult to estimate, but you can assume that it should be far greater than that of \Kr.
+To get a quantitative approximation, you can now use the plot of the event rate change again (see \ref{fig:ChangeInEventRate}) and modify the fit function used so that two exponential decays plus a constant background are taken into account.
+Both of the exponential decay fit functions have their half life fixed to the respective values of \Kr (10.739y) and \nuc{Ar}{42} (32.9y).
 The used fit function can be seen in equation \ref{fig:double}, the resulting fit function in figure and the fit parameter in table.
 \begin{equation}
     \mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}\times\exp\left(-\frac{\log(2)}{\mathrm{D}} x \right) + \mathrm{E}
 \end{equation}
-\\
 \begin{figure}[t!]
 	\centering
 	\ifmakefigures%
@@ -1309,39 +1332,43 @@ The used fit function can be seen in equation \ref{fig:double}, the resulting fi
 \begin{table}[]
     \centering
     \begin{tabular}{|l|c|}
-    \hline
-       Name  & Value \\
-       \hline
-    A     & 0.0010244$\pm$0.000122073 \\
-\hline
-     B    & 10.739 \\
-      \hline
-      C   & 0.00145395$\pm$0.000129916 \\
-       \hline
-       D  & 32.9 \\
         \hline
-        E & 0.00175652$\pm$0.000119112
+        Name  & Value \\
+        \hline
+        A     & 0.0010244$\pm$0.000122073 \\
+        \hline
+        B    & 10.739 \\
+        \hline
+        C   & 0.00145395$\pm$0.000129916 \\
+        \hline
+        D  & 32.9 \\
+        \hline
+        E & 0.00175652$\pm$0.000119112 \\
         \hline
     \end{tabular}
     \caption{Fit parameters of the double exponential decay analysis}
     \label{tab:doubleFitpara}
 \end{table}
+\\
 
+In a direct comparison of figure \ref{fig:double} with graph \ref{fig:ChangeInEventRateFit} no real difference can be see.
+But when looking at the fit parameters you can see that in this case the \nuc{Ar}{42} exponential fit function has a bigger amplitude than \Kr.
+Because the \nuc{K}{42} density is not homogeneously distributed in the liquid argon it is impossible to run a Monte Carlo simulation to again determine a new detector efficiency.
+But using the conversation factor determined from the second simulation to make an estimate the respective effective specific activities can be calculated to $(40.4\pm0.59)\frac{\unit{mBq}}{\unit{l}}$ for \Kr and $(57.3\pm0.66)\frac{\unit{mBq}}{\unit{l}}$ for all of the decays resulting from \nuc{Ar}{42}.
+These values are both still way to high for what was expected from them.
+For the \Kr it is obvious but for \nuc{Ar}{42} the maximum effective specific activity expected to be measured should have only been about one orders of magnitude higher than the actual specific activity of only the \nuc{Ar}{42}.
+Due to the fit parameters still generating far too much specific activity for these isotopes shows that other sources of change are still not accounted for.
+Nevertheless it has been shown with this fit that \Kr does not contribute solemnly to the change of count rate over time and with this the assumption from before has been shown to be false.
+\\
 
+Theoretically it would now still be possible to determine an specific activity of \Kr from plot \ref{fig:ChangeInEventRate} but considerein every individual source of change in count rate.
+But because of the higher number of fit parameters that would have to be determined and the relatively large uncertainties in the plot compared to the overall change, it is not difficult to be pessimistic whether this analysis can even make a statement about the specific activity of \Kr.
+\\
 
-!!!!! hier brauche ich noch das paper zur charakteritsichen Zeit in der das Nuklid ionisiert ist !!!!!
-
-
-
-
-!!!!! UND HIER DANN DIE ERKLÄRUNG !!!!!  
-
-
-To evaluate the accuracy of our measurement results of the second method we can also compare its values to the Darkside and the WARP experiment and predict what the equivalent changes over time with the respective activities would looks like.
+Now, at the end of this analysis, one could finally look again at what the results would have looked like if the specific activity of \Kr from the WARP or Darkside experiments had been present.
 Again in the case of the WARP experiment an activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ was measured. 
-If we were to measured its equivalent amplitude in a graph like figure \ref{fig:ChangeInEventRateFit} it would greatly dominate over the constant background and a clear change would have been able to be seen.
+If one would measure its equivalent amplitude in a diagram like Figure \ref{fig:ChangeInEventRateFit}, it would strongly dominate the constant background and a significant change would have been visible.
 On the other hand is the activity in the Darkside experiment with its $(2,8577 \pm 0,18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
-Because we expect the specific activity of \Kr in the GERDA experiment to be about an order of magnitude smaller than the one in the Darkside experiment we can assume that the error originates in the second approach.
 \\
   
 
