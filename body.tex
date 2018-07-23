@@ -100,149 +100,13 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 \chapter{Physical Background}
 \label{sec:PhyBG}
 
-\section{Weyl, Majorana and Dirac fermions}
-\label{sec:WMDf}
+\section{Neutrinos}
 
 
-Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor allem auf "Kerne und Teilchen", der KTA Script und ein paar einfürhende Paper stützen.
-
-% in this chapter almost everything from source 0
-
-\begin{itemize}
-\item historic introduction of question whether neutrinos are dirac or majorana fermions
-\begin{itemize}
-\item from Dirac relativistic equation fermion fields
-\item electrons: have mass and charge, Dirac-eq predicts antiparticles, requires 4-comp fields
-\item Weyl calculates for massless fermions that only two-component fields are necessary
-\item Pauli predicts neutrinos in letter, no charge, seems to have vanishing mass 
-\item \(\rightarrow\) assumption: neutrinos  are Weyl fermions
-\item Majorana: neutrinos are antiparticles of itself since they are uncharged, first not taken seriously, only after first indications that neutinos have mass
-\item \(\rightarrow\) discussion whether neutrinos are Dirac or Majorana fermions
-\end{itemize}
-\item short introduction to dirac-eq
-\begin{itemize}
-\item \((i\hbar\gamma^\mu \partial_\mu  - mc)\psi = 0\) , maybe Hamilton/Lagragian, has plane waves as solution multiplied with spinor
-\item Spinors: any column like function of energy and momentum which when multiplied by factor \(\exp(i\vec{p}\cdot\vec{x})\) or  \(\exp(\-i\vec{p}\cdot\vec{x})\) becomes a solution of the Dirac equation
-\end{itemize}
-\item we know that the Klein-Gordon-eq is real, how can we get a real solution from the dirac-eq
-\begin{itemize}
-\item depends on how we choose our \(\gamma^\mu\), if all non-zero elements of all the \(\gamma^\mu\) are purly imaginary, then Dirac-eq is real
-\item Majorana matrices, with usage in Dirac-eq one can obtain real solutions that satisfy \(\tilde{\psi} = \tilde{\psi}^*\)
-\item \(\rightarrow\) these solutions represent Majorana fermions
-\item general solution to Majorana condition can be obtained by transformation with unitary matrix: \(\gamma^\mu = \mathrm{U}\tilde{\gamma^\mu}\mathrm{U}^\dagger\)
-\item general Majorana condition: \(\psi = \mathrm{U}\mathrm{U}^\top\tilde{\psi}^*\), with \(\mathrm{U}\mathrm{U}^\top \equiv \gamma^0 \mathrm{C}\)
-\item with compact notation \(\widehat{\psi} \equiv \gamma^0 \mathrm{C} \psi^*\)
-\item general definition of a Majorana fermion fields through definition: \(\psi = \widehat{\psi}\), condition is Lorenz invariant
-\end{itemize}
-\item clunky repetition of what helicity and chirality is and what their problem with massive fermions is
-\begin{itemize}
-\item helicity defined as twice the value of the spin component of the particle along the direction of the momentum \(h_{\vec{p}} = \frac{2 \vec{J} \cdot \vec{p}}{p}\)
-\item eigenstates of eigenvalue -1 called "left-helical", eigenstates of eigenvalue +1 called "right-helical"
-\item is invariant under time/rotation, not invariant under boost
-\item chirality meaning assigned to matrix \(\gamma_5 = i\gamma^0\gamma^1\gamma^2\gamma^3\)
-\item projection matrices on fermion fields: \( \mathrm{L} = \frac{1}{2} \left( 1- \gamma_5\right ) \), \( \mathrm{R} = \frac{1}{2} \left( 1 + \gamma_5\right ) \)
-\item projections of L, R are called lift/right-chiral
-\item wavefunction can be written as \(\psi = \psi_L + \psi_R\) with \(\psi_L = \mathrm{L}\psi\) and \(\psi_R = \mathrm{R}\psi\)
-\item \(\rightarrow\) helicity: conserved for free particles, not under Lorenz trafo
-\item \(\rightarrow\) chirality: is Lorenz invariant, not conserved
-\item \(\rightarrow\) both not appropriate for characterizing a fermion that has mass
-\end{itemize}
-\item how to define Weyl fermions
-\begin{itemize}
-\item problem with helicity/chirality disappears if the fermion is massless
-\item general solution of Dirac-eq is not irreducible representation of Lorentz group (Lorenz group: group of Lorentz trafo in Mirkowski-space-time)
-\item \(\rightarrow\) left/right-chiral fields are Lorentz invariant, representation with 2-component-field: \( \begin{pmatrix}\frac{1}{2} \\ 0\end{pmatrix}\) for left-chiral, \(\begin{pmatrix}0 \\ \frac{1}{2}\end{pmatrix}\) for right-chiral
-\item when \(\chi\) is left chiral Weyl fermions, \( \widehat{\chi} \) is a right chiral Weyl fermions
-\item a general fermion field can be described by two Weyl fields \(\rightarrow\) building blocks
-\end{itemize}
-\item how can we build Majorana/Dirac fermions from Weyl fermions
-\begin{itemize}
-\item Majorana and Dirac fermions both have mass and therefor must have both left/right chiral components
-\item Dirac can be created by two independent left chiral Weyl fields \(\chi_1\), \(\chi_2\): \(\psi = \chi_1 + \widehat{\chi_2}\)
-\item Dirac fermions are unconstrained solutions of the Dirac equation
-\item unlike the Dirac fermions, the Majorana fermions must fulfill the reality condition \( \psi = \widehat{\psi} \)
-\item Majorana fermions are represented by: \( \psi = \chi + \widehat{\chi} \)
-\item where does mass come from?: mass term in Dirac-eq is of from \(\bar{\psi}\psi\), only \(\bar{\psi_L}\psi_R\) and \(\bar{\psi_R}\psi_L\) remains, \(\bar{\psi_L}\psi_L\) and \(\bar{\psi_R}\psi_R\) cancel out
-\item \(\rightarrow\) Weyl fermions has special chirality therefore mass term must vanish, massive fermions must have left-chiral and right-chiral components
-\end{itemize}
-\item Dirac fields are completely unconstrained solutions of Dirac equation
-\item Weyl/Majorana fields are simpler solutions with some kind of constrained imposed on solution, Weyl: chirality condition, Majorana: reality condition
-\end{itemize}
-% hier muss ich mich ein wenig einlesen ... mögliche Literatur:
-% KTA-Expert script
-% 0: https://arxiv.org/pdf/1006.1718v2.pdf
-
-\subsection{Neutrinoless Double Beta Decay}
-\label{sec:NDBD}
-\begin{itemize}
-\item Neutrino Oscillation have shown that neutrinos have finite mass, with NeOs only difference in mass measurable, lower limit on absolute mass with \(\mathrm{m}_{scale} = \sqrt{\Delta \mathrm{m}^2}\)
-\begin{itemize}
-\item SuperKamiokande showed mixing between \(\nu_\mu\) and \(\nu_\tau\) of atmospheric neutrinos
-\item "solar neutrino puzzle" solved with mixing of \(\nu_e\) and mixture of \(\nu_\mu\) and \(\nu_\tau\)
-\item NeOs can not determin absolute masses and also not separate between two different scenarios:
-\begin{itemize}
-\item hierarchical pattern ( \(m_i\)  ~= \(\sqrt{\Delta m^2}\))
-\item degenerate pattern ( \(m_i >> \sqrt{\Delta m^2}\))
-\end{itemize}
-\end{itemize}
-\item \(\beta\beta(0\nu)\) decay can only proceed when Neutrinos are massive Majorana particles
-\begin{itemize}
-\item standard electroweak model postulates that neutrinos are massless and total lepton number is conserved -> with \(\beta\beta(0\nu)\) physics beyond SM
-\item double beta decay is rare transition between two nuclei with the same mass number A involving change of nuclear charge Z by two units
-\begin{itemize}
-\item can only proceed if initial nucleon is less bound than final and both are more bound than intermediate nucleon -> only fulfilled for even-even nucleons
-\item \(\beta\beta(2\nu)\): \( (Z,A) \rightarrow (Z + 2, A) + e^-_1 + e^-_2 + \bar{\nu_{e1}} + \bar{\nu_{e2}} \), conserves lepton number
-\item \(\beta\beta(0\nu)\): \( (Z,A) \rightarrow (Z + 2, A) + e^-_1 + e^-_2\), violates lepton number conservation
-\item \(\beta\beta(0\nu, \chi)\): \((Z,A) \rightarrow (Z + 2, A) + e^-_1 + e^-_2 + \chi \)
-\end{itemize}
-\item easy to distinguish the three decay modes by shape of \(e^-\)-sum energy spectrum
-\begin{itemize}
-\item 2\(\nu\): broad maximum below half of endpoint
-\item 0\(\nu\): \(e^-\) carry full available kinetic energy, single peak at endpoint
-\item 0\(\nu,\chi\): again continuous, maximum shifted above halfway point
-\end{itemize}
-\end{itemize}
-\item Majorana, Dirac neutrinos (again from above, maybe move stuff there)
-\begin{itemize}
-\item Majorana: particles that are identical with their own antiparticles, two component objects
-\item Dirac: one can distinguish, four component objects
-\item massive fermions usually described by Dirac eq with coupling of chiral eigenstates \(\psi_L,\psi_R\), \(\Psi = \begin{pmatrix} \psi_R \\ \psi_L\end{pmatrix}\)
-\item Majorana suggested alternative description of massive fermions which do not have additive quantum numbers as two component states, chiral eigenstates connected via \(\psi_L = \epsilon \psi_R^*\)
-\end{itemize}
-\item Lorentz invariant mass in Dirac Lagrangian:
-\begin{itemize}
-\item Dirac mass: \(M_D [\bar{\nu_R}\nu_L + (\bar{\nu_L})^*\nu_R^*]\), requires both chirality eigenstates, conserves total lepton number
-\item Majorana mass: \(M_L [(\bar{\nu_L})^*\nu_L + \bar{\nu_L}\nu_L^*]\), \(M_L [(\bar{\nu_R})^*\nu_R + \bar{\nu_R}\nu_R^*]\), violates total lepton number conservation, can be present even w/o existents of \(\nu_L/\nu_R\)
-\item generally all three terms may coexist, when Lagrangian is diagonalized the resulting two general non-degenerate mass eigenvalues for each flavor (see-saw: light and heavy particle for each flavor) \(M = \begin{pmatrix} M_L & M_D \\ M_D & M_R\end{pmatrix}\) 
-\item M diagonalized by unitary matrices \(\begin{pmatrix} U \\ V \end{pmatrix}\), U,V general mixing matrices, if non of the \(\nu_R\) states exist or \(M_R\) is so large only \(M_L\) is relevant and only U needed
-\end{itemize}
-\item Majorana mass
-\begin{itemize}
-\item transition amplitude for Majorana neutrino mass \(m_e\) is sum over product of \(m_j\) and combination of nuclear mixing element
-\item in each vertice electron is emitted, therefor mixing amplitude \(\mathrm{U}_{ej}\) appears in each of them
-\item \(\Rightarrow \beta\beta(0\nu)\) decay amplitude contains factor \(\mathrm{U}_{ej}^2\) not \(|\mathrm{U}_{ej}|^2 \Rightarrow <m_\nu> = |\sum_jm_j\mathrm{U}_{ej}^2|\) 
-\end{itemize}
-\item oscillation parameters
-\begin{itemize}
-\item \(<m_\nu>^2 = |\sum_jm_j\mathrm{U}_{ej}^2|^2 = |\sum_jm_j|\mathrm{U}_{ej}|^2e^{i\alpha}|^2\) with \(\alpha\) being the Majorana phase
-\item possibility of cancellation of sum (Zee model \(<m_\nu> = 0\))
-\item \(<m_\nu> = 0\) depends on unknown phase but upper/lower limit only depends on absolute values of mixing angles\(<m_\nu> = \sum_jm_j|\mathrm{U}_{ej}|^2\)
-\item when \(<m_\nu>\) is known from tritium beta decay experiments one can determine phase \(\alpha_i\)
-\end{itemize}
-\end{itemize}
-
+\section{Neutrinoless Double Beta Decay}
 % also a bit about standard double beta decay
 % differences between the standard and neutrinoless beta decay
  
-
-
-\capter{\Kr isotope}
-\label{sec:Kry85}
-
-% where does it come from?
-% what properties does it have?
-% why is it important to calculate its influence on GERDA
-
 \chapter{GERDA}
 \label{sec:GERDA}
 
@@ -256,11 +120,6 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 
 % not sure whether this is enough for its own section, maybe just connect it with general info
 
-
-\section{Liquid Argon as Coolant, Shielding and Scintillator} 
-\label{sec:LArcoolant}
-
-
 \section{Experimental Setup}
 \label{sec:ExSetup}
 
@@ -269,6 +128,10 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 
 \section{Background Reduction}
 \label{sec:BGReduction}
+
+
+\section{Liquid Argon as Coolant, Shielding and Scintillator} 
+\label{sec:LArcoolant}
 
 
 % Mui, Mountain, Pulse shape disc.
@@ -281,6 +144,13 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 
 % short outline of approaches
  
+ \chapter{\Kr isotope}
+\label{sec:Kry85}
+
+% where does it come from?
+% what properties does it have?
+% why is it important to calculate its influence on GERDA
+
 \chapter{Line Count Rate Analysis}
 \label{sec:SAfrom514}
 
@@ -565,20 +435,7 @@ But it is practically impossible to recover them from there due to the great amo
 Our recovery attempt has therefor failed.
 \\
 
-!!!!! DAS HIER IST AUCH NOCH EINE PROBLEMSTELLE !!!!!
-
-Nevertheless we are still able to make some qualitative estimations about why approach did not work. 
-When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must be smaller.
-An important factor limiting this recovery rate originates from an estimation applied in this approach.
-It was approximated that the electrons created scintillation light instantaneously after being released.
-In reality, the moment an electron emits scintillation light is determined by many complex mechanisms. 
-However, its behavior can be approximated by a relaxation approach. 
-This gives you a new characteristic time with which you can describe how many electrons have already created scintillation light after what time. 
-But this not spontaneous behavior means, that the measured signal depends on both the relaxation time of the \nuc{Rb}{85} and the scintillation light of the electron.
-It is therefor quite possible, that a number of \Kr decay events can have a positive effective time difference.
-Those are then lost in our analysis due to us filtering out every event that has a positive time difference.
-This results in a lower recovery rate.
-\\
+!!!! hier kann man noch einen Paragraphen zu einer qualitativen Abschätzung einfügen !!!!!
 
 Now that we have seen that we were not able to recover any of the falsely filtered \Kr caused events it is justified to also question whether the majority of the rare \Kr decays can even pass through the liquid argon filter itself.
 But we only get a satisfactory answer with a quantitative analysis which will be performed in the following chapter.
