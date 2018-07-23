@@ -100,77 +100,6 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 \chapter{Physical Background}
 \label{sec:PhyBG}
 
-\section{Weyl, Majorana and Dirac fermions}
-\label{sec:WMDf}
-
-
-Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor allem auf "Kerne und Teilchen", der KTA Script und ein paar einfürhende Paper stützen.
-
-% in this chapter almost everything from source 0
-
-\begin{itemize}
-\item historic introduction of question whether neutrinos are dirac or majorana fermions
-\begin{itemize}
-\item from Dirac relativistic equation fermion fields
-\item electrons: have mass and charge, Dirac-eq predicts antiparticles, requires 4-comp fields
-\item Weyl calculates for massless fermions that only two-component fields are necessary
-\item Pauli predicts neutrinos in letter, no charge, seems to have vanishing mass 
-\item \(\rightarrow\) assumption: neutrinos  are Weyl fermions
-\item Majorana: neutrinos are antiparticles of itself since they are uncharged, first not taken seriously, only after first indications that neutinos have mass
-\item \(\rightarrow\) discussion whether neutrinos are Dirac or Majorana fermions
-\end{itemize}
-\item short introduction to dirac-eq
-\begin{itemize}
-\item \((i\hbar\gamma^\mu \partial_\mu  - mc)\psi = 0\) , maybe Hamilton/Lagragian, has plane waves as solution multiplied with spinor
-\item Spinors: any column like function of energy and momentum which when multiplied by factor \(\exp(i\vec{p}\cdot\vec{x})\) or  \(\exp(\-i\vec{p}\cdot\vec{x})\) becomes a solution of the Dirac equation
-\end{itemize}
-\item we know that the Klein-Gordon-eq is real, how can we get a real solution from the dirac-eq
-\begin{itemize}
-\item depends on how we choose our \(\gamma^\mu\), if all non-zero elements of all the \(\gamma^\mu\) are purly imaginary, then Dirac-eq is real
-\item Majorana matrices, with usage in Dirac-eq one can obtain real solutions that satisfy \(\tilde{\psi} = \tilde{\psi}^*\)
-\item \(\rightarrow\) these solutions represent Majorana fermions
-\item general solution to Majorana condition can be obtained by transformation with unitary matrix: \(\gamma^\mu = \mathrm{U}\tilde{\gamma^\mu}\mathrm{U}^\dagger\)
-\item general Majorana condition: \(\psi = \mathrm{U}\mathrm{U}^\top\tilde{\psi}^*\), with \(\mathrm{U}\mathrm{U}^\top \equiv \gamma^0 \mathrm{C}\)
-\item with compact notation \(\widehat{\psi} \equiv \gamma^0 \mathrm{C} \psi^*\)
-\item general definition of a Majorana fermion fields through definition: \(\psi = \widehat{\psi}\), condition is Lorenz invariant
-\end{itemize}
-\item clunky repetition of what helicity and chirality is and what their problem with massive fermions is
-\begin{itemize}
-\item helicity defined as twice the value of the spin component of the particle along the direction of the momentum \(h_{\vec{p}} = \frac{2 \vec{J} \cdot \vec{p}}{p}\)
-\item eigenstates of eigenvalue -1 called "left-helical", eigenstates of eigenvalue +1 called "right-helical"
-\item is invariant under time/rotation, not invariant under boost
-\item chirality meaning assigned to matrix \(\gamma_5 = i\gamma^0\gamma^1\gamma^2\gamma^3\)
-\item projection matrices on fermion fields: \( \mathrm{L} = \frac{1}{2} \left( 1- \gamma_5\right ) \), \( \mathrm{R} = \frac{1}{2} \left( 1 + \gamma_5\right ) \)
-\item projections of L, R are called lift/right-chiral
-\item wavefunction can be written as \(\psi = \psi_L + \psi_R\) with \(\psi_L = \mathrm{L}\psi\) and \(\psi_R = \mathrm{R}\psi\)
-\item \(\rightarrow\) helicity: conserved for free particles, not under Lorenz trafo
-\item \(\rightarrow\) chirality: is Lorenz invariant, not conserved
-\item \(\rightarrow\) both not appropriate for characterizing a fermion that has mass
-\end{itemize}
-\item how to define Weyl fermions
-\begin{itemize}
-\item problem with helicity/chirality disappears if the fermion is massless
-\item general solution of Dirac-eq is not irreducible representation of Lorentz group (Lorenz group: group of Lorentz trafo in Mirkowski-space-time)
-\item \(\rightarrow\) left/right-chiral fields are Lorentz invariant, representation with 2-component-field: \( \begin{pmatrix}\frac{1}{2} \\ 0\end{pmatrix}\) for left-chiral, \(\begin{pmatrix}0 \\ \frac{1}{2}\end{pmatrix}\) for right-chiral
-\item when \(\chi\) is left chiral Weyl fermions, \( \widehat{\chi} \) is a right chiral Weyl fermions
-\item a general fermion field can be described by two Weyl fields \(\rightarrow\) building blocks
-\end{itemize}
-\item how can we build Majorana/Dirac fermions from Weyl fermions
-\begin{itemize}
-\item Majorana and Dirac fermions both have mass and therefor must have both left/right chiral components
-\item Dirac can be created by two independent left chiral Weyl fields \(\chi_1\), \(\chi_2\): \(\psi = \chi_1 + \widehat{\chi_2}\)
-\item Dirac fermions are unconstrained solutions of the Dirac equation
-\item unlike the Dirac fermions, the Majorana fermions must fulfill the reality condition \( \psi = \widehat{\psi} \)
-\item Majorana fermions are represented by: \( \psi = \chi + \widehat{\chi} \)
-\item where does mass come from?: mass term in Dirac-eq is of from \(\bar{\psi}\psi\), only \(\bar{\psi_L}\psi_R\) and \(\bar{\psi_R}\psi_L\) remains, \(\bar{\psi_L}\psi_L\) and \(\bar{\psi_R}\psi_R\) cancel out
-\item \(\rightarrow\) Weyl fermions has special chirality therefore mass term must vanish, massive fermions must have left-chiral and right-chiral components
-\end{itemize}
-\item Dirac fields are completely unconstrained solutions of Dirac equation
-\item Weyl/Majorana fields are simpler solutions with some kind of constrained imposed on solution, Weyl: chirality condition, Majorana: reality condition
-\end{itemize}
-% hier muss ich mich ein wenig einlesen ... mögliche Literatur:
-% KTA-Expert script
-% 0: https://arxiv.org/pdf/1006.1718v2.pdf
 
 \subsection{Neutrinoless Double Beta Decay}
 \label{sec:NDBD}
@@ -287,83 +216,87 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 
 As stated in the introduction, the main goal of this theses is to approximate the specific activity of the isotope \Kr in the liquid argon coolant, shielding and scintillate of the GERDA experiment. 
 This value is of interest, as in other experiments this alien isotope in the liquid argon has produced a not negligible background there. 
-The two examples will be used in this thesis are the WARP and the Darkside experiment.
-Both of these experiments have set their aim to detect WIMPs (Weakly Interacting Massive Particles) which are candidates for dark matter.
-These WIMPs should in the case of their existence theoretically create tiny recoils produced in ordinary matter by the elastic scattering.
+Two examples will be used in this thesis: the WARP and the Darkside experiment.
+Both of these experiments have set their aim to detect WIMPs (Weakly Interacting Massive Particles) which are likely candidates for dark matter.
+These WIMPs should in the case of their existence theoretically create tiny recoils in ordinary matter by elastic scattering.
 Nobel gases are well suited as a target material, which is why many of today's dark matter experiments use them.
 Both WARP and Darkside use liquid argon as their target material.
-Due to the small expected interaction cross section of the WIMPs all background sources have to be well known and in both of these experiments a value for the specific activity of the residual \Kr has been determined.
+Due to the small expected interaction cross section of the WIMPs the background sources have to be well known and in both of these experiments a value for the specific activity of the residual \Kr has been determined.
 In the case of the Darkside experiment a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\)  \cite{agnes_results_2016} was measured whereas a value of \((160\pm130)\frac{\unit{Bq}}{\unit{l}}\) was measured for the specific activity in the WARP experiment \cite{benetti_measurement_2006}.
-It is now of interest to determine the specific activity for the GERDA experiment to know how much of an impact it has on the radioactive background.
+In both cases the \Kr creates a non negligible background but of very different proportion. 
+It is therefor interest to determine the specific activity for the GERDA experiment to know how much of an impact \Kr has on the radioactive background.
 %This corresponds to a concentration of about \((2.32\pm0.14)\times10^{-18}\frac{\unit{mol}}{\unit{l}}\) for the Darkside and  \((1.30\pm1.05)\times10^{-16}\frac{\unit{mol}}{\unit{l}}\) for the WARP experiment.
 \\
 
 In the curse of this theses two different approaches are used to calculate the concentration of \Kr. 
 The first and more precise method is the line count rate analysis of the \Kr decay into an excited state of \nuc{Rb}{85m}. 
 It is also the topic of this chapter.
-The second method that is discussed in the following chapter uses the reduction in intensity of all events over time. 
+The second method discussed in the following chapter uses the reduction in count rate of measured events over time. 
 This method is less likely to create precise results due to it relying on a great approximation.
-It is estimated that only \Kr's activity has a notable change with time whereas the activity of all other radioactive isotopes stay relatively constant. 
-It is therefor intended to only be a crosscheck for the result of the first method.
+Because it is estimated that only \Kr's activity has a notable change over time whereas all other radioactive isotopes stay relatively constant. 
+It is therefor planned to only be a crosscheck for the result of the first method.
 \\
 
 Now to how exactly the line count rate analysis is able to determine a specific activity.
-As discussed in section \ref{sec:Kry85} has \Kr the property, that it has a small probability of 0.43\% to decay into an excited state of \nuc{Rb}{85m}. 
+As discussed in section \ref{sec:Kry85} has \Kr the property, that it has the small probability of 0.43\% to decay into an excited state of \nuc{Rb}{85m}. 
 This state has a raised energy level of 514keV compared to its ground state and a half-life of 1.015\(\unit{\mu s}\). 
-Theoretically it should be possible to measure a peak in the spectrum around the 514keV of by the photons emitted from the relaxation of \nuc{Rb}{85m}.
-In the spectrum around this peak one can then apply an Gaussian peak fit to determine the number of events measured by the detectors in this area. 
+Theoretically it should therefor be possible to measure a peak in the spectrum around the 514keV energy mark caused by the photons emitted from the relaxation of \nuc{Rb}{85m}.
+In the spectrum around this peak one can then apply an Gaussian peak fit to determine the number of events measured in this area. 
 \\
 
-It is also necessary to calculate the efficiency of the detector to measure any photons with an energy of 514keV.
+It is also necessary to calculate the efficiency of the detectors to measure a photons with the energy of 514keV.
 But this detector efficiency can't be calculated by just using the measured data.
-It has to be determined by using a Monte Carlo simulation creating a huge amount of 514 keV photons in a constant volume and counting the measured events in the detector. 
-The detector efficiency can then be calculated by dividing the simulated measured events by the total number of simulated decays.
+It has to be determined using a Monte Carlo simulation creating a huge amount of 514 keV photons in a constant volume and counting the measured events in the detector. 
+The detector efficiency can then be calculated by dividing the measured events by the total number of simulated decays.
 This value can then be used in a conversation factor to determine the amount of decays actually necessary to create the measured peak.
 \\
 
 The final value needed to calculate the specific activity is the measuring time.
-Because not every detector was measuring over the course of Phase II a mean measuring time for all detectors has to be calculated.
-Now finally with the values of the amplitude, the conversion factor and the mean measuring time a mean specific activity can be determined. 
+Because not every detector was measuring over the course of Phase II a mean measuring time for each individual detectors has to be calculated.
+Now finally with the values of the measured events, the conversion factor and the mean measuring time a mean specific activity can be determined. 
+\\
+
 The line count rate analysis is expected to generate a relatively precise estimation of the specific activity.
-This is because only the photons of the \Kr decays can be the cause of the investigated change in spectrum whereas in the second method every isotopes theoretically creates a change in intensity over time distorting.
+This is because only the photons of the \Kr decays can cause the investigated change in spectrum.
+In the case of the second method however every radioactive isotopes residual in experimental setup contributes to the change in count rate over time.
 \\ 
 
 However, the biggest problem of this method to overcome lies with the proximity of the \Kr to the 511keV peak of the positron electron annihilation. 
 Its peak is expected to partially dominate over the \Kr in the spectrum and does not allow for a direct measurement of the 514keV peak. 
-This is not necessary a great setback because we can just adapt our fit function to a double Gaussian peak function.
-But it is also of interest whether it is possible to completely suppers the annihilation peak without changing the 514keV photon line.
-Due to the low energy of the escaping electron (47.65keV) in the \Kr decay into the excited \nuc{Rb}{85m}, this specific decay is very unlikely to create any scintillating light in the liquid argon. 
+This is not necessarily a great setback because we can just adapt our fit function to a double Gaussian peak function and still get a relatively precise value.
+But it is of interest whether it is possible to completely suppers the annihilation peak without changing the 514keV photon line.
+Due to the low mean energy of the escaping electron (47.65keV) in the \Kr decay into the excited \nuc{Rb}{85m}, this specific decay is very unlikely to create any scintillating light in the liquid argon. 
 On the other hand one can expect the light of the positron electron annihilation to create a great signal in the photomultiplier that are positioned in the liquid argon tank.
-It should therefor be possible to single out the 514keV photon events from the annihilation events.
-If possible this could be a second method to determine the amplitude of the peak with just one Gaussian peak.
+It should therefor be possible to single out the 514keV photon events from the annihilation events by using their signals.
+If possible this could be a second approach to determine the amplitude of the peak with just one Gaussian peak.
 \\
 
-The rest of the chapter will now concentrate on the concrete implementation of the method.
-As it was stated above, to determine the amount of measured 514keV photons a fit has to be applied to the spectrum around the peak. 
+From now on the concrete implementation of the method will be the topic of this chapter.
+As it was stated above, to determine the amount of measured 514keV photons a fit has to be applied to the spectrum around the 514keV peak. 
 But before the measured spectrum can be used for our analysis we have to apply some filters.
 These filters should filter out any event of which we can say with a high probability they were not caused by a \Kr decay.
-Two very appropriate filters are the Muon Veto and the detector anti-coincidence veto.
+Two very appropriate filters for this purpose are the Muon Veto and the detector anti-coincidence veto.
 How exactly these two filters work will be discussed now.
 \\
 
 As it was elaborated in section \ref{sec:ExSetup} all GERDA data is stored in a multi-tier data structure. 
 All of the data used in this theses are from either tier 3 or from tier 4.
 In these tiers a lot of analysis has already been carried out on the individual events measured. 
-Among other things, each event in tier 3 and 4 is given a flag whether or not there was a coincidence of the event with a signal in one of the photomultiplier in the water tank.
-This flag is called the Muon Veto and it always triggers whenever there is a strong light signal measured.
-Due to the high kinetic energy needed to create any Cherenkov light no isotope from inside the germanium source and liquid argon should trigger this Muon Veto.
+Among other things, each event in tier 3 and 4 is given a flag whether or not a coincidence of the event with a signal in one of the photomultiplier in the water tank was detected.
+This flag is called the Muon Veto and it always triggers whenever a is a strong light signal is measured together with a germanium detector event.
+Due to the high kinetic energy needed to create any Cherenkov light in water no isotope from inside the germanium source and liquid argon should trigger this Muon Veto.
 Especially no \Kr decay. 
 This veto can therefor be used to filter out high-energy particles from outside and the background they create.
 \\
 
 For a photon from the relaxation of \nuc{Rb}{85m} to create the distinct 514keV peak it is necessary to deposit all of its energy in only one of the detectors. 
-This means that any event in which two different germanium detectors measured a non negligible energy deposition is most likely not caused by a \Kr decay.
+This means that any event in which two different germanium detectors measured non negligible energy depositions is most likely not caused by a \Kr decay.
 This kind of filtering is called a detector anti-coincidence filter.
-Whether an event has more than one detector measure a signal can be determined by the multiplicity counter of each event stored in tier 3 and 4.
-Using this counter even more background of none \Kr decays can be repressed.
+Whether an event has more than one detector measure a signal can be determined by the multiplicity counter of each event stored in tier 3 or 4.
+Using this counter even more background of none \Kr decays can be suppressed.
 \\
 
-After applying the first few rather general filters on the measured events one has to make a distinction between the events measured in different kinds of detectors.
+After applying the first few rather general filters on the measured events one has to also make a distinction in which detector the event was measured.
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution and detector efficiencies. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
@@ -374,7 +307,7 @@ It is therefor necessary to evaluate their measured data separately.
 
 Now that we have listed the steps necessary to adjust our measurement results so that we can determine the number of decays from we can finally plot the spectra of the corresponding detectors (see figure \ref{fig:NoFilterBEGes} for the BEGes and \ref{fig:NoFilterCOAX} for the spectra of the COAX detectors). 
 In these two spectra we can clearly see two distinct peaks - one at 511keV that corresponds to the positron electron annihilation events and one at 514keV that corresponds to the photons from the relaxation of \nuc{Rb}{85m}.
-From the fact that we can see a distinct peak at the 514keV line we can already claim the fact that there must be a non neglectible amount of \Kr in the liquid argon.
+From the fact that we can see a distinct peak at the 514keV line we can already claim the fact that there must be a non negligible amount of \Kr in the liquid argon.
 Otherwise no peak should have been able to be measured. 
 The difference in resolution can be seen in the fact that in the BEGe diagram the two peaks have a smaller full width at half value.
 Compared to the COAX detectors their peaks can easily be distinguished.  
@@ -410,7 +343,7 @@ We will probably end up using the unsuppressed spectra to determine the amount o
 As we will see later this is because the used filter also filters out events from the 514keV line peak.
 This results in a lower amount of events measured at this energy and therefore, in the end, gives us a lower activity than there is in actuality. 
 But to understand why this filter also filters out these false positives we have to discuss how this filter works first.
-This will be the topic of the following chapter.
+This will be the topic of the following section.
 \\
 
 \section{Annihilation Peak Suppression}
@@ -418,14 +351,15 @@ This will be the topic of the following chapter.
 
 As mentioned above, it should be theoretically possible to filter out the majority of the positron electron annihilation events by using the scintillation property of the liquid argon.
 In the case of the \Kr decay into the excited \nuc{Rb}{85m} the emitted electron has a very low mean kinetic energy of E\(_{mean}=47.65\)keV.
-This means that in the majority of these decays no light should be seen in the detectors, because the beta electron is unlikely to trigger any of them.
+!!!!! hier die abgeschätzte Anzahl an Photonen angeben !!!!!
+This means that in the majority of these decays no light should be seen in the detectors, because the low amount of photons are unlikely to trigger any of them.
 In contrast to that you can expect a very strong light signal every time a positron electron annihilation occurs. 
 One should therefor be able to filter out almost all of the annihilation events while keeping the majority of the \Kr decay by only using events where this flag is not triggered.
 This chapter tries to implement a filter that uses this mechanism and discusses in the end how successful the repression really was.
 \\
 
 Among other things, each event in tier 4 was given a flag called "isLArVetoed".
-This flag is always triggered whenever an event in the Germanium detectors coincides with a scintillation signal of about 0.5phe in one of the photomultipliers positioned in the liquid argon tank \cite{agostini_background_2017}.
+This flag is always triggered whenever an event in the Germanium detectors coincides with a scintillation signal of at least 0.5phe in one of the photomultipliers positioned in the liquid argon tank \cite{agostini_background_2017}.
 If one plots all events in which this flag has not been set one gets figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
 You can see that the positron electron annihilation peak can not be identified any longer while the 514keV peak seems almost unchanged.
 \\
@@ -477,19 +411,19 @@ This number is way too big to look at every individual case.
 
 Luckily we can use the fact that the excited \nuc{Rb}{85m} state has a half life of 1.015 \(\unit{\mus}\).
 This means that theoretically we should be able to measure a pre-coincedence event of the beta creating scintillation light which can then be measured before even a signal in the germanium detectors could be seen.
-This way we  can hopefully identify the majority of events created by \Kr decays from the rest of the filtered signals.
+This way we can hopefully identify the majority of events created by \Kr decays from the rest of the filtered signals.
 To do this, we have to limit the events used for our investigation to those events that have a negative time difference between these two events respective to the Germanium detector signal.
-The time difference for each individual liquid argon events is already analyzed and stored in the vector $"$triggerLAr$"$  of the tier 3 data set.
-This vector has the same number of dimensions as there are photomultipliers and every entry is indexed with the corresponding input channel of this photomultiplier.
+The time difference for each individual liquid argon events is already analyzed and stored in the vector $"$triggerLAr$"$ of the tier 3 data set.
+This vector has the same number of dimensions as there are photomultipliers and every entry is indexed with the corresponding input channel of the respective photomultiplier.
 The entries of this vector are again vectors themselves storing the time difference for every signal that triggered the liquid argon veto in the corresponding channel.
 Since the events are listed in ascending order and we are interested in the first trigger event of the photomultiplier, we use only the first entry of this inner vector here for simplicity reasons.
 From now on we only use events in which at least one photomultiplier measured a negative time difference.
 \\
 
 In addition, we also know that the energy of the released beta electron is relatively low.
-This means that we can expect that only a small number of photomultipliers should measure a signal in a real rare \Kr decay.
-In this case we will only use those events that have a maximum of four different triggered photomultipliers.
-Allowing events with maximum of four different triggered photomultipliers is already a lot for a \Kr decay. 
+This means that we can expect that only a small number of photomultipliers will measure a signal of a \Kr decay if any at all.
+In the case of a measured signal we will only use those events that have a maximum of four different triggered photomultipliers.
+Allowing events with a maximum of four different triggered photomultipliers is already a lot for a \Kr decay. 
 But we wanted to do a more detailed manually investigation later anyways which is why the filter can be a little coarser here.
 \\
 
@@ -505,10 +439,10 @@ But we wanted to do a more detailed manually investigation later anyways which i
 \end{figure}
 
 If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier signals with a signal strength of at least 0.5 phe you get a distributions as seen in figure \ref{fig:Trigger4}.
-We are only interested in the signals that measured at least 0.5 phe because, as mentioned above, that is the necessary intensity to trigger the LAr veto making them the signals of interest. 
+We are only interested in the signals that measured at least 0.5 phe because, as mentioned above, this is the necessary intensity to trigger the LAr veto making them the signals of interest. 
 The x axis is the time difference of the events in the photomultipliers from the signal measured in one of the Germanium detectors.
 Theoretically it should now be possible to see a exponential increase from the negative scale towards a vanishing time difference.
-Because of the small number of events however, it is almost impossible to make any statements about the course of these events.
+But because of the small number of events however, it is almost impossible to make any statements about the course of these events.
 \\
 
 !!!!! diesen Teil noch Überarbeiten wenn nicht weglassen !!!!!
@@ -529,8 +463,8 @@ However, this should still be able to determine the trigger position of the sign
 !!!!! bis hier hin !!!!!
 
 Nevertheless we were able to lower the number of potential 514keV photons from \Kr decay events from 1728 down to only 55.  
-These remaining events can now be manually examined with a with software called GerLa written by GERDA employees.
-This tool allows one to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around this event.
+These remaining events can now be manually examined with a software called GerLa written by GERDA employees.
+This tool allows you to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around the time frame of this event.
 \\
 
 With this program one can now perform a manual filter by looking at the remaining 55 events individually and perform a specific procedure to determine whether they are signals from a \Kr decay or not.
@@ -553,7 +487,7 @@ It can then be assumed that the predominant part of all betas released in the in
 \end{figure}
 
 At this point we realized that this procedure does not really work as well as we hoped it would.
-From the remaining 55 only a few events really were unambiguous enough that one could clearly claim that they are the photons we expected.
+From the remaining 55 only a few events really were unambiguous enough that one could claim that they are the photons we expected.
 After this much filtering we can assume that probably all of these events are in fact caused by a \Kr decays.
 Signals like the one shown in figure \ref{fig:Trigger4} are a rare example of an almost model signal that we wanted to see.
 The great majority of other events were either background events in the SiPM that randomly triggered the LAr veto or their measured signal was too strong.  

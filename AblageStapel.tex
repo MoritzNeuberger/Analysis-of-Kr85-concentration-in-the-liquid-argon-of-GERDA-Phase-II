@@ -1,0 +1,72 @@
+
+\section{Weyl, Majorana and Dirac fermions}
+\label{sec:WMDf}
+
+
+Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor allem auf "Kerne und Teilchen", der KTA Script und ein paar einfürhende Paper stützen.
+
+% in this chapter almost everything from source 0
+
+\begin{itemize}
+\item historic introduction of question whether neutrinos are dirac or majorana fermions
+\begin{itemize}
+\item from Dirac relativistic equation fermion fields
+\item electrons: have mass and charge, Dirac-eq predicts antiparticles, requires 4-comp fields
+\item Weyl calculates for massless fermions that only two-component fields are necessary
+\item Pauli predicts neutrinos in letter, no charge, seems to have vanishing mass 
+\item \(\rightarrow\) assumption: neutrinos  are Weyl fermions
+\item Majorana: neutrinos are antiparticles of itself since they are uncharged, first not taken seriously, only after first indications that neutinos have mass
+\item \(\rightarrow\) discussion whether neutrinos are Dirac or Majorana fermions
+\end{itemize}
+\item short introduction to dirac-eq
+\begin{itemize}
+\item \((i\hbar\gamma^\mu \partial_\mu  - mc)\psi = 0\) , maybe Hamilton/Lagragian, has plane waves as solution multiplied with spinor
+\item Spinors: any column like function of energy and momentum which when multiplied by factor \(\exp(i\vec{p}\cdot\vec{x})\) or  \(\exp(\-i\vec{p}\cdot\vec{x})\) becomes a solution of the Dirac equation
+\end{itemize}
+\item we know that the Klein-Gordon-eq is real, how can we get a real solution from the dirac-eq
+\begin{itemize}
+\item depends on how we choose our \(\gamma^\mu\), if all non-zero elements of all the \(\gamma^\mu\) are purly imaginary, then Dirac-eq is real
+\item Majorana matrices, with usage in Dirac-eq one can obtain real solutions that satisfy \(\tilde{\psi} = \tilde{\psi}^*\)
+\item \(\rightarrow\) these solutions represent Majorana fermions
+\item general solution to Majorana condition can be obtained by transformation with unitary matrix: \(\gamma^\mu = \mathrm{U}\tilde{\gamma^\mu}\mathrm{U}^\dagger\)
+\item general Majorana condition: \(\psi = \mathrm{U}\mathrm{U}^\top\tilde{\psi}^*\), with \(\mathrm{U}\mathrm{U}^\top \equiv \gamma^0 \mathrm{C}\)
+\item with compact notation \(\widehat{\psi} \equiv \gamma^0 \mathrm{C} \psi^*\)
+\item general definition of a Majorana fermion fields through definition: \(\psi = \widehat{\psi}\), condition is Lorenz invariant
+\end{itemize}
+\item clunky repetition of what helicity and chirality is and what their problem with massive fermions is
+\begin{itemize}
+\item helicity defined as twice the value of the spin component of the particle along the direction of the momentum \(h_{\vec{p}} = \frac{2 \vec{J} \cdot \vec{p}}{p}\)
+\item eigenstates of eigenvalue -1 called "left-helical", eigenstates of eigenvalue +1 called "right-helical"
+\item is invariant under time/rotation, not invariant under boost
+\item chirality meaning assigned to matrix \(\gamma_5 = i\gamma^0\gamma^1\gamma^2\gamma^3\)
+\item projection matrices on fermion fields: \( \mathrm{L} = \frac{1}{2} \left( 1- \gamma_5\right ) \), \( \mathrm{R} = \frac{1}{2} \left( 1 + \gamma_5\right ) \)
+\item projections of L, R are called lift/right-chiral
+\item wavefunction can be written as \(\psi = \psi_L + \psi_R\) with \(\psi_L = \mathrm{L}\psi\) and \(\psi_R = \mathrm{R}\psi\)
+\item \(\rightarrow\) helicity: conserved for free particles, not under Lorenz trafo
+\item \(\rightarrow\) chirality: is Lorenz invariant, not conserved
+\item \(\rightarrow\) both not appropriate for characterizing a fermion that has mass
+\end{itemize}
+\item how to define Weyl fermions
+\begin{itemize}
+\item problem with helicity/chirality disappears if the fermion is massless
+\item general solution of Dirac-eq is not irreducible representation of Lorentz group (Lorenz group: group of Lorentz trafo in Mirkowski-space-time)
+\item \(\rightarrow\) left/right-chiral fields are Lorentz invariant, representation with 2-component-field: \( \begin{pmatrix}\frac{1}{2} \\ 0\end{pmatrix}\) for left-chiral, \(\begin{pmatrix}0 \\ \frac{1}{2}\end{pmatrix}\) for right-chiral
+\item when \(\chi\) is left chiral Weyl fermions, \( \widehat{\chi} \) is a right chiral Weyl fermions
+\item a general fermion field can be described by two Weyl fields \(\rightarrow\) building blocks
+\end{itemize}
+\item how can we build Majorana/Dirac fermions from Weyl fermions
+\begin{itemize}
+\item Majorana and Dirac fermions both have mass and therefor must have both left/right chiral components
+\item Dirac can be created by two independent left chiral Weyl fields \(\chi_1\), \(\chi_2\): \(\psi = \chi_1 + \widehat{\chi_2}\)
+\item Dirac fermions are unconstrained solutions of the Dirac equation
+\item unlike the Dirac fermions, the Majorana fermions must fulfill the reality condition \( \psi = \widehat{\psi} \)
+\item Majorana fermions are represented by: \( \psi = \chi + \widehat{\chi} \)
+\item where does mass come from?: mass term in Dirac-eq is of from \(\bar{\psi}\psi\), only \(\bar{\psi_L}\psi_R\) and \(\bar{\psi_R}\psi_L\) remains, \(\bar{\psi_L}\psi_L\) and \(\bar{\psi_R}\psi_R\) cancel out
+\item \(\rightarrow\) Weyl fermions has special chirality therefore mass term must vanish, massive fermions must have left-chiral and right-chiral components
+\end{itemize}
+\item Dirac fields are completely unconstrained solutions of Dirac equation
+\item Weyl/Majorana fields are simpler solutions with some kind of constrained imposed on solution, Weyl: chirality condition, Majorana: reality condition
+\end{itemize}
+% hier muss ich mich ein wenig einlesen ... mögliche Literatur:
+% KTA-Expert script
+% 0: https://arxiv.org/pdf/1006.1718v2.pdf
