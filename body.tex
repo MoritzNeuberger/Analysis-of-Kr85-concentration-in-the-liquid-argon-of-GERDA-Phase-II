@@ -285,11 +285,17 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 \label{sec:SAfrom514}
 
 
-As stated in the introduction, the main goal of this theses is to approximate the concentration of the isotope \Kr in the liquid argon coolant, shielding and scintillate of the GERDA experiment. 
-This value is of special interest, as in other experiments this isotope in the liquid argon has produced a not negligible background. 
-For example, a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\) was measured in the Darkside experiment \cite{agnes_results_2016} and \((0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}\) in the WARP experiment \cite{benetti_measurement_2006}.
-This corresponds to a concentration of about \((2.32\pm0.14)\times10^{-18}\frac{\unit{mol}}{\unit{l}}\) for the Darkside and  \((1.30\pm1.05)\times10^{-16}\frac{\unit{mol}}{\unit{l}}\) for the WARP experiment.
-The concentration of \Kr in the GERDA experiment therefor of interest as it provides an estimation of its influence on the measured background.
+As stated in the introduction, the main goal of this theses is to approximate the specific activity of the isotope \Kr in the liquid argon coolant, shielding and scintillate of the GERDA experiment. 
+This value is of interest, as in other experiments this alien isotope in the liquid argon has produced a not negligible background there. 
+The two examples will be used in this thesis are the WARP and the Darkside experiment.
+Both of these experiments have set their aim to detect WIMPs (Weakly Interacting Massive Particles) which are candidates for dark matter.
+These WIMPs should in the case of their existence theoretically create tiny recoils produced in ordinary matter by the elastic scattering.
+Nobel gases are well suited as a target material, which is why many of today's dark matter experiments use them.
+Both WARP and Darkside use liquid argon as their target material.
+Due to the small expected interaction cross section of the WIMPs all background sources have to be well known and in both of these experiments a value for the specific activity of the residual \Kr has been determined.
+In the case of the Darkside experiment a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\)  \cite{agnes_results_2016} was measured whereas a value of \((160\pm130)\frac{\unit{Bq}}{\unit{l}}\) was measured for the specific activity in the WARP experiment \cite{benetti_measurement_2006}.
+It is now of interest to determine the specific activity for the GERDA experiment to know how much of an impact it has on the radioactive background.
+%This corresponds to a concentration of about \((2.32\pm0.14)\times10^{-18}\frac{\unit{mol}}{\unit{l}}\) for the Darkside and  \((1.30\pm1.05)\times10^{-16}\frac{\unit{mol}}{\unit{l}}\) for the WARP experiment.
 \\
 
 In the curse of this theses two different approaches are used to calculate the concentration of \Kr. 
@@ -915,7 +921,7 @@ Of these two value we can now also calculate a mean specific activity $\bar{a}_{
 We can now make some comparisons of this value with the WARP and the Darkside experiments.
 In the case of the WARP experiment a specific activity of $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ \label{} was measured for the \Kr.
 On the other hand, an specific activity of $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
-Our determined value of $(0.508\pm0.085)\frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole tree orders of magnitude smaller than the WARP experiment.
+Our determined value of $(0.508\pm0.085)\frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole three orders of magnitude smaller than the WARP experiment.
 From these comparisons we can see that our results seem to verify the first approximations mentioned in the introduction predicting that the \Kr activity seems to be much smaller than in other experiments using liquid argon.
 \\
 
@@ -1342,16 +1348,18 @@ The used fit function can be seen in equation \ref{fig:double}, the resulting fi
 \begin{equation}
     \mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}\times\exp\left(-\frac{\log(2)}{\mathrm{D}} x \right) + \mathrm{E}
 \end{equation}
+
 \begin{figure}[t!]
 	\centering
+	\begin{minipage}{.5\textwidth}
+	\centering
 	\ifmakefigures%
-	\includegraphics[width=100mm]{./Bilder/doppelt.pdf}
+	\includegraphics[width=75mm]{./Bilder/doppelt.pdf}
 	\fi%
 	\caption{double exponential decay fit}
 	\label{fig:double}
-\end{figure}%
-\\
-\begin{table}[]
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
     \centering
     \begin{tabular}{|l|c|}
         \hline
@@ -1368,10 +1376,11 @@ The used fit function can be seen in equation \ref{fig:double}, the resulting fi
         E & 0.00175652$\pm$0.000119112 \\
         \hline
     \end{tabular}
-    \caption{Fit parameters of the double exponential decay analysis}
+    \captionof{table}{}{Fit parameters of the double exponential decay analysis}
     \label{tab:doubleFitpara}
-\end{table}
-\\
+	\end{minipage}
+\end{figure}
+
 
 In a direct comparison of figure \ref{fig:double} with graph \ref{fig:ChangeInEventRateFit} no real difference can be see.
 But when looking at the fit parameters you can see that in this case the \nuc{Ar}{42} exponential fit function has a bigger amplitude than \Kr.
@@ -1387,9 +1396,9 @@ Theoretically it would now still be possible to determine an specific activity o
 But because of the higher number of fit parameters that would have to be determined and the relatively large uncertainties in the plot compared to the overall change, it is not difficult to be pessimistic whether this analysis can even make a statement about the specific activity of \Kr.
 \\
 
-Now, at the end of this analysis, one could finally look again at what the results would have looked like if the specific activity of \Kr from the WARP or Darkside experiments had been present.
-Again in the case of the WARP experiment an activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ was measured. 
-If one would measure its equivalent amplitude in a diagram like Figure \ref{fig:ChangeInEventRateFit} a significant change would have been visible.
+At the end of this analysis it is again of interest to investigate how the change in the count rate would have looked over time if the specific activities of the WARP or the Darkside experiment had been present.
+Again, in the case of the WARP experiment an activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ was measured. 
+If one would plot its equivalent amplitude in a diagram like Figure \ref{fig:ChangeInEventRateFit} a significant change would have been visible.
 On the other hand is the activity in the Darkside experiment with its $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
 \\
 
@@ -1404,8 +1413,12 @@ On the other hand is the activity in the Darkside experiment with its $(2.8577 \
 With the line count rate analysis carried out in this paper it could be shown that the specific activity of \nuc{Kr}{85} in the liquid argon of the GERDA experiment has a value of $(0.508\pm0.0857) \frac{\unit{mBq}}{\unit{l}}$. 
 Compared to WARPs $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ and to Darksides $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ its value is much smaller.
 On the other hand, the second attempt to determine a value for the specific activity via the change of count rate over time has failed.
-This was due to the falsely made assumption that \Kr is the only isotope in the liquid argon to shoe significant change in its activity over time.
+This was due to the falsely made assumption that \Kr is the only isotope in the liquid argon to show significant change in its activity over time.
+\\
 
 
+\backmatter
 
+\bibliography{references}
+\bibliographystyle{plain}
 \end{document}

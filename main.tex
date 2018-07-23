@@ -1,15 +1,3 @@
-%-------------------------------------------------------------------------------
-%   Template for a GSTR-yy-Dxx note
-%
-%   12.12.2009/ pg+sts
-%   17.05.2011/ pg
-%   11.04.2017/ cw
-%
-% -> CHECK FOR LATEST gerda-abbreviations.tex
-%-------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------
-%\documentclass[11pt,a4paper]{article}
 \documentclass[encoding=utf8,british]{tumphthesis}
 % \documentclass[pstricks,siunitx,addfonts,theorem,font=palatino,british]{tumphthesis}
 
@@ -25,11 +13,8 @@
 \usepackage{subfig}
 \usepackage{csquotes}
 
-\bibliography{references}
-\bibliographystyle{plain}
-%\include{gerda-abbreviations}
-% Die Metadaten der Abschlussarbeit werden auf dem Deckblatt gedruckt und
-% in dem PDF eingetragen.
+\include{gerda-abbreviations}
+
 \subject{Abschlussarbeit im Bachelorstudiengang Physik}
 \title{Titel der Abschlussarbeit}
 %\subtitle{\foreignlanguage{british}{Title in English}}
@@ -44,9 +29,10 @@ Zweitgutachter: Prof.\ S.~Preuss}
 
 
 
+
 %-------------------------------------------------------------------------------
 %\include{header}              % packages/settings
-\include{gerda-abbreviations} % for definitions see:  abbreviations.tex
+%\include{gerda-abbreviations} % for definitions see:  abbreviations.tex
 %-------------------------------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,15 +127,5 @@ Zweitgutachter: Prof.\ S.~Preuss}
 %--------------------------------------------------------------- references ----
 
 
-\appendix
-\chapter{Determining the resolution of the detector types}
-\label{sec:ResDetermination}
 
-
-
-
-
-\backmatter
-
-\printbibliography
 \end{document}
