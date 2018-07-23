@@ -100,78 +100,13 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 \chapter{Physical Background}
 \label{sec:PhyBG}
 
+\section{Neutrinos}
 
-\subsection{Neutrinoless Double Beta Decay}
-\label{sec:NDBD}
-\begin{itemize}
-\item Neutrino Oscillation have shown that neutrinos have finite mass, with NeOs only difference in mass measurable, lower limit on absolute mass with \(\mathrm{m}_{scale} = \sqrt{\Delta \mathrm{m}^2}\)
-\begin{itemize}
-\item SuperKamiokande showed mixing between \(\nu_\mu\) and \(\nu_\tau\) of atmospheric neutrinos
-\item "solar neutrino puzzle" solved with mixing of \(\nu_e\) and mixture of \(\nu_\mu\) and \(\nu_\tau\)
-\item NeOs can not determin absolute masses and also not separate between two different scenarios:
-\begin{itemize}
-\item hierarchical pattern ( \(m_i\)  ~= \(\sqrt{\Delta m^2}\))
-\item degenerate pattern ( \(m_i >> \sqrt{\Delta m^2}\))
-\end{itemize}
-\end{itemize}
-\item \(\beta\beta(0\nu)\) decay can only proceed when Neutrinos are massive Majorana particles
-\begin{itemize}
-\item standard electroweak model postulates that neutrinos are massless and total lepton number is conserved -> with \(\beta\beta(0\nu)\) physics beyond SM
-\item double beta decay is rare transition between two nuclei with the same mass number A involving change of nuclear charge Z by two units
-\begin{itemize}
-\item can only proceed if initial nucleon is less bound than final and both are more bound than intermediate nucleon -> only fulfilled for even-even nucleons
-\item \(\beta\beta(2\nu)\): \( (Z,A) \rightarrow (Z + 2, A) + e^-_1 + e^-_2 + \bar{\nu_{e1}} + \bar{\nu_{e2}} \), conserves lepton number
-\item \(\beta\beta(0\nu)\): \( (Z,A) \rightarrow (Z + 2, A) + e^-_1 + e^-_2\), violates lepton number conservation
-\item \(\beta\beta(0\nu, \chi)\): \((Z,A) \rightarrow (Z + 2, A) + e^-_1 + e^-_2 + \chi \)
-\end{itemize}
-\item easy to distinguish the three decay modes by shape of \(e^-\)-sum energy spectrum
-\begin{itemize}
-\item 2\(\nu\): broad maximum below half of endpoint
-\item 0\(\nu\): \(e^-\) carry full available kinetic energy, single peak at endpoint
-\item 0\(\nu,\chi\): again continuous, maximum shifted above halfway point
-\end{itemize}
-\end{itemize}
-\item Majorana, Dirac neutrinos (again from above, maybe move stuff there)
-\begin{itemize}
-\item Majorana: particles that are identical with their own antiparticles, two component objects
-\item Dirac: one can distinguish, four component objects
-\item massive fermions usually described by Dirac eq with coupling of chiral eigenstates \(\psi_L,\psi_R\), \(\Psi = \begin{pmatrix} \psi_R \\ \psi_L\end{pmatrix}\)
-\item Majorana suggested alternative description of massive fermions which do not have additive quantum numbers as two component states, chiral eigenstates connected via \(\psi_L = \epsilon \psi_R^*\)
-\end{itemize}
-\item Lorentz invariant mass in Dirac Lagrangian:
-\begin{itemize}
-\item Dirac mass: \(M_D [\bar{\nu_R}\nu_L + (\bar{\nu_L})^*\nu_R^*]\), requires both chirality eigenstates, conserves total lepton number
-\item Majorana mass: \(M_L [(\bar{\nu_L})^*\nu_L + \bar{\nu_L}\nu_L^*]\), \(M_L [(\bar{\nu_R})^*\nu_R + \bar{\nu_R}\nu_R^*]\), violates total lepton number conservation, can be present even w/o existents of \(\nu_L/\nu_R\)
-\item generally all three terms may coexist, when Lagrangian is diagonalized the resulting two general non-degenerate mass eigenvalues for each flavor (see-saw: light and heavy particle for each flavor) \(M = \begin{pmatrix} M_L & M_D \\ M_D & M_R\end{pmatrix}\) 
-\item M diagonalized by unitary matrices \(\begin{pmatrix} U \\ V \end{pmatrix}\), U,V general mixing matrices, if non of the \(\nu_R\) states exist or \(M_R\) is so large only \(M_L\) is relevant and only U needed
-\end{itemize}
-\item Majorana mass
-\begin{itemize}
-\item transition amplitude for Majorana neutrino mass \(m_e\) is sum over product of \(m_j\) and combination of nuclear mixing element
-\item in each vertice electron is emitted, therefor mixing amplitude \(\mathrm{U}_{ej}\) appears in each of them
-\item \(\Rightarrow \beta\beta(0\nu)\) decay amplitude contains factor \(\mathrm{U}_{ej}^2\) not \(|\mathrm{U}_{ej}|^2 \Rightarrow <m_\nu> = |\sum_jm_j\mathrm{U}_{ej}^2|\) 
-\end{itemize}
-\item oscillation parameters
-\begin{itemize}
-\item \(<m_\nu>^2 = |\sum_jm_j\mathrm{U}_{ej}^2|^2 = |\sum_jm_j|\mathrm{U}_{ej}|^2e^{i\alpha}|^2\) with \(\alpha\) being the Majorana phase
-\item possibility of cancellation of sum (Zee model \(<m_\nu> = 0\))
-\item \(<m_\nu> = 0\) depends on unknown phase but upper/lower limit only depends on absolute values of mixing angles\(<m_\nu> = \sum_jm_j|\mathrm{U}_{ej}|^2\)
-\item when \(<m_\nu>\) is known from tritium beta decay experiments one can determine phase \(\alpha_i\)
-\end{itemize}
-\end{itemize}
 
+\section{Neutrinoless Double Beta Decay}
 % also a bit about standard double beta decay
 % differences between the standard and neutrinoless beta decay
  
-
-
-\capter{\Kr isotope}
-\label{sec:Kry85}
-
-% where does it come from?
-% what properties does it have?
-% why is it important to calculate its influence on GERDA
-
 \chapter{GERDA}
 \label{sec:GERDA}
 
@@ -185,11 +120,6 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 
 % not sure whether this is enough for its own section, maybe just connect it with general info
 
-
-\section{Liquid Argon as Coolant, Shielding and Scintillator} 
-\label{sec:LArcoolant}
-
-
 \section{Experimental Setup}
 \label{sec:ExSetup}
 
@@ -198,6 +128,10 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 
 \section{Background Reduction}
 \label{sec:BGReduction}
+
+
+\section{Liquid Argon as Coolant, Shielding and Scintillator} 
+\label{sec:LArcoolant}
 
 
 % Mui, Mountain, Pulse shape disc.
@@ -210,15 +144,22 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 
 % short outline of approaches
  
+ \chapter{\Kr isotope}
+\label{sec:Kry85}
+
+% where does it come from?
+% what properties does it have?
+% why is it important to calculate its influence on GERDA
+
 \chapter{Line Count Rate Analysis}
 \label{sec:SAfrom514}
 
 
 As stated in the introduction, the main goal of this theses is to approximate the specific activity of the isotope \Kr in the liquid argon coolant, shielding and scintillate of the GERDA experiment. 
 This value is of interest, as in other experiments this alien isotope in the liquid argon has produced a not negligible background there. 
-Two examples will be used in this thesis: the WARP and the Darkside experiment.
-Both of these experiments have set their aim to detect WIMPs (Weakly Interacting Massive Particles) which are likely candidates for dark matter.
-These WIMPs should in the case of their existence theoretically create tiny recoils in ordinary matter by elastic scattering.
+The two examples will be used in this thesis are the WARP and the Darkside experiment.
+Both of these experiments have set their aim to detect WIMPs (Weakly Interacting Massive Particles) which are candidates for dark matter.
+These WIMPs should in the case of their existence theoretically create tiny recoils produced in ordinary matter by the elastic scattering.
 Nobel gases are well suited as a target material, which is why many of today's dark matter experiments use them.
 Both WARP and Darkside use liquid argon as their target material.
 Due to the small expected interaction cross section of the WIMPs the background sources have to be well known and in both of these experiments a value for the specific activity of the residual \Kr has been determined.
@@ -499,20 +440,7 @@ But it is practically impossible to recover them from there due to the great amo
 Our recovery attempt has therefor failed.
 \\
 
-!!!!! DAS HIER IST AUCH NOCH EINE PROBLEMSTELLE !!!!!
-
-Nevertheless we are still able to make some qualitative estimations about why approach did not work. 
-When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must be smaller.
-An important factor limiting this recovery rate originates from an estimation applied in this approach.
-It was approximated that the electrons created scintillation light instantaneously after being released.
-In reality, the moment an electron emits scintillation light is determined by many complex mechanisms. 
-However, its behavior can be approximated by a relaxation approach. 
-This gives you a new characteristic time with which you can describe how many electrons have already created scintillation light after what time. 
-But this not spontaneous behavior means, that the measured signal depends on both the relaxation time of the \nuc{Rb}{85} and the scintillation light of the electron.
-It is therefor quite possible, that a number of \Kr decay events can have a positive effective time difference.
-Those are then lost in our analysis due to us filtering out every event that has a positive time difference.
-This results in a lower recovery rate.
-\\
+!!!! hier kann man noch einen Paragraphen zu einer qualitativen Abschätzung einfügen !!!!!
 
 Now that we have seen that we were not able to recover any of the falsely filtered \Kr caused events it is justified to also question whether the majority of the rare \Kr decays can even pass through the liquid argon filter itself.
 But we only get a satisfactory answer with a quantitative analysis which will be performed in the following chapter.
