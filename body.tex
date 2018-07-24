@@ -102,11 +102,41 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 
 \section{Neutrinos}
 
+%what are Majorana neutrinos
+
 
 \section{Neutrinoless Double Beta Decay}
+\label{sec:0nubetabeta}
+
+After it was explaining what a beta decay is and how per beta decay one neutrino is emitted the double beta decay will be explained.
+The double beta decay describes the transition of two neutrons to two protons in the same core via beta decay happening at the same time.
+The only allowed final state in the standard model of particle physics needs two electrons and two anti electron neutrinos to be created in the same process.
+The resulting leading channel is therefor
+\begin{equation}
+(A,Z)\rightarrow (A,Z+2) + 2e^- + 2\bar{\nu_e}
+\end{equation} 
+For such a specific decay to happen it is necessary the the initial state of the nuclei $(Z,A)$ is more bound than the transition state $(A,Z+1)$ and less bound than the final state $(A,Z+2)$.
+This means that for the initial nuclei the single beta decay is energetically forbidden and the transition from the initial to the final state can only occur via a double beta decay.
+Double beta decays have already been observed and a great amount materials have been found to decay via this transition.
+The found half life of such decays have been found to be in the order of $10^{19}$ to $10^{21} \units{ys}$ and therefor needed a lot of background to identify it over the background.
+\\
+
+A second final state that is not part of the standard model actually does not need neutrinos to be emitted from the decay.
+This special kind of transition is call the neutrinoless double beta decay and has not yet been observed.
+However it was to be found it would have profound consequences because most notably this transition does not conserve the lepton number conservation due to two electrons being created solemnly as seen in the most likely leading channel
+\begin{equation}
+(A,Z)\rightarrow (A,Z+2) + 2e^- 
+\end{equation} 
+This most likely channel is based on the idea that in the transition occurred an exchange between light Majorana neutrinos.
+These Majorana neutrinos annihilate in the process and gave the residual energy to the escaping electrons.
+There are also other interpretations on how the neutrinoless double beta decay might work but the concept of light Majorana neutrino interaction requires only a minimal extension to the standard model compared to the other theories.
+The only extensions necessary are the assumption of the Majorana nature of the neutrinos and their non zero mass.
+
 % also a bit about standard double beta decay
 % differences between the standard and neutrinoless beta decay
  
+
+
 \chapter{GERDA}
 \label{sec:GERDA}
 
@@ -126,12 +156,12 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 % well, just dump everything here
 % also a bit about Tier1-4 storage of data 
 
-\section{Background Reduction}
-\label{sec:BGReduction}
-
-
 \section{Liquid Argon as Coolant, Shielding and Scintillator} 
 \label{sec:LArcoolant}
+
+
+\section{Background Reduction}
+\label{sec:BGReduction}
 
 
 % Mui, Mountain, Pulse shape disc.
@@ -143,23 +173,25 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 % what has happened so far
 
 % short outline of approaches
- 
- \chapter{\Kr isotope}
+
+
+\chapter{\Kr isotope}
 \label{sec:Kry85}
 
 % where does it come from?
 % what properties does it have?
 % why is it important to calculate its influence on GERDA
 
+ 
 \chapter{Line Count Rate Analysis}
 \label{sec:SAfrom514}
 
 
 As stated in the introduction, the main goal of this theses is to approximate the specific activity of the isotope \Kr in the liquid argon coolant, shielding and scintillate of the GERDA experiment. 
 This value is of interest, as in other experiments this alien isotope in the liquid argon has produced a not negligible background there. 
-The two examples will be used in this thesis are the WARP and the Darkside experiment.
-Both of these experiments have set their aim to detect WIMPs (Weakly Interacting Massive Particles) which are candidates for dark matter.
-These WIMPs should in the case of their existence theoretically create tiny recoils produced in ordinary matter by the elastic scattering.
+Two examples will be used in this thesis: the WARP and the Darkside experiment.
+Both of these experiments have set their aim to detect WIMPs (Weakly Interacting Massive Particles) which are likely candidates for dark matter.
+These WIMPs should in the case of their existence theoretically create tiny recoils in ordinary matter by elastic scattering.
 Nobel gases are well suited as a target material, which is why many of today's dark matter experiments use them.
 Both WARP and Darkside use liquid argon as their target material.
 Due to the small expected interaction cross section of the WIMPs the background sources have to be well known and in both of these experiments a value for the specific activity of the residual \Kr has been determined.
@@ -408,11 +440,18 @@ These remaining events can now be manually examined with a software called GerLa
 This tool allows you to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around the time frame of this event.
 \\
 
+!!!!! Hier ist noch ein kleines Problem in der Erklärung warum wir so wenig licht erwarten !!!!!
+
 With this program one can now perform a manual filter by looking at the remaining 55 events individually and perform a specific procedure to determine whether they are signals from a \Kr decay or not.
 This procedure consists of filtering out every event that has a combined light intensity of over 5 phe and every event that only has a negative time difference in a signal weaker than 0.5 phe.
-The upper limit of the light intensity comes from the fact that the mean kinetic energy of the electron released from the decay is 47.65keV. 
-With the luminosity of liquid argon of about 50 photons/MeV one can expect about 2.5 photons at these energies. 
+The upper limit of the light intensity comes from the fact that the mean kinetic energy of the electron released from the decay is 47.65keV.
+
+ 
+With the scintillation yield of $10^4 \frac{\unit{photons}}{\unit{MeV}}$ an amount of about 476 photons should be expected to be created.
+of liquid argon of about 50 photons/MeV one can expect about 2.5 photons at these energies. 
 It can then be assumed that the predominant part of all betas released in the investigated decay only emit 5 photons at best.
+
+
 \\
 
 \begin{figure}[t!]
@@ -440,7 +479,20 @@ But it is practically impossible to recover them from there due to the great amo
 Our recovery attempt has therefor failed.
 \\
 
-!!!! hier kann man noch einen Paragraphen zu einer qualitativen Abschätzung einfügen !!!!!
+!!!!! DAS HIER IST AUCH NOCH EINE PROBLEMSTELLE !!!!! Problem hier ist, dass der Mechanismus ander funktioniert, kein relaxations Verhalten, tatsächlich praktisch instantane emission !!!!!
+
+Nevertheless we are still able to make some qualitative estimations about why approach did not work. 
+When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must be smaller.
+An important factor limiting this recovery rate originates from an estimation applied in this approach.
+It was approximated that the electrons created scintillation light instantaneously after being released.
+In reality, the moment an electron emits scintillation light is determined by many complex mechanisms. 
+However, its behavior can be approximated by a relaxation approach. 
+This gives you a new characteristic time with which you can describe how many electrons have already created scintillation light after what time. 
+But this not spontaneous behavior means, that the measured signal depends on both the relaxation time of the \nuc{Rb}{85} and the scintillation light of the electron.
+It is therefor quite possible, that a number of \Kr decay events can have a positive effective time difference.
+Those are then lost in our analysis due to us filtering out every event that has a positive time difference.
+This results in a lower recovery rate.
+\\
 
 Now that we have seen that we were not able to recover any of the falsely filtered \Kr caused events it is justified to also question whether the majority of the rare \Kr decays can even pass through the liquid argon filter itself.
 But we only get a satisfactory answer with a quantitative analysis which will be performed in the following chapter.
