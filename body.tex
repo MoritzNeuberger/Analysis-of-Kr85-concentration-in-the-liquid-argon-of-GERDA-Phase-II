@@ -108,7 +108,9 @@ First of all the theoretical ideas behind and the problems of the two methods wi
 \section{Neutrinoless Double Beta Decay}
 \label{sec:0nubetabeta}
 
-After it was explaining what a beta decay is and how per beta decay one neutrino is emitted the double beta decay will be explained.
+\paragraph{Double beta decay}
+
+After it was explained what a beta decay is and how per beta decay one neutrino is emitted the double beta decay (\twonu) will be explained.
 The double beta decay describes the transition of two neutrons to two protons in the same core via beta decay happening at the same time.
 The only allowed final state in the standard model of particle physics needs two electrons and two anti electron neutrinos to be created in the same process.
 The resulting leading channel is therefor
@@ -117,20 +119,94 @@ The resulting leading channel is therefor
 \end{equation} 
 For such a specific decay to happen it is necessary the the initial state of the nuclei $(Z,A)$ is more bound than the transition state $(A,Z+1)$ and less bound than the final state $(A,Z+2)$.
 This means that for the initial nuclei the single beta decay is energetically forbidden and the transition from the initial to the final state can only occur via a double beta decay.
-Double beta decays have already been observed and a great amount materials have been found to decay via this transition.
-The found half life of such decays have been found to be in the order of $10^{19}$ to $10^{21} \units{ys}$ and therefor needed a lot of background to identify it over the background.
+\twonu  decays have already been observed and a great amount materials have been found to decay via this transition.
+The found half life of such decays have been found to be in the order of $10^{19}$ to $10^{21} \unit{yr}$ and therefor needed a lot of background to identify it over the background.
 \\
 
+\paragraph{Neutrinoless double beta decay}
+
 A second final state that is not part of the standard model actually does not need neutrinos to be emitted from the decay.
-This special kind of transition is call the neutrinoless double beta decay and has not yet been observed.
-However it was to be found it would have profound consequences because most notably this transition does not conserve the lepton number conservation due to two electrons being created solemnly as seen in the most likely leading channel
+This special kind of transition is call the neutrinoless double beta decay (\onbb) and has not yet been observed.
+However if it was to be found it would have profound consequences on modern physics because most notably this transition does not conserve the lepton number conservation due to two electrons being created solemnly as seen in the most likely leading channel
 \begin{equation}
 (A,Z)\rightarrow (A,Z+2) + 2e^- 
 \end{equation} 
 This most likely channel is based on the idea that in the transition occurred an exchange between light Majorana neutrinos.
 These Majorana neutrinos annihilate in the process and gave the residual energy to the escaping electrons.
-There are also other interpretations on how the neutrinoless double beta decay might work but the concept of light Majorana neutrino interaction requires only a minimal extension to the standard model compared to the other theories.
-The only extensions necessary are the assumption of the Majorana nature of the neutrinos and their non zero mass.
+There are also other interpretations on how the \onbb decay might work but the concept of light Majorana neutrino interaction requires the minimal extension to the standard model of the Majorana nature of the neutrinos and their non zero mass.
+It has already been shown through the neutrino oscillation experiments.
+\\
+
+The flavor mixing shown by neutrino oscillaion requires the flavor eigenstates that couple to the W boson to be a  superposition of mass eigenstates.
+\begin{equation}
+\ket{\nu_\alpha} = \sum_i U^*_{\alpha i} \ket{\nu_i} 
+\end{equation}
+The resulting PMNS mixing matrix elements $U_{\alpha i}$ is defined by three mixing angles ($\Theta_{12}$,$\Theta_{13}$,$\Theta_{23}$) and three CP-violating phases ($\alpha$,$\beta$,$\delta$). 
+The phase $\delta$ is called the Dirac phase and is always present regardless whether the neutrino is a Majorana or Dirac fermion.
+The phase $\alpha$ and $\beta$ however are called the Majorana phases and only have a physical meaning for Majorana neutrinos.
+From neutrino oscillation however only the mass square differences $\Delta m^2_{ij} = m^2_i - m^2_j$ of the mass eigenstates, the mixing angles and the Dirac phase $\delta$ can be determined.
+\\
+
+In actuality, it is even worse because up till now only the absolute value  of $\abs{\Delta m^2_{32}}$ was able to be measured.
+Because the sign of this value is not known it leaves three different possible mass orders to considered: the normal hierarchie in which $m_1 \ll m_2 \ll m_3$, the inverted hierarchie in which $m_3 \ll m_1 < m_2$ and the quasi-degenerate hierarchy $m_1 \approx m_2 \approx m_3 \gg \sqrt{\Delta m^2_{32}}$ in which the mass eigenvalues are much larger than the mass differences.
+In the case of an observation of a \onbb decay it would be possible to gather direct information about this mass orders, the mass scale and the Majorana phases.
+\\
+
+From the half life of the \onbb decay however one can not only determine an effective electron neutrino mass but through comparison with the results other  approaches to measured the mass also the masses of the mass eigenstates and also the Majorana phases.
+The effective neutrino mass of the \onbb decay is defined through a coherent sum of the individual masses times the complex amplitude $U_{ei}$ that is dependent of the Majorana phases (see equation \ref{mBetaBeta}).
+\begin{equation}
+\left\langle m_{\beta\beta}\right\rangle = \abs{\sum_i U_{ei}^2m_i }
+\label{mBetaBeta}
+\end{equation}This means in that this effective neutrino mass has a lower value than an incoherent mass sum because through the complex phases some parts of this value can interfere destructively.
+Other attempts to measure the mass of the electron neutrino are measuring the energy of the beta released in a beta decay at the end of the spectrum to measure a shift of the spectrum due to a non zero neutrino mass. 
+A prominent experiment currently taking data is the KATRIN experiment and the absolute mass value these kind of experiments are sensitive to consists of a incoherent mass sum as seen in equation \ref{massBeta}.
+
+\begin{equation}
+\left\langle m_{\beta}\right\rangle = \sqrt{\sum_i \abs{U_{ei}}^2m^2_i}
+\label{massBeta}
+\end{equation}A third method involves cosmological observation in which the unweighted sum of the neutrino masses $\Sigma$ can be measured:
+\begin{equation}
+\Sigma = \sum_i m_i
+\end{equation}
+From these three masses it is theoretically possible to determine the Majorana phases,  the individual masses of the mass eigentstates and therefor also the mass order of the neutrinos.
+
+\paragraph{How can a \onbb decay be measured?}
+
+Theoretically, the experimental signature of the \onbb decay is a peak in the distribution of the energy sum of the two electrons at the endpoint energy of the normal double beta decay (see figure \ref ).
+As mentioned before there have been only a hand full of elements found to even make the normal double beta decay any only some of those are actually useful for an experimental search of the special case of the \onbb decay.
+A common experimental approach is to use a detector made of material enriched in a \onbb-decaying isotope.
+This has the advantage that the detection efficiency is maximized
+\\
+
+Because the \onbb decay is expected to have a very long half life a lot of background suppression has to be applied just to measured any influence originating from it.
+There are three kind of background sources that have to be considered.
+Firstly, the background from natural radioactivity.
+This is typically the dominant background source occurring as radioactive isotopes which are naturally present in basically all materials.
+Its influence can be suppressed by shielding the detectors using low radioactive material and selecting low radioactive components in the setup. 
+The second strongest radiation source originates from cosmic background radiation.
+A great amount of muons shower down to the earth from the atmosphere and create background in the detectors.
+This however can be avoided by placing the experiment deep underground and applying a muon veto system.
+This consists of a water tank around the experimental setup together with photomultipliers that should detect any Cherenkov radiation created by the muons passing through.
+Lastly the third  background source is caused by the \twonu decays of the investigated isotope itself.
+Its impact on the background can not be reduced by extermal measures or shielding.
+This can be avoided however by just using a material with a high Q-value due to their lower probability of decaying into an energy just under the Q-value. 
+\\
+
+\paragraph{Germanium 76}
+
+\nuc{Ge}{76} is an ideal material for the \onbb search due to it being a semiconductor and therefor also usable as the detector material itself.
+It also has the advantage of having great intrinsic radio-purity, a low spectroscopic performance and a high detection efficiency.
+It can also be operated at cryogenic temperatures allowing for reduction of thermal background.
+Disadvantages however are the low Q-value of $Q_{\beta\beta} =  2039\unit{keV}$ which is lower than \nuc {Tl}{208} and \nuc{Bi}
+{214} and the challenges to increase the target value compared to other materials like \nuc{Xe}{136}.
+\\
+
+The advantages outweigh the disadvantages however because \nuc{Ge}{76} has al long history of being used as decay material in \onbb experiments, most notably the Heidelberg-Moscow(HdM) and the IGEX experiments.
+Both of these experiments are the predecessor experiments of GERDA.
+With detectors made of enriched germanium plus the background reducing precautions and active vetos described above they were able to set a similar limit of the half life of the \onbb to $\thalfzero(\nuc{Ge}{76}) > 1.9\times10^{25}\unit{yr}$. 
+HdM experiment actually claimed to have measured the half life of about $\thalfzero(\nuc{Ge}{76}) = 1.19\times10^{25}\unit{yr}$ , but its legitimacy has been questioned by a part of the scientific community.
+This is where the GERDA experiment comes in.
+The first measuring phase was planned to verify or falsify the results of the HdM experiment using the same detectors used in the HdM and the IGEX experiment.
 
 % also a bit about standard double beta decay
 % differences between the standard and neutrinoless beta decay
@@ -418,40 +494,16 @@ Theoretically it should now be possible to see a exponential increase from the n
 But because of the small number of events however, it is almost impossible to make any statements about the course of these events.
 \\
 
-!!!!! diesen Teil noch Überarbeiten wenn nicht weglassen !!!!!
-
-Interestingly, the majority of all signals with a negative time difference were measured by the PMTs. 
-This could perhaps be due to the better temporal resolution of the PMTs. 
-The signals of all PMTs are recorded with a resolution of 10ns and the SiPM with a resolution of 80ns but over a larger range than the PMTs \cite{agostini_background_2017}. 
-However, since the expected time difference is in the order of \(\mu\)s, this is no reason for the reduced number of measured events. 
-Another difference between the photomultiplier types is that the PMTs have a faster reaction time than the SiPMs. 
-As we will see, practically all deflections in the measured intensity of the PMT signal caused by procoincedents have already subsided before the signal was measured in the germanium detectors. 
-Thus a clear maximum should be recognizable before the germanium detector events.
-In contrast, the measured signal of the SiPMs increases exponentially with a characteristic time in the order of 10\(\mu\)s. 
-The trigger positions are then determined by software. 
-However, this should still be able to determine the trigger position of the signals for procoincedence events with sufficient accuracy.
-!!!!! Hier dir noch was genaueres ausdenken, wenn überhaupt !!!!!
-\\
-
-!!!!! bis hier hin !!!!!
-
 Nevertheless we were able to lower the number of potential 514keV photons from \Kr decay events from 1728 down to only 55.  
 These remaining events can now be manually examined with a software called GerLa written by GERDA employees.
 This tool allows you to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around the time frame of this event.
 \\
 
-!!!!! Hier ist noch ein kleines Problem in der Erklärung warum wir so wenig licht erwarten !!!!!
-
 With this program one can now perform a manual filter by looking at the remaining 55 events individually and perform a specific procedure to determine whether they are signals from a \Kr decay or not.
 This procedure consists of filtering out every event that has a combined light intensity of over 5 phe and every event that only has a negative time difference in a signal weaker than 0.5 phe.
 The upper limit of the light intensity comes from the fact that the mean kinetic energy of the electron released from the decay is 47.65keV.
-
- 
-With the scintillation yield of $10^4 \frac{\unit{photons}}{\unit{MeV}}$ an amount of about 476 photons should be expected to be created.
-of liquid argon of about 50 photons/MeV one can expect about 2.5 photons at these energies. 
+With an effective scintillation yield of the whole setup of about 60 phe/MeV one can expect about 2.5 photons from a mean beta electron. 
 It can then be assumed that the predominant part of all betas released in the investigated decay only emit 5 photons at best.
-
-
 \\
 
 \begin{figure}[t!]
@@ -479,23 +531,21 @@ But it is practically impossible to recover them from there due to the great amo
 Our recovery attempt has therefor failed.
 \\
 
-!!!!! DAS HIER IST AUCH NOCH EINE PROBLEMSTELLE !!!!! Problem hier ist, dass der Mechanismus ander funktioniert, kein relaxations Verhalten, tatsächlich praktisch instantane emission !!!!!
-
 Nevertheless we are still able to make some qualitative estimations about why approach did not work. 
-When trying to make a more realistic estimation one can see qualitatively that the actual portion of recovered events must be smaller.
-An important factor limiting this recovery rate originates from an estimation applied in this approach.
-It was approximated that the electrons created scintillation light instantaneously after being released.
-In reality, the moment an electron emits scintillation light is determined by many complex mechanisms. 
-However, its behavior can be approximated by a relaxation approach. 
-This gives you a new characteristic time with which you can describe how many electrons have already created scintillation light after what time. 
-But this not spontaneous behavior means, that the measured signal depends on both the relaxation time of the \nuc{Rb}{85} and the scintillation light of the electron.
-It is therefor quite possible, that a number of \Kr decay events can have a positive effective time difference.
-Those are then lost in our analysis due to us filtering out every event that has a positive time difference.
-This results in a lower recovery rate.
-\\
-
-Now that we have seen that we were not able to recover any of the falsely filtered \Kr caused events it is justified to also question whether the majority of the rare \Kr decays can even pass through the liquid argon filter itself.
-But we only get a satisfactory answer with a quantitative analysis which will be performed in the following chapter.
+The major problem seems to be that the majority of events detected with a negative time difference are background events.
+This conclusion came from the fact that almost none of the events investigated have shown the expected features we expected from them. 
+That the majority of the negative time difference photomultiplier events seem to be background noise is also underlined by the fact that most of these were detected in the PMT. 
+As it will be seen in the next chapter, basically all of the decays that created a measurable 514keV event have happend in the vicinity of the detectors themselves an therefor mostly in between the arrays.
+The detectors themselves should already block the light of the scintillation relativly strongly but when a photon is detected in a photomultiplier it would most likely be a SiPM.
+This is because the fibers surrounding  the germanium detectors are more likely to absorb and guide the scintillation light to the SiPM than a photon to reach a PMT above or below the detector arrays.
+Now that the majority of the detected light events are measured in the PMTs it is very unlikely that these are caused by a \Kr decay.
+This might also be able to be seen from figure \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}.
+In those all filtered out events are shown over the measured energy.
+From it we first saw that the liquid argon veto also filtered out the wanted 514keV events.
+But from it we can also see, that the ratio of events filtered out at the 514keV mark over the non filtered value [$N_{\unit{vetoed}}(514\unit{keV})/N_{\unit{unfilered}}(514\unit{keV})]$ is about the same size as in a non peak area whereas the positron electron peak shows much higher ratio.
+Considering this the peak probably came to be because the same relative amount of events have their liquid argon veto triggered because of background events.
+It is therefor rather questionable whether the liquid argon veto is even a good filter to use when it also filters out events in which background can trigger the veto too.
+A satisfactory answer however will only be available through a quantitative analysis which will be performed in the following chapter.
 \\
 
 \section{Fitting}
@@ -987,7 +1037,7 @@ For a more graphical representation, see the beginning of the spectra in figure 
 This means that from the 12.10.2017 on a much higher event rate was measured just because more event were actually recored.
 To work around this continuity problem all we have to do is limit our event used for the analysis to those that have a minimal energy of 200keV. 
 While we are already at it we can also set up an upper limit on the energy.
-Its purpose is to suppress events caused by isotopes with a higher end point energy than \Kr.
+Its purpose is to suppress events caused by isotopes with a higher Q-value energy than \Kr.
 Even though they should only create a constant background, but their presence make a change in intensity harder to identify.
 We therefor chose the upper limit to be at 400keV.
 Theoretically the endpoint energy of \Kr is at 687keV, but the count rate towards the endpoint is that low that we would basically only include more constant background by setting the upper limit higher.
@@ -1244,7 +1294,7 @@ However, due to the higher density of \nuc{K}{42} isotopes near the germanium de
 \\
 
 This effect has already been measured in the GERDA set up and it is one of the greatest background sources of the whole experiment.
-\nuc{K}{42} has also the unfortunate characteristic for the GERDA experiment that its end point energy at about $Q_{\beta}=3525\unit{MeV}$ lies higher than the end point energy of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
+\nuc{K}{42} has also the unfortunate characteristic for the GERDA experiment that its Q-value at about $Q_{\beta}=3525\unit{MeV}$ lies higher than the Q-value of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
 This means that electrons of the \nuc{K}{42} decay can create background events in the investigated rage. 
 Initially it was not expected to create much background.
 Its influence on the measurement however was only recognized after the start of \PI, when its counting rate was too high by a factor of 20. \cite{becerici_schmidt_results_2014}. %!!!!! Refernz zu Becerici Schmidt 
