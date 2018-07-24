@@ -36,7 +36,7 @@
 \chapter{Introduction}
 \label{sec:intro}
 
-The GERDA experiment tries to find evidence for the existence of the neutrino less double beta decay in \nuc{Ge}{76}.
+The GERmanium Detector Array (GERDA) experiment tries to find evidence for the existence of the neutrino less double beta decay in \nuc{Ge}{76}.
 Normal double beta decay is already well observed and always occurs when a state relaxes into a lower state over an energetically raised state via two simultaneous beta decays.
 The neutrino less double beta decay is a special kind of double beta decay that can only occur when neutrinos are majorana fermions.
 Majorana fermions have the characteristic that they are particle and antiparticle at the same time, breaking the lepton number conservation.
@@ -129,121 +129,18 @@ The found half life of such decays have been found to be in the order of $10^{19
 \WarningsOff
 \begin{figure}[ht]
 \centering
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.5\textwidth}
 \centering
+		\includegraphics[width=\textwidth]{./Bilder/2nubetabeta.png}
+		\caption{specific activity of \Kr over time}
+		\label{fig:activity}
 \label{fig:Feyn2nbb}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex 					(b1) 	{\(u\)};
-\vertex[right =5cm of b1] 	(b2) 	{\(u\)};
-
-\vertex[below=1em of b1] 	(b3) 	{\(d\)};
-\vertex[right=5cm of b3] 	(b4) 	{\(d\)};
-
-\vertex[below=1em of b3] 	(b5) 	{\(d\)};
-\vertex[right=2.5cm of b5] 	(b6);
-\vertex[below=1em of b4] 	(b7) 	{\(u\)};
-
-\vertex[below=6em of b5] 	(c1) 	{\(d\)};
-\vertex[right =2.5cm of c1] (c2);
-\vertex[below=6em of b7]	(c3) 	{\(u\)};
-
-\vertex[below=1em of c1] 	(c4) 	{\(d\)};
-\vertex[right=5cm of c4] 	(c5) 	{\(d\)};
-
-\vertex[below=1em of c4] 	(c6) 	{\(u\)};
-\vertex[right=5cm of c6] 	(c7) 	{\(u\)};
-
-\vertex[below=2em of b7]	(e1)	{\(e^-\)};
-\vertex[left=2cm of e1]		(e2);
-\vertex[below=2em of e2]	(e3);
-\vertex[below=2em of e1]	(e4)	{\(e^-\)};
-
-\diagram
-{
-{[edges=fermion]
-  (b1) -- (b2),
-  (b3) -- (b4),
-  (b5) -- (b6),
-  (b6) -- (b7)
-  (c1) -- (c2),
-  (c2) -- (c3),
-  (c4) -- (c5),
-  (c6) -- (c7),
-  (e2) -- (e1),
-  (e3) -- (e4),
-},
-(b6) -- [boson, edge label'=\(W\)] (e2),
-(c2) -- [boson, edge label=\(W\)] (e3),
-(e2) -- [insertion=0.5] (e3),
-};
-\draw [decoration={brace}, decorate]  (b5.south west)--(b1.north west) node [pos=0.5, left] {\(n\)};
-\draw [decoration={brace}, decorate]  (c6.south west)--(c1.north west) node [pos=0.5, left] {\(n\)};
-\draw [decoration={brace}, decorate]  (c3.north east)--(c7.south east) node [pos=0.5, right] {\(p\)};
-\draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
-\end{feynman}
-\end{tikzpicture}
-\subcaption{Feynman-Diagram of the $0\nu\beta\beta$-decay. The Neutrinos in this diagram are virtual Majorana particle.}
-\label{fig:Feyn0nbb}
 \end{subfigure}\hfill%
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.5\textwidth}
 \centering
-\begin{tikzpicture}
-\begin{feynman}
-\vertex 					(b1) 	{\(u\)};
-\vertex[right =5cm of b1] 	(b2) 	{\(u\)};
-
-\vertex[below=1em of b1] 	(b3) 	{\(d\)};
-\vertex[right=5cm of b3] 	(b4) 	{\(d\)};
-
-\vertex[below=1em of b3] 	(b5) 	{\(d\)};
-\vertex[right=2.5cm of b5] 	(b6);
-\vertex[below=1em of b4] 	(b7) 	{\(u\)};
-
-\vertex[below=7em of b5] 	(c1) 	{\(d\)};
-\vertex[right =2.5cm of c1] (c2);
-\vertex[below=7em of b7]	(c3) 	{\(u\)};
-
-\vertex[below=1em of c1] 	(c4) 	{\(d\)};
-\vertex[right=5cm of c4] 	(c5) 	{\(d\)};
-
-\vertex[below=1em of c4] 	(c6) 	{\(u\)};
-\vertex[right=5cm of c6] 	(c7) 	{\(u\)};
-
-\vertex[below=2em of b7]	(e1)	{\(e^-\)};
-\vertex[left=2cm of e1]		(e2);
-\vertex[below=3em of e2]	(e3);
-\vertex[below=3em of e1]	(e4)	{\(e^-\)};
-
-\vertex[below= 1em of e1]	(n1)	{\(\bar{\nu_e}\)};
-\vertex[above= 1em of e4]	(n2)	{\(\bar{\nu_e}\)};
-
-\diagram
-{
-{[edges=fermion]
-  (b1) -- (b2),
-  (b3) -- (b4),
-  (b5) -- (b6),
-  (b6) -- (b7)
-  (c1) -- (c2),
-  (c2) -- (c3),
-  (c4) -- (c5),
-  (c6) -- (c7),
-  (e2) -- (e1),
-  (e3) -- (e4),
-  (e3) -- (n2),
-  (e2) -- (n1),
-},
-(b6) -- [boson, edge label'=\(W\)] (e2),
-(c2) -- [boson, edge label=\(W\)] (e3),
-};
-\draw [decoration={brace}, decorate]  (b5.south west)--(b1.north west) node [pos=0.5, left] {\(n\)};
-\draw [decoration={brace}, decorate]  (c6.south west)--(c1.north west) node [pos=0.5, left] {\(n\)};
-\draw [decoration={brace}, decorate]  (c3.north east)--(c7.south east) node [pos=0.5, right] {\(p\)};
-\draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
-\end{feynman}
-\end{tikzpicture}
-\subcaption{Feynman-Diagram for the $2\nu\beta\beta$-decay. Basically the sum of two single beta decays}
+		\includegraphics[width=\textwidth]{./Bilder/0nubetabeta.png}
+		\caption{specific activity of \Kr over time}
+		\label{fig:Feyn0nbb}
 \end{subfigure}
 \caption{Feynman-Diagrams of the $0\nu\beta\beta$- and the $2\nu\beta\beta$-decay}
 \end{figure}
@@ -271,9 +168,9 @@ The phase $\alpha$ and $\beta$ however are called the Majorana phases and only h
 From neutrino oscillation however only the mass square differences $\Delta m^2_{ij} = m^2_i - m^2_j$ of the mass eigenstates, the mixing angles and the Dirac phase $\delta$ can be determined.
 \\
 
-In actuality, it is even worse because up till now only the absolute value  of $\abs{\Delta m^2_{32}}$ was able to be measured.
+In reality it is even worse, as so far only the absolute value of $\abs{\Delta m^2_{32}}$ could be determined.
 Because the sign of this value is not known it leaves three different possible mass orders to considered: the normal hierarchie in which $m_1 \ll m_2 \ll m_3$, the inverted hierarchie in which $m_3 \ll m_1 < m_2$ and the quasi-degenerate hierarchy $m_1 \approx m_2 \approx m_3 \gg \sqrt{\Delta m^2_{32}}$ in which the mass eigenvalues are much larger than the mass differences.
-In the case of an observation of a \onbb decay it would be possible to gather direct information about this mass orders, the mass scale and the Majorana phases.
+In the case of an observation of a \onbb decay it would be possible to gather direct information about this mass orders, ut nothe mass scale and the Majorana p 
 \\
 
 From the half life of the \onbb decay however one can not only determine an effective electron neutrino mass but through comparison with the results other  approaches to measured the mass also the masses of the mass eigenstates and also the Majorana phases.
@@ -318,15 +215,21 @@ A common experimental approach is to use a detector made of material enriched in
 This has the advantage that the detection efficiency is maximized
 \\
 
-Because the \onbb decay is expected to have a very long half life a lot of background suppression has to be applied just to measured any influence originating from it.
+Since \onbb decay should have a very long half-life, a lot of background suppression must be used just to measure the resulting influence.
 There are three kind of background sources that have to be considered.
+\\
+
 Firstly, the background from natural radioactivity.
-This is typically the dominant background source occurring as radioactive isotopes which are naturally present in basically all materials.
+This is typically the dominant background source originating from radioactive isotopes which are naturally present in basically all materials.
 Its influence can be suppressed by shielding the detectors using low radioactive material and selecting low radioactive components in the setup. 
+\\
+
 The second strongest radiation source originates from cosmic background radiation.
 A great amount of muons shower down to the earth from the atmosphere and create background in the detectors.
 This however can be avoided by placing the experiment deep underground and applying a muon veto system.
 This consists of a water tank around the experimental setup together with photomultipliers that should detect any Cherenkov radiation created by the muons passing through.
+\\
+
 Lastly the third  background source is caused by the \twonu decays of the investigated isotope itself.
 Its impact on the background can not be reduced by extermal measures or shielding.
 This can be avoided however by just using a material with a high Q-value due to their lower probability of decaying into an energy just under the Q-value. 
@@ -337,16 +240,18 @@ This can be avoided however by just using a material with a high Q-value due to 
 \nuc{Ge}{76} is an ideal material for the \onbb search due to it being a semiconductor and therefor also usable as the detector material itself.
 It also has the advantage of having great intrinsic radio-purity, a low spectroscopic performance and a high detection efficiency.
 It can also be operated at cryogenic temperatures allowing for reduction of thermal background.
-Disadvantages however are the low Q-value of $Q_{\beta\beta} =  2039\unit{keV}$ which is lower than \nuc {Tl}{208} and \nuc{Bi}
-{214} and the challenges to increase the target value compared to other materials like \nuc{Xe}{136}.
+A disadvantage is however the low Q-value of $Q_{\beta\beta} = 2039\unit{keV}$, which is lower than \nuc {Tl}{208}'s and \nuc{Bi}{214}'s end point energy.
+It also is a great challenges to increase the target value in comparison with other \twonu decaying materials like \nuc{Xe}{136}.
 \\
 
 However, the advantages prevail, because \nuc{Ge}{76} has a long history of use as decay material in \onbb experiments, most notably in the Heidelberg-Moscow(HdM) and the IGEX experiments.
 Both of these experiments are the predecessor experiments of GERDA.
 With detectors made of enriched germanium plus the background reducing precautions and active vetos described above they were able to set a similar limit of the half life of the \onbb to $\thalfzero(\nuc{Ge}{76}) > 1.9\times10^{25}\unit{yr}$. 
 HdM experiment actually claimed to have measured the half life of about $\thalfzero(\nuc{Ge}{76}) = 1.19\times10^{25}\unit{yr}$ , but its legitimacy has been questioned by a part of the scientific community.
-This is where the GERDA experiment comes in.
-The first measuring phase (\PI) was planned to verify or falsify the results of the HdM experiment using the detectors used in the HdM and the IGEX experiment.
+\\
+
+This is where the  GERDA experiment comes in.
+Its first measuring phase (\PI) was planned to verify or falsify the results of the HdM experiment using the detectors used in the HdM and the IGEX experiment.
 \PI started in November 2011 and May 2013 with a total exposure  of  $21.6 \frac{\unit{kg}}{\unit{yr}}$ and no signal of a \onbb observed \cite{agostini_results_2013}.
 With its results and the results from HdM and IGEX a new lower limit for the half life was able to be set at $\thalfzero(\nuc{Ge}{76})>3.0\times10^{25}$  yr  (90$\%$ C.L.)
 The second phase (\PII) with 30 new custom-made enriched detectors together with the old detectors has started measuring in late 2015 and had its latest data published !!!! hier noch ob ich das NATURE paper quoten soll!!!!!.
@@ -365,13 +270,16 @@ A more detailed description of the construction and functionality of the GERDA  
 % Gran Sasso, 
 % what other  neutrino less beta decay experiments are there,
 
-\section{Aim of \GERDA}
-\label{sec:AimGERDA}
-
-% not sure whether this is enough for its own section, maybe just connect it with general info
-
 \section{Experimental Setup}
 \label{sec:ExSetup}
+The GERDA experiment is located in the underground Laboratori Nazionali del Gran Sasso (LNGS) of INFN, Italy.
+The laboratories are located approx. 1.4 km below ground, which corresponds to a water equivalent of 3.5km \cite{agostini_background_2017}.
+As already mentioned in the previous chapter the GERDA experiment uses \nuc{Ge}{76} as \onbb decay material as well as the detector material.
+The detectors are operated in a liquid argon (LAr) tank of 64m$^3$ volume at an working temperature of about 90K.
+The argon used was obtained from the atmosphere by air liquefaction and has been purified as well as possible from radioactive isotopes by further distillation.
+Its main purpose is to cool the germanium detectors to lower the thermal background and to shield against external radiation originating from the walls and the outside. 
+Since \PII there are also photomultipliers positioned inside the LAr tank.
+Due to the scintillation property of argon 
 
 % well, just dump everything here
 % also a bit about Tier1-4 storage of data 
