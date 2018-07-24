@@ -117,6 +117,7 @@ The resulting leading channel is therefor
 \begin{equation}
 (A,Z)\rightarrow (A,Z+2) + 2e^- + 2\bar{\nu_e}
 \end{equation} 
+The corresponding diagram is drawn in figure \ref{fig:Feyn2nbb}.
 For such a specific decay to happen it is necessary the the initial state of the nuclei $(Z,A)$ is more bound than the transition state $(A,Z+1)$ and less bound than the final state $(A,Z+2)$.
 This means that for the initial nuclei the single beta decay is energetically forbidden and the transition from the initial to the final state can only occur via a double beta decay.
 \twonu  decays have already been observed and a great amount materials have been found to decay via this transition.
@@ -125,12 +126,135 @@ The found half life of such decays have been found to be in the order of $10^{19
 
 \paragraph{Neutrinoless double beta decay}
 
+\WarningsOff
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{.4\textwidth}
+\centering
+\label{fig:Feyn2nbb}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex 					(b1) 	{\(u\)};
+\vertex[right =5cm of b1] 	(b2) 	{\(u\)};
+
+\vertex[below=1em of b1] 	(b3) 	{\(d\)};
+\vertex[right=5cm of b3] 	(b4) 	{\(d\)};
+
+\vertex[below=1em of b3] 	(b5) 	{\(d\)};
+\vertex[right=2.5cm of b5] 	(b6);
+\vertex[below=1em of b4] 	(b7) 	{\(u\)};
+
+\vertex[below=6em of b5] 	(c1) 	{\(d\)};
+\vertex[right =2.5cm of c1] (c2);
+\vertex[below=6em of b7]	(c3) 	{\(u\)};
+
+\vertex[below=1em of c1] 	(c4) 	{\(d\)};
+\vertex[right=5cm of c4] 	(c5) 	{\(d\)};
+
+\vertex[below=1em of c4] 	(c6) 	{\(u\)};
+\vertex[right=5cm of c6] 	(c7) 	{\(u\)};
+
+\vertex[below=2em of b7]	(e1)	{\(e^-\)};
+\vertex[left=2cm of e1]		(e2);
+\vertex[below=2em of e2]	(e3);
+\vertex[below=2em of e1]	(e4)	{\(e^-\)};
+
+\diagram
+{
+{[edges=fermion]
+  (b1) -- (b2),
+  (b3) -- (b4),
+  (b5) -- (b6),
+  (b6) -- (b7)
+  (c1) -- (c2),
+  (c2) -- (c3),
+  (c4) -- (c5),
+  (c6) -- (c7),
+  (e2) -- (e1),
+  (e3) -- (e4),
+},
+(b6) -- [boson, edge label'=\(W\)] (e2),
+(c2) -- [boson, edge label=\(W\)] (e3),
+(e2) -- [insertion=0.5] (e3),
+};
+\draw [decoration={brace}, decorate]  (b5.south west)--(b1.north west) node [pos=0.5, left] {\(n\)};
+\draw [decoration={brace}, decorate]  (c6.south west)--(c1.north west) node [pos=0.5, left] {\(n\)};
+\draw [decoration={brace}, decorate]  (c3.north east)--(c7.south east) node [pos=0.5, right] {\(p\)};
+\draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
+\end{feynman}
+\end{tikzpicture}
+\subcaption{Feynman-Diagram of the $0\nu\beta\beta$-decay. The Neutrinos in this diagram are virtual Majorana particle.}
+\label{fig:Feyn0nbb}
+\end{subfigure}\hfill%
+\begin{subfigure}{.4\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{feynman}
+\vertex 					(b1) 	{\(u\)};
+\vertex[right =5cm of b1] 	(b2) 	{\(u\)};
+
+\vertex[below=1em of b1] 	(b3) 	{\(d\)};
+\vertex[right=5cm of b3] 	(b4) 	{\(d\)};
+
+\vertex[below=1em of b3] 	(b5) 	{\(d\)};
+\vertex[right=2.5cm of b5] 	(b6);
+\vertex[below=1em of b4] 	(b7) 	{\(u\)};
+
+\vertex[below=7em of b5] 	(c1) 	{\(d\)};
+\vertex[right =2.5cm of c1] (c2);
+\vertex[below=7em of b7]	(c3) 	{\(u\)};
+
+\vertex[below=1em of c1] 	(c4) 	{\(d\)};
+\vertex[right=5cm of c4] 	(c5) 	{\(d\)};
+
+\vertex[below=1em of c4] 	(c6) 	{\(u\)};
+\vertex[right=5cm of c6] 	(c7) 	{\(u\)};
+
+\vertex[below=2em of b7]	(e1)	{\(e^-\)};
+\vertex[left=2cm of e1]		(e2);
+\vertex[below=3em of e2]	(e3);
+\vertex[below=3em of e1]	(e4)	{\(e^-\)};
+
+\vertex[below= 1em of e1]	(n1)	{\(\bar{\nu_e}\)};
+\vertex[above= 1em of e4]	(n2)	{\(\bar{\nu_e}\)};
+
+\diagram
+{
+{[edges=fermion]
+  (b1) -- (b2),
+  (b3) -- (b4),
+  (b5) -- (b6),
+  (b6) -- (b7)
+  (c1) -- (c2),
+  (c2) -- (c3),
+  (c4) -- (c5),
+  (c6) -- (c7),
+  (e2) -- (e1),
+  (e3) -- (e4),
+  (e3) -- (n2),
+  (e2) -- (n1),
+},
+(b6) -- [boson, edge label'=\(W\)] (e2),
+(c2) -- [boson, edge label=\(W\)] (e3),
+};
+\draw [decoration={brace}, decorate]  (b5.south west)--(b1.north west) node [pos=0.5, left] {\(n\)};
+\draw [decoration={brace}, decorate]  (c6.south west)--(c1.north west) node [pos=0.5, left] {\(n\)};
+\draw [decoration={brace}, decorate]  (c3.north east)--(c7.south east) node [pos=0.5, right] {\(p\)};
+\draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
+\end{feynman}
+\end{tikzpicture}
+\subcaption{Feynman-Diagram for the $2\nu\beta\beta$-decay. Basically the sum of two single beta decays}
+\end{subfigure}
+\caption{Feynman-Diagrams of the $0\nu\beta\beta$- and the $2\nu\beta\beta$-decay}
+\end{figure}
+\WarningsOn
+
 A second final state that is not part of the standard model actually does not need neutrinos to be emitted from the decay.
 This special kind of transition is call the neutrinoless double beta decay (\onbb) and has not yet been observed.
 However if it was to be found it would have profound consequences on modern physics because most notably this transition does not conserve the lepton number conservation due to two electrons being created solemnly as seen in the most likely leading channel
 \begin{equation}
 (A,Z)\rightarrow (A,Z+2) + 2e^- 
-\end{equation} 
+\end{equation}with the diagram seen in figure \ref{fig:Feyn0nbb}.
 This most likely channel is based on the idea that in the transition occurred an exchange between light Majorana neutrinos.
 These Majorana neutrinos annihilate in the process and gave the residual energy to the escaping electrons.
 There are also other interpretations on how the \onbb decay might work but the concept of light Majorana neutrino interaction requires the minimal extension to the standard model of the Majorana nature of the neutrinos and their non zero mass.
@@ -172,7 +296,23 @@ From these three masses it is theoretically possible to determine the Majorana p
 
 \paragraph{How can a \onbb decay be measured?}
 
-Theoretically, the experimental signature of the \onbb decay is a peak in the distribution of the energy sum of the two electrons at the endpoint energy of the normal double beta decay (see figure \ref ).
+\begin{figure}[t!]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/TheoretischesSpektrmdes0nubbDecay.png}
+		\caption{Taken from \cite{elliott_double_2002}}
+		\label{fig:TheoSpektrum}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/Aktivitaet.pdf}
+		\caption{specific activity of \Kr over time}
+		\label{fig:activity}
+	\end{minipage}
+\end{figure}
+
+Theoretically, the experimental signature of the \onbb decay is a peak in the distribution of the energy sum of the two electrons at the endpoint energy of the normal double beta decay (see figure \ref{fig:TheoSpektrum} ).
 As mentioned before there have been only a hand full of elements found to even make the normal double beta decay any only some of those are actually useful for an experimental search of the special case of the \onbb decay.
 A common experimental approach is to use a detector made of material enriched in a \onbb-decaying isotope.
 This has the advantage that the detection efficiency is maximized
@@ -207,6 +347,9 @@ With detectors made of enriched germanium plus the background reducing precautio
 HdM experiment actually claimed to have measured the half life of about $\thalfzero(\nuc{Ge}{76}) = 1.19\times10^{25}\unit{yr}$ , but its legitimacy has been questioned by a part of the scientific community.
 This is where the GERDA experiment comes in.
 The first measuring phase was planned to verify or falsify the results of the HdM experiment using the same detectors used in the HdM and the IGEX experiment.
+This first phase started in November 2011 and May 2013 with a total exposure  of  $21.6 \frac{\unit{kg}}{\unit{yr}}$ and no signal of a \onbb observed .
+
+A more detailed description of the construction and functionality of the GERDA experiment is the topic of the next section.
 
 % also a bit about standard double beta decay
 % differences between the standard and neutrinoless beta decay
