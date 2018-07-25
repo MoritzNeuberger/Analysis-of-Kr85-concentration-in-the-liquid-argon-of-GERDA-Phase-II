@@ -18,17 +18,6 @@
 
 \include{gerda-abbreviations}
 
-\makeatletter
-\renewcommand{\@chapapp}{}% Not necessary...
-\newenvironment{chapquote}[2][2em]
-  {\raggedright
-   \setlength{\@tempdima}{#1}%
-   \def\chapquote@author{#2}%
-   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
-   \itshape
-   }
-  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
-\makeatother
 
 %\usepackage{draftwatermark}
 %\SetWatermarkScale{3}
@@ -36,9 +25,9 @@
 % Die Metadaten der Abschlussarbeit werden auf dem Deckblatt gedruckt und
 % in dem PDF eingetragen.
 \subject{Bachelor Thesis}
-\title{Study of Waveguide Properties of Wavelength Shifting Fibers for Use in the GERDA LAr-Veto and Future Experiments}
+\title{Analysis of the}
 %\subtitle{subtitle}
-\author{Patrick Krause}
+\author{Moritz Neuberger}
 \date{\today}
 
 % Auf der Rückseite des Deckblatts können Themensteller, Zweitgutachter 
@@ -436,13 +425,13 @@ From these three masses it is theoretically possible to determine the Majorana p
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/NeutrinoMassOrdering.png}
+		\includegraphics[height=60mm]{./Bilder/NeutrinoMassOrdering.png}
 		\caption{}
 		\label{fig:MassOrder}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/TheoretischesSpektrmdes0nubbDecay.png}
+		\includegraphics[height=60mm]{./Bilder/TheoretischesSpektrmdes0nubbDecay.png}
 		\caption{Taken from \cite{elliott_double_2002}}
 		\label{fig:TheoSpektrum}
 	\end{minipage}
