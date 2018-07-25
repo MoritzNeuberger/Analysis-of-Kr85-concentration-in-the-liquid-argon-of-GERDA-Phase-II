@@ -128,20 +128,123 @@ The found half life of such decays have been found to be in the order of $10^{19
 \paragraph{Neutrinoless double beta decay}
 
 \WarningsOff
-\begin{figure}[ht]
+\begin{figure}[t!]
 \centering
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.4\textwidth}
 \centering
-		\includegraphics[width=\textwidth]{./Bilder/2nubetabeta.png}
-		\caption{specific activity of \Kr over time}
-		\label{fig:activity}
 \label{fig:Feyn2nbb}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex 					(b1) 	{\(u\)};
+\vertex[right =5cm of b1] 	(b2) 	{\(u\)};
+
+\vertex[below=1em of b1] 	(b3) 	{\(d\)};
+\vertex[right=5cm of b3] 	(b4) 	{\(d\)};
+
+\vertex[below=1em of b3] 	(b5) 	{\(d\)};
+\vertex[right=2.5cm of b5] 	(b6);
+\vertex[below=1em of b4] 	(b7) 	{\(u\)};
+
+\vertex[below=6em of b5] 	(c1) 	{\(d\)};
+\vertex[right =2.5cm of c1] (c2);
+\vertex[below=6em of b7]	(c3) 	{\(u\)};
+
+\vertex[below=1em of c1] 	(c4) 	{\(d\)};
+\vertex[right=5cm of c4] 	(c5) 	{\(d\)};
+
+\vertex[below=1em of c4] 	(c6) 	{\(u\)};
+\vertex[right=5cm of c6] 	(c7) 	{\(u\)};
+
+\vertex[below=2em of b7]	(e1)	{\(e^-\)};
+\vertex[left=2cm of e1]		(e2);
+\vertex[below=2em of e2]	(e3);
+\vertex[below=2em of e1]	(e4)	{\(e^-\)};
+
+\diagram
+{
+{[edges=fermion]
+  (b1) -- (b2),
+  (b3) -- (b4),
+  (b5) -- (b6),
+  (b6) -- (b7)
+  (c1) -- (c2),
+  (c2) -- (c3),
+  (c4) -- (c5),
+  (c6) -- (c7),
+  (e2) -- (e1),
+  (e3) -- (e4),
+},
+(b6) -- [boson, edge label'=\(W\)] (e2),
+(c2) -- [boson, edge label=\(W\)] (e3),
+(e2) -- [insertion=0.5] (e3),
+};
+\draw [decoration={brace}, decorate]  (b5.south west)--(b1.north west) node [pos=0.5, left] {\(n\)};
+\draw [decoration={brace}, decorate]  (c6.south west)--(c1.north west) node [pos=0.5, left] {\(n\)};
+\draw [decoration={brace}, decorate]  (c3.north east)--(c7.south east) node [pos=0.5, right] {\(p\)};
+\draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
+\end{feynman}
+\end{tikzpicture}
+\subcaption{Feynman-Diagram of the $0\nu\beta\beta$-decay. The Neutrinos in this diagram are virtual Majorana particle.}
+\label{fig:Feyn0nbb}
 \end{subfigure}\hfill%
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.4\textwidth}
 \centering
-		\includegraphics[width=\textwidth]{./Bilder/0nubetabeta.png}
-		\caption{specific activity of \Kr over time}
-		\label{fig:Feyn0nbb}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex 					(b1) 	{\(u\)};
+\vertex[right =5cm of b1] 	(b2) 	{\(u\)};
+
+\vertex[below=1em of b1] 	(b3) 	{\(d\)};
+\vertex[right=5cm of b3] 	(b4) 	{\(d\)};
+
+\vertex[below=1em of b3] 	(b5) 	{\(d\)};
+\vertex[right=2.5cm of b5] 	(b6);
+\vertex[below=1em of b4] 	(b7) 	{\(u\)};
+
+\vertex[below=7em of b5] 	(c1) 	{\(d\)};
+\vertex[right =2.5cm of c1] (c2);
+\vertex[below=7em of b7]	(c3) 	{\(u\)};
+
+\vertex[below=1em of c1] 	(c4) 	{\(d\)};
+\vertex[right=5cm of c4] 	(c5) 	{\(d\)};
+
+\vertex[below=1em of c4] 	(c6) 	{\(u\)};
+\vertex[right=5cm of c6] 	(c7) 	{\(u\)};
+
+\vertex[below=2em of b7]	(e1)	{\(e^-\)};
+\vertex[left=2cm of e1]		(e2);
+\vertex[below=3em of e2]	(e3);
+\vertex[below=3em of e1]	(e4)	{\(e^-\)};
+
+\vertex[below= 1em of e1]	(n1)	{\(\bar{\nu_e}\)};
+\vertex[above= 1em of e4]	(n2)	{\(\bar{\nu_e}\)};
+
+\diagram
+{
+{[edges=fermion]
+  (b1) -- (b2),
+  (b3) -- (b4),
+  (b5) -- (b6),
+  (b6) -- (b7)
+  (c1) -- (c2),
+  (c2) -- (c3),
+  (c4) -- (c5),
+  (c6) -- (c7),
+  (e2) -- (e1),
+  (e3) -- (e4),
+  (e3) -- (n2),
+  (e2) -- (n1),
+},
+(b6) -- [boson, edge label'=\(W\)] (e2),
+(c2) -- [boson, edge label=\(W\)] (e3),
+};
+\draw [decoration={brace}, decorate]  (b5.south west)--(b1.north west) node [pos=0.5, left] {\(n\)};
+\draw [decoration={brace}, decorate]  (c6.south west)--(c1.north west) node [pos=0.5, left] {\(n\)};
+\draw [decoration={brace}, decorate]  (c3.north east)--(c7.south east) node [pos=0.5, right] {\(p\)};
+\draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
+\end{feynman}
+\end{tikzpicture}
+\subcaption{Feynman-Diagram for the $2\nu\beta\beta$-decay. Basically the sum of two single beta decays}
 \end{subfigure}
 \caption{Feynman-Diagrams of the $0\nu\beta\beta$- and the $2\nu\beta\beta$-decay}
 \end{figure}
@@ -258,7 +361,7 @@ Its first measuring phase (\PI) was planned to verify or falsify the results of 
 \PI started in November 2011 and May 2013 with a total exposure  of  $21.6 \frac{\unit{kg}}{\unit{yr}}$ and no signal of a \onbb observed \cite{agostini_results_2013}.
 With its results and the results from HdM and IGEX a new lower limit for the half life was able to be set at $\thalfzero(\nuc{Ge}{76})>3.0\times10^{25}$  yr  (90$\%$ C.L.)
 The second phase (\PII) with 30 new custom-made enriched detectors together with the old detectors has started measuring in late 2015 and had its latest data published !!!! hier noch ob ich das NATURE paper quoten soll!!!!!.
-A more detailed description of the construction and functionality of the GERDA  \PII is the topic of the next section.
+A more detailed description of the construction and functionality of the GERDA  \PII~ is the topic of the next section.
 
 % also a bit about standard double beta decay
 % differences between the standard and neutrinoless beta decay
@@ -268,6 +371,46 @@ A more detailed description of the construction and functionality of the GERDA  
 \chapter{GERDA}
 \label{sec:GERDA}
 
+% general Information, e.g. 
+% sizes 
+% Gran Sasso, 
+% what other  neutrino less beta decay experiments are there,
+
+\section{Experimental Setup}
+\label{sec:ExSetup}
+The GERDA experiment is located in the underground Laboratori Nazionali del Gran Sasso (LNGS) of INFN, Italy.
+The laboratories are located approx. 1.4 km below ground, which corresponds to a water equivalent of 3.5km \cite{agostini_background_2017}.
+As already mentioned in the previous chapter the GERDA experiment uses \nuc{Ge}{76} as \onbb decay material as well as the detector material.
+\\
+
+The detectors are operated in a liquid argon (LAr) tank of 64m$^3$ volume at an working temperature of about 90K.
+The argon being used was obtained from the atmosphere by air liquefaction and has been purified as good as possible from radioactive isotopes by further distillation.
+Its main purpose is to cool the germanium detectors to low temperatures in order to suppress thermal background and to shield against external radiation originating from the walls and the outside. 
+Since \PII~ there are also photomultipliers positioned inside the LAr tank.
+Due to the scintillation property of argon they detect a light signal every time a charged particle travels through the liquid argon with high velocity.
+Because the \onbb decays are not likely to create any scintillation light the photomultiplier signals can be used as a veto to filter out background.
+\\
+
+Situated around the liquid argon is a 590m$^3$ water tank.
+Its main purpose is to shield from outside radiation not only passively by absorption but also actively as a muon veto as described above.
+Over the water tank is a clean room situated in which the detector strings can be assembled.  
+The general setup can be seen in figure \ref{fig:GERDASetupPII}.
+\\
+
+Now to the detectors themselves.
+As described above, GERDA \PII~ uses the seven coaxial detectors (COAX) that have already been used in the HdM and the IGEX experiment as well as 30 new broad energy germanium detectors (BEGe).
+Both of these detector types are made of germanium that has been enriched from 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$.
+They also share the same basic functionality.
+The major volume of both detectors are made of p doped germanium.
+Both detectors have the majority of their surface covered by a n$^+$ doped electrode and only a small part with an p$^+$ electrode.
+If an electron hole pair is created in the p doped area, the charged particles are separated and guided to the n$^+$ or the p$^+$ layer respectively by a strong electrostatic field of about 3 to 4 kV.
+But the two detectors differ in their design.
+COAX detectors have a cavity coaxial to the cylindrical detector and are doped p$^+$ in the cavity's surface.
+The BEGe detectors don't have a cavity but only have a small p$^+$ doped surface at the bottom.
+Their design can be seen in figure \ref{}
+The detector types also differ in their mass.
+A higher mass of a detector results in a higher exposure but also in a lower resolution.
+  
 \begin{figure}[t!]
 	\centering
 	\begin{minipage}{.5\textwidth}
@@ -283,42 +426,6 @@ A more detailed description of the construction and functionality of the GERDA  
 		\label{fig:activity}
 	\end{minipage}
 \end{figure}
-% general Information, e.g. 
-% sizes 
-% Gran Sasso, 
-% what other  neutrino less beta decay experiments are there,
-
-\section{Experimental Setup}
-\label{sec:ExSetup}
-The GERDA experiment is located in the underground Laboratori Nazionali del Gran Sasso (LNGS) of INFN, Italy.
-The laboratories are located approx. 1.4 km below ground, which corresponds to a water equivalent of 3.5km \cite{agostini_background_2017}.
-As already mentioned in the previous chapter the GERDA experiment uses \nuc{Ge}{76} as \onbb decay material as well as the detector material.
-The detectors are operated in a liquid argon (LAr) tank of 64m$^3$ volume at an working temperature of about 90K.
-The argon being used was obtained from the atmosphere by air liquefaction and has been purified as good as possible from radioactive isotopes by further distillation.
-Its main purpose is to cool the germanium detectors to low temperatures in order to suppress thermal background and to shield against external radiation originating from the walls and the outside. 
-Since \PII there are also photomultipliers positioned inside the LAr tank.
-Due to the scintillation property of argon they detect a light signal every time a charged particle travels through the liquid argon with high velocity.
-Because the \onbb decays are not likely to create any scintillation light the photomultiplier signals can be used as a veto to filter out background.
-Situated around the liquid argon is a 590m$^3$ water tank.
-Its main purpose is to shield from outside radiation not only passively by absorption but also actively as a muon veto as described above.
-Over the setup is a clean room situated from which !!!!!
-The general setup can be seen in figure \ref.
-\\
-
-Now to the detectors themselves.
-As described above GERDA \PII again uses the seven coaxial detectors (COAX) that have already been used in the HdM and the IGEX experiment as well as 30 new broad energy germanium detectors (BEGe).
-Both of these detector types are made of germanium that has been enriched from only 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$.
-They also share the same functionality.
-Both are major volume of the detectors are of p doped germanium.
-Both detectors have the majority of their surface covered by a n$^+$ doped electrode and a small part with an p$^+$ electrode.
-If an electron hole pair is created in the p doped area, the charged particles are separated and guided to the n$^+$ or the p$^+$ layer respectively.
-But the two detectors differ in their design.
-In the case of the COAX detectors an inner volume coaxial to the cylindrical detector is left out and on its surface the detector is p$^+$ doped.
-The BEGe detectors don't have a cavity but rather only have a small p$^+$ doped surface at the bottom.
-The detector types also differ in their mass.
-A higher mass of a detector results in a higher exposure but also in a lower resolution.
-  
-
 
 % well, just dump everything here
 % also a bit about Tier1-4 storage of data 
@@ -918,12 +1025,12 @@ For an amount of 27.24\(\pm\)3.87 events to be measured in the BEGe detectors, i
 \section{Calculating the Activity}
 \label{sec:CalcActiv}
 
-All we need now to calculate the mean activity of \Kr in \PII is the measuring time of all detectors.
+All we need now to calculate the mean activity of \Kr in \PII~ is the measuring time of all detectors.
 But this is not as easy as it seems.
-Firstly we have the problem that not all detectors were measuring over the curse of \PII and that there were time intervals in which no measurement was recorded at all.
+Firstly we have the problem that not all detectors were measuring over the curse of \PII~ and that there were time intervals in which no measurement was recorded at all.
 This can easily be solved by looking at the effective measuring time of each detector individually.
 The effective measuring time of a detector can easily be determined by looking at how many test pule signals have been recorded by it. 
-Since the test pulse signals have been set to a frequency of 0.05Hz over the entire \PII, an effective measurement time can be achieved by determining the number of detected test pulse signals and then multiply it by 20 seconds.
+Since the test pulse signals have been set to a frequency of 0.05Hz over the entire \PII~, an effective measurement time can be achieved by determining the number of detected test pulse signals and then multiply it by 20 seconds.
 The individual measuring times are therefor given by
 \begin{equation*}
     t_\mathrm{i} = \mathrm{N}_{TP}(\mathrm{i}) \times 20\mathrm{s}
@@ -962,7 +1069,7 @@ No matter what approach you take, you can now determine the mean measuring times
 \end{equation*}
 
 From this, an average measurement time for the BEGes of  and for the COAX of can be calculated.
-With these mean measuring times we can now finally calculate the mean specific activity $\bar{a}$ of \Kr over the curse of all of \PII by applying
+With these mean measuring times we can now finally calculate the mean specific activity $\bar{a}$ of \Kr over the curse of all of \PII~ by applying
 \begin{equation*}
     \bar{a} = \frac{\rho_{dec} }{\bar{t}} = \frac{\mathrm{N}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}}
 \end{equation*}
@@ -1044,7 +1151,7 @@ Ideally, a positive result from this method would confirm the specific activity 
 
 But as it was also stated above, the second method is expected to be relatively imprecise.  
 This estimation came from the fact that this method relies on a great approximation.
-For this method to be applied it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non negligible change in its intensity.
+For this method to be applied it is necessary to expect that in the time interval of all of \PII~ only the intensity of the \Kr isotope has a non negligible change in its intensity.
 The idea behind this comes from the fact that \Kr has the lowest half life \(T = 10.739\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
 In comparison, other radioactive isotopes that are of interest here are \nuc{Ar}{42} with a half-life of 32.9 y \cite{chen_nuclear_2016}, \nuc{Ar}{39} with 269 y \cite{singh_nuclear_2006} and \nuc{Po}{210} with 138d \cite{kondev_nuclear_2008}. 
 \\
@@ -1081,7 +1188,7 @@ With it a new conversion factor can be determined to calculate the \Kr decay den
 \\
 
 Finally the specific activity can be calculated from these two values.
-It is important to note that this approach determines the specific activity of \Kr at the start of \PII while the first method calculates the mean specific activity over all of \PII.
+It is important to note that this approach determines the specific activity of \Kr at the start of \PII~ while the first method calculates the mean specific activity over all of \PII.
 To compare those two results, in the end a mean specific activity of the second method has to be determined.
 The following sections will focus on the concrete implementation of this method and the values determined by them.
 \\
@@ -1156,9 +1263,9 @@ A new plot including only events between the energy limits of 200 and 400keV can
 
 The second discontinuous behavior originates from the same problem that we faced in the line count rate analysis.
 Not all detectors were on all of the time and there were also time intervals in which no signal at all was recorded.
-Due to the fact that some of the detectors were turned on or off over the time of \PII will result in discontinuous changes in the event rate because more or fewer events were able to be measured.
+Due to the fact that some of the detectors were turned on or off over the time of \PII~ will result in discontinuous changes in the event rate because more or fewer events were able to be measured.
 But this can easily be solved by only considering those events measured in a detector that was always turned on.
-Which detector was always on over all of \PII can be seen in figure \ref in the appendix.
+Which detector was always on over all of \PII~ can be seen in figure \ref in the appendix.
 On the other hand due to there being time intervals in which no events were recorded the event rate drops discontinuous to zero there.
 In section \ref{sec:CalcActiv} we solved this problem by calculating an effective measuring time for each detectors.
 Here, however, we are not interested in an average measurement time over the entire \PII.
@@ -1314,7 +1421,7 @@ By applying equation \ref{equ:activityAt0} and feeding it with the values found 
 We can get back to the graph \ref{fig:ChangeInEventRateFit} and apply the same formula to each of its values and the fit function.
 The resulting graph can be seen in figure \ref
 Because we want to compare this value to the specific activity found in the line count rate analysis, we have to now calculate the mean specific activity over all of Phase II.
-This can easily be done by integrating an exponential decay function over all of \PII and then dividing it by 2.17 years.
+This can easily be done by integrating an exponential decay function over all of \PII~ and then dividing it by 2.17 years.
 
 \begin{equation*}
     \bar{a} = \frac{1}{2.17\unit{y}} \int_0^{2.17y} a(t=0)\times\exp \left( \frac{\log(2)}{T} t \right) \mathrm{d}t
@@ -1347,7 +1454,7 @@ In the beginning of this chapter we already discussed all of the isotopes that a
 We already mentioned there that any contributions from \nuc{Ar}{39} and \nuc{Po}{210} can be disregarded due to their either high half life or their high mean kinetic energy of the escaping particle.
 But as it was already indicated there, it might be necessary to discuss the influence of \nuc{Ar}{42} further.
 \nuc{Ar}{42} has a half life of 32.9 y which is in the same order of magnitude as the half life of \Kr.
-Therefore, we can expect to see a change in its activity over the course of \PII of about 4.4$\%$ of its absolute specific activity.
+Therefore, we can expect to see a change in its activity over the course of \PII~ of about 4.4$\%$ of its absolute specific activity.
 With an specific activity big enough one could expect this isotope to be responsible for the measured decrease.
 But due to the fact that \nuc{Ar}{42}'s specific activity has already been determined to be much lower than the measured amplitude it can not be the only cause of this .
 \\
