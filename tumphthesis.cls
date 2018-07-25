@@ -60,7 +60,7 @@
 \RequirePackage{fontenc}
 \PassOptionsToPackage{ngerman,british}{babel}
 \RequirePackage{babel}
-\selectlanguage{british}
+\selectlanguage{ngerman}
 \if@noloadcsquotes
 	\relax
 \else
@@ -109,12 +109,12 @@
 \fi
 
 % biblatex wird zum Setzen des Literatirverzeichnisses verwendet
-%\PassOptionsToPackage{sorting=none,autolang=other,backend=biber,
-%	bibstyle=numeric-comp,citestyle=numeric-comp,%
-%	}{biblatex}
-%\RequirePackage{biblatex}
-%\IfFileExists{\reference.bib}{\addbibresource{\reference.bib}}{\relax}%
-%\defbibheading{bibliography}[\bibname]{\chapter{#1}}
+\PassOptionsToPackage{sorting=none,autolang=other,backend=biber,
+	bibstyle=numeric-comp,citestyle=numeric-comp,%
+	}{biblatex}
+\RequirePackage{biblatex}
+\IfFileExists{\jobname.bib}{\addbibresource{\jobname.bib}}{\relax}%
+\defbibheading{bibliography}[\bibname]{\chapter{#1}}
 
 % Die AMS-Pakete dienen zum modernen Satz von Gleichungen. Die Integralgrenzen
 % werden grundsätzlich unter/über das Integralzeichen gesetzt.
@@ -325,7 +325,7 @@
 		pdfsubject={\@subject},%
 		pdfkeywords={Technische Universit\"at M\"unchen;Fakult\"at f\"ur Physik;\@subject}}}
 \fi
-\renewcaptionname{british}{\proofname}{Beweis}
+\renewcaptionname{ngerman}{\proofname}{Beweis}
 
 % Kolumnentitel im Kopf mit Linie werden mit scrpage2 eingerichtet.
 \if@draftmode
@@ -347,7 +347,7 @@
 		\end{minipage}
 		\hfill
 		\begin{minipage}[b]{.4\linewidth}
-			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{./Abbildungen/PH}\hspace{.5cm}\includegraphics[width=1.87cm]{tumlogo}}{}
+			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{PH}\hspace{.5cm}\includegraphics[width=1.87cm]{tumlogo}}{}
 		\end{minipage}%
 		\null\vfill%
 		\begin{center}
