@@ -18,21 +18,34 @@
 
 \include{gerda-abbreviations}
 
-\subject{Abschlussarbeit im Bachelorstudiengang Physik}
-\title{Titel der Abschlussarbeit}
-%\subtitle{\foreignlanguage{british}{Title in English}}
-\author{Moritz Neuberger}
-\date{31.~Juli 2011}
-%\cooperators{Max-Planck-Institut für Physik}
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\raggedright
+   \setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape
+   }
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{3}
+
+% Die Metadaten der Abschlussarbeit werden auf dem Deckblatt gedruckt und
+% in dem PDF eingetragen.
+\subject{Bachelor Thesis}
+\title{Study of Waveguide Properties of Wavelength Shifting Fibers for Use in the GERDA LAr-Veto and Future Experiments}
+%\subtitle{subtitle}
+\author{Patrick Krause}
+\date{\today}
 
 % Auf der Rückseite des Deckblatts können Themensteller, Zweitgutachter 
 % und Tag der mündlichen Prüfung vermerkt werden.
 \lowertitleback{Erstgutachter (Themensteller): Prof.\ S.~Schönert\\
-Zweitgutachter: Prof.\ S.~Preuss}
-
-
-
-
+Zweitgutachter: Prof.\ P.~Fierlinger \\
+Betreuer: Dr.\ J.~Janicskó}
 %-------------------------------------------------------------------------------
 %\include{header}              % packages/settings
 %\include{gerda-abbreviations} % for definitions see:  abbreviations.tex
@@ -395,7 +408,11 @@ In case of his observation, a \onbb\ decay would bring about new knowledge of th
 \\
 
 From the half life of the \onbb\ decay one can only determine an effective electron neutrino mass of the observed electron neutrino and through its value maybe the mass order.
-However through comparison with the results of other experiments trying to measured the mass with a different approach, the masses of the mass eigenstates and also the Majorana phases can be determined.
+In figure \ref{fig:MassOrder} this effective neutrino mass is drawn as a function of the smallest mass in the case of the normal and the inverted hierarchie. 
+From it the mass order can be determined in the case of an effective mass smaller then the lower bound of the inverted hierarchy.
+\\
+
+However, through comparison with results from other experiments also trying to measure the mass with a different approach, the masses of the mass eigenstates and also the Majorana phases can be determined.
 The effective neutrino mass of the \onbb\ decay is defined through the coherent sum of the individual masses times the complex amplitude $U_{ei}$ that is dependent of the Majorana phases (see equation \ref{mBetaBeta}).
 \begin{equation}
 \left\langle m_{\beta\beta}\right\rangle = \abs{\sum_i U_{ei}^2m_i }
@@ -419,15 +436,15 @@ From these three masses it is theoretically possible to determine the Majorana p
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/TheoretischesSpektrmdes0nubbDecay.png}
-		\caption{Taken from \cite{elliott_double_2002}}
-		\label{fig:TheoSpektrum}
+		\includegraphics[width=\textwidth]{./Bilder/NeutrinoMassOrdering.png}
+		\caption{}
+		\label{fig:MassOrder}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/Aktivitaet.pdf}
-		\caption{specific activity of \Kr over time}
-		\label{fig:activity}
+		\includegraphics[width=\textwidth]{./Bilder/TheoretischesSpektrmdes0nubbDecay.png}
+		\caption{Taken from \cite{elliott_double_2002}}
+		\label{fig:TheoSpektrum}
 	\end{minipage}
 \end{figure}
 
