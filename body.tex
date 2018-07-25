@@ -379,8 +379,8 @@ A more detailed description of the construction and functionality of the GERDA  
 \section{Experimental Setup}
 \label{sec:ExSetup}
 The GERDA experiment is located in the underground Laboratori Nazionali del Gran Sasso (LNGS) of INFN, Italy.
-The laboratories are located approx. 1.4 km below ground, which corresponds to a water equivalent of 3.5km \cite{agostini_background_2017}.
-As already mentioned in the previous chapter the GERDA experiment uses \nuc{Ge}{76} as \onbb decay material as well as the detector material.
+The laboratories are located approx. 1.4 km below ground, which corresponds to a water equivalent of 3.5km.
+As already mentioned in the previous chapter the GERDA experiment uses \nuc{Ge}{76} as \onbb decay material as well as the detector material \cite{agostini_background_2017}.
 \\
 
 The detectors are operated in a liquid argon (LAr) tank of 64m$^3$ volume at an working temperature of about 90K.
@@ -392,41 +392,67 @@ Because the \onbb decays are not likely to create any scintillation light the ph
 \\
 
 Situated around the liquid argon is a 590m$^3$ water tank.
-Its main purpose is to shield from outside radiation not only passively by absorption but also actively as a muon veto as described above.
-Over the water tank is a clean room situated in which the detector strings can be assembled.  
+Its main purpose is to shield the setup from outside radiation not only passively by absorption but also actively as a muon veto as described above.
+Over the water tank is a clean room situated in which the detector strings can be assembled into the strings and .  
 The general setup can be seen in figure \ref{fig:GERDASetupPII}.
 \\
 
 Now to the detectors themselves.
 As described above, GERDA \PII~ uses the seven coaxial detectors (COAX) that have already been used in the HdM and the IGEX experiment as well as 30 new broad energy germanium detectors (BEGe).
-Both of these detector types are made of germanium that has been enriched from 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$.
+Both of these detector types are made of germanium that has been enriched from 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$ \cite{agostini_background_2017}.
 They also share the same basic functionality.
 The major volume of both detectors are made of p doped germanium.
-Both detectors have the majority of their surface covered by a n$^+$ doped electrode and only a small part with an p$^+$ electrode.
+Both detectors have the majority of their surface covered by a 1-2mm thick n$^+$ doped electrode and only a small part with an p$^+$ electrode.
 If an electron hole pair is created in the p doped area, the charged particles are separated and guided to the n$^+$ or the p$^+$ layer respectively by a strong electrostatic field of about 3 to 4 kV.
-But the two detectors differ in their design.
+It the pair is created in the n$^+$ layer the hole is most likely to recombine in the $n^+$ layer due to its low mobility and therefor create no measurable signal.
+The n$^+$ layer is therefor not not active and the area called a dead layer.
+\\
+
+The two detectors however differ in their design.
 COAX detectors have a cavity coaxial to the cylindrical detector and are doped p$^+$ in the cavity's surface.
 The BEGe detectors don't have a cavity but only have a small p$^+$ doped surface at the bottom.
-Their design can be seen in figure \ref{}
-The detector types also differ in their mass.
-A higher mass of a detector results in a higher exposure but also in a lower resolution.
-  
+Their design can be seen in figure \ref{fig:DetcDes}.
+The detector types also differ in their mass and therefor their expected exposure per detector and energy resolution.
+The COAX detectors are generally heavier then the BEGe but have therefor also a worse energy resolution.
+To compensate the fact that the BEGe detectors are generally lighter than the COAX a great amount of them are being used.
+\\
+
 \begin{figure}[t!]
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/GERDAsetupPhaseII.png}
+		\includegraphics[height=70mm]{./Bilder/GERDAsetupPhaseII.png}
 		\caption{Taken from \cite{collaboration_upgrade_2018}}
 		\label{fig:GERDASetupPII}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/Aktivitaet.pdf}
-		\caption{specific activity of \Kr over time}
-		\label{fig:activity}
+		\includegraphics[height=70mm]{./Bilder/DetectorDesign.png}
+		\caption{Taken from \cite{agostini_background_2014}}
+		\label{fig:DetcDes}
 	\end{minipage}
 \end{figure}
 
+All the enriched detectors are assembled into 6 strings forming a hexagonal array together with a seventh extra string.
+This seventh string consists of three coaxial detector of a natural isotopic composition with only 7.8$\%$ \nuc{Ge}{76}.
+The string setup can be seen in figure \ref{fig:strings} and \ref{fig:stringsabove}.
+\\ 
+
+\begin{figure}[t!]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.5\textwidth]{./Bilder/strings.png}
+		\caption{Taken from \cite{collaboration_upgrade_2018}}
+		\label{fig:strings}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.5\textwidth]{./Bilder/strings-top.png}
+		\caption{Taken from \cite{agostini_background_2014}}
+		\label{fig:stringsabove}
+	\end{minipage}
+\end{figure}
 % well, just dump everything here
 % also a bit about Tier1-4 storage of data 
 
