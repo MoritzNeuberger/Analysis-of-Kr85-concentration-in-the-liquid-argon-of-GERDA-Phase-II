@@ -368,7 +368,7 @@ A more detailed description of the construction and functionality of the GERDA  
  
 
 
-\chapter{GERDA}
+\chapter{GERDA \PII}
 \label{sec:GERDA}
 
 % general Information, e.g. 
@@ -436,28 +436,86 @@ To compensate the fact that the BEGe detectors are generally lighter than the CO
 All the enriched detectors are assembled into 6 strings forming a hexagonal array together with a seventh extra string.
 This seventh string consists of three coaxial detector of a natural isotopic composition with only 7.8$\%$ \nuc{Ge}{76}.
 The string setup can be seen in figure \ref{fig:strings} and \ref{fig:stringsabove}.
-\\ 
+\\
+
+All detectors are connected to custom made amplifiers also located in the liquid argon above the detectors.
+The analog signal of every detector is then digitized at a sampling rate of 100MHz and in the case of an event stored for further analysis.
+\\
 
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{subfigure}{.66\textwidth}
 		\centering
-		\includegraphics[width=.5\textwidth]{./Bilder/strings.png}
-		\caption{Taken from \cite{collaboration_upgrade_2018}}
+		\includegraphics[width=.9\textwidth]{./Bilder/strings.png}
+		\caption{}
 		\label{fig:strings}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
+	\end{subfigure}%
+	\begin{subfigure}{.30\textwidth}
 		\centering
-		\includegraphics[width=.5\textwidth]{./Bilder/strings-top.png}
-		\caption{Taken from \cite{agostini_background_2014}}
+		\includegraphics[width=.9\textwidth]{./Bilder/strings-top.png}
+		\caption{}
 		\label{fig:stringsabove}
-	\end{minipage}
+	\end{subfigure}
 \end{figure}
 % well, just dump everything here
 % also a bit about Tier1-4 storage of data 
 
+The detectors are surrounded by a nylon cylinder to limit the amount of LAr volume around the detectors.
+This is in place to passively suppresses the background created from \nuc{K}{42}.
+Where the \nuc{K}{42} comes from and why its influence on the background can be repressed by this will be discussed later in section \ref{Discussion}.\\
+
 \section{Liquid Argon as Coolant, Shielding and Scintillator} 
 \label{sec:LArcoolant}
+
+These nylon in the cylinder can be read out at their ends with silicon photomultipliers (SiPM) and are part of the LAr veto setup that will be the topic of this section.
+But first a few words about the LAr itself.
+\\
+
+LAr has the property that scintillation light is produced when ionizing radiation interacts with an electron or nuclei within it \cite{olsen_improvements_nodate}.
+Incoming radiation may excite or ionize the scintillation material along its way or might have a collision with another particle which in might return ionize other particles secondarily.
+The excited atoms in a nobel liquids form dimer pairs.
+These are metastable and recombine into two stable argon atoms by the release of a vacuum ultraviolet photon (VUV).
+Depending on whether the argon atom was ionized or only excited two different mechanisms are responsible for the relaxation.
+But in the end each ionized or excited atom only produces one VUV photon.
+Nobel liquids also have the advantage that VUV light does not have enough energy to excite a ground state atom which is why the scintillation light can travel very long distances without being absorbed.
+Compared to other nobel gases argon has the advantage of a very low price due to it being easily obtained by liquefaction of air from the atmosphere.
+Overall a scintillation yield for argon of about $4\times10^4\frac{\unit{photons}}{\unit{MeV}}$ can be reached \cite{olsen_improvements_nodate}.
+\\
+
+\begin{figure}[t!]
+	\centering
+	\begin{subfigure}{.66\textwidth}
+		\centering
+		\includegraphics[width=.9\textwidth]{./Bilder/LArVetoSetup.png}
+		\caption{Taken from \cite{collaboration_upgrade_2018}}
+		\label{fig:LArVetoSetup}
+	\end{subfigure}%
+	\begin{subfigure}{.30\textwidth}
+		\centering
+		\includegraphics[width=.9\textwidth]{./Bilder/strings-top.png}
+		\caption{}
+		\label{fig:stringsabove}
+	\end{subfigure}
+\end{figure}
+
+Background events often deposit energy in the argon while passing through it.
+The scintillation light can therefor be used as a veto to filter out those events in which a coincidence between an event in the germanium detectors and a signal in a photomultiplier was measured.
+That is why smaller cylindrical volume around the germanium detectors is equipped with 16 photomultiplier tubes (PMT) that are situated at the bottom and at the top of this volume as well as 90 SiPM that read out any light signal travailing through the nylon strings at the side of the volume.
+All signals measured in the photomultipliers are digitized and read-out in the case of an event in the germanium detectors.
+The complete LAr veto setup can be seen in figure \ref{fig:LArVetoSetup}}
+\\
+
+Additionally, a wavelength shifter covers all nylon fibers and PMTs.
+This shifter changes the wavelength of the LAr scintillation light from 128mn to 400nm.
+At this wavelength the PMTs have their highest quantum efficiency as well as the nylon fibers their absorption maximum.
+With this the overall detection is being increase.
+\\
+
+But liquid argon is also a good coolant due to the characteristically low melting point of nobel gases.
+It has its boiling point at 
+
+
+
 
 
 \section{Background Reduction}
