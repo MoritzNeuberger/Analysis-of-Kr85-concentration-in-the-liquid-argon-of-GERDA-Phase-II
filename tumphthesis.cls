@@ -112,9 +112,10 @@
 \PassOptionsToPackage{sorting=none,autolang=other,backend=biber,
 	bibstyle=numeric-comp,citestyle=numeric-comp,%
 	}{biblatex}
-\RequirePackage{biblatex}
-\IfFileExists{\jobname.bib}{\addbibresource{\jobname.bib}}{\relax}%
-\defbibheading{bibliography}[\bibname]{\chapter{#1}}
+%\RequirePackage{biblatex}
+%\IfFileExists{\jobname.bib}{\addbibresource{\jobname.bib}}{\relax}%
+%\addbibresource{references.bib}%
+%\defbibheading{bibliography}[\bibname]{\chapter{#1}}
 
 % Die AMS-Pakete dienen zum modernen Satz von Gleichungen. Die Integralgrenzen
 % werden grundsätzlich unter/über das Integralzeichen gesetzt.
@@ -347,7 +348,7 @@
 		\end{minipage}
 		\hfill
 		\begin{minipage}[b]{.4\linewidth}
-			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{PH}\hspace{.5cm}\includegraphics[width=1.87cm]{./Abbildungen/tumlogo}}{}
+			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{./Abbildungen/PH}\hspace{.5cm}\includegraphics[width=1.87cm]{./Abbildungen/tumlogo}}{}
 		\end{minipage}%
 		\null\vfill%
 		\begin{center}

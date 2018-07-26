@@ -12,6 +12,7 @@
 \usepackage{capt-of}
 \usepackage{subfig}
 \usepackage{csquotes}
+%\usepackage{natbib}
 \usepackage{physics}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \tikzset{/tikzfeynman/warn luatex=false}
@@ -19,22 +20,37 @@
 \include{gerda-abbreviations}
 
 
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\raggedright
+   \setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape
+   }
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+
 %\usepackage{draftwatermark}
 %\SetWatermarkScale{3}
 
 % Die Metadaten der Abschlussarbeit werden auf dem Deckblatt gedruckt und
 % in dem PDF eingetragen.
-\subject{Bachelor Thesis}
-\title{Analysis of the}
-%\subtitle{subtitle}
+\subject{Abschlussarbeit im Bachelorstudiengang Physik}
+\title{Titel der Abschlussarbeit}
+%\subtitle{\foreignlanguage{british}{Title in English}}
 \author{Moritz Neuberger}
-\date{\today}
+\date{31.~Juli 2011}
+%\cooperators{Max-Planck-Institut für Physik}
 
 % Auf der Rückseite des Deckblatts können Themensteller, Zweitgutachter 
 % und Tag der mündlichen Prüfung vermerkt werden.
 \lowertitleback{Erstgutachter (Themensteller): Prof.\ S.~Schönert\\
-Zweitgutachter: Prof.\ P.~Fierlinger \\
-Betreuer: Dr.\ J.~Janicskó}
+Zweitgutachter: Prof.\ S.~Preuss}
+
+
 %-------------------------------------------------------------------------------
 %\include{header}              % packages/settings
 %\include{gerda-abbreviations} % for definitions see:  abbreviations.tex
@@ -48,6 +64,7 @@ Betreuer: Dr.\ J.~Janicskó}
 %\newcommand{\titleheader}{Analysis of \Kr concentration in the liquid argon of GERDA Phase II} % TITLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % --------------------------------------------------------  begin document   ---
 \begin{document}
@@ -378,16 +395,18 @@ If such a decay was to be found it would have profound consequences on modern ph
 (A,Z)\rightarrow (A,Z+2) + 2e^- 
 \end{equation}
 No matter what interpretation one chooses, \onbb\ decays can only occur when the neutrino is a Majorana particle \cite{noauthor_phys._nodate-1}.
-From here on out however it will be assumed that the \onbb\ decay is caused by an exchange of massive Majorana neutrinos as seen in \ref{fig:Feyn0nbb}.
+From here on however it will be assumed that the \onbb\ decay is caused by an exchange of massive Majorana neutrinos as seen in \ref{fig:Feyn0nbb}.
 Compared to other interpretations, the concept of massive Majorana neutrino interaction requires only a minimal extension to the standard model, namely the Majorana nature of the neutrinos and their non zero mass.
-It has already been shown through the neutrino oscillation experiments.
 \\
 
-The flavor mixing ability of neutrinos as shown by neutrino oscillaion requires their flavor eigenstates that couple to the W boson to be a  superposition of so called mass eigenstates.
+Neutrino oscillation experiments have already shown that neutrinos must have a non vanishing mass.
+The flavor mixing ability of neutrinos have shown by neutrino oscillaion requires their flavor eigenstates that couple to the W boson to be a  superposition of so called mass eigenstates.
 \begin{equation}
 \ket{\nu_\alpha} = \sum_i U^*_{\alpha i} \ket{\nu_i} 
 \end{equation}
-The resulting PMNS mixing matrix elements $U_{\alpha i}$ are defined by three mixing angles ($\Theta_{12}$,$\Theta_{13}$,$\Theta_{23}$) and three CP-violating phases ($\alpha$,$\beta$,$\delta$). 
+These eigenstates must have a different masses.
+Otherwise an oscillation behaviour could not be observed. 
+The PMNS mixing matrix elements $U_{\alpha i}$ are defined by three mixing angles ($\Theta_{12}$,$\Theta_{13}$,$\Theta_{23}$) and three CP-violating phases ($\alpha$,$\beta$,$\delta$). 
 The phase $\delta$ is called the Dirac phase and is always present regardless whether the neutrino is a Majorana or Dirac particle.
 The phase $\alpha$ and $\beta$ however are called the Majorana phases and only have a physical meaning for Majorana neutrinos.
 From neutrino oscillation however only the mass square differences $\Delta m^2_{ij} = m^2_i - m^2_j$ of the mass eigenstates, the mixing angles and the Dirac phase $\delta$ can be determined.
@@ -396,7 +415,8 @@ This leaves three different possible mass orders to considered in the \onbb\ dec
 In case of his observation, a \onbb\ decay would bring about new knowledge of these mass orders, the mass scale and the Majorana phases. 
 \\
 
-From the half life of the \onbb\ decay one can only determine an effective electron neutrino mass of the observed electron neutrino and through its value maybe the mass order.
+From the half life of the \onbb\ decay one can only determine an effective electron neutrino mass of the observed electron neutrino.
+Through its value it might be possible to at least make a statement about the mass order.
 In figure \ref{fig:MassOrder} this effective neutrino mass is drawn as a function of the smallest mass in the case of the normal and the inverted hierarchie. 
 From it the mass order can be determined in the case of an effective mass smaller then the lower bound of the inverted hierarchy.
 \\
@@ -419,19 +439,19 @@ The absolute mass value these kind of experiments are sensitive to consists of a
 \Sigma = \sum_i m_i
 \end{equation}
 From these three masses it is theoretically possible to determine the Majorana phases,  the individual masses of the mass eigentstates and therefor also the mass order of the neutrinos.
-
+\\
 
 \begin{figure}[t!]
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[height=60mm]{./Bilder/NeutrinoMassOrdering.png}
-		\caption{}
+		\includegraphics[width=\textwidth]{./Bilder/NeutrinoMassOrdering.png}
+		\caption{Taken from \cite{bilenky_neutrinoless_2012}}
 		\label{fig:MassOrder}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[height=60mm]{./Bilder/TheoretischesSpektrmdes0nubbDecay.png}
+		\includegraphics[width=\textwidth]{./Bilder/TheoretischesSpektrmdes0nubbDecay.png}
 		\caption{Taken from \cite{elliott_double_2002}}
 		\label{fig:TheoSpektrum}
 	\end{minipage}
@@ -446,17 +466,17 @@ This has the advantage that the detection efficiency is maximized
 
 Since \onbb\ decay should have a very long half-life, a lot of background suppression must be used just to measure the resulting influence.
 There are three kind of background sources that have to be considered.
-\\
+
 
 The first radiation source originates from cosmic background radiation.
 A great amount of muons shower down to the earth from the atmosphere and create background in the detectors.
 Their influence can be suppressed by placing the experiment deep underground and applying a muon veto system.
-\\
+
 
 Secondly, the background from natural radioactivity.
 This is typically the dominant background source originating from radioactive isotopes which are naturally present in basically all materials.
 Its influence can be suppressed by passively shielding the detectors and the selection of low radioactive components in the setup. 
-\\
+
 
 Lastly the \twonu\ decay material itself creates background.
 Its impact on the background can not be reduced by external measures or shielding.
@@ -1814,8 +1834,9 @@ This was due to the falsely made assumption that \Kr is the only isotope in the 
 %--------------------------------------------------------------- references ----
 \backmatter
 
-\bibliography{references}
 \bibliographystyle{plain}
-
+\bibliography{references}
+\listoffigures
+\listoftables
 
 \end{document}
