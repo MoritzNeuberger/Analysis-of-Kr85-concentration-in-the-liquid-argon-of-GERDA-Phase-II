@@ -565,8 +565,9 @@ The BEGe detectors don't have a cavity.
 They have a small p$^+$ doped surface at the bottom.
 Sketches of their design can be seen in figure \ref{fig:DetcDes}.
 The detector types also differ in their mass and therefor their expected exposure per detector and energy resolution.
-The COAX detectors are generally heavier and therefor have a  then the BEGe but have therefor also a worse energy resolution.
-To compensate the fact that the BEGe detectors are generally lighter than the COAX a great amount of them are being used.
+The COAX detectors are generally heavier and therefor have a higher detector efficiency then the BEGe.
+But their higher mass also results in a worse energy resolution \cite{agostini_production_2015}.
+To compensate the fact that the BEGe detectors are generally lighter than the COAX a greater amount of them are being used.
 \\
 
 \begin{figure}[t!]
@@ -585,8 +586,9 @@ To compensate the fact that the BEGe detectors are generally lighter than the CO
 	\end{minipage}
 \end{figure}
 
-All the enriched detectors are assembled into 6 strings forming a hexagonal array together with a seventh extra string.
-This seventh string consists of three coaxial detector made of natural isotopic \nuc{Ge}{76}.
+The enriched detectors are assembled into 6 strings forming a hexagonal array together with a seventh string.
+This seventh string consists of three extra coaxial detector made of natural isotopic \nuc{Ge}{76}.
+However they are not used in GERDAs analysis.
 The string setup can be seen in figure \ref{fig:strings} and \ref{fig:stringsabove}.
 \\
 
@@ -620,18 +622,17 @@ Where the \nuc{K}{42} comes from and why its influence on the background can be 
 \label{sec:LArcoolant}
 
 These nylon in the cylinder can be read out at their ends with silicon photomultipliers (SiPM) and are part of the LAr veto setup that will be the topic of this section.
-But first a few words about the LAr itself.
 \\
 
 LAr has the property that scintillation light is produced when ionizing radiation interacts with an electron or nuclei within it \cite{olsen_improvements_nodate}.
-Incoming radiation may excite or ionize the scintillation material along its way or might have a collision with another particle which in might return ionize other particles secondarily.
-The excited atoms in a nobel liquids form dimer pairs.
-These are metastable and recombine into two stable argon atoms by the release of a vacuum ultraviolet photon (VUV).
-Depending on whether the argon atom was ionized or only excited two different mechanisms are responsible for the relaxation.
-But in the end each ionized or excited atom only produces one VUV photon.
-Nobel liquids also have the advantage that VUV light does not have enough energy to excite a ground state atom which is why the scintillation light can travel very long distances without being absorbed.
+Incoming radiation may excite or ionize the scintillation material along its way or collides with another particle which in return excites or ionizes other particles secondarily.
+The excited atoms in a nobel liquids form dimer pairs (Ar$^*_2$).
+These dimer pairs are metastable and recombine into two stable argon atoms by the release of a vacuum ultraviolet photon (VUV).
+Depending on whether the argon atom was ionized or excited two different mechanisms are responsible for the relaxation.
+But in the end each ionized or excited atom only produces one VUV photon and a direct correlation between the amount of energy deposited and the number of photons emitted can be found.
+This correlation is called the scintillation yield and argon has a value of about $4\times10^4\frac{\unit{photons}}{\unit{MeV}}$ \cite{olsen_improvements_nodate}.
+Nobel liquids also have the advantage that VUV light does not have enough energy to excite any ground state atom which is why the scintillation light can travel very long distances without being absorbed.
 Compared to other nobel gases argon has the advantage of a very low price due to it being easily obtained by liquefaction of air from the atmosphere.
-Overall a scintillation yield for argon of about $4\times10^4\frac{\unit{photons}}{\unit{MeV}}$ can be reached \cite{olsen_improvements_nodate}.
 \\
 
 \begin{figure}[t!]
@@ -652,31 +653,47 @@ Overall a scintillation yield for argon of about $4\times10^4\frac{\unit{photons
 
 Background events often deposit energy in the argon while passing through it.
 The scintillation light can therefor be used as a veto to filter out those events in which a coincidence between an event in the germanium detectors and a signal in a photomultiplier was measured.
-That is why smaller cylindrical volume around the germanium detectors is equipped with 16 photomultiplier tubes (PMT) that are situated at the bottom and at the top of this volume as well as 90 SiPM that read out any light signal travailing through the nylon strings at the side of the volume \cite{csathy_optical_2016}.
+A smaller cylindrical volume around the germanium detectors is therefor equipped with 16 photomultiplier tubes (PMT), situated at the bottom and at the top of this volume, as well as 90 SiPM that read out any light signal travailing through the nylon strings \cite{csathy_optical_2016}.
 All signals measured in the photomultipliers are digitized and read-out in the case of an event in the germanium detectors.
-The complete LAr veto setup can be seen in figure \ref{fig:LArVetoSetup}
-\\
 
 Additionally, a wavelength shifter covers all nylon fibers and PMTs.
 This shifter changes the wavelength of the LAr scintillation light from 128mn to 400nm.
 At this wavelength the PMTs have their highest quantum efficiency as well as the nylon fibers their absorption maximum.
 With this the overall detection is being increase.
+The complete LAr veto setup can be seen in figure \ref{fig:LArVetoSetup}
 \\
 
-But liquid argon is also a good coolant due to the characteristically low melting point of nobel gases.
-At normal pressure argo has its boiling point at 87.29K and its melting point 83.8K.
-The working temperature of GERDA is therefor chosen to be in between these temperature limits.
-A low termeratur is needed because every electron hole pair created in the detectors by thermal excitement creates background.
+LAr is also a good coolant due to the characteristically low melting point of nobel gases.
+At normal pressure argon has its boiling point at 87.29K and its melting point 83.8K.
+The working temperature of GERDA is therefor chosen to be right under the boiling point temperature.
+A low temperature is needed for the germanium detectors to function properly.
 \\
 
 Nobel liquids are also great as ultra radio-pure passive shielding.
 This is because nobel elements rarely make any chemical bonds due to their fully filled electron shells.
 It is therefor possible to filter the majority of impurity just by distillation.
+Compared to Xenon it has a smaller interaction cross section due to its lower Z value but it is by far cheaper.
 \\
 
-\subsection{Background Reduction}
-\label{sec:BGReduction}
+\subsection{Data processing and analysis}
+\label{sec:DataProc}
 
+As already mentioned, in the case of an event the digitized signals of the gemanium detectors and the photomultipliers are stored for further offline analysis.
+The software used for this purpose is GErda LAyouT for Input/Output (GELATIO).
+It is a data analysis framework suitable for off-line digital signal processing and analysis of data recorded by germanium detectors.
+It's advantages are its multiple level data organization and its modular digital signal processing.
+These two points leave the analysis protocol incredibly flexible.
+\\
+
+The multi-tier structure used in GELATIO can be seen in figure \ref.
+The raw data saved from the detectors and photomultipliers is stored in Tier0.
+Theoretically, at this point in the process Monte Carlo created signals can be fed to the algorithm and processed just like actually measured events.
+Tier1 has the same amount of information stored as Tier0 with the difference that it has been converted into a new encoding usable for the later analysis.
+The higher-level-tiers contain different analysis results.
+Tier2 stores the concrete output information obtained by applying the digital analysis onto the digitized signals like the uncalibrated energy and the raise time.
+Tier3 stores information extracted from Tier2 like the energy of the event and some flags.
+Tier4 also stores additional information like the pulse shape discrimination flag and further flags.
+Additional information about the analysis process can be read in \cite{a}
 
 % Mui, Mountain, Pulse shape disc.
 % especially LAr-Veto 
