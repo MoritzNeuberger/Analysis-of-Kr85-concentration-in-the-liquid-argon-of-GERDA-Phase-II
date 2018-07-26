@@ -647,7 +647,7 @@ Compared to other nobel gases argon has the advantage of a very low price due to
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/TierStructure.png}
 		\caption{}
-		\label{fig:stringsabove}
+		\label{fig:TierStructure}
 	\end{minipage}
 \end{figure}
 
@@ -685,7 +685,7 @@ It's advantages are its multiple level data organization and its modular digital
 These two points leave the analysis protocol incredibly flexible.
 \\
 
-The multi-tier structure used in GELATIO can be seen in figure \ref.
+The multi-tier structure used in GELATIO can be seen in figure \ref{fig:TierStructure}.
 The raw data saved from the detectors and photomultipliers is stored in Tier0.
 Theoretically, at this point in the process Monte Carlo created signals can be fed to the algorithm and processed just like actually measured events.
 Tier1 has the same amount of information stored as Tier0 with the difference that it has been converted into a new encoding usable for the later analysis.
@@ -693,16 +693,26 @@ The higher-level-tiers contain different analysis results.
 Tier2 stores the concrete output information obtained by applying the digital analysis onto the digitized signals like the uncalibrated energy and the raise time.
 Tier3 stores information extracted from Tier2 like the energy of the event and some flags.
 Tier4 also stores additional information like the pulse shape discrimination flag and further flags.
-Additional information about the analysis process can be found in \cite{agostini_gelatio:_2011}.
+Additional information about the analysis process can be found in \cite{agostini_gelatio:_2011} and \cite{agostini_off-line_2011}.
+\\
 
+To ensure that the filter parameters of the analysis are set without bias, all events measured in a  50keV interval around the Q-value of the \twonu\ decay were only stored without any analysis applied at all.
+Only after all parameters in the rejection process were finally defined all events from this interval analyzed will be analyzed. 
+Such a procedure is called a blinding process and the revealing of the blinded events an unblinding. 
+\\
 % Mui, Mountain, Pulse shape disc.
 % especially LAr-Veto 
 
 \subsection{Recent Results}
 \label{sec:ResultsofGERDA}
 
-Only recently there was a new unblinding of the measured events at GERDA \PII\ so far.
-Unblinding because over all of \PII\ every event with an energy in an interval of $\pm$25keV
+Only recently a new unblinding of all measured events at GERDA \PII\ so far  occured \cite{zsigmond_new_2018}.
+In it only one event in the close proximity of the Q-value was measured.
+By far too less to identify a peak at that value.
+The conclusion was therefor that no evidence for a \onbb\ decay has been seen.
+A new lower limit for \nuc{Ge}{76} was determined to be \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL).
+Currently GERDA receives an upgrade on the LAr veto and is planned to measured for untill 2020.
+After that the successor experiment LEGEND in collaboration with the MAJORANA experiment it is planned to investigate the lower limit of \nuc{Ge}{76} half life further.
 
 % what has happened so far
 
