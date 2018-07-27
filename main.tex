@@ -867,27 +867,26 @@ Compared to the COAX detectors their peaks can easily be distinguished.
 	\caption{All events measured by the respective detectors in the range of 500keV to 525keV.}
 \end{figure}
 
-Now that the two spectra of the corresponding detectors have been determined, two possible ways of how one can determine the number of measured events around the 514keV peak have to be considered.
-The easier way is to use the spectra as they are and only adjust the fit function so that it also takes the second peak into account.
-Another possible approach suppress the annihilation peak using an almost ideal filter and fit the resulting spectrum with only one Gaussian peak.
-As mentioned above the LAr Veto should be a great candidate.
-\\ 
+Now that the two spectra of the corresponding detectors have been determined, two possible ways determining the number of events in the 514keV peak have to be considered.
+One way uses the spectra as they are and only adjusts the fit function so that it also takes the second peak into account.
+
+Another possible approach suppress the annihilation peak using an almost ideal filter and fit the resulting one peak spectrum with the original fit function.
+As mentioned above the LAr Veto should be a good candidate for such a filter.
 
 In this thesis both approaches will be applied separately and later their results compared.
 Hopefully both will end up delivering the same result as no \Kr caused event should make a notable light signal.
-But its probability is not zero which is why some events of the 514keV peak might also trigger the veto.
-This would result in a smaller peak amplitude.
-From this an specific activity lower than the actual value would then be determined . 
+But this probability is not zero which is why some events of the 514keV peak might also trigger the veto.
+This would result in a smaller peak amplitude and with it a lower specific activity than the actual value. 
 Whether or not a rejection process using the LAr veto would be useful in this analysis or not is the topic of the following section.
 \\
 
 \section{Annihilation Peak Suppression}
 \label{sec:APS}
 
-Like the Muon Veto, Tier4 stores a flag with each event called "isLArVetoed".
-This flag is always triggered whenever an event in the Germanium detectors coincides with a scintillation signal of at least 0.5phe in one of the photomultipliers positioned in the LAr tank \cite{agostini_background_2017}.
-If one plots all events in which this flag has not been set into a histogram, one results in figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
-You can see that the positron electron annihilation peak can not be identified any longer while the 514keV peak seems almost unchanged.
+Like the Muon veto, Tier4 assigns a flag to each event called "isLArVetoed".
+This flag is always triggered when an event in the Germanium detectors coincides with a scintillation signal of at least 0.5phe in one of the photomultipliers in the LAr \cite{agostini_background_2017}.
+If one plots all events in which this flag has not been set into a histogram, one results spectra seen in figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
+One can see that the positron electron annihilation peak can not be identified any longer while the 514keV.
 \\
 
 \begin{figure}[t!]
@@ -924,34 +923,35 @@ You can see that the positron electron annihilation peak can not be identified a
 	\caption{All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.}
 \end{figure}
 
-In comparison, when you take only those events in which the liquid argon veto was triggered you get figure \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}.
-From those you can see that the majority of not background events that got filtered out have an energy around the 511keV mark.
-Compared to the previous figure one can clearly see in these histograms that there are also a small deviation from the background level around the 514keV marks.
-This means that some of events caused by \Kr decays must have also accidentally triggered the LAr veto.
+In order to visualize it better which events have been rejected, you can also take all those events that triggered the LAr veto (figures \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}).
+From those you can see that the majority of the filtered events had an energy around the 511keV mark.
+But one can also see from these figure that a small number of 514keV peak events have been rejected.
+This means that some of the events caused by \Kr decays must also have coincided with scintillation light.
 \\
 
-It is therefor of interest to investigate how many of the \Kr decay caused events were falsely rejected and whether it is possible to recover them.
-The absolute number of events filtered out by the liquid argon veto in the energy range of 509 to 519 keV is 1728.
-This number is way too big to look at every individual case.
+Because the line count would in this case be smaller than in the unfiltered case it is of interest to investigate whether some of the \Kr decay caused events might be possible to recover.
+The absolute number of events filtered out by the LAr veto in the energy range of 509 to 519 keV is 1728.
+This number is too big to look at every individual case manually.
 \\
 
-Luckily, the excited \nuc{Rb}{85m} state has a half life of 1.015 \(\unit{\mus}\).
+Luckily, the excited \nuc{Rb}{85m} state has a half life of 1.015 \(\unit{\mu s}\).
 This means that one should be able to measure pre-coincedence events of the beta creating scintillation light before the germanium detector event.
 This way one can hopefully identify the majority of events created by \Kr decays over the rest of the filtered signals.
-\todo{hier}
-To do this, we have to limit the events used for our investigation to those events that have a negative time difference between these two events respective to the Germanium detector signal.
-The time difference for each individual liquid argon events is already analyzed and stored in the vector $"$triggerLAr$"$ of the tier 3 data set.
-This vector has the same number of dimensions as there are photomultipliers and every entry is indexed with the corresponding input channel of the respective photomultiplier.
-The entries of this vector are again vectors themselves storing the time difference for every signal that triggered the liquid argon veto in the corresponding channel.
-Since the events are listed in ascending order and we are interested in the first trigger event of the photomultiplier, we use only the first entry of this inner vector here for simplicity reasons.
-From now on we only use events in which at least one photomultiplier measured a negative time difference.
+For this purpose, the events used for the investigation must be limited to those that have a negative time difference between the germanium events and the photomultiplier signal.
+The time difference for each individual liquid argon events is already analyzed and stored in the vector $"$triggerLAr$"$ of the Tier3 data set.
+This vector has the same number of dimensions as photomultipliers and each entry is indexed with the corresponding input channel of one.
+The entries of this vector are again vectors that store the time difference for each signal that triggered the LAr veto in the corresponding channel.
+Since only the earliest trigger event of the photomultiplier is of interest for the analysis,  for reasons of simplicity only the first entry of this internal vector will be used as they are ordered in ascending order.
+From this point, only events where at least one photomultiplier has measured a negative time difference are used for the recovery analysis.
 \\
 
-In addition, we also know that the energy of the released beta electron is relatively low.
-This means that we can expect that only a small number of photomultipliers will measure a signal of a \Kr decay if any at all.
-In the case of a measured signal we will only use those events that have a maximum of four different triggered photomultipliers.
-Allowing events with a maximum of four different triggered photomultipliers is already a lot for a \Kr decay. 
-But we wanted to do a more detailed manually investigation later anyways which is why the filter can be a little coarser here.
+In addition, as already mentioned earlier, the energy of the released beta electron is very low.
+This means that one can expect from a \Kr decay into an excited state of \nuc{Rb}{85m} that only a small number of photomultipliers should measure a signal.
+This is because the effective scintillation yield of the GERDA setup is about 60 phe/MeV.
+With a mean energy of 47.65keV one can expect that to measure 1 to 4 photons per decay.
+Therefore, only events with a maximum of four different triggered photomultipliers are used in the further analysis.
+This amount of coincedently triggered photomultiplier leaves still a lot of events.
+But due to the fact that later in the analysis a manually investigation into the individually measured events will be performed the filter can be a little coarser here.
 \\
 
 \begin{figure}[t!]
@@ -964,16 +964,15 @@ But we wanted to do a more detailed manually investigation later anyways which i
 		All liquid argon filtered events with a negative time difference between the event in the Germanium detector and a signal in the photomultipliers in the liquid argon tank.
 	}
 \end{figure}
-
-If you apply these two restrictions to the liquid argon filtered events and only take those photomuliplier signals with a signal strength of at least 0.5 phe you get a distributions as seen in figure \ref{fig:Trigger4}.
-We are only interested in the signals that measured at least 0.5 phe because, as mentioned above, this is the necessary intensity to trigger the LAr veto making them the signals of interest. 
+Applying these two restrictions to the LAr veto filtered events and from those  only using those photomultiplier events with a signal strength of at least 0.5 phe results in a distribution as shown in Figure \ref{fig:Trigger4}.
+Only the signals that have measured at least 0.5 phe are of interest because they have had the necessary intensity to trigger the LAr veto. 
 The x axis is the time difference of the events in the photomultipliers from the signal measured in one of the Germanium detectors.
 Theoretically it should now be possible to see a exponential increase from the negative scale towards a vanishing time difference.
-But because of the small number of events however, it is almost impossible to make any statements about the course of these events.
+But due to the small number of events, it is basically impossible to make any statements about the course of these events.
 \\
 
-Nevertheless we were able to lower the number of potential 514keV photons from \Kr decay events from 1728 down to only 55.  
-These remaining events can now be manually examined with a software called GerLa written by GERDA employees.
+Nevertheless, the number of events of interest was reduced from 1728 to only 55.  
+These remaining events can now be manually examined with a software called GerLa.
 This tool allows you to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around the time frame of this event.
 \\
 
