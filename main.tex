@@ -707,7 +707,7 @@ Such a procedure is called a blinding process and the revealing of the blinded e
 \label{sec:ResultsofGERDA}
 
 Only recently a new unblinding of all measured events at GERDA \PII\ so far  occured \cite{zsigmond_new_2018}.
-In it only one event in the close proximity of the Q-value was measured.
+In it only one event in the close proximity of the Q-value was measured as seen in figur \ref{fig:GerdaErgebnisse}.
 By far too less to identify a peak at that value.
 The conclusion was therefor that no evidence for a \onbb\ decay has been seen.
 A new lower limit for \nuc{Ge}{76} was determined to be \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL).
@@ -724,6 +724,24 @@ After that the successor experiment LEGEND in collaboration with the MAJORANA ex
 
 \Kr has a mass number of A = 85 and an atomic number of 36.
 Krypton is a noble gas 
+
+\begin{figure}[t!]
+	\centering
+	\begin{minipage}{.30\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/GerdaErgebnisse.png}
+		\caption{Taken from \cite{zsigmond_new_2018}}
+		\label{fig:GerdaErgebnisse}
+	\end{minipage}%
+	\begin{minipage}{.70\textwidth}
+		\centering
+	\includegraphics[width=.5\textwidth]{./Bilder/Kr85Decay.png}
+	\label{fig:Decay}
+	\caption{
+		Taken from \cite{noauthor_decay_nodate}
+	}
+	\end{minipage}
+\end{figure}
 
 \begin{figure}[t!]
 	\centering
@@ -964,23 +982,22 @@ But due to the fact that later in the analysis a manually investigation into the
 		All liquid argon filtered events with a negative time difference between the event in the Germanium detector and a signal in the photomultipliers in the liquid argon tank.
 	}
 \end{figure}
-Applying these two restrictions to the LAr veto filtered events and from those  only using those photomultiplier events with a signal strength of at least 0.5 phe results in a distribution as shown in Figure \ref{fig:Trigger4}.
-Only the signals that have measured at least 0.5 phe are of interest because they have had the necessary intensity to trigger the LAr veto. 
+Applying these two restrictions to the LAr veto filtered events and using from those only those photomultiplier events with a signal strength of at least 0.5 phe results in a distribution as shown in Figure \ref{fig:Trigger4}.
+Only the signals that have measured at least 0.5 phe are of interest because they had the necessary intensity to trigger the LAr veto. 
 The x axis is the time difference of the events in the photomultipliers from the signal measured in one of the Germanium detectors.
-Theoretically it should now be possible to see a exponential increase from the negative scale towards a vanishing time difference.
+Theoretically it should be possible to see a exponential increase from the negative scale towards a vanishing time difference.
 But due to the small number of events, it is basically impossible to make any statements about the course of these events.
 \\
 
 Nevertheless, the number of events of interest was reduced from 1728 to only 55.  
 These remaining events can now be manually examined with a software called GerLa.
-This tool allows you to search for a specific event and see all recorded signals of the Germanium detectors and the photomultipliers around the time frame of this event.
+This tool allows one to search for a specific events and see all recorded signals of the Germanium detectors and the photomultipliers around the time frame of this event.
 \\
 
-With this program one can now perform a manual filter by looking at the remaining 55 events individually and perform a specific procedure to determine whether they are signals from a \Kr decay or not.
-This procedure consists of filtering out every event that has a combined light intensity of over 5 phe and every event that only has a negative time difference in a signal weaker than 0.5 phe.
-The upper limit of the light intensity comes from the fact that the mean kinetic energy of the electron released from the decay is 47.65keV.
-With an effective scintillation yield of the whole setup of about 60 phe/MeV one can expect about 2.5 photons from a mean beta electron. 
-It can then be assumed that the predominant part of all betas released in the investigated decay only emit 5 photons at best.
+With this program one can now perform a manual filter.
+This can be done by looking at the remaining 55 events individually and decide whether to reject an event or not using a specific protocol.
+This protocol consists of rejecting every event that has a combined light intensity of over 5 phe and every event that only has a negative time difference in a signal weaker than 0.5 phe.
+The upper limit of the light intensity originates again from the expected number of photons as described earlier.
 \\
 
 \begin{figure}[t!]
@@ -995,27 +1012,29 @@ It can then be assumed that the predominant part of all betas released in the in
 	}
 \end{figure}
 
-At this point we realized that this procedure does not really work as well as we hoped it would.
-From the remaining 55 only a few events really were unambiguous enough that one could claim that they are the photons we expected.
-After this much filtering we can assume that probably all of these events are in fact caused by a \Kr decays.
-Signals like the one shown in figure \ref{fig:Trigger4} are a rare example of an almost model signal that we wanted to see.
-The great majority of other events were either background events in the SiPM that randomly triggered the LAr veto or their measured signal was too strong.  
-\\
+While going through each of the 55 events, it quickly was realized that this procedure does not work as well as we hoped it would.
+From the remaining 55 only a handful of events were unambiguous enough that one can claim that the photons must originate from expected beta electron.
+After this much filtering it can assume the few that were found are probably all in fact caused by a \Kr decays.
+Signals like the one shown in figure \ref{fig:Trigger4} are a rare example of an almost model signal that were expected to be measured.
+The great majority of other events were either background events in the SiPM that seem to randomly triggered the LAr veto or the combined signal strength was much higher than 5 phe\\
 
-With this it was now determined that the majority of events with a negative time difference are in fact not caused by a \Kr decay.
-This means that the remaining \Kr decay events must have a positive time difference.
-But it is practically impossible to recover them from there due to the great amount of individual events that have to be looked at.
+This leads to the conclusion that the majority of signals in the photomultiplier with a negative time difference were in fact not caused by the beta electrons scintillation light but rather coincidences with other signals.
+This means it is practically impossible to recover any of them with the process presented here.
+
 Our recovery attempt has therefor failed.
 \\
 
 Nevertheless we are still able to make some qualitative estimations about why approach did not work. 
-The major problem seems to be that the majority of events detected with a negative time difference are background events.
-This conclusion came from the fact that almost none of the events investigated have shown the expected features we expected from them. 
-That the majority of the negative time difference photomultiplier events seem to be background noise is also underlined by the fact that most of these were detected in the PMT. 
-As it will be seen in the next chapter, basically all of the decays that created a measurable 514keV event have happend in the vicinity of the detectors themselves an therefor mostly in between the arrays.
-The detectors themselves should already block the light of the scintillation relativly strongly but when a photon is detected in a photomultiplier it would most likely be a SiPM.
-This is because the fibers surrounding  the germanium detectors are more likely to absorb and guide the scintillation light to the SiPM than a photon to reach a PMT above or below the detector arrays.
+The problem of this recovery attempt seems to be that the majority of events detected with a negative time difference are in fact background events.
+This conclusion came from the fact that almost none of the events investigated have shown the features we expected from them.
+
+An indicator for this can be seen in the fact that the majority of light signals have been measured in the PMTs.
+As it will be shown in section \ref{sec:MonteCarlo514}, basically all of the decays that created a measurable 514keV event have happened in the vicinity of the detectors.
+The detectors themselves should already block some of the light but when a photon is detected in a photomultiplier it would most likely be a SiPM.
+This is because the nylon fibers surrounding the germanium detectors are more likely to absorb and guide the scintillation light to the SiPM than a photon to reach a PMT above or below the detector arrays.
 Now that the majority of the detected light events are measured in the PMTs it is very unlikely that these are caused by a \Kr decay.
+
+That the majority of the 
 This might also be able to be seen from figure \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}.
 In those all filtered out events are shown over the measured energy.
 From it we first saw that the liquid argon veto also filtered out the wanted 514keV events.
