@@ -39,10 +39,10 @@
 % Die Metadaten der Abschlussarbeit werden auf dem Deckblatt gedruckt und
 % in dem PDF eingetragen.
 \subject{Abschlussarbeit im Bachelorstudiengang Physik}
-\title{Titel der Abschlussarbeit}
+\title{Analysis of Kr85 concentration in the liquid argon of GERDA Phase II}
 %\subtitle{\foreignlanguage{british}{Title in English}}
 \author{Moritz Neuberger}
-\date{31.~Juli 2011}
+\date{8.~August 2018}
 %\cooperators{Max-Planck-Institut für Physik}
 
 % Auf der Rückseite des Deckblatts können Themensteller, Zweitgutachter 
@@ -443,7 +443,7 @@ From these three masses it is theoretically possible to determine the Majorana p
 
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{.419249532\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/NeutrinoMassOrdering.png}
 		\caption{Taken from \cite{bilenky_neutrinoless_2012}}
@@ -483,14 +483,14 @@ Its impact on the background can not be reduced by external measures or shieldin
 However, by using a detector with high energy resolution or a decay material of high Q-value its influence can be suppressed.
 \\
 
-\nuc{Ge}{76} is an ideal material for the \onbb\ search due to it being a semiconductor.
+\nuc{Ge}{76} is an ideal material for the \onbb\ decay search due to it being a semiconductor.
 It can therefor be also used as the detector material itself.
-A disadvantage of \nuc{Ge}{76} is the low Q-value of $Q_{\beta\beta} = 2039\unit{keV}$, which is lower than \nuc {Tl}{208}'s and \nuc{Bi}{214}'s end point energy.
+A disadvantage of \nuc{Ge}{76} is its low Q-value of $Q_{\beta\beta} = 2039\unit{keV}$, which is lower than \nuc {Tl}{208}'s and \nuc{Bi}{214}'s end point energy.
 It is also hard to increase the target volume compared to e.g. \nuc{Xe}{136}.
-But it can only be operated at cryogenic temperatures.
+Also it can only be operated at cryogenic temperatures.
 Otherwise it will not function properly.
 Its advantage however is its ability to be made with great intrinsic radio-purity, its high energy resolution and its high detection efficiency.
-These facts outweigh the disadvantages which is why it already has a history for being used as decay material and why it will be used in GERDA.
+These facts outweigh the disadvantages which is why it already has a long history for being used as decay material and why it was chosen for the GERDA experiment.
 \\
 
 %\nuc{Ge}{76} has a long history of use as decay material in \onbb\ experiments, most notably in the Heidelberg-Moscow(HdM) and the IGEX experiments.
@@ -727,7 +727,7 @@ Krypton is a noble gas
 
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.30\textwidth}
+	\begin{minipage}{.50\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/GerdaErgebnisse.png}
 		\caption{Taken from \cite{zsigmond_new_2018}}
@@ -735,23 +735,12 @@ Krypton is a noble gas
 	\end{minipage}%
 	\begin{minipage}{.70\textwidth}
 		\centering
-	\includegraphics[width=.5\textwidth]{./Bilder/Kr85Decay.png}
+	\includegraphics[width=.44\textwidth]{./Bilder/Kr85Decay.png}
 	\label{fig:Decay}
 	\caption{
 		Taken from \cite{noauthor_decay_nodate}
 	}
 	\end{minipage}
-\end{figure}
-
-\begin{figure}[t!]
-	\centering
-	\ifmakefigures%
-	\includegraphics[width=.5\textwidth]{./Bilder/Kr85Decay.png}
-	\fi%
-	\label{fig:Decay}
-	\caption{
-		Taken from \cite{noauthor_decay_nodate}
-	}
 \end{figure}
 % where does it come from?
 % what properties does it have?
@@ -828,16 +817,17 @@ The rest of the chapter will cover the concrete implementation of the individual
 \section{Preparing the spectrum}
 
 As it was stated above, to determine the amount of measured 514keV photons a fit has to be applied onto the 514keV peak. 
-But before the measured spectrum can be used for further analysis some filters have to be applied first.
+But before the measured spectrum can be used for further analysis it is helpful to lower the background level to better of the spectrum to identify the peak better.
+This can be done by using suitable filters.
 These filters should reject any event of which we can say that they can not be caused by a \Kr decay.
-Two very appropriate filters for this purpose are the Muon Veto and the detector anti-coincidence veto.
-How exactly these two filters are used in this analysis will now be discussed.
+Two very appropriate filters for this purpose are the Muon veto and the detector anti-coincidence veto.
+How exactly these two filters work and how they are used in this analysis will now be discussed.
 \\
 
 As it was elaborated in section \ref{sec:DataProc} all GERDA data is stored in a multi-tier data structure. 
 In this thesis only the data from tier 3 or tier 4 will be used.
 On these two levels a lot of analysis has already been done on the original data. 
-As part of the Muon veto, each event in tier 3 and 4 was given a flagwhether or not aat the same time asignal in one of the photomultiplier in the water tank was detected. 
+As part of the Muon veto, each event in tier 3 and 4 was given a flag whether or not at the same time a signal in one of the photomultiplier in the water tank was detected. 
 Due to the low kinetic energy of the beta electron of the specific \Kr decay in a non background event the Muon Veto flag should not be trigged.
 It can therefor be used to lower the amount of background events in the investigated energy area.
 \\
@@ -902,7 +892,7 @@ Whether or not a rejection process using the LAr veto would be useful in this an
 \label{sec:APS}
 
 Like the Muon veto, Tier4 assigns a flag to each event called "isLArVetoed".
-This flag is always triggered when an event in the Germanium detectors coincides with a scintillation signal of at least 0.5phe in one of the photomultipliers in the LAr \cite{agostini_background_2017}.
+This flag is always triggered when an event in the Germanium detectors coincides with a scintillation signal of at least 0.5 phe in one of the photomultipliers in the LAr \cite{agostini_background_2017}.
 If one plots all events in which this flag has not been set into a histogram, one results spectra seen in figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
 One can see that the positron electron annihilation peak can not be identified any longer while the 514keV.
 \\
@@ -941,9 +931,9 @@ One can see that the positron electron annihilation peak can not be identified a
 	\caption{All events measured by the respective detectors with the LAr filter applied in the range of 500keV to 525keV.}
 \end{figure}
 
-In order to visualize it better which events have been rejected, you can also take all those events that triggered the LAr veto (figures \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}).
-From those you can see that the majority of the filtered events had an energy around the 511keV mark.
-But one can also see from these figure that a small number of 514keV peak events have been rejected.
+In order to have a better visualization which events have been rejected, one can now also take all events that triggered the LAr veto and make a plot (figures \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}).
+From those you can see that the majority of the filtered events had an energy around the 511 keV mark.
+But one can also see from these figure that a small number of 514 keV peak events have been rejected.
 This means that some of the events caused by \Kr decays must also have coincided with scintillation light.
 \\
 
@@ -1005,7 +995,7 @@ The upper limit of the light intensity originates again from the expected number
 	\ifmakefigures%
 	\includegraphics[width=100mm]{./Bilder/BeispielSignal.pdf}
 	\fi%
-	\label{fig:Trigger4}
+	\label{fig:BeispielSignal}
 	\caption{
     The recorded signal of the photomultiplier tube P4 from the event with event number 1614036. !!!!!Hier noch was zu den Achsen!!!!!. 
     The blue bar represents the moment in time in which a signal in the Germanium detector was measured.
@@ -1015,16 +1005,16 @@ The upper limit of the light intensity originates again from the expected number
 While going through each of the 55 events, it quickly was realized that this procedure does not work as well as we hoped it would.
 From the remaining 55 only a handful of events were unambiguous enough that one can claim that the photons must originate from expected beta electron.
 After this much filtering it can assume the few that were found are probably all in fact caused by a \Kr decays.
-Signals like the one shown in figure \ref{fig:Trigger4} are a rare example of an almost model signal that were expected to be measured.
-The great majority of other events were either background events in the SiPM that seem to randomly triggered the LAr veto or the combined signal strength was much higher than 5 phe\\
+Signals like the one shown in figure \ref{fig:BeispielSignal} are a rare example of an almost model signal that were expected to be measured.
+The great majority of other events were either background events in the SiPM that seem to randomly triggered the LAr veto or the combined signal strength was much higher than 5 phe.\\
 
 This leads to the conclusion that the majority of signals in the photomultiplier with a negative time difference were in fact not caused by the beta electrons scintillation light but rather coincidences with other signals.
 This means it is practically impossible to recover any of them with the process presented here.
 
-Our recovery attempt has therefor failed.
+The recovery attempt has failed.
 \\
 
-Nevertheless we are still able to make some qualitative estimations about why approach did not work. 
+Nevertheless we are still able to make some qualitative estimations about why approach might not have worked. 
 The problem of this recovery attempt seems to be that the majority of events detected with a negative time difference are in fact background events.
 This conclusion came from the fact that almost none of the events investigated have shown the features we expected from them.
 
@@ -1034,13 +1024,12 @@ The detectors themselves should already block some of the light but when a photo
 This is because the nylon fibers surrounding the germanium detectors are more likely to absorb and guide the scintillation light to the SiPM than a photon to reach a PMT above or below the detector arrays.
 Now that the majority of the detected light events are measured in the PMTs it is very unlikely that these are caused by a \Kr decay.
 
-That the majority of the 
-This might also be able to be seen from figure \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}.
-In those all filtered out events are shown over the measured energy.
-From it we first saw that the liquid argon veto also filtered out the wanted 514keV events.
-But from it we can also see, that the ratio of events filtered out at the 514keV mark over the non filtered value [$N_{\unit{vetoed}}(514\unit{keV})/N_{\unit{unfilered}}(514\unit{keV})]$ is about the same size as in a non peak area whereas the positron electron peak shows much higher ratio.
-Considering this the peak probably came to be because the same relative amount of events have their liquid argon veto triggered because of background events.
-It is therefor rather questionable whether the liquid argon veto is even a good filter to use when it also filters out events in which background can trigger the veto too.
+%That the majority of the 
+%This might also be able to be seen from figure \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}.
+%From them one was able to see that the LAr veto also filtered out some of the 514keV line events.
+%But from it can also be seen, that the ratio of events filtered out at the 514keV mark over the non filtered value [$N_{\unit{vetoed}}(514\unit{keV})/N_{\unit{unfilered}}(514\unit{keV})]$ is of about the same size as in the background area whereas the positron electron peak shows much higher ratio.
+%Considering this the peaks in \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX} probably came to be  due to the same relative amount of events have their liquid argon veto triggered because of background events.
+Because of this it is rather questionable whether the LAr veto is even a good identifier to use when it also filters out events in which background can trigger the veto.
 A satisfactory answer however will only be available through a quantitative analysis which will be performed in the following chapter.
 \\
 
