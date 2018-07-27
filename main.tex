@@ -722,9 +722,6 @@ After that the successor experiment LEGEND in collaboration with the MAJORANA ex
 \section{\Kr isotope}
 \label{sec:Kry85}
 
-\Kr has a mass number of A = 85 and an atomic number of 36.
-Krypton is a noble gas 
-
 \begin{figure}[t!]
 	\centering
 	\begin{minipage}{.50\textwidth}
@@ -742,6 +739,30 @@ Krypton is a noble gas
 	}
 	\end{minipage}
 \end{figure}
+
+\Kr has a mass number of A = 85 and an atomic number of Z = 36.
+Krypton is a noble gas and therefor hardly forms bonds with other atoms.
+This isotope decays via a $\beta^-$-decay into \nuc{Rb}{85} and in its ground state it has a half life of 10.756 yr \cite{singh_nuclear_2014}.
+\Kr's $\beta$-decay has three different transitions, but most of the time only two of them are actually active (as seen in figure \ref{fig:Decay}).
+The transition with the highest probability (99.563$\%$) has its final state in the ground state of \nuc{Rb}{85} with a Q-value of 687keV.
+The second most probable transition (0.434$\%$) goes into an excited state of 514keV above the ground state with a Q-value of 173keV.
+This excited state has a half life of 1.015 $\unit{\mu s}$ and in basically all cases it relaxes directly into the ground state by emitting a photon of 514keV energy. 
+A third transition into another excited \nuc{Rb}{85m} is possible but its probability is in the order of $10^{-7}$ which is why it can be neglected. 
+\\
+
+Due to the fact that we are interested in \Kr in the argon extracted from the atmosphere, it is of interest to find out how it got there.
+There are various different sources how the \Kr can get there.
+It can be created in the atmosphere naturally by an interaction of \nuc{Kr}{84} with cosmic rays.
+In equilibrium an activity of 0.09PBq in the whole atmosphere originates from these cosmogenic isotopes.
+However, the production of \Kr from nuclear fission generates an atmospheric inventory about four orders of magnitude higher than the cosmic ray production.
+\Kr can be created in the neutron induced fission of \nuc{U}{235} and \nuc{Pu}{239}.
+A small amount is again natural produced from the uranium deposit in earth's crust.
+But the majority is man made from nuclear power plants and research reactors.
+Due to the higher amount of nuclear power plants build in the last fifty years the activity of \Kr in the atmosphere has risen steadily.
+
+
+
+
 % where does it come from?
 % what properties does it have?
 % why is it important to calculate its influence on GERDA
@@ -1030,38 +1051,38 @@ Now that the majority of the detected light events are measured in the PMTs it i
 %But from it can also be seen, that the ratio of events filtered out at the 514keV mark over the non filtered value [$N_{\unit{vetoed}}(514\unit{keV})/N_{\unit{unfilered}}(514\unit{keV})]$ is of about the same size as in the background area whereas the positron electron peak shows much higher ratio.
 %Considering this the peaks in \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX} probably came to be  due to the same relative amount of events have their liquid argon veto triggered because of background events.
 Because of this it is rather questionable whether the LAr veto is even a good identifier to use when it also filters out events in which background can trigger the veto.
-A satisfactory answer however will only be available through a quantitative analysis which will be performed in the following chapter.
+A satisfactory answer however will only be able to obtain through a quantitative analysis which will be performed in the following chapter.
 \\
 
 \section{Fitting}
 \label{sec:Fitting}
 
-Our strategy to calculate the activity of \Kr through the 514keV peak involves determining the absolute amount of measured \Kr decays events over all of \PII.
-Due to the still enormous amount of events from other sources that can not be suppressed, for example the \nuc{Ge}{76} decays, it is necessary to fit the 514keV peak with a suitable fit function.
-The amount of measured \Kr decay events can then be calculated by integrating over the found fit function and dividing by the probability of the specific decay into \nuc{Rb}{85m}.
+Now that the spectra for the two different approaches have been obtained the fitting process can be applied.
+Due to the still enormous amount of events from other sources, for example the \nuc{Ge}{76} decays, that can not be suppressed, it is necessary to fit the 514keV peak while also considering the background.
+When the fit parameter are then obtained the amount of measured \Kr decay events can then be calculated by integrating over the isolated Gauss function.
 \\
 
-The not liquid argon filtered spectrum \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show two peaks.
+The not LAr filtered spectrum \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} shows two peaks.
 This requires the fit function to include two Gaussian functions from which only the parameters of the second peak will then be analyzed.
 Additionally to the two Gaussian peaks a constant and an exponential background function will be added.
-When looking at the not liquid argon filtered spectra again we can see that over the course of the displayed interval no real change in count rate over energy can be seen (see figure \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX}).
-But theoretically we expect the distribution of the germanium events to behave like its phase-space function and therefor change with energy.
-It is therefor necessary to also consider this change in count rate over energy in the fit function.
-The phase-space function of \nuc{Ge}{76} is very complex however.
-In this case however is the energy interval relatively small compared to the complete spectrum of \nuc{Ge}{76}.
+When looking at the not LAr veto filtered spectra again we can see that over the course of the displayed interval no real change in count rate of the background can be seen (see figure \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX}).
+But theoretically one can expect the count rate to behave like the phase-space function of \Kr and therefor change with energy.
+So it is necessary to also consider this change in count rate over energy in the fit function.
+The phase-space function of \nuc{Ge}{76} is very complex.
+In this case however the energy interval is relatively small compared to the complete spectrum of \nuc{Ge}{76}.
 This allows the approximation that its phase-space function changes like an exponential decrease due to the general form of the measured spectrum in this energy range.
 The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
 \\
 
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi}\mathrm{C}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\frac{1}{\sqrt{2\pi}\mathrm{F}}\exp\left(-\frac{(x-\mathrm{E})^2}{2\mathrm{F}^2}\right) + \mathrm{G}\exp\left(\mathrm{H}x\right) + \mathrm{I}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi}\mathrm{C}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\frac{1}{\sqrt{2\pi}\mathrm{F}}\exp\left(-\frac{(x-\mathrm{E})^2}{2\mathrm{F}^2}\right) + \mathrm{G}\exp\left(-\mathrm{H}x\right) + \mathrm{I}
 \label{equ:FitNoFilters}
 \end{equation}
 \\
 
-In the course of the fitting process it has to be mentioned that some fitness parameters have only been left free for rather small interval.
-Most notably the values C and F, being the variances of two Gaussian peaks, were each only left free on a very small range around the values derived from the resolutions of the detectors at their specific energies (see appendix section \ref{sec:ResDetermination}).
-When you apply the fit function to the two different spectra of the two kinds of detectors you get the graphs displayed in figure \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX}.
+In the course of this fitting process it has to be mentioned that some fitness parameters have only been left free for rather small interval.
+Most notably the values C and F, being the variances of two Gaussian peaks, were each only free on a very small range around the expected values derived from the resolutions of the detectors at the specific energies (see appendix section \ref{sec:ResDetermination}).
+When applying the fit function to the two different spectra one gets the graphs displayed in figure \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX}.
 The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}. 
 \\
 
@@ -1086,29 +1107,30 @@ The resulting fit parameters are listed in table \ref{tab:FitParNoFilter}.
 \end{figure}
 \\
 
+
 \begin{figure}[t!]
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|l|c|c|}
 \hline
-Name	& Value [BEGes] & Valuse [COAX]\\ 
+Name	& Value [BEGes] & Values [COAX]\\ 
 \hline
-A  &	(16.384684 \(\pm\)	4.229890	)&	(29.842 \(\pm\)	3.968)	\\	
+A [counts / 0.2 keV] &	(15.98 \(\pm\)	4.54	)&	(31.93\(\pm\)	7.08)	\\	
 \hline
-B  &	(510.689545  \(\pm\)	0.275479	)&	(510.750 \(\pm\)	0.265)\\	
+B [keV] &	(510.87 \(\pm\)	0.22	)&	(510.88 \(\pm\)	0.190)\\	
 \hline
-C  &	(0.952063 \(\pm\)	0.010154	)	&	(1.564 \(\pm\)	0.236	)	\\
+C [keV] &	(0.952 \(\pm\)	0.011	)	&	(1.165 \(\pm\)	0.010	)	\\
 \hline
-D  &	(36.757652 \(\pm\)	4.743389)	&	(20.463 \(\pm\)	3.279	)	\\
+D [counts / 0.2 keV] &	(36.66 \(\pm\)	4.99)	&	(30.40 \(\pm\)	5.24	)	\\
 \hline
-E  &	(513.923462 \(\pm\)	0.153953	)	&	(513.858 \(\pm\)	0.213)	\\
+E [keV] &	(513.95 \(\pm\)	0.16	)	&	(513.87 \(\pm\)	0.14)	\\
 \hline
-F  &	(0.952731 \(\pm\)	0.011750	)	&	(1.017 \(\pm\)	0.173	)	\\
+F [keV] &	(0.953 \(\pm\)	0.014	)	&	(1.145 \(\pm\)	0.012	)	\\
 \hline
-G  &	(21.714308 \(\pm\)	0.432063)	&	(13.123 \(\pm\)	0.289	)	\\
+G [counts / 0.2 keV] &	(11.98 \(\pm\)	5.27)	&	(11.35 \(\pm\)	7.45	)	\\
 \hline
-H  &	(-224175.656250 \(\pm\)	0.000424)	&	(-384995.062 \(\pm\)	2.592)	\\
+H [counts / 0.2 keV] &	(189.92 \(\pm\)	110.05)	&	(996.72 \(\pm\)	972.62)	\\
 \hline
-I  &	(-0.655847 \(\pm\) 0.399776)	&	(-40.573 \(\pm\)	1.414)\\
+I [1/keV] &	(5.80 \(\pm\) 1.22)$\times10^{-3}$	&	(9.24 \(\pm\)1.83)$\times10^{-3}$ \\
 \hline
 
 \end{tabular}
@@ -1119,25 +1141,26 @@ I  &	(-0.655847 \(\pm\) 0.399776)	&	(-40.573 \(\pm\)	1.414)\\
 
 
 
-The only values of these fit parameters that is of real interest for the determination of the activity is variable D.
+The only values that is of real interest here is variable D.
 Its value is the amplitude of the second Gaussian peak.
-Because the Gaussian peak was chosen in the normalized form this value also represents the amount of \Kr decays measured per binning of the histogram.
-But we only want the amount of counts in the peak independently of the binning of the histogram.
-We therefor have to multiply these values with $\frac{1}{0.2}\unit{keV}$.
-Finally, we can conclude that in the BEGes an amount of !!!!! events was measured and in the COAX detectors a number !!!!! of events.
+Because the Gaussian peak was already chosen in the normalized form this value also represents the amount of \Kr decays measured per binning of the histogram.
+From this value one can determine the actual kine count $N_{peak}$ by dividing by the binning factor $\frac{1}{0.2 \unit{keV}}$.
+Finally, we can conclude that in the BEGes an amount of $N_{peak,BEGe} = (183\pm25)$ counts was measured and in the COAX detectors  $N_{peak,COAX} = (152\pm26.2)
+$ of events.
 \\
 
 
-From the fit parameter value H and I we can also see that as expected the change of the background over the inspected energy interval is neglactable.
+From fit parameter value H and I one can also see that as expected the change of the background over the inspected energy interval is negligible.
 Parameter I defines the change in energy and its value so small that the exponential function in the range that is investigated in has no real impact on the overall fit function.
-But as mentioned before it would have been wrong to leave out the fit functions possibility to change over energy because otherwise it might have ruined our whole fitting process. 
+But as mentioned before it might have been problematic to leave out the fit functions possibility to change over energy.
+Otherwise it might have ruined our whole fitting process. 
 \\
 
 
-After finding the fit parameter for the not liquid argon filtered spectrum we now go to the filtered spectrum.
-As mentioned above we can assumed that the positron electron annihilation peak is fully suppressed.
-Additionally in the ideal case, that the majority of all \Kr decay events got through the liquid argon filter, we expect the amplitude of the Gaussian peak to be similar to the amplitude in the not liquid argon filtered case.
+Now to the LAr veto filtered spectrum.
+As mentioned above one can assumed that the positron electron annihilation peak is fully suppressed.
 Therefor only one Gaussian peak has to be fitted together with the background function.
+Additionally in the ideal case, that the majority of all \Kr decay events got through the LAr veto, one can expect the amplitude of the Gaussian peak to be equal to the amplitude of the not LAr veto filtered case.
 The fit results in the function displayed in equation \ref{equ:FitFilters}.
 \\ 
 
@@ -1147,13 +1170,13 @@ The fit results in the function displayed in equation \ref{equ:FitFilters}.
 \end{equation}
 \\
 
-After applying the fit to the spectra seen in figure \ref to \ref, you get the fit parameters displayed in table \ref.
+When applying the fit to the spectra the resulting plots can be seen in figure \ref{fig:FitLArVetoBEGes} to \ref{fig:FitLArVetoCOAX} and the resulting fit parameters in table \ref.
 As above, the amplitude A of the Gaussian peak correspond to the number of events measured in the area of the peak per binning.
-This results in an amount of !!!! for the BEGe and !!!!! for the COAX spectrum.
-As mentioned above these values are only planned to be a crosscheck for the not argon filtered values. 
-Compared to those values, it can be seen that the number of events in the BEGe and in the COAX detectors has dropped considerably.
-This means that some of the \Kr decay events must have been filtered out and a recovery of these falsely filtered \Kr decays is necessary.
-But due to that not being possible we can not use those results in our analysis nor for a real crosscheck..
+This results in an amount of $(120\pm19.3)$ counts for the BEGe and $(128\pm22.1)$ for the COAX spectrum.
+As mentioned above the second approch was planned to be a crosscheck for the not LAr veto filtered values. 
+Compared to those values however, it can be seen that the number of counts in the BEGe and in the COAX detectors have dropped considerably.
+This means that quite a few  \Kr decay events must have been filtered out and a recovery of these falsely filtered \Kr decays would be necessary.
+But due to that not being possible those results can not be used in further course of this analysis.
 \\
 
 \begin{figure}[t!]
@@ -1196,18 +1219,16 @@ But due to that not being possible we can not use those results in our analysis 
 	\captionof{table}[]{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
 \end{figure}
 
-Now that we have a number of the special \Kr events measured in the respective detectors.
-But what we need for the determination of the activity is not the amount of measured events but actually the amount of \Kr decays in the whole liquid argon tank.
-Luckily we can calculate the amount of actual events in the liquid argon tank by determining the detector efficiency of the two detector types.
-This can be done by running a Monte Carlo simulation simulating a great amount of 514keV photon emissions in a cylindrical volume with a detector therein with the same design as used in GERDA.
-From the amount of measured events in these simulated detectors and the absolute amount of simulated events one can then calculate the efficiency with which the detectors measure any \Kr events. 
-How exactly this was implemented is the topic of the next chapter.
+From now on the line count rate $N_{peak,BEGe}$ and $N_{peak,COAX}$ will be used in the further analysis as the final result of the fitting process.
+These values represent the amount of events that which with absolute certainty were caused by a 514 keV photon of the \nuc{Rb}{85m} relaxation.  
+To be able to calculate the values of actual amount of \Kr per liter necessary for this amount of counts to be measured one has to determine a conversion factor. 
+How this conversion factor can be determined is the topic of the following section.
 \\
 
 \section{Monte Carlo Simulation}
 \label{sec:MonteCarlo514}
 
-As described above, we want to determine a conversion factor between the measured 514keV events and the decay density of \Kr necessary to create this signal.
+As described above, it is possible to calculate the decay density of \Kr necessary to create the measured line count by determining the factor $\frac{1}{\epsilon V_{sim}} \times \frac{1}{p}$. 
 Such a conversion factor can be determined with the help of a Monte Carlo simulation.
 The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA \cite{boswell_mage_2010}.
 Both experiments aim to measure the neutrinoless double beta decay using enriched Germanium detectors.
