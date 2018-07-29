@@ -314,62 +314,6 @@ The half life of such decays has been found to be in the order of $10^{19}$ to $
 \vertex[right=2.5cm of b5] 	(b6);
 \vertex[below=1em of b4] 	(b7) 	{\(u\)};
 
-\vertex[below=6em of b5] 	(c1) 	{\(d\)};
-\vertex[right =2.5cm of c1] (c2);
-\vertex[below=6em of b7]	(c3) 	{\(u\)};
-
-\vertex[below=1em of c1] 	(c4) 	{\(d\)};
-\vertex[right=5cm of c4] 	(c5) 	{\(d\)};
-
-\vertex[below=1em of c4] 	(c6) 	{\(u\)};
-\vertex[right=5cm of c6] 	(c7) 	{\(u\)};
-
-\vertex[below=2em of b7]	(e1)	{\(e^-\)};
-\vertex[left=2cm of e1]		(e2);
-\vertex[below=2em of e2]	(e3);
-\vertex[below=2em of e1]	(e4)	{\(e^-\)};
-
-\diagram
-{
-{[edges=fermion]
-  (b1) -- (b2),
-  (b3) -- (b4),
-  (b5) -- (b6),
-  (b6) -- (b7)
-  (c1) -- (c2),
-  (c2) -- (c3),
-  (c4) -- (c5),
-  (c6) -- (c7),
-  (e2) -- (e1),
-  (e3) -- (e4),
-},
-(b6) -- [boson, edge label'=\(W\)] (e2),
-(c2) -- [boson, edge label=\(W\)] (e3),
-(e2) -- [insertion=0.5] (e3),
-};
-\draw [decoration={brace}, decorate]  (b5.south west)--(b1.north west) node [pos=0.5, left] {\(n\)};
-\draw [decoration={brace}, decorate]  (c6.south west)--(c1.north west) node [pos=0.5, left] {\(n\)};
-\draw [decoration={brace}, decorate]  (c3.north east)--(c7.south east) node [pos=0.5, right] {\(p\)};
-\draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
-\end{feynman}
-\end{tikzpicture}
-\subcaption{Feynman-Diagram of the $0\nu\beta\beta$-decay. The Neutrinos in this diagram are virtual Majorana particle.}
-\label{fig:Feyn0nbb}
-\end{subfigure}\hfill%
-\begin{subfigure}{.4\textwidth}
-\centering
-\begin{tikzpicture}
-\begin{feynman}
-\vertex 					(b1) 	{\(u\)};
-\vertex[right =5cm of b1] 	(b2) 	{\(u\)};
-
-\vertex[below=1em of b1] 	(b3) 	{\(d\)};
-\vertex[right=5cm of b3] 	(b4) 	{\(d\)};
-
-\vertex[below=1em of b3] 	(b5) 	{\(d\)};
-\vertex[right=2.5cm of b5] 	(b6);
-\vertex[below=1em of b4] 	(b7) 	{\(u\)};
-
 \vertex[below=7em of b5] 	(c1) 	{\(d\)};
 \vertex[right =2.5cm of c1] (c2);
 \vertex[below=7em of b7]	(c3) 	{\(u\)};
@@ -413,8 +357,64 @@ The half life of such decays has been found to be in the order of $10^{19}$ to $
 \draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
 \end{feynman}
 \end{tikzpicture}
-\subcaption{Feynman-Diagram for the $2\nu\beta\beta$-decay. Basically the sum of two single beta decays}
+\subcaption{Feynman-Diagram for the $2\nu\beta\beta$-decay. Two neutrinos transfer into two protons, two electrons and two electron anti-neutrinos. Has already been observed.}
 \label{fig:Feyn2nbb}
+\end{subfigure}\hfill%
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\begin{tikzpicture}
+	\begin{feynman}
+	\vertex 					(b1) 	{\(u\)};
+	\vertex[right =5cm of b1] 	(b2) 	{\(u\)};
+	
+	\vertex[below=1em of b1] 	(b3) 	{\(d\)};
+	\vertex[right=5cm of b3] 	(b4) 	{\(d\)};
+	
+	\vertex[below=1em of b3] 	(b5) 	{\(d\)};
+	\vertex[right=2.5cm of b5] 	(b6);
+	\vertex[below=1em of b4] 	(b7) 	{\(u\)};
+	
+	\vertex[below=6em of b5] 	(c1) 	{\(d\)};
+	\vertex[right =2.5cm of c1] (c2);
+	\vertex[below=6em of b7]	(c3) 	{\(u\)};
+	
+	\vertex[below=1em of c1] 	(c4) 	{\(d\)};
+	\vertex[right=5cm of c4] 	(c5) 	{\(d\)};
+	
+	\vertex[below=1em of c4] 	(c6) 	{\(u\)};
+	\vertex[right=5cm of c6] 	(c7) 	{\(u\)};
+	
+	\vertex[below=2em of b7]	(e1)	{\(e^-\)};
+	\vertex[left=2cm of e1]		(e2);
+	\vertex[below=2em of e2]	(e3);
+	\vertex[below=2em of e1]	(e4)	{\(e^-\)};
+	
+	\diagram
+	{
+		{[edges=fermion]
+			(b1) -- (b2),
+			(b3) -- (b4),
+			(b5) -- (b6),
+			(b6) -- (b7)
+			(c1) -- (c2),
+			(c2) -- (c3),
+			(c4) -- (c5),
+			(c6) -- (c7),
+			(e2) -- (e1),
+			(e3) -- (e4),
+		},
+		(b6) -- [boson, edge label'=\(W\)] (e2),
+		(c2) -- [boson, edge label=\(W\)] (e3),
+		(e2) -- [insertion=0.5] (e3),
+	};
+	\draw [decoration={brace}, decorate]  (b5.south west)--(b1.north west) node [pos=0.5, left] {\(n\)};
+	\draw [decoration={brace}, decorate]  (c6.south west)--(c1.north west) node [pos=0.5, left] {\(n\)};
+	\draw [decoration={brace}, decorate]  (c3.north east)--(c7.south east) node [pos=0.5, right] {\(p\)};
+	\draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
+	\end{feynman}
+	\end{tikzpicture}
+	\subcaption{Feynman-Diagram of the $0\nu\beta\beta$-decay. Two neutrinos transfer into two protons and two electrons. In the massive Majorana neutrino interpretation two virtual neutrinos interact with each other in the process. This transition has not been detected yet.}
+	\label{fig:Feyn0nbb}
 \end{subfigure}
 \caption{Feynman-Diagrams of the $0\nu\beta\beta$- and the $2\nu\beta\beta$-decay}
 \end{figure}
@@ -426,7 +426,7 @@ It also describes the change of two neutrinos to two protons in the same core bu
 (A,Z)\rightarrow (A,Z+2) + 2e^- 
 \end{equation}
 No matter what interpretation one chooses, \onbb\ decays can only occur when the neutrino is a Majorana particle \cite{noauthor_phys._nodate-1}.
-From here on it will be assumed that the \onbb\ decay is caused by an exchange of massive Majorana neutrinos as seen in \ref{fig:Feyn0nbb}.
+However, from here on it will be assumed that the \onbb\ decay is caused by an exchange of massive Majorana neutrinos as seen in \ref{fig:Feyn0nbb}.
 Compared to other interpretations, the concept of massive Majorana neutrino interaction requires only a minimal extension to the standard model, namely the Majorana nature of the neutrinos and their non zero mass.
 \\
 
@@ -477,13 +477,13 @@ From these three masses it is theoretically possible to determine the Majorana p
 	\begin{minipage}{.419249532\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/NeutrinoMassOrdering.png}
-		\caption{Taken from \cite{bilenky_neutrinoless_2012}}
+		\caption{Effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle$ detectable by \onbb\ as a function of the smallest mass of the respective mass hierarchy. NS stands for the normal hierarchy and IS for the inverted hierarchy. Taken from \cite{bilenky_neutrinoless_2012}.}
 		\label{fig:MassOrder}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/TheoretischesSpektrmdes0nubbDecay.png}
-		\caption{Taken from \cite{elliott_double_2002}}
+		\caption{Effective spectrum of a \twonu\ decay when adding the energies of the two escaping electrons. In the case \onbb\ decays exist a peak at the Q-value of the \twonu\ decay spectrum can be seen. Taken from \cite{elliott_double_2002}.}
 		\label{fig:TheoSpektrum}
 	\end{minipage}
 \end{figure}
@@ -584,13 +584,13 @@ The general setup can be seen in figure \ref{fig:GERDASetupPII}.
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[height=60mm]{./Bilder/GERDAsetupPhaseII.png}
-		\caption{Taken from \cite{collaboration_upgrade_2018}}
+		\caption{Sketch of GERDA \PII\'s experimental setup. The germanium source and detectors are placed inside a LAr tank which itself is surrounded by a water tank. Inside LAr tank a LAr veto system is installed and inside the water tank several photomultiplier are positioned. Taken from \cite{collaboration_upgrade_2018}.}
 		\label{fig:GERDASetupPII}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[height=60mm]{./Bilder/DetectorDesign.png}
-		\caption{Taken from \cite{agostini_background_2014}}
+		\caption{Sketch of the Coaxial (COAX) and BEGe detector designs. Both detector types are cylindrical, have an outer n$^+$ and inner p$^+$ doped layer. The COAX detectors however are larger and have a cylindrical coaxial cavity while the BEGes don't. Taken from \cite{agostini_background_2014}.}
 		\label{fig:DetcDes}
 	\end{minipage}
 \end{figure}
