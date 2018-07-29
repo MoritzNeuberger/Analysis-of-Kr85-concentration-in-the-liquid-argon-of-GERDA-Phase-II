@@ -474,10 +474,10 @@ From these three masses it is theoretically possible to determine the Majorana p
 
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.4\textwidth}
+	\begin{minipage}{.4125\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/NeutrinoMassOrdering.png}
-		\caption{Effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle$ detectable by \onbb\ as a function of the smallest mass of the respective mass hierarchy. NS stands for the normal hierarchy and IS for the inverted hierarchy. Taken from \cite{bilenky_neutrinoless_2012}.}
+		\caption{Possible ranges for the effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle$ detectable by \onbb\ as a function of the smallest mass of the respective mass hierarchy. NS stands for the normal hierarchy and IS for the inverted hierarchy. Taken from \cite{bilenky_neutrinoless_2012}.}
 		\label{fig:MassOrder}
 	\end{minipage}\hfill%
 	\begin{minipage}{.5\textwidth}
@@ -581,22 +581,22 @@ The general setup can be seen in figure \ref{fig:GERDASetupPII}.
 
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{.45\textwidth}
 		\centering
 		\includegraphics[height=60mm]{./Bilder/GERDAsetupPhaseII.png}
-		\caption{Sketch of GERDA \PII\'s experimental setup. The germanium source and detectors are placed inside a LAr tank which itself is surrounded by a water tank. Inside LAr tank a LAr veto system is installed and inside the water tank several photomultiplier are positioned. Taken from \cite{collaboration_upgrade_2018}.}
+		\caption{Sketch of the GERDA \PII\'s experimental setup. The germanium source and detectors are placed inside a liquid argon (LAr) tank which itself is surrounded by a water tank. Inside LAr tank a LAr veto system is installed and inside the water tank several photomultiplier are positioned for the Muon veto. Taken from \cite{collaboration_upgrade_2018}.}
 		\label{fig:GERDASetupPII}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
+	\end{minipage}\hfill%
+	\begin{minipage}{.45\textwidth}
 		\centering
 		\includegraphics[height=60mm]{./Bilder/DetectorDesign.png}
-		\caption{Sketch of the Coaxial (COAX) and BEGe detector designs. Both detector types are cylindrical, have an outer n$^+$ and inner p$^+$ doped layer. The COAX detectors however are larger and have a cylindrical coaxial cavity while the BEGes don't. Taken from \cite{agostini_background_2014}.}
+		\caption{Sketch of the Coaxial (COAX) and Broad Energy Germanium (BEGe) detector designs. Both detector types are cylindrical, have their inner volume p doped and a big n$^+$ and smaller p$^+$ doped layer on their surface. The COAX detectors have are larger and have a cylindrical coaxial cavity while the BEGes are completely solid. Taken from \cite{agostini_background_2014}.}
 		\label{fig:DetcDes}
 	\end{minipage}
 \end{figure}
 
 Now to the detectors themselves.
-GERDA \PII~ uses the seven coaxial detectors (COAX) that have already been used in the predecessor experiments HdM and the IGEX as well as 30 new broad energy germanium detectors (BEGe).
+GERDA \PII~ uses the seven coaxial detectors (COAX) that have already been used in the predecessor experiments HdM and the IGEX as well as 30 new Broad Energy Germanium detectors (BEGe).
 Both of these detector types are made of germanium that has been enriched from 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$ \cite{agostini_background_2017}.
 They also share the same basic functionality.
 The major volume of both detectors are made of p doped germanium.
@@ -627,7 +627,7 @@ The string setup can be seen in figure \ref{fig:strings} and \ref{fig:stringsabo
 All detectors are connected to custom made amplifiers also located in the liquid argon above the detectors.
 The analog signal of every detector is then digitized at a sampling rate of 100MHz and in the case of an event stored for further analysis \cite{riboldi_cryogenic_2015}.
 \\
-
+\iffalse
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}{.66\textwidth}
@@ -635,7 +635,7 @@ The analog signal of every detector is then digitized at a sampling rate of 100M
 		\includegraphics[width=.9\textwidth]{./Bilder/strings.png}
 		\caption{}
 		\label{fig:strings}
-	\end{subfigure}%
+	\end{subfigure}\hfill%
 	\begin{subfigure}{.30\textwidth}
 		\centering
 		\includegraphics[width=.9\textwidth]{./Bilder/strings-top.png}
@@ -643,6 +643,7 @@ The analog signal of every detector is then digitized at a sampling rate of 100M
 		\label{fig:stringsabove}
 	\end{subfigure}
 \end{figure}
+\fi
 % well, just dump everything here
 % also a bit about Tier1-4 storage of data 
 
@@ -669,16 +670,16 @@ Compared to other nobel gases argon has the advantage of a very low price due to
 
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.30\textwidth}
+	\begin{minipage}{.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/LArVetoSetup.png}
-		\caption{Taken from \cite{collaboration_upgrade_2018}}
+		\includegraphics[width=0.6\textwidth]{./Bilder/LArVetoSetup.png}
+		\caption{Sketch of the liquid agron (LAr) veto setup. In a cylindrical volume around the detectors 16 photomultiplier tubes (PMT) are placed at the top and the bottom of the cylinder. At the height of the detectors nylon strings are placed which are read out at their ends by silicon photomultiplier (SiPM). Taken from \cite{collaboration_upgrade_2018}.}
 		\label{fig:LArVetoSetup}
-	\end{minipage}%
-	\begin{minipage}{.70\textwidth}
+	\end{minipage}\hfill%
+	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/TierStructure.png}
-		\caption{}
+		\caption{The multi-tier structure used by GELATIO. Tier0 and Tier1 contain all of the raw data. However, the data in Tier1 has already been converted to root files. Tier2, Tier3 and Tier4 store  progressively more analyzed data. Taken from \cite{agostini_gelatio:_2011}}
 		\label{fig:TierStructure}
 	\end{minipage}
 \end{figure}
@@ -742,15 +743,14 @@ Such a procedure is called a blinding process and the revealing of the blinded e
 	\begin{minipage}{0.567813662\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/GerdaErgebnisse.png}
-		\caption{Taken from \cite{zsigmond_new_2018}}
+		\caption{Recent results from GERDA \PII. The measured spectra of COAX and BEGe detectors are distinguished by their different resolutions.  Only one decay is in the energy range in which the signature peak of the \onbb\ decay was expected. This leads to the conclusion that no \onbb\ decay was measured and a new lower limit of \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL) was determined. Taken from \cite{zsigmond_new_2018}}
 		\label{fig:GerdaErgebnisse}
-	\end{minipage}%
+	\end{minipage}\hfill%
 	\begin{minipage}{.35\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{./Bilder/Kr85Decay.png}
 	\label{fig:Decay}
-	\caption{
-		Taken from \cite{noauthor_decay_nodate}
+	\caption{Taken from \cite{noauthor_decay_nodate}
 	}
 	\end{minipage}
 \end{figure}
@@ -930,7 +930,7 @@ Compared to the COAX detectors their peaks can easily be distinguished.
 	\includegraphics[width=75mm]{./Bilder/500525NoFilterBEGes.pdf}
   \label{fig:NoFilterBEGes}
   \caption{BEGes}
-\end{subfigure}%
+\end{subfigure}\hfill%
 \begin{subfigure}{.5\textwidth}
   \centering
 	\includegraphics[width=75mm]{./Bilder/500525NoFilterCOAX.pdf}
@@ -970,7 +970,7 @@ One can see that the positron electron annihilation peak can not be identified a
 	\includegraphics[width=75mm]{./Bilder/500525LArVetoBEGes.pdf}
     \caption{BEGes}
   \label{fig:LArBEGes}
-\end{subfigure}%
+\end{subfigure}\hfill%
 \begin{subfigure}{0.5\textwidth}
 	\includegraphics[width=75mm]{./Bilder/500525LArVetoCOAX.pdf}
   \caption{COAX}
@@ -987,7 +987,7 @@ One can see that the positron electron annihilation peak can not be identified a
 		\includegraphics[width=75mm]{./Bilder/AntiLArBEGe.pdf}
 		\caption{BEGes}
 		\label{fig:AntiLArBEGes}
-	\end{subfigure}%
+	\end{subfigure}\hfill%
 	\begin{subfigure}{.5\textwidth}
 		\includegraphics[width=75mm]{./Bilder/AntiLArCOAX.pdf}
 		\caption{COAX}
@@ -1141,7 +1141,7 @@ The corresponding fit parameters are listed in table \ref{tab:FitParNoFilter}.
 		\includegraphics[width=75mm]{./Bilder/500525FitNoFilterBEGes.pdf}
 		\caption{BEGes}
 		\label{fig:FitNoFilterBEGes}
-	\end{subfigure}%
+	\end{subfigure}\hfill%
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=75mm]{./Bilder/500525FitNoFilterCOAX.pdf}
@@ -1232,7 +1232,7 @@ It still would have been great if it had worked as a crosscheck.
 		\includegraphics[width=75mm]{./Bilder/500525FitLArVetoBEGes.pdf}
 		\caption{BEGes}
 		\label{fig:FitLArVetoBEGes}
-	\end{subfigure}%
+	\end{subfigure}\hfill%
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=75mm]{./Bilder/500525FitLArVetoCOAX.pdf}
@@ -1297,7 +1297,7 @@ As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over th
 		\includegraphics[height=75mm]{./Bilder/MC-Querschnitt-BEGes.pdf}
 		\caption{Cross section from above}
 		\label{fig:CrossSecAb}
-	\end{subfigure}%
+	\end{subfigure}\hfill%
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=75mm]{./Bilder/MC-Radius-BEGes.png}
@@ -1463,7 +1463,7 @@ As a graphical representation, the peaks that would have been able to be seen in
 		\includegraphics[width=75mm]{./Bilder/WARP.pdf}
 		\caption{Cross section from above}
 		\label{fig:WARP}
-	\end{subfigure}%
+	\end{subfigure}\hfill%
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=75mm]{./Bilder/Darkside.pdf}
@@ -1560,7 +1560,7 @@ The following sections will focus on the concrete implementation of this method 
 		\includegraphics[width=\textwidth]{./Bilder/ZeitverlaufALLE.pdf}
 		\caption{every event}
 		\label{fig:ZeitAll}
-	\end{subfigure}%
+	\end{subfigure}\hfill%
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/ZeitverlaufLimits.pdf}
@@ -1605,7 +1605,7 @@ A new plot including only events between the energy limits of 200 and 400keV can
 		\includegraphics[width=\textwidth]{./Bilder/beforeTheFall.pdf}
 		\caption{before}
 		\label{fig:before}
-	\end{subfigure}%
+	\end{subfigure}\hfill%
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/afterTheFall.pdf}
@@ -1643,7 +1643,7 @@ By dividing all bins of histogram \ref{fig:ZeitLimits} by the corresponding bins
 		\includegraphics[width=\textwidth]{./Bilder/testpuler.pdf}
 		\caption{effective measuring times}
 		\label{fig:effectiveMeasuringTimes}
-	\end{minipage}%
+	\end{minipage}\hfill%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/eventRate.pdf}
@@ -1700,7 +1700,7 @@ What this simulation actually simulates and how one determines the conversion fa
 		\includegraphics[width=\textwidth]{./Bilder/Sim1Phasenraum.pdf}
 		\caption{after}
 		\label{fig:Sim1Spektrum}
-	\end{minipage}%
+	\end{minipage}\hfill%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/Aktivitaet.pdf}
@@ -1872,7 +1872,7 @@ The used fit function can be seen in equation \ref{fig:double}, the resulting fi
 	\fi%
 	\caption{double exponential decay fit}
 	\label{fig:double}
-	\end{minipage}%
+	\end{minipage}\hfill%
 	\begin{minipage}{.5\textwidth}
     \centering
     \begin{tabular}{|l|c|}
