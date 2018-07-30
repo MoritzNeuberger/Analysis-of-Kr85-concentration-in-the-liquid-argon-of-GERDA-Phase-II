@@ -573,7 +573,7 @@ The two detectors however differ in their design as seen in figure \ref{fig:Detc
 But the detector types also differ in their mass and therefore their expected exposure per detector and energy resolution.
 The COAX detectors are generally heavier and therefore have a higher detector efficiency then the BEGe.
 But their higher mass also results in a worse energy resolution \cite{agostini_production_2015}.
-BEGes are also allow for a better pulse shape discrimination (PDS) compared to the COAX detectors.
+BEGes are also allow for a better pulse shape discrimination (PDS) compared to the COAX detectors \cite{agostini_pulse_2013}.
 PDS can make a statement about the creation process of the electron hole pair by looking at the shape of the signal.
 It can therefore discriminate between different kind of origins for a signal and acts as a veto.
 \\
@@ -613,15 +613,11 @@ This is in place to passively suppresses the background created from \nuc{K}{42}
 \subsection{Liquid Argon as Coolant, Shielding and Scintillator} 
 \label{sec:LArcoolant}
 
-LAr has the property that scintillation light is produced when ionizing radiation interacts with an electron in it \cite{olsen_improvements_nodate}.
-Incoming radiation can excite or ionize the scintillation material.
+LAr has the property that scintillation light is produced when electrically charged radiation excites or ionizes electrons in the material \cite{olsen_improvements_nodate}.
 The excited atoms in a noble liquids form dimer pairs (Ar$^*_2$).
-These dimer pairs are meta stable and relax with the release of a vacuum ultraviolet photon (VUV) with a wavelength of 127 nm.
-Depending on whether the argon atom was ionized or excited two different mechanisms are responsible for the relaxation.
-But in the end each ionized or excited atom only produces one VUV photon.
-The correlation between the deposited energy and the amount of photons is called the scintillation yield and argon has a value of about $4\times10^4\frac{\unit{photons}}{\unit{MeV}}$.
-Nobel liquids the VUV light does not have enough energy to excite any ground state resulting in a very long travel distances of the VUV without being absorbed.
-Compared to other noble gases argon has the advantage of a very low price due to it being easily obtained by liquefaction of air from the atmosphere.
+These dimer pairs are meta stable and relax with the release of a vacuum ultraviolet photon (VUV) with a wavelength of 128 nm.
+In the end each ionized or excited atom only produces one VUV photon.
+In nobel liquids the VUV light does not have enough energy to excite any ground state allowing a very long travel distances of the VUV without being absorbed.
 \\
 
 \begin{figure}[t!]
@@ -649,11 +645,11 @@ That is why wavelength shifting material covers the nylon fibers and the photomu
 
 LAr is also a good coolant due to the characteristically low melting point of nobel gases.
 In \gerda\ it is cooled down to the working temperature of the germanium detectors at about 90 K.
-\\
 
 Nobel liquids are also great as ultra radio-pure passive shielding.
 This is because noble elements rarely make any chemical bonds due to their fully filled electron shells.
 It is therefore possible to filter the majority of impurity just by distillation.
+Compared to other noble gases argon also has the advantage of a very low price due to it being easily obtained by liquefaction of air from the atmosphere.
 \\
 
 \subsection{Data processing and analysis}
@@ -667,12 +663,13 @@ These two points leave the analysis protocol incredibly flexible.
 \\
 
 The multi-tier structure used in GELATIO can be seen in figure \ref{fig:TierStructure}.
+Tier0 and Tier1 store raw information while all higher Tiers store progressively more analyzed data.
 Additional information about the analysis process can be found in \cite{agostini_gelatio:_2011} and \cite{agostini_off-line_2011}.
 In this thesis only data from Tier3 and Tier4 will be used.
 \\
 
-To ensure that the filter parameters of the analysis are set without bias, all events measured in a  50keV interval around the Q-value of the \twonu\ decay were only stored without any analysis applied at all.
-Only after all parameters in the rejection process were finally defined all events from this interval analyzed will be analyzed. 
+To ensure that the filter parameters of the analysis are set without bias, all events measured in a  50 keV interval around the $Q_{\beta\beta}$ were only stored without any analysis applied on them.
+Only after all parameters in the rejection process were finally defined all events from this interval will be analyzed. 
 Such a procedure is called a blinding process and the revealing of the blinded events an unblinding. 
 \\
 % Mui, Mountain, Pulse shape disc.
@@ -698,13 +695,13 @@ Such a procedure is called a blinding process and the revealing of the blinded e
 	\label{fig:Decay}
 	\end{minipage}
 \end{figure}
-Only recently a new unblinding of all measured events at \gerda\ \PII\ so far  occurred \cite{zsigmond_new_2018}.
-In it only one event in the close proximity of the Q-value was measured as seen in figure \ref{fig:gerdaErgebnisse}.
-By far too less to identify a peak at that value.
+Only recently new data was published by \gerda\ \cite{zsigmond_new_2018}.
+In it only one event in the proximity of the Q-value was found as seen in figure \ref{fig:gerdaErgebnisse}.
+However, more than 2 sigma from the expected peak position.
 The conclusion was therefore that no evidence for a \onbb\ decay has been seen.
-A new lower limit for \nuc{Ge}{76} was determined to be \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL).
-Currently \gerda\ receives an upgrade on the LAr veto and is planned to measured for until 2020.
-After that the successor experiment LEGEND in collaboration with the MAJORANA experiment it is planned to investigate the lower limit of \nuc{Ge}{76} half life further.
+A new lower limit for \nuc{Ge}{76} was determined to be $\thalfzero\ = 0.9\times10^{26}\unit{yr}$ (90$\%$ CL).
+Currently \gerda\ receives an upgrade and is planned to measured for until 2020.
+After that the successor experiment LEGEND is planned to investigate the lower limit of \nuc{Ge}{76} half life further.
 
 % what has happened so far
 
@@ -716,9 +713,9 @@ After that the successor experiment LEGEND in collaboration with the MAJORANA ex
 
 \Kr\ has a mass number of A = 85 and an atomic number of Z = 36.
 This isotope is not stable and decays via a $\beta^-$-decay into \nuc{Rb}{85}.
-The half life of this decay is 10.756 yr \cite{singh_nuclear_2014}.
-\Kr's $\beta$-decay has three different possible transitions, but most of the time only two of them are actually active (as seen in figure \ref{fig:Decay}).
-The transition with the highest probability (99.563$\%$) has its final state in the ground state of \nuc{Rb}{85} with a Q-value of 687 keV.
+The half life of this decay is 10.756 yr \cite{singh_nuclear_2014} and a Q-value of 687 keV.
+\Kr's $\beta$-decay has two different possible transitions (see figure \ref{fig:Decay}).
+The transition with the higher probability (99.563$\%$) has its final state in the ground state of \nuc{Rb}{85}.
 The second most probable transition (0.434$\%$) goes into an excited state of 514 keV above the ground state with a Q-value of 173 keV.
 This excited state has a half life of 1.015 $\unit{\mu s}$ and in basically all cases it relaxes directly into the ground state by emitting a photon of 514 keV energy. 
 A third transition into another excited \nuc{Rb}{85m} is possible but its probability is in the order of $10^{-9}$ which is why it can be neglected. 
