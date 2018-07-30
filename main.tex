@@ -1506,7 +1506,7 @@ As a graphical representation, the peaks that would have been able to be seen in
     \caption{
     	Energy spectra of the BEGe detectors from 500 to 525 keV.
     	The green plots in the spectra represent the theoretical peaks one could expect to measure if a specific activity of the respective experiment was present.
-    	In both cases it would have created 
+    	In both cases it would have created a much greater signal than observed above.
     	}
 \end{figure}
 \\
@@ -1602,7 +1602,12 @@ The following sections will focus on the concrete implementation of this method 
 		\label{fig:ZeitLimits}
 	\end{subfigure}
     \\
-    \caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
+    \caption{
+    	The change of count rate over time. 
+    	In both figures the amount of events measured in one week are plotted over the whole time frame of \PII. 
+    	In figure (a) no filters were imposed onto the used events while in (b) only those events were used that have an energy between 200 and 400 keV. 
+    	One can see that further precautions must be taken before an exponential decrease can be determined. 
+    	}
 \end{figure}
 
 To determine the change of count rate with time one has to plot the amount of measured events over time in a histogram with a suitable binning (see figure \ref{fig:ZeitAll}).
@@ -1646,10 +1651,10 @@ A new plot including only events between the energy limits of 200 and 400keV can
 		\caption{after}
 		\label{fig:after}
 	\end{subfigure}
-	\\
-	\vspace{0.5cm}
-	\caption{ }
-	\vspace{0.5cm}
+	\caption{
+		Energy spectra from 0 to 200 keV. 
+		Figure (a) shows the resulting spectrum of all events measured before the lowering of the lower energy threshold of recorded events on 12.10.2017 while (b) shows the spectrum after this date.
+		}
 \end{figure}
 
 The second discontinuous behavior originates from the same problem that was already faced in the line count rate analysis.
@@ -1675,13 +1680,21 @@ By dividing all bins of histogram \ref{fig:ZeitLimits} by the corresponding bins
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/testpuler.pdf}
-		\caption{effective measuring times}
+		\caption{
+			Histogram showing the mean measuring time of each week corresponding to the individual bins.
+			Those were determined by the amount of test pulse signals measured in the time frames and their amount multiplied by 20s.
+			From the course of this histogram one can see, that the measuring time of each week varied on a broad level.
+			}
 		\label{fig:effectiveMeasuringTimes}
 	\end{minipage}\hfill%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/eventRate.pdf}
-		\caption{after}
+		\caption{
+			Count rate of measured events between 200 and 400 keV over the course of \PII\.
+			A continuous change in rate can be seen. 
+			One can now apply a fit using function \ref{equ:FitFilters2} and through it determine the count rate of \Kr\ at the start of \PII\.
+			}
 		\label{fig:ChangeInEventRate}
 	\end{minipage}
 	\\
@@ -1715,7 +1728,11 @@ What this simulation actually simulates and how one determines the conversion fa
 		C  &	(0.828315 \(\pm\)	1.377836)\\
 		\hline
 	\end{tabular}
-	\caption{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
+	\caption{
+		Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.
+		Parameter A represents the amplitude of the exponential decay function and B the half life of the decaying isotope.
+		Fitparameter C is there to handle the constant background created by other radioactive isotopes with much higher half lifes.
+		}
     \label{tab:FitParZeit}
 \end{table}
 
@@ -1732,7 +1749,10 @@ What this simulation actually simulates and how one determines the conversion fa
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/Sim1Phasenraum.pdf}
-		\caption{after}
+		\caption{
+			Energy spectrum computed by simulating 1 billion \Kr\ decays and plotting the counts of events by their corresponding energy.
+			From it can be seen, that the majority 
+			}
 		\label{fig:Sim1Spektrum}
 	\end{minipage}\hfill%
 	\begin{minipage}{.5\textwidth}
@@ -1765,7 +1785,10 @@ Because of this low expected detector efficiency a much higher amount of decays 
 That is why a number of N = 1 billion \Kr\ decays in a volume of again $V_{sim} = 17.65 \mathrm{m}^3$ was simulated.
 Due to the massive amount of these simulated events only those decays were saved in which a signal has actually been measured.
 These events created a combined spectrum of the emitted electrons plus the photons emitted from the excited \nuc{Rb}{85m} as seen in figure \ref{fig:Sim1Spektrum}.
-If you compare this spectrum with the one determined for the other Monte Carlo simulation you can see these two spectra look very much alike.
+If you compare this spectrum with the one determined for the other Monte Carlo simulation you can see these two spectra look relatively similar.
+To test this one can calculate a ratio from the two spectra and compare them.
+A fitting ratio would be to take the counts of one bin of a spectra and divide it through count of the 514 keV peak.
+
 This would mean however that the majority of the measured events must have been caused by the photons of the \nuc{Rb}{85m} relaxation and not by the electrons.
 This is actually an advantage.
 If the majority of the measured events were created by electrons then one would have to apply a correction onto our detector efficiency.
