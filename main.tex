@@ -625,7 +625,7 @@ In nobel liquids the VUV light does not have enough energy to excite any ground 
 	\begin{minipage}{.475\textwidth}
 		\centering
 		\includegraphics[width=0.6\textwidth]{./Bilder/LArVetoSetup.png}
-		\caption{Sketch of the liquid agron (LAr) veto setup. In a cylindrical volume around the detectors 16 photomultiplier tubes (PMT) are placed at the top and the bottom of the cylinder. At the height of the detectors nylon strings are placed which are read out at their ends by silicon photomultiplier (SiPM). Taken from \cite{collaboration_upgrade_2018}.}
+		\caption{Sketch of the liquid agron (LAr) veto setup. 16 photomultiplier tubes (PMT) are mounted in a cylindrical copper surface at the top and bottom. At the level of the detectors instead of copper, the cylinder consists of fibers. These are read out at their ends by silicon photomultipliers (SiPM). Taken from \cite{collaboration_upgrade_2018}.}
 		\label{fig:LArVetoSetup}
 	\end{minipage}\hfill%
 	\begin{minipage}{.475\textwidth}
@@ -729,31 +729,45 @@ This excited state has a half life of 1.015 $\unit{\mu s}$ and it basically alwa
 	\fi%
 	\caption{
 	    \Kr's specific activity in the atmosphere between 1976 and 2008. It can be seen that over this period the average specific activity in the atmosphere has increased. This is due to the higher amount of fission reactors in which \Kr is produced.   
-		Taken from \cite{bieringer_trace_2009}.
+		Taken from \cite{ahlswede_update_2013}.
 	}
     \label{fig:Kr85Aenderung}
 \end{figure}
 
 
-In the course of this thesis the main interest lies with the concentration of \Kr\ in argon.
+The main interest of this thesis lies with the concentration of \Kr\ in argon.
 The argon used in \gerda\ \PII\ was extracted from the atmosphere.
-It is therefore of interest to find out how the \Kr\ got there.
-There are various different sources how the \Kr\ can be produced.
+But how did it get there?
+There are two different sources \Kr\ can be originate from on earth.
 It can be created in the atmosphere naturally by an interaction of \nuc{Kr}{84} with cosmic rays.
-In equilibrium an activity of 0.09PBq in the whole atmosphere originates from these cosmogenic isotopes \cite{winger_new_2005}.
-However, the production of \Kr\ from nuclear fission generates an atmospheric inventory about four orders of magnitude higher than the cosmic ray production.
-\Kr\ can be created in the neutron induced fission of \nuc{U}{235} and \nuc{Pu}{239}.
-A small amount is again natural produced from the uranium deposit in earth's crust.
-But the majority is man made from nuclear power plants.
+In equilibrium this accounts to an activity of 0.09PBq in the whole atmosphere \cite{winger_new_2005}.
+However, the production of \Kr\ from nuclear fission of \nuc{U}{235} and \nuc{Pu}{239} generates an atmospheric inventory about four orders of magnitude higher than that.
+Only a small amount is natural produced in earth's crust, but the majority is man made from nuclear power plants.
 Krypton is a noble gas and therefore easily diffuses through everything in its way until it reaches the atmosphere.
-Due to the higher amount of nuclear power plants build in the last half century the activity of \Kr\ in the atmosphere has risen steadily from about 1961 PBq in 1973 \cite{telegadas_atmospheric_1975} to an estimated 5500 PBq in 2009 (see figure \ref{fig:Kr85Aenderung}) \cite{bieringer_trace_2009}.
+Due to the higher amount of nuclear power plants build in the last half century the activity of \Kr\ in the atmosphere has risen steadily from about 1961 PBq in 1973 \cite{telegadas_atmospheric_1975} to an estimated 5500 PBq in 2009 (see figure \ref{fig:Kr85Aenderung}) \cite{ahlswede_update_2013}.
 \\
 
-It is also interesting that the concentration of \Kr in the air at ground level varies depending on the proximity to a nuclear power plant \cite{weiss_mesoscale_1986}.
-If you look at atmospheric altitudes, however, the \Kr concentrations only varies on large length scales since \Kr rises quickly from the ground into the atmosphere, where most of it stays longer.
-Different models predict that air from the northern troposphere takes up to one year to get to the southern troposphere delaying the equalization of their \Kr concentrations \cite{}.
+It is also of interest that the concentration of \Kr\ in the air at ground level varies depending on the proximity to a nuclear power plant \cite{weiss_mesoscale_1986}.
+At atmospheric altitudes, however, the \Kr\ concentrations only varies on large length scales since \Kr rises quickly from the ground into the atmosphere, where most of it stays longer.
+Different models predict that air from the northern troposphere takes up to one year to get to the southern troposphere delaying the equalization of their \Kr\ concentrations \cite{weiss_global_1992}.
+Still, \Kr's concentration in the atmosphere should everywhere be in the same order of magnitude.
+This means that no matter where atmospheric air for an argon extraction would be taken, the concentration of \Kr and therefor its specific activity per liter LAr would be of the same order. 
+\\
 
+Two experiments also using LAr will be used as examples in this thesis: the WARP and the Darkside experiment.
+Both of these experiments aim to detect WIMPs (Weakly Interacting Massive Particles) which are likely candidates for dark matter.
+Both WARP and Darkside have chosen LAr as their target material.
+Due to the small expected interaction cross section of the WIMPs, the radioactive background sources have to be well known.
+In both of experiments the specific activity of their residual \Kr\ was determined.
+On the one hand, the Darkside experiment has a specific activity of \((2.86\pm0.18) \frac{\unit{mBq}} {\unit{l}}\) using underground argon (UAr).  \cite{agnes_results_2016}.
+This UAr has been extracted, as the name indicates, from underground reservoirs.
+Since it should only have come into contact with \Kr\ from natural processes, its specific  \Kr\ activity should be very low. 
+On the other hand in the LAr of the WARP experiment, using atmospheric argon, a specific activity of   \((160\pm130)\frac{\unit{mBq}}{\unit{l}}\) was measured \cite{benetti_measurement_2006}.
+As it was expected, this value is much higher then Darkside's.
+\\
 
+It is therefore not unlikely that the specific \Kr\ activity in \gerda\ \PII\ would be much higher than in the Darkside experiment.
+The determination of this concrete value is the objective of the two remaining chapters. 
 
 % where does it come from?
 % what properties does it have?
@@ -763,28 +777,12 @@ Different models predict that air from the northern troposphere takes up to one 
 \chapter{Line Count Rate Analysis}
 \label{sec:SAfrom514}
 
-
-As stated in the introduction, the main goal of this theses is to approximate the specific activity of the isotope \Kr\ in the liquid argon coolant of the \gerda\ experiment. 
-This value is of interest, as in other experiments this alien isotope in the liquid argon has produced a not negligible background. 
-Two examples will be used in this thesis: the WARP and the Darkside experiment.
-Both of these experiments have set their aim to detect WIMPs (Weakly Interacting Massive Particles) which are likely candidates for dark matter.
-These WIMPs should in the case of their existence create tiny recoils in ordinary matter by elastic scattering.
-Nobel gases are well suited as a target material, which is why many of today's dark matter experiments use them as target material.
-Both WARP and Darkside have chosen liquid argon.
-Due to the small expected interaction cross section of the WIMPs, the radioactive background sources have to be well known.
-In both of these experiments a value for the specific activity of the residual \Kr\ has been determined.
-In the Darkside experiment a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\)  \cite{agnes_results_2016} was measured whereas  \((160\pm130)\frac{\unit{Bq}}{\unit{l}}\) was measured for the WARP experiment \cite{benetti_measurement_2006}.
-\Kr\ creates a non negligible background in the low energy statistics in both experiments but of very different proportion. 
-It is therefore of interest to determine the specific activity in the \gerda\ experiment if one wants to use the low energy interval for other kinds of research.
-For example for a further investigation of \nuc{Ar}{39} with a similar Q-value as \Kr\ or the search for dark matter in the keV-scale.
-%This corresponds to a concentration of about \((2.32\pm0.14)\times10^{-18}\frac{\unit{mol}}{\unit{l}}\) for the Darkside and  \((1.30\pm1.05)\times10^{-16}\frac{\unit{mol}}{\unit{l}}\) for the WARP experiment.
-\\
-
-As already mentioned in the introduction, two different approaches are used in this theses to calculate the concentration of \Kr. 
+As mentioned in the introduction, the main objective of this thesis is to determine the specific activity of the isotope \Kr\ in the LAr of the \gerda\ experiment. 
+Two different methods are used in this paper to calculate the concentration of \Kr. 
 The first and more precise method is the line count rate analysis of the \Kr\ decay into an excited state of \nuc{Rb}{85m}. 
 It is also the topic of this chapter.
 The second method discussed in the following chapter uses the reduction in count rate over time. 
-This method is less likely to create precise results due to it relying on the assumption that only \Kr's activity has a notable change over time.
+This method is less likely to a create precise results due to it relying on the assumption that only \Kr's activity has a notable change over time.
 It is therefore only planned as a crosscheck for the result of the first method.
 \\
 
