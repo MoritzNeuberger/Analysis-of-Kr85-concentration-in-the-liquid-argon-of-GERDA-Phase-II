@@ -39,7 +39,8 @@
 % Die Metadaten der Abschlussarbeit werden auf dem Deckblatt gedruckt und
 % in dem PDF eingetragen.
 \subject{Abschlussarbeit im Bachelorstudiengang Physik}
-\title{Analysis of Kr85 concentration in the liquid argon of GERDA Phase II}
+%\title{Analysis of Kr85 concentration in the liquid argon of \gerda\ Phase II}
+\title{Determination of the specific \Kr\ activity in the liquid argon of \gerda\ Phase II}
 %\subtitle{\foreignlanguage{british}{Title in English}}
 \author{Moritz Neuberger}
 \date{8.~August 2018}
@@ -53,7 +54,7 @@ Zweitgutachter: Prof.\ S.~Preuss}
 
 %-------------------------------------------------------------------------------
 %\include{header}              % packages/settings
-%\include{gerda-abbreviations} % for definitions see:  abbreviations.tex
+%\include{\gerda\-abbreviations} % for definitions see:  abbreviations.tex
 %-------------------------------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -61,7 +62,7 @@ Zweitgutachter: Prof.\ S.~Preuss}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\newcommand{\repnumber}  {GSTR-18-0xx}    % REPNUMBER (yy->year, 0xx->running number)
 %\newcommand{\repdate}    {August 8, 2018} % DATE
-%\newcommand{\titleheader}{Analysis of \Kr concentration in the liquid argon of GERDA Phase II} % TITLE
+%\newcommand{\titleheader}{Analysis of \Kr concentration in the liquid argon of \gerda\ Phase II} % TITLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -163,18 +164,23 @@ Zweitgutachter: Prof.\ S.~Preuss}
 
 
 \chapter*{Abstract}
-The GERmanium Detector Array (GERDA) experiment tries to find evidence for the neutrino less double beta decay in \nuc{Ge}{76}.
-Because it is well known, that the half life of a neutrinoless double beta decay would be greater than 10$^{26}$yr a lot of background suppression has to be applied.
-The liquid argon in which the detectors are located acts as coolant, shielding against radiation from the outside and as an active veto due to its scintillation capability.
-A residual radioactive isotope in the liquid argon creating measurable background in the detectors is \nuc{Kr}{85}.
+The GERmanium Detector Array (\gerda) experiment tries to find evidence for the neutrino less double beta decay in \nuc{Ge}{76}.
+Enriched germanium detector are used simultaneously as source and detector.
+The liquid argon in which the detectors are located acts as coolant, passive shielding against radiation from the outside and as an active veto due to its scintillation capability.
+Due to the ultra low background condition \gerda\ explores half life at about 10$^{26}$ yr.
+A residual radioactive isotope in the liquid argon is \nuc{Kr}{85}.
+It does not contribute to the background for \gerda\'s neutrinoless double beta decay search, but might influence analyses carried out at lower energies.
 The aim of this thesis is to determine its specific activity.
-Two different and independent approaches will be applied to measure this value.
-The second method, using the change in count rate over time, failed due to a falsely made assumption.
-The first method however, using a line count rate, determined \nuc{Kr}{85}'s specific activity to be $0.508\frac{\unit{mBq}}{\unit{l}}$.
+%here: a bit more (and more positive) about the analysis
+In about 0.434$\%$ the \Kr\ decays are followed by the emission of a $\gamma$ with 514 keV.
+With a line count rate analysis a specific activity of $0.508\frac{\unit{mBq}}{\unit{l}}$ was determined.
+A cross-check analysis facilitating the decay lifetime was carried out.
+However, the presence of \nuc{Kr}{42} with comparable lifetime did not allow a verification of the obtained result.
+
 
 \begin{otherlanguage}{ngerman}
 \chapter*{Zusammenfassung}
-Das GERmanium Detector Array (GERDA) Experiment versucht Beweise für den neutrinolosen doppelten Beta-Zerfall in \nuc{Ge}{76} zu finden.
+Das GERmanium Detector Array (\gerda) Experiment versucht Beweise für den neutrinolosen doppelten Beta-Zerfall in \nuc{Ge}{76} zu finden.
 Da bekannt ist, dass die Halbwertszeit eines solchen neutrinolosen doppelten Beta-Zerfall größer als 10$^{26}$yr sein muss, wird viel Aufwand dafür verwendent jeglichen Hintergrund zu unterdrücken.
 Das flüssige Argon, in dem sich die Detektoren befinden, wirkt als Kühlmittel, als Abschirmung gegen äußere Strahlung und als aktives Veto aufgrund seiner Szintillationsfähigkeit.
 Ein zurückgebliebenes radioaktives Isotop im flüssigen Argon, das einen messbaren Hintergrund in den Detektoren erzeugt, ist \nuc{Kr}{85}.
@@ -190,91 +196,64 @@ Die erste Methode jedoch, bei der die Anzahl an Messungen in einem bestimmen Int
 
 \chapter{Introduction}
 \label{sec:intro}
+%paragraph about sec. neutrino phys
 
-The GERmanium Detector Array (GERDA) experiment tries to find evidence for the neutrino less double beta (\onbb) decay in \nuc{Ge}{76}.
-The normal double beta (\twonu) decay has been observed in several isotopes where single beta decay is forbidden.
-\onbb\ decay will only occur when neutrinos are Majorana particles.
+The double beta (\twonu) decay has been observed in several isotopes where single beta decay is forbidden.
+The neutrinoless double beta (\onbb) decay will only occur when neutrinos are Majorana fermions.
 Majorana particles have the characteristic that they are particle and antiparticle at the same time, breaking the lepton number conservation.
-In the case of a \onbb\ decay, an exchange between the Majorana neutrinos would occur and the excess energy would be split  between the escaping electrons.
-Their energy sum can be measured directly because the detectors themselves are made of the  decay material \nuc{Ge}{76}.
-In the resulting signature of the \onbb\ is a sharp peak at the end of the regular \twonu\ decay (Q-value).
+More about this in section \ref{sec:PhyBG}.
 \\
 
-\onbb\ beta decay is known to have a  very long half life.
-It is therefor important to suppress any background sources as good as possible. 
-A passively shield around the detectors for suppression of external radiation as well as a scintillator around the detectors to active reject radiation coming from the outside are therefor necessities.
-The germanium detectors also demand a cryogenic temperature to even function properly.
-Liquid argon (LAr) is a fitting material for these requirements due to its suitable boiling point, its low Z value making it a good shielding material and its ability to scintillate. 
-Commercial argon is extracted from the atmosphere by air liquefaction and has residual foreign isotopes. 
-The majority of the impurities can be removed by cryogenic distillation but traces of radioactive components can be left.
+Section \ref{sec:gerda} will focus on the \gerda experiment.
+The GERmanium Detector Array (\gerda) experiment tries to find evidence for the neutrino less double beta (\onbb) decay in \nuc{Ge}{76}.
+\onbb\ decay is known to have a  very long half life.
+It is therefor important to minimize background as good as possible. 
+A passive shield around the detectors for suppression of external radiation as well as a scintillator around the detectors to active reject radiation coming from the outside are therefor necessities.
+Liquid argon (LAr) is a fitting material for these requirements due to its suitable low point, its a good shielding material and its ability to scintillate. 
+Commercial argon is extracted from the atmosphere by air liquefaction. 
+Impurities can be removed by cryogenic distillation but traces of radioactive components can be left.
 \\
 
-One of these residual radioactive isotopes is \Kr. 
-Compared to \nuc{Ge}{76} it has a low endpoint energy and therefor doesn't contribute to the background of the \onbb\ decay.
-It does however have an impact on low energy statistics in GERDA.
+One residual radioactive isotopes is \Kr. 
+Compared to \nuc{Ge}{76} it has a small $Q_\beta$ value.
+It therefor doesn't contribute to the background for \gerda's \onbb\ decay search.
+However it is to be taken into account in any low energy analysis.
+Its characteristics will be discussed in section \ref{sec:Kry85}.
 \\
 
-The aim of this theses is to determine the concentration of the \Kr\ in the liquid argon coolant of the GERDA experiment and by this determining its influence to the radioactive background. 
+The aim of this theses is to determine the specific activity of the \Kr\ in the liquid argon coolant of the \gerda\ experiment. 
 \\
 
-The first chapter of this thesis acts as an introduction.
-The beginning of the first chapter of this theses concentrates on the physical background of neutrinos and the \onbb\ decay but also describes how it should be measurable. 
-It then goes on to describe GERDA \PII\ in more detail, how it works and what recent results have been published.
-Finally, \Kr\ will be characterized more precisely and its possible transitions described. 
-\\
-
-In the second chapter the main focus will be the line count rate analysis.
-Firstly, an coarse outline of the procedure is given.
-After that the implementation of the individual steps will be described and their results discussed.
-At the end a small comparison of the specific activity from other liquid argon using experiments will be performed.
-\\
-
-The third chapter describes the implementation of the second method using the decrease in count rate.
-Like the second chapter it will provide a short outline of the procedure and describes the results of every step.
-After it will be found that the measured value here is too big an error analysis will be performed finding \nuc{Ar}{42} and \nuc{K}{42} to be the cause of the problem why the second method ultimately fails.
-\\
 
 % what is the general aim of my Bachelor thesis
 % general overview of how I'm going to do this
 % ? what are my predictions ?
-% What possible influence would the result of my work might have on the result of the GERDA experiment?
+% What possible influence would the result of my work might have on the result of the \gerda\ experiment?
 
 \section{Neutrino physics}
 \label{sec:PhyBG}
 
 \subsection{Neutrinos and lepton number conservation}
 
-In the standard model of particle physics (SM) neutrinos are electrically neutral elementary particles.
-They are leptons and only interact with other particles via the weak force and gravity.
-From a weak interaction three different kind of neutrino flavours can be created: the electron neutrino $\nu_e$, the muon neutrino $\nu_{\mu}$ and the tau neutrino $\nu_{\tau}$.
-The SM also predicted that neutrinos must be massless.
-Neutrino oscillation however has shown that neutrinos must have non zero mass.
-More about neutrino oscillation and its consequence in section \ref{sec:0nubetabeta}.
-\\
-
-Neutrinos were first observed in the beta decay.
-At first only the electron was expected to be created in this decay.
-But its energy spectrum was measured to be continuous.
-However, this is only possible if at least three particles are involved in this transition due to momentum conservation.
-As mentioned above, neutrinos carry no electromagnetic charge and effectively only interact via the weak force.
-This makes it hard to investigate its characteristic attributes.
-Among other things, up until now it was not able to determine whether neutrinos are Dirac or Majorana particles.
+Neutrinos are electrically neutral elementary particles.
+They are leptons and, apart from gravity, they only interact with other particles via the weak force and gravity.
+They occur in three different kind of flavours: the electron neutrino $\nu_e$, the muon neutrino $\nu_{\mu}$ and the tau neutrino $\nu_{\tau}$.
+The standard model neutrinos would be massless.
+Neutrino oscillation however has shown that neutrinos are massive.
+However, the absolute values of their mass and whether they are Dirac or marjoram particles is still unknown.
 \\
 
 The major difference between these two kinds of particles is that in the case of Dirac particles one can clearly identify particles and anti-particles while Majorana particles only have one kind.
-In other words Majorana particles are particle and anti-particle at the same time.
-Up until now all other observed particles were Dirac particles who also conserve the so called lepton number.
+Majorana particles are particle and anti-particle at the same time.
 Normal particles carry a lepton number of $L = 1$ and anti-particles carry $L = -1$.
-The lepton number conservation is then due to the fact that only a particle and an anti-particle can annihilate while two normal or two anti-particles can not.
-The resulting change in lepton number between Dirac particles should therefor only ever be $\Delta L = 0$.
-But two Majorana particles, if they exist, could in fact annihilate with each other leaving a difference of $\Delta L = 2$.
-This means that if one kind of particle was found to be a Majorana particles, the overall lepton number conservation, on which the SM relies on, would be broken.
+When two Dirac particles interact the change in lepton number is always $\Delta L = 0$.
+Majorana particles however could make such an interaction that the lepton number difference could be $\abs{\Delta L} = 2$.
+This means that if one kind of particle was found to be a Majorana particles, the overall lepton number conservation, on which the standard model relies on, would be broken.
 This would indicate new physics outside the SM.
 \\
 
-Until today only one possible transition is known that in the case of its existence would clearly show that neutrinos are Majorana particles.
-This transition is know as the neutrinoless double beta (\onbb) decay.
-It is the topic of the following section.
+Until now only one possible transition is known could identify neutrinos as Majorana particles.
+This transition is the (\onbb) decay \cite{noauthor_phys._nodate-1}.
  
 %what are Majorana neutrinos
 
@@ -283,18 +262,15 @@ It is the topic of the following section.
 \subsection{\onbb\ Decay}
 \label{sec:0nubetabeta}
 
-The double beta (\twonu) decay describes the transition of two neutrons to two protons in the same core.
+The double beta (\twonu) decay describes the transition of two neutrons to two protons in the same nuclei.
 The standard model of particle physics needs two electrons and two anti electron neutrinos in the final state of this process.
 \begin{equation}
 (A,Z)\rightarrow (A,Z+2) + 2e^- + 2\bar{\nu_e}
 \end{equation} 
 The corresponding diagram is drawn in figure \ref{fig:Feyn2nbb}.
-For a \twonu\ decay to occur in an isotope any normal beta decay has to be forbidden whereas two neutrinos changing to two protons has to be allowed.
-in most cases is due to the fact that the initial state of the nuclei $(Z,A)$ is more bound than the transition state $(A,Z+1)$ and less bound than the final state $(A,Z+2)$.
-In some cases however the transition state is energetically lower then the initial state.
-There the normal beta decay is still forbidden because the resulting nuclei have a great difference in spin.
-\twonu\ decays has already been observed in a number of materials.
-The half life of such decays has been found to be in the order of $10^{19}$ to $10^{21} \unit{yr}$
+It is only observable if single beta decay is forbidden, while \twonu\ is allowed.
+In most cases this is due to the fact that the initial state of the nuclei $(A,Z)$ is more bound than the transition state $(A,Z+1)$ and less bound than the final state $(A,Z+2)$.
+The half life are in the order of $10^{19}$ to $10^{21} \unit{yr}$
 \\
 
 \WarningsOff
@@ -357,7 +333,7 @@ The half life of such decays has been found to be in the order of $10^{19}$ to $
 \draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
 \end{feynman}
 \end{tikzpicture}
-\subcaption{Feynman-Diagram for the $2\nu\beta\beta$-decay. In it two neutrinos transfer into two protons, two electrons and two electron anti-neutrinos. This decay has already been observed, but only 12 nuclei are known to make this transition.}
+\subcaption{Feynman-Diagram for the $2\nu\beta\beta$-decay. Two neutrons transfer into two protons, two electrons and two electron anti-neutrinos. This decay has already been observed, but only 12 nuclei are known to make this transition.}
 \label{fig:Feyn2nbb}
 \end{subfigure}\hfill%
 \begin{subfigure}{.4\textwidth}
@@ -413,63 +389,60 @@ The half life of such decays has been found to be in the order of $10^{19}$ to $
 	\draw [decoration={brace}, decorate]  (b2.north east)--(b7.south east) node [pos=0.5, right] {\(p\)};
 	\end{feynman}
 	\end{tikzpicture}
-	\subcaption{Feynman-Diagram of the $0\nu\beta\beta$-decay. Two neutrinos transfer into two protons and two electrons. In the massive Majorana neutrino interpretation two virtual neutrinos interact with each other in the process. This transition has not been detected yet.}
+	\subcaption{Feynman-Diagram of the $0\nu\beta\beta$-decay. Two neutrons transfer into two protons and two electrons. One probability is that it is mediated via the exchange of a massive Majorana neutrino. This transition has not been detected yet.}
 	\label{fig:Feyn0nbb}
 \end{subfigure}
 \caption{Feynman-Diagrams of the $0\nu\beta\beta$- and the $2\nu\beta\beta$-decay}
 \end{figure}
 \WarningsOn
-
-\onbb\ is another kind of transition that has not yet been observed but should theoretically happen in the same materials in which \twonu\ decays occurs.
-It also describes the change of two neutrinos to two protons in the same core but here only electrons escape from the decay.
+In the case of \onbb\ no neutrinos are released:
 \begin{equation}
 (A,Z)\rightarrow (A,Z+2) + 2e^- 
 \end{equation}
-No matter what interpretation one chooses, \onbb\ decays can only occur when the neutrino is a Majorana particle \cite{noauthor_phys._nodate-1}.
-However, from here on it will be assumed that the \onbb\ decay is caused by an exchange of massive Majorana neutrinos as seen in \ref{fig:Feyn0nbb}.
+
+From here it will be assumed that the \onbb\ decay is caused by an exchange of massive Majorana neutrinos as seen in \ref{fig:Feyn0nbb}.
 Compared to other interpretations, the concept of massive Majorana neutrino interaction requires only a minimal extension to the standard model, namely the Majorana nature of the neutrinos and their non zero mass.
-\\
-
-Neutrino oscillation experiments have already shown that neutrinos must have a non vanishing mass.
-The flavor mixing ability of neutrinos have shown by neutrino oscillaion requires their flavor eigenstates that couple to the W boson to be a  superposition of so called mass eigenstates.
-\begin{equation}
-\ket{\nu_\alpha} = \sum_i U^*_{\alpha i} \ket{\nu_i} 
-\end{equation}
-These eigenstates must have a different masses.
-Otherwise an oscillation behaviour could not be observed. 
-The PMNS mixing matrix elements $U_{\alpha i}$ are defined by three mixing angles ($\Theta_{12}$,$\Theta_{13}$,$\Theta_{23}$) and three CP-violating phases ($\alpha$,$\beta$,$\delta$). 
-The phase $\delta$ is called the Dirac phase and is always present regardless whether the neutrino is a Majorana or Dirac particle.
-The phase $\alpha$ and $\beta$ however are called the Majorana phases and only have a physical meaning for Majorana neutrinos.
-From neutrino oscillation however only the mass square differences $\Delta m^2_{ij} = m^2_i - m^2_j$ of the mass eigenstates, the mixing angles and the Dirac phase $\delta$ can be determined.
-So far only the absolute value of $\Delta m^2_{32}$ could be determined.
-This leaves three different possible mass orders to considered in the \onbb\ decay: the normal hierarchie in which $m_1 \ll m_2 \ll m_3$, the inverted hierarchie in which $m_3 \ll m_1 < m_2$ and the quasi-degenerate hierarchy $m_1 \approx m_2 \approx m_3 \gg \sqrt{\Delta m^2_{32}}$ in which the mass eigenvalues are much larger than the mass differences.
-In case of his observation, a \onbb\ decay would bring about new knowledge of these mass orders, the mass scale and the Majorana phases. 
-\\
-
-From the half life of the \onbb\ decay one can only determine an effective electron neutrino mass of the observed electron neutrino.
-Through its value it might be possible to at least make a statement about the mass order.
-In figure \ref{fig:MassOrder} this effective neutrino mass is drawn as a function of the smallest mass in the case of the normal and the inverted hierarchie. 
-From it the mass order can be determined in the case of an effective mass smaller then the lower bound of the inverted hierarchy.
-\\
-
-However, through comparison with results from other experiments also trying to measure the mass with a different approach, the masses of the mass eigenstates and also the Majorana phases can be determined.
-The effective neutrino mass of the \onbb\ decay is defined through the coherent sum of the individual masses times the complex amplitude $U_{ei}$ that is dependent of the Majorana phases (see equation \ref{mBetaBeta}).
+The non zero mass follows from the dependence of the \onbb\ decay half life \thalfzero\ on the effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle^2$ ($1 / \thalfzero\ \propto \left\langle m_{\beta\beta}\right\rangle^2$).
+This effective neutrino mass is defined by 
 \begin{equation}
 \left\langle m_{\beta\beta}\right\rangle = \abs{\sum_i U_{ei}^2m_i }
 \label{mBetaBeta}
-\end{equation}This means in that this effective neutrino mass has a lower value than an incoherent mass sum because through the complex phases some parts of this value can interfere destructively.
-Other attempts to measure the mass of the electron neutrino are measuring the energy of the beta released in a beta decay at the end of the spectrum to measure a shift of the spectrum due to a non zero neutrino mass. 
-A prominent experiment currently taking data is the KATRIN experiment.
-The absolute mass value these kind of experiments are sensitive to consists of a incoherent mass sum as seen in equation \ref{massBeta}.
+\end{equation}
+The $U_{ei}$ originate from neutrino flavor mixing. 
+
+Neutrino oscillation experiments has shown that neutrino flavor eigenstates $\nu_\alpha$, that couple to the W boson, are superposition of neutrino mass eigenstates $\nu_i$.
+\begin{equation}
+\ket{\nu_\alpha} = \sum_i U^*_{\alpha i} \ket{\nu_i} 
+\end{equation}
+The PMNS mixing matrix elements $U_{\alpha i}$ are defined by three mixing angles and three CP-violating phases.
+The Dirac phase $\delta$ is always present regardless whether the neutrino is a Majorana or Dirac particle.
+The two Majorana phases $\alpha$ and $\beta$ only have a physical meaning for Majorana neutrinos.
+Neutrino oscillation is only sensitive to the mass square differences $\Delta m^2_{ij} = m^2_i - m^2_j$ of the mass eigenstates and so far only an absolute value of $\Delta m^2_{32}$ could be determined.
+This leaves three different possible mass orders to considered in the \onbb\ decay:
+\begin{enumerate}
+    \item normal hierarchy ($m_1 \ll m_2 \ll m_3$)
+    \item inverted hierarchy ($m_3 \ll m_1 < m_2$)
+    \item quasi-degenerate hierarchy ($m_1 \approx m_2 \approx m_3$) in which the mass eigenvalues are much larger than the mass differences
+\end{enumerate}
+The effective neutrino mass as a function of the lightest mass of the respective hierarchy can be seen in figure \ref{fig:MassOrder}.
+In case of its observation, a \onbb\ decay would bring about new knowledge of these mass orders, the mass scale and the Majorana phases. 
+\\
+
+Through comparison with experiments trying to measure the mass with a different approach, the values of the mass eigenstates and the Majorana phases can be determined.
+Other attempts to measure the mass of the electron neutrino are measuring the energy of the beta decay. 
+A prominent experiment right now is the KATRIN experiment.
+The absolute mass value these kind of experiments are sensitive to an incoherent mass sum as seen in equation \ref{massBeta}.
 
 \begin{equation}
 \left\langle m_{\beta}\right\rangle = \sqrt{\sum_i \abs{U_{ei}}^2m^2_i}
 \label{massBeta}
-\end{equation}A third method involves cosmological observation in which the unweighted sum of the neutrino masses $\Sigma$ can be measured:
+\end{equation}
+
+A third method involves cosmological observation in which the sum of the neutrino masses $\Sigma$ can be measured:
 \begin{equation}
 \Sigma = \sum_i m_i
 \end{equation}
-From these three masses it is theoretically possible to determine the Majorana phases,  the individual masses of the mass eigentstates and therefor also the mass order of the neutrinos.
+From these three masses it is possible to determine the Majorana phases, the individual masses of the mass eigentstates and therefor also the mass order of the neutrinos.
 \\
 
 \begin{figure}[t!]
@@ -488,62 +461,56 @@ From these three masses it is theoretically possible to determine the Majorana p
 	\end{minipage}
 \end{figure}
 
-But how exactly can you measured the \onbb\ decay?
-Theoretically, the experimental signature of the \onbb\ decay is a sharp peak at the end of the regular \twonu\ decay (Q-value) from the effective spectrum of the two electrons (see figure \ref{fig:TheoSpektrum}).
-As mentioned before there have only been a hand full of elements found to make \twonu\ decay and even less are actually useful for an experimental search of the \onbb\ decay.
-A common experimental approach is to use a detector made of material enriched in a \onbb\-decaying isotope.
-This has the advantage that the detection efficiency is maximized
+\subsection{Experimental methods to detect a \onbb\ decay}
+
+The experimental signature of the \onbb\ decay is a sharp peak at the $Q_{\beta\beta}$ value of the \twonu\ decay in the effective spectrum of the two electrons (see figure \ref{fig:TheoSpektrum}).
+One experimental approach is to use a detector made of material enriched in a \onbb\ decaying isotope.
+This has the advantage that the detection efficiency is maximized.
 \\
 
-Since \onbb\ decay should have a very long half-life, a lot of background suppression must be used just to measure the resulting influence.
+Since \onbb\ decay should have a very long half-life, any background has to be minimized just to measure the resulting influence.
 There are three kind of background sources that have to be considered.
-
-
-The first radiation source originates from cosmic background radiation.
-A great amount of muons shower down to the earth from the atmosphere and create background in the detectors.
+\begin{enumerate}
+    \item Cosmic background radiation.
+Muons shower down to the earth from the atmosphere and create background in the detectors.
 Their influence can be suppressed by placing the experiment deep underground and applying a muon veto system.
-
-
-Secondly, the background from natural radioactivity.
-This is typically the dominant background source originating from radioactive isotopes which are naturally present in basically all materials.
+\item Natural radioactivity.
+This is typically the dominant background source originating from radioactive isotopes which are naturally present in all materials.
 Its influence can be suppressed by passively shielding the detectors and the selection of low radioactive components in the setup. 
-
-
-Lastly the \twonu\ decay material itself creates background.
+\item The \twonu\ decay material itself.
 Its impact on the background can not be reduced by external measures or shielding.
 However, by using a detector with high energy resolution or a decay material of high Q-value its influence can be suppressed.
+\end{enumerate}
 \\
 
-\nuc{Ge}{76} is an ideal material for the \onbb\ decay search due to it being a semiconductor.
-It can therefor be also used as the detector material itself.
+\nuc{Ge}{76} is often used in \onbb\ decay search experiment. 
+Due to it being a semiconductor it can be used as the detector material itself.
 A disadvantage of \nuc{Ge}{76} is its low Q-value of $Q_{\beta\beta} = 2039\unit{keV}$, which is lower than \nuc {Tl}{208}'s and \nuc{Bi}{214}'s end point energy.
 It is also hard to increase the target volume compared to e.g. \nuc{Xe}{136}.
-Also it can only be operated at cryogenic temperatures.
-Otherwise it will not function properly.
 Its advantage however is its ability to be made with great intrinsic radio-purity, its high energy resolution and its high detection efficiency.
-These facts outweigh the disadvantages which is why it already has a long history for being used as decay material and why it was chosen for the GERDA experiment.
+These facts outweigh the disadvantages which is why it already has a long history for being used as decay material and why it was chosen for the \gerda\ experiment.
 \\
 
 %\nuc{Ge}{76} has a long history of use as decay material in \onbb\ experiments, most notably in the Heidelberg-Moscow(HdM) and the IGEX experiments.
-%Both of these experiments are the predecessor experiments of GERDA.
+%Both of these experiments are the predecessor experiments of \gerda\.
 %With detectors made of enriched germanium plus the background reducing precautions and active vetos described above they were able to set a similar limit of the half life of the \onbb\ to $\thalfzero(\nuc{Ge}{76}) > 1.9\times10^{25}\unit{yr}$ \cite{noauthor_phys._nodate}. 
 %HdM experiment actually claimed to have measured the half life of about $\thalfzero(\nuc{Ge}{76}) = 1.19\times10^{25}\unit{yr}$ , but its legitimacy has been questioned by a part of the scientific community \cite{klapdor-kleingrothaus_search_2004}.
 %\\
 
-%This is where the  GERDA experiment comes in.
+%This is where the  \gerda\ experiment comes in.
 %Its first measuring phase (\PI) was planned to verify or falsify the results of the HdM experiment using the detectors used in the HdM and the IGEX experiment.
 %\PI started in November 2011 and May 2013 with a total exposure  of  $21.6 \frac{\unit{kg}}{\unit{yr}}$ and no signal of a \onbb\ observed \cite{agostini_results_2013}.
 %With its results and the results from HdM and IGEX a new lower limit for the half life was able to be set at $\thalfzero(\nuc{Ge}{76})>3.0\times10^{25}$  yr  (90$\%$ C.L.)
 %The second phase (\PII) with 30 new custom-made enriched detectors together with the old detectors has started measuring in late 2015 and had its latest data published !!!! hier noch ob ich das NATURE paper quoten soll!!!!!.
-%A more detailed description of the construction and functionality of the GERDA  \PII~ is the topic of the next section.
+%A more detailed description of the construction and functionality of the \gerda\  \PII~ is the topic of the next section.
 
 % also a bit about standard double beta decay
 % differences between the standard and neutrinoless beta decay
  
 
 
-\section{GERDA \PII}
-\label{sec:GERDA}
+\section{\gerda\ \PII}
+\label{sec:gerda}
 
 % general Information, e.g. 
 % sizes 
@@ -552,40 +519,35 @@ These facts outweigh the disadvantages which is why it already has a long histor
 
 \subsection{Experimental Setup}
 \label{sec:ExSetup}
-The GERDA experiment is located in the underground Laboratori Nazionali del Gran Sasso (LNGS) of INFN, Italy.
+The \gerda\ experiment is located in the underground Laboratori Nazionali del Gran Sasso (LNGS) of INFN, Italy.
 The laboratories are located approx. 1.4 km below ground, which corresponds to a water equivalent of 3.5km.
-As already mentioned in the previous chapter the GERDA experiment uses \nuc{Ge}{76} as \onbb\ decay material as well as the detector material \cite{agostini_background_2017}.
+\gerda\ experiment uses \nuc{Ge}{76} as \onbb\ decay material as well as the detector material \cite{agostini_background_2017}.
 \\
 
 The detectors are operated bare in a liquid argon (LAr) tank of 64m$^3$ volume at an working temperature of about 90K.
-This corresponds to a temperature light under the boiling point of LAr at normal pressure.
-The argon being used was obtained from the atmosphere by air liquefaction and has been purified from radioactive isotopes by further distillation.
-Its main purpose is to cool the germanium detectors down to their working temperatures and to shield against external radiation originating from the walls or the outside. 
-Since \PII~ there are also photomultipliers positioned inside the LAr tank.
-Due to the scintillation property of argon they measure a light signals whenever a charged particle travels through the LAr.
-Because the \onbb\ decays are not likely to create any scintillation light the photomultiplier signals can be used as a rejection veto - the so called LAr veto.
+Its main purpose is to cool the germanium detectors down to their working temperatures and to passivly shield against external radiation originating from the outside.
+LAr can also scintillate.
+That is why in \PII\ extra instrumentation was positioned inside the LAr tank the measure any light signal around the detectors.
+Because any \nuc{Ge}{76} decays are unlikely to create scintillation light their signal can be used as a veto - the so called LAr veto.
 \\
 
 Situated around the LAr is a 590m$^3$ water tank.
 Its main purpose is to shield the setup from outside radiation not only passively by absorption but also actively as a muon veto.
 Situated in the water tank are 66 photomultipliers.
-These detect any Cherenkov light created by high velocity charged particles passing through the water tank.
-It can be expected that whenever an event is measured that the event was caused by an outside source and can therefor be rejected.
-It therefor shares the same basic functionality with the LAr veto.   
-Together, these two vetoes can identify  the majority of events.
-
+These detect any Cherenkov light created mostly by Muons.
+Again, \nuc{Ge}{76}'s Q-value is to low to create any kind of Cherenkov light which is why any light signal can be used as a veto.
 
 Over the water tank is a clean room situated in which the detector strings can be assembled into the strings.  
-The general setup can be seen in figure \ref{fig:GERDASetupPII}.
+The general setup can be seen in figure \ref{fig:gerdaSetupPII}.
 \\
 
 \begin{figure}[t!]
 	\centering
 	\begin{minipage}{.45\textwidth}
 		\centering
-		\includegraphics[height=60mm]{./Bilder/GERDAsetupPhaseII.png}
-		\caption{Sketch of the GERDA \PII\'s experimental setup. The germanium source and detectors are placed inside a liquid argon (LAr) tank which itself is surrounded by a water tank. Inside LAr tank a LAr veto system is installed and inside the water tank several photomultiplier are positioned for the Muon veto. Taken from \cite{collaboration_upgrade_2018}.}
-		\label{fig:GERDASetupPII}
+		\includegraphics[height=60mm]{./Bilder/GerdasetupPhaseII.png}
+		\caption{Sketch of the \gerda\ \PII\'s experimental setup. The germanium source and detectors are placed inside a liquid argon (LAr) tank which itself is surrounded by a water tank. Inside LAr tank a LAr veto system is installed and inside the water tank several photomultiplier are positioned for the Muon veto. Taken from \cite{collaboration_upgrade_2018}.}
+		\label{fig:gerdaSetupPII}
 	\end{minipage}\hfill%
 	\begin{minipage}{.45\textwidth}
 		\centering
@@ -596,32 +558,30 @@ The general setup can be seen in figure \ref{fig:GERDASetupPII}.
 \end{figure}
 
 Now to the detectors themselves.
-GERDA \PII~ uses the seven coaxial detectors (COAX) that have already been used in the predecessor experiments HdM and the IGEX as well as 30 new Broad Energy Germanium detectors (BEGe).
+\gerda\ \PII~ uses seven coaxial detectors (COAX) that have already been used in the predecessor experiments HdM and the IGEX as well as 30 new Broad Energy Germanium detectors (BEGe).
 Both of these detector types are made of germanium that has been enriched from 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$ \cite{agostini_background_2017}.
 They also share the same basic functionality.
-The major volume of both detectors are made of p doped germanium.
+The major volume of both detectors are made of p-type germanium.
 Both detectors have the majority of their surface covered by a 1-2mm thick n$^+$ doped electrode and only a small part with an p$^+$ electrode.
 If an electron hole pair is created in the p doped area, the charged particles are separated and guided to the n$^+$ or the p$^+$ layer respectively by a strong electrostatic field (3 to 4 kV) between the electrodes.
-It the pair is created in the n$^+$ layer the hole is most likely to recombine in the $n^+$ layer due to its low mobility and therefor creates no measurable signal.
+If the pair is created in the n$^+$ layer the hole is most likely to recombine in the $n^+$ layer due to its low mobility and therefor creates no measurable signal.
 The n$^+$ layer is therefor not not active and called a dead layer.
 \\
 
-The two detectors however differ in their design.
-COAX detectors have a cavity coaxial to the cylindrical volume and are doped p$^+$ in the cavity's surface.
-The BEGe detectors don't have a cavity.
-They have a small p$^+$ doped surface at the bottom.
-Sketches of their design can be seen in figure \ref{fig:DetcDes}.
-The detector types also differ in their mass and therefor their expected exposure per detector and energy resolution.
+The two detectors however differ in their design as seen in figure \ref{fig:DetcDes}
+But the detector types also differ in their mass and therefor their expected exposure per detector and energy resolution.
 The COAX detectors are generally heavier and therefor have a higher detector efficiency then the BEGe.
 But their higher mass also results in a worse energy resolution \cite{agostini_production_2015}.
+BEGes are also allow for a better pulse shape discrimination (PDS) compared to the COAX detectors.
+
+
 To compensate the fact that the BEGe detectors are generally lighter than the COAX a greater amount of them are being used.
 \\
 
 
 The enriched detectors are assembled into 6 strings forming a hexagonal array together with a seventh string.
-This seventh string consists of three extra coaxial detector made of natural isotopic \nuc{Ge}{76}.
-However they are not used in GERDAs analysis.
-The string setup can be seen in figure \ref{fig:strings} and \ref{fig:stringsabove}.
+This seventh string consists of three extra coaxial detector made of natural isotopic Ge.
+However they are not used in \gerda s analysis.
 \\
 
 All detectors are connected to custom made amplifiers also located in the liquid argon above the detectors.
@@ -659,13 +619,13 @@ These nylon in the cylinder can be read out at their ends with silicon photomult
 
 LAr has the property that scintillation light is produced when ionizing radiation interacts with an electron or nuclei within it \cite{olsen_improvements_nodate}.
 Incoming radiation may excite or ionize the scintillation material along its way or collides with another particle which in return excites or ionizes other particles secondarily.
-The excited atoms in a nobel liquids form dimer pairs (Ar$^*_2$).
-These dimer pairs are metastable and recombine into two stable argon atoms by the release of a vacuum ultraviolet photon (VUV).
+The excited atoms in a noble liquids form dimer pairs (Ar$^*_2$).
+These dimer pairs are meta stable and recombine into two stable argon atoms by the release of a vacuum ultraviolet photon (VUV).
 Depending on whether the argon atom was ionized or excited two different mechanisms are responsible for the relaxation.
 But in the end each ionized or excited atom only produces one VUV photon and a direct correlation between the amount of energy deposited and the number of photons emitted can be found.
 This correlation is called the scintillation yield and argon has a value of about $4\times10^4\frac{\unit{photons}}{\unit{MeV}}$ \cite{olsen_improvements_nodate}.
 Nobel liquids also have the advantage that VUV light does not have enough energy to excite any ground state atom which is why the scintillation light can travel very long distances without being absorbed.
-Compared to other nobel gases argon has the advantage of a very low price due to it being easily obtained by liquefaction of air from the atmosphere.
+Compared to other noble gases argon has the advantage of a very low price due to it being easily obtained by liquefaction of air from the atmosphere.
 \\
 
 \begin{figure}[t!]
@@ -698,12 +658,12 @@ The complete LAr veto setup can be seen in figure \ref{fig:LArVetoSetup}
 
 LAr is also a good coolant due to the characteristically low melting point of nobel gases.
 At normal pressure argon has its boiling point at 87.29K and its melting point 83.8K.
-The working temperature of GERDA is therefor chosen to be right under the boiling point temperature.
+The working temperature of \gerda\ is therefor chosen to be right under the boiling point temperature.
 A low temperature is needed for the germanium detectors to function properly.
 \\
 
 Nobel liquids are also great as ultra radio-pure passive shielding.
-This is because nobel elements rarely make any chemical bonds due to their fully filled electron shells.
+This is because noble elements rarely make any chemical bonds due to their fully filled electron shells.
 It is therefor possible to filter the majority of impurity just by distillation.
 Compared to Xenon it has a smaller interaction cross section due to its lower Z value but it is by far cheaper.
 \\
@@ -711,8 +671,8 @@ Compared to Xenon it has a smaller interaction cross section due to its lower Z 
 \subsection{Data processing and analysis}
 \label{sec:DataProc}
 
-As already mentioned, in the case of an event the digitized signals of the gemanium detectors and the photomultipliers are stored for further offline analysis.
-The software used for this purpose is GErda LAyouT for Input/Output (GELATIO).
+As already mentioned, in the case of an event the digitized signals of the germanium detectors and the photomultipliers are stored for further offline analysis.
+The software used for this purpose is \gerda\ LAyouT for Input/Output (GELATIO).
 It is a data analysis framework suitable for off-line digital signal processing and analysis of data recorded by germanium detectors.
 It's advantages are its multiple level data organization and its modular digital signal processing.
 These two points leave the analysis protocol incredibly flexible.
@@ -737,30 +697,31 @@ Such a procedure is called a blinding process and the revealing of the blinded e
 % especially LAr-Veto 
 
 \subsection{Recent Results}
-\label{sec:ResultsofGERDA}
+\label{sec:Resultsofgerda}
 \begin{figure}[t!]
 	\centering
 	\begin{minipage}{0.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/GerdaErgebnisse.png}
-		\caption{Recent results from GERDA \PII. The measured spectra of COAX and BEGe detectors are distinguished by their different resolutions.  Only one decay is in the energy range in which the signature peak of the \onbb\ decay was expected. This leads to the conclusion that no \onbb\ decay was measured and a new lower limit of \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL) was determined. Taken from \cite{zsigmond_new_2018}}
-		\label{fig:GerdaErgebnisse}
+		\includegraphics[width=\textwidth]{./Bilder/gerdaErgebnisse.png}
+		\caption{Recent results from \gerda\ \PII. The measured spectra of COAX and BEGe detectors are distinguished by their different resolutions.  Only one decay is in the energy range in which the signature peak of the \onbb\ decay was expected. This leads to the conclusion that no \onbb\ decay was measured and a new lower limit of \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL) was determined. Taken from \cite{zsigmond_new_2018}}
+		\label{fig:gerdaErgebnisse}
 	\end{minipage}\hfill%
 	\begin{minipage}{.50\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{./Bilder/Kr85Decay.png}
-	\label{fig:Decay}
+	
 	\caption{
 	The decay scheme of \Kr. It decays via three different channels where effectively only two are active. The majority of transitions end in the ground state of \nuc{Rb}{85} while 0.434$\%$ of the times \Kr decays into a excited state being 514 keV over the ground state. The excited state has a half life of 1.015$\mu$s. It then relaxes directly into the ground state. Taken from \cite{noauthor_livechart_nodate}.
 	}
+	\label{fig:Decay}
 	\end{minipage}
 \end{figure}
-Only recently a new unblinding of all measured events at GERDA \PII\ so far  occurred \cite{zsigmond_new_2018}.
-In it only one event in the close proximity of the Q-value was measured as seen in figure \ref{fig:GerdaErgebnisse}.
+Only recently a new unblinding of all measured events at \gerda\ \PII\ so far  occurred \cite{zsigmond_new_2018}.
+In it only one event in the close proximity of the Q-value was measured as seen in figure \ref{fig:gerdaErgebnisse}.
 By far too less to identify a peak at that value.
 The conclusion was therefor that no evidence for a \onbb\ decay has been seen.
 A new lower limit for \nuc{Ge}{76} was determined to be \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL).
-Currently GERDA receives an upgrade on the LAr veto and is planned to measured for until 2020.
+Currently \gerda\ receives an upgrade on the LAr veto and is planned to measured for until 2020.
 After that the successor experiment LEGEND in collaboration with the MAJORANA experiment it is planned to investigate the lower limit of \nuc{Ge}{76} half life further.
 
 % what has happened so far
@@ -791,11 +752,11 @@ A third transition into another excited \nuc{Rb}{85m} is possible but its probab
 		Taken from \cite{bieringer_trace_2009}.
 	}
     \label{fig:Kr85Aenderung}
-	\end{figure}
+\end{figure}
 
 
 In the course of this thesis the main interest lies with the concentration of \Kr\ in argon.
-The argon used in GERDA \PII\ was extracted from the atmosphere.
+The argon used in \gerda\ \PII\ was extracted from the atmosphere.
 It is therefor of interest to find out how the \Kr\ got there.
 There are various different sources how the \Kr\ can be produced.
 It can be created in the atmosphere naturally by an interaction of \nuc{Kr}{84} with cosmic rays.
@@ -806,19 +767,23 @@ A small amount is again natural produced from the uranium deposit in earth's cru
 But the majority is man made from nuclear power plants and research reactors.
 As mentioned earlier krypton is a noble gas and therefor easily diffuses through everything in its way until it reaches the atmosphere.
 Due to the higher amount of nuclear power plants build in the last fifty years the activity of \Kr\ in the atmosphere has risen steadily (see figure \ref{fig:Kr85Aenderung}) \cite{bieringer_trace_2009}.
+\\
 
-
+Due to nuclear power plants being the major source of \Kr\, the concentration in the atmosphere might vary depending on the location.
+This is important because as it will be seen later, the specific activity of \Kr\ in \gerda\ \PII\ and therefor its concentration in the LAr is much lower than compared to other experiments.
+The most probable reason for why this might happen is that the air from which the argon was captured from originated in an area far away from nuclear power plants where the amount of produced \Kr\ is much lower.
+\\
 
 % where does it come from?
 % what properties does it have?
-% why is it important to calculate its influence on GERDA
+% why is it important to calculate its influence on \gerda\
 
  
 \chapter{Line Count Rate Analysis}
 \label{sec:SAfrom514}
 
 
-As stated in the introduction, the main goal of this theses is to approximate the specific activity of the isotope \Kr\ in the liquid argon coolant of the GERDA experiment. 
+As stated in the introduction, the main goal of this theses is to approximate the specific activity of the isotope \Kr\ in the liquid argon coolant of the \gerda\ experiment. 
 This value is of interest, as in other experiments this alien isotope in the liquid argon has produced a not negligible background. 
 Two examples will be used in this thesis: the WARP and the Darkside experiment.
 Both of these experiments have set their aim to detect WIMPs (Weakly Interacting Massive Particles) which are likely candidates for dark matter.
@@ -829,7 +794,7 @@ Due to the small expected interaction cross section of the WIMPs, the radioactiv
 In both of these experiments a value for the specific activity of the residual \Kr\ has been determined.
 In the Darkside experiment a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\)  \cite{agnes_results_2016} was measured whereas  \((160\pm130)\frac{\unit{Bq}}{\unit{l}}\) was measured for the WARP experiment \cite{benetti_measurement_2006}.
 \Kr\ creates a non negligible background in the low energy statistics in both experiments but of very different proportion. 
-It is therefor of interest to determine the specific activity in the GERDA experiment if one wants to use the low energy interval for other kinds of research.
+It is therefor of interest to determine the specific activity in the \gerda\ experiment if one wants to use the low energy interval for other kinds of research.
 For example for a further investigation of \nuc{Ar}{39} with a similar Q-value as \Kr\ or the search for dark matter in the keV-scale.
 %This corresponds to a concentration of about \((2.32\pm0.14)\times10^{-18}\frac{\unit{mol}}{\unit{l}}\) for the Darkside and  \((1.30\pm1.05)\times10^{-16}\frac{\unit{mol}}{\unit{l}}\) for the WARP experiment.
 \\
@@ -894,7 +859,7 @@ Two very appropriate filters for this purpose are the Muon veto and the detector
 How exactly these two filters work and how they are used in this analysis will now be discussed.
 \\
 
-As it was elaborated in section \ref{sec:DataProc} all GERDA data is stored in a multi-tier data structure. 
+As it was elaborated in section \ref{sec:DataProc} all \gerda\ data is stored in a multi-tier data structure. 
 In this thesis only the data from tier 3 or tier 4 will be used.
 On these two levels a lot of analysis has already been done on the original data. 
 As part of the Muon veto, each event in tier 3 and 4 was given a flag whether or not at the same time a signal in one of the photomultiplier in the water tank was detected. 
@@ -1025,7 +990,7 @@ From this point, only events where at least one photomultiplier has measured a n
 
 In addition, as already mentioned earlier, the energy of the released beta electron is very low.
 This means that one can expect from a \Kr\ decay into an excited state of \nuc{Rb}{85m} that only a small number of photomultipliers should measure a signal.
-This is because the effective scintillation yield of the GERDA setup is about 60 phe/MeV.
+This is because the effective scintillation yield of the \gerda\ setup is about 60 phe/MeV.
 With a mean energy of 47.65keV one can expect that to measure 1 to 4 photons per decay.
 Therefore, only events with a maximum of four different triggered photomultipliers are used in the further analysis.
 This amount of coincedently triggered photomultiplier leaves still a lot of events.
@@ -1038,13 +1003,14 @@ But due to the fact that later in the analysis a manually investigation into the
 	\includegraphics[width=100mm]{./Bilder/TriggerTimeOnly4.pdf}
 	\fi%
 	\caption{
-	    Counts plotted over the time difference between the germanium detector event and the signal in the photomultipliers. 
+	    Counts plotted over the time difference between the germanium detector event and the signal in the photomultipliers.
 	    The range of the plot only shows the negative time difference from -5 to 0 $\mu$s.
 	    This means that all events creating this plot measured a photomultiplier signal before an germanium detector signal.
 	    Due to \nuc{Rb}{85m}'s half life of 1.015$\mu$s an exponential increase should be identifiable but with the low amount of counts no statement can be made. 
 	}
     	\label{fig:Trigger4}
 \end{figure}
+
 Applying these two restrictions to the LAr veto filtered events and using from those only those photomultiplier events with a signal strength of at least 0.5 phe results in a distribution as shown in figure \ref{fig:Trigger4}.
 Only the signals that have measured at least 0.5 phe are of interest because they had the necessary intensity to trigger the LAr veto. 
 The x axis is the time difference of the events in the photomultipliers from the signal measured in one of the Germanium detectors.
@@ -1172,19 +1138,19 @@ The corresponding fit parameters are listed in table \ref{tab:FitParNoFilter}.
 \hline
 Name	& Value [BEGe] & Values [COAX]\\ 
 \hline
-A [counts $\times$ / 0.2 ] &	(15.98 \(\pm\)	4.54	)&	(31.93\(\pm\)	7.08)	\\	
+A [counts $\times$ / 0.2 ] &	(15.98 \(\pm\)	4.54)&	(31.93\(\pm\)7.08)	\\	
 \hline
-B [keV] &	(510.87 \(\pm\)	0.22	)&	(510.88 \(\pm\)	0.190)\\	
+B [keV] &	(510.87 \(\pm\)	0.22)&	(510.88 \(\pm\)	0.190)\\	
 \hline
-C [keV] &	(0.952 \(\pm\)	0.011	)	&	(1.165 \(\pm\)	0.010	)	\\
+C [keV] &	(0.952 \(\pm\)	0.011)	&	(1.165 \(\pm\)	0.010)	\\
 \hline
-D [counts / 0.2 keV] &	(36.66 \(\pm\)	4.99)	&	(30.40 \(\pm\)	5.24	)	\\
+D [counts / 0.2 keV] &	(36.66 \(\pm\)	4.99)	&	(30.40 \(\pm\)	5.24)	\\
 \hline
-E [keV] &	(513.95 \(\pm\)	0.16	)	&	(513.87 \(\pm\)	0.14)	\\
+E [keV] &	(513.95 \(\pm\)	0.16)	&	(513.87 \(\pm\)	0.14)	\\
 \hline
-F [keV] &	(0.953 \(\pm\)	0.014	)	&	(1.145 \(\pm\)	0.012	)	\\
+F [keV] &	(0.953 \(\pm\)	0.014)	&	(1.145 \(\pm\)	0.012)	\\
 \hline
-G [counts / 0.2 keV] &	(11.98 \(\pm\)	5.27)	&	(11.35 \(\pm\)	7.45	)	\\
+G [counts / 0.2 keV] &	(11.98 \(\pm\)	5.27)	&	(11.35 \(\pm\)	7.45)	\\
 \hline
 H [counts / 0.2 keV] &	(189.92 \(\pm\)	110.05)	&	(996.72 \(\pm\)	972.62)	\\
 \hline
@@ -1192,25 +1158,26 @@ I [1/keV] &	(5.80 \(\pm\) 1.22)$\times10^{-3}$	&	(9.24 \(\pm\)1.83)$\times10^{-3
 \hline
 
 \end{tabular}
-\label{tab:FitParNoFilter}
 \caption{
 	Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors. 
 	Variable A and D correspond to the amplitudes of the two Gaussian peaks, B and E to the position of their maxima, C and F their standard deviation. 
 	On the other hand is G the constant background, H the amplitude of the exponential background and I its decrease parameter.
 	}
+\label{tab:FitParNoFilter}
 \end{table}
 \\
 
 The only fit parameter that is of real interest here is variable D.
 Its value is the amplitude of the second Gaussian peak.
 Because the Gaussian peak was already chosen in the normalized form this value also represents the amount of \Kr\ decays measured per binning of the histogram.
-From this value one can determine the actual kine count $N_{\mathrm{peak}}$ by dividing by the binning factor $\frac{1}{0.2 }$.
-One can finally state that in the BEGes an amount of $N_{\mathrm{peak,BEGe}} = (183\pm25)$ counts could be determined and in the COAX detectors $N_{\mathrm{peak,COAX}} = 152\pm26.2)$ counts.
+From this value one can determine the actual kine count $N_{\mathrm{peak}}$ by dividing by the binning factor $0.2$.
+One can finally state that in the BEGes an amount of $N_{\mathrm{peak,BEGe}} = (183\pm25)$ counts could be determined and in the COAX detectors $N_{\mathrm{peak,COAX}} = (152\pm26.2)$ counts.
 \\
 
 
-From fit parameter value H and I one can also see that, as expected, the change of the background over the inspected energy interval is negligible.
-Parameter I defines the change in energy and its value is so small that the exponential function in the investigated range has no real impact on the fit function.
+Fit parameter G, H and I define the background contribution to the fit function.
+One can see from them that, as expected, the change of the background over the inspected energy interval low.
+Parameter I defines the change in energy and its value is so small that the exponential function in the investigated range has no real overall change.
 But as mentioned before it might have been problematic to leave out the fit functions possibility to change over energy.
 Otherwise it might have ruined the whole fitting process. 
 \\
@@ -1229,8 +1196,8 @@ The fit results in the function displayed in equation \ref{equ:FitFilters}.
 \end{equation}
 \\
 
-The fitting process produces the diagrams \ref{fig:FitLArVetoBEGes} and \ref{fig:FitLArVetoCOAX} and the corresponding fitting parameters (see table \ref).
-As above, the amplitude A of the Gaussian peak correspond to the number of events measured in the area of the peak per binning.
+The fitting process produces the diagrams \ref{fig:FitLArVetoBEGes} and \ref{fig:FitLArVetoCOAX} and the corresponding fitting parameters (see table \ref{tab:FitParFilter} ).
+As above, the amplitude A of the Gaussian peak corresponds to the number of events measured in the area of the peak per binning.
 This results in an amount of $(120\pm19.3)$ counts for the BEGe and $(128\pm22.1)$ for the COAX spectrum.
 Compared to the values of the not filtered spectra however, it can be seen that the number of counts in the BEGe and in the COAX detectors have dropped considerably.
 This means that quite a few  \Kr\ decay events must have been rejected by the LAr veto and a recovery of these falsely filtered \Kr\ decays would be necessary.
@@ -1281,12 +1248,13 @@ It still would have been great if it had worked as a crosscheck.
 		F [1 / keV] &	(0.901209$\pm$2.409593)	&	(0.001950$\pm$0.004637)\\
 		\hline
 	\end{tabular}
-	\label{tab:FitParFilter}
 	\caption{
 		Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors. 
 		Variable A correspond to the amplitudes of the Gaussian peak, B to the position of its maximum, C its standard deviation. 
 		On the other hand is D the constant background, E the amplitude of the exponential background and F its decrease parameter.
 		}
+			\label{tab:FitParFilter}
+
 \end{table}
 
 Nevertheless, the line count rate $N_{\mathrm{peak,BEGe}}$ and $N_{\mathrm{peak,COAX}}$ used in the further analysis were successfully determined from the fit of the unfiltered spectra.
@@ -1300,15 +1268,15 @@ How this conversion factor can be determined is the topic of the following secti
 
 As described above, it is possible to calculate the decay density of \Kr\ necessary to create the measured line count by determining the factor $\frac{1}{\epsilon V_{\mathrm{sim}}} \times \frac{1}{p}$. 
 Such a conversion factor can be determined with the help of a Monte Carlo simulation.
-The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA \cite{boswell_mage_2010}.
+The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and \gerda\ \cite{boswell_mage_2010}.
 Both experiments aim to measure the neutrinoless double beta decay using enriched Germanium detectors.
 Because it is expected that the half life of this decay is in the order of at least \(10^{25}\) years, a lot of effort is put into finding out how big the contribution of different isotopes to the background is.
 \mage is therefor specialized to simulate radioactive decays and their corresponding measured events in Germanium detectors.
 \\
 
-The simulation used here consists of a cylindrical volume of 2.5m of height and 3m diameter, in which at the center the detector arrays of the GERDA experiment is placed.
+The simulation used here consists of a cylindrical volume of 2.5m of height and 3m diameter, in which at the center the detector arrays of the \gerda\ experiment is placed.
 The resulting volume of the liquid argon is $V_{\mathrm{sim}} = 17.65 \mathrm{m}^3$ .
-Compared with the volume of 64 m\(^3\) of LAr used in the GERDA experiment this volume is much smaller.
+Compared with the volume of 64 m\(^3\) of LAr used in the \gerda\ experiment this volume is much smaller.
 But as we will see later, this volume is by far big enough for this purpose.
 A total of $N_{\mathrm{sim}}$ = 50.000.000 photons with an energy of 514keV were simulated in of the simulated LAr volume. 
 As it can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over the entire volume of the cylinder is relatively constant.
@@ -1380,7 +1348,7 @@ If you divide this factor by the simulated volume and the probability $p=0.434\%
 \frac{1}{p}\times\frac{1}{\epsilon_{\mathrm{COAX}} V_{\mathrm{sim}}} = (176.07\pm2.90) \frac{\mathrm{decay}}{\mathrm{event} \times l}
 \end{equation*}
 
-As mentioned above these values are invariant with change of volume which is why we can also apply it to our real liquid argon tank volume. 
+As mentioned above, all these values are invariant with change of volume which is why one can also apply it to the real liquid argon tank volume. 
 \\
 
 \begin{figure}[t!]
@@ -1392,17 +1360,12 @@ As mentioned above these values are invariant with change of volume which is why
     Energy spectrum of simulated events measured in BEGe detectors.
 	The majority of measured signals had an energy below 514 keV.
 	This means that a lot of the emitted photons interacted with the LAr or only had parts of their energy deposited in the detectors.
-	Among other things, the compton peak at roughly 343 keV can be seen.  
+	Among other things, the Compton peak at roughly 343keV can be seen.  
 	}
 	\label{fig:PhasenraumMC514}
 \end{figure}
 
-Now that the two conversion factors are determined one can calculate the density of all \Kr\ decays by applying formula \ref{equ:density}
-
-\begin{equation}
-\rho_{\mathrm{dec}} = \frac{N_{\mathrm{peak}}}{p}\times\frac{1}{\epsilon V_{\mathrm{sim}}}
-\label{equ:density}
-\end{equation}For an amount of ($183\pm25$) counts to be measured in the BEGe detectors, it can be concluded that a density of $(26.52\pm4.01)\times10^3 \frac{\unit{decay}}{\unit{l}}$ \Kr\ decay of, whereas for the COAX detectors one gets a value of $(26.76\pm5.05)\times10^3 \frac{\unit{decay}}{\unit{l}}$ . 
+Now that the two conversion factors are determined the last value needed to calculate the specific activity is the measuring time o all detectors.
 \\
 %2,6519E+04	4,0042E+03		2,6762E+04	5,0496E+03
 
@@ -1455,11 +1418,11 @@ With this one can finally determine the mean measuring times using equation \ref
 \label{meanmeauringtime}
 \end{equation*}
 From this, an average measurement time for the BEGes of $\bar{t}_{\mathrm{BEGe}} = (1.540\pm0.001)\unit{yr}$ and for the COAX of $\bar{t}_{\mathrm{COAX}} = (1.803\pm0.001)\unit{yr}$ can be calculated.
-With these mean measuring times the mean specific activity $\bar{a}$ of \Kr\ over the curse of all of \PII\ can  finally calculate  by applying equation \ref{equ:activityDieErste}.
 \\
 
-With the line count rate analysis it was able to determine an activity of $\bar{a}_{\mathrm{BEGe}} = (0.546\pm0.0827)	\frac{\unit{mBq}}{\unit{l}}$ in the BEGes and a specific activity of $\bar{a}_{\mathrm{COAX}} = (0.470\pm0.0887)	\frac{\unit{mBq}}{\unit{l}}$ in the COAX.
-These two values differ only inside their range of uncertainty which is why these results are of relativly good quality.
+With the mean measuring times, the line counts rates and the conversation factors the mean specific activity $\bar{a}$ of \Kr\ over the curse of all of \PII\ can  finally calculate  by applying equation \ref{equ:activityDieErste}.
+From the measurement data of the BEGe detectors it was therefor possible to calculate a specific activity of $\bar{a}_{\mathrm{BEGe}} = (0.546\pm0.0827)	\frac{\unit{mBq}}{\unit{l}}$ of \Kr\ and $\bar{a}_{\mathrm{COAX}} = (0.470\pm0.0887)	\frac{\unit{mBq}}{\unit{l}}$ from the COAX detectors.
+These two values differ only inside their range of uncertainty which is why these results are of relatively good quality.
 Of these two value a mean specific activity 
 \begin{equation*}
 \bar{a} = (0.508\pm0.086)\frac{\unit{mBq}}{\unit{l}}
@@ -1471,7 +1434,7 @@ One can now make some comparisons of this value with the WARP and the Darkside e
 In the case of the WARP experiment a specific activity of $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ \label{} was measured for the \Kr.
 On the other hand, an specific activity of $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
 The here determined value of $(0.508\pm0.085)\frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole three orders of magnitude smaller than the WARP experiment.
-From these comparisons one can see, that the specific activity of \Kr\ in GERDA \PII\ seems to be much smaller than in other experiments using LAr.
+From these comparisons one can see, that the specific activity of \Kr\ in \gerda\ \PII\ seems to be much smaller than in other experiments using LAr.
 \\
 
 What one can also do is take the specific activities of the other two experiments and determine how many counts one would have been able to measure if the \Kr\ had their specific activity.
@@ -1511,6 +1474,17 @@ As a graphical representation, the peaks that would have been able to be seen in
 \end{figure}
 \\
 
+But why is the specific activity of \Kr\ in \gerda\ \PII\ so much smaller than in any other experiment?
+As it was elaborated above, due to the argon being extracted from the atmosphere, \Kr\ should be present.
+And the majority of the \Kr\ there should originate from nuclear power plants.
+WARP's LAr also originated from the atmosphere but its specific activity was measured to be almost three orders of magnitude higher than \gerda's.
+A possible explanation would be that the air from which the argon of WARP was extracted from was taken from a place with much a lot of nuclear power plants surrounding it while the argon of the \gerda\ experiment originated from air far away from any reactor.
+On the other hand Darkside's argon originated from an underground reservoir where only natural fission decays produce any \Kr\.
+But its specific activity is still much higher than \gerda's.
+Also no extra purification of the LAr was applied.
+This would mean that in the case of the LAr in \gerda\ one was extremely lucky to have found argon that had such low \Kr\ concentration that its impact on the background can basically be neglected.
+\\
+
 Now that a concrete value for the specific activity of \Kr\ has been determine the second attempt to measure the specific activity will described in the next chapter.
 \\  
 
@@ -1538,7 +1512,7 @@ Ideally, a similar result from this method would confirm the specific activity d
 \\
 
 But compared to the line count rate analysis is the second method  expected to be relatively imprecise.  
-This estimation comes from the fact that this method relies on a the approximation, that \Kr\ is the only radioactive isotope in the GERDA setup that has a non negligible change in its specific activity.
+This estimation comes from the fact that this method relies on a the approximation, that \Kr\ is the only radioactive isotope in the \gerda\ setup that has a non negligible change in its specific activity.
 The idea is that \Kr\ has the lowest half-life (T = 10,739\unit) of all other remaining radioactive isotopes in liquid argon and therefor only \Kr\ should change its decay rate.
 In comparison, other radioactive isotopes that are of interest are \nuc{Ar}{42} with a half-life of 32.9 y \cite{chen_nuclear_2016}, \nuc{Ar}{39} with 269 y \cite{singh_nuclear_2006} and \nuc{Po}{210} with 138d \cite{kondev_nuclear_2008}.
 \\
@@ -1562,7 +1536,7 @@ It can therefore be assumed that all changes in intensity are only due to \Kr\ d
 Even if the specific activity determined with this method is not expected to be as precise as the first method, it can still be used as a crosscheck for the other specific activity determined above.
 \\
 
-It has now been shown that this approach can be applied in the case of GERDA \PII\.
+It has now been shown that this approach can be applied in the case of \gerda\ \PII\.
 Therefore it is now necessary to discuss how exactly the specific activity can be determined by changing the intensity.
 To measure the change in count rate every measured event will have to be drawn over time in a fit function and through the resulting plot an exponential fit applied.
 From the amplitude of the resulting exponential function a count rate $R_{\mathrm{count}}$ of counts per second can be determined.
@@ -1850,7 +1824,7 @@ This can easily be done by integrating an exponential decay function over all of
     \bar{a} = \frac{1}{2.17\unit{yr}} \int_0^{2.17\unit{yr}} a(t=0)\times\exp \left( \frac{\log(2)}{T_{\frac{1}{2}}} t \right) \mathrm{d}t
 \end{equation*}
 
-with T being the half life of \Kr.
+with $T_{\frac{1}{2}}$ being the half life of \Kr.
 This results in an mean specific activity of $ \bar{a} = 57.294 \frac{\unit{mBq}}{\unit{l}}$.
 \\
 
@@ -1902,7 +1876,7 @@ Such fields in the LAr tank originated from the germanium detectors.
 In a germanium detector it is necessary to create a great electrostatic potential difference between the doped electrodes.
 The resulting electric field separates electron-hole pairs that might have been created by other particles depositing their energy in the semiconductor \cite{spieler_semiconductor_2005}.
 The field then guids the particles to the respective electrodes and by that creating a current which can be measured externally.
-In the case of the GERDA experiment strong fields are necessary.
+In the case of the \gerda\ experiment strong fields are necessary.
 They are supposed to guarantee that the majority of electron-hole pairs reach the corresponding electrodes much faster than their mean free time $\tau$. %Hier noch die Buchquelle
 If the fields would not be as strong, the detection probability of any event would be much lower which is not ideal for an experiment in which extremely rare events have to be measured.
 \\
@@ -1913,8 +1887,8 @@ Thats why even though the fields are not very strong far away of the detectors t
 Now that the density of \nuc{K}{42} isotopes is higher near the germanium detectors it can be expected that the specific activity around the detector also increases.
 \\
 
-The effect explained here has already been measured in GERDA and it is actually one of the greatest background sources of the whole experiment.
-\nuc{K}{42} has also the unfortunate characteristic for the GERDA experiment that its Q-value of about $Q =3525\unit{MeV}$ lies higher than the Q-value of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
+The effect explained here has already been measured in \gerda\ and it is actually one of the greatest background sources of the whole experiment.
+\nuc{K}{42} has also the unfortunate characteristic for the \gerda\ experiment that its Q-value of about $Q =3525\unit{MeV}$ lies higher than the Q-value of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
 This means that electrons of the \nuc{K}{42} decay can create background events in the investigated rage. 
 Initially it was not expected to create much background.
 Its influence on the measurement however was only recognized after the start of \PI, when its counting rate was higher by a factor of 20. \cite{becerici_schmidt_results_2014}.
@@ -1995,6 +1969,8 @@ If one would plot its equivalent amplitude in a diagram like Figure \ref{fig:Cha
 On the other hand is the activity in the Darkside experiment with its $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
 \\
 
+
+
 % use fit to calculate the decrease in rate of the signals in range from 200 to 500keV
 % from fit and assumption that only Kr85's activity is decreasing one can calculate the specific activity from the amplitude of the fit
 
@@ -2003,13 +1979,24 @@ On the other hand is the activity in the Darkside experiment with its $(2.8577 \
 \chapter{Summary and Outlook}
 \label{sec:ConcAndOutlook}
 
-With the line count rate analysis carried out in this paper it could be shown that the specific activity of \nuc{Kr}{85} in the liquid argon of the GERDA experiment has a value of $(0.508\pm0.0857) \frac{\unit{mBq}}{\unit{l}}$. 
+With the line count rate analysis carried out in this paper it was able to show that the specific activity of \nuc{Kr}{85} in the LAr in \gerda\ \PII\ has a value of $(0.508\pm0.086) \frac{\unit{mBq}}{\unit{l}}$. 
 Compared to WARPs $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ and to Darksides $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ its value is much smaller.
 On the other hand, the second attempt to determine a value for the specific activity via the change of count rate over time has failed.
-This was due to the falsely made assumption that \Kr\ is the only isotope in the liquid argon to show significant change in its activity over time.
+This was due to the falsely made assumption that \Kr\ is the only isotope in the LAr to show significant change in its activity over time.
 \\
 
+As it was mentioned in the introduction, the \gerda\ experiment is planned to keep measuring until 2020.
+Afterwards the \gerda\ setup will be converted to the LEGEND experiment - a collaboration between the \gerda\ and the MAJORANA experiments.
+There LAr is used again as coolant, but new argon is added which might again lead to a higher concentration of \Kr\ depending on where the argon was taken from.
+LEGEND will also feature a new and more precise LAr veto setup.
+With this new LAr veto it might  actually be possible to use the pre-coincedences of the \Kr\ decay in the line count rate analysis which would make a fitting of the peak possible. 
+\\
 
+Due to the comparably small specific activity of the \Kr\ in the argon it might be of interest to find out where it originated from.
+As seen from other experiments as WARP \Kr\ can cause an non insignificant amount of background in the lower energy area.
+For experiments interested in this region like the search for sterile neutrinos or dark matter in the energy range of keV this isotope might be a problematic isotope.
+This might be prevented by finding out where the argon in \gerda\ \PII\ came from and why its \Kr\ concentration is so low there.
+The argon from this area might be better suited for such low-background experiments.
 
 
 
@@ -2017,6 +2004,7 @@ This was due to the falsely made assumption that \Kr\ is the only isotope in the
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -----------------------------------------------  ADD SOME ACKNOWLEDGMENTS  ---
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section*{Acknowledgments}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
