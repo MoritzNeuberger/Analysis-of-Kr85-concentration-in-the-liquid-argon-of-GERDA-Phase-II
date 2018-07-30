@@ -1462,7 +1462,7 @@ With the line count rate analysis it was able to determine an activity of $\bar{
 These two values differ only inside their range of uncertainty which is why these results are of relativly good quality.
 Of these two value a mean specific activity 
 \begin{equation*}
-\bar{a} = (0.508\pm0.0857)\frac{\unit{mBq}}{\unit{l}}
+\bar{a} = (0.508\pm0.086)\frac{\unit{mBq}}{\unit{l}}
 \end{equation*}
 can be calculated.
 \\
@@ -1589,13 +1589,13 @@ The following sections will focus on the concrete implementation of this method 
 
 \begin{figure}[t!]
 	\centering
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/ZeitverlaufALLE.pdf}
 		\caption{every event}
 		\label{fig:ZeitAll}
 	\end{subfigure}\hfill%
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/ZeitverlaufLimits.pdf}
 		\caption{only energies between 200 and 400keV}
@@ -1639,13 +1639,13 @@ A new plot including only events between the energy limits of 200 and 400keV can
 \\
 \begin{figure}[t!]
 	\centering
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}[t]{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/beforeTheFall.pdf}
 		\caption{before}
 		\label{fig:before}
 	\end{subfigure}\hfill%
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}[t]{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/afterTheFall.pdf}
 		\caption{after}
@@ -1655,6 +1655,7 @@ A new plot including only events between the energy limits of 200 and 400keV can
 		Energy spectra from 0 to 200 keV. 
 		Figure (a) shows the resulting spectrum of all events measured before the lowering of the lower energy threshold of recorded events on 12.10.2017 while (b) shows the spectrum after this date.
 		}
+		\vspace{5mm}
 \end{figure}
 
 The second discontinuous behavior originates from the same problem that was already faced in the line count rate analysis.
@@ -1677,23 +1678,23 @@ By dividing all bins of histogram \ref{fig:ZeitLimits} by the corresponding bins
 \\
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}[t]{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/testpuler.pdf}
 		\caption{
 			Histogram showing the mean measuring time of each week corresponding to the individual bins.
 			Those were determined by the amount of test pulse signals measured in the time frames and their amount multiplied by 20s.
-			From the course of this histogram one can see, that the measuring time of each week varied on a broad level.
+			One can see, that the measuring time of each week varied on a broad level.
 			}
 		\label{fig:effectiveMeasuringTimes}
 	\end{minipage}\hfill%
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}[t]{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/eventRate.pdf}
 		\caption{
-			Count rate of measured events between 200 and 400 keV over the course of \PII\.
+			Count rate of measured events between 200 and 400 keV over the course of \PII.
 			A continuous change in rate can be seen. 
-			One can now apply a fit using function \ref{equ:FitFilters2} and through it determine the count rate of \Kr\ at the start of \PII\.
+			One can now apply a fit using function \ref{equ:FitFilters2} and through it determine the count rate of \Kr\ at the start of \PII.
 			}
 		\label{fig:ChangeInEventRate}
 	\end{minipage}
@@ -1717,21 +1718,21 @@ What this simulation actually simulates and how one determines the conversion fa
 
 \begin{table}[t!]
 	\centering
-	\begin{tabular}{|l|r|}
+	\begin{tabular}{|l|c|}
 		\hline
-		Name	& Value  \\ 
+		Name 	& Value  \\ 
 		\hline
-		A  &	(17.844639 \(\pm\)	3.179471)\\	
+		A [1/s] &	(1.521 $\pm$ 0.224)$\times10^{-3}$\\	
 		\hline
-		B  &	(513.838989 \(\pm\)	0.665171)\\	
+		B [yr] &	10.739\\	
 		\hline
-		C  &	(0.828315 \(\pm\)	1.377836)\\
+		C [1/s] &	(2.714 $\pm$ 0.210)$\times10^{-3}$\\
 		\hline
 	\end{tabular}
 	\caption{
 		Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.
 		Parameter A represents the amplitude of the exponential decay function and B the half life of the decaying isotope.
-		Fitparameter C is there to handle the constant background created by other radioactive isotopes with much higher half lifes.
+		fit parameter C is there to handle the constant background created by other radioactive isotopes with much higher half lives.
 		}
     \label{tab:FitParZeit}
 \end{table}
@@ -1741,29 +1742,14 @@ What this simulation actually simulates and how one determines the conversion fa
 	\ifmakefigures%
 	\includegraphics[width=100mm]{./Bilder/eventRateFit.pdf}
 	\fi%
-	\caption{effective measuring times}
+	\caption{
+	    Fitted count rate diagram over the time frame of \PII.
+	    For the fitting process function \ref{equ:FitFilters2}.
+	    The resulting fit parameter can be seen in table \ref{tab:FitParZeit}.
+	}
 	\label{fig:ChangeInEventRateFit}
 \end{figure}%
-\begin{figure}[t!]
-	\centering
-	\begin{minipage}{.5\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{./Bilder/Sim1Phasenraum.pdf}
-		\caption{
-			Energy spectrum computed by simulating 1 billion \Kr\ decays and plotting the counts of events by their corresponding energy.
-			From it can be seen, that the majority 
-			}
-		\label{fig:Sim1Spektrum}
-	\end{minipage}\hfill%
-	\begin{minipage}{.5\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{./Bilder/Aktivitaet.pdf}
-		\caption{specific activity of \Kr\ over time}
-		\label{fig:activity}
-	\end{minipage}
-\end{figure}
-\section{Monte Carlo simulation}
-\label{sec:MonteCarlo2}
+
 
 To calculate this conversion factor one basically has to apply the same process as in the line count rate analysis.
 Just this time one does not just simulate the emission of photons with an energy of 514keV in the LAr.
@@ -1781,22 +1767,50 @@ It must also be taken into account that only those events are used in the furthe
 Every other decay that made a signal in another detector will be discarded making the detector efficiency even smaller. 
 Because of this low expected detector efficiency a much higher amount of decays have to be simulated than in the case of the first Monte Carlo simulation.
 \\
+\begin{figure}[t!]
+	\centering
+	\begin{minipage}[t]{.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/Sim1Phasenraum.pdf}
+		\caption{
+			Energy spectrum computed by simulating 1 billion \Kr\ decays and plotting the counts of events by their corresponding energy.
+			From it can be seen, that the majority of events were created by the photons of the 514 keV peak and only about 20$\%$ from the electrons of every other \Kr\ decay.
+			}
+		\label{fig:Sim1Spektrum}
+	\end{minipage}\hfill%
+	\begin{minipage}[t]{.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/Aktivitaet.pdf}
+		\caption{
+		The calculated specific activity of \Kr\ over the time frame of \PII.
+		This plot was created by subtracting the constant background of each point in figure \ref{fig:ChangeInEventRateFit} and multiplying each value with the conversion factor.
+		}
+		\label{fig:activity}
+	\end{minipage}
+\end{figure}
+
+\section{Monte Carlo simulation}
+\label{sec:MonteCarlo2}
 
 That is why a number of N = 1 billion \Kr\ decays in a volume of again $V_{sim} = 17.65 \mathrm{m}^3$ was simulated.
 Due to the massive amount of these simulated events only those decays were saved in which a signal has actually been measured.
 These events created a combined spectrum of the emitted electrons plus the photons emitted from the excited \nuc{Rb}{85m} as seen in figure \ref{fig:Sim1Spektrum}.
 If you compare this spectrum with the one determined for the other Monte Carlo simulation you can see these two spectra look relatively similar.
 To test this one can calculate a ratio from the two spectra and compare them.
-A fitting ratio would be to take the counts of one bin of a spectra and divide it through count of the 514 keV peak.
+An appropriate ratio for the range of values of this analysis would be to take the sum of all events with an energy between 200 and 400 keV $N_{\mathrm{sum}}$ and divide by the counts in the 514 keV peak $N_ {\mathrm{peak}}$.
+This results in a value of $N_{\mathrm{sum}}/N_{\mathrm{peak}} = 2.481$ for the first simulation and $3.137$ for the second simulation.
+Due to the fact that the first simulation only computed 514 keV photons the first value represents the ratio when only the 514 keV photons would contribute to the energy spectrum.
+The second value, on the other hand, represents the ratio when the 514 keV photons together with the electrons generate the spectrum.
+This means that the electrons only generate about 20$\%$ of all measured events in the range of 200 to 400 keV.
+The 514 keV photons created the rest.
+\\
 
-This would mean however that the majority of the measured events must have been caused by the photons of the \nuc{Rb}{85m} relaxation and not by the electrons.
 This is actually an advantage.
-If the majority of the measured events were created by electrons then one would have to apply a correction onto our detector efficiency.
+If the majority of the measured events were created by electrons then one would have to apply a correction onto the detector efficiency.
 This is because of a weakness of the simulated detectors.
 The dead layer of the actual detectors isn't known that well which is why the simulated detectors can only work with an assumptions of the actual dead volume of the detectors.
 Unfortunately, it's hard to correct the determined value for this weakness.
-It is therefor quite lucky that the 514keV photons are responsible for the majority of counts in the spectrum.
-In this case no such correction has to be applied.
+It is therefor lucky that the 514keV photons are responsible for the majority of counts in the spectrum and no such correction has to be applied.
 \\
 
 But this conclusion of photons being the main cause of the spectrum assumes that in both simulations the same environmental conditions and \Kr\ characteristics were simulated.
@@ -1823,8 +1837,6 @@ With this value one can again calculate the volume independent conversation fact
 \begin{equation*}
     \frac{1}{\epsilon V_{\mathrm{sim}}} = (39.38\pm1.04) \frac{\unit{decay}}{\unit{event} \times \unit{l} }
 \end{equation*}
-\\
-
 With this conversation factor one can now finally calculate the specific activity of \Kr.
 By applying equation \ref{equ:ActivityDieZweite} and feeding it with the values found we result in an specific activity of $a(t=0) = (61.4\pm41.9) \frac{\unit{mBq}}{\unit{l}}$ at the start of Phase II.
 
@@ -1837,6 +1849,7 @@ This can easily be done by integrating an exponential decay function over all of
 \begin{equation*}
     \bar{a} = \frac{1}{2.17\unit{yr}} \int_0^{2.17\unit{yr}} a(t=0)\times\exp \left( \frac{\log(2)}{T_{\frac{1}{2}}} t \right) \mathrm{d}t
 \end{equation*}
+
 with T being the half life of \Kr.
 This results in an mean specific activity of $ \bar{a} = 57.294 \frac{\unit{mBq}}{\unit{l}}$.
 \\
@@ -1904,7 +1917,7 @@ The effect explained here has already been measured in GERDA and it is actually 
 \nuc{K}{42} has also the unfortunate characteristic for the GERDA experiment that its Q-value of about $Q =3525\unit{MeV}$ lies higher than the Q-value of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
 This means that electrons of the \nuc{K}{42} decay can create background events in the investigated rage. 
 Initially it was not expected to create much background.
-Its influence on the measurement however was only recognized after the start of \PI, when its counting rate was higher by a factor of 20. \cite{becerici_schmidt_results_2014}. %!!!!! Refernz zu Becerici Schmidt 
+Its influence on the measurement however was only recognized after the start of \PI, when its counting rate was higher by a factor of 20. \cite{becerici_schmidt_results_2014}.
 Techniques to suppress the background of \nuc{K}{42} were introduced over time like the usage of nylon mini-shrouds (NMS) as a mechanically barrier.
 The NMS together with the active filters of the pulse shape analysis and the LAr veto have proven to bee able to suppress \nuc{K}{42} events by more then three orders of magnitude.
 \\
@@ -1915,42 +1928,51 @@ So it still can be expected that a not negligible proportion of the measured spe
 What effective specific activity can be expected from the \nuc{Ar}{42} is difficult to estimate, but you can assume that it should be far greater than that of \Kr.
 To get a quantitative approximation, you can use the plot of the event rate change again (see \ref{fig:ChangeInEventRate}) and modify the fit function used so that two exponential decays plus a constant background are taken into account.
 Both exponential decay fit functions have their half life fixed to the respective values of \Kr\ (10.739y) and \nuc{Ar}{42} (32.9y).
-The used fit function can be seen in equation \ref{fig:double}, the resulting fit function in figure \ref{fig:double} and the fit parameter in table \ref{tab:doubleFitpara}.
+The used fit function can be seen in equation \ref{fig:doubleFitFun}, the resulting fit function in figure \ref{fig:double} and the fit parameter in table \ref{tab:doubleFitpara}.
 \begin{equation}
     \mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}\times\exp\left(-\frac{\log(2)}{\mathrm{D}} x \right) + \mathrm{E}
+    \label{equ:doubleFitFun}
 \end{equation}
 
-\begin{figure}[t!]
+\begin{table}[t!]
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}[t!]{.475\textwidth}
 	\centering
 	\ifmakefigures%
 	\includegraphics[width=75mm]{./Bilder/doppelt.pdf}
 	\fi%
-	\caption{double exponential decay fit}
+	\captionof{figure}{
+		    Fitted count rate diagram over the time frame of \PII.
+	    For the fitting process function \ref{equ:doubleFitFun}.
+	    The resulting fit parameter can be seen in table \ref{tab:doubleFitpara}.
+	}
 	\label{fig:double}
 	\end{minipage}\hfill%
-	\begin{minipage}{.5\textwidth}
+    \begin{minipage}[t!]{.475\textwidth}
     \centering
     \begin{tabular}{|l|c|}
         \hline
         Name  & Value \\
         \hline
-        A     & 0.0010244$\pm$0.000122073 \\
+        A [1/s]    & (1.024$\pm$0.122)$\times 10^{-3}$ \\
         \hline
-        B    & 10.739 \\
+        B [yr] & 10.739 \\
         \hline
-        C   & 0.00145395$\pm$0.000129916 \\
+        C [1/s]  & (1.454$\pm$0.130)$\times 10^{-3}$ \\
         \hline
-        D  & 32.9 \\
+        D [yr] & 32.9 \\
         \hline
-        E & 0.00175652$\pm$0.000119112 \\
+        E [1/s] & (1.757$\pm$0.120)$\times 10^{-3}$ \\
         \hline
     \end{tabular}
-    \captionof{table}{}{Fit parameters of the double exponential decay analysis}
+    \caption{
+        Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.
+		Parameters A and C represent the amplitude of the exponential decay function and B and D the half lives of the decaying isotopes.
+		Fit parameter E is there to handle the constant background created by other radioactive isotopes with much higher half lives.
+    }
     \label{tab:doubleFitpara}
 	\end{minipage}
-\end{figure}
+\end{table}
 
 
 In a direct comparison of figure \ref{fig:double} with graph \ref{fig:ChangeInEventRateFit} no real difference can be see.
@@ -1967,7 +1989,7 @@ It would still be possible to determine an specific activity of \Kr\ from plot \
 But due to the higher number of fit parameters that would have to be determined and the way to small time frame compared to the half lifes of the isotopes, one can be quite pessimistic whether this analysis can even make a satisfying statement about the specific activity of \Kr.
 \\
 
-At the end of this analysis it is again of interest to investigate how the change in the count rate would have looked over time if the specific activities of the WARP or the Darkside experiment had been present.
+At the end of this analysis it is of interest again to investigate how the change in the count rate would have looked over time if the specific activities of the WARP or the Darkside experiment had been present.
 Again, in the case of the WARP experiment an activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ was measured. 
 If one would plot its equivalent amplitude in a diagram like Figure \ref{fig:ChangeInEventRateFit} a significant change would have been visible.
 On the other hand is the activity in the Darkside experiment with its $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
