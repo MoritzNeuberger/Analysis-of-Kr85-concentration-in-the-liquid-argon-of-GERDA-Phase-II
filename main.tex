@@ -169,7 +169,7 @@ The liquid argon in which the detectors are located acts as coolant, shielding a
 A residual radioactive isotope in the liquid argon creating measurable background in the detectors is \nuc{Kr}{85}.
 The aim of this thesis is to determine its specific activity.
 Two different and independent approaches will be applied to measure this value.
-The second method, using the change in  count rate over time, failed due to falsely made assumptions.
+The second method, using the change in count rate over time, failed due to a falsely made assumption.
 The first method however, using a line count rate, determined \nuc{Kr}{85}'s specific activity to be $0.508\frac{\unit{mBq}}{\unit{l}}$.
 
 \begin{otherlanguage}{ngerman}
@@ -1070,7 +1070,10 @@ The upper limit of the light intensity originates again from the expected number
 	\fi%
 
 	\caption{
-    The recorded signal of photomultiplier tube P4 in event 1614036. In it is the raw energy signal plotted over the recorded time frame. The blue line indicates the moment in time in which an event in one of the germanium detectors was measured. From it one can see that the photomultiplier signal occurred before the germanium detector signal.   
+    The recorded signal of photomultiplier tube P4 in event 1614036. 
+    In it is the raw energy signal plotted over the recorded time frame. 
+    The blue line indicates the moment in time in which an event in one of the germanium detectors was measured. 
+    From it one can see that the photomultiplier signal occurred before the germanium detector signal.   
     }
     	\label{fig:BeispielSignal}
 \end{figure}
@@ -1153,7 +1156,12 @@ The corresponding fit parameters are listed in table \ref{tab:FitParNoFilter}.
 		\label{fig:FitNoFilterCOAX}
 	\end{subfigure}
     \\
-	\caption{Fitted energy spectra from 500 to 525 keV when only considering those event that got though the Muon veto and the detector anti-coincidence veto. Function \ref{equ:FitNoFilters} was used as fit function. Its course is indicated in red. The two green plots at the bottom of the figures indicate the two independent peak responsible for the deviation. Their course was determined from the corresponding fit parameter.}
+	\caption{
+		Fitted energy spectra from 500 to 525 keV when only considering those event that got though the Muon veto and the detector anti-coincidence veto. 
+		Function \ref{equ:FitNoFilters} was used as fit function. Its course is indicated in red. 
+		The two green plots at the bottom of the figures indicate the two independent peak responsible for the deviation. 
+		Their course was determined from the corresponding fit parameter.
+		}
 \end{figure}
 \\
 
@@ -1164,7 +1172,7 @@ The corresponding fit parameters are listed in table \ref{tab:FitParNoFilter}.
 \hline
 Name	& Value [BEGe] & Values [COAX]\\ 
 \hline
-A [counts $\times$ keV / 0.2 keV] &	(15.98 \(\pm\)	4.54	)&	(31.93\(\pm\)	7.08)	\\	
+A [counts $\times$ / 0.2 ] &	(15.98 \(\pm\)	4.54	)&	(31.93\(\pm\)	7.08)	\\	
 \hline
 B [keV] &	(510.87 \(\pm\)	0.22	)&	(510.88 \(\pm\)	0.190)\\	
 \hline
@@ -1185,7 +1193,11 @@ I [1/keV] &	(5.80 \(\pm\) 1.22)$\times10^{-3}$	&	(9.24 \(\pm\)1.83)$\times10^{-3
 
 \end{tabular}
 \label{tab:FitParNoFilter}
-\caption{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors. Variable A and D correspond to the amplitudes of the two Gaussian peaks, B and E to the position of their maxima, C and F their standard deviation. On the other hand is G the constant background, H the amplitude of the exponential background and I its decrease parameter.}
+\caption{
+	Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors. 
+	Variable A and D correspond to the amplitudes of the two Gaussian peaks, B and E to the position of their maxima, C and F their standard deviation. 
+	On the other hand is G the constant background, H the amplitude of the exponential background and I its decrease parameter.
+	}
 \end{table}
 \\
 
@@ -1242,7 +1254,11 @@ It still would have been great if it had worked as a crosscheck.
 		\label{fig:FitLArVetoCOAX}
 	\end{subfigure}
 	\caption{
-	Fitted energy spectra from 500 to 525 keV when only considering those event that got though the Muon veto, the detector anti-coincidence veto and the LAr veto. Function \ref{equ:FitFilters} was used as fit function. Its course is indicated in red. The green plots at the bottom of the figures indicate the peaks responsible for the deviation. Their course was determined from the corresponding fit parameter.
+	Fitted energy spectra from 500 to 525 keV when only considering those event that got though the Muon veto, the detector anti-coincidence veto and the LAr veto. 
+	Function \ref{equ:FitFilters} was used as fit function. 
+	Its course is indicated in red. 
+	The green plots at the bottom of the figures indicate the peaks responsible for the deviation. 
+	Their course was determined from the corresponding fit parameter.
 	}
 \end{figure}
 
@@ -1266,7 +1282,11 @@ It still would have been great if it had worked as a crosscheck.
 		\hline
 	\end{tabular}
 	\label{tab:FitParFilter}
-	\caption{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors. Variable A correspond to the amplitudes of the Gaussian peak, B to the position of its maximum, C its standard deviation. On the other hand is D the constant background, E the amplitude of the exponential background and F its decrease parameter.}
+	\caption{
+		Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors. 
+		Variable A correspond to the amplitudes of the Gaussian peak, B to the position of its maximum, C its standard deviation. 
+		On the other hand is D the constant background, E the amplitude of the exponential background and F its decrease parameter.
+		}
 \end{table}
 
 Nevertheless, the line count rate $N_{\mathrm{peak,BEGe}}$ and $N_{\mathrm{peak,COAX}}$ used in the further analysis were successfully determined from the fit of the unfiltered spectra.
@@ -1291,7 +1311,7 @@ The resulting volume of the liquid argon is $V_{\mathrm{sim}} = 17.65 \mathrm{m}
 Compared with the volume of 64 m\(^3\) of LAr used in the GERDA experiment this volume is much smaller.
 But as we will see later, this volume is by far big enough for this purpose.
 A total of $N_{\mathrm{sim}}$ = 50.000.000 photons with an energy of 514keV were simulated in of the simulated LAr volume. 
-As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over the entire volume of the cylinder is relatively constant.
+As it can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over the entire volume of the cylinder is relatively constant.
 \\
 
 \begin{figure}[t!]
@@ -1310,7 +1330,12 @@ As can be seen in figure \ref{fig:CrossSecAb}, the density of the decays over th
 	\end{subfigure}
     \\
 	\vspace{0.5cm}
-    \caption{Cross section from above and a radial cross section showing the density of simulated decays in the cylindrical volume. The red points indicate all events that were measured by the BEGe detectors.}
+    \caption{
+    	The cross section of the simulated volume from above and radial.
+    	The colored area shows the density of simulated decays. 
+    	The red points indicate all events that were measured by BEGe detectors.
+    	From it can be seen that photons that have been emitted far away from the detectors created no measurable signal in the detectors.
+    	}
 \vspace{0.5cm}
 \end{figure}
 \\
@@ -1364,7 +1389,10 @@ As mentioned above these values are invariant with change of volume which is why
 	\includegraphics[width=100mm]{./Bilder/MC-514-Phasenraum.pdf}
 	\fi%
 	\caption{
-    Spectrum of the measured rare \Kr\ events in all of the BEGe detectors of the Monte Carlo simulation.
+    Energy spectrum of simulated events measured in BEGe detectors.
+	The majority of measured signals had an energy below 514 keV.
+	This means that a lot of the emitted photons interacted with the LAr or only had parts of their energy deposited in the detectors.
+	Among other things, the compton peak at roughly 343 keV can be seen.  
 	}
 	\label{fig:PhasenraumMC514}
 \end{figure}
@@ -1465,19 +1493,21 @@ As a graphical representation, the peaks that would have been able to be seen in
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=75mm]{./Bilder/WARP.pdf}
-		\caption{Cross section from above}
+		\caption{WARP}
 		\label{fig:WARP}
 	\end{subfigure}\hfill%
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=75mm]{./Bilder/Darkside.pdf}
-		\caption{Radial cross section}
+		\caption{Darkside}
 		\label{fig:Darkside}
 	\end{subfigure}
     \\
-	\vspace{0.5cm}
-    \caption{}
-\vspace{0.5cm}
+    \caption{
+    	Energy spectra of the BEGe detectors from 500 to 525 keV.
+    	The green plots in the spectra represent the theoretical peaks one could expect to measure if a specific activity of the respective experiment was present.
+    	In both cases it would have created 
+    	}
 \end{figure}
 \\
 
