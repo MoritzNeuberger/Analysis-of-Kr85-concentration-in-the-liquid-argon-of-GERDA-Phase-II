@@ -544,16 +544,16 @@ The general setup can be seen in figure \ref{fig:gerdaSetupPII}.
 
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.45\textwidth}
+	\begin{minipage}[t!]{.45\textwidth}
 		\centering
 		\includegraphics[height=60mm]{./Bilder/GERDAsetupPhaseII.png}
-		\caption{Sketch of the \gerda\ \PII\'s experimental setup. The germanium source and detectors are placed inside a liquid argon (LAr) tank which itself is surrounded by a water tank. Inside LAr tank a LAr veto system is installed and inside the water tank several photomultiplier are positioned for the Muon veto. Taken from \cite{collaboration_upgrade_2018}.}
+		\caption{Sketch of the \gerda\ \PII\'s experimental setup. The germanium source and detectors are placed inside a liquid argon (LAr) tank which itself is surrounded by a water tank. Taken from \cite{collaboration_upgrade_2018}.}
 		\label{fig:gerdaSetupPII}
 	\end{minipage}\hfill%
-	\begin{minipage}{.45\textwidth}
+	\begin{minipage}[t!]{.45\textwidth}
 		\centering
 		\includegraphics[height=60mm]{./Bilder/DetectorDesign.png}
-		\caption{Sketch of the Coaxial (COAX) and Broad Energy Germanium (BEGe) detector designs. Both detector types are cylindrical, have their inner volume p doped and a big n$^+$ and smaller p$^+$ doped layer on their surface. The COAX detectors have are larger and have a cylindrical coaxial cavity while the BEGes are completely solid. Taken from \cite{agostini_background_2014}.}
+		\caption{Sketch of the Coaxial (COAX) and Broad Energy Germanium (BEGe) detector designs. The COAX detectors have are larger and have a cylindrical coaxial cavity while the BEGes are completely solid. Taken from \cite{agostini_background_2014}.}
 		\label{fig:DetcDes}
 	\end{minipage}
 \end{figure}
@@ -622,17 +622,17 @@ In nobel liquids the VUV light does not have enough energy to excite any ground 
 
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.45\textwidth}
+	\begin{minipage}{.475\textwidth}
 		\centering
 		\includegraphics[width=0.6\textwidth]{./Bilder/LArVetoSetup.png}
 		\caption{Sketch of the liquid agron (LAr) veto setup. In a cylindrical volume around the detectors 16 photomultiplier tubes (PMT) are placed at the top and the bottom of the cylinder. At the height of the detectors nylon strings are placed which are read out at their ends by silicon photomultiplier (SiPM). Taken from \cite{collaboration_upgrade_2018}.}
 		\label{fig:LArVetoSetup}
 	\end{minipage}\hfill%
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{.475\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/TierStructure.png}
-		\caption{The multi-tier structure used by GELATIO. Tier0 and Tier1 contain all of the raw data. However, the data in Tier1 has already been converted to root files. Tier2, Tier3 and Tier4 store  progressively more analyzed data. Taken from \cite{agostini_gelatio:_2011}}
-		\label{fig:TierStructure}
+		\includegraphics[width=\textwidth]{./Bilder/GerdaErgebnisse.png}
+		\caption{Recent results from \gerda\ \PII. The measured spectra of COAX and BEGe detectors are distinguished by their different resolutions.  Only one decay 2 sigma from the \onbb\ decay was found. This leads to the conclusion that no \onbb\ decay was measured and a new lower limit of \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL) was determined. Taken from \cite{zsigmond_new_2018}}
+		\label{fig:gerdaErgebnisse}
 	\end{minipage}
 \end{figure}
 
@@ -652,8 +652,19 @@ It is therefore possible to filter the majority of impurity just by distillation
 Compared to other noble gases argon also has the advantage of a very low price due to it being easily obtained by liquefaction of air from the atmosphere.
 \\
 
+
+
+
 \subsection{Data processing and analysis}
 \label{sec:DataProc}
+
+\label{sec:Resultsofgerda}
+\begin{figure}[t!]
+	\centering
+		\includegraphics[width=100mm]{./Bilder/TierStructure.png}
+		\caption{The multi-tier structure used by GELATIO. Tier0 and Tier1 contain all of the raw data. However, the data in Tier1 has already been converted to root files. Tier2, Tier3 and Tier4 store  progressively more analyzed data. Taken from \cite{agostini_gelatio:_2011}}
+		\label{fig:TierStructure}
+\end{figure}
 
 As already mentioned, in the case of an event the digitized signals of the germanium detectors and the photomultipliers are stored for further offline analysis.
 The software used for this purpose is \gerda\ LAyouT for Input/Output (GELATIO).
@@ -676,16 +687,8 @@ Such a procedure is called a blinding process and the revealing of the blinded e
 % especially LAr-Veto 
 
 \subsection{Recent Results}
-\label{sec:Resultsofgerda}
-\begin{figure}[t!]
-	\centering
-	\begin{minipage}{0.475\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{./Bilder/GerdaErgebnisse.png}
-		\caption{Recent results from \gerda\ \PII. The measured spectra of COAX and BEGe detectors are distinguished by their different resolutions.  Only one decay 2 sigma from the \onbb\ decay was found. This leads to the conclusion that no \onbb\ decay was measured and a new lower limit of \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL) was determined. Taken from \cite{zsigmond_new_2018}}
-		\label{fig:gerdaErgebnisse}
-	\end{minipage}\hfill%
-	\begin{minipage}{.475\textwidth}
+
+\begin{figure}	
 		\centering
 	\includegraphics[width=\textwidth]{./Bilder/Kr85Decay.png}
 	
@@ -693,7 +696,6 @@ Such a procedure is called a blinding process and the revealing of the blinded e
 	The decay scheme of \Kr. It decays via two different channels. The majority of transitions end in the ground state of \nuc{Rb}{85} while 0.434$\%$ of the times \Kr decays into a excited state being 514 keV over the ground state. The excited state has a half life of 1.015$\mu$s. It then relaxes directly into the ground state. Taken from \cite{noauthor_livechart_nodate}.
 	}
 	\label{fig:Decay}
-	\end{minipage}
 \end{figure}
 Only recently new data was published by \gerda\ \cite{zsigmond_new_2018}.
 In it only one event in the proximity of the Q-value was found as seen in figure \ref{fig:gerdaErgebnisse}.
@@ -744,9 +746,13 @@ However, the production of \Kr\ from nuclear fission generates an atmospheric in
 A small amount is again natural produced from the uranium deposit in earth's crust.
 But the majority is man made from nuclear power plants.
 Krypton is a noble gas and therefore easily diffuses through everything in its way until it reaches the atmosphere.
-Due to the higher amount of nuclear power plants build in the last half century the activity of \Kr\ in the atmosphere has risen steadily from about 1961 PBq in 1973 to  (see figure \ref{fig:Kr85Aenderung}) \cite{bieringer_trace_2009}.
-nuclear power plants being the major source of \Kr\, the concentration in the atmosphere might vary depending on the location.
+Due to the higher amount of nuclear power plants build in the last half century the activity of \Kr\ in the atmosphere has risen steadily from about 1961 PBq in 1973 \cite{telegadas_atmospheric_1975} to an estimated 5500 PBq in 2009 (see figure \ref{fig:Kr85Aenderung}) \cite{bieringer_trace_2009}.
+But in actuality, the concentration in the atmosphere varies depending on the location \cite}
 \\
+
+When now air in closer proximity to a nuclear power plant was taken and the argon extracted it is very likely to have a great concentration of \Kr in it.
+
+
 
 % where does it come from?
 % what properties does it have?
