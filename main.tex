@@ -674,7 +674,7 @@ These two points leave the analysis protocol incredibly flexible.
 \\
 
 The multi-tier structure used in GELATIO can be seen in figure \ref{fig:TierStructure}.
-Tier0 and Tier1 store raw information while all higher Tiers store progressively more analyzed data.
+Tier0 and Tier1 store raw information while all higher Tiers contain progressively more analyzed data.
 Additional information about the analysis process can be found in \cite{agostini_gelatio:_2011} and \cite{agostini_off-line_2011}.
 In this thesis only data from Tier3 and Tier4 will be used.
 \\
@@ -780,32 +780,31 @@ The determination of this concrete value is the objective of the two remaining c
 
 As mentioned in the introduction, the main objective of this thesis is to determine the specific activity of the isotope \Kr\ in the LAr of the \gerda\ experiment. 
 Two different methods are used in this paper to calculate the concentration of \Kr. 
-The first and more precise method is the line count rate analysis of the \Kr\ decay into an excited state of \nuc{Rb}{85m}. 
+The first and more precise method uses the line count rate of the \Kr\ decay into an excited state of \nuc{Rb}{85m}. 
 It is also the topic of this chapter.
 The second method discussed in the following chapter uses the reduction in count rate over time. 
 This method is less likely to a create precise results due to it relying on the assumption that only \Kr's activity has a notable change over time.
 It is therefore only planned as a crosscheck for the result of the first method.
 \\
 
-Now to how the line count rate analysis can determine the specific activity of an radioactive isotope.
+The following paragraphs will focus on how the line count rate analysis can actually determine the specific \Kr\ activity.
 As discussed in section \ref{sec:Kry85}, \Kr\ has a small probability of 0.43\% to decay into an excited state of \nuc{Rb}{85m}. 
-This state has a raised energy level of 514keV compared to its ground state and a half-life of 1.015\(\unit{\mu s}\). 
-Theoretically it should be possible to measure a peak in the spectrum around the 514keV energy mark caused by the photons emitted from this relaxation.
-Around this peak a Gaussian peak fit can then be apply to determine the number $N_{\mathrm{peak}}$ of events measured in this area. 
+When \nuc{Rb}{85m} relaxes into its ground state it emits a photon of 514 keV energy.
+%This state has a raised energy level of 514keV compared to its ground state and a half-life of 1.015\(\unit{\mu s}\). 
+It should therefore be possible to measure a peak in the energy spectrum around this mark. %caused by the photons emitted from this relaxation.
+To determine the amount of events $N_{\mathrm{peak}}$ in this peak a Gaussian fit can be applied. 
 \\
 
-It is also necessary to calculate an efficiency of the detectors to measure a photons with an energy of 514keV.
+Also necessary is the determination of an efficiency of the detectors to measure these 514 keV photons.
 This detector efficiency has to be determined using a Monte Carlo simulation.
-This simulation creates a huge amount of 514 keV photons $N_{\mathrm{sim}}$  in a constant volume $V_{\mathrm{sim}}$ and counts the measured events in the detector $\Delta N$. 
-The detector efficiency can then be calculated by dividing the measured events by the total number of simulated decays ($\epsilon = \frac{\Delta N}{N_{\mathrm{sim}}}$).
-This value is a conversation factor $\frac{1}{\epsilon V_{\mathrm{sim}}}$ from the amount of measured counts tothe amount of emissions of 514keV photons per liter necessary to create this measured peak.
-From this value it is easy to get to the overall decay density of \Kr\ just by dividing through the probability $p$ of a \Kr\ decay into the excited \nuc{Rb}{85m} state.
-The resulting conversation factor from measured counts to the necessary decay density is therefore $\frac{1}{\epsilon V_{\mathrm{sim}}} \times \frac{1}{p}$.
+In it a huge amount of 514 keV photons $N_{\mathrm{sim}}$ are simulated in a constant volume of $V_{\mathrm{sim}}$.
+From the resulting energy spectrum the line count $\Delta N$ of the simulated 514 keV photons can be determined. 
+The detector efficiency can then be calculated by dividing the line count of 514 keV by the total number of simulated decays ($\epsilon = \frac{\Delta N}{N_{\mathrm{sim}}}$).
+The value $\frac{1}{p \epsilon V_{\mathrm{sim}}}$, using the detector efficiency, the simulated volume $V_{\mathrm{sim}$ and the probability $p$ of \Kr\ to decay via the excited \nuc{Rb}{85m}, is then a conversion factor from the measured line counts to the decay density necessary to create this signal.
 \\
 
-The final value needed to calculate the specific activity is the measuring time $\bar{t}$.
-Not every detector was measuring over the course of Phase II.
-This is why a mean measuring time for all detectors has to be calculated.
+The final value needed is the measuring time $\bar{t}$.
+Not every detector was measuring over the course of Phase II which is why a mean measuring time for all detectors has to be calculated.
 With these three values, a mean specific activity $\bar{a}$ can be determined:
 
 \begin{equation}
@@ -818,14 +817,14 @@ This is because only photons from the \nuc{Rb}{85m} relaxation can create this s
 \\
 
 However, a problem of this method lies with the proximity of the \Kr\ to the 511keV peak of the positron electron annihilation. 
-Its signal is expected to partially dominate over the \Kr\ in the spectrum and does not allow for a direct measurement of the 514keV peak. 
-This is not necessarily a great setback because we can just adapt our fit function to a double Gaussian peak function.
-It is of interest however whether it is possible to completely suppers the annihilation peak without changing the 514keV photon line count.
+Its peak in the energy spectrum is expected to partially dominate over \Kr\ and does not allow for a direct measurement of the 514keV peak. 
+This is not necessarily a great setback because one can just adapt the fit function to a double Gaussian peak function.
+It is of interest, however, whether it is possible to completely suppers the annihilation peak without changing the 514keV photon line count.
 For this one could consider using the LAr veto.
-Due to the low mean energy of the escaping electron (47.65keV) of this decay, it is very unlikely that it creats any scintillating light. 
+Due to the low mean energy of the escaping electron (47.65keV) of this decay, it is very unlikely that it creates any scintillating light. 
 On the other hand one can expect the light of the positron electron annihilation to create a great signal in the photomultipliers.
-therefore it should be possible with the LAr veto to single out the 514keV photon events from the annihilation events.
-If possible this could be a second approach to determine the amplitude of the peak without adjusting the fit function.
+Therefore it should be possible with the LAr veto to single out the 514keV photon events from the annihilation events.
+If possible its value can be used as a cross-check for the value determined from the not filtered spectrum.
 
 The rest of the chapter will cover the concrete implementation of the individual steps in their own sections.
 \\
