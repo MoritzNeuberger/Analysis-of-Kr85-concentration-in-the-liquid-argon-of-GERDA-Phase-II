@@ -823,6 +823,10 @@ The second veto can not be triggered from \Kr\  because the measured gammas basi
 The third veto also does not effect gamma events as they deposit all their energy in only one detector and any event with several detectors measuring a signal are likely to be background.  
 \\
 
+Some plots for the COAX detectors are neglected in the course of the analysis.
+This was chosen to suppress repetitiveness in the structure of this thesis because of their similar results.
+
+
 The data was also split for the two detector types in \gerda.
 This is necessary due to the differences in detector efficiency and resolution already mentioned in seciton \ref{sec:ExSetup}.
 BEGes have a lower efficiency to detect full 514 keV gammas but show a higher energy resolution ($\Delta E_{\mathrm{BEGe}} = 2.267\unit{keV}  @ 514 \unit{keV}$) and vice versa for the COAX detectors ($\Delta E_{\mathrm{COAX}} = 2.720\unit{keV} @ 514 \unit{keV}$).
@@ -1301,8 +1305,8 @@ This ratio easily be adapted to a conversion factor from the amount of measured 
 	\fi%
 	\caption{
     Energy spectrum of simulated events measured in BEGe detectors.
+	The blue colored bin represents the counts used for determining the detector efficiency.
 	The majority of measured signals had an energy below 514 keV.
-	This means that a lot of the emitted photons interacted with the LAr or only had parts of their energy deposited in the detectors.
 	Among other things, the Compton peak at roughly 343keV can be seen.  
 	}
 	\label{fig:PhasenraumMC514}
@@ -1999,13 +2003,37 @@ On the other hand is the activity in the Darkside experiment with its $(2.8577 \
 
 \chapter{Summary and Outlook}
 \label{sec:ConcAndOutlook}
-
+\section{Summary}
 With the line count rate analysis carried out in this paper it was able to show that the specific activity of \nuc{Kr}{85} in the LAr in \gerda\ \PII\ has a value of $(0.508\pm0.086) \frac{\unit{mBq}}{\unit{l}}$. 
 Compared to WARPs $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ and to Darksides $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ its value is much smaller.
 On the other hand, the second attempt to determine a value for the specific activity via the change of count rate over time has failed.
 This was due to the falsely made assumption that \Kr\ is the only isotope in the LAr to show significant change in its activity over time.
 \\
+\section{Comparison to WARP and Darkside}
 
+One can now make some comparisons of this value with the WARP and the Darkside experiments.
+In the case of the WARP experiment a specific activity of $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ \label{} was measured for the \Kr.
+On the other hand, an specific activity of $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
+The here determined value of $(0.508\pm0.085)\frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole three orders of magnitude smaller than the WARP experiment.
+From these comparisons one can see, that the specific activity of \Kr\ in \gerda\ \PII\ seems to be much smaller than in other experiments using LAr.
+\\
+
+What one can also do is take the specific activities of the other two experiments and determine how many counts one would have been able to measure if the \Kr\ had their specific activity.
+As simplification only the theroeticall values for the BEGe detectors was determined. 
+How many counts the corresponds activity would induce in the BEGe detectors can be determined with the help of formula \ref{equ:correspondingEvents}.
+\begin{equation}
+\mathrm{N} = \bar{a} \times p \times \epsilon_\mathrm{BEGe} V_{\mathrm{sim}} \times \bar{t}
+\label{equ:correspondingEvents}
+\end{equation}
+With the activity and the values determined from the analysis above one can calculate a corresponding amount of about 76152 events for the WARP experiment.
+In the case of the WARP experiment one could expect the count rate to be much higher than the 183 events determined from the actual measurement.
+For the Darkside experiment with an amount of 1360 counts is again about one order of magnitude higher than the here measured events.
+From these comparisons one can see that for a much higher specific activity of \Kr\ to have actually been present a much bigger amount of events should have been counted.
+As a graphical representation, the peaks that would have been able to be seen in the measured spectrum are displayed in figure \ref{fig:WARP} and \ref{fig:Darkside}.
+\\
+
+
+\section{Outlook}
 As it was mentioned in the introduction, the \gerda\ experiment is planned to keep measuring until 2020.
 Afterwards the \gerda\ setup will be converted to the LEGEND experiment - a collaboration between the \gerda\ and the MAJORANA experiments.
 There LAr is used again as coolant, but new argon is added which might again lead to a higher concentration of \Kr\ depending on where the argon was taken from.
