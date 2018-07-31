@@ -451,7 +451,7 @@ From these three masses it is possible to determine the Majorana phases, the ind
 	\begin{minipage}{.4125\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/NeutrinoMassOrdering.png}
-		\caption{Possible ranges for the effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle$ detectable by \onbb\ as a function of the smallest mass of the respective mass hierarchy. NS stands for the normal hierarchy and IS for the inverted hierarchy. Taken from \cite{bilenky_neutrinoless_2012}.}
+		\caption{Value of the effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle$ detectable by \onbb\ as a function of the smallest mass of the respective mass hierarchy. NS stands for the normal hierarchy and IS for the inverted hierarchy. Taken from \cite{bilenky_neutrinoless_2012}.}
 		\label{fig:MassOrder}
 	\end{minipage}\hfill%
 	\begin{minipage}{.5\textwidth}
@@ -564,7 +564,7 @@ Both of these detector types are made of germanium that has been enriched from 7
 They also share the same basic functionality.
 The major volume of both detectors are made of p-type germanium.
 Both detectors have the majority of their surface covered by a 1-2mm thick n$^+$ doped electrode and only a small part with an p$^+$ electrode.
-If an electron hole pair is created in the p doped area, the charged particles are separated and guided to the n$^+$ or the p$^+$ layer respectively by a strong electrostatic field (3 to 4 kV) between the electrodes.
+If an electron hole pair is created in the p doped area, the charged particles are separated and guided to the n$^+$ or the p$^+$ layer respectively by a strong electrostatic field (3 to 4 kV) between the electrodes  \cite{spieler_semiconductor_2005}.
 If the pair is created in the n$^+$ layer the hole is most likely to recombine in the $n^+$ layer due to its low mobility and therefore creates no measurable signal.
 The n$^+$ layer is therefore not not active and called a dead layer.
 \\
@@ -573,7 +573,7 @@ The two detectors however differ in their design as seen in figure \ref{fig:Detc
 But the detector types also differ in their mass and therefore their expected exposure per detector and energy resolution.
 The COAX detectors are generally heavier and therefore have a higher detector efficiency then the BEGe.
 But their higher mass also results in a worse energy resolution \cite{agostini_production_2015}.
-BEGes are also allow for a better pulse shape discrimination (PDS) compared to the COAX detectors \cite{agostini_pulse_2013}.
+BEGes also allow for a better pulse shape discrimination (PDS) compared to the COAX detectors \cite{agostini_pulse_2013}.
 PDS can make a statement about the creation process of the electron hole pair by looking at the shape of the signal.
 It can therefore discriminate between different kind of origins for a signal and acts as a veto.
 \\
@@ -581,12 +581,10 @@ It can therefore discriminate between different kind of origins for a signal and
 The enriched detectors are assembled into 6 strings forming a hexagonal array together with a seventh string.
 This seventh string consists of three extra coaxial detector made of natural isotopic Ge.
 However they are not used in \gerda's main analysis.
-\\
 
-All detectors are connected to custom made amplifiers also located in the liquid argon above the detectors.
-The analog signal of every detector is then digitized at a sampling rate of 100MHz if a triggering signal was found \cite{riboldi_cryogenic_2015}.
+Custom made amplifiers also located in the liquid argon above the detectors and digitized the analog signals of the detectors at a sampling rate of 100MHz if a triggering signal was found \cite{riboldi_cryogenic_2015}.
 The analysis of the signals is performed offline.
-\\
+
 \iffalse
 \begin{figure}[t!]
 	\centering
@@ -607,17 +605,17 @@ The analysis of the signals is performed offline.
 % well, just dump everything here
 % also a bit about Tier1-4 storage of data 
 
-The detectors are surrounded by a nylon cylinder to limit the amount of LAr volume around the detectors.
+Surrounding the detectors so called nylon mini shrouds (NMS) are attached to limit the amount of LAr volume around the detectors.
 This is in place to passively suppresses the background created from \nuc{K}{42}.
 
 \subsection{Liquid Argon as Coolant, Shielding and Scintillator} 
 \label{sec:LArcoolant}
 
-LAr has the property that scintillation light is produced when electrically charged radiation excites or ionizes electrons in the material \cite{olsen_improvements_nodate}.
+LAr has the property that scintillation light is produced when electrically charged radiation excites or ionizes atoms in the material \cite{olsen_improvements_nodate}.
 The excited atoms in a noble liquids form dimer pairs (Ar$^*_2$).
-These dimer pairs are meta stable and relax with the release of a vacuum ultraviolet photon (VUV) with a wavelength of 128 nm.
+These dimer pairs are meta stable and relax with the release of a vacuum ultraviolet photon (VUV)  which have a wavelength of 128 nm.
 In the end each ionized or excited atom only produces one VUV photon.
-In nobel liquids the VUV light does not have enough energy to excite any ground state allowing a very long travel distances of the VUV without being absorbed.
+In nobel liquids the VUV light does not have enough energy to excite any atom in the ground state allowing the VUV to have a very long travel distances of without being absorbed.
 \\
 
 \begin{figure}[t!]
@@ -637,8 +635,10 @@ In nobel liquids the VUV light does not have enough energy to excite any ground 
 \end{figure}
 
 Background events often deposit energy in the argon while passing through it.
-Their scintillation light can therefore be used as a veto to reject background.
-A cylindrical volume around the germanium detectors is therefore equipped with 16 photomultiplier tubes (PMT), situated at the bottom and at the top of this volume, as well as 90 SiPM that read out light signal travailing through extra fiber strings positioned around the height if the detectors \cite{csathy_optical_2016} (see figure \ref{fig:LArVetoSetup}).
+Their scintillation light around the detectors can therefore be used as a veto to reject those events.
+That is why a cylindrical copper shell around the germanium detectors is equipped with 16 photomultiplier tubes (PMT), situated at the bottom and at the top of this volume.
+At the level of the detectors the shell is not made of copper but of nylon strings.
+These are read out by 90 silicon photomultipliers (SiPM) measuring any light signal travailing through them \cite{csathy_optical_2016} (see figure \ref{fig:LArVetoSetup}).
 VUV has a wavelength so small most material absorbs it in ionization.
 That is why wavelength shifting material covers the nylon fibers and the photomultipliers shifting from 128nm to 400nm.
 \\
@@ -738,20 +738,21 @@ This excited state has a half life of 1.015 $\unit{\mu s}$ and it basically alwa
 The main interest of this thesis lies with the concentration of \Kr\ in argon.
 The argon used in \gerda\ \PII\ was extracted from the atmosphere.
 But how did \Kr\ get there?
-There are two different sources \Kr\ can be originate from on earth.
+There are two main sources \Kr\ can be originate from on earth.
 It can be created in the atmosphere naturally by an interaction of \nuc{Kr}{84} with cosmic rays.
 In equilibrium this accounts to an activity of 0.09PBq in the whole atmosphere \cite{winger_new_2005}.
 However, the production of \Kr\ from nuclear fission of \nuc{U}{235} and \nuc{Pu}{239} generates an atmospheric inventory about four orders of magnitude higher than that.
-Only a small amount is natural produced in earth's crust, but the majority is man made from nuclear power plants.
+Only a small amount is natural produced in earth's crust.
+The majority is man made from nuclear power plants.
 Krypton is a noble gas and therefore easily diffuses through everything in its way until it reaches the atmosphere.
 \\
 
-It is also of interest that the concentration of \Kr\ in the air at ground level varies depending on the proximity to a nuclear power plant \cite{weiss_mesoscale_1986}.
+The concentration of \Kr\ in the air at ground level varies depending on the proximity to a nuclear power plant \cite{weiss_mesoscale_1986}.
 At atmospheric altitudes, however, the \Kr\ concentrations only varies on large length scales since \Kr rises quickly from the ground into the atmosphere, where most of it stays longer.
 Different models predict that air from the northern troposphere takes up to one year to get to the southern troposphere delaying the equalization of their \Kr\ concentrations \cite{weiss_global_1992}.
 Due to the higher amount of nuclear power plants build in the last half century the activity of \Kr\ in the atmosphere has risen steadily from about 1961 PBq in 1973 \cite{telegadas_atmospheric_1975} to an estimated 5500 PBq in 2009 (see figure \ref{fig:Kr85Aenderung}) \cite{ahlswede_update_2013}.
 But the change over time is so small that one can assume that \Kr's concentration in the atmosphere should be in the same order of magnitude everywhere.
-This means that no matter where atmospheric air for an argon extraction would be taken, its specific activity per liter LAr would be of the same order. 
+This means that no matter where atmospheric air for an argon extraction would be taken, its concentration in the LAr would be of the same order. 
 \\
 
 Two experiments also using LAr will be used as examples in this thesis: the WARP and the Darkside experiment.
@@ -766,7 +767,7 @@ On the other hand in the LAr of the WARP experiment, using atmospheric argon, a 
 As it was expected, this value is much higher then Darkside's.
 \\
 
-It is therefore not unlikely that the specific \Kr\ activity in \gerda\ \PII\ would be much higher than in the Darkside experiment.
+It is therefore not unlikely that the specific \Kr\ activity in \gerda\ \PII\ would also be much higher than in the Darkside experiment.
 The determination of this concrete value is the objective of the two remaining chapters. 
 
 % where does it come from?
@@ -1843,7 +1844,7 @@ This doubles the number of decays which can be attributed to \nuc{Ar}{42}.
 But assuming that the individual \nuc{Ar}{42} and \nuc{K}{42} isotopes are homogeneously distributed in the LAr, their combined specific activity is still by far not big enough to explain the bigger amplitude measured.
 \\
 
-But here comes the critical point.
+But here lies the critical point.
 The \nuc{K}{42} isotopes are in fact not homogeneously distributed in the LAr.
 To understand why they are not one has to look at what a \nuc{K}{42} does right after it is formed.
 Right after a \nuc{Ar}{42} decays its resulting \nuc{K}{42} isotope positively ionized.
@@ -1855,9 +1856,8 @@ Such fields in the LAr tank originated from the germanium detectors.
 In a germanium detector it is necessary to create a great electrostatic potential difference between the doped electrodes.
 The resulting electric field separates electron-hole pairs that might have been created by other particles depositing their energy in the semiconductor \cite{spieler_semiconductor_2005}.
 The field then guids the particles to the respective electrodes and by that creating a current which can be measured externally.
-In the case of the \gerda\ experiment strong fields are necessary.
-They are supposed to guarantee that the majority of electron-hole pairs reach the corresponding electrodes much faster than their mean free time $\tau$. %Hier noch die Buchquelle
-If the fields would not be as strong, the detection probability of any event would be much lower which is not ideal for an experiment in which extremely rare events have to be measured.
+For a high detection efficiency strong fields are necessary.
+Otherwise the electron or the hole might recombine in the p-type volume without creating any signal.
 \\
 
 The positively ionized isotopes are now deflected by these electrostatic fields to the negatively charged surface of the detectors. 
@@ -1867,7 +1867,7 @@ Now that the density of \nuc{K}{42} isotopes is higher near the germanium detect
 \\
 
 The effect explained here has already been measured in \gerda\ and it is actually one of the greatest background sources of the whole experiment.
-\nuc{K}{42} has also the unfortunate characteristic for the \gerda\ experiment that its Q-value of about $Q =3525\unit{MeV}$ lies higher than the Q-value of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
+\nuc{K}{42} has also the unfortunate characteristic for the \gerda\ experiment that its Q-value of about $Q_\beta =3525\unit{MeV}$ lies higher than the Q-value of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
 This means that electrons of the \nuc{K}{42} decay can create background events in the investigated rage. 
 Initially it was not expected to create much background.
 Its influence on the measurement however was only recognized after the start of \PI, when its counting rate was higher by a factor of 20. \cite{becerici_schmidt_results_2014}.
