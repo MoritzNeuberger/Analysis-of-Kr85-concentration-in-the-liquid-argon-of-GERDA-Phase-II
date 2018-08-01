@@ -1603,7 +1603,7 @@ The reason why one can expect to determine the individual specific activity of \
 In comparison, other radioactive isotopes that are of interest are \nuc{Ar}{42} (32.9 yr) \cite{chen_nuclear_2016}, \nuc{Ar}{39} (269 yr) \cite{singh_nuclear_2006} and \nuc{Po}{210} (138 d)\cite{kondev_nuclear_2008}.
 \\
 
-The two different types of argon isotopes have both a mean beta energy close to \Kr's mean beta energy of  251.59 keV.
+The two different types of argon isotopes have both their majority of electrons emitted at the same energy interval as \Kr.
 The change in specific activity of \nuc{Ar}{39} can be neglected because its half life is one order of magnitude higher then \Kr's.
 \nuc{Ar}{42} on the other hand has a half life that is in the same order of magnitude as \Kr.
 But its specific activity has already been determined to be about $0.148\mathrm{mBq/l}$ \cite{becerici_schmidt_results_2014} which is about factor 3.5 smaller than the expected \Kr\ specific activity.
@@ -1611,15 +1611,15 @@ Whether or not one have to consider its influence will be discussed later on in 
 For the time being, the simplification is applied that its change is much smaller than that of \Kr, so that it can also be neglected.
 \\
 
-A problem though is\nuc{Po}{210} because it has a half life  much lower than \Kr.
+One problem, however, is \nuc{Po}{210}, because it has a half-life much shorter than \Kr's.
 But luckily its mean energy of the escaping alpha particle ($\mathcal{O}(5000\unit{keV})$) is much higher than the mean beta energy of \Kr\ (\mathcal{O}(250\unit{keV})).
 This is convenient because an upper energy limit on the considered events can easily suppress their influence.
 This upper energy limit was chosen to be 400 keV.
 Theoretically, \Kr's Q-value lies at 687 keV but it can be expected that the majority of \Kr\ events will have an energy lower then this.
-By setting the limit so low it also suppresses the constant background of events with a higher energy making the change in rate more apparent.
+By setting the limit so low it also suppresses the constant background of events with a higher energy that would otherwise making the change in rate less apparent.
 \\
 
-All other radioactive isotopes left in the LAr have either a much longer half life than \nuc{Ar}{42}, most of their released particles have an energy over 400keV or their specific activity is too small too small to measure any kind of change over time.
+All other radioactive isotopes in the \gerda\ \PII\ setup have either a much longer half life than \nuc{Ar}{42}, most of their released particles have an energy over 400keV or their specific activity is too small too small to measure any kind of change over time.
 It can therefore be assumed that all changes in the count rate are only due to \Kr\ decay.
 \\
 
@@ -1654,7 +1654,6 @@ It can therefore be assumed that all changes in the count rate are only due to \
 
 To determine the change of count rate over time it is necessary to plot the amount of measured counts over time in a histogram (see figure \ref{fig:ZeitAll}) and later divide those counts by the mean measuring times inside the respective bins of the histogram.
 The data used in this approach is the \gerda\ \PII\ data from run 55 to 92.
-It was chosen to exclude the data from run 53 and 54 as less detectors were measuring in these two runs and a jump in count rate would have been able to be seen in the transition between run 54 to 55.
 The used data had also been cut again by the standard \gerda\ analysis cuts (quality, muon, anti-coincedence).
 The anti-coincidence cut here also because not only the gammas basically always deposit all their energy in one detector but due to the low  $Q_\beta$ of the \Kr\ the released beta as well.
  \\
@@ -1704,7 +1703,10 @@ Using this procedure results in a histogram as seen in figure \ref{fig:effective
 However, this approach requires all detectors used for the evaluation to have always been measuring 
 If at any point in \PII\ one of the detectors stops taking measurements, it would result in a jump in the combined count rate of all detectors creating discontinuities in its course.    
 Therefore, in the further course of the count rate analysis only those events are considered which have measured a signal in one of the detectors, that were always turned on.
-Which detectors were actually used in this analysis can be seen on graphic ... in the appendix.
+This is also the reason for why the data of run 53 and 54 have been neglected from this analysis.
+In these two runs the majority of  detectors was turned of resulting in only a small amount of detectors to chose from.
+By discarding the data of run 53 and 54 more detectors can be used in the analysis and therefore data.
+Which detectors were actually used in this analysis can be seen in graphic ... in the appendix.
 \\
 
 When re-plotting the count histogram now also considering only using those detectors that have always been measuring thought \PII\ and dividing all bins by the corresponding mean measuring times, it results new histogram showing the mean count rate of each week (see figure \ref{fig:ChangeInEventRate}).
