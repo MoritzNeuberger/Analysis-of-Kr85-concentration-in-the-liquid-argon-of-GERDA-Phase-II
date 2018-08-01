@@ -1575,61 +1575,53 @@ Now that a concrete value for the specific activity of \Kr\ has been determine t
 \chapter{Change in Count Rate over Time}
 \label{sec:SAfromDecrease}
 
-As described in the beginning of section \ref{sec:SAfrom514}, the line count analysis method of the rare \Kr\ decay was expected to be relatively precise.
-By following this procedure we were able to determine the activity down to the order of 10$^{-4} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
-This chapter will now concentrate on implementing and discussing the second approach of determining the specific activity by using the change in count rate over time.
-This method does not rely on any of the values used in the line count rate analysis which is why this approach is truly independent of the other method.
-Ideally, a similar result from this method would confirm the specific activity determined in the previous chapter. 
+This chapter focuses on the implementation and discussion of the second approach to determine the specific \Kr\ activity using the change in count rate over time.
+This method is not based on any of the values used in the row count rate analysis, which is why this approach is truly independent of the other method.
+Ideally, a similar result of this method would be a cross check for the value found in the previous section. 
 \\
 
-But compared to the line count rate analysis is the second method  expected to be relatively imprecise.  
-This estimation comes from the fact that this method relies on a the approximation, that \Kr\ is the only radioactive isotope in the \gerda\ setup that has a non negligible change in its specific activity.
-The idea is that \Kr\ has the lowest half-life (T = 10,739\unit) of all other remaining radioactive isotopes in liquid argon and therefore only \Kr\ should change its decay rate.
-In comparison, other radioactive isotopes that are of interest are \nuc{Ar}{42} with a half-life of 32.9 y \cite{chen_nuclear_2016}, \nuc{Ar}{39} with 269 y \cite{singh_nuclear_2006} and \nuc{Po}{210} with 138d \cite{kondev_nuclear_2008}.
+To measure the change in count rate every measured event will have to be drawn over time and an exponential fit function applied through it.
+From the amplitude of the resulting exponential function the value $R_{\mathrm{count}}$ of measured counts per second can be determined.
 \\
 
-Even though\nuc{Po}{210} has a much lower half life than \Kr, the mean energy of the escaping alpha particle is much higher than the mean beta energy of all of the isotopes above.
-This is important because in the course of this chapter it is explained that only those events are considered in the analysis which have deposited an energy between 200 and 400 keV. 
-This means even though \nuc{Po}{210} has a much lower half life it would not create much of a change in count rate in the investigated interval due to its much lower probably to release an alpha particle in this energy range.
-\\
-
-The two different types of argon isotopes have both a mean beta energy close to \Kr's 251.59 keV.
-Their change in event rate should therefore be measurable in the investigated interval.
-The change in activity of \nuc{Ar}{39} can be neglected because its half life is one order of magnitude larger then \Kr's.
-\nuc{Ar}{42} on the other hand has a half life that is in the same order of magnitude as \Kr.
-But its specific activity has already been determined to be about $148\mathrm{\mui Bq/l}$ \cite{becerici_schmidt_results_2014} which is about factor 3.5 smaller than the expected \Kr\ specific activity.
-Whether or not one have to consider the influence of this isotope will be discussed later in this thesis.
-For now the simplification will be applied that its change will be much smaller than \Kr's so that one can neglect it.
-\\
-
-All other radioactive isotopes that are residual in the liquid argon have either a much longer half life than \nuc{Ar}{42}, their mean beta energy is much higher than 400keV or their specific activity is too small too small to measure any kind of change over time.
-It can thereforee be assumed that all changes in intensity are only due to \Kr\ decay.
-Even if the specific activity determined with this method is not expected to be as precise as the first method, it can still be used as a crosscheck for the other specific activity determined above.
-\\
-
-It has now been shown that this approach can be applied in the case of \gerda\ \PII\.
-thereforee it is now necessary to discuss how exactly the specific activity can be determined by changing the intensity.
-To measure the change in count rate every measured event will have to be drawn over time in a fit function and through the resulting plot an exponential fit applied.
-From the amplitude of the resulting exponential function a count rate $R_{\mathrm{count}}$ of counts per second can be determined.
-\\
-
-To calculate the specific activity of \Kr\ with this value one again has to use a Monte Carlo simulation to calculate a conversion factor between those values. 
-One cannot use the same simulation from the first method because in this case actual \Kr\ decays have to be simulated, not only the emission of 514keV photons as it was done in the prior chapter.
-That is why another Monte Carlo simulation has to be carried out.
-With it a new conversion factor $\frac{1}{\epsilon V_{\mathrm{sim}}}$ between the measured counts and the decays necessary to create this amount of counts can be determined.
-\\
-
-Finally the specific activity can be calculated from these two values.
+It is also necessary to use a Monte Carlo simulation to calculate another conversion factor between the measured counts and the number of decays required for them. 
+A new Monte Carlo simulation must be used, since in this case all \Kr\ must be considered in the simulation and not only the 514 keV gamma.
+With this new conversion factor $\frac{1}{\epsilon V_{\mathrm{sim}}}$ the specific activity of \Kr\ can finally be calculated.
 \begin{equation}
 a(t=0) = \frac{R_{\mathrm{count}}}{\epsilon V_{\mathrm{sim}}}
 \label{equ:ActivityDieZweite}
 \end{equation}
-It is important to note that this approach determines the specific activity of \Kr\ at the start of \PII\ while the first method calculates the mean specific activity over all of \PII.
-To compare those two results, in the end a mean specific activity of the second method has to be determined.
-The following sections will focus on the concrete implementation of this method and the values determined by them.
+It is important to note that this approach determines the specific activity of \Kr\ at the beginning of \PII\, while the first method calculates the mean specific activity over the entire period of \PII.
+In order to compare these two results, an average specific activity must finally be determined from the second method.
 \\
 
-\section{Event Rate}
+\section{Justification for this approach}
+
+Theoretically, the result of the approach described above is in actuality the combined specific activity of the whole \gerda\ \PII\ setup and not specifically just \Kr.
+The reason why one can expect to determine the individual specific activity of \Kr\ from this approach is that \Kr\ has one of the smallest half-lives ($T_{\frac{1}{2}}$ = 10.739\unit{yr}) of all remaining radioactive isotopes in LAr and the highest specific activity among isotopes with similar half-lives. 
+In comparison, other radioactive isotopes that are of interest are \nuc{Ar}{42} (32.9 yr) \cite{chen_nuclear_2016}, \nuc{Ar}{39} (269 yr) \cite{singh_nuclear_2006} and \nuc{Po}{210} (138 d)\cite{kondev_nuclear_2008}.
+\\
+
+The two different types of argon isotopes have both a mean beta energy close to \Kr's mean beta energy of  251.59 keV.
+The change in specific activity of \nuc{Ar}{39} can be neglected because its half life is one order of magnitude higher then \Kr's.
+\nuc{Ar}{42} on the other hand has a half life that is in the same order of magnitude as \Kr.
+But its specific activity has already been determined to be about $0.148\mathrm{mBq/l}$ \cite{becerici_schmidt_results_2014} which is about factor 3.5 smaller than the expected \Kr\ specific activity.
+Whether or not one have to consider its influence will be discussed later on in this thesis.
+For the time being, the simplification is applied that its change is much smaller than that of \Kr, so that it can also be neglected.
+\\
+
+Even though\nuc{Po}{210} has a much lower half life than \Kr, the mean energy of the escaping alpha particle is much higher than the mean beta energy of all of the isotopes above.
+This is important because in this analysis only those events are considered which have deposited an energy between 200 and 400 keV. 
+This means even though \nuc{Po}{210} has a much lower half life it would not contribute to the investigated count rates due to its much lower probably to release an alpha particle in this energy range.
+\\
+
+All other radioactive isotopes left in the LAr have either a much longer half life than \nuc{Ar}{42}, most of their released particles have an energy over 400keV or their specific activity is too small too small to measure any kind of change over time.
+It can therefore be assumed that all changes in the count rate are only due to \Kr\ decay.
+\\
+
+
+
+\section{Count Rate}
 \label{sec:EventAct}
 
 \begin{figure}[t!]
@@ -1648,15 +1640,19 @@ The following sections will focus on the concrete implementation of this method 
 	\end{subfigure}
     \\
     \caption{
-    	The change of count rate over time. 
-    	In both figures the amount of events measured in one week are plotted over the whole time frame of \PII. 
+    	The change of count rate over time.
+    	In both figures the amount of counts measured in one week are plotted over the whole time frame of \PII. 
+        The binning of these hisograms was chosen to be one week per bin which results in about 114 bins over all of  \PII.
     	In figure (a) no filters were imposed onto the used events while in (b) only those events were used that have an energy between 200 and 400 keV. 
     	One can see that further precautions must be taken before an exponential decrease can be determined. 
     	}
 \end{figure}
 
-To determine the change of count rate with time one has to plot the amount of measured events over time in a histogram with a suitable binning (see figure \ref{fig:ZeitAll}).
-In this case a binning of one week per bin was chosen which results in about 114 bins for the 2.17 years of \PII.
+To determine the change of count rate over time it is necessary to plot the amount of measured counts over time in a histogram (see figure \ref{fig:ZeitAll}) and later divide those counts by the mean measuring times inside the respective bins of the histogram.
+The data used in this approach is the \gerda\ \PII\ data from run 55 to 92.
+ 
+
+
 As in the line count rate analysis, histogram \ref{fig:ZeitAll} only used events where the Muon veto and the detector anticoincidence veto were not triggered.
 When looking at the histogram two new problems seem to occur.
 Firtsly, there seems to be a great jump in the amount of events measured in the second half of \PII.
@@ -2050,8 +2046,9 @@ On the other hand is the activity in the Darkside experiment with its $(2.8577 \
 \label{sec:ConcAndOutlook}
 \section{Summary}
 With the line count rate analysis carried out in this paper it was able to show that the specific activity of \nuc{Kr}{85} in the LAr in \gerda\ \PII\ has a value of $(0.508\pm0.086) \frac{\unit{mBq}}{\unit{l}}$. 
-On the other hand, the second attempt to determine a value for the specific activity via the change of count rate over time has failed.
-This was due to the falsely made assumption that \Kr\ is the only isotope in the LAr to show significant change in its activity over time.
+On the other hand, the second attempt to determine a value for the specific activity via the change of count rate over time was unable to find a value.
+This was due to \nuc{Ar}{42} having a comparable long half life and an effective specific activity much higher than expected.
+
 \\
 \section{Comparison to WARP and Darkside}
 
@@ -2061,47 +2058,37 @@ It was therefore also assumed that \gerda's specific \Kr\ activity should also b
 However, the value of specific \Kr\ activity in the LAr of \gerda\ determined in this thesis is now even smaller than that of Darkside.
 \\
 
-For future experiments with LAr it is now of particular interest to find out why the specific \Kr\ activity in \gerda\ is so much smaller than in the WARP experiment with the same source for its argon but also why it is even smaller than the UAr of Darkside that was supposed to be the more radio pure material.
-But it is hard to come up with a reason why it is the case.
+For future experiments with LAr it would now be of particular interest to find out why the specific \Kr\ activity in \gerda\ is so much smaller than in the WARP experiment with the same source for its argon, but also why it is even smaller than the UAr of Darkside, which should be the radio pure material.
+But it is hard to find a reason why it should be.
 The LAr used in \gerda\ was bought commercially and has not been further distilled.
-Also the \Kr\ in the atmosphere should have been relatively homogeneous or at least in the same order of magnitude \.
-
-
-One can now make some comparisons of this value with the WARP and the Darkside experiments.
-In the case of the WARP experiment a specific activity of $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ \label{} was measured for the \Kr.
-On the other hand, an specific activity of $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
-The here determined value of $(0.508\pm0.085)\frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole three orders of magnitude smaller than the WARP experiment.
-From these comparisons one can see, that the specific activity of \Kr\ in \gerda\ \PII\ seems to be much smaller than in other experiments using LAr.
+Also the \Kr\ in the atmosphere should have been relatively homogeneous or at least in the same order of magnitude \cite{j._jacob_atmospheric_1987}.
+Therefore, it only matters on a way to small range where the air for the argon extraction was taken from in the atmosphere.
 \\
 
-What one can also do is take the specific activities of the other two experiments and determine how many counts one would have been able to measure if the \Kr\ had their specific activity.
-As simplification only the theroeticall values for the BEGe detectors was determined. 
-How many counts the corresponds activity would induce in the BEGe detectors can be determined with the help of formula \ref{equ:correspondingEvents}.
-\begin{equation}
-\mathrm{N} = \bar{a} \times p \times \epsilon_\mathrm{BEGe} V_{\mathrm{sim}} \times \bar{t}
-\label{equ:correspondingEvents}
-\end{equation}
-With the activity and the values determined from the analysis above one can calculate a corresponding amount of about 76152 events for the WARP experiment.
-In the case of the WARP experiment one could expect the count rate to be much higher than the 183 events determined from the actual measurement.
-For the Darkside experiment with an amount of 1360 counts is again about one order of magnitude higher than the here measured events.
-From these comparisons one can see that for a much higher specific activity of \Kr\ to have actually been present a much bigger amount of events should have been counted.
-As a graphical representation, the peaks that would have been able to be seen in the measured spectrum are displayed in figure \ref{fig:WARP} and \ref{fig:Darkside}.
+One possible causes might be that in the extraction process used in the case of the \gerda\ LAr was better at filtering out any residual alien isotopes than it was for the WARP LAr.
+Another possible reason might be that the air in \gerda\ or WARP was not actually taken from the atmosphere but from a location closer to earth.
+At the surface the \Kr\ actually varies greatly with the proximity of the location to nuclear fission reactors \cite{weiss_mesoscale_1986}.
+If the air for \gerda\ was now taken closer to Earth but further away from any nuclear power plant, this might explain the discrepancy between \gerda\ and WARP. 
+But to have a real answer to why the specific \Kr\ activity in \gerda\ is so low, a proper investigation must be carried out to find out exactly where the seller of the argon has caught the air and how they separate the argon from it.
 \\
+
+Besides the activities themselves, you could also go the other way and calculate how high the line count rates would have been in the \gerda\ setup if the specific activities of WARP and Darkside would have been present.
+In section \ref{sec:Fitting} a line count of about 180 counts was found.
+The corresponding line count of the other specific activities of the other experiments can then be determined by upscaling the line count measured in \gerda\ to the corresponding values with the factor ($\bar{a}_{\mathrm{Exp}}/\bar{a}_{\mathrm{GERDA}}$).
+This results in a line count of about $\mathcal{O}(1000)$ in the Darkside experiment and about $\mathcal{O}(50000)$ in the WARP experiment.
+If their specific \Kr\ activity had been present, a much sharper peak could have been measured.
 
 
 \section{Outlook}
-As it was mentioned in the introduction, the \gerda\ experiment is planned to keep measuring until 2020.
-Afterwards the \gerda\ setup will be converted to the LEGEND experiment - a collaboration between the \gerda\ and the MAJORANA experiments.
-There LAr is used again as coolant, but new argon is added which might again lead to a higher concentration of \Kr\ depending on where the argon was taken from.
-LEGEND will also feature a new and more precise LAr veto setup.
-With this new LAr veto it might  actually be possible to use the pre-coincedences of the \Kr\ decay in the line count rate analysis which would make a fitting of the peak possible. 
+Also mentioned in the introduction, the \gerda\ experiment is planned to keep measuring until 2020.
+Afterwards the \gerda\ setup will be converted into the LEGEND experiment that will investigate the lower limit of \nuc{Ge}{76}'s half life further.
+In it LAr is used again as coolant.
+However, new argon will be used.
+It could therefore be that in LEGEND again a much higher concentration of \Kr\ can be present and thus the background generated by it can be larger.
+However, LEGEND will also feature a new and more precise LAr veto setup.
+With this new LAr veto it might  actually be possible to use the pre-coincedences of the \Kr\ decay properly to be able to use it as a veto against it. 
 \\
 
-Due to the comparably small specific activity of the \Kr\ in the argon it might be of interest to find out where it originated from.
-As seen from other experiments as WARP \Kr\ can cause an non insignificant amount of background in the lower energy area.
-For experiments interested in this region like the search for sterile neutrinos or dark matter in the energy range of keV this isotope might be a problematic isotope.
-This might be prevented by finding out where the argon in \gerda\ \PII\ came from and why its \Kr\ concentration is so low there.
-The argon from this area might be better suited for such low-background experiments.
 
 
 
