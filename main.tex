@@ -750,7 +750,11 @@ This excited state has a half life of 1.015 $\unit{\mu s}$ and relaxes directly 
 \end{figure}
 
 The argon used in \gerda\ \PII\ was extracted from the atmosphere.
-Any \Kr\ residual in the argon must have already been present there.
+When argon is separated from the other components of the air, argon can easily be made radioactively pure.
+Nevertheless, a very small portion of alien elements like krypton can still be present in the extracted argon and therefore also \Kr\.  
+But this would also mean that any residual \Kr\ in the argon must also have already present in the atmosphere.
+\\
+
 When investigating on how  \Kr\ got into the atmosphere, two different sources on earth can be identified.
 On the one hand side, it can be created naturally in the atmosphere by an interaction of \nuc{Kr}{84} with cosmic rays.
 On the other hand, the production of \Kr\ from nuclear fission of \nuc{U}{235} and \nuc{Pu}{239} generates an atmospheric inventory about four orders of magnitude higher than that.
@@ -759,7 +763,7 @@ The majority is man-made from nuclear power plants \cite{winger_new_2005}.
 Krypton is a noble gas and therefore easily diffuses through everything in its way.
 It rises until it reaches the atmosphere where a \Kr\ reserve is build over time.  
 Due to the higher amount of nuclear power plants build in the last half century the\Kr\ activity in the atmosphere has risen from about 1961 PBq in 1973 \cite{telegadas_atmospheric_1975} to about 5500 PBq in 2009 (see figure \ref{fig:Kr85Aenderung}) \cite{ahlswede_update_2013}.
-Compared to \nuc{Ar}{39}, however,  in the atmosphere \Kr\ only has a small specific activity of any noble gas isotope and therefore also in the extracted argon.
+Compared to other radioactive noble gas isotopes like \nuc{Ar}{39}, however, the\Kr\ still only has a small specific activity in the atmosphere which is why its change is not of great concern.
 \\
 
 \iffalse
@@ -1175,7 +1179,7 @@ From it one can finally determine an amount of $N_{\mathrm{peak,BEGe}} = (183\pm
 
 Now to spectrum after the LAr veto.
 Fit function \ref{equ:FitNoFilters} will also be used.
-This is an advantage because it will also fit around a possible remaining 511 keV peak that might otherwise would have affected the outcome.
+This is an advantage because it will also fit around a possible remaining 511 keV peak that otherwise might have affected the outcome.
 
 \iffalse
 As mentioned above one can assumed that the positron electron annihilation peak is fully suppressed.
@@ -1190,6 +1194,7 @@ The fit results in the function displayed in equation \ref{equ:FitFilters}.
 \end{equation}
 \\
 \fi
+\\
 
 Diagrams \ref{fig:FitLArVetoBEGes} and \ref{fig:FitLArVetoCOAX} show the fitted plots.
 As above, the amplitude D of the second Gaussian peak corresponds to the number of events measured in the area of the peak per binning.
@@ -1197,6 +1202,8 @@ This results in an amount of $(120\pm19.3)$ counts for the BEGe and $(128\pm22.1
 \\
 
 Compared to the values of the not filtered spectra however, it can be seen that the number of counts in the BEGe and in the COAX detectors have dropped considerably.
+This means that the LAr veto also rejected some of the \Kr\ decay caused events.
+
 This means that some of the  \Kr\ decay events must have also been rejected by the LAr veto and a recovery would be necessary. !!!!! hier noch umschreiben !!!!!
 But due to that not being possible those results cannot be used in further course of this analysis.
 The second approach was only intended as a cross-check for the values not filtered by LAr veto anyway, so no real loss there.
@@ -1219,10 +1226,12 @@ It still would have been great if it had worked as a crosscheck.
 	\end{subfigure}
 	\caption{
 	Fitted energy spectra from 500 to 525 keV when only considering those event that got though the Muon veto, the detector anti-coincidence veto and the LAr veto. 
-	Function \ref{equ:FitFilters} was used as fit function. 
+	Function \ref{equ:FitNoFilters} was used as fit function. 
 	Its course is indicated in red. 
 	The green plots at the bottom of the figures indicate the peaks responsible for the deviation. 
 	Their course was determined from the corresponding fit parameter.
+    In the case of the BEGe spectrum the first peak function vanishes due to no measurable deviation from the background level.
+    In the COAX spectrum, however, a deviation is still visible which is why the second peak function has a finite amplitude.
 	}
 \end{figure}
 \iffalse
@@ -1254,6 +1263,7 @@ It still would have been great if it had worked as a crosscheck.
 
 \end{table}
 \fi
+
 \iffalse
 Nevertheless, the line count rate $N_{\mathrm{peak,BEGe}}$ and $N_{\mathrm{peak,COAX}}$ used in the further analysis were successfully determined from the fit of the unfiltered spectra.
 These values represent the amount of events that were with almost absolute certainty caused by a 514 keV photon of the \nuc{Rb}{85m} relaxation.  
@@ -1265,19 +1275,19 @@ How this conversion factor can be determined is the topic of the following secti
 \section{Monte Carlo Simulation}
 \label{sec:MonteCarlo514}
 
-It is possible to calculate the decay density of \Kr\ necessary to create the measured line count by determining the conversion factor $\frac{1}{\epsilon V_{\mathrm{sim}} p}$ between them. 
+It is possible to calculate the decay density of \Kr\ necessary to create the measured line count by using the conversion factor $\frac{1}{p \epsilon V_{\mathrm{sim}} }$ between these two values. 
 Such a conversion factor can be determined with the help of a Monte Carlo simulation.
 The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and \gerda\ \cite{boswell_mage_2010}.
 \mage is specialized to simulate radioactive decays and their corresponding measured events in Germanium detectors.
 To simulate the \gerda\ environment as good as possible, MAGE computes all parts of the internal and external experiment setup as well as some of LNGS.
 \\
 
-The simulation used here consists of a cylindrical volume of 2.5m of height and 3m diameter, in which at the center the detector arrays of the \gerda\ experiment is placed.
-The resulting volume of the liquid argon is $V_{\mathrm{sim}} = 17.65 \mathrm{m}^3$ .
+The simulation used here simulates a cylindrical LAr volume of 2.5m of height and 3m diameter, in which at the center the detector arrays of the \gerda\ experiment is placed.
+The effective LAr volume is $V_{\mathrm{sim}} = 17.65 \mathrm{m}^3$ .
 Compared with the volume of 64 m\(^3\) of LAr used in the \gerda\ experiment this volume is much smaller.
 But as we will see later, this volume is by far big enough for this purpose.
 A total of $N_{\mathrm{sim}}$ = 50.000.000 gammas with an energy of 514 keV were simulated in of this volume. 
-As it can be seen in figure \ref{fig:CrossSecAb}, the density of the decays is as by design constant over the whole volume.
+As you can see in figure \ref{fig:CrossSecAb}, the density of the decays over the whole volume is relatively constant, as it was planned from the beginning.
 \\
 
 \begin{figure}[t!]
@@ -1298,7 +1308,7 @@ As it can be seen in figure \ref{fig:CrossSecAb}, the density of the decays is a
 	\vspace{0.5cm}
     \caption{
     	The cross section of the simulated volume from above and radial.
-    	The colored area shows the density of simulated decays. 
+    	The colored area shows the density of all simulated decays. 
     	The red points indicate all events that were measured by BEGe detectors.
     	From it can be seen that photons that have been emitted far away from the detectors created no measurable signal in the detectors.
     	}
@@ -1335,12 +1345,12 @@ This ratio easily be adapted to a conversion factor from the amount of measured 
 	\label{fig:PhasenraumMC514}
 \end{figure}
 
-
+\\
 The spectrum of all the events detected in BEGe detectors is shown in figure \ref{fig:PhasenraumMC514}.
-From it one can see that only a small amount cases the gamma deposited 514 keV in the detectors
-The great majority of photons measured must scattered before they arrived in the detector or did not deposit all of their energy in them.
-But to calculate the detector efficiency, only the measured events at the 514keV peak have to be accounted for.
-In the BEGe detector spectrum the peak contains a total of \(\Delta N_{\mathrm{BEGe}} = 4511\pm67\) counts while the COAX peak contains  \(\Delta N_{\mathrm{COAX}} = 3706\pm60\) .
+From it one can see that only in a small amount cases the gamma deposited all of its initial 514 keV in the detectors
+The great majority of photons measured must have scattered before they arrived in the detector or did not deposit all of their energy in them.
+To calculate the detector efficiency, however, only the measured events at the 514 keV peak have to be accounted for.
+In the BEGe detector spectrum the peak contains a total of \(\Delta N_{\mathrm{BEGe}} = (4511\pm67)\) counts while the COAX peak contains  \(\Delta N_{\mathrm{COAX}} = (3706\pm60)\) .
 With a total of 50 million initial decays, this results in a efficiency of 
 \begin{equation*}
 \epsilon_{\mathrm{BEGe}} = \frac{\Delta N_{\mathrm{BEGe}}}{N_{\mathrm{sim}}} = (9.02\pm0.13) \times 10^{-5}  \frac{\mathrm{event}}{\mathrm{gamma}}
@@ -1349,25 +1359,26 @@ With a total of 50 million initial decays, this results in a efficiency of
 \epsilon_{\mathrm{COAX}} = \frac{\Delta N_{\mathrm{COAX}}}{N_{\mathrm{sim}}} = (7.412\pm0.12) \times 10^{-5}  \frac{\mathrm{event}}{\mathrm{gamma}}
 \end{equation*}
 for the volume of the simulated cylinder.
-This means that if a 514keV photon is emitted at any location in the liquid argon container, it has a probability \(\epsilon_{\mathrm{BEGe}}\) of being measured by one of the BEGe detectors.
-On the other hand, it can also be said, that for every measured 514keV photon in one of the BEGe detectors an amount of about $1 / \epsilon_{\mathrm{BEGe}} = 10515$ \nuc{Rb}{85m} relaxations must occur.
-In other words, the value $1 / \epsilon_{\mathrm{BEGe}}$ is a factor to convert from the measured entries to the actual amount of \nuc{Rb}{85m} relaxations.
+This means that if a 514 keV photon is emitted at any location in the liquid argon container, it has a probability \(\epsilon_{\mathrm{BEGe}}\) of being measured by one of the BEGe detectors.
+On the other hand, for every measured 514keV photon in one of the BEGe detectors an amount of about $1 / \epsilon_{\mathrm{BEGe}} = 10515$ \nuc{Rb}{85m} relaxations must occur.
+In other words, the value $1 / \epsilon_{\mathrm{BEGe}}$ is a factor to convert from the measured entries to the mean amount of \nuc{Rb}{85m} relaxations necessary to create it.
 \\
 
-However, this value is direct proportional to the simulated volume $V_{\mathrm{sim}}$.
-This dependency can be identified from figures \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa}.
+This value is direct proportional to the simulated volume $V_{\mathrm{sim}}$.
+This dependency can be derived from figures \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa}.
 The red dots in them represent the location the measured gamma was released.
 It can be seen that essentially all measured gamma originated in the immediate vicinity of the detectors.
 This would mean that, with a big enough volume and a constant decay density $\rho_{\mathrm{dec}}$, the value $\Delta N$ of each detector remains constant under change of volume.
-$N_{\mathrm{sim}}$ on the other hand is directly proportional to the volume due to definition of $N_{\mathrm{sim}} = \rho_{\mathrm{dec}} V_{\mathrm{sim}}$.
-This results in a direct proportionality of $\frac{1}{\epsilon}$ with the simulated volume.
+$N_{\mathrm{sim}}$ on the other hand is directly proportional to the volume through to definition of $N_{\mathrm{sim}} = \rho_{\mathrm{dec}} V_{\mathrm{sim}}$.
+With the definition of the detector efficiency this results in the proportionality  $\frac{1}{\epsilon} \propto V_{\mathrm{sim}}$.
 \\
 
 A problem already mentioned above is that simulated that LAr volume $V_{\mathrm{sim}}$ was chosen smaller than it is in the actual setup. 
 This makes it necessary for the wanted conversion factor to be volume independent.
-But after $\epsilon$'s dependency with the simulated volume has already been determined, such a value can easily be generated by dividing $\frac{1}{\epsilon}$ through $V_{\mathrm{sim}}$.
+Otherwise the results of the Monte Carlo simulation would be unusable for the values determined for the real LAr tank.
+After $\epsilon$'s dependency on the simulated volume has already been determined, such a value can easily be generated by dividing $\frac{1}{\epsilon}$ through $V_{\mathrm{sim}}$.
 This new value $\frac{1}{\epsilon V_{\mathrm{sim}}}$ is a conversion factor from the measured line count to the gamma emissions per liter.
-By also dividing this new value by the probability $p=0.434 \frac{\mathrm{gamma}} {\mathrm{decay}}$, you finally get the desired conversion factor $\frac{1}{ p\epsilon V_ {\mathrm{sim}}}$ between the measured line numbers and the necessary \Kr\ decay density to generate this peak. 
+By also dividing this new value through the probability $p=0.434\% \frac{\mathrm{gamma}} {\mathrm{decay}}$, you finally get the desired conversion factor $\frac{1}{ p\epsilon V_ {\mathrm{sim}}}$ between the measured line numbers and the necessary \Kr\ decay density to generate this peak. 
  
 \begin{equation*}
 \frac{1}{ p \epsilon_{\mathrm{BEGe}} V_{\mathrm{sim}}} = (144.65\pm2.15) \frac{\mathrm{decay}}{\mathrm{event} \times l}
@@ -1382,10 +1393,14 @@ By also dividing this new value by the probability $p=0.434 \frac{\mathrm{gamma}
 \label{sec:CalcActiv}
 
 The last remaining value to be determined is the mean measuring time $\bar{t}$ of all respective detectors.
-The reason why not simply the entire duration of \PII\ was used as measuring time is due to the fact that not all detectors were recording all the time.
+The reason why not simply the entire duration of \PII\ was used as measuring time is due to not all detectors recording all of the time.
 For determining this mean measuring time the exposures of all individual detectors has to be known.
 An easy way to determine those values involves the test pulse signal.
-Due to its periodicity of 0.05 Hz, the effective measurement times of the individual detectors can be determined by counting the number of measured test pulse signals in each detector and multiplying with the 20 seconds:
+As mentioned in the introduction the test pulse sends every 20 s an electric pulse through the front end electrons of the detectors.
+These events are also recorded and specifically marked as test pulse event. 
+\\
+
+Due to its periodicity, the effective measurement times of the individual detectors can easily be determined by counting the number of measured test pulse signals in each detector and multiplying with the 20 seconds:
 \begin{equation}
     t_\mathrm{i} = N_{\mathrm{TP}}(\mathrm{i}) \times 20\mathrm{s}
 \end{equation}
@@ -1410,10 +1425,15 @@ By following this procedure the mean measuring times for the BEGe and the COAX d
     \bar{t}_{\mathrm{COAX}} = 1.803 \unit{yr}
 \end{equation*}
 
-These mean measurement times are exactly the times that each detector must have measured to obtain the same amount of combined exposure as from the actual measurement times.
-Of course, this is only a simplification that generates a certain error.
+These mean measurement times are exactly the time that each detector of one kind must have measured to obtain the same amount of combined exposure as from the actual individual measuring times.
+However, this is a simplification that generates a certain error in the detector efficiency.
+Every detector has a own efficiency of detecting 514 keV gammas.
+If some detectors now have a longer measurement time than others, the combined detector efficiency of one type of detector deviates from the value determined above, which assumed that all detectors had the same measurement time.
+
 Theoretically it would also have been possible to use the exposures of all individual detectors in the Monte Carlo simulation and determine how much a detector actually contributes to the detector efficiency.
-However, this would have been too complicated and the error that results from the simplification can be neglected, since the measuring times of the individual detectors are almost always of the same sizes.
+However, this would have been very complicated and unnecessary, since the error can actually be neglected.
+This is due to the fact that the measurement times of the individual detectors are almost the same anyway resulting in a mean value from which the individual measuring times do not vary too much.
+This means that the error in the detector efficiency resulting from only using a mean measuring time can be neglected.  
 \\
 
 \iffalse
@@ -1461,7 +1481,7 @@ From this, an average measurement time for the BEGes of $\bar{t}_{\mathrm{BEGe}}
 \\
 \fi
 
-With the mean measuring times, the line counts rates and the conversation factors the mean specific activity $\bar{a}$ of \Kr\ over the curse of all of \PII\ can  finally calculate by applying equation \ref{equ:activityDieErste}.
+Finally, with the mean measuring times, the line counts rates and the conversation factors the mean specific activity $\bar{a}$ of \Kr\ over the curse of all of \PII\ can  finally calculate by applying equation \ref{equ:activityDieErste}.
 The resulting mean specific \Kr\ activities are
 \begin{equation*}
     \bar{a}_{\mathrm{BEGe}} = (0.546\pm0.083)	\frac{\unit{mBq}}{\unit{l}}
@@ -1476,6 +1496,7 @@ From these two values an average specific \Kr\ activity for the whole period of 
 \bar{a} = (0.508\pm0.086)\frac{\unit{mBq}}{\unit{l}}
 \end{equation*}
 \\
+
 %5.07978E-04	8.57336E-05
 
 \iffalse
@@ -2029,11 +2050,22 @@ On the other hand is the activity in the Darkside experiment with its $(2.8577 \
 \label{sec:ConcAndOutlook}
 \section{Summary}
 With the line count rate analysis carried out in this paper it was able to show that the specific activity of \nuc{Kr}{85} in the LAr in \gerda\ \PII\ has a value of $(0.508\pm0.086) \frac{\unit{mBq}}{\unit{l}}$. 
-Compared to WARPs $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ and to Darksides $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ its value is much smaller.
 On the other hand, the second attempt to determine a value for the specific activity via the change of count rate over time has failed.
 This was due to the falsely made assumption that \Kr\ is the only isotope in the LAr to show significant change in its activity over time.
 \\
 \section{Comparison to WARP and Darkside}
+
+Two other experiments also using LAr were mentioned at the end of the introduction chapter: the Darkside experiment using UAr and the WARP experiment also using argon from the atmosphere.
+Tt was assumed there that Darkside's specific \Kr\ activity [$(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$] was measured two orders of magnitude smaller than in the WARP experiment [$(160\pm130)\frac{\unit{mBq}}{\unit{l}}$] because the UAr did not come into contact with the man-made \Kr.
+It was therefore also assumed that \gerda's specific \Kr\ activity should also be much higher than Darkside's.
+However, the value of specific \Kr\ activity in the LAr of \gerda\ determined in this thesis is now even smaller than that of Darkside.
+\\
+
+For future experiments with LAr it is now of particular interest to find out why the specific \Kr\ activity in \gerda\ is so much smaller than in the WARP experiment with the same source for its argon but also why it is even smaller than the UAr of Darkside that was supposed to be the more radio pure material.
+But it is hard to come up with a reason why it is the case.
+The LAr used in \gerda\ was bought commercially and has not been further distilled.
+Also the \Kr\ in the atmosphere should have been relatively homogeneous or at least in the same order of magnitude \.
+
 
 One can now make some comparisons of this value with the WARP and the Darkside experiments.
 In the case of the WARP experiment a specific activity of $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ \label{} was measured for the \Kr.
