@@ -202,10 +202,10 @@ Die erste Methode jedoch, bei der die Anzahl an Messungen in einem bestimmen Int
 The double beta (\twonu) decay has been observed in several isotopes where single beta decay is forbidden.
 The neutrinoless double beta (\onbb) decay will only occur when neutrinos are Majorana fermions.
 Majorana particles have the characteristic that they are particle and antiparticle at the same time, breaking the lepton number conservation.
-More about this in section \ref{sec:PhyBG}.
+The consequences of this will be discussed in  section \ref{sec:PhyBG}.
 \\
 
-Section \ref{sec:gerda} will focus on the \gerda experiment.
+The following section \ref{sec:gerda} will focus on the \gerda experiment.
 The GERmanium Detector Array (\gerda) experiment tries to find evidence for the neutrino less double beta (\onbb) decay in \nuc{Ge}{76}.
 \onbb\ decay is known to have a very long half life.
 It is therefore important to minimize background as good as possible. 
@@ -215,12 +215,10 @@ Commercial argon is extracted from the atmosphere by air liquefaction.
 Impurities can be removed by cryogenic distillation but traces of radioactive components can be left.
 \\
 
-One residual radioactive isotopes is \Kr. 
+One residual radioactive isotopes is \Kr and  will be discussed in section \ref{sec:Kry85}. 
 Compared to \nuc{Ge}{76} it has a small $Q_\beta$ value.
 It therefore doesn't contribute to the background for \gerda's \onbb\ decay search.
 However, it is to be taken into account in any low energy analysis.
-Its characteristics will be discussed in section \ref{sec:Kry85}.
-\\
 
 The aim of this thesis is to determine the specific activity of the \Kr\ in the liquid argon coolant of the \gerda\ experiment. 
 \\
@@ -411,7 +409,7 @@ This effective neutrino mass is defined by
 \left\langle m_{\beta\beta}\right\rangle = \abs{\sum_i U_{ei}^2m_i }
 \label{mBetaBeta}
 \end{equation}
-The $U_{ei}$ matrix elements originate from neutrino flavor mixing. 
+The $U_{ei}$ originate from neutrino flavor mixing. 
 Neutrino oscillation experiments have shown that neutrino flavor eigenstates $\nu_\alpha$ that couple to the W boson are a superposition of neutrino mass eigenstates $\nu_i$.
 \begin{equation}
 \ket{\nu_\alpha} = \sum_i U^*_{\alpha i} \ket{\nu_i} 
@@ -449,17 +447,16 @@ From these three masses it is possible to determine the Majorana phases, the ind
 
 \begin{figure}[t!]
 	\centering
-	\begin{minipage}{.4125\textwidth}
+	\begin{minipage}[t]{.475\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{./Bilder/NeutrinoMassOrdering.png}
-		\caption{Value of the effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle$ detectable by \onbb\ as a function of the smallest mass of the respective mass hierarchy. NS stands for the normal hierarchy and IS for the inverted hierarchy. Taken from \cite{bilenky_neutrinoless_2012}.}
+		\includegraphics[width=.825\textwidth]{./Bilder/NeutrinoMassOrdering.png}
+		\caption{Effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle$ as a function of the smallest mass of the respective mass hierarchy. NS stands for the normal hierarchy and IS for the inverted hierarchy. Taken from \cite{bilenky_neutrinoless_2012}.}
 		\label{fig:MassOrder}
 	\end{minipage}\hfill%
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}[t]{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/TheoretischesSpektrmdes0nubbDecay.png}
-		\caption{Effective spectrum of a \twonu\ decay when adding the energies of the two escaping electrons. 
-        In case \onbb\ decay exists, a peak at the Q-value of the \twonu\ decay spectrum can be seen. Taken from \cite{elliott_double_2002}.}
+		\caption{Effective spectrum of a \twonu\ decay when adding the energies of the two escaping electrons.  Taken from \cite{elliott_double_2002}.}
 		\label{fig:TheoSpektrum}
 	\end{minipage}
 \end{figure}
@@ -549,7 +546,7 @@ The general setup can be seen in figure \ref{fig:gerdaSetupPII}.
 	\begin{minipage}[t!]{.45\textwidth}
 		\centering
 		\includegraphics[height=60mm]{./Bilder/GERDAsetupPhaseII.png}
-		\caption{Sketch of the \gerda\ \PII\'s experimental setup. The germanium source and detectors are placed inside a liquid argon (LAr) tank which itself is surrounded by a water tank. Taken from \cite{collaboration_upgrade_2018}.}
+		\caption{Sketch of the \gerda\ \PII's experimental setup. The germanium source and detectors are placed inside a liquid argon (LAr) tank which itself is surrounded by a water tank. Taken from \cite{collaboration_upgrade_2018}.}
 		\label{fig:gerdaSetupPII}
 	\end{minipage}\hfill%
 	\begin{minipage}[t!]{.45\textwidth}
@@ -560,7 +557,7 @@ The general setup can be seen in figure \ref{fig:gerdaSetupPII}.
 	\end{minipage}
 \end{figure}
 
-Regarding the detectors themselves, \gerda\ \PII\ uses seven coaxial detectors (COAX) which have already been used in the predecessor experiments HdM and the IGEX as well as 30 new Broad Energy Germanium detectors (BEGe).
+Regarding the detectors themselves, \gerda\ \PII\ uses seven coaxial detectors (COAX) which have already been used in the predecessor experiments (Heidelberg-Moscow and IGEX) as well as 30 new Broad Energy Germanium detectors (BEGe).
 Both detector types are made of germanium that has been enriched from 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$ \cite{agostini_background_2017}.
 They also share the same basic functionality.
 The major volume of both detectors are made of p-type germanium.
@@ -627,13 +624,27 @@ In noble liquids, the VUV light does not have enough energy to excite any atom i
 	\begin{minipage}{.475\textwidth}
 		\centering
 		\includegraphics[width=0.6\textwidth]{./Bilder/LArVetoSetup.png}
-		\caption{Sketch of the liquid agron (LAr) veto setup. 16 photomultiplier tubes (PMT) are mounted in a cylindrical copper surface at the top and bottom. At the level of the detectors, the cylinder consists of fibers instead of copper. They are read out at their ends by silicon photomultipliers (SiPM). Taken from \cite{collaboration_upgrade_2018}.}
+		\caption{Sketch of the liquid agron (LAr) veto setup. 
+        In it 16 photomultiplier tudes (PMT) and 90 silicon photomultiplers (SiPM) are installed. 
+        \iffalse
+        16 photomultiplier tubes (PMT) are mounted in a cylindrical copper surface at the top and bottom. 
+        At the level of the detectors, the cylinder consists of fibers instead of copper. 
+        They are read out at their ends by silicon photomultipliers (SiPM). 
+        \fi
+        Taken from \cite{collaboration_upgrade_2018}.}
 		\label{fig:LArVetoSetup}
 	\end{minipage}\hfill%
 	\begin{minipage}{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/GerdaErgebnisse.png}
-		\caption{Recent results from \gerda\ \PII. The measured spectra of COAX and BEGe detectors are distinguished by their different resolutions.  Only one decay 2 sigma from the \onbb\ decay was found. This leads to the conclusion that no \onbb\ decay was measured and a new lower limit of \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL) was determined. Taken from \cite{zsigmond_new_2018}}
+		\caption{
+        Recent results from \gerda\ \PII. 
+        The measured spectra of COAX and BEGe detectors are distinguished by their different resolutions.  
+        \iffalse
+        Only one decay 2 sigma from the \onbb\ decay was found. 
+        This leads to the conclusion that no \onbb\ decay was measured and a new lower limit of \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL) was determined. 
+        \fi
+        Taken from \cite{zsigmond_new_2018}}
 		\label{fig:gerdaErgebnisse}
 	\end{minipage}
 \end{figure}
@@ -672,12 +683,14 @@ It is a data analysis framework suitable for off-line digital signal processing 
 Its advantages lie in its multiple level data organization as seen in figure \ref{fig:TierStructure}.
 Tier0 and Tier1 store raw information whereas all higher Tiers contain progressively more analyzed data.
 Additional information about the analysis process can be found in \cite{agostini_gelatio:_2011} and \cite{agostini_off-line_2011}.
+In this thesis only data from Tier3 and Tier4 are used.
 \\
-
+\iffalse
 To ensure that the filter parameters of the analysis are set without bias, all events measured in a  50 keV interval around the $Q_{\beta\beta}$ were only stored without any analysis applied on them.
 Only after all parameters in the rejection process were finally defined all events from this interval will be analyzed. 
 Such a procedure is called a blinding process and the revealing of the blinded events an unblinding. 
 \\
+\fi
 % Mui, Mountain, Pulse shape disc.
 % especially LAr-Veto 
 
@@ -689,10 +702,13 @@ Such a procedure is called a blinding process and the revealing of the blinded e
 	
 	\caption{
 	The decay scheme of \Kr. 
+    \iffalse
     It decays via two different channels. 
     The majority of transitions end in the ground state of \nuc{Rb}{85} while 0.434$\%$ of the time \Kr\ decays into an excited state being 514 keV over the ground state. 
     The excited state has a half life of 1.015$\mu$s. It
-    then relaxes directly into the ground state. Taken from \cite{noauthor_livechart_nodate}.
+    then relaxes directly into the ground state. 
+    \fi
+    Taken from \cite{noauthor_livechart_nodate}.
 	}
 	\label{fig:Decay}
 \end{figure}
@@ -727,40 +743,43 @@ This excited state has a half life of 1.015 $\unit{\mu s}$ and relaxes directly 
 	\includegraphics[width=80mm]{./Bilder/Kr85Aenderung.png}
 	\fi%
 	\caption{
-	    \Kr's specific activity in the atmosphere between 1945 to 2009. It can be seen that over this period the average specific activity in the atmosphere has increased. This is due to the higher amount of fission reactors in which \Kr\ is produced.   
+	    \Kr's specific activity in the atmosphere between 1945 to 2009. It can be seen that over this period the average specific activity in the atmosphere has increased. 
 		Taken from \cite{ahlswede_update_2013}.
 	}
     \label{fig:Kr85Aenderung}
 \end{figure}
 
 The argon used in \gerda\ \PII\ was extracted from the atmosphere.
-Air liquefaction  
-Any \Kr\ that would be residual in the argon must also be present there.
+Any \Kr\ residual in the argon must have already been present there.
 When investigating on how  \Kr\ got into the atmosphere, two different sources on earth can be identified.
 On the one hand side, it can be created naturally in the atmosphere by an interaction of \nuc{Kr}{84} with cosmic rays.
 On the other hand, the production of \Kr\ from nuclear fission of \nuc{U}{235} and \nuc{Pu}{239} generates an atmospheric inventory about four orders of magnitude higher than that.
 Only a small amount is naturally produced in earth's crust.
 The majority is man-made from nuclear power plants \cite{winger_new_2005}.
 Krypton is a noble gas and therefore easily diffuses through everything in its way.
-It rises until it reaches the atmosphere where in an equilibrium a reserve of it is build over time.  
+It rises until it reaches the atmosphere where a \Kr\ reserve is build over time.  
 Due to the higher amount of nuclear power plants build in the last half century the\Kr\ activity in the atmosphere has risen from about 1961 PBq in 1973 \cite{telegadas_atmospheric_1975} to about 5500 PBq in 2009 (see figure \ref{fig:Kr85Aenderung}) \cite{ahlswede_update_2013}.
-But compared to \nuc{Ar}{39} \Kr\ still only has a small specific activity in the atmosphere and therefore also in the extracted argon.
+Compared to \nuc{Ar}{39}, however,  in the atmosphere \Kr\ only has a small specific activity of any noble gas isotope and therefore also in the extracted argon.
 \\
+
 \iffalse
 The concentration of \Kr\ in the air at ground level varies depending on the proximity to a nuclear power plant \cite{weiss_mesoscale_1986} but at atmospheric altitudes it only varies on large length scales.
 This change is so small, however, that one can assume \Kr\'s concentration is everywhere the same. 
 \\
 \fi
+
 Two other experiments also using LAr are the WARP and the Darkside experiment.
 In both of experiments the specific activity of their residual \Kr\ was determined.
 The Darkside experiment, using underground argon (UAr), has measured a specific activity of \((2.86\pm0.18) \frac{\unit{mBq}} {\unit{l}}\)  \cite{agnes_results_2016}.
 This UAr has been extracted from underground reservoirs and should only have come into contact with \Kr\ from natural processes.
 In the LAr of the WARP experiment a specific \Kr\ activity of   \((160\pm130)\frac{\unit{mBq}}{\unit{l}}\) was measured \cite{benetti_measurement_2006}.
 It uses atmospheric argon which is likely why it has a higher specific activity compared to  Darkside.
-\gerdas\ value is therefor also expected to be comparably high.
+\gerdas\ value is therefor also expected to be comparably high but up until now this value was unknown.
+The aim of this thesis is to determin the specific \Kr\ activity in the LAr of \gerda\ \PII.
+\iffalse
 Its concrete value would be of interest when researching in the lower energy spectrum of \gerda\.
 For example for a further investigation on \nuc{Ar}{39} that has a similar Q-value or the search for dark matter in the keV-scale.
-
+\fi
 % where does it come from?
 % what properties does it have?
 % why is it important to calculate its influence on \gerda\
@@ -770,27 +789,33 @@ For example for a further investigation on \nuc{Ar}{39} that has a similar Q-val
 \label{sec:SAfrom514}
 
 The first and more precise method uses the 514 keV line count rate of the \Kr\ decay.
-As discussed in section \ref{sec:Kry85}, \Kr\ has a small probability of 0.43\% to decay into an excited state of \nuc{Rb}{85m}. 
+As discussed in section \ref{sec:Kry85}, \Kr\ has a small probability of $p=0.434\%$ to decay into an excited state of \nuc{Rb}{85m}. 
 When \nuc{Rb}{85m} relaxes into its ground state it emits a photon of 514 keV energy.
-The evolution of this line in the \gerda\ spectra allows to draw a conclusion on the amount of \Kr's caused events $N_{\mathrm{peak}}$ and therefor its activity. 
+The evolution of the 514 keV line in the \gerda\ spectra would therefore allow to draw a conclusion on the amount of \Kr's caused events $N_{\mathrm{peak}}$ and with it its activity in the LAr. 
 \\
 
-Also necessary for the calculation is the efficiency of any germanium detector to fully absorb a 514 keV gamma.
-This detector efficiency has to be determined using a Monte Carlo simulation in which an amount $N_{\mathrm{sim}}$ of  514 keV gammas were simulated in a  volume $V_{\mathrm{sim}}$.
-The detector efficiency can then be calculated by dividing the simulated line count at 514 keV by the total number of  decays ($\epsilon = \frac{\Delta N}{N_{\mathrm{sim}}}$).
-The value $\frac{1}{p \epsilon V_{\mathrm{sim}}}$, using the detector efficiency, the simulated volume $V_{\mathrm{sim}}$ and the probability $p$ of \Kr\ to decay via the excited \nuc{Rb}{85m}, is then a conversion factor from a measured line counts to the density of decays necessary to create this signal.
+Also necessary for the calculation is the efficiency of the used germanium detector to fully absorb these 514 keV gammas.
+For this a Monte Carlo simulation is necessary in which $N_{\mathrm{sim}}$ gammas with an energy of 514 keV  in a  volume $V_{\mathrm{sim}}$ are simulated.
+The detector efficiency can then be calculated from dividing the simulated line count at 514 keV by the total number of  decays ($\epsilon = \Delta N/N_{\mathrm{sim}}$).
+The value $1/p \epsilon V_{\mathrm{sim}}$, using the detector efficiency, the simulated volume and the probability $p$ of \Kr\ to decay via the excited \nuc{Rb}{85m}, is a conversion factor from a measured line count rate to the density of decays necessary to create this signal.
 \\
 
 The final value needed is the measuring time $\bar{t}$.
-Not every detector was measuring over the course of Phase II which is why a mean measuring time for all detectors has to be calculated.
+Not every detector was measuring over the course of Phase II.
+This is why a mean measuring time for all detectors has to be calculated.
 With these three values, a mean specific activity $\bar{a}$ can be determined:
 
 \begin{equation}
     \bar{a} = N_{\mathrm{peak}}\times\frac{1}{p \epsilon V_{\mathrm{sim}}}\times\frac{1}{\bar{t}}
     \label{equ:activityDieErste}
 \end{equation}
-The line count rate analysis is expected to generate a relatively precise estimation of the specific activity due to the 514 keV line being a clear feature that can be traced back only to \Kr.
+The line count rate analysis is expected to generate a relatively precise estimation of the specific activity.
+That is due to the 514 keV line being a clear feature that can only be traced back to \Kr.
 \\
+
+In the course of this thesis only statistical errors will be considered as 
+!!!! heir noch eine begrüngun finden !!!!!
+
 
 \iffalse
 However, a problem of this method lies with the proximity of the \Kr\ to the 511keV peak of the positron electron annihilation. 
@@ -808,20 +833,21 @@ The rest of the chapter will cover the concrete implementation of the individual
 \fi
 \section{Preparing the spectrum}
 
-To determine the amount of measured 514keV gammas a fit has to be applied onto the corresponding line.
+To determine the amount of measured 514keV gammas a fit has to be applied onto the corresponding peak in the energy spectrum.
 The data used in this analysis is the full available \gerda\ \PII\ data at the time (run 53 to 92).
 Onto the events used the standard \gerda\ analysis cuts where applied.
-This includes data quality cuts, the Muon veto cut and the anti-coincidence between germanium detectors of the array.
-The second veto cannot be triggered from \Kr\  because the measured gammas basically always happen in close vicinity of the detectors and with a $Q_\beta$ value of 687 keV it is impossible for the escaping electron to create any Cerenkov radiation.
-The third veto also does not effect gamma events as they deposit all their energy in only one detector and any event with several detectors measuring a signal are likely to be background.  
+This includes data quality cuts, the Muon veto cut and the anti-coincidence cut between germanium detectors in the event of more than one detector measuring a signal.
+The second veto cannot be triggered from \Kr, because for a beta electron from a \Kr\ decay via the excited \nuc{Rb}{85m} states is is impossible to create any Cerenkov radiation as it does not have by far enough energy ($E_{\mathrm{max}} = 173\unit{keV}$) .
+The third veto also does not effect gamma events as the majority of gammas deposit all their energy in only one detector.
+If any event has measured signals in several detectors these events are likely to be caused by background.  
 \\
 
 The data was also split for the two detector types in \gerda.
-This is necessary due to the differences in detector efficiency and resolution already mentioned in seciton \ref{sec:ExSetup}.
+This is necessary due to the differences in detector efficiency and resolution already mentioned in section \ref{sec:ExSetup}.
 BEGes have a lower efficiency to detect full 514 keV gammas but show a higher energy resolution ($\Delta E_{\mathrm{BEGe}} = 2.267\unit{keV}  @ 514 \unit{keV}$) and vice versa for the COAX detectors ($\Delta E_{\mathrm{COAX}} = 2.720\unit{keV} @ 514 \unit{keV}$).
-Over the time investigated time frame of \PII\ all BEGe detectors were exposed to 30.836 kg$\cdot$yr and all COAX were exposed to 28.088 kg$\cdot$yr.
+Over the investigated time frame of \PII\ all BEGe detectors were exposed to 30.836 kg$\cdot$yr and all COAX were exposed to 28.088 kg$\cdot$yr.
 Some plots or examples for the COAX detectors were neglected in the course of the analysis.
-This was chosen to suppress repetitiveness in the structure of this thesis due to almost identical results.
+This was chosen to suppress repetitiveness in the structure of this thesis due to them showing almost identical results as the BEGe detectors.
 \\
 
 \begin{figure}[t!]
@@ -839,12 +865,12 @@ This was chosen to suppress repetitiveness in the structure of this thesis due t
   \caption{COAX}
   \label{fig:NoFilterCOAX}
 \end{subfigure}
-	\caption{Energy spectra from 500 to 525 keV after standard \gerda\ analysis cuts, split by the respective detectors the signal was measured in.}
+	\caption{Energy spectra from 500 to 525 keV after standard \gerda\ analysis cuts, split by the detectors respective to where signal was measured in.}
 \end{figure}
 
 In figure \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} two resulting spectra from 500 to 525 keV of the respective detectors can be seen.
-In them a structure at the 511 keV and the 514 keV line can be identified.
-The 511 keV line originates from measured gammas created in positron electron annihilation events while the 514 keV line can only originate from the \Kr\ gammas.
+In them a structure deviating from the background level can be identified  at 511 keV and 514 keV .
+The 511 keV line originates from gammas created in positron electron annihilation events while the 514 keV line can only originate from the gammas created in the \Kr\ decay via the excited \nuc{Rb}{85m} state.
 From this one can already make the statement that a non negligible amount of \Kr\ must be present in the LAr.
 Otherwise no variation from the background level should be visible.
 \\
@@ -876,7 +902,7 @@ Whether or not a rejection process using the LAr veto would be useful in this an
 \section{Annihilation Peak Suppression}
 \label{sec:APS}
 
-Because of the 511 keV peak two different approaches are now possible.
+Due to the occurrence of the 511 keV peak, two different approaches are now possible.
 One approach would directly apply a double Gaussian peak fit function to the spectra also fitting the 511 keV peak.
 Another approach would try to suppress the 511 keV peak and fit a single peak function through the spectra.
 Both of these approaches will be applied in this thesis.
@@ -885,13 +911,15 @@ The first method does not need any more preparation while method needs to find a
 
 A promising candidate for this is the LAr veto.
 This veto is always triggered in the case an event in the Germanium detectors coincides with a scintillation signal of at least about 0.5 phe \cite{agostini_background_2017}.
-The \Kr\ decay into the excited \nuc{Rb}{85m} leaves the escaping electron with a maximum of 173 keV which should only create a very weak scintillation light signal.
-Any positron creating process, however, should also create a strong scintillation light signal visible to the LAr veto setup.
-This way one might be able to discriminate between \Kr\ gamma events and annihilating events.
+Again, the \Kr\ decay into the excited \nuc{Rb}{85m} leaves the escaping electron with a maximum of 173 keV which should only create a very weak scintillation light signal.
+Any process involving positron, however, should create a strong scintillation light signal visible to the LAr veto setup.
+This is due to any positron creating event in the LAr also creating a lot of  scintillation light.
+With positrons almost instantly  annihilating it is likely that the light signal of its creation can still be measured in the LAr veto setup.
+Therefore it might be able to discriminate between \Kr\ gamma events and annihilating events with the LAr veto.
 \\
 
 In figure \ref{fig:LArBEGes} and \ref{fig:LArCOAX} are the energy spectra from 500 to 525 keV after the LAr veto displayed.
-In them one can see that the annihilation peak is reduced compare to the spectra befor the LAr veto.
+In them one can see that the annihilation peak is reduced compare to the spectra before the LAr veto.
 \\
 
 \begin{figure}[t!]
@@ -1039,8 +1067,7 @@ A satisfactory answer however will only be able to obtain through a quantitative
 \section{Fitting}
 \label{sec:Fitting}
 
-The spectra from before and after the LAr veto will now be fitted.
-From the determined fit parameters the amount of measured \Kr\ decay events can then be calculated by integrating over the isolated Gauss function.
+The spectra from before and after the LAr veto can now be fitted and from the determined fit parameters the amount of measured \Kr\ decay events determined.
 \\
 
 The spectra before the LAr vetoes \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show two peaks.
@@ -1048,6 +1075,7 @@ This requires the fit function to include two Gaussian functions from which only
 Additionally to the two Gaussian peaks, a constant background parameter will be added.
 Theoretically, the \nuc{Ge}{76} spectrum creating the background changes with energy.
 In the investigated area, however, its overall change is so small, as seen in all previously plotted spectra, that it can be approximated as constant. 
+
 \iffalse
 When looking at the not LAr veto filtered spectra we can see that over the course of the displayed energy interval no real change of the background can be seen (see figure \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX}).
 Theoretically however, one can expect the background count rate to behave like the phase-space function of the dominant \nuc{Ge}{76} and therefore change with energy.
@@ -1056,7 +1084,8 @@ The phase-space function of \nuc{Ge}{76} is very complex.
 In this case however the energy interval is relatively small compared to the complete spectrum.
 This allows the approximation that its phase-space function changes like an exponential decrease.
 \fi
-The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
+
+The resulting fit function is displayed in equation \ref{equ:FitNoFilters}.
 \\
 
 \begin{equation}
@@ -1065,12 +1094,14 @@ The resulting fit function is shown in equation \ref{equ:FitNoFilters}.
 \end{equation}
 \\
 
-In figure \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX} are the resulting fit plots displayed.
-The concrete fit parameter values can be seen in the table of the figures.
+In figure \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX} show the resulting fit plots.
+The values of the fit parameter values can be seen in the table of the figures.
 Fitting parameters B and E - the mean values of the peaks - where fixed to the values of 511 keV and 514 keV respectively.
 All other values were left free under the condition of a positive value.
-Also, Parameters C - the sigma value - was used in both peaks as the resolution of the detectors should not vary much over this small interval.
-Their measured values resemble the expected value of ... and ... calculated from the respective resolution relatively well.  
+Also, Parameters C - the sigma value - was used in both peaks as the resolution of the detectors.
+In the investigated energy range these two parameters should not vary much which is why this simplification can be applied.
+Their expected values derived from the resolutions of the detectors at this energy scale are $\sigma_{\mathrm{BEGe}} = 0.9627 \unit{keV}$ for the BEGe detectors and  $\sigma_{\mathrm{COAX}} = 1.1559 \unit{keV}$ for the COAX detectors.
+When comparing these values with the values determined from the fitting plots one can see that the measured variances have their expected values inside their range of uncertainty.
 \\
 
 \begin{figure}[t!]
@@ -1093,7 +1124,6 @@ Their measured values resemble the expected value of ... and ... calculated from
 		Function \ref{equ:FitNoFilters} was used as fit function. 
 		Its course is indicated in red. 
 		The two green plots at the bottom of the figures indicate the two independent peak responsible for the deviations. 
-        The determined variances have the expected values calculated from their respective resolutions in their range of uncertainty. 
 		}
 \end{figure}
 \\
@@ -1139,6 +1169,7 @@ I [1/keV] &	(5.80 \(\pm\) 1.22)$\times10^{-3}$	&	(9.24 \(\pm\)1.83)$\times10^{-3
 However, the only fit parameter that is of real interest here is variable D.
 Its value is the amplitude of the second Gaussian peak.
 Because the Gaussian peak was already chosen in the normalized form this value also represents the amount of \Kr\ decays measured per binning of the histogram.
+Therefore no integration is necessary.
 From it one can finally determine an amount of $N_{\mathrm{peak,BEGe}} = (183\pm25)$ counts in the peak of the BEGe spectrum and $N_{\mathrm{peak,COAX}} = (152\pm26.2)$ counts in the COAX spectrum.
 \\
 
