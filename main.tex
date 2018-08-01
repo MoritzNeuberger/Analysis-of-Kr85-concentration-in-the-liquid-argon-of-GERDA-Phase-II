@@ -1582,14 +1582,14 @@ Ideally, a similar result of this method would be a cross check for the value fo
 \\
 
 To measure the change in count rate every measured event will have to be drawn over time and an exponential fit function applied through it.
-From the amplitude of the resulting exponential function the value $R_{\mathrm{count}}$ of measured counts per second can be determined.
+From the amplitude of the resulting exponential function the value $R_{\mathrm{count}}(t=0)$ of measured counts per second at the start of \PII\ can be determined.
 \\
 
 It is also necessary to use a Monte Carlo simulation to calculate another conversion factor between the measured counts and the number of decays required for them. 
 A new Monte Carlo simulation must be used, since in this case all \Kr\ must be considered in the simulation and not only the 514 keV gamma.
 With this new conversion factor $\frac{1}{\epsilon V_{\mathrm{sim}}}$ the specific activity of \Kr\ can finally be calculated.
 \begin{equation}
-a(t=0) = \frac{R_{\mathrm{count}}}{\epsilon V_{\mathrm{sim}}}
+a(t=0) = \frac{R_{\mathrm{count}}(t=0)}{\epsilon V_{\mathrm{sim}}}
 \label{equ:ActivityDieZweite}
 \end{equation}
 It is important to note that this approach determines the specific activity of \Kr\ at the beginning of \PII\, while the first method calculates the mean specific activity over the entire period of \PII.
@@ -1611,9 +1611,12 @@ Whether or not one have to consider its influence will be discussed later on in 
 For the time being, the simplification is applied that its change is much smaller than that of \Kr, so that it can also be neglected.
 \\
 
-Even though\nuc{Po}{210} has a much lower half life than \Kr, the mean energy of the escaping alpha particle is much higher than the mean beta energy of all of the isotopes above.
-This is important because in this analysis only those events are considered which have deposited an energy between 200 and 400 keV. 
-This means even though \nuc{Po}{210} has a much lower half life it would not contribute to the investigated count rates due to its much lower probably to release an alpha particle in this energy range.
+A problem though is\nuc{Po}{210} because it has a half life  much lower than \Kr.
+But luckily its mean energy of the escaping alpha particle ($\mathcal{O}(5000\unit{keV})$) is much higher than the mean beta energy of \Kr\ (\mathcal{O}(250\unit{keV})).
+This is convenient because an upper energy limit on the considered events can easily suppress their influence.
+This upper energy limit was chosen to be 400 keV.
+Theoretically, \Kr's Q-value lies at 687 keV but it can be expected that the majority of \Kr\ events will have an energy lower then this.
+By setting the limit so low it also suppresses the constant background of events with a higher energy making the change in rate more apparent.
 \\
 
 All other radioactive isotopes left in the LAr have either a much longer half life than \nuc{Ar}{42}, most of their released particles have an energy over 400keV or their specific activity is too small too small to measure any kind of change over time.
@@ -1630,20 +1633,20 @@ It can therefore be assumed that all changes in the count rate are only due to \
 	\begin{subfigure}{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/ZeitverlaufALLE.pdf}
-		\caption{every event}
+		\caption{energies lower than 400 keV}
 		\label{fig:ZeitAll}
 	\end{subfigure}\hfill%
 	\begin{subfigure}{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/ZeitverlaufLimits.pdf}
-		\caption{only energies between 200 and 400keV}
+		\caption{energies between 200 and 400 keV}
 		\label{fig:ZeitLimits}
 	\end{subfigure}
     \\
     \caption{
     	The change of count rate over time.
     	In both figures the amount of counts measured in one week are plotted over the whole time frame of \PII. 
-        The binning of these hisograms was chosen to be one week per bin which results in about 114 bins over all of  \PII.
+        The binning of these hisograms was chosen to be one week per bin which results in about 113 bins over all of  \PII.
     	In figure (a) no filters were imposed onto the used events while in (b) only those events were used that have an energy between 200 and 400 keV. 
     	One can see that further precautions must be taken before an exponential decrease can be determined. 
     	}
@@ -1651,34 +1654,29 @@ It can therefore be assumed that all changes in the count rate are only due to \
 
 To determine the change of count rate over time it is necessary to plot the amount of measured counts over time in a histogram (see figure \ref{fig:ZeitAll}) and later divide those counts by the mean measuring times inside the respective bins of the histogram.
 The data used in this approach is the \gerda\ \PII\ data from run 55 to 92.
- 
+It was chosen to exclude the data from run 53 and 54 as less detectors were measuring in these two runs and a jump in count rate would have been able to be seen in the transition between run 54 to 55.
+The used data had also been cut again by the standard \gerda\ analysis cuts (quality, muon, anti-coincedence).
+The anti-coincidence cut here also because not only the gammas basically always deposit all their energy in one detector but due to the low  $Q_\beta$ of the \Kr\ the released beta as well.
+ \\
 
-
-As in the line count rate analysis, histogram \ref{fig:ZeitAll} only used events where the Muon veto and the detector anticoincidence veto were not triggered.
-When looking at the histogram two new problems seem to occur.
-Firtsly, there seems to be a great jump in the amount of events measured in the second half of \PII.
-And secondly, there are times in which the amount of events measured drop to zero.
-These two discontinuous changes to the expected exponential decrease make it impossible to lay an exponential fit function throug the graph.
-It is therefore necessary to find a way to suppress them.
-But for this to be done one has to investigate where these discontinuities originate from.
+Figure \ref{fig:ZeitAll} shows the amount of counted events with an energy below 400 keV in each individual week.
+From it a jump in the count of events in the second half of \PII\ can be seen.
+However, this discontinuous change makes it impossible to determine the change in the counting rate, as no fit function can be applied through the resulting counting rate diagram. 
+It is therefore necessary to find a way to suppress this jump, but to do so, its origin must be investigated.
 \\
 
-Firstly, we discuss the big jump in number of events measured.
-This jump originates from the lowering of the energy threshold on the 12.10.2017.
-This reduction of the lower threshold dramatically increased the number of events measured.
+This jump occurs on the 12.10.2017.
+On this day the lower energy threshold of all detectors was lowered.
+This dramatically increased the number of events measured.
 Due to every detector having different characteristics, the limit was set for each detector individually.
 Before the lowering the highest limit was set at about 140keV for the BEGes and at 185 for the COAX.
 After the lowering all event with an energy of at least about 15keV could be recorded by all detectors.
 For a graphical representation, see the beginning of the spectra in figure \ref{fig:before} for all events measured before and figure \ref{fig:after} for all events after the lowering of the limit. 
-This means that from the 12.10.2017 on a much higher event rate was measured just because more event were actually recored.
-To work around this continuity problem all one has to do is limit the events used for the analysis to those that have a minimal energy of about 200keV. 
-While doing so one can also set up an upper limit on the energy.
-Its purpose is to suppress events caused by isotopes with a much higher  mean energy than \Kr.
-Even though they should only create a constant background, not considering \nuc{Po}{210}, but their presence make a change in intensity harder to identify.
-therefore was 400 keV chosen as an upper limit for the event energy.
-Theoretically the endpoint energy of \Kr\ is at 687keV, but its count rate towards the endpoint is that low that one would basically only include more constant background by setting the upper limit higher.
-A new plot including only events between the energy limits of 200 and 400keV can be seen in figure \ref{fig:ZeitLimits}.
+To work around this continuity problem all one has to do is to apply a lower energy limit of 200 keV.
+The resulting count histogram can be seen in figure \ref{fig:ZeitLimits}.
 \\
+
+
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}[t]{.475\textwidth}
@@ -1699,23 +1697,17 @@ A new plot including only events between the energy limits of 200 and 400keV can
 		}
 		\vspace{5mm}
 \end{figure}
-
-The second discontinuous behavior originates from the same problem that was already faced in the line count rate analysis.
-Not all detectors were on all of the time and time intervals occurred in which no signal at all was recorded.
-Due to the fact that some of the detectors were turned on or off over the time of \PII\ will result in discontinuous changes in the event rate because of a change in detector efficiency over time.
-This can easily be solved by only considering those events measured in a detector that was always turned on.
-Which detector was always on over all of \PII\ can be seen in figure \ref in the appendix.
-On the other hand due to there being time intervals in which no events were recorded the event rate drops discontinuous to zero there.
-In section \ref{sec:CalcActiv} this problem was solved by calculating an effective measuring time for each detectors.
-Her, however, an average measurement time over the entirety of \PII\ is of interest.
-In this method we must find a way to weigh each individual bin of the event histogram with the corresponding effective measurement time of that bin.
-This is where the test pulse signal comes in handy again.
-Similar to the first method one can now determine an effective measuring times for each time interval of the bins of histogram \ref{fig:ZeitLimits}.
-These mean measuring times can easily be calculated by plotting the test pulse signals in an histogram with the same binning as the event histogram and dividing each of these bins with the frequency of the test pulse of $f_\mathrm{TP} = 0.05\unit{Hz}$ (see figure \ref{fig:effectiveMeasuringTimes}).
-The contents of these bins in the test pulse histogram correspond now to the respective measuring time in the binning intervals. 
+To now determine the count rates of each individual week this histogram has to be divided by the mean measuring times of each week.
+For this the test pulse signal can be used again.
+Similar to how it was done in the line count rate analysis for each week the number of recorded test pulse signals can be determined and their individual amount multiplied by 20 s.
+Using this procedure results in a histogram as seen in figure \ref{fig:effectiveMeasuringTimes}.
+However, this approach requires all detectors used for the evaluation to have always been measuring 
+If at any point in \PII\ one of the detectors stops taking measurements, it would result in a jump in the combined count rate of all detectors creating discontinuities in its course.    
+Therefore, in the further course of the count rate analysis only those events are considered which have measured a signal in one of the detectors, that were always turned on.
+Which detectors were actually used in this analysis can be seen on graphic ... in the appendix.
 \\
 
-By dividing all bins of histogram \ref{fig:ZeitLimits} by the corresponding bins in the test pulse histogram, you would get a new histogram showing the mean count rate in each time frame of the bins (see figure \ref{fig:ChangeInEventRate}).
+When re-plotting the count histogram now also considering only using those detectors that have always been measuring thought \PII\ and dividing all bins by the corresponding mean measuring times, it results new histogram showing the mean count rate of each week (see figure \ref{fig:ChangeInEventRate}).
 \\
 \begin{figure}[t!]
 	\centering
@@ -1742,21 +1734,20 @@ By dividing all bins of histogram \ref{fig:ZeitLimits} by the corresponding bins
 	\\
 \end{figure}
 
-From this graph one can now determine the exponential change in the event rate by applying an exponential fit function.
-The fit function used here is
+This graph can now be fitted with fit function
 \begin{equation}
 \mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}
 \label{equ:FitFilters2}
 \end{equation}
-In this A corresponds to the initial count rate caused by \Kr\ decays, B to \Kr's half life and C the constant background rate.
-By assuming that only \Kr\ has a notable change over time fit-parameter B was fixed to \Kr's half life \(10.739\unit{y}\) and leaving the other two parameter relatively free.
-From the resulting fitting plot (seen figure \ref{fig:ChangeInEventRateFit}) one gets the fit parameters as seen in table \ref{tab:FitParZeit}.
-The only parameter needed for the further analysis is parameter \(\mathrm{A}\) being the initial count rate $R_{\mathrm{count}} = (1.560\pm1.022) \unit{mHz}$ wanted from the fitting process. 
-Now that the \Kr\ count rate has been determined all that is still needed to calculate \Kr's specific activity is the conversion factor from the measured events to the necessary \Kr\ decays in the LAr to cause the measured \Kr\ count rate.
-As described above a new Monte Carlo simulation is needed for that.
-What this simulation actually simulates and how one determines the conversion factor from it is the topic of the following section.
-
-
+Fit parameter A corresponds to the initial count rate caused by the decay of \Kr\, B to \Kr's half-life, and C to the constant background rate.
+Fit parameter B was fixed to \Kr's half-life of \(10.739\unit{y}\) , but all other parameters remained free, only limited by the condition of them being positive.
+The resulting fitting plot can be seen in figure  \ref{fig:ChangeInEventRateFit}.
+The only parameter of interest for further analysis is the parameter \(\mathrm{A}\). 
+It corresponds to a count rate  
+\begin{equation*}
+R_{\mathrm{count}}(t = 0) = (1.560\pm1.022) \unit{mHz}
+\end{equation*}of \Kr\ decay caused events at the start of \PII\.
+\iffalse
 \begin{table}[t!]
 	\centering
 	\begin{tabular}{|l|c|}
@@ -1777,7 +1768,7 @@ What this simulation actually simulates and how one determines the conversion fa
 		}
     \label{tab:FitParZeit}
 \end{table}
-
+\fi
 \begin{figure}[t!]
 	\centering
 	\ifmakefigures%
@@ -1792,21 +1783,21 @@ What this simulation actually simulates and how one determines the conversion fa
 \end{figure}%
 
 
-To calculate this conversion factor one basically has to apply the same process as in the line count rate analysis.
-Just this time one does not just simulate the emission of photons with an energy of 514keV in the LAr.
-One rather simulates the actual \Kr\ decays themselves.
-A problem however is, that one can expect the detector efficiency of \Kr\ to be very small.
-This is due to the fact that electrons being created in the LAr have a low probability of being measured .
+\section{Monte Carlo simulation}
+\label{sec:MonteCarlo2}
+
+The last variable needed to determine the specific activity of \Kr\ is the conversion factor $1/\epsilon V_{\mathrm{sim}}$.
+To obtain this conversion factor, almost the same process must be used as for line count rate analysis, with the only difference that this time the \Kr\ decays themselves are simulated instead of 514 keV gamma.
+\\
+
+A problem is, however, that one can expect the detector efficiency of \Kr\ to be very small.
+This is due to the fact that electrons being created in the LAr have a low probability of actually being detected.
 
 On the one hand, electrons emitted far away from the detectors have a longer distance to travel in which they lose a lot of energy by generating scintillation light, effectively reducing their range.
 
 On the other hand, electrons only have a small transmission factor in germanium.
-This causes the problem that a significant number of them are detected in the dead zone of the detectors where they do not generate measurable signals.
-In comparison, photons have a larger transmission factor that allows them to deposit their energy deep in the active volume of the detectors.
-
-It must also be taken into account that only those events are used in the further analysis that have made their signal in one of the detectors that was always on.
-Every other decay that made a signal in another detector will be discarded making the detector efficiency even smaller. 
-Because of this low expected detector efficiency a much higher amount of decays have to be simulated than in the case of the first Monte Carlo simulation.
+This causes a significant number of them being absorbed in the dead zone of the detectors where they do not generate a measurable signal.
+In comparison, the 514 keV gammas have a large transmission factor that allows them to deposit their energy deep in the active volume of the detectors.
 \\
 \begin{figure}[t!]
 	\centering
@@ -1831,13 +1822,12 @@ Because of this low expected detector efficiency a much higher amount of decays 
 	\end{minipage}
 \end{figure}
 
-\section{Monte Carlo simulation}
-\label{sec:MonteCarlo2}
 
-That is why a number of N = 1 billion \Kr\ decays in a volume of again $V_{sim} = 17.65 \mathrm{m}^3$ was simulated.
-Due to the massive amount of these simulated events only those decays were saved in which a signal has actually been measured.
-These events created a combined spectrum of the emitted electrons plus the photons emitted from the excited \nuc{Rb}{85m} as seen in figure \ref{fig:Sim1Spektrum}.
-If you compare this spectrum with the one determined for the other Monte Carlo simulation you can see these two spectra look relatively similar.
+That is why a far bigger number of N = 1 billion \Kr\ decays in a volume of again $V_{sim} = 17.65 \mathrm{m}^3$ were simulated.
+From the measured events  a combined spectrum of the emitted electrons plus the 514 keV gammas can be created which can be seen in figure \ref{fig:Sim1Spektrum}.
+\\
+
+When compare this spectrum with the one determined for the other Monte Carlo simulation you can see these two spectra look relatively similar.
 To test this one can calculate a ratio from the two spectra and compare them.
 An appropriate ratio for the range of values of this analysis would be to take the sum of all events with an energy between 200 and 400 keV $N_{\mathrm{sum}}$ and divide by the counts in the 514 keV peak $N_ {\mathrm{peak}}$.
 This results in a value of $N_{\mathrm{sum}}/N_{\mathrm{peak}} = 2.481$ for the first simulation and $3.137$ for the second simulation.
