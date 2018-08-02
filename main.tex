@@ -660,11 +660,11 @@ This is why wavelength shifting material covers the surface of the LAr veto shif
 		\label{fig:TierStructure}
 \end{figure}
 
-As already mentioned, in the case of an event the digitized signals of the germanium detectors and the photomultipliers are stored for further off-line analysis.
-The software used for this purpose is \gerda\ LAyouT for Input/Output (GELATIO).
+As already mentioned, in the case of an event the digitized signals of the germanium detectors and the LAr channels are stored for further off-line analysis.
+The software used for the analysis is Gerda LAyouT for Input/Output (GELATIO).
 It is a data analysis framework suitable for off-line digital signal processing and analysis of data recorded by germanium detectors.
 Its advantages lie in its multiple level data organization as seen in figure \ref{fig:TierStructure}.
-Tier0 and Tier1 store raw information whereas all higher Tiers contain progressively more analyzed data.
+Tier0 and Tier1 store raw information whereas all higher Tiers contain the data resulting from the successive steps of the analyzing process.
 Additional information about the analysis process can be found in \cite{agostini_gelatio:_2011} and \cite{agostini_off-line_2011}.
 In this thesis only data from Tier3 and Tier4 are used.
 \\
@@ -699,9 +699,9 @@ Only recently, new data was published by \gerda\ \cite{zsigmond_new_2018}.
 In it, only one event in the proximity of the Q-value was found as shown in figure \ref{fig:gerdaErgebnisse}.
 However, more than 2 sigma from the expected peak position.
 The conclusion was therefore that no evidence for a \onbb\ decay has been seen.
-A new lower limit for \nuc{Ge}{76} was determined to be $\thalfzero\ = 0.9\times10^{26}\unit{yr}$ (90$\%$ CL).
+A new lower limit for \nuc{Ge}{76} was determined to be $\thalfzero\ > 0.9\times10^{26}\unit{yr}$ (90$\%$ CL).
 Currently \gerda\ receives an upgrade and is planned to measure until 2020.
-After that, the successor experiment LEGEND is planned to further investigate the lower limit of \nuc{Ge}{76} half life.
+After that, the successor experiment LEGEND is planned to further investigate the \onbb\ decay in\nuc{Ge}{76}.
 
 % what has happened so far
 
@@ -715,9 +715,9 @@ After that, the successor experiment LEGEND is planned to further investigate th
 This isotope is not stable and decays via a $\beta^-$-decay into \nuc{Rb}{85}.
 The half life of this decay is 10.756 yr \cite{singh_nuclear_2014} and a Q-value of $Q_\beta = 687 \unit{keV}$.
 \Kr's $\beta$-decay has two different possible transitions (see figure \ref{fig:Decay}).
-With overwhelming 99.563$\%$, the \Kr decay has its final state in the ground state of \nuc{Rb}{85}.
+With overwhelming 99.563$\%$, the \Kr\ decay directly populates the ground state of \nuc{Rb}{85}.
 In 0.434$\%$, however, it decays via an excited state of \nuc{Rb}{85} 514 keV above the ground state.
-This excited state has a half life of 1.015 $\unit{\mu s}$ and relaxes directly into the ground state while emitting  a photon carrying the energy difference.
+This excited state has a half life of 1.015 $\unit{\mu s}$ and relaxes immediately into the ground state while emitting  a photon carrying the energy difference.
 \\
 
 \begin{figure}[t!]
@@ -740,13 +740,11 @@ But this would also mean that any residual \Kr\ in the argon must also have alre
 
 When investigating on how  \Kr\ got into the atmosphere, two different sources on earth can be identified.
 On the one hand side, it can be created naturally in the atmosphere by an interaction of \nuc{Kr}{84} with cosmic rays.
-On the other hand, the production of \Kr\ from nuclear fission of \nuc{U}{235} and \nuc{Pu}{239} generates an atmospheric inventory about four orders of magnitude higher than that.
-Only a small amount is naturally produced in earth's crust.
-The majority is man-made from nuclear power plants \cite{winger_new_2005}.
+On the other hand, the production of \Kr\ from nuclear fission of \nuc{U}{235} and \nuc{Pu}{239} generates an atmospheric inventory about four orders of magnitude higher than that \cite{winger_new_2005}.
+Natural production in the earth's crust is only marginal.
 Krypton is a noble gas and therefore easily diffuses through everything in its way.
 It rises until it reaches the atmosphere where a \Kr\ reserve is build over time.  
 Due to the higher amount of nuclear power plants build in the last half century the\Kr\ activity in the atmosphere has risen from about 1961 PBq in 1973 \cite{telegadas_atmospheric_1975} to about 5500 PBq in 2009 (see figure \ref{fig:Kr85Aenderung}) \cite{ahlswede_update_2013}.
-Compared to other radioactive noble gas isotopes like \nuc{Ar}{39}, however, the\Kr\ still only has a small specific activity in the atmosphere which is why its change is not of great concern.
 \\
 
 \iffalse
@@ -760,9 +758,8 @@ In both of experiments the specific activity of their residual \Kr\ was determin
 The Darkside experiment, using underground argon (UAr), has measured a specific activity of \((2.86\pm0.18) \frac{\unit{mBq}} {\unit{l}}\)  \cite{agnes_results_2016}.
 This UAr has been extracted from underground reservoirs and should only have come into contact with \Kr\ from natural processes.
 In the LAr of the WARP experiment a specific \Kr\ activity of   \((160\pm130)\frac{\unit{mBq}}{\unit{l}}\) was measured \cite{benetti_measurement_2006}.
-It uses atmospheric argon which is likely why it has a higher specific activity compared to  Darkside.
-\gerdas\ value is therefor also expected to be comparably high but up until now this value was unknown.
-The aim of this thesis is to determin the specific \Kr\ activity in the LAr of \gerda\ \PII.
+It uses atmospheric argon which is likely why it has a higher specific activity compared to Darkside.
+The aim of this thesis is to determine the specific \Kr\ activity in the LAr of \gerda\ \PII.
 \iffalse
 Its concrete value would be of interest when researching in the lower energy spectrum of \gerda\.
 For example for a further investigation on \nuc{Ar}{39} that has a similar Q-value or the search for dark matter in the keV-scale.
@@ -788,7 +785,7 @@ The value $1/p \epsilon V_{\mathrm{sim}}$, using the detector efficiency, the si
 \\
 
 The final value needed is the experimental time $\bar{t}$.
-Not every detector was measuring over the course of Phase II.
+Not every detector was operational over the course of Phase II.
 This is why a mean measuring time for all detectors has to be calculated.
 With these three values, a mean specific activity $\bar{a}$ can be determined:
 
@@ -1401,10 +1398,11 @@ From these two values an average specific \Kr\ activity for the whole period of 
 The uncertainty of this value is only statistical.
 Systematical errors originate from the Monte Carlo simulation and the earlier mentioned detector on/off time. 
 In the Monte Carlo simulation the situation of \gerda\ \PII\ are only simulated as good as possible.
-For example variations on the construction or the functionality of the detectors or the neglect of cables and constructions around the detectors create an error.
-By disregarding the actually detector on/off time an error is imposed.
-In actuality the detectors measuring longer then the mean measuring time contribute a higher count of events to the overall amount of measured events than assumed with the mean measuring time and vice versa.
-To compensate for the different detector efficiency  of the individual detectors to measure 514 keV gammas the mean measuring time was calculated using the mass as weighting factor.
+Variations on the construction or the functionality of the detectors for example or the neglect of cables and constructions around the detectors create an error in the determined detector efficiency.
+Also a disregarding of the actually detector on/off time creates and error in the mean measuring time.
+If detectors measure longer than the mean measurement time, they contribute a higher number of counts to the total number of counts and vice versa than if they measure the mean measurement time taking into account a constant specific activity.
+The specific amount of variating counts depends on the detector efficiency of the individual detectors to detect 514 keV gammas.
+To compensate for the mean measuring time was calculated using the mass as weighting factor.
 But as the detector efficiency not only depends on the mass but also the concrete construction of the detectors an error occurs.
 The size of these two errors are hard to estimate which is why they have not been evaluated.
 
