@@ -43,7 +43,7 @@
 \title{Determination of the specific \Kr\ activity in the liquid argon of \gerda\ Phase II}
 %\subtitle{\foreignlanguage{british}{Title in English}}
 \author{Moritz Neuberger}
-\date{8.~August 2018}
+\date{7.~August 2018}
 %\cooperators{Max-Planck-Institut für Physik}
 
 % Auf der Rückseite des Deckblatts können Themensteller, Zweitgutachter 
@@ -1596,7 +1596,7 @@ It is important to note that this approach determines the specific activity of \
 In order to compare these two results, an average specific activity must finally be determined from the second method.
 \\
 
-\section{Justification for this approach}
+\section{Motivation}
 
 Theoretically, the result of the approach described above is in actuality the combined specific activity of the whole \gerda\ \PII\ setup and not specifically just \Kr.
 The reason why one can expect to determine the individual specific activity of \Kr\ from this approach is that \Kr\ has one of the smallest half-lives ($T_{\frac{1}{2}}$ = 10.739\unit{yr}) of all remaining radioactive isotopes in LAr and the highest specific activity among isotopes with similar half-lives. 
@@ -1672,7 +1672,6 @@ Before the lowering the highest limit was set at about 140keV for the BEGes and 
 After the lowering all event with an energy of at least about 15keV could be recorded by all detectors.
 For a graphical representation, see the beginning of the spectra in figure \ref{fig:before} for all events measured before and figure \ref{fig:after} for all events after the lowering of the limit. 
 To work around this continuity problem all one has to do is to apply a lower energy limit of 200 keV.
-The resulting count histogram can be seen in figure \ref{fig:ZeitLimits}.
 \\
 
 
@@ -1696,20 +1695,24 @@ The resulting count histogram can be seen in figure \ref{fig:ZeitLimits}.
 		}
 		\vspace{5mm}
 \end{figure}
-To now determine the count rates of each individual week this histogram has to be divided by the mean measuring times of each week.
-For this the test pulse signal can be used again.
-Similar to how it was done in the line count rate analysis for each week the number of recorded test pulse signals can be determined and their individual amount multiplied by 20 s.
-Using this procedure results in a histogram as seen in figure \ref{fig:effectiveMeasuringTimes}.
-However, this approach requires all detectors used for the evaluation to have always been measuring 
-If at any point in \PII\ one of the detectors stops taking measurements, it would result in a jump in the combined count rate of all detectors creating discontinuities in its course.    
-Therefore, in the further course of the count rate analysis only those events are considered which have measured a signal in one of the detectors, that were always turned on.
-This is also the reason for why the data of run 53 and 54 have been neglected from this analysis.
-In these two runs the majority of  detectors was turned of resulting in only a small amount of detectors to chose from.
-By discarding the data of run 53 and 54 more detectors can be used in the analysis and therefore data.
-Which detectors were actually used in this analysis can be seen in graphic ... in the appendix.
+
+What must also be taken into account is that the approach through a combined counting rate requires all detectors used for the evaluation to have been continuously measuring throughout all of \PII\.
+If at any point one of the detectors stops taking measurements, it would result in a jump in this combined count rate creating discontinuities in its course.    
+In the further course of this analysis, therefore, all events are rejected that were measured in a detector whose measurement process was interrupted at some point in \PII.
+This retroactively also explains why the data of \gerda\ run 53 and 54 have been disregarded.
+In these two runs, a smaller number of detectors were measuring than usual.
+This would result in a small pool of detectors with an uninterrupted measurement process available and therefore less data being rejected.
+By discarding the data of run 53 and 54 more detectors can be used in the analysis and therefore more data.
+The resulting count histogram considering the upper and lower energy limit and only using data from continuously measuring detectors can be seen in figure \ref{fig:ZeitLimits}.
 \\
 
-When re-plotting the count histogram now also considering only using those detectors that have always been measuring thought \PII\ and dividing all bins by the corresponding mean measuring times, it results new histogram showing the mean count rate of each week (see figure \ref{fig:ChangeInEventRate}).
+The count rate of each individual week can now be determined by dividing histogram \ref{fig:ZeitLimits} by the mean measuring times of each week in histogram.
+To determine these mean measuring times the test pulse signal can be used again.
+Similar to how it was done in the line count rate analysis for each week the number of recorded test pulse signals can be determined and their individual amount multiplied by 20 s.
+Using this procedure results in a histogram as seen in figure \ref{fig:effectiveMeasuringTimes}.
+\\
+
+Figure \ref{fig:ChangeInEventRate} finally shows the resulting count rate measured over the course of \PII.
 \\
 \begin{figure}[t!]
 	\centering
