@@ -205,7 +205,7 @@ Majorana particles have the characteristic that they are particle and antipartic
 The consequences of this will be discussed in  section \ref{sec:PhyBG}.
 \\
 
-The following section \ref{sec:gerda} will focus on the \gerda experiment.
+The following section \ref{sec:gerda} will focus on the \gerda\ experiment.
 The GERmanium Detector Array (\gerda) experiment tries to find evidence for the neutrino less double beta (\onbb) decay in \nuc{Ge}{76}.
 \onbb\ decay is known to have a very long half life.
 It is therefore important to minimize background as good as possible. 
@@ -213,16 +213,8 @@ A passive shield around the detectors for suppression of external radiation as w
 Liquid argon (LAr) is a fitting material for these requirements due to its low boiling point, its good shielding characteristic and its ability to scintillate. 
 Commercial argon is extracted from the atmosphere by air liquefaction. 
 Impurities can be removed by cryogenic distillation but traces of radioactive components can be left.
+One residual radioactive isotopes is \Kr\ and  will be discussed in section \ref{sec:Kry85}. 
 \\
-
-One residual radioactive isotopes is \Kr and  will be discussed in section \ref{sec:Kry85}. 
-Compared to \nuc{Ge}{76} it has a small $Q_\beta$ value.
-It therefore doesn't contribute to the background for \gerda's \onbb\ decay search.
-However, it is to be taken into account in any low energy analysis.
-
-The aim of this thesis is to determine the specific activity of the \Kr\ in the liquid argon coolant of the \gerda\ experiment. 
-\\
-
 
 % what is the general aim of my Bachelor thesis
 % general overview of how I'm going to do this
@@ -237,22 +229,16 @@ The aim of this thesis is to determine the specific activity of the \Kr\ in the 
 Neutrinos are electrically neutral elementary particles.
 They are leptons and, apart from gravity, they only interact with other particles via the weak force and gravity.
 They occur in three different kinds of flavors: the electron neutrino $\nu_e$, the muon neutrino $\nu_{\mu}$ and the tau neutrino $\nu_{\tau}$.
-The standard model neutrinos would be massless.
+According to the standard model neutrinos would be massless.
 Neutrino oscillation, however, has shown that neutrinos are massive.
-But the absolute values of their mass and whether they are Dirac or marjoram particles is still unknown.
+But the absolute values of their mass and whether they are Dirac or Marjoram particles are still unknown.
 \\
 
 The major difference between these two kinds of particles is that, in the case of Dirac particles, one can clearly identify particles and anti-particles while Majorana particles only have one kind.
 Majorana particles are particle and anti-particle at the same time.
-Normal particles carry a lepton number of $L = 1$ and anti-particles carry $L = -1$.
-When two Dirac particles interact, the change in lepton number is always $\Delta L = 0$.
-Majorana particles, however, can interact in such as way that the lepton number difference can be $\abs{\Delta L} = 2$.
-This means that, if one kind of particle was found to be a Majorana particle, the overall lepton number conservation, which the standard model relies on, would be broken.
-This would indicate new physics outside the standard model.
-\\
-
+This would allow lepton number violation and point towards physics beyond the standard model.
 Until now, only one possible transition is known that could identify neutrinos as Majorana particles.
-This transition is referred to as (\onbb) decay \cite{noauthor_phys._nodate-1}.
+This transition is referred to as a neutrinoless double beta (\onbb) decay \cite{noauthor_phys._nodate-1}.
  
 %what are Majorana neutrinos
 
@@ -268,14 +254,14 @@ The standard model of particle physics needs two electrons and two anti electron
 \end{equation} 
 The corresponding diagram is drawn in figure \ref{fig:Feyn2nbb}.
 It is only observable if a single beta decay is forbidden, while a \twonu\ decay is allowed.
-In most cases, this is due to the fact that the initial state of the nuclei $(A,Z)$ is more bound than the transition state $(A,Z+1)$ and less bound than the final state $(A,Z+2)$.
+In most cases, this is due to the fact that the initial state of the nuclei $(A,Z)$ is stronger bound than the transition state $(A,Z+1)$ and less strong than the final state $(A,Z+2)$.
 Their half lives are in the order of $10^{19}$ to $10^{21} \unit{yr}$
 \\
 
 \WarningsOff
 \begin{figure}[t!]
 \centering
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.475\textwidth}
 \centering
 \begin{tikzpicture}
 \begin{feynman}
@@ -335,7 +321,7 @@ Their half lives are in the order of $10^{19}$ to $10^{21} \unit{yr}$
 \subcaption{Feynman-Diagram for the $2\nu\beta\beta$-decay. Two neutrons transfer into two protons, two electrons and two electron anti-neutrinos. This decay has already been observed, but only 12 nuclei are known to make this transition.}
 \label{fig:Feyn2nbb}
 \end{subfigure}\hfill%
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.475\textwidth}
 	\centering
 	\begin{tikzpicture}
 	\begin{feynman}
@@ -402,35 +388,33 @@ In the case of a \onbb\ decay, no neutrinos are released:
 \end{equation}
 
 From here, it will be assumed that the \onbb\ decay is caused by an exchange of massive Majorana neutrinos as seen in \ref{fig:Feyn0nbb}.
-Compared to other interpretations, the concept of massive Majorana neutrino interactions requires only a minimal extension to the standard model, namely the Majorana nature of the neutrinos and their non zero mass.
 The non zero mass is due to the dependence of the \onbb\ decay half life \thalfzero\ on the effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle^2$ ($1 / \thalfzero\ \propto \left\langle m_{\beta\beta}\right\rangle^2$) \cite{vergados_theory_2012}.
 This effective neutrino mass is defined by 
 \begin{equation}
 \left\langle m_{\beta\beta}\right\rangle = \abs{\sum_i U_{ei}^2m_i }
 \label{mBetaBeta}
 \end{equation}
-The $U_{ei}$ originate from neutrino flavor mixing. 
+The PMNS mixing matrix elements $U_{\alpha i}$ originate from neutrino flavor mixing. 
 Neutrino oscillation experiments have shown that neutrino flavor eigenstates $\nu_\alpha$ that couple to the W boson are a superposition of neutrino mass eigenstates $\nu_i$.
 \begin{equation}
 \ket{\nu_\alpha} = \sum_i U^*_{\alpha i} \ket{\nu_i} 
 \end{equation}
-The PMNS mixing matrix elements $U_{\alpha i}$ are defined by three mixing angles and three CP-violating phases.
-The Dirac phase $\delta$ is always present, regardless whether the neutrino is a Majorana or Dirac particle.
-The two Majorana phases $\alpha$ and $\beta$ only have a physical meaning for Majorana neutrinos.
+The value of each $U_{\alpha i}$ is defined by three mixing angles and three CP-violating phases.
+The Dirac phase is always present, regardless whether the neutrino is a Majorana or Dirac particle.
+The two Majorana phases only have a physical meaning for Majorana neutrinos.
 Neutrino oscillation is only sensitive to the mass square differences $\Delta m^2_{ij} = m^2_i - m^2_j$ of the mass eigenstates and so far only an absolute value of $\Delta m^2_{32}$ could be determined.
-This leaves three different possible mass orders to be considered in the \onbb\ decay:
+This leaves three different possible scenarios to be considered in the \onbb\ decay:
 \begin{enumerate}
-    \item normal hierarchy ($m_1 \ll m_2 \ll m_3$)
-    \item inverted hierarchy ($m_3 \ll m_1 < m_2$)
-    \item quasi-degenerate hierarchy ($m_1 \approx m_2 \approx m_3$) in which the mass eigenvalues are much larger than the mass differences
+    \item normal order ($m_1 \ll m_2 \ll m_3$)
+    \item inverted order ($m_3 \ll m_1 < m_2$)
+    \item quasi-degenerate order ($m_1 \approx m_2 \approx m_3$) in which the mass eigenvalues are much larger than the mass differences
 \end{enumerate}
-The effective neutrino mass as a function of the lightest mass of the respective hierarchy can be seen in figure \ref{fig:MassOrder}.
-In case of its observation, a \onbb\ decay provide new knowledge about these mass orders, the mass scale as well as the Majorana phases. 
+The effective neutrino mass as a function of the lightest mass of each mass ordering can be seen in figure \ref{fig:MassOrder}.
+A \onbb\ decay may  provide new knowledge about the mass ordering, the mass scale as well as the Majorana phases. 
 \\
 
-Through comparison with experiments trying to measure the mass with a different approach, the values of the mass eigenstates and the Majorana phases can be determined.
-Other attempts to measure the mass of the electron neutrino are measuring the energy of the beta decay. 
-A prominent experiment right now is the KATRIN experiment.
+Other attempts to measure the mass of the electron neutrino are measuring the end point of the beta decay. 
+A promising experiment right now is the KATRIN experiment.
 The absolute mass these kinds of experiments can measure, is an incoherent mass sum as seen in equation \ref{massBeta}.
 
 \begin{equation}
@@ -450,7 +434,7 @@ From these three masses it is possible to determine the Majorana phases, the ind
 	\begin{minipage}[t]{.475\textwidth}
 		\centering
 		\includegraphics[width=.825\textwidth]{./Bilder/NeutrinoMassOrdering.png}
-		\caption{Effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle$ as a function of the smallest mass of the respective mass hierarchy. NS stands for the normal hierarchy and IS for the inverted hierarchy. Taken from \cite{bilenky_neutrinoless_2012}.}
+		\caption{Effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle$ as a function of the smallest mass of the respective mass hierarchy. NS stands for the normal order and IS for the inverted order. Taken from \cite{bilenky_neutrinoless_2012}.}
 		\label{fig:MassOrder}
 	\end{minipage}\hfill%
 	\begin{minipage}[t]{.475\textwidth}
@@ -471,9 +455,10 @@ This has the advantage that the detection efficiency is maximized.
 Since \onbb\ decay should have a very long half-life, any background has to be minimized just to measure the resulting influence.
 There are three kind of background sources which have to be considered.
 \begin{enumerate}
-    \item Cosmic background radiation.
-Muons shower down to the earth from the atmosphere and create background in the detectors.
-Their influence can be suppressed by placing the experiment deep underground and by applying a muon veto system.
+    \item Cosmic background.
+Muons and other particles shower down to the earth from the atmosphere and create background in the detectors.
+Most of their influence can be suppressed by placing the experiment deep underground.
+By also applying a muon veto system the most of the residual muon flux can be suppressed.
 \item Natural radioactivity.
 This is typically the dominant background source originating from radioactive isotopes which are naturally present in all materials.
 Its influence can be suppressed by passively shielding the detectors and by the selecting of low radioactive components in the setup. 
@@ -520,24 +505,22 @@ These facts outweigh the disadvantages which is the reason why it already has a 
 \subsection{Experimental Setup}
 \label{sec:ExSetup}
 The \gerda\ experiment is located in the underground Laboratori Nazionali del Gran Sasso (LNGS) of INFN, Italy.
-The laboratories are located approximately 1.4 km below ground, which corresponds to a water equivalent of 3.5km.
-\gerda\ experiment uses \nuc{Ge}{76} as \onbb\ decay material as well as the detector material \cite{agostini_background_2017}.
+The laboratories are located approximately 1.4 km below ground, which corresponds to a water equivalent of 3.5 km.
+\gerda\ uses \nuc{Ge}{76} as \onbb\ source as well as the detector material \cite{agostini_background_2017}.
 \\
 
-The detectors are operated barely in a liquid argon (LAr) tank of 64m$^3$ volume at an working temperature of about 90K.
+The detectors are operated bare in a liquid argon (LAr) tank of 64m$^3$ volume at an working temperature of about 90K.
 Its main purpose is to cool the germanium detectors down to their working temperatures and to passively shield them against external radiation originating from the outside.
 LAr can also scintillate.
-This is why in \PII\ , extra instrumentation was positioned inside the LAr tank in order to measure any light signal around the detectors.
+This is why in \PII, extra instrumentation was positioned inside the LAr tank in order to measure any light signal around the detectors.
 As any \nuc{Ge}{76} decays are unlikely to create scintillation light, their signal can be used as a veto - the so-called LAr veto.
-\\
 
-Situated around the LAr is a 590m$^3$ water tank.
+Situated around the LAr cryostat is a 590m$^3$ water tank.
 Its main purpose is to shield the setup from outside radiation not only passively by absorption but also actively as a muon veto.
 Situated in the water tank are 66 photomultipliers.
-They detect any Cherenkov light created mostly by Muons.
-Again, \nuc{Ge}{76}'s Q-value is too low to create any kind of Cherenkov light which is the reason why any light signal measured can be used as a veto.
+They detect Cherenkov light created by Muons.
 
-Above the water tank, a clean room is installed in which the detector strings can be assembled into the strings.  
+Above the water tank, a clean room is installed in which the detector strings are assembled.  
 The general setup can be seen in figure \ref{fig:gerdaSetupPII}.
 \\
 
@@ -546,43 +529,42 @@ The general setup can be seen in figure \ref{fig:gerdaSetupPII}.
 	\begin{minipage}[t!]{.45\textwidth}
 		\centering
 		\includegraphics[height=60mm]{./Bilder/GERDAsetupPhaseII.png}
-		\caption{Sketch of the \gerda\ \PII's experimental setup. The germanium source and detectors are placed inside a liquid argon (LAr) tank which itself is surrounded by a water tank. Taken from \cite{collaboration_upgrade_2018}.}
+		\caption{Sketch of the \gerda\ \PII's experimental setup. The germanium detector array is placed inside a liquid argon (LAr) cryostat which itself is surrounded by a water tank. Taken from \cite{collaboration_upgrade_2018}.}
 		\label{fig:gerdaSetupPII}
 	\end{minipage}\hfill%
 	\begin{minipage}[t!]{.45\textwidth}
 		\centering
 		\includegraphics[height=60mm]{./Bilder/DetectorDesign.png}
-		\caption{Sketch of the Coaxial (COAX) and Broad Energy Germanium (BEGe) detector designs. The COAX detectors are larger and have a cylindrical coaxial cavity while the BEGes are completely solid. Taken from \cite{agostini_background_2014}.}
+		\caption{Sketch of the Semi-Coaxial (COAX) and Broad Energy Germanium (BEGe) detector designs. Taken from \cite{agostini_background_2014}.}
 		\label{fig:DetcDes}
 	\end{minipage}
 \end{figure}
 
-Regarding the detectors themselves, \gerda\ \PII\ uses seven coaxial detectors (COAX) which have already been used in the predecessor experiments (Heidelberg-Moscow and IGEX) as well as 30 new Broad Energy Germanium detectors (BEGe).
+Regarding the detectors themselves, \gerda\ \PII\ uses seven semi-coaxial detectors (COAX) which have already been used in the predecessor experiments (Heidelberg-Moscow and IGEX) as well as 30 new Broad Energy Germanium detectors (BEGe).
 Both detector types are made of germanium that has been enriched from 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$ \cite{agostini_background_2017}.
 They also share the same basic functionality.
-The major volume of both detectors are made of p-type germanium.
+They are made from p-type germanium material.
 Both detectors have the majority of their surface covered by a 1-2mm thick n$^+$ doped electrode and only a small part with a p$^+$ electrode.
-If an electron hole pair is created in the p doped area, the charged particles are separated and guided to the n$^+$ or the p$^+$ layer respectively by a strong electrostatic field (3 to 4 kV) between the electrodes  \cite{spieler_semiconductor_2005}.
+If an electron hole pair is created in the p doped area, the charged cariers are separated and guided to the n$^+$ or the p$^+$ layer respectively by a strong electrostatic field (3 to 4 kV) between the electrodes  \cite{spieler_semiconductor_2005}.
 If the pair is created in the n$^+$ layer, the hole is most likely to recombine in the $n^+$ layer due to its low mobility and, thus, creates no measurable signal.
 The n$^+$ layer is therefore not active and called a dead layer.
 \\
 
 The two detectors, however, differ in their design as seen in figure \ref{fig:DetcDes}.
-Moreover the detector types also differ in their mass and therefore in their expected exposure per detector and energy resolution.
-The COAX detectors are generally heavier and therefore have a higher detector efficiency than the BEGe.
+Moreover the detector types also differ in their mass and energy resolution.
 But their design also results in a worse energy resolution due to their higher capacity compared to the BEGes \cite{agostini_production_2015}.
-BEGes also allow for better pulse shape discrimination (PDS) compared to the COAX detectors \cite{agostini_pulse_2013}.
-PDS can make a statement about the creation process of the electron hole pair by looking at the shape of the signal.
-It can therefore discriminate between different kinds of origins for a signal and acts as a veto.
+BEGes also allow for better pulse shape discrimination (PSD) compared to the COAX detectors \cite{agostini_pulse_2013}.
+PSD can make a statement about the creation process of the electron hole pair by looking at the shape of the signal.
+It can therefore discriminate between different event topologies and acts as a veto.
 \\
 
 The enriched detectors are assembled into 6 strings forming a hexagonal array together with a seventh string.
 This seventh string consists of three extra coaxial detectors made of natural isotopic germanium.
 However, they are not used in \gerda's main analysis.
 
-Custom-made amplifiers also located in the liquid argon above the detectors and digitized the analog signals of the detectors at a sampling rate of 100MHz if a triggering signal was found \cite{riboldi_cryogenic_2015}.
-Every 20 seconds a charged pulse, called the test pulse, is injected into the the front-end electronics.
-Its purpose is to monitor leakage current and noise \cite{agostini_background_2017}.
+Custom-made amplifiers also located in the liquid argon above the detectors, the analog signals of the detectors are digitized at a sampling rate of 100MHz if a triggering signal was found \cite{riboldi_cryogenic_2015}.
+Every 20 seconds a charge pulse, called the test pulse, is injected into the the front-end electronics.
+Its purpose is to monitor the stability\cite{agostini_background_2017}.
 The analysis of the signals is performed off-line.
 
 
@@ -612,11 +594,19 @@ These NMS are placed there to passively suppress the background created from \nu
 \subsection{Liquid Argon as Coolant, Shielding and Scintillator} 
 \label{sec:LArcoolant}
 
-LAr has the property that scintillation light is produced when electrically charged radiation excites or ionizes atoms in the material \cite{olsen_improvements_nodate}.
+
+LAr is also a good coolant due to its low boiling point.
+In \gerda\, it is cooled down to the working temperature of the germanium detectors at about 90 K.
+LAr can also be produces with a very high purity by air separation and further distillation.
+It also has good shielding capabilities !!!!!
+It can therefore be used as an ultra radio-pure passive shielding, as noble elements rarely make any chemical bonds due to their fully filled electron shells.
+It is therefore possible to filter the majority of impurity just by distillation.
+Compared to other noble gases, argon also has the advantage of a very low price being easily obtained by liquefaction of air from the atmosphere.
+\\
+
+LAr has the property that scintillation light is produced when radiation excites or ionizes atoms in the material \cite{olsen_improvements_nodate}.
 The excited atoms in noble liquids form dimer pairs (Ar$^*_2$).
 These dimer pairs are metastable and relax with the release of a vacuum ultraviolet photon (VUV)  which have a wavelength of 128 nm.
-In the end each ionized or excited atom only produces one VUV photon.
-In noble liquids, the VUV light does not have enough energy to excite any atom in the ground state allowing the VUV to have a very long travel distances of without being absorbed.
 \\
 
 \begin{figure}[t!]
@@ -639,7 +629,7 @@ In noble liquids, the VUV light does not have enough energy to excite any atom i
 		\includegraphics[width=\textwidth]{./Bilder/GerdaErgebnisse.png}
 		\caption{
         Recent results from \gerda\ \PII. 
-        The measured spectra of COAX and BEGe detectors are distinguished by their different resolutions.  
+        The measured spectra of COAX and BEGe detectors are separately displayed.  
         \iffalse
         Only one decay 2 sigma from the \onbb\ decay was found. 
         This leads to the conclusion that no \onbb\ decay was measured and a new lower limit of \thalfzero\ = $0.8\times10^{26}\unit{yr}$ (90$\%$ CL) was determined. 
@@ -651,20 +641,13 @@ In noble liquids, the VUV light does not have enough energy to excite any atom i
 
 Background events often deposit energy in the argon while passing through it.
 Their scintillation light around the detectors can therefore be used as a veto to reject those events.
-For this reason, a cylindrical copper shell around the germanium detectors is equipped with 16 photomultiplier tubes (PMT), situated at the bottom and at the top of this volume.
-At the level of the detectors the shell is not made of copper but of nylon strings.
-These are read out by 90 silicon photomultipliers (SiPM) measuring any light signal travailing through them \cite{csathy_optical_2016} (see figure \ref{fig:LArVetoSetup}).
+The LAr veto system consists of a cylindrical copper shell around the germanium detectors is equipped with 16 photomultiplier tubes (PMT), situated at the bottom and at the top of this volume.
+Also, at the level of the detectors the shell is not made of copper but of wavelength shifting fibers.
+These are read out by 90 silicon photomultipliers (SiPM)\cite{csathy_optical_2016} (see figure \ref{fig:LArVetoSetup}).
 VUV has a wavelength which is so small most material absorbs it in ionization.
-This is why wavelength shifting material covers the nylon fibers and the photomultipliers shifting from 128nm to 400nm.
+This is why wavelength shifting material covers the surface of the LAr veto shifting from 128nm to 400nm.
 \\
 
-LAr is also a good coolant due to the characteristically low melting point of nobel gases.
-In \gerda\, it is cooled down to the working temperature of the germanium detectors at about 90 K.
-
-Nobel liquids are also very useful as ultra radio-pure passive shielding, as noble elements rarely make any chemical bonds due to their fully filled electron shells.
-It is therefore possible to filter the majority of impurity just by distillation.
-Compared to other noble gases, argon also has the advantage of a very low price being easily obtained by liquefaction of air from the atmosphere.
-\\
 
 \subsection{Data processing and analysis}
 \label{sec:DataProc}
@@ -794,12 +777,12 @@ For example for a further investigation on \nuc{Ar}{39} that has a similar Q-val
 
 The first and more precise method uses the 514 keV line count rate of the \Kr\ decay.
 As discussed in section \ref{sec:Kry85}, \Kr\ has a small probability of $p=0.434\%$ to decay into an excited state of \nuc{Rb}{85m}. 
-When \nuc{Rb}{85m} relaxes into its ground state it emits a photon of 514 keV energy.
-The counts $N_{\mathrm{peak}}$ in the 514 keV line in the \gerda\ spectra would therefore allow to draw a conclusion on the amount of \Kr. 
+When \nuc{Rb}{85m} relaxes into its ground state, it emits a photon of 514 keV energy.
+The counts $N_{\mathrm{peak}}$ in the 514 keV line in the \gerda\ spectra would therefore allow to draw a conclusion concerning the amount of \Kr. 
 \\
 
-Also necessary for the calculation is the efficiency of the used germanium detector to fully absorb these 514 keV gammas.
-For this a Monte Carlo simulation is necessary in which $N_{\mathrm{sim}}$ gammas with an energy of 514 keV  in a  volume $V_{\mathrm{sim}}$ are simulated.
+An important factor for the calculation is the efficiency of the used germanium detector to fully absorb these 514 keV gammas.
+For this, a Monte Carlo simulation is necessary in which $N_{\mathrm{sim}}$ gammas with an energy of 514 keV  in a  volume $V_{\mathrm{sim}}$ are simulated.
 The detector efficiency can then be calculated from dividing the simulated line count at 514 keV by the total number of  decays ($\epsilon = \Delta N/N_{\mathrm{sim}}$).
 The value $1/p \epsilon V_{\mathrm{sim}}$, using the detector efficiency, the simulated volume and the probability $p$ of \Kr\ to decay via the excited \nuc{Rb}{85m}, is a conversion factor from a measured line count rate to the density of decays necessary to create this signal.
 \\
@@ -814,7 +797,7 @@ With these three values, a mean specific activity $\bar{a}$ can be determined:
     \label{equ:activityDieErste}
 \end{equation}
 The line count rate analysis is expected to generate a relatively precise estimation of the specific activity.
-That is due to the 514 keV line being a clear feature that can only be traced back to \Kr.
+This is due to the 514 keV line being a clear feature which can only be traced back to \Kr.
 \\
 
 
@@ -834,8 +817,8 @@ The rest of the chapter will cover the concrete implementation of the individual
 \fi
 \section{Preparing the spectrum}
 
-To determine the amount of measured 514keV gammas a fit has to be applied onto the corresponding peak in the energy spectrum.
-The data used in this analysis is the full available \gerda\ \PII\ data (run 53 to 92).
+To determine the amount of measured 514 keV gammas, a fit has to be applied onto the corresponding peak in the energy spectrum.
+The data used in this analysis is the fully available \gerda\ \PII\ data (run 53 to 92).
 The standard \gerda\ analysis cuts where applied.
 This includes data quality cuts, the Muon veto cut and the anti-coincidence cut between germanium detectors.
 \\
@@ -844,7 +827,7 @@ The data was also split for the two detector types in \gerda.
 This is necessary due to the differences in detector efficiency and resolution already mentioned in section \ref{sec:ExSetup}.
 BEGes have a lower efficiency to detect full 514 keV gammas but show a higher energy resolution ($\Delta E_{\mathrm{BEGe}} = 2.267\unit{keV}  @ 514 \unit{keV}$) and vice versa for the COAX detectors ($\Delta E_{\mathrm{COAX}} = 2.720\unit{keV} @ 514 \unit{keV}$).
 These values were determined in the appendix chapter \ref{sec:ResDetermination}.
-The exposure of all BEGe detectors over all \PII\ is 30.8 kg$\cdot$yr and 28.1 kg$\cdot$yr for the COAX detectors as calculated in section \ref{sec:CalcActiv}.
+The exposure of all BEGe detectors in the entire \PII\ is 30.8 kg$\cdot$yr and 28.1 kg$\cdot$yr for the COAX detectors as calculated in section \ref{sec:CalcActiv}.
 \\
 
 \begin{figure}[t!]
@@ -862,13 +845,13 @@ The exposure of all BEGe detectors over all \PII\ is 30.8 kg$\cdot$yr and 28.1 k
   \caption{COAX}
   \label{fig:NoFilterCOAX}
 \end{subfigure}
-	\caption{Energy spectra from 500 to 525 keV after standard \gerda\ analysis cuts, split by the detectors respective to where signal was measured in.}
+	\caption{Energy spectra from 500 to 525 keV after standard \gerda\ analysis cuts, split by the respective detectors where the signal was measured in.}
 \end{figure}
 
 In figure \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} two resulting spectra from 500 to 525 keV of the respective detectors can be seen.
-In them a structure deviating from the background level can be identified  at 511 keV and 514 keV .
-The 511 keV line originates from gammas created in positron electron annihilation events while the 514 keV line hint to gammas being created in the \Kr\ decay via the excited \nuc{Rb}{85m} state.
-From this one can already make the statement that a non negligible amount of \Kr\ must be present in the LAr.
+A structure deviating from the background level can be identified  at 511 keV and 514 keV .
+The 511 keV line originates from gammas created in positron electron annihilation events whereas the 514 keV line leads to the presumption that gammas are being created in the \Kr\ decays via the excited \nuc{Rb}{85m} state.
+Analyzing these figure one can already make the statement that a non negligible amount of \Kr\ must be present in the LAr.
 \\
 
 \iffalse
@@ -900,20 +883,20 @@ Whether or not a rejection process using the LAr veto would be useful in this an
 
 Due to the occurrence of the 511 keV peak, two different approaches are now possible.
 One approach would directly apply a double Gaussian peak fit function to the spectra also fitting the 511 keV peak.
-Another approach would try to suppress the 511 keV peak and fit a single peak function through the spectra.
-Both of these approaches will be applied in this thesis.
+Another approach would try to suppress the 511 keV peak and fit a single peak function through the resulting spectra.
+Both approaches will be applied in this thesis.
 \\
 
-A promising candidate for this is the LAr veto.
-This veto is triggered in the case an event in the Germanium detectors coincides with a scintillation signal of at least about 0.5 phe \cite{agostini_background_2017}.
-Again, the \Kr\ decay into the excited \nuc{Rb}{85m} leaves the escaping electron with a maximum of 173 keV which only create a very weak scintillation light signal.
-Furthermore this beta induced light signal could be measured before the standard veto time window.
+A promising candidate in order to suppress the peak, is the LAr veto.
+It is triggered in the case an event in the germanium detectors coincides with a scintillation signal of at least ~0.5 phe \cite{agostini_background_2017}.
+Again, the \Kr\ decay into the excited \nuc{Rb}{85m} leaves the escaping electron with a maximum of 173 keV which only creates a very weak scintillation light signal.
+Furthermore, this beta induced light signal could be measured before the standard veto time window.
 Any process involving positron annihilation, however, should create a measurable scintillation light signal visible to the LAr veto setup.
-Therefore it should be able to discriminate between \Kr\ gamma events and annihilating events with the LAr veto.
+Therefore, the LAr veto should be able to discriminate between \Kr\ gamma events and annihilating events.
 \\
 
-In figure \ref{fig:LArBEGes} and \ref{fig:LArCOAX} are the energy spectra from 500 to 525 keV after the LAr veto displayed.
-In them one can see that the annihilation peak is reduced compare to the spectra before the LAr veto.
+Figures \ref{fig:LArBEGes} and \ref{fig:LArCOAX} show the energy spectra from 500 to 525 keV after the LAr veto.
+One can see that the annihilation peak is reduced compared to the spectra before the LAr veto.
 \\
 
 \begin{figure}[t!]
@@ -948,12 +931,12 @@ In them one can see that the annihilation peak is reduced compare to the spectra
 	\caption{Energy spectra from 500 to 525 keV }
 \end{figure}
 
-In order to have a better visualization which events have been rejected, all events that triggered the LAr veto are plotted in figures \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}).
-From those you can see that the majority of the filtered events had an energy around the 511 keV mark.
+In order to have a better visualization which events have been rejected, all events that triggered the LAr veto are plotted in figures \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}.
+You can see that the majority of the filtered events had an energy around the 511 keV mark.
 \\
 
-Another way to possibly single out the \Kr\ decay caused events would look for pre-coincidence events in the LAr setup.
-As the excited \nuc{Rb}{85} nuclei has a half life of 1.015 $\mu$s the scintillation light created by the released beta electron is very probable to be measured before the standard veto time frame looking for a coincidental light signal.
+Another way to possibly single out the \Kr\ decay caused events would be to look for pre-coincidence events in the LAr setup.
+As the excited \nuc{Rb}{85} nuclei has a half life of 1.015 $\mu$s, the scintillation light created by the released beta electron is very probable to be measured before the standard veto time frame looking for a coincidental light signal.
 It should therefore also be possible to distinguish \Kr\ decays from other events if it is possible to find these pre-coincidences.
 \\
 
@@ -974,10 +957,10 @@ It should therefore also be possible to distinguish \Kr\ decays from other event
 \end{figure}
 
 
-An investigation to find out whether the pre-coincidence signals is usable was applied by plotting all raw measured LAr veto signals of events in the energy around the 514 keV peak and manually search for any pre-coincidences.
-Their expected signatures consist of a single peak in the PMTs (for example as seen in figure \ref{fig:BeispielSignal}) or a rising edge in the SiPMs respectively.
+An investigation to find out whether the pre-coincidence signals are usable was applied by plotting all raw measured LAr veto signals of events with an energy around the 514 keV peak and by manually search for any pre-coincidences.
+The expected signatures consist of a single peak in the PMTs (for example as seen in figure \ref{fig:BeispielSignal}) or a rising edge in the SiPMs respectively.
 However, this investigation showed that almost none of the events considered had any kind of indication for pre-coincidences.
-This excludes this approach as a useful \Kr\ indicator.
+This excludes the presented approach as being a useful \Kr\ indicator.
 
 \iffalse
 
@@ -986,14 +969,14 @@ This excludes this approach as a useful \Kr\ indicator.
 \section{Fitting}
 \label{sec:Fitting}
 
-The spectra from before and after the LAr veto can now be fitted and from the determined fit parameters the amount of measured \Kr\ decay events determined.
+The spectra from before and after the LAr veto can now be fitted and, from the fit parameters, the amount of measured \Kr\ decay events can be determined.
 \\
 
 The spectra before the LAr vetoes \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show two peaks.
 This requires the fit function to include two Gaussian functions from which only the parameters of the second peak will then be used for further analysis.
-Additionally to the two Gaussian peaks, a constant background parameter will be added.
-Theoretically, the \nuc{Ge}{76} spectrum creating the background changes with energy.
-In the investigated area, however, its overall change is so small. 
+In addition to the two Gaussian peaks, a constant background parameter will be added.
+Theoretically, the \nuc{Ge}{76} spectra creating the background changes with energy.
+In the investigated area, however, its overall change very small that it can be approximated as constant. 
 
 \iffalse
 When looking at the not LAr veto filtered spectra we can see that over the course of the displayed energy interval no real change of the background can be seen (see figure \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX}).
@@ -1013,12 +996,12 @@ The resulting fit function is displayed in equation \ref{equ:FitNoFilters}.
 \end{equation}
 \\
 
-In figure \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX} show the resulting fit plots.
+Figures \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX} show the resulting fit plots.
 The values of the fit parameter values can be seen in the table of the figures.
 Fitting parameters B and E - the mean values of the peaks - where fixed to the values of 511 keV and 514 keV respectively.
 All other values were left free under the condition of a positive value.
-Also, Parameter C - the sigma value - was used in both peaks as the resolution of the detectors.
-In the investigated energy range these two parameters should not vary much which is why this simplification can be applied.
+Also, Parameter C - the sigma value - was used in both peaks being resolution of the detectors.
+In the investigated energy range, these two parameters should not vary much which is why this simplification can be applied.
 Their expected values derived from the resolutions of the detectors at an energy of 514 keV are $\sigma_{\mathrm{BEGe}} = 0.96 \unit{keV}$ for the BEGe detectors and  $\sigma_{\mathrm{COAX}} = 1.16 \unit{keV}$ for the COAX detectors (see appendix chapter \ref{sec:ResDetermination}).
 The values determined in the fitting process have the corresponding expected value in their range of uncertainty .
 \\
@@ -1042,7 +1025,7 @@ The values determined in the fitting process have the corresponding expected val
 		Fitted energy spectra from 500 to 525 keV before the LAr veto cut. 
 		Function \ref{equ:FitNoFilters} was used as fit function. 
 		Its course is indicated in red. 
-		The two green plots at the bottom of the figures indicate the two independent peak responsible for the deviations. 
+		The two green plots at the bottom of the figures indicate the two independent peaks. 
 		}
 \end{figure}
 \\
@@ -1085,22 +1068,21 @@ I [1/keV] &	(5.80 \(\pm\) 1.22)$\times10^{-3}$	&	(9.24 \(\pm\)1.83)$\times10^{-3
 \\
 \fi
 
-However, the only fit parameter that is of real interest here is variable D.
+However, the only fit parameter of real interest in this case is variable D.
 Its value is the amplitude of the second Gaussian peak.
-Because the Gaussian peak was already chosen in the normalized form this value also represents the amount of \Kr\ decays.
+As the Gaussian peak was already chosen in the normalized form, this value also represents the amount of \Kr\ decays.
 
-Taking into account the binning of the histograms a value of  
+Taking into account the binning of the histograms, a value of  
 \begin{equation*}
 N_{\mathrm{peak,BEGe}} = (183\pm25) \unit{cts}
 \end{equation*} in the peak of the BEGe spectrum and
 \begin{equation*}
 N_{\mathrm{peak,COAX}} = (152\pm26) \unit{cts}
-\end{equation*}in the COAX spectrum.
+\end{equation*}in the COAX spectrum has been detected.
 \\
 
-Now to the spectrum after the LAr veto.
-Fit function \ref{equ:FitNoFilters} will also be used.
-This is an advantage because it will also fit around a possible remaining 511 keV peak that otherwise might have affected the outcome.
+When it comes to the spectrum after the LAr veto, fit function \ref{equ:FitNoFilters} will also be used.
+This is an advantage because it will also fit around a possible remaining 511 keV peak which otherwise might have affected the outcome.
 
 \iffalse
 As mentioned above one can assumed that the positron electron annihilation peak is fully suppressed.
@@ -1118,11 +1100,11 @@ The fit results in the function displayed in equation \ref{equ:FitFilters}.
 \\
 
 Diagrams \ref{fig:FitLArVetoBEGes} and \ref{fig:FitLArVetoCOAX} show the fitted plots.
-As above, the amplitude D of the second Gaussian peak corresponds to the number of events measured in the area of the peak per binning.
+As explained above, the amplitude D of the second Gaussian peak corresponds to the number of events measured in the area of the peak per binning.
 This results in an amount of $(120\pm19)$ counts for the BEGe and $(128\pm22)$ for the COAX spectrum.
 \\
 
-Compared to the values of the not filtered spectra however, it can be seen that the number of counts in the BEGe and in the COAX detectors have dropped considerably.
+Compared to the values of the non LAr filtered spectra, however, it can be seen that the number of counts in the BEGe and in the COAX detectors have dropped considerably.
 This means that the LAr veto also rejected some of the \Kr\ decay caused events.
 \\
 
@@ -1143,12 +1125,12 @@ This means that the LAr veto also rejected some of the \Kr\ decay caused events.
 		\label{fig:FitLArVetoCOAX}
 	\end{subfigure}
 	\caption{
-	Fitted energy spectra from 500 to 525 keV when only considering those event that got though the Muon veto, the detector anti-coincidence veto and the LAr veto. 
+	Fitted energy spectra from 500 to 525 keV when only considering those events that got through the Muon veto, the detector anti-coincidence veto and the LAr veto. 
 	Function \ref{equ:FitNoFilters} was used as fit function. 
 	Its course is indicated in red. 
 	The green plots at the bottom of the figures indicate the peaks responsible for the deviation. 
 	Their course was determined from the corresponding fit parameter.
-    In the case of the BEGe spectrum the first peak function vanishes due to no measurable deviation from the background level.
+    In the case of the BEGe spectrum, the first peak function vanishes due to no measurable deviation from the background level.
     In the COAX spectrum, however, a deviation is still visible which is why the second peak function has a finite amplitude.
 	}
 \end{figure}
@@ -1196,13 +1178,13 @@ How this conversion factor can be determined is the topic of the following secti
 It is possible to calculate the decay density of \Kr\ necessary to create the measured line count by using the conversion factor $\frac{1}{p \epsilon V_{\mathrm{sim}} }$ between these two values. 
 Such a conversion factor can be determined with the help of a Monte Carlo simulation.
 The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and \gerda\ \cite{boswell_mage_2010}.
-\mage is specialized to simulate radioactive decays and their corresponding energy deposition in Germanium detectors.
-In this work the full \gerda\ implementation is used.
+\mage is specialized in the simulation of radioactive decays and their corresponding energy deposition in germanium detectors.
+In this thesis, the full \gerda\ implementation is used.
 \\
 
 A number of $N_{\mathrm{sim}}$ = 50.000.000 gammas with 514 keV were simulated in cylindrical volume of 2.5 m height and a diameter of 3 m resulting in $V_{\mathrm{sim}} = 17.65 \mathrm{m}^3$.
-Compared with the volume of 64 m\(^3\) of LAr used in the \gerda\ experiment this volume is much smaller.
-But as we will see later, this volume is by far big enough for this purpose.
+Compared with the volume of 64 m\(^3\) of LAr used in the \gerda\ experiment, this volume is much smaller.
+Nevertheless, as we will see later, this volume is by far big enough for this purpose.
 \\
 
 \begin{figure}[t!]
@@ -1225,14 +1207,14 @@ But as we will see later, this volume is by far big enough for this purpose.
     	The cross section of the simulated volume from above and its radial projection.
     	The colored area shows the density of all simulated decays. 
     	The red points indicate all events that were measured by BEGe detectors.
-    	It can be seen that photons that have been emitted far away from the detectors created no measurable signal in the detectors.
+    	It can be seen that gammas which have been emitted far away from the detectors created no measurable signal in the detectors.
     	}
 \vspace{0.5cm}
 \end{figure}
 \\
 
 From these 50 million simulated gammas with the anti-coincidence veto already applied only about 90 thousand have created a signal in a detector, only 30.465 of them in a BEGe and 24.902 in a COAX.
-The spatial distribution of all measured events in the BEGe detectors can be seen as red dots in figure \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa}.
+The spatial distribution of all measured events in the BEGe detectors can be seen as red dots in figures \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa}.
 
 \iffalse
 From it one can see that the overwhelming majority of the detected events were positioned close to the detectors themselves.
@@ -1254,7 +1236,7 @@ This ratio easily be adapted to a conversion factor from the amount of measured 
 	\caption{
     Energy spectrum of simulated events measured in BEGe detectors.
 	The blue colored bin represents the counts used for determining the detector efficiency.
-	The majority of measured signals had an energy below 514 keV.
+	The majority of measured signals has an energy below 514 keV.
 	Among other things, the Compton peak at roughly 343keV can be seen.  
 	}
 	\label{fig:PhasenraumMC514}
@@ -1262,11 +1244,11 @@ This ratio easily be adapted to a conversion factor from the amount of measured 
 
 \\
 The spectrum of all the events detected in BEGe detectors is shown in figure \ref{fig:PhasenraumMC514}.
-From it one can see that only in a small amount cases the gamma deposited all of its initial 514 keV in the detectors
-The great majority of photons measured must have scattered before they arrived in the detector or did not deposit all of their energy in them.
+One can see that only in a small number of cases the gamma deposited all of its initial 514 keV in the detectors.
+The majority of photons measured must have scattered before they arrived in the detector or did not deposit all their energy in them.
 To calculate the detector efficiency, however, only the measured events at the 514 keV peak have to be accounted for.
-In the BEGe detector spectrum the peak contains a total of \(\Delta N_{\mathrm{BEGe}} = (4511\pm67)\) counts while the COAX peak contains  \(\Delta N_{\mathrm{COAX}} = (3706\pm60)\) .
-With a total of 50 million initial decays, this results in a efficiency of 
+In the BEGe detector spectrum, the peak contains a total of \(\Delta N_{\mathrm{BEGe}} = (4511\pm67)\) counts while the COAX peak contains \(\Delta N_{\mathrm{COAX}} = (3706\pm60)\) .
+With a total of 50 million initial decays, this results in an efficiency of 
 \begin{equation*}
 \epsilon_{\mathrm{BEGe}} = \frac{\Delta N_{\mathrm{BEGe}}}{N_{\mathrm{sim}}} = (9.02\pm0.13) \times 10^{-5}  \frac{\mathrm{cts}}{\mathrm{gamma}}
 \end{equation*}
@@ -1274,21 +1256,20 @@ With a total of 50 million initial decays, this results in a efficiency of
 \epsilon_{\mathrm{COAX}} = \frac{\Delta N_{\mathrm{COAX}}}{N_{\mathrm{sim}}} = (7.412\pm0.12) \times 10^{-5}  \frac{\mathrm{cts}}{\mathrm{gamma}}
 \end{equation*}
 for the volume of the simulated cylinder.
-This means that if a 514 keV photon is emitted at any location in the liquid argon container, it has a probability \(\epsilon_{\mathrm{BEGe}}\) of being measured by one of the BEGe detectors.
+This means that, if a 514 keV photon is emitted at any location in the liquid argon container, it has a probability \(\epsilon_{\mathrm{BEGe}}\) of being measured by one of the BEGe detectors.
 On the other hand, for every measured 514keV photon in one of the BEGe detectors an amount of about $1 / \epsilon_{\mathrm{BEGe}} = 10515$ \nuc{Rb}{85m} relaxations must occur.
 In other words, the value $1 / \epsilon_{\mathrm{BEGe}}$ is a factor to convert from the measured entries to the mean amount of \nuc{Rb}{85m} relaxations necessary to create it.
 \\
 
 This value is direct proportional to the simulated volume $V_{\mathrm{sim}}$.
-This dependency can be derived from figures \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa}.
-The red dots in them represent the location the measured gamma was released.
-It can be seen that essentially all measured gamma originated in the immediate vicinity of the detectors.
+This dependency can be derived from figures \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa} where the red dots represent the location the measured gamma was released.
+It can be seen, that essentially all measured gamma originated in the immediate vicinity of the detectors.
 This would mean that, with a big enough volume and a constant decay density $\rho_{\mathrm{dec}}$, the value $\Delta N$ of each detector remains constant under change of volume.
 $N_{\mathrm{sim}}$ on the other hand is directly proportional to the volume through to definition of $N_{\mathrm{sim}} = \rho_{\mathrm{dec}} V_{\mathrm{sim}}$.
-With the definition of the detector efficiency this results in the proportionality  $\frac{1}{\epsilon} \propto V_{\mathrm{sim}}$.
+With the definition of the detector efficiency, this results in the proportionality  $\frac{1}{\epsilon} \propto V_{\mathrm{sim}}$.
 \\
 
-Taking this into account a volume independent conversion factor can be generated by dividing $\frac{1}{\epsilon}$ through $V_{\mathrm{sim}}$.
+Taking this into account, a volume independent conversion factor can be generated by dividing $\frac{1}{\epsilon}$ through $V_{\mathrm{sim}}$.
 This new value $\frac{1}{\epsilon V_{\mathrm{sim}}}$ is a conversion factor from the measured line count to the gamma emissions per liter and can also be applied onto the counts measured in the real LAr tank.
 By also dividing this new value through the probability $p=0.434\% \frac{\mathrm{gamma}} {\mathrm{decay}}$, you finally get the desired conversion factor $\frac{1}{ p\epsilon V_ {\mathrm{sim}}}$ between the measured line numbers and the necessary \Kr\ decay density to generate this peak. 
  
@@ -1305,14 +1286,14 @@ By also dividing this new value through the probability $p=0.434\% \frac{\mathrm
 \label{sec:CalcActiv}
 
 The last remaining value to be determined is the mean measuring time $\bar{t}$ of all respective detectors.
-The reason why not simply the entire duration of \PII\ was used as measuring time is due to not all detectors recording all of the time.
-For determining this mean measuring time the exposures of all individual detectors has to be known.
+The reason why the whole duration of \PII\ was not used as measuring time, is due to the fact that not all detectors were recording the entire time.
+For determining this mean measuring time, the exposures of all individual detectors have to be known.
 An easy way to determine those values involves the test pulse signal.
-As mentioned in the introduction the test pulse sends every 20 s an electric pulse through the front end electrons of the detectors.
+As mentioned in the introduction, every 20 s the test pulse sends an electric pulse through the front end electrons of the detectors.
 These events are also recorded and specifically marked as test pulse event. 
 \\
 
-Due to its periodicity, the effective measurement times of the individual detectors can easily be determined by counting the number of measured test pulse signals in each detector and multiplying with the 20 seconds:
+Due to its periodicity, the effective measurement times of the individual detectors can easily be determined by counting the number of measured test pulse signals in each detector and by multiplying it with the 20 seconds:
 \begin{equation}
     t_\mathrm{i} = N_{\mathrm{TP}}(\mathrm{i}) \times 20\mathrm{s}
 \end{equation}
@@ -1325,8 +1306,8 @@ The combined exposure of all detectors of the same kind can then be calculated b
 \begin{equation}
     \varepsilon_{\mathrm{comb}} = \sum_\mathrm{i} \varepsilon_\mathrm{i}
 \end{equation}
-With this approach a combined exposure of $\varepsilon_{\mathrm{BEGe}} = 30.8 \unit{kg}\cdot \unit{yr}$ for the BEGe and $\varepsilon_{\mathrm{COAX}} = 28.1 \unit{kg}\cdot \unit{yr}  $ for the COAX was able to be determined.
-The mean measuring times of the two detector types can then be calculated by dividing their combined exposure through their combined masses. 
+With this approach, it was possible to determine a combined exposure of $\varepsilon_{\mathrm{BEGe}} = 30.8 \unit{kg}\cdot \unit{yr}$ for the BEGe and $\varepsilon_{\mathrm{COAX}} = 28.1 \unit{kg}\cdot \unit{yr}  $ for the COAX.
+The mean measuring times of the two detector types were then calculated by dividing their combined exposure through their combined masses. 
 \begin{equation}
     \bar{t} = \frac{\varepsilon_{\mathrm{comb}}}{M} = \frac{\sum_\mathrm{i} N_{\mathrm{TP}}(\mathrm{i}) \times 20\mathrm{s} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}}
 \end{equation}
@@ -1339,7 +1320,7 @@ By following this procedure the mean measuring times for the BEGe and the COAX d
 \end{equation*}
 
 These mean measurement times are exactly the time that each detector of one kind must have measured to obtain the same amount of combined exposure as from the actual individual measuring times.
-The simplification of only using the mean measuring time and neglecting the individual detector on/off times creates an systematical error that has to be discussed later on.
+The simplification of only using the mean measuring time and neglecting the individual detector on/off times creates a systematical error that will to be discussed later.
 \\
 
 
@@ -1401,7 +1382,7 @@ From this, an average measurement time for the BEGes of $\bar{t}_{\mathrm{BEGe}}
 
 \section{Results}
 \label{sec:res}
-Finally, with the mean measuring times, the line counts rates and the conversation factors the mean specific activity $\bar{a}$ of \Kr\ over the curse of all of \PII\ can  finally calculate by applying equation \ref{equ:activityDieErste}.
+Finally, with the mean measuring times, the line count rates and the conversion factors the mean specific activity $\bar{a}$ of \Kr\ over the curse of the entire \PII\ can  finally be calculate by applying equation \ref{equ:activityDieErste}.
 The resulting mean specific \Kr\ activities are
 \begin{equation*}
     \bar{a}_{\mathrm{BEGe}} = (0.546\pm0.083)	\frac{\unit{mBq}}{\unit{l}}
@@ -1505,16 +1486,16 @@ Now that a concrete value for the specific activity of \Kr\ has been determine t
 \chapter{Change in Count Rate over Time}
 \label{sec:SAfromDecrease}
 
-This chapter focuses on the implementation and discussion of the second approach to determine the specific \Kr\ activity using the change in count rate over time.
-The motivation behind using this approach lies in \Kr\ having a low half life of $T_{\frac{1}{2}} = 10.739\unit{yr}$.
-As it will be shown in section \ref{sec:motivation} it is one of a few isotopes that should show a notable change over the time scale of \PII.
-However, after the line count rate analysis has already shown the specific \Kr\ activity to be in the order of 10$^{-4} \unit{Bq}/\unit{l}$ it can be expected that its change in count rate will be dominated by a comparably huge constant value caused by \nuc{Ar}{39} ($T_{\frac{1}{2}} = 269\unit{yr}$) \cite{singh_nuclear_2006}.
-It has an specific activity in the order of 1$\mathrm{Bq}/\unit{l}$ and a Q value in the same order of magnitude as \Kr\ \cite{agostini_background_2014}.
-With their huge difference in activity it should be impossible to measure any kind of change in count rate of \Kr\ over the \nuc{Ar}{39}.
-
-However, if it were possible to measure a remarkable change in the count rate, it could be used to falsify the low value calculated in the \ref{sec:res} section.
-This is possible because this second method is completely independent of the first method, since it is not based on any values used there.
+This chapter focuses on the second approach using the change in count rate over time.
+In the previous chapter using the line count rate has already shown the specific \Kr\ activity in the LAr to be in the order of 10$^{-4} \unit{Bq}/\unit{l}$,
+However, when compared to \nuc{Ar}{39} ($T_{\frac{1}{2}} = 269\unit{yr}$) \cite{singh_nuclear_2006} having a relatively constant specific activity in the order of 1$\mathrm{Bq}/\unit{l}$ hardly any change in count rate made from \Kr\ should be able to be measurable due to it having a count rate four orders of magnitude smaller than the constant count rate of \nuc{Ar}{39}.
+But if one were to actually measure a remarkable change due made by \Kr\ decays, one could use this result to falsify the value calculated in the first method.
 \\
+
+This process, however, assumes that \Kr\ is the only radioactive isotope with a notable change in its count rate meaning that it has the smallest half life to show any change over the time frame of \PII.
+
+
+
 
 To actually measure the change in the count rate, the count rate must be drawn over time and an exponential fit function applied through it.
 From the amplitude of the exponential function the value $R_{\mathrm{count}}(t=0)$ of counts per second at the start of \PII\ can be determined.
@@ -1542,6 +1523,21 @@ By setting the limit even lower than \Kr\ Q-value of 687 keV, it will also suppr
 
 \nuc{Ar}{42} has a half life that is in the same order of magnitude as \Kr\ and most of its emitted electrons also have an energy in the same range as \Kr\.
 Even though its specific activity has already been determined to be smaller than \Kr's at about $0.148\mathrm{mBq/l}$ \cite{becerici_schmidt_results_2014}, this isotope can still be problematic as it decays into the unstable isotope \nuc{K}{42}.
+
+
+
+
+
+The motivation behind this approach lies in \Kr\ having a low half life of $T_{\frac{1}{2}} = 10.739\unit{yr}$.
+As it will be shown in section \ref{sec:motivation} it is one of a few isotopes that should show a notable change over the time scale of \PII.
+
+
+
+
+
+
+
+
 
 Right after its creation \nuc{K}{42} is positively ionized as the electron also created in the beta decay escapes due to its high energy.
 These positively ionized \nuc{K}{42} atoms will then be attracted by the electrostatic fields of the germanium detectors.
