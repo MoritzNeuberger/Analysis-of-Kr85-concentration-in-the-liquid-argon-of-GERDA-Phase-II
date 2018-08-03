@@ -1485,8 +1485,14 @@ Now that a concrete value for the specific activity of \Kr\ has been determine t
 \label{sec:SAfromDecrease}
 
 This chapter focuses on the second approach using the change in count rate over time.
-To be able to use this method to determine the specific activity of \Kr\ it is necessary to assume that only \Kr\ with its half life of $T_{\frac{1}{2}}$ = 10.739\unit{yr} should create a notable change in the overall count rate.
+To be able to use this method to determine the specific activity of \Kr\ it is necessary to assume that only \Kr\ with its half life of $T_{\frac{1}{2}}$ = 10.739yr} should create a notable change in the overall count rate.
 As it is necessary to suppress a jump in the count rate by the lowering of the lower energy threshold, a lower energy limit at 200 keV for the considered events must be applied.
+It is also necessary to only use the data recorded by detectors that have recorded data throughout all of \gerda's active measuring times.
+For this reason only the data from run 55 to 92 was used as run 53 and 54 only had a smaller amount of detectors recording.
+Which detectors have ultimately used in this analysis can be seen in appendix chapter \ref.
+All data used in this analysis has also been previously filtered by the standard \gerda\ analysis cuts.
+\\
+
 When finally plotting all count rates a exponential fit can be applied and from it the \Kr\ caused count rate $R_{count}(t=0)$ at the beginning of \PII\ determined.
 Another Monte Carlo simulation is necessary to calculate another conversion factor 1/$\epsilon V_{sim}$.
 With these two values the activity at the beginning of \PII\ can then be determined using formula \ref{equ:ActivityDieZweite}
@@ -1503,7 +1509,7 @@ This leads to three possible scenarios:
 \begin{enumerate}
 	\item No change in count rate can be seen in the count rate plot. 
 	This would any \Kr\ change would already be dominated by the statistical variations of radioactive isotopes with a much higher half life.
-	In this case only an upper limit on \Kr\ specific activity can be determined as it has to be smaller than the error of the count rates in the diagram.
+	%In this case only an upper limit on \Kr\ specific activity can be determined as it has to be smaller than the error of the count rates in the diagram.
 	\item A change can be seen in the count rate and \Kr\ is responsible for this change with a count rate much higher than expected from the previous chapter.
 	This result can be used falsify the results determined in chapter \ref{sec:SAfrom514}.
 	\item A change can be seen in the count rate but \Kr\ is not responsible but rather another radioactive isotope with a similar half life whoes specific activity has been expected to be too low to be measured.
@@ -1511,8 +1517,8 @@ This leads to three possible scenarios:
 	\nuc{Po}{210} can easily suppressed by setting an upper energy limit of 400 keV on the considered events.
 	It can be expected that most of its emitted particles have an energy much higher than 400 keV whereas \Kr\ emits most its particles with less energy.
 	\nuc{Ar}{42} was only expected to have a specific activity of $0.148\mathrm{mBq/l}$.
-	However, its also unstable daughter nuclei \nuc{K}{42} has the property to have a higher density around the detectors due to its positive charge after being created and the high electrostatic fields in the detectors.
-	This creates an effective specific activity of \nuc{Ar}{42} far bigger than expected that could then also cause a notable change in the count rate.
+	However, its also unstable daughter nuclei \nuc{K}{42} has the property to have a higher density around the detectors due to it being positive charge right after its creation and its resulting attraction towards the detectors because of their strong electrostatic fields.
+	This creates an effective specific activity of \nuc{Ar}{42} far bigger than expected which could then also cause a notable change in the count rate.
 	\end{enumerate}
 This means that in the case a notable change can be detected it has to be determined whether it originates from the \Kr\ or \nuc{Ar}{42}.
 This can be done be applying two exponential fit functions through the count rate diagram each fixed to the half life of the respective isotope and determining which fit has the better goodness using a chi-squared test.
@@ -1528,7 +1534,7 @@ This is due to the much shorter range of electrons in the LAr as well as their l
 For this reason a much higher amount of N = 1 billion \Kr\ decays in a volume of again $V_{sim} = 17.65 \mathrm{m}^3$ were simulated.
 \\
 
-Figure \ref{fig:Sim1Spektrum} shows the simulated energy spectrum of all measured events.
+Figure \ref{fig:Sim1Spektrum} shows the simulated energy spectrum of all measured events in the detectors considered.
 On can see that the 514 keV gamma peak contains a relativity high number fo counts being caused by only 0.434$\%$ of all \Kr\ decays.
 This suggests that the majority of measured events at energy lower than 514 keV must have been caused by the gammas.
 When comparing the number of events in the investigated energy range of 200 to 400 keV divided by the line counts of the 514 keV peaks of the spectra \ref{fig:Sim1Spektrum} and \ref{fig:PhasenraumMC514} one is able to determine that only 20.1$\%$ of all events in this energy interval have been caused by beta electrons.
@@ -1577,18 +1583,123 @@ in the energy range of 200 to 400 keV.
 
 \section{Count rate}
 
-As explained above for the determination of the count rate diagram only those events are considered that lie in the interval of the energy limits. 
-It is also necessary to only use the data recorded by detectors that have recorded data throughout all of \gerda's active measuring times.
-For this reason only the data from run 55 to 92 was used as run 53 and 54 only had a smaller amount of detectors recording.
-Which detectors have ultimately used in this analysis can be seen in appendix chapter \ref.
-All data used in this analysis has also been previously filtered by the standard \gerda\ analysis cuts.
+As explained above for the determination of the count rate diagram only those events are considered that lie in the interval of the energy limits and have been measured in one of those detectors that was always recording in \gerda's active measuring time. 
 All remaining events were now plotted in figure \ref{fig:ZeitLimits} displaying the amount of measured counts per week over the remaining portion of \PII.
 \\
 
 Due to the \gerda\ setup not always continuously measuring one has to determine the actual lifetime fractions of the detectors in the respective weeks.
 For this the test pulse signal can be used again.
-When plotting all measured test pulse events in a diagram similar to \ref{fig:ZeitLimits} multiplying each bar by 20 s but also dividing them by 
+When plotting all measured test pulse events in a diagram similar to \ref{fig:ZeitLimits} multiplying each bar by 20 s one results in the actual measuring times in each week.
+By also dividing each bin by the amount of one week one results in the lifetime fraction diagram as seen in figure \ref{fig:livetime}.
+\\
 
+The count rate diagram can now finally be obtained by dividing the bins of the count diagram through the measuring times of the respective weeks.
+The resulting diagram can be seen in figure \ref{fig:ChangeInEventRate}.
+
+\begin{figure}[t!]
+	\centering
+	\begin{minipage}[t]{.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/onceInALivetime.pdf}
+		\caption{
+			Energy spectrum computed by simulating 1 billion \Kr\ decays and plotting the counts of events by their corresponding energy.
+			The blue colored area represents the amount of counts used for the calculation of the detector efficiency.
+			From it can be seen, that the majority of events were created by the photons of the 514 keV peak and only about 20$\%$ from the electrons of every other \Kr\ decay.
+		}
+		\label{fig:livetime}
+	\end{minipage}\hfill%
+	\begin{minipage}[t]{.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/eventRate.pdf}
+		\caption{
+			Count rate of measured events between 200 and 400 keV over the course of \PII.
+			A continuous change in rate can be seen. 
+			One can now apply a fit using function \ref{equ:FitFilters2} and through it determine the count rate of \Kr\ at the start of \PII.
+		}
+		\label{fig:ChangeInEventRate}
+	\end{minipage}
+\end{figure}
+
+As you can see, the scale of the count rate over the entire coarse one of \PII\ is in the order of 10$^{-3}$, which means that one should hardly see the count rate of \Kr\ determined from Monte Carlo, since it is two orders of magnitude smaller.
+Even the errors of the measured values in the graph have a value an order of magnitude bigger, which is why it should not be visible at all.
+\\
+
+However, when fitting this plot with fit function 
+\begin{equation}
+\mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}
+\label{equ:FitFilters2}
+\end{equation}
+with B fixed as \Kr's half life of 10.739yr, one can see from the resulting fitting plot in figure \ref{fig:eventRateFit} that a notable change in time can actually be detected.
+With Fit parameter A$ = (1.495\pm0.227)\times10^{-3}\frac{}}{s}$, which corresponds to the count rate of \Kr\ at the beginning of \PII\, and the conversion factor $1/\epsilon V_{\mathrm{sim}}$ determined in the Monte Carlo simulation, the specific \Kr\ activity can be calculated using the formula \ref{equ:ActivityDieZweite}.
+This results in a value of
+\begin{equation*}
+	a(t = 0) = (58.89\pm10.50) \frac{\unit{mBq}}{\unit{l}}
+\end{equation*}
+which would be two orders of magnitude higher than the value determined from the first method.
+But whether or not one can use this value to make any form of statement about \Kr's specific activity  depends on how well one could also apply an exponential fit function using \nuc{Ar}{42}'s half life through the data points.
+\\
+
+Figure \ref{fig:Argon} shows the resulting fitting plot of an \nuc{Ar}{42} decay also using function \ref{equ:FitFilters2}.
+Unfortunately it is not possible to determine a conversion factor for \nuc{Ar}{42} due to \nuc{K}{42} not being distributed homogeneously.
+One can use \Kr's conversion factor as reference to estimate the \nuc{Ar}{42} specific activity to be
+\begin{equation*}
+a_{\mathrm{\nuc{Ar}{42}]}}(t = 0) = \frac{R_{\mathrm{count}}}{\epsilon V_{\mathrm{sim}}}  =  (0.162\pm0.026) \frac{\unit{Bq}}{\unit{l}}
+\end{equation*}
+\\
+
+Both of these fit functions have results far to big for what was actually expected from them.
+In the case of the \nuc{Ar}{42} fit results only $10^{-4}$ cts/s would be attributed to \nuc{Ar}{39} whereas this isotope was expected to be the major source of count rate in this interval with its specific activity much higher then \Kr\ and \nuc{Ar}{42}.
+However, one can see that the chi-squared $\chi^2$ values of the two exponential fit functions show that they do equally well in fitting the presented data.
+This is probably mainly due to the fact that only a relatively short time was measured compared to the half-lives of the two isotopes.
+Which isotope is responsible for the change in the count rate cannot be determined with the values measured so far.
+Unfortunately, it can be concluded that this approach makes no statement about the specific activity of \Kr\.
+
+
+
+\begin{figure}[t!]
+	\centering
+	\begin{minipage}[t]{.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/eventRateFit.pdf}
+		\caption{
+			Energy spectrum computed by simulating 1 billion \Kr\ decays and plotting the counts of events by their corresponding energy.
+			The blue colored area represents the amount of counts used for the calculation of the detector efficiency.
+			From it can be seen, that the majority of events were created by the photons of the 514 keV peak and only about 20$\%$ from the electrons of every other \Kr\ decay.
+		}
+		\label{fig:eventRateFit}
+	\end{minipage}\hfill%
+	\begin{minipage}[t]{.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Bilder/Argon.pdf}
+		\caption{
+			Count rate of measured events between 200 and 400 keV over the course of \PII.
+			A continuous change in rate can be seen. 
+			One can now apply a fit using function \ref{equ:FitFilters2} and through it determine the count rate of \Kr\ at the start of \PII.
+		}
+		\label{fig:Argon}
+	\end{minipage}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
 
 
 
@@ -1881,8 +1992,7 @@ Using this procedure results in a histogram as seen in figure \ref{fig:effective
 Figure \ref{fig:ChangeInEventRate} finally shows the resulting count rate measured over the course of \PII.
 This graph can now be fitted with fit function
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}
-\label{equ:FitFilters2}
+
 \end{equation}
 Fit parameter A corresponds to the initial count rate caused by the decay of \Kr\, B to \Kr's half-life, and C to the constant background rate.
 Fit parameter B was fixed to \Kr's half-life of \(10.739\unit{y}\) , but all other parameters remained free, only limited by the condition of them being positive.
@@ -2057,7 +2167,7 @@ If one would plot its equivalent amplitude in a diagram like Figure \ref{fig:Cha
 On the other hand is the activity in the Darkside experiment with its $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
 \\
 
-
+\fi
 
 % use fit to calculate the decrease in rate of the signals in range from 200 to 500keV
 % from fit and assumption that only Kr85's activity is decreasing one can calculate the specific activity from the amplitude of the fit
