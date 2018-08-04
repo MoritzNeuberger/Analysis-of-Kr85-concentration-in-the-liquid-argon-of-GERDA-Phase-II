@@ -394,7 +394,7 @@ In the case of a \onbb\ decay, no neutrinos are released:
 \end{equation}
 
 From here, it will be assumed that the \onbb\ decay is caused by an exchange of massive Majorana neutrinos as seen in \ref{fig:Feyn0nbb}.
-The non zero mass is due to the dependence of the \onbb\ decay half life \thalfzero\ on the effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle^2$ ($1 / \thalfzero\ \propto \left\langle m_{\beta\beta}\right\rangle^2$) \cite{vergados_theory_2012}.
+A non zero effective neutrino mass $\left\langle m_{\beta\beta}\right\rangle^2$ can be determined from \onbb\ decay's half life \thalfzero\ when using their interdependence  of $1 / \thalfzero\ \propto \left\langle m_{\beta\beta}\right\rangle^2$ \cite{vergados_theory_2012}.
 This effective neutrino mass is defined by 
 \begin{equation}
 \left\langle m_{\beta\beta}\right\rangle = \abs{\sum_i U_{ei}^2m_i }
@@ -604,15 +604,14 @@ These NMS are placed there to passively suppress the background created from \nu
 LAr is also a good coolant due to its low boiling point.
 In \gerda\, it is cooled down to the working temperature of the germanium detectors at about 90 K.
 LAr can also be produces with a very high purity by air separation and further distillation.
-It also has good shielding capabilities !!!!!
-It can therefore be used as an ultra radio-pure passive shielding, as noble elements rarely make any chemical bonds due to their fully filled electron shells.
-It is therefore possible to filter the majority of impurity just by distillation.
+It also has good shielding capabilities of radioactive background.
+It is therefore a fitting to be used in \gerda\ as coolant and ultra pure shielding material.
 Compared to other noble gases, argon also has the advantage of a very low price being easily obtained by liquefaction of air from the atmosphere.
 \\
 
-LAr has the property that scintillation light is produced when radiation excites or ionizes atoms in the material \cite{olsen_improvements_nodate}.
+LAr has the property that scintillation light is produced when radiation excites or ionizes atoms in the material.
 The excited atoms in noble liquids form dimer pairs (Ar$^*_2$).
-These dimer pairs are metastable and relax with the release of a vacuum ultraviolet photon (VUV)  which have a wavelength of 128 nm.
+These dimer pairs are metastable and relax with the release of a vacuum ultraviolet photon (VUV)  which have a wavelength of 128 nm \cite{olsen_improvements_nodate}.
 \\
 
 \begin{figure}[t!]
@@ -667,19 +666,18 @@ This is why wavelength shifting material covers the surface of the LAr veto shif
 \end{figure}
 
 As already mentioned, in the case of an event the digitized signals of the germanium detectors and the LAr channels are stored for further off-line analysis.
-The software used for the analysis is Gerda LAyouT for Input/Output (GELATIO).
-It is a data analysis framework suitable for off-line digital signal processing and analysis of data recorded by germanium detectors.
-Its advantages lie in its multiple level data organization as seen in figure \ref{fig:TierStructure}.
-Tier0 and Tier1 store raw information whereas all higher Tiers contain the data resulting from the successive steps of the analyzing process.
+The software used for the analysis is Gerda LAyouT for Input/Output (GELATIO) being an analysis framework specialized for this task.
+An advantage of it lise in its multiple level data organization as seen in figure \ref{fig:TierStructure}.
+Tier0 and Tier1 store the raw data measured by the detectors, while all higher animals contain the data resulting from the successive analysis steps.
 Additional information about the analysis process can be found in \cite{agostini_gelatio:_2011} and \cite{agostini_off-line_2011}.
 In this thesis only data from Tier3 and Tier4 are used.
 \\
-\iffalse
-To ensure that the filter parameters of the analysis are set without bias, all events measured in a  50 keV interval around the $Q_{\beta\beta}$ were only stored without any analysis applied on them.
-Only after all parameters in the rejection process were finally defined all events from this interval will be analyzed. 
+
+To ensure an unbiased approach to the analyzing process, all events measured in a  50 keV interval around the $Q_{\beta\beta}$ were only stored without any analysis applied on them.
+Only after all parameters in the rejection process were finally defined all events of this interval will be analyzed. 
 Such a procedure is called a blinding process and the revealing of the blinded events an unblinding. 
 \\
-\fi
+
 % Mui, Mountain, Pulse shape disc.
 % especially LAr-Veto 
 
@@ -701,9 +699,8 @@ Such a procedure is called a blinding process and the revealing of the blinded e
 	}
 	\label{fig:Decay}
 \end{figure}
-Only recently, new data was published by \gerda\ \cite{zsigmond_new_2018}.
-In it, only one event in the proximity of the Q-value was found as shown in figure \ref{fig:gerdaErgebnisse}.
-However, more than 2 sigma from the expected peak position.
+Only recently, new data was published by \gerda\ \cite{zsigmond_new_2018} in such an unblinding process.
+In it, only one event in the proximity of the Q-value was found as shown in figure \ref{fig:gerdaErgebnisse}, however, more than 2 sigma from the expected peak position.
 The conclusion was therefore that no evidence for a \onbb\ decay has been seen.
 A new lower limit for \nuc{Ge}{76} was determined to be $\thalfzero\ > 0.9\times10^{26}\unit{yr}$ (90$\%$ CL).
 Currently \gerda\ receives an upgrade and is planned to measure until 2020.
@@ -1522,28 +1519,27 @@ After the previous chapter has already determined a value of $(0.508\pm0.086)\fr
 Because Kr has a half-life of 10.739 yr, a decrease of 13 $ \% $ of its count rate can be expected for a measurement time of 2.17 yr.
 \\
 
-Whether this change becomes apparent in the diagram or not depends on whether the scale of the overall count rate level is in the same order of magnitude as \Kr\ count rate or lower.
-If the overall count rate measured would be orders of magnitude higher than the change in count rate caused by \Kr\ may not be distinguishable from statistical fluctuation.
-This overall count rate can be reduced by selecting a suitable upper energy limit.
-The influence of other radioactive isotopes with a much higher Q-value can be suppressed by using an upper energy limit.
-At 400 keV you only lose a few \Kr\ events but you can remove a large amount of constant contribution to the count rate.
+Whether this change becomes apparent in the diagram or not depends on whether the scale of the total count rate level is in the same order of magnitude as \Kr's count rate or lower.
+If the total count rate measured would be orders of magnitude higher than the change in count rate caused by \Kr\ may not be distinguishable from statistical fluctuation.
+This total count rate can be reduced by selecting a suitable upper energy limit, as the influence of radioactive isotopes with a significantly higher Q value can be suppressed by this.
+At the chosen 400 keV you only lose a few \Kr\ events but you can remove a large amount of relativly constant contribution to the count rate.
 \\
 
 Additionally, some precautions had to be made.
-Together with the upper limit, it is also necessary to set a lower energy limit above the highest energy thresholds present in \PII\ to suppress the influence of changes to these in the counting rate.
+Together with the upper limit, it is also necessary to set a lower energy limit above the highest energy thresholds present in \PII\ to suppress the influence of changes to it in the count rate.
 This was set to 200 keV.
-Since the counting rate is also sensitive to the on/off settings of the detectors, it is necessary that only the data of those detectors is used that were always turned on.
-For this reason, only the data set of runs 55 to 92 was used, since runs 53 and 54 only used a smaller number of detectors, which would have greatly reduced the available data pool.
-On this data set were also the standard \gerda\ analysis cuts applied.
+Since the count rate is also sensitive to the on/off settings of the detectors, it is necessary that only the data of those detectors is used that were always turned on.
+For this reason, only the data sets of runs 55 to 92 was used, since runs 53 and 54 only used a smaller number of detectors, which would have greatly reduced the available detectors and with it the data pool.
+On these data sets the standard \gerda\ analysis cuts were also applied.
 \\
 
 With these remaining events, it was able to create a diagram of the measured count rates as seen in figure \ref{fig:ChangeInEventRate}.
 For this purpose, the number of counts measured in each week was determined and divided by the measurement time in the same week.
 The measurement times were determined again by counting the number of test pulse signals in each week and multiplying them by 20 seconds.
-The resulting livetimes in each week can be seen in figure \ref{fig:livetime}.
+The resulting livetime fractions of each week can be seen in figure \ref{fig:livetime}.
 \\
 
-The scale of the count rate in diagram \ref{fig:ChangeInEventRate} is, as one can see, in the order of 10$^{-3} \frac{\unit{cts}}{\unit{s}}$.
+The scale of the total count rate in diagram \ref{fig:ChangeInEventRate} is, as one can see, in the order of 10$^{-3} \frac{\unit{cts}}{\unit{s}}$.
 A change in time of the same order of magnitude can also be seen from its course.
 \\
 
@@ -1573,14 +1569,14 @@ The difference between the simulations, however, is that this time the actual \K
 
 The detection efficiency determined from this simulation is also expected to be much smaller than earlier.
 This is due to the much shorter range of the electrons in the LAr as well as their low transmission factor in germanium, leaving many electrons to be captured in the dead layer of the detectors.
-For this reason, a much higher number of N = 1 billion \Kr\ decays in a volume of $V_{sim} = 17.65 \mathrm{m}^3$ were simulated.
+For this reason, a much higher number of $N_{\mathrm{sim}}$ = 1 billion \Kr\ decays in a volume of $V_{sim} = 17.65 \mathrm{m}^3$ were simulated.
 \\
 
 !!!!! soll der Absatz weg?
 Figure \ref{fig:Sim1Spektrum} shows the simulated energy spectrum of all measured events in the detectors considered.
-You can see that the 514 keV gamma peak contains a relatively high number of counts for a gamma only emitted in 0.434$\%$ of all \Kr\ decays.
+You can see that the 514 keV gamma peak contains a relatively high number of counts for gammas only emitted in 0.434$\%$ of all \Kr\ decays.
 This indicates that a disproportionate number of events in the range of 200 to 400 keV were caused by the 514 keV gamma.
-Comparing the ratio of the counts measured in this range divided by the line counts at 514 keV of the spectra \ref{fig:Sim1Spektrum} and \ref{fig:PhasenraumMC514}, it can be determined that only about 20.1$\%$ of all events in this energy interval were caused by beta electrons.
+Comparing the ratio of the values measured in this range divided by the line counts at 514 keV in the case of the two spectra \ref{fig:Sim1Spektrum} and \ref{fig:PhasenraumMC514}, it can be seen that only about 20.1$\%$ of all events in this energy interval were caused by beta radiation.
 Since the dead layer of the Monte Carlo simulation is only an approximation to the real dead layer, a systematic error is generated in the simulation.
 However, since only a small number of events were caused by beta electrons, this error can be neglected, as the 514 keV gamma's most likely deposit their energy deep in the active detector volume. 
 \\
@@ -1597,7 +1593,7 @@ However, since only a small number of events were caused by beta electrons, this
 \end{figure}
 
 
-In the colored area of figure \ref{fig:Sim1Spektrum} contains a number of $\Delta N =$ 1438 counts.
+The colored area of figure \ref{fig:Sim1Spektrum} contains a number of $\Delta N =$ 1438 counts.
 This results in a detector efficiency of 
 \begin{equation*}
 \epsilon = \frac{\Delta N}{N_{\unit{sim}}} = (1.438 \pm 0.038) \times 10^{-6} \frac{\unit{cts}}{\unit{decay}}
@@ -1606,32 +1602,31 @@ Its reciprocal value and its division by the simulated volume result in the volu
 \begin{equation*}
 \frac{1}{\epsilon V_{\unit{sim}}} = (39.39 \pm 1.04) \frac{\unit{decay}}{\unit{cts \times l}}
 \end{equation*}
-In this case it can still be assumed that this value is volume-independent, since the beta electrons have an even shorter range than the gamma and the same volume is used as in the previous simulation.
+In this case it can still be assumed that this value is volume-independent, since the beta particles have an even shorter range than the gammas and the same volume is used as in the previous simulation.
 \\
 
-The count rate one can expect with the specific activity derived from the first method can now be calculated to be
+The count rate expected for the previously determine specific activity can now be calculated as follows
 \begin{equation*}
 R_{\mathrm{M1}} = \bar{a} \times V_{\mathrm{sim}} \epsilon =  (1.29\pm0.25) \times 10^{-5} \frac{\unit{cts}}{\unit{s}}
 \end{equation*}
-of events in the energy range of 200 to 400 keV.
 \\
 
 \section{Other relevant radioactive Isotopes}
 
 If one compares this value with the scale of the count rate diagram above, then one sees that actually no change caused by \Kr\ should be recognizable over the statistical fluctuation of the measured count rate.
 However, the fact a change can be seen leaves two possible scenarios.
-Either the value determined in the first method was wrong and the specific \Kr\ activity in the LAr was actually much greater, or the assumption that \Kr\ was the only isotope with a significant change over time was wrong.
+Either the value determined in the first method was wrong and the specific \Kr\ activity in the LAr was actually much higher, or the assumption that \Kr\ was the only isotope with a significant change over time was wrong.
 \\
 
-There are three isotopes resent at \gerda\ that are of interest here: \nuc{Po}{210}, \nuc{Ar}{39} and \nuc{Ar}{42}.
-\nuc{Po}{210} has a much shorter half-life than \Kr\ with its $138 h$, which means that it strongly changes its activity in the inspected time frame. 
-However, it also has a Q value far above 400 keV, so that this isotope can be neglected, since almost non of its decays should  lead to an event in the expected energy range. 
+There are three isotopes present at \gerda\ that are of interest here: \nuc{Po}{210}, \nuc{Ar}{39} and \nuc{Ar}{42}.
+\nuc{Po}{210} has a much shorter half-life than \Kr\ with its $138 h$, but this value is actually much too small to expect a change in the examined interval. 
+Furthermore, it has a Q-value far above 400 keV, so that this isotope can be neglected in any case, since almost no decay should lead to an event in the expected energy range. 
 \nuc{Ar}{39} is the most active isotope in this energy range, but has a much longer half-life of 269 years, which means that no change should be visible in the studied time scale.
 \nuc{Ar}{42} has a half-life of 32.9 years, but its specific activity has already been determined to be $0.148\mathrm{mBq/l}$, which means that at first glance no change caused by it should be visible either.
 However, its also unstable daughter nucleus \nuc{K}{42} is positively charged right after its creation and is accelerated towards the detector due to their electrostatic fields.
-This results in a much higher \nuc{K}{42} density around the detectors and therefore a higher measureable specific activity.
+This results in a much higher \nuc{K}{42} density around the detectors and therefore a higher measurable specific activity.
 As \nuc{K}{42} has a much lower half-life than \nuc{Ar}{42} any change in \nuc{Ar}{42}'s activity also immediately changes \nuc{K}{42}'s activity.
-This means \nuc{Ar}{42} change over time gets effectively amplified to a level that it might be able to might also cause the change seen in figure \ref{fig:livetime}.
+This means \nuc{Ar}{42} change over time gets effectively amplified to a level that it might be able to cause the change seen in figure \ref{fig:livetime}.
 \\
 
 \section{Fitting}
@@ -1646,8 +1641,8 @@ Function \ref{equ:FitFun} was used for the fits  with parameter B fixed to the r
 \end{equation}
 
 The resulting fitting plots can be seen in figures \ref{fig:eventRateFit} and \ref{fig:Argon}.
-From the chi-squared $\chi^2$ value  of the two fit functions, however, it can be seen that both fit functions describe the course of the data equality well.
-This leads to the conclusion that the data used in this method does not have enough statistical value be able to discriminate to which of the two isotopes this change belongs.
+From the chi-squared $\chi^2$ value  of the two fit functions, however, it can be seen that both describe the course of the data equality well.
+This leads to the conclusion that the data used in this method does not have enough statistical value be able to discriminate  which of the two isotopes is responsible for the change.
 Therefore, no statement can be made about the specific activity of \Kr\ from this plot.
 Hopefully it will be possible to make a statement about the responsible isotope with even more measuring time.
 \\
