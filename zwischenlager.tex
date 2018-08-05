@@ -1,5 +1,30 @@
+\iffalse
+As mentioned above one can assumed that the positron electron annihilation peak is fully suppressed.
+therefore only one Gaussian peak has to be fitted together with the background function.
+Additionally in the ideal case, that the majority of all \Kr\ decay events got through the LAr veto, one can expect the amplitude of the Gaussian peak to be equal to the amplitude of the not LAr veto filtered case.
+The fit results in the function displayed in equation \ref{equ:FitFilters}.
+\\ 
+
+\begin{equation}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi}\mathrm{C}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\exp\left(\mathrm{-E}x\right) + \mathrm{F}
+\label{equ:FitFilters}
+\end{equation}
+\\
+\fi
+\\
 
 
+
+\iffalse
+From it one can see that the overwhelming majority of the detected events were positioned close to the detectors themselves.
+At longer distances, the majority of all decays were no longer measured.
+This means that, while holding the simulated decay density constant, the amount of measured events should not change when enlarging the volume.
+But that would also mean that the detector efficiency $\epsilon$ would have a reciprocal proportionality to the simulated volume.
+Therefore, one can expect the ratio $1/ \epsilon V_{\mathrm{sim}}$ to be invariant with change of volume, provided that the volume is large enough.   
+This is the reason why the usage of a smaller volume of LAr in the Monte Carlo simulation was justified.
+This ratio easily be adapted to a conversion factor from the amount of measured counts in the 514keV line to the density of \Kr\ necessary to create the measured peak, just by dividing the ratio through the probability $p = 0.434\%$ of \Kr\ decaying into the excited state of \nuc{Rb}{85}.
+\\
+\fi
 
 
 
@@ -681,7 +706,6 @@ If one would plot its equivalent amplitude in a diagram like Figure \ref{fig:Cha
 On the other hand is the activity in the Darkside experiment with its $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
 \\
 
-\fi
 
 
 
