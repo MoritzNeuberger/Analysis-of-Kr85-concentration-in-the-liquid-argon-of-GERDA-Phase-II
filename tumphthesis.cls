@@ -341,13 +341,14 @@
 \newcommand{\cooperators}{} \let\cooperators=\publishers%
 \renewcommand*{\maketitle}{%
 	\begin{titlepage}
-		\noindent\begin{minipage}[b]{.5\linewidth}%
+		\noindent\begin{minipage}[c]{.8\linewidth}%
 			\normalfont\sffamily Technische Universit\"{a}t M\"{u}nchen\\
-			Fakult\"{a}t f\"{u}r Physik
+			Fakult\"{a}t f\"{u}r Physik \\
+            E15 Chair for Experimental Physics and Astroparticle Physics
 		\end{minipage}
 		\hfill
-		\begin{minipage}[b]{.4\linewidth}
-			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{./Bilder./PH}\hspace{.5cm}\includegraphics[width=1.87cm]{./Bilder./tumlogo}}{}
+		\begin{minipage}[c]{.4\linewidth}
+			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{PH}\hspace{.5cm}\includegraphics[width=1.87cm]{tumlogo}}{}
 		\end{minipage}%
 		\null\vfill%
 		\begin{center}
