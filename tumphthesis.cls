@@ -112,6 +112,120 @@
 \PassOptionsToPackage{sorting=none,autolang=other,backend=biber,
 	bibstyle=numeric-comp,citestyle=numeric-comp,%
 	}{biblatex}
+%% 
+%% Vorschlag für eine LaTeX2e-Dokumentenklasse für Abschlussarbeiten am Physik-Department der TU München
+%% Stand 03.08.2016 (PHvL)
+%%
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesClass{tumphthesis}[2016/08/03 LaTeX2e TUM PH Thesis layout]
+% Basisklasse: KOMA-Buch (scrbook)
+\PassOptionsToPackage{headinclude=true,footinclude=false}{typearea}
+\LoadClass[version=last,%
+	headinclude=true%
+	,footinclude=false%
+	,fontsize=11pt%
+	,twocolumn=false%
+	,twoside=false%
+	,open=any%
+	,footnotes=multiple%
+	,chapterprefix=true%
+	,appendixprefix=true%
+	,numbers=noenddot%
+	,bibliography=totocnumbered%
+	]{scrbook}%[2010/06/17]
+\DefineFamily{TUMPH}
+\DefineFamilyMember{TUMPH}
+\def\tumph@font{9}
+\FamilyNumericalKey{TUMPH}{font}{tumph@font}{%
+	{cm}{9},{latex}{9},%
+	{palatino}{0},{mathpazo}{0},%
+	{cmsuper}{1},%
+	{minionpro}{2},%
+	{helvetica}{3},{helvet}{3},%
+	{palatino-tum}{4},{mathpazo-tum}{4},%
+	{tum}{5},%
+	{lmodern}{6}%
+	}
+\FamilyBoolKey{TUMPH}{draft}{@draftmode}
+\FamilyBoolKey{TUMPH}{pstricks}{@loadpst}
+\FamilyBoolKey{TUMPH}{bibunits}{@loadbibunits}
+\FamilyBoolKey{TUMPH}{siunitx}{@loadsiunitx}
+\FamilyBoolKey{TUMPH}{nohyperref}{@noloadhyperref}
+\FamilyBoolKey{TUMPH}{nopdfcomment}{@noloadpdfcomment}
+\FamilyBoolKey{TUMPH}{nocsquotes}{@noloadcsquotes}
+\FamilyBoolKey{TUMPH}{addfonts}{@loadadditionalfonts}
+\FamilyBoolKey{TUMPH}{theorem}{@loadtheorem}
+\newcommand{\file@encoding}{utf8x}
+\DefineFamilyKey{TUMPH}{encoding}{\renewcommand{\file@encoding}{#1}}
+\FamilyProcessOptions{TUMPH}\relax
+\if@draftmode
+	\relax
+\else
+	\KOMAoptions{BCOR=1cm%
+		,DIV=10%
+		,open=right%
+		,fontsize=11pt%
+		,twoside=true%
+		}
+\fi
+\PassOptionsToPackage{\file@encoding}{inputenc}
+\RequirePackage{inputenc}
+\PassOptionsToPackage{T1}{fontenc}
+\RequirePackage{fontenc}
+\PassOptionsToPackage{ngerman,british}{babel}
+\RequirePackage{babel}
+\selectlanguage{ngerman}
+\if@noloadcsquotes
+	\relax
+\else
+	\PassOptionsToPackage{german=guillemets}{csquotes}
+	\RequirePackage{csquotes} 
+	\defineshorthand{"`}{\openautoquote}
+	\defineshorthand{"'}{\closeautoquote}
+\fi
+
+% xcolor dient zur vereinfachten Definition von Farben.
+\RequirePackage{xcolor}
+
+% Ist die Einbindung von Postscript Grafiken gewünscht, so geschieht dies
+% durch pst-pdf.
+\if@loadpst
+	\PassOptionsToPackage{nosub}{psfragx}
+	\RequirePackage{psfragx}
+	\PassOptionsToPackage{notightpage}{pst-pdf}
+	\RequirePackage{pst-pdf}
+	\if@draftmode
+		\setkeys{Gin}{showname=true}
+	\fi
+\else
+	\RequirePackage[final]{graphicx}
+\fi
+
+% Um PDF-Kommentare für ToDos o. Ae. zu setzen, wird pdfcomment verwendet 
+% und ein \todo-Makro definiert.
+\if@noloadpdfcomment
+	\newcommand{\todo}[1]{%
+		\marginpar{#1}%
+		\if@draftmode
+			\relax
+		\else
+			\ClassWarning{tumphthesis}{Warning! There are \string\todo\space notes in the final document.}
+		\fi}
+\else
+	\RequirePackage{pdfcomment}
+	\newcommand{\todo}[1]{%
+		\pdfcomment[color=red,open=true]{#1}%
+		\if@draftmode
+			\relax
+		\else
+			\ClassWarning{tumphthesis}{Warning! There are \string\todo\space notes in the final document.}
+		\fi}
+\fi
+
+% biblatex wird zum Setzen des Literatirverzeichnisses verwendet
+\PassOptionsToPackage{sorting=none,autolang=other,backend=biber,
+	bibstyle=numeric-comp,citestyle=numeric-comp,%
+	}{biblatex}
 \RequirePackage{biblatex}
 \IfFileExists{\jobname.bib}{\addbibresource{\jobname.bib}}{\relax}%
 \defbibheading{bibliography}[\bibname]{\chapter{#1}}
@@ -343,11 +457,12 @@
 	\begin{titlepage}
 		\noindent\begin{minipage}[b]{.5\linewidth}%
 			\normalfont\sffamily Technische Universit\"{a}t M\"{u}nchen\\
-			Fakult\"{a}t f\"{u}r Physik
+			Fakult\"{a}t f\"{u}r Physik\\
+			E15 Chair for Experimental Physics and Astroparticle Physics
 		\end{minipage}
 		\hfill
 		\begin{minipage}[b]{.4\linewidth}
-			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{PH}\hspace{.5cm}\includegraphics[width=1.87cm]{tumlogo}}{}
+			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{./Abbildungen/PH}\hspace{.5cm}\includegraphics[width=1.87cm]{./Abbildungen/tumlogo}}{}
 		\end{minipage}%
 		\null\vfill%
 		\begin{center}
