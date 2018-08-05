@@ -4,14 +4,14 @@
 % Das folgende Paket dient lediglich dazu, den Blindtext "Lorem ipsum ..."
 % auszugeben und kann in einer echten Abschlussarbeit natürlich weggelassen 
 % (oder auskommentiert) werden.
-\usepackage{lipsum}
+
 \usepackage{graphicx}
-\usepackage{caption}
+%\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{units}
-\usepackage{capt-of}
+%\usepackage{capt-of}
 \usepackage{subfig}
-\usepackage{csquotes}
+%\usepackage{csquotes}
 %\usepackage{natbib}
 \usepackage{physics}
 \usepackage[compat=1.1.0]{tikz-feynman}
@@ -38,18 +38,19 @@
 
 % Die Metadaten der Abschlussarbeit werden auf dem Deckblatt gedruckt und
 % in dem PDF eingetragen.
-\subject{Abschlussarbeit im Bachelorstudiengang Physik}
+\subject{Bachelor Thesis}
 %\title{Analysis of Kr85 concentration in the liquid argon of \gerda\ Phase II}
 \title{Determination of the specific \Kr\ activity in the liquid argon of \gerda\ Phase II}
 %\subtitle{\foreignlanguage{british}{Title in English}}
 \author{Moritz Neuberger}
-\date{7.~August 2018}
+\date{7^{th}~August, 2018}
 %\cooperators{Max-Planck-Institut für Physik}
 
 % Auf der Rückseite des Deckblatts können Themensteller, Zweitgutachter 
 % und Tag der mündlichen Prüfung vermerkt werden.
 \lowertitleback{Erstgutachter (Themensteller): Prof.\ S.~Schönert\\
-Zweitgutachter: Prof.\ S.~Preuss}
+Zweitgutachter: Prof.\ H.~Kroha\\
+Betreuer: C.\ Wiesinger}
 
 
 %-------------------------------------------------------------------------------
@@ -774,24 +775,66 @@ For example for a further investigation on \nuc{Ar}{39} that has a similar Q-val
 % why is it important to calculate its influence on \gerda\
 
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 \chapter{Line Count Rate Analysis}
 \label{sec:SAfrom514}
 
 The first and more precise method to determine the specific \Kr\ activity in \gerda\ \PII\ uses the 514 keV line count rate of the \Kr\ decay.
 As discussed in section \ref{sec:Kry85}, \Kr\ has a small probability of $p=0.434\%$ to decay into an excited state of \nuc{Rb}{85m}. 
 When \nuc{Rb}{85m} relaxes into its ground state, it emits a photon of 514 keV energy.
-The counts $N_{\mathrm{peak}}$ in the 514 keV line in the \gerda\ spectra would therefore allow to draw a conclusion concerning the amount of \Kr. 
+The counts $N_{\mathrm{peak}}$ in the 514 keV line in the \gerda\ spectra would therefore allow to draw a conclusion concerning the amount of \Kr, as discussed in sections \ref{sec:prep} to \ref{sec:Fitting}. 
 \\
 
 An important factor for the calculation is the efficiency of the used germanium detector to fully absorb these 514 keV gammas.
 For this, a Monte Carlo simulation is necessary in which $N_{\mathrm{sim}}$ gammas with an energy of 514 keV  in a  volume $V_{\mathrm{sim}}$ are simulated.
 The detector efficiency for 514 keV gammas can then be calculated from dividing the simulated line count at 514 keV by the total number of  decays ($\epsilon = \Delta N/N_{\mathrm{sim}}$).
-The value $1/p \epsilon V_{\mathrm{sim}}$, using the detector efficiency, the simulated volume and the probability $p$ is a conversion factor from a measured line count to the density of decays necessary to create this signal.
+The value $1/p \epsilon V_{\mathrm{sim}}$, using the detector efficiency, the simulated volume and the probability $p$ is a conversion factor from a measured line count to the density of decays necessary to create this signal and will be calculated in section \ref{sec:MonteCarlo514}.
 \\
 
 The final value needed is the mean measuring time $\bar{t}$.
 Not every detector was operational over the course of Phase II.
-This is why a mean measuring time for all detectors has to be calculated.
+This is why an average measuring time for all detectors has been calculated in section \ref{sec:CalcActiv}.
 With these three values, a mean specific activity $\bar{a}$ can be determined:
 
 \begin{equation}
@@ -818,6 +861,7 @@ The rest of the chapter will cover the concrete implementation of the individual
 \\
 \fi
 \section{Preparing the spectrum}
+\label{sec:prep}
 
 To determine the amount of events caused by 514 keV gammas, a fit has to be applied onto the corresponding peak in the energy spectrum.
 The data used in this analysis is the fully available \gerda\ \PII\ data (run 53 to 92).
@@ -847,14 +891,14 @@ The exposure of all BEGe detectors over the entire period of \PII\ is 30.8 kg$\c
   \caption{COAX}
   \label{fig:NoFilterCOAX}
 \end{subfigure}
-	\caption{Energy spectra from 500 to 525 keV after standard \gerda\ analysis cuts, split by the respective detectors where the signal was measured in.}
+	\caption{Energy spectra from 500 to 525 keV after standard \gerda\ analysis cuts, split by the respective detectors where the signal was measured in. Two deviations from the background level can be seen in both figure at 511 keV and 514 keV.}
 			\vspace{5mm}
 \end{figure}
 
-Figures \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show the two resulting spectra of each detector between 500 and 525 keV.
-Structures deviating from the background level can be identified  at 511 keV and 514 keV .
-The 511 keV deviation originates from gamma generated in positron electron annihilation events, while the 514 keV line was most likely caused by gamma from the relaxation of the \Kr\ decay via the excited \nuc{Rb}{85m}.
-Analyzing these figure one can already make the statement that a non negligible amount of \Kr\ must be present in the LAr.
+Figures \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show the two resulting spectra for each detector between 500 and 525 keV.
+Structures deviating from the background level can be identified  at 511 keV and 514 keV.
+The 511 keV deviation originates from gammas generated in positron electron annihilation events, while the 514 keV line was most likely caused by gammas created in the relaxation of \nuc{Rb}{85m} in the \Kr\ decay via this excited state.
+If you examine these figures, you can already make the statement that there must be a not insignificant amount of \Kr\ in the LAr as otherwise no deviation should be visible.
 \\
 
 \iffalse
@@ -884,6 +928,22 @@ Whether or not a rejection process using the LAr veto would be useful in this an
 \section{Annihilation Peak Suppression}
 \label{sec:APS}
 
+
+\begin{figure}[t!]
+\centering
+\begin{subfigure}{0.475\textwidth}
+	\includegraphics[width=75mm]{./Bilder/500525LArVetoBEGes.pdf}
+    \caption{BEGes}
+  \label{fig:LArBEGes}
+\end{subfigure}\hfill%
+\begin{subfigure}{0.475\textwidth}
+	\includegraphics[width=75mm]{./Bilder/500525LArVetoCOAX.pdf}
+  \caption{COAX}
+  \label{fig:LArCOAX}
+\end{subfigure}
+    \caption{Energy spectra from 500 to 525 keV after standard \gerda\ analysis cuts and LAr veto. The LAr veto made the 511 keV deviation almost completely disappear while the 514 keV deviation is still clearly visible. }
+\end{figure}
+
 Due to the occurrence of the 511 keV peak, two different approaches are possible.
 One approach would directly apply a double Gaussian peak fit function to the spectra also fitting the 511 keV peak.
 Another approach would try to suppress the 511 keV peak and fit a single peak function through the resulting spectra.
@@ -902,21 +962,6 @@ One can see that the annihilation peak is reduced compared to the spectra before
 \\
 
 \begin{figure}[t!]
-\centering
-\begin{subfigure}{0.475\textwidth}
-	\includegraphics[width=75mm]{./Bilder/500525LArVetoBEGes.pdf}
-    \caption{BEGes}
-  \label{fig:LArBEGes}
-\end{subfigure}\hfill%
-\begin{subfigure}{0.475\textwidth}
-	\includegraphics[width=75mm]{./Bilder/500525LArVetoCOAX.pdf}
-  \caption{COAX}
-  \label{fig:LArCOAX}
-\end{subfigure}
-    \caption{Energy spectra from 500 to 525 keV after standard \gerda\ analysis cuts and LAr veto.}
-\end{figure}
-
-\begin{figure}[t!]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\includegraphics[width=75mm]{./Bilder/AntiLArBEGe.pdf}
@@ -930,7 +975,7 @@ One can see that the annihilation peak is reduced compared to the spectra before
 	\end{subfigure}
 	\\
 	\vspace{0.5cm}
-	\caption{Energy spectra from 500 to 525 keV }
+	\caption{Energy spectra from 500 to 525 keV showing all events previously rejected by the LAr veto. The majority of rejected events lie around the 511 keV mark while also a small deviation around the 514 keV mark can be seen.}
 \end{figure}
 
 In order to have a better visualization which events have been rejected, all events that triggered the LAr veto are plotted in figures \ref{fig:AntiLArBEGes} and \ref{fig:AntiLArCOAX}.
@@ -1404,13 +1449,18 @@ From these two values an average specific \Kr\ activity for the whole period of 
 The uncertainty of this value is only statistical.
 Systematical errors originate from the Monte Carlo simulation and the earlier mentioned detector on/off time. 
 In the Monte Carlo simulation, the situation of \gerda\ \PII\ is only simulated as good as possible.
-Variations on the construction or the functionality of the detectors or the neglect of cables and constructions around the detectors create an error in the determined detector efficiency.
-Also, a disregarding of the actual detector on/off time creates an error in the mean measuring time.
-If detectors measure longer than the mean measurement time, they add a higher number of counts to the total number of counts and vice versa than if they measure the mean measurement time.
-The specific amount of counts depends on the detector efficiency of the individual detectors to detect 514 keV gammas.
-To compensate this, the average measurement time was calculated with the mass as weighing factor.
-But, as the detector efficiency not only depends on the mass but also on the concrete construction of the detectors, an error occurs.
-The size of these two errors are difficult to estimate which is why they have not been evaluated.
+Variations on the construction or the functionality of the detectors as well as the neglect of cables and constructions around the detectors create an error in the determined detector efficiency.
+The disregarding of the actual detector on/off time and instead using only an average measurement time for all detectors also creates an error in the resulting specific activity.
+\iffalse
+Due to the detection efficiency of the individual detectors not only depending on the mass but also on their concrete construction the determination of an average measuring time only using the mass as weighing factor creates a certain error. 
+Here the exposure was used to determine the average measurement time as the amount of measured events depends on the detector efficiency of each individual detector to measured a 514 keV gamma.
+To measure the same amount of counts with a given specific activity it would therefore be necessary to 
+If detectors measure longer than the average measurement time, they contribute more to the total number of counts than if they had only measured the average measurement time and vice versa.
+The difference in counts measured depends on the efficiency of the individual detectors to detect 514 keV gammas.
+To considered this fact, the average measurement time was effectively calculated with the mass as weighing factor for the individual measurement times.
+But, as the detector efficiency does not only depend on the mass but also on the concrete construction of the detectors, an error occurs in the average measurement time.
+\fi
+However, the size of these two errors are difficult to estimate which is why they have not been evaluated in this thesis.
 
 %5.07978E-04	8.57336E-05
 
@@ -1514,26 +1564,32 @@ Now that a concrete value for the specific activity of \Kr\ has been determine t
 \chapter{Change in Count Rate over Time}
 \label{sec:SAfromDecrease}
 
-This chapter focuses on the second approach using the change in count rate over time.
-After the previous chapter has already determined a value of $(0.508\pm0.086) \unit{mBq}/\unit{l}$ for \Kr's specific activity, the purpose of the second approach is to cross-check this value.
-Because \Kr\ has a half-life of 10.739 yr, a decrease of 13 $ \% $ of its count rate can be expected for a measurement time of 2.17 yr.
+This chapter focuses on the second approach to determine the specific \Kr\ activity based on the change in the total count rate over time.
+After the previous chapter has already determined a value of $(0.508\pm0.086) \unit{mBq}/\unit{l}$ for \Kr's specific activity, the purpose of this second approach is to cross-check this value.
+Because \Kr\ has a half-life of 10.739 years, a decrease of 13 $ \% $ in its count rate can be expected for a measurement period of 2.17 years.
 \nuc{Ar}{42} has a similar half-life as \Kr\ and thus presents the problem that its change should also be measurable.
-Its influence on the count rate is discussed in section \ref{sec:other}, but at the moment it is assumed that only \Kr\ causes a remarkable change.
+Its possible influence and that of other radioactive isotopes on the count rate is discussed in section \ref{sec:other}. 
+
+But first it is necessary to plot the count rate over time to estimate the order of magnitude for the total count rate and that of each visible change, as described in section \ref{sec:plotting}, and then to evaluate whether a change of this scale by \Kr\ can be expected using a Monte Carlo simulation, as outlined in section \ref{sec:monteCarlo2}.
+The last section will focus on fitting exponential decay functions of \Kr\ and \nuc{Ar}{42} through the diagram to determine which isotope may have caused a visible change.   
 \\
+
+\section{Plotting the count rate over time}
+\label{sec:plotting}
 
 Whether or not the \Kr's change is actually visible depends on whether the scale of the total count rate is in the same order of magnitude as \Kr's count rate or even lower.
 If the total count rate measured would be orders of magnitude higher than the change in count rate caused by \Kr, its change might not be distinguishable from statistical fluctuation.
-This total count rate can be reduced by selecting a suitable upper energy limit, as the influence of radioactive isotopes with a significantly higher Q value can be suppressed by this.
-At the chosen 400 keV you only lose a few \Kr\ events but you can remove a large amount of relatively constant contribution to the count rate.
+A great portion of the total count rate can be reduced by selecting a suitable upper energy limit, as the influence of radioactive isotopes with a significantly higher Q value then \Kr's can be suppressed by this.
+With the selected 400 keV, only a few \Kr\ events are lost, but the influence of many other radioactive isotopes can be suppressed, that would have only made it more difficult to detect any change by \Kr\.
 \\
 
 Additionally, some precautions had to be made.
 Together with the upper limit, it is also necessary to set a lower energy limit above the highest energy thresholds present in \PII.
-This is to suppress the influence of changes of individual detector thresholds on the counting rate and was set to 200 keV.
+This is to suppress the influence of changes to the individual detector thresholds on the counting rate and was set to 200 keV.
 Since the count rate is also sensitive to the on/off settings of the detectors, it is necessary that only the data of those detectors is used that were always turned on.
-For this reason, only the data sets of runs 55 to 92 was used, since runs 53 and 54 only used a smaller number of detectors, which would have greatly reduced the available detectors and with it the data pool.
-Which detectors have been used for this analysis are listed in table \ref in the appendix. 
-The exposure of the considered detectors over the time window under consideration corresponds to 42.4 $\unit{kg}\cdot\unit{yr}$. 
+For this reason, only the data sets of run 55 to 92 was used, since run 53 and 54 only used a smaller number of detectors.
+When considering the data of run 53 and 54, due to the lower number of detectors to use the exposure is much lower at $21.9\unit{kg}\cdot\unit{yr}$ compared to $41.5\unit{kg}\cdot\unit{yr}$ when ignoring them.
+The detectors used for this analysis are listed in the table \ref{tab:Detector} in the appendix.
 On the remaining data sets the standard \gerda\ analysis cuts were also applied.
 \\
 
@@ -1567,9 +1623,11 @@ A change in time of the same order of magnitude can also be seen from its course
 \\
 
 \section{Monte Carlo}
+\label{sec:monteCarlo2}
 
-Whether this order of magnitude in the change of the count rate is compatible with the results of the first method must be determined with the aid of a Monte Carlo simulation.
-With a conversion factor similar to the one of the previous simulation, the expected count rate for a given activity of \Kr\ can then be calculated.
+
+Whether this order of magnitude in the change of the count rate is compatible with the results of the previous chapter must be determined with the aid of a Monte Carlo simulation.
+With a conversion factor similar to the one derived of the previous simulation, the expected count rate for a given activity of \Kr\ can then be calculated.
 The difference between the simulations, however, is that this time the actual \Kr\ decays are simulated instead of just the 514 keV gamma emissions.
 \\
 
@@ -1613,13 +1671,14 @@ In this case it can still be assumed that this value is volume-independent, sinc
 
 The count rate expected for the previously determine specific activity can now be calculated as follows
 \begin{equation*}
-R_{\mathrm{M1}} = \bar{a} \times V_{\mathrm{sim}} \epsilon =  (1.29\pm0.25) \times 10^{-5} \frac{\unit{cts}}{\unit{s}}
+R = \bar{a} \times  \epsilon V_{\mathrm{sim}} =  (1.29\pm0.25) \times 10^{-5} \frac{\unit{cts}}{\unit{s}}
 \end{equation*}
 \\
 
 \section{Other relevant radioactive Isotopes}
 \label{sec:other}
-If one compares this value with the scale of the count rate diagram above, then one sees that actually no change caused by \Kr\ should be recognizable over the statistical fluctuation of the measured count rate.
+
+If one compares this value with the scale of the count rate diagram above, then it can be seen that actually no change caused by \Kr\  should be visible over the statistical fluctuation of the measured count rate.
 However, the fact a change can be seen leaves two possible scenarios.
 Either the value determined in the first method was wrong and the specific \Kr\ activity in the LAr was actually much higher, or the assumption that \Kr\ was the only isotope with a significant change over time was wrong.
 \\
@@ -1627,18 +1686,18 @@ Either the value determined in the first method was wrong and the specific \Kr\ 
 There are three isotopes present at \gerda\ that are of interest here: \nuc{Po}{210}, \nuc{Ar}{39} and \nuc{Ar}{42}.
 \nuc{Po}{210} has a much shorter half-life than \Kr\ with its $138 h$, but this value is actually much too small to expect a change in the examined interval. 
 Furthermore, it has a Q-value far above 400 keV, so that this isotope can be neglected in any case, since almost no decay should lead to an event in the expected energy range. 
-\nuc{Ar}{39} is the most active isotope in this energy range, but has a much longer half-life of 269 years, which means that no change should be visible in the studied time scale.
+\nuc{Ar}{39} is the most active isotope in this energy range, but has a much longer half-life of 269 years, which means that no change should be visible in the studied time frame.
 \nuc{Ar}{42} has a half-life of 32.9 years, but its specific activity has already been determined to be $0.148\mathrm{mBq/l}$, which means that at first glance no change caused by it should be visible either.
 However, its also unstable daughter nucleus \nuc{K}{42} is positively charged right after its creation and is accelerated towards the detector due to their electrostatic fields.
 This results in a much higher \nuc{K}{42} density around the detectors and therefore a higher measurable specific activity.
 As \nuc{K}{42} has a much lower half-life than \nuc{Ar}{42} any change in \nuc{Ar}{42}'s activity also immediately changes \nuc{K}{42}'s activity.
-This means \nuc{Ar}{42} change over time gets effectively amplified to a level that it might be able to cause the change seen in figure \ref{fig:livetime}.
+This means \nuc{Ar}{42} change over time gets effectively amplified in the count rate diagram to a level that it might be able to cause the change seen.
 \\
 
 \section{Fitting}
 
-To find out whether the change was caused by \Kr\ or \nuc{Ar}{42}, it is necessary to fit  plot \ref{fig:livetime} with the respective exponential decay functions of the isotopes.
-From the goodness of the two fits it should be possible to determine which of isotopes better describes the measured data.
+To find out whether the change was caused by \Kr\ or \nuc{Ar}{42}, it is necessary to fit  plot \ref{fig:livetime} with the respective exponential decay functions of the two isotopes.
+From the goodness of the two fits it should be possible to determine which isotope better describes the measured data.
 Function \ref{equ:FitFun} was used for the fits  with parameter B fixed to the respective half-lives of the two isotopes.
 
 \begin{equation}
@@ -1668,17 +1727,22 @@ Function \ref{equ:FitFun} was used for the fits  with parameter B fixed to the r
 
 
 The resulting fitting plots can be seen in figures \ref{fig:eventRateFit} and \ref{fig:Argon}.
-From the chi-squared $\chi^2$ value  of the two fit functions, however, it can be seen that both describe the course of the data equality well.
+From the resulting amplitude in the \Kr\ fit an specific activity of $(58.9\pm10.5) \unit{mBq}/\unit{l}$ was able to be calculated using the conversion factor.
+This value is, as expected, much higher than determined in the previous chapter.
+Since no Monte Carlo simulation can be calculated for \nuc{K}{42} as it is not homogeneously distributed in LAr, no statement can be made about its specific activity.
+\\
+
+Concerning the goodness of the fit the chi-squared $\chi^2$ value of the two fit functions can be evaluated.
+The smaller this value the better the fit function describes the measured data.
+However, in this case both fit functions describe the course of the data equality well.
 This leads to the conclusion that the data used in this method does not have enough statistical value be able to discriminate  which of the two isotopes is responsible for the change.
 Therefore, no statement can be made about the specific activity of \Kr\ from this plot.
-Hopefully it will be possible to make a statement about the responsible isotope with even more measuring time.
+Hopefully it will be possible to make a statement about the responsible isotope with more measuring time.
 \\
 
 Since \nuc{K}{42} has a much higher Q value than \Kr\ ($Q_{\beta,K42} = 3525.22 \unit{keV}$), it should be possible to choose another energy frame above \Kr's Q-value and to determine its change in the count rate without \Kr's influence.
-However, due to \nuc{K}{42} not being distributed homogeneously no Monte Carlo simulation can be applied.
+However, due to \nuc{K}{42} not being distributed homogeneously in the LAr no Monte Carlo simulation can be applied.
 Without this, however, no statement about the expected count rate in the previous energy frame can be derived.
-
-
 
 
 
@@ -1749,9 +1813,9 @@ This would result in a much higher contribution of \Kr\ to the background of a l
 
 %--------------------------------------------------------------- references ----
 \backmatter
-
-\bibliographystyle{unsrt}
-\bibliography{references}
+\printbibliography
+%\bibliographystyle{unsrt}
+%\bibliography{references}
 \listoffigures
 \listoftables
 

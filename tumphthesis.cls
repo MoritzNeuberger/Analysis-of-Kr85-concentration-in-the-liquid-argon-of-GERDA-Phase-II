@@ -344,7 +344,8 @@
 	\begin{titlepage}
 		\noindent\begin{minipage}[b]{.5\linewidth}%
 			\normalfont\sffamily Technische Universit\"{a}t M\"{u}nchen\\
-			Fakult\"{a}t f\"{u}r Physik
+			Fakult\"{a}t f\"{u}r Physik\\
+			E15 Chair for Experimental Physics and Astroparticle Physics
 		\end{minipage}
 		\hfill
 		\begin{minipage}[b]{.4\linewidth}
