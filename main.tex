@@ -202,7 +202,7 @@ Die Anwesenheit von \nuc{Ar}{42} mit vergleichbarer Lebensdauer erlaubte jedoch 
 
 The double beta (\twonu) decay has been observed in several isotopes where single beta decay is forbidden.
 However, the neutrinoless double beta (\onbb) decay will only occur when neutrinos are Majorana fermions \cite{schechter_neutrinoless_1982}.
-Majorana particles have the characteristic of being particle and antiparticle at the same time, breaking the lepton number conservation. \cite{bilenky_massive_1987}
+Majorana particles have the characteristic of being particle and antiparticle at the same time, breaking the lepton number conservation  \cite{bilenky_massive_1987}.
 The physical background of all this is described in section \ref{sec:PhyBG}.
 \\
 
@@ -612,7 +612,7 @@ These NMS are placed there to passively suppress the background created from \nu
         Only one decay 2 sigma from the \onbb\ decay was found. 
         This leads to the conclusion that no \onbb\ decay was measured and a new lower limit of \thalfzero\ = $0.8\times10^{26} \unit{yr}$ (90$\%$ CL) was determined. 
         \fi
-        Taken from \cite{zsigmond_new_2018}}.
+        Taken from \cite{zsigmond_new_2018}.}
 		\label{fig:gerdaErgebnisse}
 	\end{minipage}
 \end{figure}
@@ -845,7 +845,7 @@ The rest of the chapter will cover the concrete implementation of the individual
 \section{Preparing the Spectra}
 \label{sec:prep}
 
-The data used in this analysis is the fully available \gerda\ \PII\ data (run~53~to~92).
+The data used in this analysis is the fully available \gerda\ \PII\ data (runs~53~to~92).
 The standard \gerda\ analysis cuts where applied.
 This includes data quality cuts, the Muon veto cut and the anti-coincidence cut between germanium detectors.
 \\
@@ -1387,79 +1387,6 @@ Systematic errors are caused by the Monte Carlo simulation and the aforementione
 The Monte Carlo simulation is able to reproduce the background spectrum.
 The complete evaluation of the systematics was not carried out.
 However, it is assumed that both influences are negligible compared to the current statistical uncertainty.
-\iffalse
-Due to the detection efficiency of the individual detectors not only depending on the mass but also on their concrete construction the determination of an average measuring time only using the mass as weighing factor creates a certain error. 
-Here the exposure was used to determine the average measurement time as the amount of measured events depends on the detector efficiency of each individual detector to measured a 514 keV gamma.
-To measure the same amount of counts with a given specific activity it would therefore be necessary to 
-If detectors measure longer than the average measurement time, they contribute more to the total number of counts than if they had only measured the average measurement time and vice versa.
-The difference in counts measured depends on the efficiency of the individual detectors to detect 514 keV gammas.
-To considered this fact, the average measurement time was effectively calculated with the mass as weighing factor for the individual measurement times.
-But, as the detector efficiency does not only depend on the mass but also on the concrete construction of the detectors, an error occurs in the average measurement time.
-\fi
-
-%5.07978E-04	8.57336E-05
-
-\iffalse
-
-One can now make some comparisons of this value with the WARP and the Darkside experiments.
-In the case of the WARP experiment a specific activity of $(160\pm130) \frac{\unit{mBq}}{\unit{l}}$ \label{} was measured for the \Kr.
-On the other hand, an specific activity of $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
-The here determined value of $(0.508\pm0.085) \frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole three orders of magnitude smaller than the WARP experiment.
-From these comparisons one can see, that the specific activity of \Kr\ in \gerda\ \PII\ seems to be much smaller than in other experiments using LAr.
-\\
-
-What one can also do is take the specific activities of the other two experiments and determine how many counts one would have been able to measure if the \Kr\ had their specific activity.
-As simplification only the theroeticall values for the BEGe detectors was determined. 
-How many counts the corresponds activity would induce in the BEGe detectors can be determined with the help of formula \ref{equ:correspondingEvents}.
-\begin{equation}
-\mathrm{N} = \bar{a} \times p \times \epsilon_\mathrm{BEGe} V_{\mathrm{sim}} \times \bar{t}
-\label{equ:correspondingEvents}
-\end{equation}
-With the activity and the values determined from the analysis above one can calculate a corresponding amount of about 76152 events for the WARP experiment.
-In the case of the WARP experiment one could expect the count rate to be much higher than the 183 events determined from the actual measurement.
-For the Darkside experiment with an amount of 1360 counts is again about one order of magnitude higher than the here measured events.
-From these comparisons one can see that for a much higher specific activity of \Kr\ to have actually been present a much bigger amount of events should have been counted.
-As a graphical representation, the peaks that would have been able to be seen in the measured spectrum are displayed in figure \ref{fig:WARP} and \ref{fig:Darkside}.
-\\
-
-\begin{figure}[t!]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=75mm]{./Bilder/WARP.pdf}
-		\caption{WARP}
-		\label{fig:WARP}
-	\end{subfigure}\hfill%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=75mm]{./Bilder/Darkside.pdf}
-		\caption{Darkside}
-		\label{fig:Darkside}
-	\end{subfigure}
-    \\
-    \caption{
-    	Energy spectra of the BEGe detectors from 500 to 525 keV.
-    	The green plots in the spectra represent the theoretical peaks one could expect to measure if a specific activity of the respective experiment was present.
-    	In both cases it would have created a much greater signal than observed above.
-    	}
-\end{figure}
-\\
-
-But why is the specific activity of \Kr\ in \gerda\ \PII\ so much smaller than in any other experiment?
-As it was elaborated above, due to the argon being extracted from the atmosphere, \Kr\ should be present.
-And the majority of the \Kr\ there should originate from nuclear power plants.
-WARP's LAr also originated from the atmosphere but its specific activity was measured to be almost three orders of magnitude higher than \gerda's.
-A possible explanation would be that the air from which the argon of WARP was extracted from was taken from a place with much a lot of nuclear power plants surrounding it while the argon of the \gerda\ experiment originated from air far away from any reactor.
-On the other hand Darkside's argon originated from an underground reservoir where only natural fission decays produce any \Kr\.
-But its specific activity is still much higher than \gerda's.
-Also no extra purification of the LAr was applied.
-This would mean that in the case of the LAr in \gerda\ one was extremely lucky to have found argon that had such low \Kr\ concentration that its impact on the background can basically be neglected.
-\\
-
-Now that a concrete value for the specific activity of \Kr\ has been determine the second attempt to measure the specific activity will described in the next chapter.
-\\  
-\fi
-
 
 
 %	4.70E-04	8,87E-05	Bq/l
@@ -1534,13 +1461,13 @@ The standard \gerda\ analysis cuts have also been applied to this data set.
    	\begin{minipage}[t]{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/onceInALivetime.pdf}
-		\caption{The lifetime fractions of the detectors in the respective week plotted over the timeframe between run 55 and 92.}
+		\caption{The lifetime fractions of the detectors in the respective week plotted over the timeframe between runs 55 and 92.}
 		\label{fig:lifetime}
 	\end{minipage}\hfill%
    	\begin{minipage}[t]{.475\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/eventRate.pdf}
-		\caption{Average count rate of each week of events with an energy between 200 to 400 keV plotted over the timeframe between run 55 and 92. }
+		\caption{Average count rate of each week of events with an energy between 200 to 400 keV plotted over the timeframe between runs 55 and 92. }
 		\label{fig:ChangeInEventRate}
 	\end{minipage}
 	
@@ -1711,7 +1638,7 @@ On the other hand, one can calculate an expected count rate for WARP in the orde
 \\
 
 To gain further insight into why the specific \Kr\ activity in \gerda\ can be so much lower, one could study the purification process during filling of the \gerda\ cryostat before starting with \PI.
-Also the source of the argon might be of interest as in the higher levels of the atmosphere the \Kr\ concentration is relatively homogeneous  \cite{j._jacob_atmospheric_1987} but at lower levels strongly dependent on the proximity to a nuclear fission reactor \cite{weiss_mesoscale_1986}.
+Also the source of the argon might be of interest as in the higher levels of the atmosphere the \Kr\ concentration is relatively homogeneous \cite{j._jacob_atmospheric_1987} but at lower levels strongly dependent on the proximity to a nuclear fission reactor \cite{weiss_mesoscale_1986}.
 \\
 
 
