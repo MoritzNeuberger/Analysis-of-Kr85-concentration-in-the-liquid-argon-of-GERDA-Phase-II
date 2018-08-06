@@ -535,13 +535,13 @@ The general setup can be seen in figure \ref{fig:gerdaSetupPII}.
 \end{figure}
 
 Regarding the detectors themselves, \gerda\ \PII\ uses seven semi-coaxial detectors (COAX) which have already been used in the predecessor experiments (Heidelberg-Moscow and IGEX) as well as 30 new Broad Energy Germanium detectors (BEGe).
-Both detector types are made of germanium that has been enriched from 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$ \cite{agostini_background_2017}.
+Both detector types are made of germanium that has been enriched from 7.8$\%$ of \nuc{Ge}{76} to about 87$\%$.
 They also share the same basic functionality.
 They are made from p-type germanium material.
 Both detectors have doped most of their surface 1-2mm thick n$^+$ and only a small part p$^+$ with both layers to be used as electrodes.
-If an electron hole pair is created in the p doped area, the charge carriers are separated and guided to the n$^+$ or the p$^+$ layer respectively by a strong electrostatic field (3 to 4 kV) between the electrodes \cite{spieler_semiconductor_2005}.
-If the pair is created in the n$^+$ layer, the hole is most likely to recombine in the $n^+$ layer due to its low mobility and, thus, creates no measurable signal.
-The n$^+$ layer is therefore not active and called a dead layer.
+If an electron hole pair is created in the p doped area, the charge carriers are separated and guided to the n$^+$ or the p$^+$ layer respectively by a strong electrostatic field (3 to 4 kV) between the electrodes.
+If the pair is created in the n$^+$ layer, the hole is most likely to recombine in the n$^+$ layer due to its low mobility and, thus, creates no measurable signal.
+The n$^+$ layer is therefore not active and called a dead layer \cite{agostini_production_2015}.
 \\
 
 The two detector types differ in their design as seen in figure \ref{fig:DetcDes}.
@@ -554,7 +554,8 @@ PSD allows to make a statement about the event topology inside the germanium cry
 The enriched detectors are assembled into 6 strings forming a hexagonal array together with a seventh string.
 This seventh string consists of three extra coaxial detectors made of natural isotopic germanium.
 However, they are not used in \gerda's main analysis.
-Custom-made amplifiers also located in the liquid argon above the detectors, the analog signals of the detectors are digitized at a sampling rate of 100MHz if a triggering signal was found \cite{riboldi_cryogenic_2015}.
+Custom-made amplifiers also located in the liquid argon above the detectors.
+The analog signals of the detectors are digitized at a sampling rate of 100MHz if a triggering signal was found \cite{riboldi_cryogenic_2015}.
 Every 20 seconds a charge pulse, called the test pulse, is injected into the the front-end electronics.
 Its purpose is to monitor the gain stability.
 The analysis of the signals is performed off-line.
@@ -617,7 +618,7 @@ These NMS are placed there to passively suppress the background created from \nu
 \end{figure}
 
 
-LAr is a good coolant due to its low boiling point as it fits the working temperature of the HPGe detectors. 
+LAr is a good coolant due to its low boiling point, also because it corresponds to the operating temperature of the HPGe detectors. 
 In \gerda, it is at about 90 K.
 LAr can also be produces with a very high purity by air separation and further distillation.
 It also has good shielding capabilities of radioactive background.
@@ -644,7 +645,7 @@ This is why wavelength shifting material covers the surface of the LAr veto shif
 		\includegraphics[width=100mm]{./Bilder/TierStructure.png}
 		\caption{
 		The multi-tier structure used by GELATIO. 
-		Tier0 and Tier1 contain the entire raw data with the difference that Tier1 already stores the data in a TTree root structure.
+		Tier0 and Tier1 contain the entire raw data with the difference that Tier1 already stores the data in a root structure.
 		Tier2, Tier3 and Tier4 contain the resulting data of the successive analysis steps.
 		Taken from \cite{agostini_gelatio:_2011}.
 		}
@@ -664,7 +665,7 @@ Additional information about the analysis process can be found in \cite{agostini
 In this thesis only data from Tier3 and Tier4 are used.
 \\
 
-To ensure an unbiased approach to the analyzing process, all events measured in a  50 keV interval around $Q_{\beta\beta}$ were only stored without any analysis applied on them and are unable to be accessed.
+To ensure an unbiased approach to the analyzing process, all events measured in a  50 keV interval around $Q_{\beta\beta}$ were only stored without any analysis applied on them.
 Only after all parameters were finally defined all events are processed.
 Such a procedure is called a blinding process.
 \\
@@ -707,7 +708,7 @@ After that, the successor experiment LEGEND is planned to further investigate th
 
 \Kr\ has a mass number of A = 85 and an atomic number of Z = 36.
 This isotope is not stable and decays via a $\beta^-$-decay into \nuc{Rb}{85}.
-The half life of this decay is 10.756 yr and has a Q-value of $Q_\beta = 687 \unit{keV}$.
+The half life of this decay is 10.756~yr and has a Q-value of $Q_\beta = 687 ~\unit{keV}$.
 \Kr's $\beta$-decay has two different probable transitions (see figure \ref{fig:Decay}).
 With overwhelming 99.563$\%$, the \Kr\ decay directly populates the ground state of \nuc{Rb}{85}.
 In 0.434$\%$, however, it decays via an excited state of \nuc{Rb}{85} 514 keV above the ground state.
@@ -739,7 +740,7 @@ On the other hand, the production of man-made \Kr\ from nuclear fission of \nuc{
 Natural production in the earth's crust is only marginal \cite{winger_new_2005}.
 Krypton is a noble gas and therefore easily diffuses through everything in its way.
 It rises until it reaches the atmosphere where a \Kr\ reserve is built over time.  
-Due to the higher amount of nuclear power plants built in the last half century, the\Kr\ activity in the atmosphere has risen from about 1961 PBq in 1973 \cite{telegadas_atmospheric_1975} to about 5500 PBq in 2009 \cite{ahlswede_update_2013} (see figure \ref{fig:Kr85Aenderung}) .
+Due to the higher amount of nuclear power plants built in the last half century, the\Kr\ activity in the atmosphere has risen to about 5500 PBq in 2009 \cite{ahlswede_update_2013} (see figure \ref{fig:Kr85Aenderung}) .
 \\
 
 Two other experiments also using LAr are the WARP and the Darkside experiment.
@@ -801,10 +802,10 @@ The aim of this thesis is to determine the specific \Kr\ activity in the LAr of 
 \chapter{Line Count Rate Analysis}
 \label{sec:SAfrom514}
 
-This method to determine the specific \Kr\ activity in \gerda\ \PII\ uses the 514 keV line count rate of the \Kr\ decay.
+This method to determine the specific \Kr\ activity in \gerda\ \PII\ uses the 514~keV line count rate of the \Kr\ decay.
 As discussed in section \ref{sec:Kry85}, \Kr\ has a small probability of $p=0.434\%$ to decay into an excited state of \nuc{Rb}{85m}. 
 When \nuc{Rb}{85m} relaxes into its ground state, it emits a photon of 514 keV energy.
-The counts $N_{\mathrm{peak}}$ in the 514 keV line in the \gerda\ spectra would therefore allow to draw a conclusion concerning the amount of \Kr, as will be discussed in sections \ref{sec:prep} to \ref{sec:Fitting}. 
+The counts $N_{\mathrm{peak}}$ in the 514 keV line in the \gerda\ spectra would therefore allow to draw a conclusion concerning the amount of \Kr\ in the LAr, as will be discussed in sections \ref{sec:prep} to \ref{sec:Fitting}. 
 \\
 
 A factor necessary for the calculation is the efficiency of the germanium detector used to detect these 514 keV gamma.
@@ -844,7 +845,7 @@ The rest of the chapter will cover the concrete implementation of the individual
 \section{Preparing the Spectra}
 \label{sec:prep}
 
-The data used in this analysis is the fully available \gerda\ \PII\ data (run 53 to 92).
+The data used in this analysis is the fully available \gerda\ \PII\ data (run~53~to~92).
 The standard \gerda\ analysis cuts where applied.
 This includes data quality cuts, the Muon veto cut and the anti-coincidence cut between germanium detectors.
 \\
@@ -874,13 +875,12 @@ The exposure of all BEGe detectors over the entire period of \PII\ is 30.8 kg$\c
 	Energy spectra after to standard \gerda\ analysis cuts between 500 and 525 keV, split by the respective detectors in which the signal was measured.
 	Two deviations from the background level can be seen in both figure at 511 keV and 514 keV.
 	}
-			\vspace{5mm}
 \end{figure}
 
 Figures \ref{fig:NoFilterBEGes} and \ref{fig:NoFilterCOAX} show the two resulting spectra for each detector between 500 and 525 keV.
 Structures deviating from the background level can be identified  at 511 keV and 514 keV.
 The 511 keV deviation originates from gammas generated in positron electron annihilation events, while the 514 keV line was most likely caused by gammas created in the relaxation of \nuc{Rb}{85m} in the \Kr\ decay via this excited state.
-If you examine these figures, you can already make the statement that there must be a not insignificant amount of \Kr\ in the LAr as otherwise no deviation should be visible.
+If one examines these figures, one can already make the statement that there must be a not insignificant amount of \Kr\ in the LAr as otherwise no deviation should be visible.
 \\
 
 \iffalse
@@ -915,7 +915,7 @@ Whether or not a rejection process using the LAr veto would be useful in this an
 \centering
 \begin{subfigure}{0.475\textwidth}
 	\includegraphics[width=75mm]{./Bilder/500525LArVetoBEGes.pdf}
-    \caption{BEGes}
+    \caption{BEGe}
   \label{fig:LArBEGes}
 \end{subfigure}\hfill%
 \begin{subfigure}{0.475\textwidth}
@@ -950,7 +950,7 @@ One can see that the annihilation peak is reduced compared to the spectra before
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\includegraphics[width=75mm]{./Bilder/AntiLArBEGe.pdf}
-		\caption{BEGes}
+		\caption{BEGe}
 		\label{fig:AntiLArBEGes}
 	\end{subfigure}\hfill%
 	\begin{subfigure}{.5\textwidth}
@@ -1017,7 +1017,7 @@ The resulting fit function is displayed in equation \ref{equ:FitNoFilters}.
 \mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi}\mathrm{C}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\frac{1}{\sqrt{2\pi}\mathrm{C}}\exp\left(-\frac{(x-\mathrm{E})^2}{2\mathrm{C}^2}\right) + \mathrm{F}
 \label{equ:FitNoFilters}
 \end{equation}
-Figures \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX} show the resulting fit.
+Figures \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX} show the resulting fits.
 The values of the fit parameter values can be seen in the table inside the figures.
 Fitting parameters B and E - the mean values of the peaks - were fixed to the values of 511 keV and 514 keV respectively.
 All other values were left free under the condition of a positive value.
@@ -1043,7 +1043,7 @@ The values determined in the fitting process are compatible with the resolution 
     \\
 	\caption{
 		Fitted energy spectra before the LAr veto cut between 500 and 525 keV. 
-		Function \ref{equ:FitNoFilters} was used as fit function and its course is indicated in red. 
+		Function~\ref{equ:FitNoFilters} was used as fit function and its course is indicated in red. 
 		The two green plots at the bottom of the figures indicate the two independent peaks. 
 		}
 \end{figure}
@@ -1110,7 +1110,7 @@ This results in an amount of $(120\pm19)$ counts for the BEGe and $(128\pm22)$ f
 
 Compared to the values of the non LAr filtered spectra, however, it can be seen that the number of counts in the BEGe and in the COAX detectors have dropped considerably.
 This means that the LAr veto also rejected some of the \Kr\ decay caused events.
-Therefore only the results of the spectra before the LAr veto is able to see some of the beta produced light.
+Therefore only the results of the spectra before the LAr veto will be used in the remaining analysis.
 \\
 
 
@@ -1179,13 +1179,13 @@ How this conversion factor can be determined is the topic of the following secti
 
 It is possible to calculate the decay density of \Kr\ necessary to create the measured line count by using the conversion factor $1/p \epsilon V_{\mathrm{sim}} $ between these two values. 
 Such a conversion factor can be determined with the help of a Monte Carlo simulation.
-The tool used to perform this simulation is \mage (MAjorana-GErda) \cite{aalseth_search_2018}, a GEANT4-based physics simulation software developed jointly by MAJORANA and \gerda.
+The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA \cite{aalseth_search_2018} and \gerda.
 \mage is specialized in the simulation of radioactive decays and their corresponding energy deposition in germanium detectors.
 In this thesis, the full \gerda\ implementation is used \cite{boswell_mage_2011}.
 \\
 
 A number of $N_{\mathrm{sim}}$ = 50.000.000 gammas with 514 keV were simulated in cylindrical volume of 2.5 m height and a diameter of 3 m resulting in $V_{\mathrm{sim}} = 17.65 ~\mathrm{m}^3$.
-Compared with the volume of 64 m\(^3\) of LAr used in the \gerda\ experiment, this volume is much smaller.
+Compared with the volume of 64 m\(^3\) of the LAr used in the \gerda\ experiment, this volume is much smaller.
 Nevertheless, as we will see later, this volume is by far big enough for this purpose.
 \\
 
@@ -1230,7 +1230,7 @@ Nevertheless, as we will see later, this volume is by far big enough for this pu
 			%\vspace{5mm}
 \end{figure}
 
-From these 50 million simulated gammas with the anti-coincidence veto already applied only about 75 thousand have created a signal in a detector, only 30465 of them in a BEGe and 24902 in a COAX.
+From these 50 million simulated gammas with the anti-coincidence veto already applied only about 75 thousand have created a signal in a detector, only 30465 of them in a BEGe and 24902 in a COAX detector.
 The spatial distribution of all measured events in the BEGe detectors can be seen as red dots in figures \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa}.
 Furthermore, the spectrum of all events detected in BEGe detectors is shown in Figure \ref{fig:PhasenraumMC514}.
 One can see that only in a small number of cases the gamma deposited all of its initial 514 keV in the detectors.
