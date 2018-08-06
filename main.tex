@@ -184,8 +184,8 @@ Aufgrund der extrem niedrigen Hintergrundbedingung erforscht \gerda\ Halbwertsze
 Ein radioaktives Isotop im flüssigen Argon ist \nuc{Kr}{85}.
 Es trägt nicht zum Hintergrund für \gerdas\ die neutrinolose Doppel-Betazerfall-Suche bei, könnte aber Analysen bei niedrigeren Energien beeinflussen.
 Das Ziel dieser Arbeit ist es, die spezifische Aktivität von \Kr\ zu bestimmen.
-Ca. 0,434$\%$ aller \Kr\-Zerfälle werden von der Emission eines Gammas mit 514 keV zeitlich verzögert begleitet.
-Basierend auf der Anzahl an Counts im zugehörigen Peak im Energiespektrum von \gerda, der Effizienz der Detektoren, ein solches Gamma zu messen und auf der mittleren Gesamtmesszeit kann die spezifische \Kr\-Aktivität berechnet werden.
+Ca. 0,434$\%$ aller \Kr-Zerfälle werden von der Emission eines Gammas mit 514 keV zeitlich verzögert begleitet.
+Basierend auf der Anzahl an Counts im zugehörigen Peak im Energiespektrum von \gerda, der Effizienz der Detektoren, ein solches Gamma zu messen und auf der mittleren Gesamtmesszeit kann die spezifische \Kr-Aktivität berechnet werden.
 Durch die Anwendung dieser Methode wurde eine spezifische Aktivität von $(0.508\pm0.086) \   \unit{mBq}/ \unit{l}$ bestimmt.
 Es wurde eine Cross-Check mit Hilfe der exponentiellen Abnahme der Zählrate durchgeführt.
 Die Anwesenheit von \nuc{Ar}{42} mit vergleichbarer Lebensdauer erlaubte jedoch keine Überprüfung des erhaltenen Ergebnisses.
@@ -722,7 +722,7 @@ This excited state has a half life of 1.015 $\unit{\mu s}$ and relaxes immediate
 	\fi%
 	\caption{
 	    \Kr's specific activity in the atmosphere between 1945 to 2009. 
-	    It can be seen that over this period the average specific activity in the atmosphere has increased due to more man-made nuclear fission in reactors. 
+	    Over this period the average specific activity in the atmosphere has increased due to man-made nuclear fission in reactors. 
 		Taken from \cite{ahlswede_update_2013}.
 	}
     \label{fig:Kr85Aenderung}
@@ -982,7 +982,7 @@ It should therefore be possible to distinguish \Kr\ decays from other events if 
 \begin{figure}[t!]
 	\centering
 	\ifmakefigures%
-	\includegraphics[width=100mm]{./Bilder/BeispielSignal.pdf}
+	\includegraphics[width=100mm]{./Bilder/Beispiel.pdf}
 	\fi%
 
 	\caption{
@@ -1024,9 +1024,9 @@ Figures \ref{fig:FitNoFilterBEGes} and \ref{fig:FitNoFilterCOAX} show the result
 The values of the fit parameter values can be seen in the table inside the figures.
 Fitting parameters B and E - the mean values of the peaks - were fixed to the values of 511 keV and 514 keV respectively.
 All other values were left free under the condition of a positive value.
-Also, Parameter C - the sigma value - was used for both peaks.
+Also, parameter C - the sigma value - was used for both peaks.
 In the energy area investigated, the two resolutions and thus also the variances at the specific energies should not vary greatly, which is why this simplification can be applied.
-The previously determined resolutions can be used to calculate the expected values for the deviations, as shown in appendix chapter \ref{sec:ResDetermination}: $\sigma_{\mathrm{BEGe}} = 0.96 \unit{keV}$ for the BEGe detectors and $\sigma_{\mathrm{COAX}} = 1.16 \unit{keV}$ for the COAX detectors.
+The previously determined resolutions can be used to calculate the expected values for the variances, as shown in appendix chapter \ref{sec:ResDetermination}: $\sigma_{\mathrm{BEGe}} = 0.96 \ \unit{keV}$ for the BEGe detectors and $\sigma_{\mathrm{COAX}} = 1.16 \ \unit{keV}$ for the COAX detectors.
 The values determined in the fitting process have the corresponding expected value in their range of uncertainty .
 \\
 
@@ -1114,6 +1114,7 @@ This results in an amount of $(120\pm19)$ counts for the BEGe and $(128\pm22)$ f
 
 Compared to the values of the non LAr filtered spectra, however, it can be seen that the number of counts in the BEGe and in the COAX detectors have dropped considerably.
 This means that the LAr veto also rejected some of the \Kr\ decay caused events.
+Therefore only the results of the spectra before the LAr veto can be used for the further analysis.
 \\
 
 
@@ -1134,7 +1135,7 @@ This means that the LAr veto also rejected some of the \Kr\ decay caused events.
 	\end{subfigure}
 	\caption{
 	Fitted energy spectra after the LAr veto between 500 and 525 keV. 
-	Function \ref{equ:FitNoFilters} was again used as fit function. 
+	Function \ref{equ:FitNoFilters} was used as fit function again. 
     In the case of the BEGe spectrum, the first peak function vanishes due to no measurable deviation from the background level at the 511 keV mark.
     In the COAX spectrum, however, a deviation is still visible which is why the second peak function has a finite amplitude.
 	}
@@ -1253,11 +1254,11 @@ On the other hand, for every measured 514keV photon in one of the BEGe detectors
 In other words, the value $1 / \epsilon_{\mathrm{BEGe}}$ is a factor to convert from the amount measured entries to the average amount of \nuc{Rb}{85m} relaxations necessary to create them.
 \\
 
-This value is direct proportional to the simulated volume $V_{\mathrm{sim}}$.
+This value is at volumes big enough direct proportional to the simulated volume $V_{\mathrm{sim}}$.
 This dependency can be derived from figures \ref{fig:CrossSecAb} and \ref{fig:CrossSecRa} where the red dots represent the location the measured gamma was released.
 It can be seen, that essentially all measured gamma originated in the immediate vicinity of the detectors.
 This would mean that, with a big enough volume and a constant decay density $\rho_{\mathrm{dec}}$, the value $\Delta N$ of each detector remains constant under change of volume.
-$N_{\mathrm{sim}}$ on the other hand is directly proportional to the volume through to definition of $N_{\mathrm{sim}} = \rho_{\mathrm{dec}} V_{\mathrm{sim}}$.
+$N_{\mathrm{sim}}$ on the other hand is directly proportional to the volume through its definition of $N_{\mathrm{sim}} = \rho_{\mathrm{dec}} V_{\mathrm{sim}}$.
 With the definition of the detector efficiency, this results in the proportionality  $1 / \epsilon \propto V_{\mathrm{sim}}$.
 \\
 
@@ -1618,7 +1619,7 @@ R_{^{85}\mathrm{Kr}} = \bar{a} \times  \epsilon V_{\mathrm{sim}} =  (1.29\pm0.25
 \section{Other Relevant Radioactive Isotopes}
 \label{sec:other}
 
-If one compares this value with the scale of the count rate diagram above, it can be seen that actually no change caused by \Kr\ should be visible in the statistical fluctuations of the measured count rate.
+If one compares this value with the scale of the count rate diagram above, it can be seen that actually no change caused by \Kr\ should be visible over the statistical fluctuations of the measured count rate.
 However, the fact that a change can be seen, leaves two possible scenarios.
 Either the value determined in the first method was wrong and the specific \Kr\ activity in the LAr was actually much higher, or the assumption that \Kr\ was the only isotope with a significant change over time was wrong.
 \\
@@ -1673,7 +1674,7 @@ The smaller this value, the better the fit function describes  the measured data
 However, in this case, both fit functions seem to have a similar $\chi^2$ value and therefore describe the course of the data equality well.
 This leads to the conclusion that the data used in this method does not have enough statistical value to be able to discriminate which of the two isotopes is responsible for the change.
 Therefore, no statement can be made about the specific activity of \Kr\ from this change in count rate.
-With more measuring time it might be possible to make a statement about the responsible isotope.
+With more measuring time it might be possible to make a statement about the responsible isotope and to potentially falsify the result of found above.
 \\
 
 Since \nuc{K}{42} has a much higher Q value ($Q_{\beta} = 3525.22 \ \unit{keV}$ \cite{chen_nuclear_2016}) than \Kr, it should be possible to choose another energy frame above \Kr's Q-value and to determine its change in the count rate there without \Kr's influence.
@@ -1697,7 +1698,7 @@ However, since no Monte Carlo simulation can be calculated for \nuc{K}{42}, no s
 
 With the line count rate analysis, it was possible to show that the specific activity of \nuc{Kr}{85} in the LAr in \gerda\ \PII\ has a value of $(0.508\pm0.086) \ \unit{mBq} / \unit{l}$.
 The attempt to verify this number using the half life did not work.
-Due to \Kr\ low value, only a strong discrepancy could have been detected.
+Due to \Kr's low value, only a strong discrepancy could have been detected.
 However, the presence of \nuc{Ar}{42} with a similar decay time and its daughter nuclei \nuc{K}{42} did not allow to confirm or falsify the value of the previous method.
 
 \\
