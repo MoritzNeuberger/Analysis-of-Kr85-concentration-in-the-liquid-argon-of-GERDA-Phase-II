@@ -405,3 +405,18 @@
 \widowpenalty=10000
 \vfuzz \hfuzz
 \raggedbottom
+
+
+
+\newenvironment{chapquote}[2][2em]
+  {\raggedright
+   \setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape
+   }
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatletter
+\renewcommand*{\chapterformat}{%
+  \mbox{\chapapp~\thechapter\autodot:\enskip}%
+}
