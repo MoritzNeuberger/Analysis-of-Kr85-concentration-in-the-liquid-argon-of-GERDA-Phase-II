@@ -20,7 +20,9 @@
 \include{gerda-abbreviations}
 \setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{1}
-
+\hyphenpenalty=500
+\clubpenalty=150
+\widowpenalty=150
 \makeatletter
 \renewcommand*{\chapterformat}{%
   \mbox{\chapapp~\thechapter\autodot:\enskip}%
@@ -231,15 +233,15 @@ Neutrinos are electrically neutral elementary particles.
 They are leptons and, apart from gravity, they only interact with other particles via the weak force.
 They occur in three different kinds of flavors: the electron neutrino $\nu_e$, the muon neutrino $\nu_{\mu}$ and the tau neutrino $\nu_{\tau}$.
 According to the standard model neutrinos would be massless.
-Neutrino oscillation, however, has shown that neutrinos are massive \cite{fukuda_evidence_1998}.
-But the absolute values of their mass and whether they are Dirac or Marjoram particles are still unknown \cite{barabash_brief_2017}.
+Neutrino oscillation, however, has shown that neutrinos are massive \cite{fukuda_evidence_1998,sno_collaboration_direct_2002}.
+But the absolute values of their mass and whether they are Dirac or Marjoram particles are still unknown. 
 \\
 
 The major difference between these two kinds of particles is that, in the case of Dirac particles, one can clearly identify particles and anti-particles while Majorana particles only have one kind.
 In other words, Majorana particles are particle and anti-particle at the same time.
 This would allow lepton number violation and point towards physics beyond the standard model.
-Until now, only one possible transition is known that could identify neutrinos as Majorana particles.
-This transition is referred to as a neutrinoless double beta (\onbb) decay \cite{schechter_neutrinoless_1982}.
+Until now, only one possible transition is known that could identify neutrinos as Majorana particles \cite{schechter_neutrinoless_1982}.
+This transition is referred to as a neutrinoless double beta (\onbb) decay. 
  
 %what are Majorana neutrinos
 
@@ -399,21 +401,21 @@ Neutrino oscillation experiments have shown that neutrino flavor eigenstates $\n
 \begin{equation}
 \ket{\nu_\alpha} = \sum_i U^*_{\alpha i} \ket{\nu_i} 
 \end{equation}
-The value of each $U_{\alpha i}$ is defined by three mixing angles and three CP-violating phases.
+The elements of the matrix are defined by three mixing angles and three CP-violating phases.
 The Dirac phase is always present, regardless whether the neutrino is a Majorana or Dirac particle.
 The two Majorana phases only have a physical meaning for Majorana neutrinos.
 Neutrino oscillation is only sensitive to the mass square differences $\Delta m^2_{ij} = m^2_i - m^2_j$ of the mass eigenstates and so far only an absolute value of $\Delta m^2_{32}$ could be determined.
 This leaves three different possible scenarios to be considered in the \onbb\ decay \cite{bilenky_alternative_2017}:
 \begin{enumerate}
-    \item normal order ($m_1 < m_2 < m_3$)
-    \item inverted order ($m_3 < m_1 < m_2$)
-    \item quasi-degenerate order ($m_1 \approx m_2 \approx m_3$) in which the mass eigenvalues are much larger than the mass differences
+    \item normal hierarchy ($m_1 < m_2 < m_3$)
+    \item inverted hierarchy ($m_3 < m_1 < m_2$)
+    \item quasi-degenerate hierarchy ($m_1 \approx m_2 \approx m_3$) in which the mass eigenvalues are much larger than the mass differences
 \end{enumerate}
 The effective neutrino mass as a function of the lightest mass of each mass ordering can be seen in figure \ref{fig:MassOrder}.
 A \onbb\ decay may  provide new knowledge about the mass ordering, the mass scale as well as the Majorana phases. 
 \\
 
-Other attempts to measure the mass of the electron neutrino are measuring the end point of the beta decay \cite{otten_neutrino_2008}. 
+Other attempts to determine the mass of the electron neutrino measure the endpoint of beta decay \cite{otten_neutrino_2008}. 
 A promising experiment right now is the KATRIN experiment.
 The absolute mass these kinds of experiments can measure, is an incoherent mass sum as seen in equation \ref{massBeta}.
 \begin{equation}
